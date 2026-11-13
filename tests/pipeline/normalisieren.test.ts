@@ -66,6 +66,17 @@ describe("normalisiere", () => {
     expect(normalisiere(roh({ titel: "Python (12–16 Jahre)" }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["teens"]);
     expect(normalisiere(roh({ titel: "Python", quellTags: ["Eltern"] }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["eltern"]);
     expect(normalisiere(roh({ titel: "Python ab 16 Jahren" }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["teens", "erwachsene"]);
+    expect(normalisiere(roh({ titel: "Python ab 6 Jahren" }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["kinder", "teens"]);
+    expect(normalisiere(roh({ titel: "Python mit KI in der Kita", quellTags: ["pädagogische Fachkraft Krippe und Kita"] }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["fachkraefte"]);
+    expect(normalisiere(roh({ titel: "Python (Kl. 9-10)", quellTags: ["Juniorstudierende"] }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["teens"]);
+    expect(normalisiere(roh({ titel: "Python", quellTags: ["Schüler/in"] }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["kinder", "teens"]);
+    expect(normalisiere(roh({ titel: "Python (12–16 Jahre)", quellTags: ["Schüler/in"] }), QUELLE, THEMEN, JETZT)?.zielgruppen).toEqual(["teens"]);
+  });
+
+  it("vereinigt Altersgruppen aus mehreren Tags", () => {
+    const a = normalisiere(roh({ titel: "Python", quellTags: ["Kindergartenkind (3-6 Jahre)", "Schulkinder & Jugendliche (ab 6 Jahren)"] }), QUELLE, THEMEN, JETZT);
+    expect(a?.alterMin).toBe(3);
+    expect(a?.alterMax).toBeUndefined();
   });
 
   it("formatiert Kosten", () => {

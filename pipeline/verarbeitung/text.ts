@@ -1,9 +1,11 @@
 import * as cheerio from "cheerio";
 
 const BLOCK_TAGS = "p, div, li, br, h1, h2, h3, h4, h5, h6, tr, section, article";
+const LEERRAUM = /[\s ​]+/g;
 
+/** Vereinheitlicht Leerraum und Unicode-Form (manche Seiten liefern zerlegte Umlaute: u + ̈). */
 export function normalisiereLeerraum(text: string): string {
-  return text.normalize("NFC").replace(/[\s ​]+/g, " ").trim();
+  return text.normalize("NFC").replace(LEERRAUM, " ").trim();
 }
 
 /** Wandelt HTML in lesbaren Klartext um; Blockelemente werden zu Zeilenumbrüchen. */

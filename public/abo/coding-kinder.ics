@@ -1,0 +1,957 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COSMOS-Entdecker//Lernangebote Heilbronn//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Coding & Robotik für Kinder – COSMOS-Entdecker
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:aim-262420SC-20261117T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261117T153000Z
+DTEND:20261117T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261124T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261124T153000Z
+DTEND:20261124T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261201T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261201T153000Z
+DTEND:20261201T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261208T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261208T153000Z
+DTEND:20261208T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261215T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261215T153000Z
+DTEND:20261215T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270112T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270112T153000Z
+DTEND:20270112T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270119T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270119T153000Z
+DTEND:20270119T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270126T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270126T153000Z
+DTEND:20270126T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270202T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270202T153000Z
+DTEND:20270202T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420RK2-20261118T140000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261118T140000Z
+DTEND:20261118T153000Z
+SUMMARY:Robotik zum Anfassen 2– vom analogen ins symbolbasierte Programmi
+ eren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/262420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/262420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H304002-20261128T113000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261128T113000Z
+DTEND:20261128T143000Z
+SUMMARY:Programmieren Lernen - Scratch
+DESCRIPTION:Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Wo
+ rkshop erlernen die Kinder die visuelle Programmiersprache Scratch\, spezi
+ ell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder dur
+ ch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zwe
+ iergruppen…\n\nKosten: 30 €\nInfos und Anmeldung: https://hdf-hn.de/ku
+ rs/programmieren-lernen-scratch-261H304002/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207006-20261205T083000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261205T083000Z
+DTEND:20261205T103000Z
+SUMMARY:Märchenhaft mit ScratchJunior eine Geschichte programmieren: Das m
+ utige Tier
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Workshop machen wir es uns zuerst gemütlich und lauschen einem span
+ nenden Märchen – voller Tiere\, Abenteuer und einer kleinen Portion Mut
+ . Anschließend verwandeln wir die Geschichte gemeinsam mit ScratchJunior\
+ , einer kindgerechten…\n\nKosten: 10 €\nInfos und Anmeldung: https://h
+ df-hn.de/kurs/maerchenhaft-mit-scratchjunior-eine-geschichte-programmieren
+ -das-mutige-tier-261H207006/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 3
+URL:https://hdf-hn.de/kurs/maerchenhaft-mit-scratchjunior-eine-geschichte-p
+ rogrammieren-das-mutige-tier-261H207006/
+END:VEVENT
+BEGIN:VEVENT
+UID:experimenta-first-lego-league-explore-ausstellung-20261205T100000Z@cosm
+ os-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261205T100000Z
+DTEND:20261205T150000Z
+SUMMARY:First Lego League Explore – Ausstellung
+DESCRIPTION:In der aktuellen Saison begeben sich Kinder im Alter von 6 bis 
+ 10 Jahren bei der First Lego League (FLL) Explore in die Vielfalt globaler
+  Naturlandschaften. Die Saison BIOGLOW™ führt Teams in die faszinierend
+ en Ökosysteme unserer Erde. Im Mittelpunkt stehen die Wechselwirkungen zw
+ ischen Natur…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: https://ww
+ w.experimenta.science/besuchen/veranstaltungskalender/first-lego-league-ex
+ plore-ausstellung/
+LOCATION:Experimenta-Platz\, 74072 Heilbronn
+URL:https://www.experimenta.science/besuchen/veranstaltungskalender/first-l
+ ego-league-explore-ausstellung/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207007-20270116T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270116T090000Z
+DTEND:20270116T103000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207007/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207007/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207007-20270123T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270123T090000Z
+DTEND:20270123T103000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207007/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207007/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207016-20270116T113000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270116T113000Z
+DTEND:20270116T130000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207016/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207016/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207016-20270123T113000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270123T113000Z
+DTEND:20270123T130000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207016/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207016/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207017-20270116T133000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270116T133000Z
+DTEND:20270116T150000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207017/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207017/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207017-20270123T133000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270123T133000Z
+DTEND:20270123T150000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207017/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207017/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207008-20270130T083000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270130T083000Z
+DTEND:20270130T103000Z
+SUMMARY:Spielerisch mit ScratchJunior eine grünere\, saubere Welt programm
+ ieren
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem fröhlichen Mitmach-Workshop entdecken wir gemeinsam\, wie spannend 
+ Programmieren sein kann. Programmieren ist eine eigene Sprache – und mit
+  ScratchJunior können schon die Jüngsten sie spielerisch lernen. Ganz oh
+ ne Vorkenntnisse…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn
+ .de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saubere-welt-programm
+ ieren-261H207008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saub
+ ere-welt-programmieren-261H207008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270211T080000Z
+DTEND:20270211T090000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270211T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270211T090000Z
+DTEND:20270211T113000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270212T080000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270212T080000Z
+DTEND:20270212T090000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270212T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270212T090000Z
+DTEND:20270212T113000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305006-20270213T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270213T090000Z
+DTEND:20270213T120000Z
+SUMMARY:KinderFerienBox: Programmieren Lernen - Scratch
+DESCRIPTION:Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Wo
+ rkshop erlernen die Kinder die visuelle Programmiersprache Scratch\, spezi
+ ell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder dur
+ ch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zwe
+ iergruppen…\n\nKosten: 30 €\nInfos und Anmeldung: https://hdf-hn.de/ku
+ rs/kinderferienbox-programmieren-lernen-scratch-261H305006/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 1
+URL:https://hdf-hn.de/kurs/kinderferienbox-programmieren-lernen-scratch-261
+ H305006/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270217T140000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270217T140000Z
+DTEND:20270217T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270224T140000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270224T140000Z
+DTEND:20270224T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270303T140000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270303T140000Z
+DTEND:20270303T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270223T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270223T153000Z
+DTEND:20270223T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270302T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270302T153000Z
+DTEND:20270302T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270309T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270309T153000Z
+DTEND:20270309T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270316T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270316T153000Z
+DTEND:20270316T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270323T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270323T153000Z
+DTEND:20270323T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270406T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270406T143000Z
+DTEND:20270406T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270413T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270413T143000Z
+DTEND:20270413T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270420T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270420T143000Z
+DTEND:20270420T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270427T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270427T143000Z
+DTEND:20270427T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270504T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270504T143000Z
+DTEND:20270504T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270511T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270511T143000Z
+DTEND:20270511T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270601T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270601T143000Z
+DTEND:20270601T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270615T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270615T143000Z
+DTEND:20270615T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270622T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270622T143000Z
+DTEND:20270622T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270629T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270629T143000Z
+DTEND:20270629T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270706T143000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270706T143000Z
+DTEND:20270706T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270407T130000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270407T130000Z
+DTEND:20270407T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270414T130000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270414T130000Z
+DTEND:20270414T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270421T130000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270421T130000Z
+DTEND:20270421T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270423T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270423T124500Z
+DTEND:20270423T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270430T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270430T124500Z
+DTEND:20270430T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270507T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270507T124500Z
+DTEND:20270507T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270514T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270514T124500Z
+DTEND:20270514T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270604T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270604T124500Z
+DTEND:20270604T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270611T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270611T124500Z
+DTEND:20270611T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270618T124500Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270618T124500Z
+DTEND:20270618T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+END:VCALENDAR

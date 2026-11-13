@@ -23,36 +23,39 @@ export function schlagwortRegex(schlagwort: string): RegExp {
 const SICHERHEIT_TITEL = 0.9;
 const SICHERHEIT_MEHRFACH = 0.7;
 const SICHERHEIT_EINZELN = 0.5;
+/** Ein Nebenthema ohne Titeltreffer braucht mindestens so viele Treffer in der Beschreibung. */
+const MIN_TREFFER_NEBENTHEMA = 2;
+
+type Treffer = { thema: string; imTitel: boolean; inBeschreibung: number; woerter: string[] };
 
 export function klassifiziereThemen(titel: string, beschreibung: string, themen: Thema[]): Klassifizierung {
-  const gefunden: string[] = [];
-  const ausloeser: string[] = [];
-  let imTitel = false;
-  let trefferBeschreibung = 0;
-
+  const treffer: Treffer[] = [];
   for (const thema of themen) {
-    let themaGetroffen = false;
+    const t: Treffer = { thema: thema.id, imTitel: false, inBeschreibung: 0, woerter: [] };
     for (const wort of thema.schlagwoerter) {
       const rx = schlagwortRegex(wort);
-      const titelTreffer = rx.test(titel);
-      const beschreibungTreffer = rx.test(beschreibung);
-      if (!titelTreffer && !beschreibungTreffer) continue;
-      themaGetroffen = true;
-      ausloeser.push(wort);
-      if (titelTreffer) imTitel = true;
-      else trefferBeschreibung++;
+      const imTitel = rx.test(titel);
+      const inBeschreibung = rx.test(beschreibung);
+      if (!imTitel && !inBeschreibung) continue;
+      t.woerter.push(wort);
+      if (imTitel) t.imTitel = true;
+      else t.inBeschreibung++;
     }
-    if (themaGetroffen) gefunden.push(thema.id);
+    if (t.woerter.length > 0) treffer.push(t);
   }
 
+  const titelEindeutig = treffer.some((t) => t.imTitel);
+  const behalten = titelEindeutig ? treffer.filter((t) => t.imTitel || t.inBeschreibung >= MIN_TREFFER_NEBENTHEMA) : treffer;
+  const trefferBeschreibung = behalten.reduce((s, t) => s + t.inBeschreibung, 0);
+
   const sicherheit =
-    gefunden.length === 0
+    behalten.length === 0
       ? 0
-      : imTitel
+      : titelEindeutig
         ? SICHERHEIT_TITEL
-        : trefferBeschreibung >= 2
+        : trefferBeschreibung >= MIN_TREFFER_NEBENTHEMA
           ? SICHERHEIT_MEHRFACH
           : SICHERHEIT_EINZELN;
 
-  return { themen: gefunden, sicherheit, ausloeser };
+  return { themen: behalten.map((t) => t.thema), sicherheit, ausloeser: behalten.flatMap((t) => t.woerter) };
 }

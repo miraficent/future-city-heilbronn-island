@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { erkenneAlter } from "../../pipeline/verarbeitung/alter";
+import { erkenneAlter, vereinigeAlter } from "../../pipeline/verarbeitung/alter";
 import { klassifiziereThemen } from "../../pipeline/verarbeitung/themen";
 import type { Thema } from "../../src/lib/angebot";
 
@@ -11,6 +11,7 @@ describe("erkenneAlter", () => {
     ["IT erleben (ab 13 Jahre)", { min: 13 }],
     ["Future Skills – ab 14 J.", { min: 14 }],
     ["Für Klasse 5 - 10", { min: 10, max: 15 }],
+    ["Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)", { min: 12, max: 13 }],
     ["Schulkinder & Jugendliche (ab 6 Jahren)", { min: 6 }],
     ["Kindergartenkind (3-6 Jahre)", { min: 3, max: 6 }],
     ["ab-8-jahren", { min: 8 }],
@@ -35,6 +36,14 @@ const THEMEN: Thema[] = [
   { id: "gaming", name: "Gaming", emoji: "🎮", schlagwoerter: ["Game", "Minecraft"] },
 ];
 
+describe("vereinigeAlter", () => {
+  it("bildet die Hülle mehrerer Altersgruppen", () => {
+    expect(vereinigeAlter([{ min: 3, max: 6 }, { min: 6 }])).toEqual({ min: 3 });
+    expect(vereinigeAlter([{ min: 3, max: 6 }, { min: 1, max: 3 }])).toEqual({ min: 1, max: 6 });
+    expect(vereinigeAlter([])).toEqual({});
+  });
+});
+
 describe("klassifiziereThemen", () => {
   it("findet KI als ganzes Wort, aber nicht in Kinder oder Skizze", () => {
     expect(klassifiziereThemen("Python lernen mit KI", "", THEMEN).themen).toEqual(["ki"]);
@@ -53,6 +62,11 @@ describe("klassifiziereThemen", () => {
   it("Titeltreffer ergibt hohe Sicherheit, nur Beschreibung niedrige", () => {
     expect(klassifiziereThemen("Scratch für Kids", "", THEMEN).sicherheit).toBeGreaterThanOrEqual(0.8);
     expect(klassifiziereThemen("Basteln", "Am Ende spielen wir Minecraft", THEMEN).sicherheit).toBeLessThan(0.6);
+  });
+
+  it("verwirft Nebenthemen mit nur einem Treffer in der Beschreibung, wenn der Titel eindeutig ist", () => {
+    expect(klassifiziereThemen("KI im Unterricht", "Wir spielen ein Game.", THEMEN).themen).toEqual(["ki"]);
+    expect(klassifiziereThemen("KI im Unterricht", "Game hier, Minecraft dort.", THEMEN).themen.sort()).toEqual(["gaming", "ki"]);
   });
 
   it("liefert die auslösenden Schlagwörter", () => {

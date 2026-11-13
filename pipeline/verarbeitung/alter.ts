@@ -7,11 +7,13 @@ const plausibel = (n: number) => n >= MIN_ALTER && n <= MAX_ALTER;
 
 const SPANNE = /(\d{1,2})\s*[-–—]\s*(\d{1,2})\s*(?:J\.|Jahre|Jährige|-jahre)/i;
 const AB = /ab[\s-]+(\d{1,2})[\s-]*(?:J\.|J\b|Jahr|-jahr)/i;
-const KLASSE = /Klassen?(?:stufe)?\s*(\d{1,2})\s*(?:[-–—]|bis)\s*(\d{1,2})/i;
-const AB_KLASSE = /ab[\s-]+Klasse[\s-]+(\d{1,2})/i;
+const KLASSE = /(?:Klassen?(?:stufe)?|Kl\.)\s*(\d{1,2})\s*(?:[-–—]|bis)\s*(\d{1,2})/i;
+const AB_KLASSE = /ab[\s-]+(?:Klasse|Kl\.)[\s-]*(\d{1,2})/i;
 
 /** Schulklasse n entspricht grob dem Alter n + 5. */
 const KLASSE_ZU_ALTER = 5;
+
+const leer = (a: Alter) => a.min === undefined && a.max === undefined;
 
 function ausEinemText(text: string): Alter | null {
   const spanne = SPANNE.exec(text);
@@ -35,9 +37,8 @@ function ausEinemText(text: string): Alter | null {
 }
 
 /**
- * Erkennt Altersangaben. Die Texte werden in Prioritätsreihenfolge übergeben
- * (z. B. Titel, Beschreibung, Tags der Quelle); der erste Treffer mit Spanne gewinnt,
- * sonst der erste „ab …“-Treffer.
+ * Erkennt Altersangaben. Die Texte werden in Prioritätsreihenfolge übergeben;
+ * der erste Treffer mit Spanne gewinnt, sonst der erste „ab …“-Treffer.
  */
 export function erkenneAlter(texte: string[]): Alter {
   let nurMin: Alter | null = null;
@@ -48,4 +49,23 @@ export function erkenneAlter(texte: string[]): Alter {
     nurMin ??= treffer;
   }
   return nurMin ?? {};
+}
+
+/** Hülle mehrerer Altersgruppen – z. B. „3–6 Jahre“ + „ab 6 Jahren“ ⇒ „ab 3“. */
+export function vereinigeAlter(alter: Alter[]): Alter {
+  const relevant = alter.filter((a) => !leer(a));
+  if (relevant.length === 0) return {};
+  const mins = relevant.map((a) => a.min ?? MIN_ALTER);
+  const offen = relevant.some((a) => a.max === undefined);
+  const max = offen ? undefined : Math.max(...relevant.map((a) => a.max ?? MAX_ALTER));
+  return { min: Math.min(...mins), ...(max !== undefined ? { max } : {}) };
+}
+
+/** Titel vor Quell-Tags (vereinigt) vor Beschreibung. */
+export function bestimmeAlter(titel: string, tags: string[], beschreibung: string): Alter {
+  const ausTitel = erkenneAlter([titel]);
+  if (!leer(ausTitel)) return ausTitel;
+  const ausTags = vereinigeAlter(tags.map((t) => erkenneAlter([t])));
+  if (!leer(ausTags)) return ausTags;
+  return erkenneAlter([beschreibung]);
 }

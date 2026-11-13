@@ -1,0 +1,284 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//COSMOS-Entdecker//Lernangebote Heilbronn//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Künstliche Intelligenz für Teens – COSMOS-Entdecker
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:aim-262410KIDT-20261114T093000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261114T093000Z
+DTEND:20261114T150000Z
+SUMMARY:Werde zum KI-Detektiv: KI-generierte Bilder\, Videos und Stimmen er
+ kennen (ab 10 Jahren)
+DESCRIPTION:Erkenne KI-generierte Bilder\, Videos und Stimmen und lerne\, d
+ igitale Inhalte kritisch zu prüfen. Echt oder KI? In diesem Workshop gehs
+ t du als KI-Detektivin oder KI-Detektiv auf Spurensuche. Du untersuchst Bi
+ lder\, Videos und Stimmen\, entlarvst verdächtige Details und findest her
+ aus\, wie künstliche…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/KI-Detektive-KI-generierte-Bilder-Videos
+ -und-Stimmen-erkennen-10-15-Jahre/262410KIDT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Detektive-KI-generierte-Bild
+ er-Videos-und-Stimmen-erkennen-10-15-Jahre/262410KIDT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PAI-20261116T153000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261116T153000Z
+DTEND:20261116T173000Z
+SUMMARY:Python lernen mit KI (ab 16 Jahren)
+DESCRIPTION:Dein smarter Start in Python: mit erfahrenem Dozenten und pers
+ önlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem
+  Kurs lernst du Schritt für Schritt die Grundlagen von Python\, einer wel
+ tweit eingesetzten und für Einsteigende super geeigneten Programmiersprac
+ he\, kennen. Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahr
+ en/262420PAI
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261121T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261121T090000Z
+DTEND:20261121T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261122T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262993JLKK-20261205T080000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20261205T080000Z
+DTEND:20261205T150000Z
+SUMMARY:Juniorakademie: Kreativ mit KI – Ideen\, Texte und Bilder gestalt
+ en (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-Ideen-Texte-u
+ nd-Bilder-gestalten-Kl-9-10/262993JLKK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-I
+ deen-Texte-und-Bilder-gestalten-Kl-9-10/262993JLKK
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270220T090000Z
+DTEND:20270220T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270221T090000Z
+DTEND:20270221T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JLMM-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270306T080000Z
+DTEND:20270306T150000Z
+SUMMARY:Juniorakademie: Mensch\, Maschine\, Moral – Was unterscheidet uns
+  von KI? (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-Moral-Kl-11-13/2
+ 71993JLMM
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-
+ Moral-Kl-11-13/271993JLMM
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270330T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270330T070000Z
+DTEND:20270330T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270331T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270331T070000Z
+DTEND:20270331T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270401T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270401T070000Z
+DTEND:20270401T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270330T070000Z
+DTEND:20270330T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270331T070000Z
+DTEND:20270331T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270401T070000Z
+DTEND:20270401T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270402T070000Z
+DTEND:20270402T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
+DTSTAMP:20261113T192941Z
+DTSTART:20270525T070000Z
+DTEND:20270525T140000Z
+SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 
+ der Schwarz Digits (ab 13 Jahre)
+DESCRIPTION:Ein Besuch im IT Education Center der Schwarz Digits Komm mit i
+ ns ITEC der Schwarz Digits und tauche ein in die spannende und vielseitige
+  Welt der Informationstechnologie (IT)! Unser interaktiver Workshop „IT 
+ erleben statt nur verstehen" bietet Jugendlichen ab der 7. Klasse und ihre
+ n Eltern die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-Ein-Besuch-im-ITEC
+ -der-Schwarz-Digits/271470SIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-
+ Ein-Besuch-im-ITEC-der-Schwarz-Digits/271470SIT
+END:VEVENT
+END:VCALENDAR

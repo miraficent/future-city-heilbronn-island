@@ -1,5 +1,5 @@
 import type { Angebot, Art, Quelle, RohAngebot, Termin, Thema, Zielgruppe } from "../../src/lib/angebot";
-import { erkenneAlter } from "./alter";
+import { bestimmeAlter } from "./alter";
 import { klassifiziereThemen } from "./themen";
 import { teaser } from "./text";
 
@@ -9,11 +9,14 @@ const TEEN_BIS = 17;
 const TAG_ZIELGRUPPEN: Array<[RegExp, Zielgruppe[]]> = [
   [/eltern|väter|vater|mütter|großeltern/i, ["eltern"]],
   [/familie/i, ["familien"]],
-  [/erwachsene/i, ["erwachsene"]],
-  [/fortbildung|pädagog|lehrkr|fachkr|erzieh/i, ["fachkraefte"]],
-  [/jugendliche|gymnasium|klasse/i, ["teens"]],
-  [/grundschul|schulkind|kindergarten|kita/i, ["kinder"]],
+  [/erwachsene|(?<!junior)studierende|auszubildende|interessierte/i, ["erwachsene"]],
+  [/fortbildung|pädagog|lehrkr|fachkr|erzieh|schulleitung|referendar|sozialarbeit|ganztag|tagespflege|zusatzkraft|leitungskraft/i, ["fachkraefte"]],
+  [/jugendliche|gymnasium|klasse|juniorstud/i, ["teens"]],
+  [/grundschul|schulkind|kindergartenkind/i, ["kinder"]],
 ];
+
+/** Nur wenn das Alter unbekannt ist: „Schüler/in“ heißt dann Kinder oder Teens. */
+const TAG_ZIELGRUPPEN_OHNE_ALTER: Array<[RegExp, Zielgruppe[]]> = [[/schüler/i, ["kinder", "teens"]]];
 
 const TAG_ART: Array<[RegExp, Art]> = [
   [/ferien/i, "ferienprogramm"],
@@ -28,6 +31,9 @@ function zukuenftigeTermine(termine: Termin[], jetzt: Date): Termin[] {
     .sort((a, b) => a.start.localeCompare(b.start));
 }
 
+/** Ab diesem Mindestalter richtet sich ein „ab …“-Angebot auch an Erwachsene. */
+const ERWACHSENE_AB_MIN = 16;
+
 export function zielgruppenAusAlter(min?: number, max?: number): Zielgruppe[] {
   if (min === undefined && max === undefined) return [];
   const von = min ?? 0;
@@ -35,14 +41,15 @@ export function zielgruppenAusAlter(min?: number, max?: number): Zielgruppe[] {
   const gruppen: Zielgruppe[] = [];
   if (von <= KIND_BIS) gruppen.push("kinder");
   if (von <= TEEN_BIS && bis > KIND_BIS) gruppen.push("teens");
-  if (bis > TEEN_BIS) gruppen.push("erwachsene");
+  if (max !== undefined ? bis > TEEN_BIS : von >= ERWACHSENE_AB_MIN) gruppen.push("erwachsene");
   return gruppen;
 }
 
-function zielgruppenAusTags(tags: string[]): Zielgruppe[] {
+function zielgruppenAusTags(tags: string[], alterBekannt: boolean): Zielgruppe[] {
   const gruppen = new Set<Zielgruppe>();
+  const regeln = alterBekannt ? TAG_ZIELGRUPPEN : [...TAG_ZIELGRUPPEN, ...TAG_ZIELGRUPPEN_OHNE_ALTER];
   for (const tag of tags) {
-    for (const [rx, ziel] of TAG_ZIELGRUPPEN) if (rx.test(tag)) ziel.forEach((z) => gruppen.add(z));
+    for (const [rx, ziel] of regeln) if (rx.test(tag)) ziel.forEach((z) => gruppen.add(z));
   }
   return [...gruppen];
 }
@@ -73,8 +80,12 @@ export function normalisiere(roh: RohAngebot, quelle: Quelle, themen: Thema[], j
   if (termine.length === 0) return null;
 
   const klass = klassifiziereThemen(roh.titel, `${roh.beschreibung}\n${roh.quellTags.join(" · ")}`, themen);
-  const alter = erkenneAlter([roh.titel, ...roh.quellTags, roh.beschreibung]);
-  const zielgruppen = [...new Set([...zielgruppenAusAlter(alter.min, alter.max), ...zielgruppenAusTags(roh.quellTags)])];
+  const alter = bestimmeAlter(roh.titel, roh.quellTags, roh.beschreibung);
+  const alterBekannt = alter.min !== undefined || alter.max !== undefined;
+  const ausTags = zielgruppenAusTags(roh.quellTags, alterBekannt);
+  // Fortbildungen für Fachkräfte richten sich nicht an Kinder, auch wenn „Kita“ im Titel steht.
+  const ausAlter = ausTags.includes("fachkraefte") && !alterBekannt ? [] : zielgruppenAusAlter(alter.min, alter.max);
+  const zielgruppen = [...new Set([...ausAlter, ...ausTags])];
 
   return {
     id: `${quelle.id}:${roh.externeId}`,

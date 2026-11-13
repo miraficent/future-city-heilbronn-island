@@ -1,0 +1,3907 @@
+[
+ {
+  "id": "aim:262410KIDT",
+  "quelle": "aim",
+  "titel": "Werde zum KI-Detektiv: KI-generierte Bilder, Videos und Stimmen erkennen (ab 10 Jahren)",
+  "teaser": "Erkenne KI-generierte Bilder, Videos und Stimmen und lerne, digitale Inhalte kritisch zu prüfen. Echt oder KI? In diesem Workshop gehst du als KI-Detektivin oder KI-Detektiv auf Spurensuche. Du untersuchst Bilder, Videos und Stimmen, entlarvst verdächtige Details und findest heraus, wie künstliche…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Detektive-KI-generierte-Bilder-Videos-und-Stimmen-erkennen-10-15-Jahre/262410KIDT",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 10,
+  "termine": [
+   {
+    "start": "2026-11-14T10:30:00+01:00",
+    "ende": "2026-11-14T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "experimenta:meine-freundin-roxy",
+  "quelle": "experimenta",
+  "titel": "Meine Freundin Roxy",
+  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-11-14T11:30:00+01:00",
+    "ende": "2026-11-14T12:05:00+01:00"
+   },
+   {
+    "start": "2026-11-17T09:30:00+01:00",
+    "ende": "2026-11-17T10:05:00+01:00"
+   },
+   {
+    "start": "2026-11-21T11:30:00+01:00",
+    "ende": "2026-11-21T12:05:00+01:00"
+   },
+   {
+    "start": "2026-11-28T11:30:00+01:00",
+    "ende": "2026-11-28T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-02T09:30:00+01:00",
+    "ende": "2026-12-02T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-05T12:30:00+01:00",
+    "ende": "2026-12-05T13:05:00+01:00"
+   },
+   {
+    "start": "2026-12-06T10:30:00+01:00",
+    "ende": "2026-12-06T11:05:00+01:00"
+   },
+   {
+    "start": "2026-12-10T09:30:00+01:00",
+    "ende": "2026-12-10T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-19T13:30:00+01:00",
+    "ende": "2026-12-19T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-20T11:30:00+01:00",
+    "ende": "2026-12-20T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-21T13:00:00+01:00",
+    "ende": "2026-12-21T13:35:00+01:00"
+   },
+   {
+    "start": "2026-12-23T11:00:00+01:00",
+    "ende": "2026-12-23T11:35:00+01:00"
+   },
+   {
+    "start": "2026-12-27T13:30:00+01:00",
+    "ende": "2026-12-27T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-29T10:00:00+01:00",
+    "ende": "2026-12-29T10:35:00+01:00"
+   },
+   {
+    "start": "2026-12-29T15:00:00+01:00",
+    "ende": "2026-12-29T15:35:00+01:00"
+   },
+   {
+    "start": "2027-01-05T12:00:00+01:00",
+    "ende": "2027-01-05T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-07T12:00:00+01:00",
+    "ende": "2027-01-07T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-09T12:30:00+01:00",
+    "ende": "2027-01-09T13:05:00+01:00"
+   },
+   {
+    "start": "2027-01-10T10:30:00+01:00",
+    "ende": "2027-01-10T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-13T09:30:00+01:00",
+    "ende": "2027-01-13T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-17T10:30:00+01:00",
+    "ende": "2027-01-17T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-19T09:30:00+01:00",
+    "ende": "2027-01-19T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-23T12:30:00+01:00",
+    "ende": "2027-01-23T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-07T12:30:00+01:00",
+    "ende": "2027-02-07T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-08T11:00:00+01:00",
+    "ende": "2027-02-08T11:35:00+01:00"
+   },
+   {
+    "start": "2027-02-10T13:00:00+01:00",
+    "ende": "2027-02-10T13:35:00+01:00"
+   },
+   {
+    "start": "2027-02-14T10:30:00+01:00",
+    "ende": "2027-02-14T11:05:00+01:00"
+   },
+   {
+    "start": "2027-02-20T12:30:00+01:00",
+    "ende": "2027-02-20T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-28T10:30:00+01:00",
+    "ende": "2027-02-28T11:05:00+01:00"
+   },
+   {
+    "start": "2027-03-18T09:30:00+01:00",
+    "ende": "2027-03-18T10:05:00+01:00"
+   },
+   {
+    "start": "2027-03-24T12:00:00+01:00",
+    "ende": "2027-03-24T12:35:00+01:00"
+   },
+   {
+    "start": "2027-03-25T11:00:00+01:00",
+    "ende": "2027-03-25T11:35:00+01:00"
+   },
+   {
+    "start": "2027-03-28T11:30:00+02:00",
+    "ende": "2027-03-28T12:05:00+02:00"
+   },
+   {
+    "start": "2027-03-31T11:00:00+02:00",
+    "ende": "2027-03-31T11:35:00+02:00"
+   },
+   {
+    "start": "2027-04-06T09:30:00+02:00",
+    "ende": "2027-04-06T10:05:00+02:00"
+   },
+   {
+    "start": "2027-05-03T09:30:00+02:00",
+    "ende": "2027-05-03T10:05:00+02:00"
+   },
+   {
+    "start": "2027-06-14T09:30:00+02:00",
+    "ende": "2027-06-14T10:05:00+02:00"
+   },
+   {
+    "start": "2027-07-13T09:30:00+02:00",
+    "ende": "2027-07-13T10:05:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Roboter"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420PAI",
+  "quelle": "aim",
+  "titel": "Python lernen mit KI (ab 16 Jahren)",
+  "teaser": "Dein smarter Start in Python: mit erfahrenem Dozenten und persönlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem Kurs lernst du Schritt für Schritt die Grundlagen von Python, einer weltweit eingesetzten und für Einsteigende super geeigneten Programmiersprache, kennen. Dabei…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene",
+   "eltern"
+  ],
+  "alterMin": 16,
+  "termine": [
+   {
+    "start": "2026-11-16T16:30:00+01:00",
+    "ende": "2026-11-16T18:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "Programmier",
+   "Python"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262430DSW",
+  "quelle": "aim",
+  "titel": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen",
+  "teaser": "Digitale Spiele verstehen und Kinder kompetent begleiten Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern",
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-16T17:00:00+01:00",
+    "ende": "2026-11-16T19:30:00+01:00"
+   },
+   {
+    "start": "2026-11-23T17:00:00+01:00",
+    "ende": "2026-11-23T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "wenige",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Game",
+   "Gaming",
+   "Minecraft",
+   "Roblox"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420SC",
+  "quelle": "aim",
+  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
+  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/262420SC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 8,
+  "alterMax": 11,
+  "termine": [
+   {
+    "start": "2026-11-17T16:30:00+01:00",
+    "ende": "2026-11-17T18:10:00+01:00"
+   },
+   {
+    "start": "2026-11-24T16:30:00+01:00",
+    "ende": "2026-11-24T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-01T16:30:00+01:00",
+    "ende": "2026-12-01T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-08T16:30:00+01:00",
+    "ende": "2026-12-08T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-15T16:30:00+01:00",
+    "ende": "2026-12-15T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-12T16:30:00+01:00",
+    "ende": "2027-01-12T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-19T16:30:00+01:00",
+    "ende": "2027-01-19T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-26T16:30:00+01:00",
+    "ende": "2027-01-26T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-02T16:30:00+01:00",
+    "ende": "2027-02-02T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262410KR",
+  "quelle": "aim",
+  "titel": "KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvoll und rechtssicher im Unterricht einsetzen",
+  "teaser": "Künstliche Intelligenz verstehen und souverän im Unterricht nutzen Künstliche Intelligenz verändert die Art und Weise, wie wir lehren und lernen – und stellt Schulen zugleich vor neue Herausforderungen. Dieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und weiterführenden…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-17T17:00:00+01:00",
+    "ende": "2026-11-17T20:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "wenige",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "AI",
+   "künstliche Intelligenz",
+   "ChatGPT"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207010",
+  "quelle": "hdf",
+  "titel": "Gesunder Umgang mit Social Media (Teil I): Mechanismen verstehen und Risiken erkennen - LIVE ONLINE",
+  "teaser": "Ein Vortrag für Eltern Soziale Medien sind fester Bestandteil der Lebenswelt Jugendlicher. Im ersten Teil des Webinars wird aufgezeigt, warum Plattformen so fesselnd wirken und mit welchen Mechanismen – wie Likes, Endlosschleifen, Push-Benachrichtigungen, FOMO oder Antwortdruck – Jugendliche…",
+  "url": "https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-i-mechanismen-verstehen-und-risiken-erkennen-live-online-261H207010/",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern",
+   "familien"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-17T18:00:00+01:00",
+    "ende": "2026-11-17T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Haus der Familie",
+   "adresse": "online",
+   "online": true
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420RK2",
+  "quelle": "aim",
+  "titel": "Robotik zum Anfassen 2– vom analogen ins symbolbasierte Programmieren (7–10 Jahre)",
+  "teaser": "Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine Roboter programmieren. Tauche ein in die spannende Welt der Robotik und des Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Roboter und lernst, sie mithilfe von Symbolen auf dem Tablet zu programmieren. Spielerisch…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolbasierte-Programmieren710-Jahre/262420RK2",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 7,
+  "alterMax": 10,
+  "termine": [
+   {
+    "start": "2026-11-18T15:00:00+01:00",
+    "ende": "2026-11-18T16:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420PY",
+  "quelle": "aim",
+  "titel": "Programmieren lernen mit Python (12–16 Jahre)",
+  "teaser": "Tauche ein in die faszinierende Welt des Programmierens! In unserem Grundkurs „Programmieren lernen mit Python\" entdeckst du, wie du mit einer der vielseitigsten und beliebtesten Programmiersprachen der Welt eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal, ob du erste…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420PY",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 16,
+  "termine": [
+   {
+    "start": "2026-11-18T16:30:00+01:00",
+    "ende": "2026-11-18T18:10:00+01:00"
+   },
+   {
+    "start": "2026-11-25T16:30:00+01:00",
+    "ende": "2026-11-25T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-02T16:30:00+01:00",
+    "ende": "2026-12-02T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-09T16:30:00+01:00",
+    "ende": "2026-12-09T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-16T16:30:00+01:00",
+    "ende": "2026-12-16T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-13T16:30:00+01:00",
+    "ende": "2027-01-13T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-27T16:30:00+01:00",
+    "ende": "2027-01-27T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-03T16:30:00+01:00",
+    "ende": "2027-02-03T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "ipai:living-room-session-10-women-in-ai",
+  "quelle": "ipai",
+  "titel": "Living Room Session #10: Women in AI",
+  "teaser": "Kommt vorbei zu unserem Afterwork-Event im IPAI mit einem spannenden Couch-Talk, Führungen, Food & Drinks! Das Motto unserer zehnten Living Room Session ist „Women in Robotics“. Euch erwartet: ein spannender Couch-Talk mit Leona Grulich (byte robotics), Maike Kaufman (Polybot) und Gesche Held…",
+  "url": "https://ipai-foundation.ai/event/living-room-session-10-women-in-ai/",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "veranstaltung",
+  "zielgruppen": [
+   "erwachsene"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-18T18:00:00+01:00",
+    "ende": "2026-11-18T21:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "IPAI",
+   "adresse": "Im Zukunftspark 11",
+   "online": false,
+   "lat": 49.1555884,
+   "lon": 9.2076931
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "AI",
+   "Roboter",
+   "Robotik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262410KIE",
+  "quelle": "aim",
+  "titel": "KI-Orientierung für Eltern: Grundlagen, Praxis und Zukunftsperspektiven",
+  "teaser": "Künstliche Intelligenz verstehen, einordnen und Kinder kompetent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinder angekommen – in der Schule, beim Lernen und in der Freizeit. Doch was steckt dahinter, welche Chancen bietet KI, und was sollten Eltern wissen? Dieser Kurs gibt…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Praxis-und-Zukunftsperspektiven/262410KIE",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-19T18:00:00+01:00",
+    "ende": "2026-11-19T20:00:00+01:00"
+   },
+   {
+    "start": "2026-11-26T18:00:00+01:00",
+    "ende": "2026-11-26T20:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz",
+   "Chatbot",
+   "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207004",
+  "quelle": "hdf",
+  "titel": "Data Literacy for Kids: Von Bausteinen zum Balkendiagramm",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Willkommen in der Welt der Daten! Hier wird gesammelt, gezählt und gezeichnet – mit bunten Bausteinen, Lieblingsfarben und kleinen Spielen. Gemeinsam mit ihren Eltern entdecken Kinder, wie man Dinge sortiert, Strichlisten macht und…",
+  "url": "https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2026-11-21T10:00:00+01:00",
+    "ende": "2026-11-21T12:00:00+01:00"
+   },
+   {
+    "start": "2026-11-22T10:00:00+01:00",
+    "ende": "2026-11-22T12:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "wenige",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz",
+   "Data Literacy",
+   "Datenkompetenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "ipai:ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung",
+  "quelle": "ipai",
+  "titel": "KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwendung",
+  "teaser": "Software primär durch intuitive, KI-gestützte Anweisungen entstehen lassen – das ist das Prinzip hinter „Vibe Coding“. Doch wie funktioniert das Zusammenspiel mit modernen KI-Agenten in der Praxis und worauf müsst ihr achten, um nicht ins Stolpern zu geraten? Dieser Workshop bietet euch eine…",
+  "url": "https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung/",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "workshop",
+  "zielgruppen": [
+   "erwachsene"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-23T15:00:00+01:00",
+    "ende": "2026-11-23T17:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "IPAI",
+   "adresse": "IPAI Spaces, Im Zukunftspark 11/13, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1558958,
+   "lon": 9.207604
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "KI-Agent",
+   "Coding"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H116302",
+  "quelle": "hdf",
+  "titel": "English Kids Club",
+  "teaser": "children aged 3-5 years Our English Club is designed for children aged 3–5 who are growing up with English or speak English at home. Through stories, songs, games, movement, and hands-on activities, children can build confidence, expand their vocabulary, and enjoy using English in a fun and…",
+  "url": "https://hdf-hn.de/kurs/english-kids-club-261H116302/",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2026-11-24T16:45:00+01:00",
+    "ende": "2026-11-24T17:30:00+01:00"
+   },
+   {
+    "start": "2026-12-01T16:45:00+01:00",
+    "ende": "2026-12-01T17:30:00+01:00"
+   },
+   {
+    "start": "2026-12-08T16:45:00+01:00",
+    "ende": "2026-12-08T17:30:00+01:00"
+   },
+   {
+    "start": "2026-12-15T16:45:00+01:00",
+    "ende": "2026-12-15T17:30:00+01:00"
+   },
+   {
+    "start": "2027-01-12T16:45:00+01:00",
+    "ende": "2027-01-12T17:30:00+01:00"
+   },
+   {
+    "start": "2027-01-19T16:45:00+01:00",
+    "ende": "2027-01-19T17:30:00+01:00"
+   },
+   {
+    "start": "2027-01-26T16:45:00+01:00",
+    "ende": "2027-01-26T17:30:00+01:00"
+   },
+   {
+    "start": "2027-02-02T16:45:00+01:00",
+    "ende": "2027-02-02T17:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 2",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 38,
+   "text": "38 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Game"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "experimenta:fortbildung-esp32-programmierung-in-python",
+  "quelle": "experimenta",
+  "titel": "Fortbildung „ESP32-Programmierung in Python“",
+  "teaser": "Wie funktioniert der Mikrocontrollers ESP32? Was kann man damit im Unterricht machen? Antworten gibt es in unserer praxisnahen Fortbildung für Lehrkräfte. Wir richten den Mikrokontroller ein, verbinden ihn mit verschiedenen Bauteilen und steuern anschließend LEDs, Lautsprecher, Sensoren und Motoren.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-esp32-programmierung-in-python/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2026/09/ESP32-Projekte_in_Python_experimenta_1920x1080.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "veranstaltung",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-26T14:00:00+01:00",
+    "ende": "2026-11-26T18:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python",
+   "Mikrocontroller",
+   "ESP32"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420PCB",
+  "quelle": "aim",
+  "titel": "Kleine Computer, große Wirkung – Einführung in die Programmierung mit Mikrocontrollern (12–15 Jahre)",
+  "teaser": "Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Computer, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messgerät dabei helfen, unser Wasser zu untersuchen? In diesem Kurs probierst du genau das aus. Dazu arbeitest du mit einem kleinen Computer, einem Mikrocontroller…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontrollern-1215-Jahre/262420PCB",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2026-11-27T16:30:00+01:00",
+    "ende": "2026-11-27T18:00:00+01:00"
+   },
+   {
+    "start": "2026-12-04T16:30:00+01:00",
+    "ende": "2026-12-04T18:00:00+01:00"
+   },
+   {
+    "start": "2026-12-11T16:30:00+01:00",
+    "ende": "2026-12-11T18:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Mikrocontroller"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H304002",
+  "quelle": "hdf",
+  "titel": "Programmieren Lernen - Scratch",
+  "teaser": "Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Workshop erlernen die Kinder die visuelle Programmiersprache Scratch, speziell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder durch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zweiergruppen…",
+  "url": "https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "familien"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-11-28T12:30:00+01:00",
+    "ende": "2026-11-28T15:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 30,
+   "text": "30 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "ipai:ki-salon-workshop-erstelle-dein-board-of-excellence",
+  "quelle": "ipai",
+  "titel": "KI SALON WORKSHOP: Erstelle dein Board of Excellence",
+  "teaser": "In diesem Workshop zeigt Rafaela Fleischer, wie ihr euch euer eigenes „Board of Excellence“ aufbaut – ein persönliches Experten-Team in ChatGPT oder Claude, ganz ohne Programmieren oder technisches Setup. Ihr lernt, wie ihr KI gezielt als Denk- und Sparringspartner nutzt, um blinde Flecken…",
+  "url": "https://ipai-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-of-excellence/",
+  "themen": [
+   "ki"
+  ],
+  "art": "workshop",
+  "zielgruppen": [
+   "erwachsene"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-30T12:30:00+01:00",
+    "ende": "2026-11-30T14:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "IPAI",
+   "adresse": "IPAI Spaces, Im Zukunftspark 11/13, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1558958,
+   "lon": 9.207604
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "AI",
+   "ChatGPT",
+   "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "ipai:ki-salon-community-event-21",
+  "quelle": "ipai",
+  "titel": "KI SALON COMMUNITY EVENT #21",
+  "teaser": "Treffe die KI-Community bei unserem nächsten KI Salon Event im IPAI SPACES! Für wen ist dieses Event? Das Event ist für jede/n der/die sich für KI interessiert. Egal ob Interessiert/e, Experte, Bürger, Laie. Wir freuen uns über jeden. Zur besseren Planung bitten wir um kostenlose Anmeldung über…",
+  "url": "https://ipai-foundation.ai/event/ki-salon-community-event-21/",
+  "themen": [
+   "ki"
+  ],
+  "art": "veranstaltung",
+  "zielgruppen": [
+   "erwachsene"
+  ],
+  "termine": [
+   {
+    "start": "2026-12-01T17:30:00+01:00",
+    "ende": "2026-12-01T20:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "IPAI",
+   "adresse": "Besucherzentrum IPAI, Im Zukunftspark 11/13, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1558958,
+   "lon": 9.207604
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262410DKI",
+  "quelle": "aim",
+  "titel": "Deepfakes & soziale Medien: Wie KI den Alltag von Kindern und Jugendlichen prägt",
+  "teaser": "Wie können Deepfakes und KI-generierte Inhalte eingeordnet und Schüler/-innen für einen reflektierten Umgang sensibilisiert werden? In diesem Kurs stehen grundlegende Entwicklungen rund um Künstliche Intelligenz und deren Bedeutung für die Lebenswelt von Kindern und Jugendlichen im Mittelpunkt…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Deepfakes-soziale-Medien-Wie-KI-den-Alltag-von-Kindern-und-Jugendlichen-praegt/262410DKI",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-12-02T16:30:00+01:00",
+    "ende": "2026-12-02T19:45:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262993CHNB",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Blockchain, Bitcoin & NFTs – Hype oder echte Innovation? (Kl. 10-13)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 10 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Blockchain-Bitcoin-NFTs-Kl-10-13/262993CHNB",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene"
+  ],
+  "alterMin": 15,
+  "alterMax": 18,
+  "termine": [
+   {
+    "start": "2026-12-05T09:00:00+01:00",
+    "ende": "2026-12-05T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Gaming"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262993JLKK",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Kreativ mit KI – Ideen, Texte und Bilder gestalten (Kl. 9-10)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-Ideen-Texte-und-Bilder-gestalten-Kl-9-10/262993JLKK",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2026-12-05T09:00:00+01:00",
+    "ende": "2026-12-05T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207006",
+  "quelle": "hdf",
+  "titel": "Märchenhaft mit ScratchJunior eine Geschichte programmieren: Das mutige Tier",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In diesem Workshop machen wir es uns zuerst gemütlich und lauschen einem spannenden Märchen – voller Tiere, Abenteuer und einer kleinen Portion Mut. Anschließend verwandeln wir die Geschichte gemeinsam mit ScratchJunior, einer kindgerechten…",
+  "url": "https://hdf-hn.de/kurs/maerchenhaft-mit-scratchjunior-eine-geschichte-programmieren-das-mutige-tier-261H207006/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2026-12-05T09:30:00+01:00",
+    "ende": "2026-12-05T11:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 3",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "experimenta:first-lego-league-explore-ausstellung",
+  "quelle": "experimenta",
+  "titel": "First Lego League Explore – Ausstellung",
+  "teaser": "In der aktuellen Saison begeben sich Kinder im Alter von 6 bis 10 Jahren bei der First Lego League (FLL) Explore in die Vielfalt globaler Naturlandschaften. Die Saison BIOGLOW™ führt Teams in die faszinierenden Ökosysteme unserer Erde. Im Mittelpunkt stehen die Wechselwirkungen zwischen Natur…",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/first-lego-league-explore-ausstellung/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2024/09/2025-10-22-experimenta-veranstaltung-first-lego-league-explore.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "veranstaltung",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "familien"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-12-05T11:00:00+01:00",
+    "ende": "2026-12-05T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Lego League"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "experimenta:first-lego-league-regionalwettbewerb-heilbronn",
+  "quelle": "experimenta",
+  "titel": "First Lego League Challenge – Regionalwettbewerb Heilbronn",
+  "teaser": "Faszinierende Naturphänomene, neue Entdeckungen und innovative Forschungsmethoden: Unter dem Motto „BIOGLOW“ nimmt die First Lego League (FLL) Challenge in dieser Saison mit auf eine Reise durch die vielfältigen Ökosysteme unserer Erde.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/first-lego-league-regionalwettbewerb-heilbronn/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2024/09/2025-10-22-experimenta-veranstaltung-first-lego-league-challenge.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "veranstaltung",
+  "zielgruppen": [
+   "teens"
+  ],
+  "termine": [
+   {
+    "start": "2026-12-05T11:00:00+01:00",
+    "ende": "2026-12-05T17:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Lego League"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "ipai:ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-an-die-wand",
+  "quelle": "ipai",
+  "titel": "KI SALON IMPULS: Dr. Sebastian Hallensleben – Regulieren wir uns an die Wand?",
+  "teaser": ": Einlass & Ankommen: Ab 18:00 Uhr im Raum Grace Hopper Keynote: Dr. Sebastian Hallensleben gibt Einblicke in die Standardisierung der EU-KI-Verordnung, Qualitätsmetriken und den Mut zur sachlichen KI-Bewertung Fragen & Austausch: Raum für eure Fragen und eine offene Diskussion mit dem Speaker, um…",
+  "url": "https://ipai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-an-die-wand/",
+  "themen": [
+   "ki"
+  ],
+  "art": "vortrag",
+  "zielgruppen": [
+   "erwachsene"
+  ],
+  "termine": [
+   {
+    "start": "2026-12-08T18:30:00+01:00",
+    "ende": "2026-12-08T20:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "IPAI",
+   "adresse": "Besucherzentrum IPAI, Im Zukunftspark 11/13, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1558958,
+   "lon": 9.207604
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "AI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H116102",
+  "quelle": "hdf",
+  "titel": "Maxi-MINTies - Entdeckungsreise durch die Welt der Technik",
+  "teaser": "Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson In diesem Angebot erleben Kinder Technik als etwas Greifbares und Alltagsnahes. Sie bauen, tüfteln, reparieren und experimentieren mit verschiedenen Materialien und einfachen Werkzeugen. Dabei entwickeln sie ein erstes Verständnis für…",
+  "url": "https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-technik-261H116102/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2026-12-11T14:45:00+01:00",
+    "ende": "2026-12-11T16:00:00+01:00"
+   },
+   {
+    "start": "2026-12-18T14:45:00+01:00",
+    "ende": "2026-12-18T16:00:00+01:00"
+   },
+   {
+    "start": "2027-01-15T14:45:00+01:00",
+    "ende": "2027-01-15T16:00:00+01:00"
+   },
+   {
+    "start": "2027-01-22T14:45:00+01:00",
+    "ende": "2027-01-22T16:00:00+01:00"
+   },
+   {
+    "start": "2027-01-29T14:45:00+01:00",
+    "ende": "2027-01-29T16:00:00+01:00"
+   },
+   {
+    "start": "2027-02-05T14:45:00+01:00",
+    "ende": "2027-02-05T16:00:00+01:00"
+   },
+   {
+    "start": "2027-02-12T14:45:00+01:00",
+    "ende": "2027-02-12T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 60,
+   "text": "60 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410ZGR",
+  "quelle": "aim",
+  "titel": "Zukunftswerkstatt: Generative KI trifft Grundschulalltag",
+  "teaser": "KI-Werkzeuge für den Grundschulalltag In dieser Zukunftswerkstatt erhalten Lehrkräfte einen verständlichen Einstieg in generative KI und erkunden konkrete Einsatzmöglichkeiten für den Schulalltag. Ob Unterrichtsvorbereitung, differenzierte Materialien, Elternkommunikation oder organisatorische…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI-trifft-Grundschulalltag/271410ZGR",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-01-16T10:00:00+01:00",
+    "ende": "2027-01-16T16:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207007",
+  "quelle": "hdf",
+  "titel": "Roboter - Verstehen, Programmieren, Entdecken - Stufe 2",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In diesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die Welt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie kleine Roboter und lernen anschließend, diese mithilfe von Symbolen auf dem Tablet zu…",
+  "url": "https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207007/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2027-01-16T10:00:00+01:00",
+    "ende": "2027-01-16T11:30:00+01:00"
+   },
+   {
+    "start": "2027-01-23T10:00:00+01:00",
+    "ende": "2027-01-23T11:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207016",
+  "quelle": "hdf",
+  "titel": "Roboter - Verstehen, Programmieren, Entdecken - Stufe 2",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In diesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die Welt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie kleine Roboter und lernen anschließend, diese mithilfe von Symbolen auf dem Tablet zu…",
+  "url": "https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207016/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2027-01-16T12:30:00+01:00",
+    "ende": "2027-01-16T14:00:00+01:00"
+   },
+   {
+    "start": "2027-01-23T12:30:00+01:00",
+    "ende": "2027-01-23T14:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207017",
+  "quelle": "hdf",
+  "titel": "Roboter - Verstehen, Programmieren, Entdecken - Stufe 2",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In diesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die Welt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie kleine Roboter und lernen anschließend, diese mithilfe von Symbolen auf dem Tablet zu…",
+  "url": "https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207017/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2027-01-16T14:30:00+01:00",
+    "ende": "2027-01-16T16:00:00+01:00"
+   },
+   {
+    "start": "2027-01-23T14:30:00+01:00",
+    "ende": "2027-01-23T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271931",
+  "quelle": "aim",
+  "titel": "Kinderuni: Wie Mathematik die Welt verbessert",
+  "teaser": "Was haben einfache Spiele mit Klimaverhandlungen zu tun? Gewinnen, Verlieren, Zusammenarbeiten? Erfahre, wie Du mit Mathematik optimale Strategien für Spiele, aber auch für Entscheidungen im realen Leben finden kannst. Dozierende: Dr. Annegret Weng ist seit 2012 als Professorin für Mathematik mit…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Kinderuni-Wie-Mathematik-die-Welt-verbessert/271931",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 8,
+  "alterMax": 12,
+  "termine": [
+   {
+    "start": "2027-01-20T16:00:00+01:00",
+    "ende": "2027-01-20T17:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn, Bildungscampus T-Gebäude",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993SDMO",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Mission Online – Baue Hardware und hoste deinen eigenen Server (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mission-Online-Baue-Hardware-und-hoste-Server-Kl-7-8/271993SDMO",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-01-23T09:00:00+01:00",
+    "ende": "2027-01-23T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Microcontroller"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410ZKT",
+  "quelle": "aim",
+  "titel": "Zukunftswerkstatt: Die smarte Kita – Planung und Organisation vereinfachen mit KI",
+  "teaser": "KI als Unterstützung für Organisation und Verwaltung im Kita-Alltag KI kann pädagogische Fachkräfte bei vielen Verwaltungsaufgaben unterstützen – von der Dokumentation über die Elternkommunikation bis hin zur Erstellung von Protokollen. In dieser Zukunftswerkstatt erhalten Sie einen praxisnahen…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Kita/271410ZKT",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-01-25T09:30:00+01:00",
+    "ende": "2027-01-25T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410KIKT",
+  "quelle": "aim",
+  "titel": "KI in der Kita? Chancen, Fragen und erste Erfahrungen",
+  "teaser": "Impulsvortrag mit anschließendem Austausch Ein niedrigschwelliger Einstieg in das Thema Künstliche Intelligenz für pädagogische Fachkräfte, der Orientierung bietet, Fragen aufgreift und zum gemeinsamen Austausch einlädt. Künstliche Intelligenz gewinnt auch im Bildungsbereich zunehmend an…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-und-erste-Erfahrungen/271410KIKT",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-01-25T16:30:00+01:00",
+    "ende": "2027-01-25T19:45:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H207008",
+  "quelle": "hdf",
+  "titel": "Spielerisch mit ScratchJunior eine grünere, saubere Welt programmieren",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In diesem fröhlichen Mitmach-Workshop entdecken wir gemeinsam, wie spannend Programmieren sein kann. Programmieren ist eine eigene Sprache – und mit ScratchJunior können schon die Jüngsten sie spielerisch lernen. Ganz ohne Vorkenntnisse…",
+  "url": "https://hdf-hn.de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saubere-welt-programmieren-261H207008/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2027-01-30T09:30:00+01:00",
+    "ende": "2027-01-30T11:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271430UN",
+  "quelle": "aim",
+  "titel": "Spieleentwicklung mit Unity für Einsteiger (10–14 Jahre)",
+  "teaser": "Entwickle dein eigenes Videospiel mit der Spiele-Engine aus Games wie Among Us oder Pokémon Go Stell dir vor du drückst „Play\" und dein eigenes Spiel startet. Genau das passiert in diesem Workshop mit Hilfe von Unity! Unity ist eine der weltweit beliebtesten Spiele-Engines, mit der vielfältige…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Spieleentwicklung-mit-Unity-fuer-Einsteiger-1014-Jahre/271430UN",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 10,
+  "alterMax": 14,
+  "termine": [
+   {
+    "start": "2027-02-03T15:30:00+01:00",
+    "ende": "2027-02-03T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Hochschule Heilbronn, TechCampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Game",
+   "Spieleentwicklung",
+   "Videospiel",
+   "Unity"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "experimenta:maker-faire",
+  "quelle": "experimenta",
+  "titel": "Maker Faire ® Heilbronn 2027",
+  "teaser": "Kreativität trifft Technologie! Komm vorbei, wenn die Maker Community ihre Projekte vorstellt. An den Ständen kannst du kreative Köpfe treffen, dich austauschen und inspirieren lassen. Werde bei Mini Workshops aktiv und lausche spannenden Vorträgen.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/maker-faire/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2024/10/2025-11-19-experimenta-veranstaltung-maker-faire-2026-1920x1080-1.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "workshop",
+  "zielgruppen": [
+   "teens",
+   "erwachsene",
+   "familien"
+  ],
+  "alterMin": 14,
+  "termine": [
+   {
+    "start": "2027-02-06T10:00:00+01:00",
+    "ende": "2027-02-06T18:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Maker"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993AOGD",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (Kl. 9-10)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum-Spiel-Game-Design-mit-Unity-Kl-9-10/271993AOGD",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2027-02-08T09:00:00+01:00",
+    "ende": "2027-02-08T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-09T09:00:00+01:00",
+    "ende": "2027-02-09T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-10T09:00:00+01:00",
+    "ende": "2027-02-10T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-11T09:00:00+01:00",
+    "ende": "2027-02-11T15:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Game",
+   "Spieleentwicklung",
+   "Computerspiel",
+   "Unity"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271430CYC1",
+  "quelle": "aim",
+  "titel": "Craft Your City – Baue deine nachhaltige und smarte Traumstadt (10–14 Jahre)",
+  "teaser": "Kreatives, nachhaltiges und gemeinsames Bauen in der Sandbox-Welt von Luanti Wie sieht eine Stadt aus, in der du gerne leben möchtest? In diesem Workshop planst und baust du gemeinsam mit anderen eine nachhaltige und smarte Stadt in der Sandbox-Welt von Luanti (ähnlich wie Minecraft). Dabei…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nachhaltige-und-smarte-Traumstadt-1014-Jahre/271430CYC1",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 10,
+  "alterMax": 14,
+  "termine": [
+   {
+    "start": "2027-02-09T09:00:00+01:00",
+    "ende": "2027-02-09T15:00:00+01:00"
+   },
+   {
+    "start": "2027-02-10T09:00:00+01:00",
+    "ende": "2027-02-10T15:00:00+01:00"
+   },
+   {
+    "start": "2027-02-11T09:00:00+01:00",
+    "ende": "2027-02-11T15:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Game",
+   "Minecraft"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993JKIT",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Internet of Things – Von Sensoren zu smarten Systemen (Kl. 11-13)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Things-Kl-11-13/271993JKIT",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene"
+  ],
+  "alterMin": 16,
+  "alterMax": 18,
+  "termine": [
+   {
+    "start": "2027-02-09T09:00:00+01:00",
+    "ende": "2027-02-09T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-10T09:00:00+01:00",
+    "ende": "2027-02-10T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-11T09:00:00+01:00",
+    "ende": "2027-02-11T15:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Programmier",
+   "Mikrocontroller",
+   "Microcontroller"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993JGCS",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Code your Story – Interaktive Geschichten mit Scratch (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-Scratch-Kl-7-8/271993JGCS",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-02-10T09:00:00+01:00",
+    "ende": "2027-02-10T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-11T09:00:00+01:00",
+    "ende": "2027-02-11T15:15:00+01:00"
+   },
+   {
+    "start": "2027-02-12T09:00:00+01:00",
+    "ende": "2027-02-12T15:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H305008",
+  "quelle": "hdf",
+  "titel": "KinderFerienBox: Wie funktionieren Roboter und wie werden sie programmiert?",
+  "teaser": "Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem spielerischen Kurs entdecken Kinder, wie Roboter „denken“, was sie brauchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und anschließend planen die…",
+  "url": "https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-programmiert-261H305008/",
+  "themen": [
+   "coding"
+  ],
+  "art": "ferienprogramm",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2027-02-11T09:00:00+01:00",
+    "ende": "2027-02-11T10:00:00+01:00"
+   },
+   {
+    "start": "2027-02-11T10:00:00+01:00",
+    "ende": "2027-02-11T12:30:00+01:00"
+   },
+   {
+    "start": "2027-02-12T09:00:00+01:00",
+    "ende": "2027-02-12T10:00:00+01:00"
+   },
+   {
+    "start": "2027-02-12T10:00:00+01:00",
+    "ende": "2027-02-12T12:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 60,
+   "text": "60 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H305006",
+  "quelle": "hdf",
+  "titel": "KinderFerienBox: Programmieren Lernen - Scratch",
+  "teaser": "Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Workshop erlernen die Kinder die visuelle Programmiersprache Scratch, speziell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder durch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zweiergruppen…",
+  "url": "https://hdf-hn.de/kurs/kinderferienbox-programmieren-lernen-scratch-261H305006/",
+  "themen": [
+   "coding"
+  ],
+  "art": "ferienprogramm",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2027-02-13T10:00:00+01:00",
+    "ende": "2027-02-13T13:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 1",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 30,
+   "text": "30 €"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:261H116303",
+  "quelle": "hdf",
+  "titel": "English Kids Club",
+  "teaser": "children aged 3-5 years Our English Club is designed for children aged 3–5 who are growing up with English or speak English at home. Through stories, songs, games, movement, and hands-on activities, children can build confidence, expand their vocabulary, and enjoy using English in a fun and…",
+  "url": "https://hdf-hn.de/kurs/english-kids-club-261H116303/",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2027-02-16T17:00:00+01:00",
+    "ende": "2027-02-16T17:45:00+01:00"
+   },
+   {
+    "start": "2027-02-23T17:00:00+01:00",
+    "ende": "2027-02-23T17:45:00+01:00"
+   },
+   {
+    "start": "2027-03-02T17:00:00+01:00",
+    "ende": "2027-03-02T17:45:00+01:00"
+   },
+   {
+    "start": "2027-03-09T17:00:00+01:00",
+    "ende": "2027-03-09T17:45:00+01:00"
+   },
+   {
+    "start": "2027-03-16T17:00:00+01:00",
+    "ende": "2027-03-16T17:45:00+01:00"
+   },
+   {
+    "start": "2027-03-23T17:00:00+01:00",
+    "ende": "2027-03-23T17:45:00+01:00"
+   },
+   {
+    "start": "2027-04-06T17:00:00+02:00",
+    "ende": "2027-04-06T17:45:00+02:00"
+   },
+   {
+    "start": "2027-04-13T17:00:00+02:00",
+    "ende": "2027-04-13T17:45:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 2",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 38,
+   "text": "38 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Game"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420RK1",
+  "quelle": "aim",
+  "titel": "Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildschirm (7–10 Jahre)",
+  "teaser": "Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spielerisch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik! In diesem Kurs lernen Kinder spielerisch, wie man Programme erstellt, die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit werden logisches…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 7,
+  "alterMax": 10,
+  "termine": [
+   {
+    "start": "2027-02-17T15:00:00+01:00",
+    "ende": "2027-02-17T16:30:00+01:00"
+   },
+   {
+    "start": "2027-02-24T15:00:00+01:00",
+    "ende": "2027-02-24T16:30:00+01:00"
+   },
+   {
+    "start": "2027-03-03T15:00:00+01:00",
+    "ende": "2027-03-03T16:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H207001",
+  "quelle": "hdf",
+  "titel": "Data Literacy for Kids: Trends und Anteile",
+  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Willkommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder spielerisch, wie man Veränderungen sichtbar macht und Anteile versteht – mit einfachen Alltagsbeobachtungen, kleinen Experimenten und gemeinsamen Aktivitäten…",
+  "url": "https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H207001/",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens",
+   "eltern",
+   "familien"
+  ],
+  "alterMin": 3,
+  "termine": [
+   {
+    "start": "2027-02-20T10:00:00+01:00",
+    "ende": "2027-02-20T12:00:00+01:00"
+   },
+   {
+    "start": "2027-02-21T10:00:00+01:00",
+    "ende": "2027-02-21T12:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 10,
+   "text": "10 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "künstliche Intelligenz",
+   "Data Literacy",
+   "Datenkompetenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420SC",
+  "quelle": "aim",
+  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
+  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/271420SC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 8,
+  "alterMax": 11,
+  "termine": [
+   {
+    "start": "2027-02-23T16:30:00+01:00",
+    "ende": "2027-02-23T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-02T16:30:00+01:00",
+    "ende": "2027-03-02T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-09T16:30:00+01:00",
+    "ende": "2027-03-09T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-16T16:30:00+01:00",
+    "ende": "2027-03-16T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-23T16:30:00+01:00",
+    "ende": "2027-03-23T18:10:00+01:00"
+   },
+   {
+    "start": "2027-04-06T16:30:00+02:00",
+    "ende": "2027-04-06T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-13T16:30:00+02:00",
+    "ende": "2027-04-13T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-20T16:30:00+02:00",
+    "ende": "2027-04-20T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-27T16:30:00+02:00",
+    "ende": "2027-04-27T18:10:00+02:00"
+   },
+   {
+    "start": "2027-05-04T16:30:00+02:00",
+    "ende": "2027-05-04T18:10:00+02:00"
+   },
+   {
+    "start": "2027-05-11T16:30:00+02:00",
+    "ende": "2027-05-11T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-01T16:30:00+02:00",
+    "ende": "2027-06-01T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-15T16:30:00+02:00",
+    "ende": "2027-06-15T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-22T16:30:00+02:00",
+    "ende": "2027-06-22T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-29T16:30:00+02:00",
+    "ende": "2027-06-29T18:10:00+02:00"
+   },
+   {
+    "start": "2027-07-06T16:30:00+02:00",
+    "ende": "2027-07-06T18:10:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410DD",
+  "quelle": "aim",
+  "titel": "KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokumentationspflichten clever meistern",
+  "teaser": "Künstliche Intelligenz – ein Game Changer in der Schulverwaltung? Künstliche Intelligenz in der Verwaltung zu nutzen hat sich vielerorts mittlerweile etabliert. Dieser Kurs beschäftigt sich mit dem Themengebiet der rechtlichen Dokumentationspflichten im Bereich der Schulverwaltung. Sie lernen, wie…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulverwaltung/271410DD",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-02-23T17:00:00+01:00",
+    "ende": "2027-02-23T20:15:00+01:00"
+   },
+   {
+    "start": "2027-02-26T14:00:00+01:00",
+    "ende": "2027-02-26T19:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz",
+   "ChatGPT",
+   "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410HBL",
+  "quelle": "aim",
+  "titel": "Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht einsetzen",
+  "teaser": "Orientierung statt Tool-Chaos: Lerne Sie, digitale Bildungsanwendungen mithilfe der Heilbronner Liste reflektiert auszuwählen, didaktisch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig gestalten. Die…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-02-24T17:00:00+01:00",
+    "ende": "2027-02-24T18:30:00+01:00"
+   },
+   {
+    "start": "2027-03-12T15:00:00+01:00",
+    "ende": "2027-03-12T20:30:00+01:00"
+   },
+   {
+    "start": "2027-04-14T17:00:00+02:00",
+    "ende": "2027-04-14T19:30:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420FE",
+  "quelle": "aim",
+  "titel": "Code your Chat – Entwickle deine eigene Messenger-Web-App (13–17 Jahre)",
+  "teaser": "Schritt für Schritt zur eigenen Messenger-App – von der Idee bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung ein und baust deine eigene Messenger Web-App, inspiriert von Anwendungen wie WhatsApp, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil dazu. Du startest…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messenger-Web-App-1317-Jahre/271420FE",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 13,
+  "alterMax": 17,
+  "termine": [
+   {
+    "start": "2027-02-25T16:30:00+01:00",
+    "ende": "2027-02-25T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-04T16:30:00+01:00",
+    "ende": "2027-03-04T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-11T16:30:00+01:00",
+    "ende": "2027-03-11T18:10:00+01:00"
+   },
+   {
+    "start": "2027-03-18T16:30:00+01:00",
+    "ende": "2027-03-18T18:10:00+01:00"
+   },
+   {
+    "start": "2027-04-08T16:30:00+02:00",
+    "ende": "2027-04-08T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-15T16:30:00+02:00",
+    "ende": "2027-04-15T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-22T16:30:00+02:00",
+    "ende": "2027-04-22T18:10:00+02:00"
+   },
+   {
+    "start": "2027-04-29T16:30:00+02:00",
+    "ende": "2027-04-29T18:10:00+02:00"
+   },
+   {
+    "start": "2027-05-13T16:30:00+02:00",
+    "ende": "2027-05-13T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-03T16:30:00+02:00",
+    "ende": "2027-06-03T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-17T16:30:00+02:00",
+    "ende": "2027-06-17T18:10:00+02:00"
+   },
+   {
+    "start": "2027-06-24T16:30:00+02:00",
+    "ende": "2027-06-24T18:10:00+02:00"
+   },
+   {
+    "start": "2027-07-01T16:30:00+02:00",
+    "ende": "2027-07-01T18:10:00+02:00"
+   },
+   {
+    "start": "2027-07-08T16:30:00+02:00",
+    "ende": "2027-07-08T18:10:00+02:00"
+   },
+   {
+    "start": "2027-07-15T16:30:00+02:00",
+    "ende": "2027-07-15T18:10:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Coding",
+   "Python",
+   "Web-App"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410KK",
+  "quelle": "aim",
+  "titel": "KI kreativ – eigene Musik- und Klangdesigns für Schule und Unterricht entwickeln",
+  "teaser": "Musikalisch, performativ und konzeptionell – vom ersten Impuls zur gestalteten Umsetzung – für Unterricht, AGs und kreative Projekte In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von Musik-KI und entwickeln daraus eigene Songs, Klangideen und musikalische Formate für Schule und…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-02-25T17:15:00+01:00",
+    "ende": "2027-02-25T19:00:00+01:00"
+   },
+   {
+    "start": "2027-03-04T17:15:00+01:00",
+    "ende": "2027-03-04T20:30:00+01:00"
+   },
+   {
+    "start": "2027-03-11T17:15:00+01:00",
+    "ende": "2027-03-11T20:30:00+01:00"
+   },
+   {
+    "start": "2027-03-18T17:15:00+01:00",
+    "ende": "2027-03-18T20:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H116101",
+  "quelle": "hdf",
+  "titel": "Maxi-MINTies - Entdeckungsreise durch die Welt der Mathematik",
+  "teaser": "Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson In diesem Angebot gehen kleine Entdeckerinnen und Entdecker auf eine spannende Reise in die Welt der Mathematik. Zahlen, Formen, Muster und Mengen werden hier nicht abstrakt vermittelt, sondern mit allen Sinnen erlebt – durch Bewegung…",
+  "url": "https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-mathematik-272H116101/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2027-02-26T14:45:00+01:00",
+    "ende": "2027-02-26T16:00:00+01:00"
+   },
+   {
+    "start": "2027-03-05T14:45:00+01:00",
+    "ende": "2027-03-05T16:00:00+01:00"
+   },
+   {
+    "start": "2027-03-12T14:45:00+01:00",
+    "ende": "2027-03-12T16:00:00+01:00"
+   },
+   {
+    "start": "2027-03-19T14:45:00+01:00",
+    "ende": "2027-03-19T16:00:00+01:00"
+   },
+   {
+    "start": "2027-04-02T14:45:00+02:00",
+    "ende": "2027-04-02T16:00:00+02:00"
+   },
+   {
+    "start": "2027-04-09T14:45:00+02:00",
+    "ende": "2027-04-09T16:00:00+02:00"
+   },
+   {
+    "start": "2027-04-16T14:45:00+02:00",
+    "ende": "2027-04-16T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 60,
+   "text": "60 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H114102",
+  "quelle": "hdf",
+  "titel": "Mini-MINTies auf Entdeckungstour",
+  "teaser": "Spielkreis mit Schwerpunkt MINT für Kinder von 1 bis 1,5 Jahre In diesem Spielkreis können schon die Kleinsten entdecken, experimentieren und ausprobieren: Beim Klecksen, Matschen, Bauen erfahren und begreifen unsere Mini-MINTies spielerisch die Welt mit allen Sinnen. Ob beim Plantschen mit Wasser…",
+  "url": "https://hdf-hn.de/kurs/mini-minties-auf-entdeckungstour-272H114102/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-01T09:30:00+01:00",
+    "ende": "2027-03-01T11:00:00+01:00"
+   },
+   {
+    "start": "2027-03-08T09:30:00+01:00",
+    "ende": "2027-03-08T11:00:00+01:00"
+   },
+   {
+    "start": "2027-03-15T09:30:00+01:00",
+    "ende": "2027-03-15T11:00:00+01:00"
+   },
+   {
+    "start": "2027-03-22T09:30:00+01:00",
+    "ende": "2027-03-22T11:00:00+01:00"
+   },
+   {
+    "start": "2027-04-05T09:30:00+02:00",
+    "ende": "2027-04-05T11:00:00+02:00"
+   },
+   {
+    "start": "2027-04-12T09:30:00+02:00",
+    "ende": "2027-04-12T11:00:00+02:00"
+   },
+   {
+    "start": "2027-04-19T09:30:00+02:00",
+    "ende": "2027-04-19T11:00:00+02:00"
+   },
+   {
+    "start": "2027-04-26T09:30:00+02:00",
+    "ende": "2027-04-26T11:00:00+02:00"
+   },
+   {
+    "start": "2027-05-03T09:30:00+02:00",
+    "ende": "2027-05-03T11:00:00+02:00"
+   },
+   {
+    "start": "2027-05-10T09:30:00+02:00",
+    "ende": "2027-05-10T11:00:00+02:00"
+   },
+   {
+    "start": "2027-05-24T09:30:00+02:00",
+    "ende": "2027-05-24T11:00:00+02:00"
+   },
+   {
+    "start": "2027-05-31T09:30:00+02:00",
+    "ende": "2027-05-31T11:00:00+02:00"
+   },
+   {
+    "start": "2027-06-07T09:30:00+02:00",
+    "ende": "2027-06-07T11:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 1",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 128.5,
+   "text": "128,50 €"
+  },
+  "status": "wenige",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H114201",
+  "quelle": "hdf",
+  "titel": "Mini-MINTies auf Entdeckungstour",
+  "teaser": "Spielkreis mit Schwerpunkt MINT für Kinder von 1,5 bis 3 Jahre In diesem Spielkreis können schon die Kleinsten entdecken, experimentieren und ausprobieren: Beim Klecksen, Matschen, Bauen erfahren und begreifen unsere Mini-MINTies spielerisch die Welt mit allen Sinnen. Ob beim Plantschen mit Wasser…",
+  "url": "https://hdf-hn.de/kurs/mini-minties-auf-entdeckungstour-272H114201/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-01T11:15:00+01:00",
+    "ende": "2027-03-01T12:45:00+01:00"
+   },
+   {
+    "start": "2027-03-08T11:15:00+01:00",
+    "ende": "2027-03-08T12:45:00+01:00"
+   },
+   {
+    "start": "2027-03-15T11:15:00+01:00",
+    "ende": "2027-03-15T12:45:00+01:00"
+   },
+   {
+    "start": "2027-03-22T11:15:00+01:00",
+    "ende": "2027-03-22T12:45:00+01:00"
+   },
+   {
+    "start": "2027-04-05T11:15:00+02:00",
+    "ende": "2027-04-05T12:45:00+02:00"
+   },
+   {
+    "start": "2027-04-12T11:15:00+02:00",
+    "ende": "2027-04-12T12:45:00+02:00"
+   },
+   {
+    "start": "2027-04-19T11:15:00+02:00",
+    "ende": "2027-04-19T12:45:00+02:00"
+   },
+   {
+    "start": "2027-04-26T11:15:00+02:00",
+    "ende": "2027-04-26T12:45:00+02:00"
+   },
+   {
+    "start": "2027-05-03T11:15:00+02:00",
+    "ende": "2027-05-03T12:45:00+02:00"
+   },
+   {
+    "start": "2027-05-10T11:15:00+02:00",
+    "ende": "2027-05-10T12:45:00+02:00"
+   },
+   {
+    "start": "2027-05-24T11:15:00+02:00",
+    "ende": "2027-05-24T12:45:00+02:00"
+   },
+   {
+    "start": "2027-05-31T11:15:00+02:00",
+    "ende": "2027-05-31T12:45:00+02:00"
+   },
+   {
+    "start": "2027-06-07T11:15:00+02:00",
+    "ende": "2027-06-07T12:45:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 1",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 128.5,
+   "text": "128,50 €"
+  },
+  "status": "wenige",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271430GBL",
+  "quelle": "aim",
+  "titel": "Games im Unterricht – Impulse für den Einstieg in Game-based Learning",
+  "teaser": "Wie Sie motivierende Lernprozesse mit Spielen gestalten können Spiele gehören heute selbstverständlich zu unserer Kultur, digital wie analog, und haben längst auch den Bildungsbereich erreicht. Doch nicht in jeder spielerischen Verpackung steckt ein gelungener Lernprozess. In diesem kompakten…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Games-im-Unterricht-Impulse-fuer-den-Einstieg-in-Game-based-Learning/271430GBL",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-01T17:00:00+01:00",
+    "ende": "2027-03-01T20:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Game",
+   "Gaming"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410PM",
+  "quelle": "aim",
+  "titel": "Mathe mal anders – Problemlösen als Schlüsselkompetenz",
+  "teaser": "Denken, lösen, verstehen – Mathematikunterricht, der mehr kann, als nur Wissen vermitteln Dieser Workshop zeigt, wie Lehrkräfte, auch mit Hilfe von KI, Lernumgebungen gestalten können, in denen Schüler aktiv denken, eigene Lösungswege entwickeln und mathematische Zusammenhänge wirklich verstehen…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Mathe-mal-anders-Problemloesen-als-Schluesselkompetenz/271410PM",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-02T17:00:00+01:00",
+    "ende": "2027-03-02T20:15:00+01:00"
+   },
+   {
+    "start": "2027-03-05T14:00:00+01:00",
+    "ende": "2027-03-05T19:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410KIP",
+  "quelle": "aim",
+  "titel": "Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Interaktionspartnern werden",
+  "teaser": "Folgen für die soziale und kognitive Entwicklung Die Art und Weise, wie wir KI-Tools verwenden, lässt sich nicht mehr auf bloßen Werkzeuggebrauch reduzieren: KI-Systeme bieten sich als Gesprächspartner, Lernbegleiter, Freunde und sogar als Therapeuten an. In diesem zweitägigen Seminar für…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/271410KIP",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-05T14:30:00+01:00",
+    "ende": "2027-03-05T18:00:00+01:00"
+   },
+   {
+    "start": "2027-03-06T09:00:00+01:00",
+    "ende": "2027-03-06T12:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271430ZGBL",
+  "quelle": "aim",
+  "titel": "Zukunftswerkstatt: Game-based Learning im Unterricht umsetzen – Lernsettings mit Games gestalten",
+  "teaser": "Wir unterstützen Sie dabei, Lernprozesse mit Spielmethoden zu gestalten! Sie möchten Ihre Schüler mit spielerischen Methoden neu motivieren, wissen aber noch nicht, wie Sie Game-based Learning sinnvoll in Ihren Unterricht integrieren können? In dieser Zukunftswerkstatt setzen Sie sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Game-based-Learning-im-Unterricht-umsetzen/271430ZGBL",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-06T09:00:00+01:00",
+    "ende": "2027-03-06T16:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Game"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993JLMM",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Mensch, Maschine, Moral – Was unterscheidet uns von KI? (Kl. 11-13)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-Moral-Kl-11-13/271993JLMM",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene"
+  ],
+  "alterMin": 16,
+  "alterMax": 18,
+  "termine": [
+   {
+    "start": "2027-03-06T09:00:00+01:00",
+    "ende": "2027-03-06T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "maschinelles Lernen"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271994CMDB",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Durchblick behalten – Fake News erkennen, begegnen und reflektiert handeln (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 bis 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Durchblick-behalten-Kl-7-8/271994CMDB",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-03-06T09:00:00+01:00",
+    "ende": "2027-03-06T16:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271470IN",
+  "quelle": "aim",
+  "titel": "Im Sog der Likes? Wie Influencer jugendliche Lebenswelten prägen",
+  "teaser": "Zwischen Vorbild, Werbung und digitaler Freundschaft – Influencer verstehen und Medienkompetenz stärken Influencer prägen den Alltag vieler Kinder und Jugendlicher. Sie beeinflussen Trends, Konsumverhalten und Meinungen und wirken dabei oft vertrauenswürdiger als klassische Werbung. In diesem Kurs…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Im-Sog-der-Likes-Wie-Influencer-jugendliche-Lebenswelten-praegen/271470IN",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern",
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-03-08T17:00:00+01:00",
+    "ende": "2027-03-08T19:30:00+01:00"
+   },
+   {
+    "start": "2027-03-15T17:00:00+01:00",
+    "ende": "2027-03-15T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420SG",
+  "quelle": "aim",
+  "titel": "Talking Plants – Programmiere deine Pflanze, bis sie spricht (12–16 Jahre)",
+  "teaser": "Was wäre, wenn deine Pflanze plötzlich Nachrichten schicken könnte? In diesem Workshop entdeckst du, wie Internet of Things, Coding und KI zusammenwirken. Du verbindest einen Micro-Computer (keine Angst, das lernst du hier) mit einem Feuchtigkeitssensor und programmierst, wann deine Pflanze eine…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Talking-Plants-Programmiere-deine-Pflanze-bis-sie-spricht-1216-Jahre/271420SG",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 16,
+  "termine": [
+   {
+    "start": "2027-03-10T16:00:00+01:00",
+    "ende": "2027-03-10T19:15:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Coding",
+   "Mikrocontroller",
+   "ESP32"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993KIEK",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-Intelligenz-Kl-9-10/271993KIEK",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2027-03-30T09:00:00+02:00",
+    "ende": "2027-03-30T15:15:00+02:00"
+   },
+   {
+    "start": "2027-03-31T09:00:00+02:00",
+    "ende": "2027-03-31T15:15:00+02:00"
+   },
+   {
+    "start": "2027-04-01T09:00:00+02:00",
+    "ende": "2027-04-01T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993JKCK",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Code & Kreativität – Webentwicklung mit HTML, CSS und JavaScript (Kl. 11-13)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung-Kl-11-13/271993JKCK",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene"
+  ],
+  "alterMin": 16,
+  "alterMax": 18,
+  "termine": [
+   {
+    "start": "2027-03-30T09:00:00+02:00",
+    "ende": "2027-03-30T15:15:00+02:00"
+   },
+   {
+    "start": "2027-03-31T09:00:00+02:00",
+    "ende": "2027-03-31T15:15:00+02:00"
+   },
+   {
+    "start": "2027-04-01T09:00:00+02:00",
+    "ende": "2027-04-01T15:15:00+02:00"
+   },
+   {
+    "start": "2027-04-02T09:00:00+02:00",
+    "ende": "2027-04-02T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "KI",
+   "Chatbot",
+   "Programmier",
+   "Web-App"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993AOER",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Escape the Room – Entwickle dein eigenes Rätselspiel (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Escape-the-Room-Entwickle-dein-eigenes-Raetselspiel-Kl-7-8/271993AOER",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-03-30T09:00:00+02:00",
+    "ende": "2027-03-30T15:15:00+02:00"
+   },
+   {
+    "start": "2027-03-31T09:00:00+02:00",
+    "ende": "2027-03-31T15:15:00+02:00"
+   },
+   {
+    "start": "2027-04-01T09:00:00+02:00",
+    "ende": "2027-04-01T15:15:00+02:00"
+   },
+   {
+    "start": "2027-04-02T09:00:00+02:00",
+    "ende": "2027-04-02T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Game"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420RK2",
+  "quelle": "aim",
+  "titel": "Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programmieren (7–10 Jahre)",
+  "teaser": "Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine Roboter programmieren. Tauche ein in die spannende Welt der Robotik und des Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Roboter und lernst, sie mithilfe von Symbolen auf dem Tablet zu programmieren. Spielerisch…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 7,
+  "alterMax": 10,
+  "termine": [
+   {
+    "start": "2027-04-07T15:00:00+02:00",
+    "ende": "2027-04-07T16:30:00+02:00"
+   },
+   {
+    "start": "2027-04-14T15:00:00+02:00",
+    "ende": "2027-04-14T16:30:00+02:00"
+   },
+   {
+    "start": "2027-04-21T15:00:00+02:00",
+    "ende": "2027-04-21T16:30:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Roboter",
+   "Robotik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H116102",
+  "quelle": "hdf",
+  "titel": "Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik",
+  "teaser": "Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson In diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien der Informatik auseinander. Sie erfinden einfache Anleitungen, erkennen Muster, sortieren, strukturieren und finden kreative Lösungen. Dabei erfahren sie, wie…",
+  "url": "https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H116102/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2027-04-23T14:45:00+02:00",
+    "ende": "2027-04-23T16:00:00+02:00"
+   },
+   {
+    "start": "2027-04-30T14:45:00+02:00",
+    "ende": "2027-04-30T16:00:00+02:00"
+   },
+   {
+    "start": "2027-05-07T14:45:00+02:00",
+    "ende": "2027-05-07T16:00:00+02:00"
+   },
+   {
+    "start": "2027-05-14T14:45:00+02:00",
+    "ende": "2027-05-14T16:00:00+02:00"
+   },
+   {
+    "start": "2027-06-04T14:45:00+02:00",
+    "ende": "2027-06-04T16:00:00+02:00"
+   },
+   {
+    "start": "2027-06-11T14:45:00+02:00",
+    "ende": "2027-06-11T16:00:00+02:00"
+   },
+   {
+    "start": "2027-06-18T14:45:00+02:00",
+    "ende": "2027-06-18T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 60,
+   "text": "60 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271992BBMM",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Die Macht der Medien – Wie beeinflussen sie mein Selbstkonzept? (Kl. 9-10)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Die-Macht-der-Medien-Kl-9-10/271992BBMM",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2027-04-24T09:00:00+02:00",
+    "ende": "2027-04-24T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271993JEWP",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Entdecke die Welt des Programmierens – Vom ersten Befehl zur eigenen Anwendung (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Entdecke-die-Welt-des-Programmierens-Kl-7-8/271993JEWP",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-04-24T09:00:00+02:00",
+    "ende": "2027-04-24T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410FK",
+  "quelle": "aim",
+  "titel": "Feedback-Tools im Unterricht: gestern analog, heute digital – und morgen mit KI",
+  "teaser": "Von analogen Methoden über digitale Tools bis zu KI-gestütztem Feedback im Unterricht Feedback hat einen starken Einfluss auf den Lernprozess. In diesem Workshop erhalten Sie praxisnahe Impulse dazu, wie Feedback im Schulalltag gestaltet werden kann, am Beispiel kleiner, direkt im Unterricht…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-gestern-analog-heute-digital-und-morgen-mit-KI/271410FK",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-04-29T16:30:00+02:00",
+    "ende": "2027-04-29T19:45:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271420SDD",
+  "quelle": "aim",
+  "titel": "Future Skills: Mit Python & Datenbanken die Welt von morgen gestalten (ab 14 Jahre)",
+  "teaser": "Daten gehören zu den wichtigsten Ressourcen unserer Zeit – doch wie werden sie eigentlich gespeichert, analysiert und genutzt? Weißt du, warum immer genug Chips da sind, während kurz vor Ladenschluss manchmal das frische Obst fehlt? Oder noch wichtiger: Wie lässt sich verhindern, dass am Ende des…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenbanken-die-Welt-von-morgen-gestalten-ab-14-J/271420SDD",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "termine": [
+   {
+    "start": "2027-05-24T09:00:00+02:00",
+    "ende": "2027-05-24T14:00:00+02:00"
+   },
+   {
+    "start": "2027-05-26T09:00:00+02:00",
+    "ende": "2027-05-26T14:00:00+02:00"
+   },
+   {
+    "start": "2027-06-05T09:00:00+02:00",
+    "ende": "2027-06-05T14:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Coding",
+   "Python"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271470SIT",
+  "quelle": "aim",
+  "titel": "IT erleben statt nur verstehen - Ein Besuch im IT Education Center der Schwarz Digits (ab 13 Jahre)",
+  "teaser": "Ein Besuch im IT Education Center der Schwarz Digits Komm mit ins ITEC der Schwarz Digits und tauche ein in die spannende und vielseitige Welt der Informationstechnologie (IT)! Unser interaktiver Workshop „IT erleben statt nur verstehen\" bietet Jugendlichen ab der 7. Klasse und ihren Eltern die…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-Ein-Besuch-im-ITEC-der-Schwarz-Digits/271470SIT",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "eltern"
+  ],
+  "alterMin": 13,
+  "termine": [
+   {
+    "start": "2027-05-25T09:00:00+02:00",
+    "ende": "2027-05-25T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn, Schwarz Digits KG / ITEC",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "KI",
+   "Programmier",
+   "Robotik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:271410KR",
+  "quelle": "aim",
+  "titel": "KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvoll und rechtssicher im Unterricht einsetzen",
+  "teaser": "Künstliche Intelligenz verstehen und souverän im Unterricht nutzen Künstliche Intelligenz verändert die Art und Weise, wie wir lehren und lernen – und stellt Schulen zugleich vor neue Herausforderungen. Dieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und weiterführenden…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-06-08T17:00:00+02:00",
+    "ende": "2027-06-08T20:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "AI",
+   "künstliche Intelligenz",
+   "ChatGPT"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "hdf:272H116103",
+  "quelle": "hdf",
+  "titel": "Maxi-MINTies - Entdeckungsreise durch die Welt der Naturwissenschaften",
+  "teaser": "Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson Die kleinen Entdecker tauchen in die spannende Welt der Naturwissenschaften ein. Mit spielerischen Experimenten und Entdeckungsreisen erkunden sie Naturphänomene aus der Natur wie Magnetismus, Wasser, Luft und Pflanzen auf spannende…",
+  "url": "https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-naturwissenschaften-272H116103/",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "eltern"
+  ],
+  "alterMin": 3,
+  "alterMax": 6,
+  "termine": [
+   {
+    "start": "2027-07-02T14:45:00+02:00",
+    "ende": "2027-07-02T16:00:00+02:00"
+   },
+   {
+    "start": "2027-07-09T14:45:00+02:00",
+    "ende": "2027-07-09T16:00:00+02:00"
+   },
+   {
+    "start": "2027-07-16T14:45:00+02:00",
+    "ende": "2027-07-16T16:00:00+02:00"
+   },
+   {
+    "start": "2027-07-23T14:45:00+02:00",
+    "ende": "2027-07-23T16:00:00+02:00"
+   },
+   {
+    "start": "2027-07-30T14:45:00+02:00",
+    "ende": "2027-07-30T16:00:00+02:00"
+   },
+   {
+    "start": "2027-08-06T14:45:00+02:00",
+    "ende": "2027-08-06T16:00:00+02:00"
+   },
+   {
+    "start": "2027-08-13T14:45:00+02:00",
+    "ende": "2027-08-13T16:00:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "online": false,
+   "lat": 49.1453958,
+   "lon": 9.2089472
+  },
+  "kosten": {
+   "euro": 60,
+   "text": "60 €"
+  },
+  "status": "frei",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Informatik"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:272993XMC",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-und-Elektronik-Kl-7-8/272993XMC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-08-02T09:00:00+02:00",
+    "ende": "2027-08-02T15:15:00+02:00"
+   },
+   {
+    "start": "2027-08-03T09:00:00+02:00",
+    "ende": "2027-08-03T15:15:00+02:00"
+   },
+   {
+    "start": "2027-08-04T09:00:00+02:00",
+    "ende": "2027-08-04T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Heilbronn, experimenta",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Arduino",
+   "Mikrocontroller",
+   "Microcontroller",
+   "Roboter"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:272993JECI",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren lernen mit Python (Kl. 9-10)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-zur-eigenen-Idee-Kl-9-10/272993JECI",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 14,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2027-08-02T09:00:00+02:00",
+    "ende": "2027-08-02T15:15:00+02:00"
+   },
+   {
+    "start": "2027-08-03T09:00:00+02:00",
+    "ende": "2027-08-03T15:15:00+02:00"
+   },
+   {
+    "start": "2027-08-04T09:00:00+02:00",
+    "ende": "2027-08-04T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python",
+   "Informatik",
+   "Algorithm"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:272993RESC",
+  "quelle": "aim",
+  "titel": "Juniorakademie: Smart City Lab – Bauen, Coden, Zukunft gestalten mit LEGO & senseBox (Kl. 7-8)",
+  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können sich…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-Kl-7-8/272993RESC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 13,
+  "termine": [
+   {
+    "start": "2027-09-06T09:00:00+02:00",
+    "ende": "2027-09-06T15:15:00+02:00"
+   },
+   {
+    "start": "2027-09-07T09:00:00+02:00",
+    "ende": "2027-09-07T15:15:00+02:00"
+   },
+   {
+    "start": "2027-09-08T09:00:00+02:00",
+    "ende": "2027-09-08T15:15:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Programmier",
+   "Coding",
+   "Maker"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ }
+]
