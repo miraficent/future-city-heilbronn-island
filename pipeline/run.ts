@@ -27,7 +27,7 @@ async function ladeRoh(quelle: Quelle, http: Http): Promise<RohAngebot[]> {
     try {
       return JSON.parse(await readFile(pfad, "utf8")) as RohAngebot[];
     } catch {
-      // kein Cache vorhanden → normal laden
+      throw new Error(`${quelle.id}: gespeicherte Quelldaten fehlen oder sind ungültig. Für einen Live-Abruf ROH_CACHE weglassen.`);
     }
   }
   const adapter = ADAPTER[quelle.adapter];
@@ -95,13 +95,15 @@ async function main() {
   gueltig.sort((a, b) => (a.termine[0]?.start ?? "").localeCompare(b.termine[0]?.start ?? ""));
 
   await writeFile(PFAD_ANGEBOTE, `${JSON.stringify(gueltig, null, 1)}\n`);
-  const bericht: Bericht = { erstellt: jetzt.toISOString(), quellen: berichte, gesamt: gueltig.length };
+  const lesemodus = process.env.ROH_CACHE === "1" ? "cache" : "live";
+  const bericht: Bericht = { erstellt: jetzt.toISOString(), lesemodus, quellen: berichte, gesamt: gueltig.length };
   await writeFile(PFAD_BERICHT, `${JSON.stringify(bericht, null, 2)}\n`);
   await writeFile(
     PFAD_META,
     `${JSON.stringify(
       {
         aktualisiert: jetzt.toISOString(),
+        lesemodus,
         quellen: quellen.map(({ id, name, website, farbe }) => ({ id, name, website, farbe })),
         themen,
       },

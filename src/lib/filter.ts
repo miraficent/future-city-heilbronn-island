@@ -53,7 +53,9 @@ export function passtZuAlter(a: Angebot, alter: number): boolean {
 }
 
 export function naechsterStart(a: Angebot, jetzt: Date): number {
-  const zukunft = a.termine.map((t) => new Date(t.start).getTime()).filter((t) => t >= jetzt.getTime() - TAG_MS);
+  const zukunft = a.termine
+    .filter((t) => new Date(t.ende ?? t.start).getTime() >= jetzt.getTime())
+    .map((t) => new Date(t.start).getTime());
   return zukunft.length > 0 ? Math.min(...zukunft) : Infinity;
 }
 
@@ -77,8 +79,9 @@ export function filtere(angebote: Angebot[], f: Filter, jetzt: Date): Angebot[] 
       if (f.zielgruppen.length > 0 && !a.zielgruppen.some((z) => f.zielgruppen.includes(z))) return false;
       if (f.quellen.length > 0 && !f.quellen.includes(a.quelle)) return false;
       if (f.nurKostenlos && a.kosten.euro !== 0) return false;
-      if (f.nurFrei && a.status === "ausgebucht") return false;
-      return naechsterStart(a, jetzt) <= bis;
+      if (f.nurFrei && a.status !== "frei" && a.status !== "wenige") return false;
+      const start = naechsterStart(a, jetzt);
+      return Number.isFinite(start) && start <= bis;
     })
     .sort((x, y) => naechsterStart(x, jetzt) - naechsterStart(y, jetzt));
 }

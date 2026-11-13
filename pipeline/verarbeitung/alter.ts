@@ -5,7 +5,7 @@ const MAX_ALTER = 99;
 
 const plausibel = (n: number) => n >= MIN_ALTER && n <= MAX_ALTER;
 
-const SPANNE = /(\d{1,2})\s*[-–—]\s*(\d{1,2})\s*(?:J\.|Jahre|Jährige|-jahre)/i;
+const SPANNE = /(\d{1,2})\s*(?:[-–—]|bis)\s*(\d{1,2})\s*(?:J\.|Jahre|Jährige|-jahre)/i;
 const AB = /ab[\s-]+(\d{1,2})[\s-]*(?:J\.|J\b|Jahr|-jahr)/i;
 const KLASSE = /(?:Klassen?(?:stufe)?|Kl\.)\s*(\d{1,2})\s*(?:[-–—]|bis)\s*(\d{1,2})/i;
 const AB_KLASSE = /ab[\s-]+(?:Klasse|Kl\.)[\s-]*(\d{1,2})/i;
@@ -61,11 +61,13 @@ export function vereinigeAlter(alter: Alter[]): Alter {
   return { min: Math.min(...mins), ...(max !== undefined ? { max } : {}) };
 }
 
-/** Titel vor Quell-Tags (vereinigt) vor Beschreibung. */
+/** Konkrete Altersangaben in Titel/Beschreibung vor breiten Website-Kategorien. */
 export function bestimmeAlter(titel: string, tags: string[], beschreibung: string): Alter {
   const ausTitel = erkenneAlter([titel]);
   if (!leer(ausTitel)) return ausTitel;
+  const ausBeschreibung = erkenneAlter([beschreibung]);
+  if (!leer(ausBeschreibung)) return ausBeschreibung;
   const ausTags = vereinigeAlter(tags.map((t) => erkenneAlter([t])));
   if (!leer(ausTags)) return ausTags;
-  return erkenneAlter([beschreibung]);
+  return {};
 }

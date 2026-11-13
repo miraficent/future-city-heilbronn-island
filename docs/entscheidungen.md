@@ -1,0 +1,46 @@
+# Entscheidungen und ihre Begründung
+
+Stand: 13.11.2026. Diese Datei dokumentiert die tatsächlich implementierte Fassung und Abweichungen vom ursprünglichen Plan. Sie ist keine rechtliche Freigabe.
+
+## Aktueller Pixelstand
+
+Der Nutzer hat einen bildbetonten Pixelstil und weniger Leselast konkretisiert. Acht eigene Rastergrafiken wurden erzeugt: vier Häuser, Baum, Bank, Kind und Roboter. Die Spielwelt steht direkt im ersten Bildschirm; die lange Illustration/Einführung entfällt. Die Gebäude nutzen dieselbe feste Darstellungsgröße und zwei gemeinsame Grundlinien. Antippen führt zur Station und öffnet sie automatisch; direkte Knöpfe und Tastatur bleiben verfügbar.
+
+Die frühere Display-Schrift wurde durch Trebuchet MS mit lokalem Atkinson-Fallback ersetzt. Texte werden ausdrücklich nicht als schwer lesbare Pixelbuchstaben gesetzt. Aufgaben beginnen mit einer kurzen Handlung; Erklärungen und echte Kurse lassen sich aufklappen. Die Pixelgrafik ist eine Designentscheidung und kein wissenschaftlich nachgewiesener Universalstil. Ein Test mit einer Kindergruppe bleibt sinnvoll.
+
+Motivation entsteht durch Wahlfreiheit, eigene Versuche und eindeutige Rückmeldungen. Der Wunsch nach einem süchtig machenden Algorithmus wurde nicht umgesetzt. Es gibt keine Verhaltensprofile, Zufallsbelohnungen oder Verlustdrohungen. Der [Einzelcheck der Quellen](quellen-check.md) dokumentiert insbesondere 5Rights-Prinzipien zu Wohlbefinden und Agency sowie verbleibende Abrufgrenzen.
+
+## Aktualisierung: 2D-Spiel statt Kinder-Kartensuche
+
+Die nachgereichte Teamentscheidung verlangt ein 2D-Spiel und eine Oberfläche ohne Emojis. Sie hat Vorrang vor den früheren Überlegungen zu einer Kinder-Planetenübersicht. Die Kinderroute wurde entsprechend durch eine begehbare SVG-Lerninsel mit Figur, Gebäude-Kollisionen und Touch-Wegsuche ersetzt. Die bisherigen Karten dienen innerhalb der Aufgaben und des Rucksacks weiterhin dem Bezug zu realen Kursen. Die ältere Themenansicht bleibt für Teens und Erwachsene bestehen.
+
+Vier Aufgaben vermitteln Programmierfolgen, Leitfähigkeit, ein verständliches Spiellevel und Mustererkennung. Sie sind als eigene Spielinhalte gekennzeichnet und werden nicht als bestätigte Kurse der Einrichtungen ausgegeben. Direkte Stationsknöpfe ermöglichen dieselben Inhalte ohne Bewegungssteuerung. Eine Pause, unbegrenzte Versuche und fehlende Zeit-/Lebenslimits vermeiden unnötigen Druck. Fortschritt besteht nur aus gelösten Stations-IDs im Sitzungsspeicher.
+
+Die Gestaltung folgt unter anderem der [NN/g-Forschung zu Kinder-UX](https://www.nngroup.com/articles/childrens-websites-usability-issues/): unterschiedliche Altersbedürfnisse, verständliche Navigation und direkte Rückmeldungen. Unsere konkrete Spielwelt ist daraus abgeleitet, wurde aber noch nicht mit einer Kindergruppe evaluiert.
+
+Eine Illustration und ein Logo aus der bereitgestellten aim-Präsentation werden unverändert lokal verwendet. Website-Fotos sind nicht pauschal frei, nur weil sie öffentlich sichtbar sind. Der [Bildnachweis](bildnachweise.md) dokumentiert Herkunft und Grenzen. Der [Regelabgleich](regeln-abgleich.md) benennt außerdem den nicht erreichbaren Freigabelink. Die folgende Tabelle enthält die bisherigen Grundentscheidungen; bei der Kinderoberfläche gilt diese Aktualisierung.
+
+| Entscheidung | Umsetzung / Grund | Grundlage |
+| --- | --- | --- |
+| Drei Einstiege | Kind, Teen, Eltern/Fachkräfte teilen Angebotsdaten, bekommen unterschiedliche Bedienung. | Challenge-README, Anforderungen an Zielgruppen und Paket A; lokale Datei `aim/aim_Challenge_Learning_Guide_readme.pdf`, S. 2–3. |
+| Bildauswahl statt Kinder-Freitext | Sechs wählbare Interessenbilder und Themenplaneten helfen beim Entdecken; kein Freitextfeld im Kinderbereich. | Challenge-README, Pakete A und D; [ICO Children's Code](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/). Der ICO-Code ist eine Gestaltungsreferenz aus Großbritannien, keine deutsche Rechtsgrundlage. |
+| Datensparsame Voreinstellungen | Keine Konten, keine Standortabfrage, keine Analytics, Sitzungsspeicher erst beim Merken; kein dauerhaftes Speichern bei Kindern. | [DSGVO Art. 5 und 25](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679), ICO-Prinzipien Datenminimierung und Voreinstellungen. |
+| Bewusste dauerhafte Speicherung | Teens/Eltern können gespeicherte Angebots-IDs ausdrücklich auf dem Gerät behalten und diese Wahl widerrufen. Ein Löschknopf entfernt alle COSMOS-Schlüssel. | [§ 25 TDDDG](https://www.gesetze-im-internet.de/ttdsg/__25.html); ausdrücklich gewünschte Merkfunktion von Tracking unterscheiden, spätere Betreiberprüfung erforderlich. |
+| Präzise Erklärung zu Minderjährigen | Art. 8 betrifft einwilligungsbasierte Datenverarbeitung bei bestimmten unmittelbar Kindern angebotenen Online-Diensten; die 16-Jahre-Grenze ist keine pauschale Nutzungssperre. | [DSGVO Art. 8](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679), [Datenschutzkonferenz: Datenschutz von Kindern](https://www.datenschutzkonferenz-online.de/media/en/Entschliessung_Datenschutz-von-Kindern.pdf). |
+| Gemeinsame Anmeldung | Die App nimmt keine Buchungen vor. Externe Veranstalterlinks sind in den Details als Bereich für Erwachsene erkennbar. Es handelt sich um eine erklärende Hürde, keine Altersverifikation. | Challenge-README S. 3 und 5–6. |
+| Planeten und Merkzettel ohne Druck | Es gibt keine Ranglisten, täglichen Login-Belohnungen oder erfundenen Platzlimits. | Challenge-README Paket E; ICO Children's Code, Nudge-Techniken und Kindesinteressen. |
+| Bedienung mit Tastatur und großen Zielen | Sichtbarer Fokus, Skip-Link, beschriftete Felder, native Dialoge, Hauptbedienziele mindestens 44 px, Kinderknöpfe mindestens 56 px, reduzierte Animation bei Systemeinstellung. | [WCAG 2.2, Zielgrößen](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html). WCAG-AA verlangt dort grundsätzlich 24 px oder entsprechende Abstände; größere Projektziele sind bewusst gewählt. Keine vollständige WCAG-Zertifizierung behauptet. |
+| Lokaler Interessen-Kompass | Nachvollziehbare Gewichtung ausgewählter Themen statt eines unkonfigurierten externen KI-Chats. Kein Altersscheincheck als alleinige Absicherung und keine Weitergabe von Freitext. | Kernfunktion laut Challenge auch ohne KI möglich; optionale KI-Beratung ist zurückgestellt. Ohne aktivierten KI-Chat wird keine Erfüllung aller AI-Act-Anforderungen behauptet. |
+| Keine extern geladenen Angebotsbilder | Eigene SVG-Planeten visualisieren Themen. Schriften liegen samt OFL-Lizenz im Projekt, QR-Codes entstehen im Browser. | Datenminimierung; Ausfall des Google-Font-Downloads im ersten Build zeigte zusätzlich den Nutzen lokaler Assets. |
+| Lokales Vorlesen | Nur vom Browser als lokal gekennzeichnete deutsche Stimmen verwenden; sonst Fehlermeldung statt unbemerkter Cloud-Stimme. | Projektziel keine unnötigen Drittübermittlungen; Web Speech API `SpeechSynthesisVoice.localService`. |
+| Konkretes Kursalter vor Kategorien | Titel und konkrete Angaben in der Beschreibung gewinnen vor allgemeinen Website-Kategorien. Auch „4 bis 7 Jahre“ wird erkannt. | Beobachteter HdF-Fall: allgemeine Kategorien „3–6“ plus „ab 6“ hatten fälschlich „ab 3“ ergeben. Regressionstest sichert die Korrektur. |
+| Keine erfundenen Verfügbarkeiten | Unbekannter Status zählt nicht als freier Platz; bei „ausgebucht“ wird keine ungeprüfte Warteliste behauptet. Vergangene Angebote verschwinden aus der Suche. | Datenmodell, beobachtete Filterfehler und Quellenbezug der Challenge. |
+| Unsichere Treffer zurückhalten | Themen-Sicherheit unter 0,6 führt nicht in die öffentliche Liste; ein öffentliches Projektstatusfenster zeigt nur aggregierte Qualitätsdaten. | Menschliche Aufsicht aus Challenge-Paket B; Pipeline-Konzept der Spezifikation. |
+| Erweiterung per Tabelle mit Formatgrenze | Neue Themen oder Quellen mit unterstütztem Format per CSV; neue Quellformate benötigen Code. | Challenge-Anforderung Skalierung; tatsächliche Adapter-Registry `pipeline/adapters/index.ts`. |
+| Öffentlichkeit erst nach vollständigen Angaben | Lokale Vorführung mit offen benannten Betreiber- und Hostingangaben; keine erfundenen Kontaktdaten und keine Rechtskonformitätsgarantie. | [§ 5 DDG](https://www.gesetze-im-internet.de/ddg/__5.html), DSGVO Art. 12–14 und gegebenenfalls Art. 28/44 ff. |
+
+## Gegenüber dem ursprünglichen Plan zurückgestellt
+
+Externer KI-Berater, Supabase-Nutzungssignale, echte Nachfragestatistiken, Passwort-Redaktion, Kartenansicht und Ferien-Radar sind nicht umgesetzt. Das öffentlich sichtbare Projektfenster ersetzt keine geschützte Redaktion. Kalenderdateien sind Downloads und werden nicht als bereits aktiviertes Abo ausgegeben. Das vorhandene nächtliche Workflow-File ist vorbereitet, aber weder GitHub-Ausführung noch neues Hosting-Deployment wurden in dieser Sitzung eingerichtet.
+
+Ein Regel- oder Regex-Filter würde eine zuverlässige Anonymisierung freien Kindertextes nicht garantieren. Deshalb versendet diese Fassung solche Texte nicht. Auch „keine Tracking-Cookies“ bedeutet nicht, dass bei einer späteren Veröffentlichung keine technischen personenbezogenen Verbindungsdaten anfallen.

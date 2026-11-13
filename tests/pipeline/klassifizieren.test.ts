@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { erkenneAlter, vereinigeAlter } from "../../pipeline/verarbeitung/alter";
+import { bestimmeAlter, erkenneAlter, vereinigeAlter } from "../../pipeline/verarbeitung/alter";
 import { klassifiziereThemen } from "../../pipeline/verarbeitung/themen";
 import type { Thema } from "../../src/lib/angebot";
 
@@ -7,6 +7,7 @@ describe("erkenneAlter", () => {
   it.each([
     ["Scratch – Reise zum Planeten Mars (8–11 Jahre)", { min: 8, max: 11 }],
     ["Talking Plants (12-16 Jahre)", { min: 12, max: 16 }],
+    ["Für Kinder von 8 bis 12 Jahren ohne Begleitperson", { min: 8, max: 12 }],
     ["Python lernen mit KI ab 16 Jahren", { min: 16 }],
     ["IT erleben (ab 13 Jahre)", { min: 13 }],
     ["Future Skills – ab 14 J.", { min: 14 }],
@@ -30,10 +31,19 @@ describe("erkenneAlter", () => {
   });
 });
 
+describe("bestimmeAlter", () => {
+  it("bevorzugt die konkrete Altersgrenze vor breiten HdF-Kategorien", () => {
+    expect(bestimmeAlter("Data Literacy for Kids", ["Kindergartenkind (3-6 Jahre)", "Schulkinder & Jugendliche (ab 6 Jahren)"], "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson")).toEqual({ min: 4, max: 7 });
+  });
+  it("behält den ausdrücklich im Titel genannten Altersbereich", () => {
+    expect(bestimmeAlter("Robotik (7–10 Jahre)", ["ab 6 Jahren"], "Auch Geschwister ab 4 Jahren dürfen zuschauen.")).toEqual({ min: 7, max: 10 });
+  });
+});
+
 const THEMEN: Thema[] = [
-  { id: "ki", name: "KI", emoji: "🤖", schlagwoerter: ["KI", "AI", "künstliche Intelligenz"] },
-  { id: "coding", name: "Coding", emoji: "💻", schlagwoerter: ["Programmier", "Scratch", "Roboter"] },
-  { id: "gaming", name: "Gaming", emoji: "🎮", schlagwoerter: ["Game", "Minecraft"] },
+  { id: "ki", name: "KI", symbol: "robot", schlagwoerter: ["KI", "AI", "künstliche Intelligenz"] },
+  { id: "coding", name: "Coding", symbol: "robot", schlagwoerter: ["Programmier", "Scratch", "Roboter"] },
+  { id: "gaming", name: "Gaming", symbol: "robot", schlagwoerter: ["Game", "Minecraft"] },
 ];
 
 describe("vereinigeAlter", () => {

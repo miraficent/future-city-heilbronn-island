@@ -1,0 +1,90 @@
+{
+  "bank": {
+    "datei": "/medien/pixel/bank.png",
+    "breite": 1261,
+    "hoehe": 1247,
+    "ausschnitt": [
+      99,
+      353,
+      1162,
+      1038
+    ]
+  },
+  "baum": {
+    "datei": "/medien/pixel/baum.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      162,
+      103,
+      1079,
+      1158
+    ]
+  },
+  "code-labor": {
+    "datei": "/medien/pixel/code-labor.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      40,
+      226,
+      1214,
+      1179
+    ]
+  },
+  "forscherhaus": {
+    "datei": "/medien/pixel/forscherhaus.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      66,
+      206,
+      1188,
+      1199
+    ]
+  },
+  "ki-atelier": {
+    "datei": "/medien/pixel/ki-atelier.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      8,
+      216,
+      1246,
+      1110
+    ]
+  },
+  "kind": {
+    "datei": "/medien/pixel/kind-v2.png",
+    "breite": 1024,
+    "hoehe": 1536,
+    "ausschnitt": [
+      191,
+      95,
+      832,
+      1500
+    ]
+  },
+  "roboter": {
+    "datei": "/medien/pixel/roboter.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      302,
+      126,
+      953,
+      1167
+    ]
+  },
+  "spielewerkstatt": {
+    "datei": "/medien/pixel/spielewerkstatt.png",
+    "breite": 1254,
+    "hoehe": 1254,
+    "ausschnitt": [
+      26,
+      225,
+      1228,
+      1092
+    ]
+  }
+}

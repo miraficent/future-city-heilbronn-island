@@ -17,8 +17,8 @@ const QUELLE: Quelle = {
 };
 
 const THEMEN: Thema[] = [
-  { id: "coding", name: "Coding", emoji: "💻", schlagwoerter: ["Scratch", "Python"] },
-  { id: "gaming", name: "Gaming", emoji: "🎮", schlagwoerter: ["Game"] },
+  { id: "coding", name: "Coding", symbol: "robot", schlagwoerter: ["Scratch", "Python"] },
+  { id: "gaming", name: "Gaming", symbol: "robot", schlagwoerter: ["Game"] },
 ];
 
 function roh(teil: Partial<RohAngebot> = {}): RohAngebot {

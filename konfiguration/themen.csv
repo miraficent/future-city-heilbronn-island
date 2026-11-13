@@ -1,4 +1,4 @@
-id,name,kindername,emoji,farbe,schlagwoerter
-ki,Künstliche Intelligenz,KI-Planet,🤖,#FF5A36,KI|AI|künstliche Intelligenz|ChatGPT|Machine Learning|maschinelles Lernen|neuronale|Data Literacy|Datenkompetenz|Chatbot|KI-Agent|Prompt
-coding,Coding & Robotik,Code-Planet,💻,#00A3A3,Programmier|Coding|Scratch|Python|Calliope|Arduino|Mikrocontroller|Microcontroller|ESP32|Roboter|Robotik|Lego League|App-Entwicklung|Web-App|Informatik|Hacker|Algorithm|Maker
-gaming,Gaming & Games,Spiele-Planet,🎮,#FFBF1F,Game|Gaming|Spieleentwicklung|Spiele-Entwicklung|Videospiel|Computerspiel|Unity|Minecraft|Roblox|E-Sport|Esport|Konsole
+id,name,kindername,symbol,farbe,schlagwoerter
+ki,Künstliche Intelligenz,KI-Planet,robot,#FF5A36,KI|AI|künstliche Intelligenz|ChatGPT|Machine Learning|maschinelles Lernen|neuronale|Data Literacy|Datenkompetenz|Chatbot|KI-Agent|Prompt
+coding,Coding & Robotik,Code-Planet,code,#00A3A3,Programmier|Coding|Scratch|Python|Calliope|Arduino|Mikrocontroller|Microcontroller|ESP32|Roboter|Robotik|Lego League|App-Entwicklung|Web-App|Informatik|Hacker|Algorithm|Maker
+gaming,Gaming & Games,Spiele-Planet,controller,#FFBF1F,Game|Gaming|Spieleentwicklung|Spiele-Entwicklung|Videospiel|Computerspiel|Unity|Minecraft|Roblox|E-Sport|Esport|Konsole

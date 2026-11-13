@@ -4,6 +4,7 @@ import { Planet } from "@/components/planet";
 import { Sternenhimmel } from "@/components/sternenhimmel";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
 import { themenStile } from "@/lib/themen-stil";
+import { Symbol } from "@/components/symbol";
 
 const ausgabeFormat = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "numeric", month: "long", year: "numeric" });
 
@@ -29,8 +30,8 @@ export default function Start() {
             <span className="block text-[0.52em] tracking-[0.02em]">Entdecker</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg sm:text-xl">
-            Kurse und Workshops zu <strong>KI, Coding und Gaming</strong> von aim, experimenta, Haus der Familie und IPAI – endlich an
-            einem Ort. Ohne Anmeldung. Ohne Tracking.
+            Eine spielbare 2D-Lerninsel für Kinder. Mit echten Kursen zu <strong>KI, Coding und Gaming</strong> von aim, experimenta,
+            Haus der Familie und IPAI. Ohne Konto. Ohne Tracking.
           </p>
         </div>
         <div aria-hidden className="relative mx-auto h-56 w-full max-w-sm sm:h-72">
@@ -62,10 +63,10 @@ export default function Start() {
                 <Planet kennung="tuer-kind" farbe={erster.farbe} art="krater" className="absolute -right-8 -top-8 w-40 transition-transform duration-500 group-hover:rotate-12" />
               ) : null}
               <span aria-hidden className="text-5xl">
-                🚀
+                <Symbol name="robot" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich bin ein Kind</span>
-              <span className="mt-1 text-base text-tinte-2">6 bis 11 Jahre · mit Bildern und Vorlesen</span>
+              <span className="mt-1 text-base text-tinte-2">6 bis 11 Jahre · 2D-Spielwelt und echte Abenteuer</span>
             </Link>
           </li>
           <li>
@@ -88,10 +89,10 @@ export default function Start() {
                 ))}
               </svg>
               <span aria-hidden className="text-5xl">
-                ⚡
+                <Symbol name="code" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich bin ein Teen</span>
-              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · Lernpfade · KI-Berater ab 16</span>
+              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · Spielmissionen & neue Ideen</span>
             </Link>
           </li>
           <li>
@@ -102,10 +103,10 @@ export default function Start() {
             >
               <span aria-hidden className="raster absolute -right-6 -top-6 size-36 rounded-full text-blau opacity-70" />
               <span aria-hidden className="text-5xl">
-                🧭
+                <Symbol name="compass" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich suche für mein Kind</span>
-              <span className="mt-1 text-base text-tinte-2">Eltern & Fachkräfte · Suche, Kalender, KI-Berater</span>
+              <span className="mt-1 text-base text-tinte-2">Eltern & Fachkräfte · Entdeckungen, Kurse & Kalender</span>
             </Link>
           </li>
         </ul>
@@ -131,7 +132,8 @@ export default function Start() {
               So gehen wir mit Daten um
             </Link>
           </p>
-          <p className="mt-1 text-tinte-2">Die Angebote werden jede Nacht automatisch von den Websites der Einrichtungen geholt.</p>
+          <p className="mt-1 text-tinte-2">Echte Angebotsdaten · letzter gespeicherter Stand vom {ausgabeFormat.format(new Date(META.aktualisiert))}.</p>
+          <p className="mt-2 flex flex-wrap gap-4 sm:justify-end"><Link className="underline underline-offset-4" href="/impressum">Impressum</Link><Link className="underline underline-offset-4" href="/projekt">Projekt & Datenstatus</Link></p>
         </div>
       </footer>
     </main>

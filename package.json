@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "node scripts/export.mjs",
+    "preview": "node scripts/vorschau.mjs",
     "lint": "eslint",
-    "pipeline": "tsx pipeline/run.ts",
+    "pipeline": "node scripts/pipeline.mjs",
     "test": "vitest run"
   },
   "dependencies": {

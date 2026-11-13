@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:aim-262420PAI-20261116T153000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261116T153000Z
 DTEND:20261116T173000Z
 SUMMARY:Python lernen mit KI (ab 16 Jahren)
@@ -25,7 +25,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ipai-living-room-session-10-women-in-ai-20261118T170000Z@cosmos-entdeck
  er
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261118T170000Z
 DTEND:20261118T200000Z
 SUMMARY:Living Room Session #10: Women in AI
@@ -41,7 +41,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ipai-ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendun
  g-20261123T140000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261123T140000Z
 DTEND:20261123T160000Z
 SUMMARY:KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwen
@@ -60,7 +60,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:experimenta-fortbildung-esp32-programmierung-in-python-20261126T130000Z
  @cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261126T130000Z
 DTEND:20261126T170000Z
 SUMMARY:Fortbildung „ESP32-Programmierung in Python“
@@ -77,7 +77,7 @@ URL:https://www.experimenta.science/besuchen/veranstaltungskalender/fortbil
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H304002-20261128T113000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261128T113000Z
 DTEND:20261128T143000Z
 SUMMARY:Programmieren Lernen - Scratch
@@ -92,7 +92,7 @@ URL:https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207006-20261205T083000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261205T083000Z
 DTEND:20261205T103000Z
 SUMMARY:Märchenhaft mit ScratchJunior eine Geschichte programmieren: Das m
@@ -111,7 +111,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:experimenta-first-lego-league-explore-ausstellung-20261205T100000Z@cosm
  os-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20261205T100000Z
 DTEND:20261205T150000Z
 SUMMARY:First Lego League Explore – Ausstellung
@@ -128,7 +128,7 @@ URL:https://www.experimenta.science/besuchen/veranstaltungskalender/first-l
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207007-20270116T090000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270116T090000Z
 DTEND:20270116T103000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -144,7 +144,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207007-20270123T090000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270123T090000Z
 DTEND:20270123T103000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -160,7 +160,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207016-20270116T113000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270116T113000Z
 DTEND:20270116T130000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -176,7 +176,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207016-20270123T113000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270123T113000Z
 DTEND:20270123T130000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -192,7 +192,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207017-20270116T133000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270116T133000Z
 DTEND:20270116T150000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -208,7 +208,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207017-20270123T133000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270123T133000Z
 DTEND:20270123T150000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -224,7 +224,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207008-20270130T083000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270130T083000Z
 DTEND:20270130T103000Z
 SUMMARY:Spielerisch mit ScratchJunior eine grünere\, saubere Welt programm
@@ -242,7 +242,7 @@ URL:https://hdf-hn.de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saub
 END:VEVENT
 BEGIN:VEVENT
 UID:experimenta-maker-faire-20270206T090000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270206T090000Z
 DTEND:20270206T170000Z
 SUMMARY:Maker Faire ® Heilbronn 2027
@@ -258,7 +258,7 @@ URL:https://www.experimenta.science/besuchen/veranstaltungskalender/maker-f
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKIT-20270209T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270209T080000Z
 DTEND:20270209T141500Z
 SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
@@ -276,7 +276,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKIT-20270210T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270210T080000Z
 DTEND:20270210T141500Z
 SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
@@ -294,7 +294,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKIT-20270211T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270211T080000Z
 DTEND:20270211T141500Z
 SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
@@ -312,7 +312,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270330T070000Z
 DTEND:20270330T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -330,7 +330,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270331T070000Z
 DTEND:20270331T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -348,7 +348,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270401T070000Z
 DTEND:20270401T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -366,7 +366,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270402T070000Z
 DTEND:20270402T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -384,7 +384,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270423T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270423T124500Z
 DTEND:20270423T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -401,7 +401,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270430T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270430T124500Z
 DTEND:20270430T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -418,7 +418,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270507T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270507T124500Z
 DTEND:20270507T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -435,7 +435,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270514T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270514T124500Z
 DTEND:20270514T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -452,7 +452,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270604T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270604T124500Z
 DTEND:20270604T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -469,7 +469,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270611T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270611T124500Z
 DTEND:20270611T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -486,7 +486,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H116102-20270618T124500Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270618T124500Z
 DTEND:20270618T140000Z
 SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
@@ -503,7 +503,7 @@ URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270525T070000Z
 DTEND:20270525T140000Z
 SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 

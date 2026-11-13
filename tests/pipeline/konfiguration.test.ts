@@ -26,8 +26,8 @@ describe("parseQuellen", () => {
 
 describe("parseThemen", () => {
   it("trennt Schlagwörter und entfernt Leerraum", () => {
-    const csv = ["id,name,emoji,schlagwoerter", "ki,KI,🤖, KI | künstliche Intelligenz |"].join("\n");
-    expect(parseThemen(csv)).toEqual([{ id: "ki", name: "KI", emoji: "🤖", schlagwoerter: ["KI", "künstliche Intelligenz"] }]);
+    const csv = ["id,name,symbol,schlagwoerter", "ki,KI,robot, KI | künstliche Intelligenz |"].join("\n");
+    expect(parseThemen(csv)).toEqual([{ id: "ki", name: "KI", symbol: "robot", schlagwoerter: ["KI", "künstliche Intelligenz"] }]);
   });
 });
 

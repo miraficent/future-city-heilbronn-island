@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: process.env.COSMOS_STATIC_EXPORT === "1" ? "export" : undefined,
+  trailingSlash: true,
+  poweredByHeader: false,
+  devIndicators: false,
   turbopack: {
     rules: {
       "*.css": {

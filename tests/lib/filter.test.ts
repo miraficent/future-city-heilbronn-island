@@ -59,6 +59,21 @@ describe("filtere", () => {
     expect(filtere(liste, LEERER_FILTER, JETZT).map((x) => x.id)).toEqual(["voll", "scratch", "ki", "teuer"]);
   });
 
+  it("zeigt vergangene Angebote auch ohne Zeitraumbegrenzung nicht an", () => {
+    const vergangen = a("alt", { termine: [{ start: "2026-11-12T10:00:00+01:00" }] });
+    expect(filtere([vergangen], LEERER_FILTER, JETZT)).toEqual([]);
+  });
+
+  it("behält laufende Veranstaltungen bis zu ihrem Ende", () => {
+    const laufend = a("laeuft", { termine: [{ start: "2026-11-13T10:00:00+01:00", ende: "2026-11-13T15:00:00+01:00" }] });
+    expect(filtere([laufend], LEERER_FILTER, JETZT)).toHaveLength(1);
+  });
+
+  it("behauptet bei unbekanntem Buchungsstatus keine freien Plätze", () => {
+    const unbekannt = a("unbekannt", { status: "unbekannt" });
+    expect(filtere([unbekannt], { ...LEERER_FILTER, nurFrei: true }, JETZT)).toEqual([]);
+  });
+
   it("sucht ohne Umlaut-Probleme in Titel und Themen", () => {
     expect(filtere(liste, { ...LEERER_FILTER, suche: "kunstliche" }, JETZT).map((x) => x.id)).toEqual(["ki"]);
   });

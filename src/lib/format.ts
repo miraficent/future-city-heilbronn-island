@@ -34,6 +34,8 @@ export function alterText(a: Angebot): string {
   if (a.zielgruppen.includes("fachkraefte")) return "für Fachkräfte";
   if (a.zielgruppen.includes("eltern")) return "für Eltern";
   if (a.zielgruppen.includes("familien")) return "für Familien";
+  if (a.zielgruppen.includes("kinder")) return "für Kinder · Alter beim Anbieter";
+  if (a.zielgruppen.includes("teens")) return "für Teens · Alter beim Anbieter";
   return "für Erwachsene";
 }
 
@@ -55,9 +57,9 @@ export function statusText(status: Angebot["status"]): string {
     case "frei":
       return "Plätze frei";
     case "wenige":
-      return "Nur noch wenige Plätze";
+      return "Wenige Plätze gemeldet";
     case "ausgebucht":
-      return "Ausgebucht – Warteliste möglich";
+      return "Ausgebucht";
     default:
       return "Plätze: beim Anbieter";
   }

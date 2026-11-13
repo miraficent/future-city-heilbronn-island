@@ -670,11 +670,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2026-11-21T10:00:00+01:00",
@@ -918,7 +919,8 @@
    "teens",
    "familien"
   ],
-  "alterMin": 6,
+  "alterMin": 8,
+  "alterMax": 12,
   "termine": [
    {
     "start": "2026-11-28T12:30:00+01:00",
@@ -1152,11 +1154,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2026-12-05T09:30:00+01:00",
@@ -1195,10 +1198,10 @@
   "art": "veranstaltung",
   "zielgruppen": [
    "kinder",
-   "teens",
    "familien"
   ],
   "alterMin": 6,
+  "alterMax": 10,
   "termine": [
    {
     "start": "2026-12-05T11:00:00+01:00",
@@ -1314,7 +1317,7 @@
    "eltern"
   ],
   "alterMin": 3,
-  "alterMax": 6,
+  "alterMax": 5,
   "termine": [
    {
     "start": "2026-12-11T14:45:00+01:00",
@@ -1412,11 +1415,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2027-01-16T10:00:00+01:00",
@@ -1460,11 +1464,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2027-01-16T12:30:00+01:00",
@@ -1508,11 +1513,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2027-01-16T14:30:00+01:00",
@@ -1710,11 +1716,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2027-01-30T09:30:00+01:00",
@@ -2041,6 +2048,7 @@
    "teens"
   ],
   "alterMin": 6,
+  "alterMax": 10,
   "termine": [
    {
     "start": "2027-02-11T09:00:00+01:00",
@@ -2092,7 +2100,8 @@
    "kinder",
    "teens"
   ],
-  "alterMin": 6,
+  "alterMin": 8,
+  "alterMax": 12,
   "termine": [
    {
     "start": "2027-02-13T10:00:00+01:00",
@@ -2248,11 +2257,12 @@
   "art": "kurs",
   "zielgruppen": [
    "kinder",
-   "teens",
    "eltern",
+   "teens",
    "familien"
   ],
-  "alterMin": 3,
+  "alterMin": 4,
+  "alterMax": 7,
   "termine": [
    {
     "start": "2027-02-20T10:00:00+01:00",
@@ -2635,7 +2645,7 @@
    "eltern"
   ],
   "alterMin": 3,
-  "alterMax": 6,
+  "alterMax": 5,
   "termine": [
    {
     "start": "2027-02-26T14:45:00+01:00",
@@ -3395,7 +3405,7 @@
    "eltern"
   ],
   "alterMin": 3,
-  "alterMax": 6,
+  "alterMax": 5,
   "termine": [
    {
     "start": "2027-04-23T14:45:00+02:00",
@@ -3705,7 +3715,7 @@
    "eltern"
   ],
   "alterMin": 3,
-  "alterMax": 6,
+  "alterMax": 5,
   "termine": [
    {
     "start": "2027-07-02T14:45:00+02:00",

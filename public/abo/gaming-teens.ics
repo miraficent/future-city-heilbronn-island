@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:aim-271430UN-20270203T143000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270203T143000Z
 DTEND:20270203T183000Z
 SUMMARY:Spieleentwicklung mit Unity für Einsteiger (10–14 Jahre)
@@ -25,7 +25,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Spieleentwicklung-mit-Unity-fue
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993AOGD-20270208T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270208T080000Z
 DTEND:20270208T141500Z
 SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
@@ -43,7 +43,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993AOGD-20270209T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270209T080000Z
 DTEND:20270209T141500Z
 SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
@@ -61,7 +61,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993AOGD-20270210T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270210T080000Z
 DTEND:20270210T141500Z
 SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
@@ -79,7 +79,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993AOGD-20270211T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270211T080000Z
 DTEND:20270211T141500Z
 SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
@@ -97,7 +97,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271430CYC1-20270209T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270209T080000Z
 DTEND:20270209T140000Z
 SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1
@@ -115,7 +115,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nach
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271430CYC1-20270210T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270210T080000Z
 DTEND:20270210T140000Z
 SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1
@@ -133,7 +133,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nach
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271430CYC1-20270211T080000Z@cosmos-entdecker
-DTSTAMP:20261113T193258Z
+DTSTAMP:20261113T205954Z
 DTSTART:20270211T080000Z
 DTEND:20270211T140000Z
 SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1

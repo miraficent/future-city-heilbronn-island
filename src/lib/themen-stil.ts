@@ -6,7 +6,7 @@ export type ThemaStil = {
   id: string;
   name: string;
   kindername: string;
-  emoji: string;
+  symbol: string;
   farbe: string;
   /** Dunklere Variante für Text auf Papier (Kontrast ≥ 4.5:1). */
   textFarbe: string;
@@ -34,7 +34,7 @@ export function themenStile(themen: Thema[]): Record<string, ThemaStil> {
           id: t.id,
           name: t.name,
           kindername: t.kindername ?? t.name,
-          emoji: t.emoji,
+          symbol: t.symbol,
           farbe,
           textFarbe: mischeMitTinte(farbe, 0.45),
           planet: PLANETEN[i % PLANETEN.length] ?? "krater",

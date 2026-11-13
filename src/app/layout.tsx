@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible_Next, Martian_Mono, Unbounded } from "next/font/google";
 import "./globals.css";
-
-// next/font liefert die Schriften selbst aus – zur Laufzeit gehen keine Anfragen an Google.
-const atkinson = Atkinson_Hyperlegible_Next({ subsets: ["latin", "latin-ext"], variable: "--font-atkinson", display: "swap" });
-const unbounded = Unbounded({ subsets: ["latin", "latin-ext"], variable: "--font-unbounded", display: "swap" });
-const martian = Martian_Mono({ subsets: ["latin", "latin-ext"], variable: "--font-martian", display: "swap" });
+import "./spiel.css";
+import "./pixel.css";
+import "./abenteuer.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASIS_URL ?? "http://localhost:3000"),
@@ -13,6 +10,8 @@ export const metadata: Metadata = {
   description:
     "Alle Kurse und Workshops zu KI, Coding und Gaming von aim, experimenta, Haus der Familie und IPAI an einem Ort – für Kinder, Teens und Eltern in Heilbronn. Ohne Anmeldung, ohne Tracking.",
   openGraph: { locale: "de_DE", type: "website", siteName: "COSMOS-Entdecker" },
+  robots: { index: false, follow: false },
+  referrer: "no-referrer",
 };
 
 export const viewport: Viewport = {
@@ -23,7 +22,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="de" className={`${atkinson.variable} ${unbounded.variable} ${martian.variable}`}>
+    <html lang="de">
       <body className="korn min-h-dvh antialiased">
         <a
           href="#inhalt"
