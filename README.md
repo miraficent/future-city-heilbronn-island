@@ -1,12 +1,12 @@
 # COSMOS-Entdecker
 
-Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. Kinder erkunden eine **spielbare 2D-Lerninsel** und finden von dort zu echten Angeboten zu **KI, Coding und Gaming** von aim, experimenta, Haus der Familie und IPAI in Heilbronn. Die gesamte Oberfläche ist ohne Emojis gestaltet.
+Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. Kinder spielen in einer **Spielwelt** (Figur wählen, durch eine kleine Stadt laufen, in vier Lernhäusern Aufgaben lösen und die COSMOS-Rakete bauen) und finden von dort zu echten Angeboten zu **KI, Coding und Gaming** von aim, experimenta, Haus der Familie und IPAI in Heilbronn. Die gesamte Oberfläche ist ohne Emojis gestaltet.
 
 ## Website öffnen
 
 **Fertige lokale Webansicht: http://localhost:4173/**
 
-**Direkt ins 2D-Spiel: http://localhost:4173/kind/**
+**Direkt in die Spielwelt: http://localhost:4173/kind/** · **Heilbronn-Karte: http://localhost:4173/einrichtungen/**
 
 Auf diesem Computer **`Website-starten.cmd` doppelt anklicken**. Das startet den lokalen Webserver und öffnet danach die Website im Browser. Das Fenster während der Vorführung offen lassen. `COSMOS-Entdecker.url` öffnet eine bereits laufende Vorschau. Diese Adresse funktioniert nur auf diesem Computer; sie ist kein öffentlicher Hosting-Link.
 
@@ -25,12 +25,13 @@ Entwicklung mit automatischem Neuladen: `npm.cmd run dev`, anschließend http://
 
 ## Was funktioniert?
 
-- **Kinder und Teens:** zusammenhängende Pixelstadt mit 2400 × 1700 Welteinheiten, vier Kapiteln und zwölf Aufgaben je Altersstufe (6–8, 9–11, 12–17), Kamerazoom, Gesamtkarte, Straßenübergängen, Baum-/Bank-Kollisionen und Finale am Ideenbaum; eigene Pixel-Spielfigur, Pfeiltasten/WASD, Touch-Wegsuche um Gebäude mit automatischem Betreten, Pause und vier direkt zugängliche Lernhäuser. Roboter-Code, Stromkreis, Levelbau und Mustererkennung sind interaktive Aufgaben mit hilfreichen Rückmeldungen. Danach führen altersgerechte Empfehlungen zu echten Kursen. Der Rucksack und erledigte Aufgaben bleiben nur in der Sitzung. Pico hilft lokal mit vorbereiteten Antworten. Wünsche und ein erklärbarer Elternbericht verbinden ausprobierte Themen mit echten Kursen. Offizielle Einrichtungen und bestätigte Socials: /einrichtungen/. Keine Uhr, keine Leben, keine Rangliste. Häuser und Eingänge stehen auf zwei gemeinsamen Reihen. Die lesbare Schrift wurde geändert; Einstieg und Aufgaben sind deutlich kürzer. Kurse werden bei Bedarf aufgeklappt.
-- **Teens:** dunkle Oberfläche, Suche und Filter, Merkzettel, Zeitreise und Sternbild mit echten Angeboten. Das Sternbild ist eine Entdeckungsidee, keine fachlich bestätigte Kursfolge.
-- **Eltern/Fachkräfte:** Volltextsuche, Thema, Alter, Zeitraum, Einrichtung, Veranstaltungsart, Zielgruppe, kostenlose Angebote und gemeldete freie Plätze.
+- **Spielwelt (6–11 Jahre):** sechs Spielfiguren zur Wahl (verschiedene Hautfarben, Frisuren, Kopftuch, Brille, ein Roboter) und Altersauswahl 6–11 (6–8 „Entdecken“, 9–11 „Tüfteln“). Die Stadt entsteht automatisch aus der Liste der Lernhäuser (mehr Häuser → längere Stadt). Die Figur läuft **nur auf Wegen**: Wiese, Bäume, Teich, Häuser und Fahrbahn sind gesperrt, die Straße wird nur am Zebrastreifen überquert. Steuerung per Antippen (Wegsuche über das Wegenetz), Steuerkreuz oder Pfeiltasten/WASD. Die Straße beginnt im Tunnel und endet im Wendehammer; Autos halten vor dem Zebrastreifen, solange die Figur darauf steht. Jedes Lernhaus (Code-Labor/aim, Forscherhaus/experimenta, Spielewerkstatt/Haus der Familie, KI-Atelier/IPAI) hat drei Aufgaben je Altersstufe (Roboter programmieren, Stromkreis, Level bauen, Muster erkennen) und gibt ein Raketenteil; mit allen vier Teilen startet die Rakete und es gibt einen Entdecker-Pass. Bedienknöpfe nur mit Symbolen, beschriftete Mini-Karte mit großer Kartenansicht und Zoom, Pause, Vollbild, Vorlesen mit lokaler Stimme.
+- **Echte Kurse im Spiel:** In jedem Haus erscheinen passende echte Kurse als Sammelkarten mit Alter, Datum, Ort und Preis – gefiltert nach Thema und gewähltem Alter. „Einpacken“ legt sie in den Rucksack; „Zeig's Mama oder Papa“ erzeugt lokal einen QR-Code bzw. Teilen-Link auf `/sammlung/` (nur Kurs-Kennungen). Kinder melden sich nie selbst an.
+- **Teens (12–17):** eigener, dunkler Bereich ohne Kinderspiel: Themen, Suche und Filter, Sammlung, Zeitreise und Sternbild mit echten Angeboten.
+- **Eltern/Fachkräfte:** Volltextsuche, Thema, Alter, Zeitraum, Einrichtung, Veranstaltungsart, Zielgruppe, kostenlose Angebote und gemeldete freie Plätze; Elternbericht aus der Spielsitzung.
+- **Heilbronn-Karte (`/einrichtungen/`):** echte Karte aus OpenStreetMap-Daten (Neckar, Seen, Straßen, Bahn, Parks; einmalig vorab vereinfacht, lokal ausgeliefert) mit den vier Lernorten an ihren echten Adressen. Pins mit Ziehen/Zoomen und Entdecker-Tour; je Ort: Beschreibung, Adresse, Gehzeit vom Hauptbahnhof, Anzahl und Themen der aktuellen Angebote, nächste Termine mit Alter, Anmeldeweg in drei Schritten, Links zu Anmeldung/Route/Kontakt und woher die Daten kommen.
 - **Details:** Termine, Ort, Preis, Verfügbarkeit, Link zum Original, lokaler ICS-Download, QR-Code und Web-Share mit Kopieralternative.
-- **Vorlesen:** nur mit einer lokal verfügbaren deutschen Browser-/Systemstimme; sonst eine verständliche Meldung, ohne externen Sprachdienst.
-- **Datenschutz:** keine Konten, keine Analyseübertragung, kein externer KI-Chat, keine extern geladenen Angebotsbilder. Schriften und QR-Code-Erzeugung sind lokal. Löschen der App-Speicherdaten ist in der Oberfläche möglich.
+- **Datenschutz:** keine Konten, keine Analyseübertragung, kein externer KI-Chat, keine nachgeladenen Karten oder Angebotsbilder. Schriften, Kartendaten und QR-Code-Erzeugung sind lokal. Spielstand und Rucksack nur in der Browsersitzung; „Neu anfangen“ und ein Löschknopf auf der Datenschutzseite entfernen alles.
 
 Der gespeicherte Datenbestand enthält derzeit 78 Angebote: 61 öffentlich sichtbar und 17 wegen unsicherer Themenzuordnung zurückgehalten. Nicht jede Quelle hat Angebote für jede Altersgruppe. Die Oberfläche erfindet bei fehlenden Treffern keine Kurse.
 
@@ -53,7 +54,7 @@ Konfigurations-CSVs → vier Quelladapter → vereinheitlichen + klassifizieren
   → Korrekturen + Validierung → angebote.json / bericht.json / meta.json
   → Kalenderdateien → Next.js-Seiten → optional statischer Export
 
-Browser: 2D-Spiel, lokale Suche, Filter, Interessen-Kompass und Merkzettel
+Browser: Spielwelt, lokale Suche, Filter, Interessen-Kompass, Sammlung/Rucksack, Heilbronn-Karte
 ```
 
 Der Interessen-Kompass der Erwachsenenansichten ist regelbasiert, kein generativer KI-Chat. Auch die Musteraufgabe ist ein einfaches Lernspiel und trainiert kein echtes KI-Modell. Die Übungen und die Karte sind selbst erstellte Spielinhalte, keine bestätigten Kurse oder Gebäudepläne der Einrichtungen. Es werden keine Interessen, Bewegungen oder Suchtexte an einen Server gesendet. Eine Auswertung realer Nutzungsinteressen, eine geschützte Redaktion und ein externer KI-Berater sind in dieser Fassung nicht implementiert.
@@ -64,17 +65,17 @@ npm.cmd run build
 npm.cmd run export
 ```
 
-Aktuell: **122 automatisierte Tests erfolgreich**, Produktions-Build und statischer Export erfolgreich. Browserprüfung umfasst alle zwölf Kapitelaufgaben in jeder der drei Altersstufen, das Finale am Ideenbaum, Bewegung, Kollisionen, Kamera/Vollbild, Rucksack, Elternbericht, lokalen Begleiter, Wünsche/Download und mobile Ansichten bei 320, 390 und 768 px Breite. Einzelheiten und Grenzen: [docs/pruefbericht.md](docs/pruefbericht.md).
+Aktuell: **125 automatisierte Tests erfolgreich** (darunter: Figur verlässt nie das Wegenetz, Straße nur am Zebrastreifen, jede Haustür per Antippen erreichbar, Route mit echten Laufschritten ablaufbar, Autos halten am besetzten Zebrastreifen, größere Stadt bei mehr Häusern), Produktions-Build und statischer Export erfolgreich. Browserprüfung (Chrome, 1280 px und 390 px): Figurenwahl, Antippen eines Hauses, Weg über den Zebrastreifen, Tastatur am Fahrbahnrand, Aufgabe mit Belohnung, Raketenstart und Finale, Rucksack mit QR-Code, große Karte, Heilbronn-Karte, alle internen Links. Einzelheiten und Grenzen: [docs/pruefbericht.md](docs/pruefbericht.md).
 
 ## Datenschutz und Freigabestatus
 
 Diese Fassung dient der **lokalen Vorführung**. Vor öffentlicher Veröffentlichung sind Betreibername, ladungsfähige Anschrift, Kontakt, Hostinganbieter und dessen Datenverarbeitung einschließlich Auftragsverarbeitung/Transfers und Löschfristen verbindlich zu ergänzen. Dazu kommen die Nutzungsrechte bzw. Vereinbarungen zur Datenübernahme und die Prüfung der verbleibenden rechtlichen Anforderungen.
 
-Die Datenschutzseite erklärt auch technische Verbindungsdaten und behauptet keine vollständige Anonymität eines späteren Hostings. Die Art.-8-Altersgrenze wird nicht pauschal auf jede Nutzung angewendet. Sitzungsspeicher kann bei wiederhergestellten Browsersitzungen fortbestehen. Dauerhafte Merkzettel für Teens/Eltern sind nur nach bewusster Aktivierung vorgesehen. Kinder haben keine dauerhafte Speicheroption.
+Die Datenschutzseite erklärt auch technische Verbindungsdaten und behauptet keine vollständige Anonymität eines späteren Hostings. Die Art.-8-Altersgrenze wird nicht pauschal auf jede Nutzung angewendet. Sitzungsspeicher kann bei wiederhergestellten Browsersitzungen fortbestehen. Dauerhafte Sammlungen für Teens/Eltern sind nur nach bewusster Aktivierung vorgesehen. Kinder haben keine dauerhafte Speicheroption.
 
 Die ursprüngliche Spezifikation bleibt als Plan erhalten; sie beschreibt teilweise noch nicht gebaute Zusatzfunktionen. Maßgeblich für den aktuellen Stand sind diese README und [docs/entscheidungen.md](docs/entscheidungen.md). Challenge-PDF und Vortragsunterlagen unter `aim/` sind per `.gitignore` vom Repository ausgeschlossen.
 
-Die Challenge-README mit neun Seiten und die aim-Präsentation wurden lokal vollständig gelesen. Der später bereitgestellte Freigabelink ist durch die Umgebung nicht erreichbar; zusätzliche Unterlagen darin sind noch nicht bestätigt. Der [Regelabgleich](docs/regeln-abgleich.md) unterscheidet umgesetzte Anforderungen, Bonusfunktionen und offene Prüfpunkte. Die aktive Spielwelt verwendet acht eigens generierte, lokal ausgelieferte Pixelgrafiken für Figur, Häuser, Baum, Bank und Roboter. [Herkunft](docs/bildnachweise.md) und [vollständige Prompts](docs/pixel-prompts.json) sind dokumentiert. Die einzeln geprüften Links und Abrufgrenzen stehen im [Quellencheck](docs/quellen-check.md).
+Die Challenge-README mit neun Seiten und die aim-Präsentation wurden lokal vollständig gelesen. Der KIT-Freigabeordner wurde abgerufen; er enthält genau diese beiden Dateien. Der [Regelabgleich](docs/regeln-abgleich.md) unterscheidet umgesetzte Anforderungen, Bonusfunktionen und offene Prüfpunkte. Die Spielwelt verwendet eigens generierte, lokal ausgelieferte Pixelgrafiken für Häuser, Baum, Bank und Roboter; die sechs Spielfiguren, Autos, Straßen und die Rakete sind Codegrafik. [Herkunft](docs/bildnachweise.md) und [vollständige Prompts](docs/pixel-prompts.json) sind dokumentiert. Die einzeln geprüften Links und Abrufgrenzen stehen im [Quellencheck](docs/quellen-check.md).
 
 ## Vorbereitung für die spätere Präsentation
 
