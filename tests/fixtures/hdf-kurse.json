@@ -1,0 +1,507 @@
+[
+ {
+  "knr": "261N103102",
+  "mandant_id": "0",
+  "hauptdozent_dnr": "14164",
+  "level": "0",
+  "haupttitel": "PEKiP 8-9/26 in Neckarsulm",
+  "hauptuntertitel": "Bewegungs- und Spielanregungen für Babys  im 1. Jahr",
+  "inhalt": "Mit PEKiP gut begleitet durch das aufregende erste Lebensjahr\nDas erste Lebensjahr ist für Babys und Eltern ein ganz besonderes Jahr, in dem sowohl die Babys als auch die Eltern viele neue Erfahrungen machen. PEKiP begleitet Sie dabei, ihr Baby auf seinem individuellen Entwicklungsstand „abzuholen“ und ihm liebevoll durch (Spiel-)Anregungen nächste Schritte aufzuzeigen und seine individuellen Bedürfnisse wahrzunehmen. PEKiP stärkt die Beziehung zwischen Eltern und Baby und ermöglicht den Kindern erste soziale Kontakte zu Gleichaltrigen.\nIm Austausch mit anderen Eltern und der zertifizierten PEKiP-Gruppenleiterin lernen Sie von und miteinander und erhalten Antworten, Anregungen und Unterstützung auf Ihre Fragen. \nIn der PEKiP-Gruppe treffen sich Eltern mit Babys ab der 4. – 6. Lebenswoche, ein späterer Einstieg ist möglich. Die Babys sind im gleichen Alter. \nWir bieten Kurse mit 30 Terminen an, die Sie und Ihr Baby in einer festen Gruppe durch das ganze erste Lebensjahr begleiten. Die Gebühr beträgt für dieses Kurangebot 11,60 € pro Treffen und wird in 3 Raten à 116,– € abgebucht.",
+  "web_info": "Mit PEKiP gut begleitet durch das aufregende erste Lebensjahr\nDas erste Lebensjahr ist für Babys und Eltern ein ganz besonderes Jahr, in dem sowohl die Babys als auch die Eltern viele neue Erfahrungen machen. PEKiP begleitet Sie dabei, ihr Baby auf seinem individuellen Entwicklungsstand „abzuholen“ und ihm liebevoll durch (Spiel-)Anregungen nächste Schritte aufzuzeigen und seine individuellen Bedürfnisse wahrzunehmen. PEKiP stärkt die Beziehung zwischen Eltern und Baby und ermöglicht den Kindern erste soziale Kontakte zu Gleichaltrigen.\nIm Austausch mit anderen Eltern und der zertifizierten PEKiP-Gruppenleiterin lernen Sie von und miteinander und erhalten Antworten, Anregungen und Unterstützung auf Ihre Fragen. \nIn der PEKiP-Gruppe treffen sich Eltern mit Babys ab der 4. – 6. Lebenswoche, ein späterer Einstieg ist möglich. Die Babys sind im gleichen Alter. \nWir bieten Kurse mit 30 Terminen an, die Sie und Ihr Baby in einer festen Gruppe durch das ganze erste Lebensjahr begleiten. Die Gebühr beträgt für dieses Kurangebot 11,60 € pro Treffen und wird in 3 Raten à 116,– € abgebucht.",
+  "internetaktiv": "W",
+  "semester": "H26",
+  "beginndat": "2026-11-17",
+  "endedat": "2027-07-20",
+  "beginnuhr": "11:00",
+  "endeuhr": "12:30",
+  "dauer": "30 x",
+  "kurstyp": "Eltern-Kind-Kurs",
+  "online_kurstyp": "Präsenzkurs",
+  "ort": "Neckarsulm, Gemeindehaus Viktorshöhe, Damaschkestraße 23",
+  "ortplz": "74172",
+  "ortname": "Neckarsulm",
+  "ortraumname": "Neckarsulm, Gemeindehaus Viktorshöhe, Damaschkestraße 23",
+  "ortid": "4",
+  "fachb": "1",
+  "gebnorm": "348.00",
+  "tnanmeldungen": "18",
+  "tnmax": "16",
+  "tnmin": "12",
+  "material": "2 Bade- oder Moltontücher, Ersatzwindel, leichte, bequeme Kleidung und Socken für die Eltern",
+  "highlightkurs": "F",
+  "offeneferienbetreuung": "",
+  "related": "",
+  "letzte_sync": "2026-11-13 18:10:16",
+  "status": "3",
+  "termine": [
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-11-10",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "Ausfall"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-11-17",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-11-24",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-12-01",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-12-08",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-12-15",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2026-12-22",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-01-12",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-01-19",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-01-26",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-02-02",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-02-16",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-02-23",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-03-02",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-03-09",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-03-16",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-03-23",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-04-06",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-04-13",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-04-20",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-04-27",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-05-04",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-05-11",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-06-01",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-06-08",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-06-15",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-06-22",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-06-29",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-07-06",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-07-13",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "tag": "2027-07-20",
+    "zeitvon": "11:00:00",
+    "zeitbis": "12:30:00",
+    "termin_status": "normale Planung"
+   }
+  ],
+  "gebuehren": [
+   {
+    "kurs_knr": "261N103102",
+    "betragnorm": "116.00",
+    "text": "€",
+    "zahlplan": "",
+    "zahlplanbetrag": "0.00",
+    "faelligkeit": "2026-11-17"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "betragnorm": "116.00",
+    "text": "2. Rate",
+    "zahlplan": "",
+    "zahlplanbetrag": "0.00",
+    "faelligkeit": "2027-01-26"
+   },
+   {
+    "kurs_knr": "261N103102",
+    "betragnorm": "116.00",
+    "text": "Restzahlung",
+    "zahlplan": "",
+    "zahlplanbetrag": "0.00",
+    "faelligkeit": "2027-04-20"
+   }
+  ],
+  "keywords": [
+   "bedürfsorientiert",
+   "Bindung stärken",
+   "Eltern-Kind-Bindung",
+   "Eltern-kind-kurs",
+   "Elternkompetenz",
+   "Entwicklung Baby",
+   "frühkindliche Bildung",
+   "PEKiP",
+   "PEKiP Kurs",
+   "Prager-Eltern-Kind Programm"
+  ],
+  "kategorien": {
+   "151": "Baby (0-1 Jahr)"
+  },
+  "firmen_namen": [],
+  "themen": {
+   "3": "PEKiP/ LEFino/ Rollen-Robben-Krabbeln"
+  },
+  "dozenten": [
+   {
+    "dnr": "14164",
+    "vorname": "Vorname",
+    "name": "Nachname",
+    "titel": "",
+    "email": "dozent@example.org",
+    "qualifikationen": {
+     "qualifikation": [
+      "Dipl. Sozialpädagogin, PEKiP-Leiterin"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "knr": "261H304002",
+  "mandant_id": "0",
+  "hauptdozent_dnr": "68503",
+  "level": "0",
+  "haupttitel": "Programmieren Lernen - Scratch",
+  "hauptuntertitel": "Für Kinder von 8 bis 12 Jahren ohne Begleitperson",
+  "inhalt": "In diesem Workshop erlernen die Kinder die visuelle Programmiersprache Scratch, speziell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder durch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zweiergruppen entdecken sie die Grundlagen des Programmierens und gestalten ihre eigenen Charaktere, die sie zum Leben erwecken - sie lassen sie laufen, hüpfen und spannende Aufgaben meistern. Scratch fördert kreatives Denken und Problemlösungsfähigkeiten, da die Kinder lernen, logische Abläufe zu erstellen und ihre Ideen in digitale Projekte umzusetzen.",
+  "web_info": "In diesem Workshop erlernen die Kinder die visuelle Programmiersprache Scratch, speziell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder durch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zweiergruppen entdecken sie die Grundlagen des Programmierens und gestalten ihre eigenen Charaktere, die sie zum Leben erwecken - sie lassen sie laufen, hüpfen und spannende Aufgaben meistern. Scratch fördert kreatives Denken und Problemlösungsfähigkeiten, da die Kinder lernen, logische Abläufe zu erstellen und ihre Ideen in digitale Projekte umzusetzen.",
+  "internetaktiv": "W",
+  "semester": "H26",
+  "beginndat": "2026-11-28",
+  "endedat": "2026-11-28",
+  "beginnuhr": "12:30",
+  "endeuhr": "15:30",
+  "dauer": "1 x",
+  "kurstyp": "Kinderkurs",
+  "online_kurstyp": "Präsenzkurs",
+  "ort": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4",
+  "ortplz": "74076",
+  "ortname": "Heilbronn",
+  "ortraumname": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4",
+  "ortid": "159",
+  "fachb": "3",
+  "gebnorm": "30.00",
+  "tnanmeldungen": "8",
+  "tnmax": "8",
+  "tnmin": "6",
+  "material": "Schreibzeug, Ordner, Snack, Getränk",
+  "highlightkurs": "F",
+  "offeneferienbetreuung": "F",
+  "related": "",
+  "letzte_sync": "2026-11-13 18:10:14",
+  "status": "3",
+  "termine": [
+   {
+    "kurs_knr": "261H304002",
+    "tag": "2026-11-28",
+    "zeitvon": "12:30:00",
+    "zeitbis": "15:30:00",
+    "termin_status": "normale Planung"
+   }
+  ],
+  "gebuehren": [
+   {
+    "kurs_knr": "261H304002",
+    "betragnorm": "30.00",
+    "text": "€",
+    "zahlplan": "",
+    "zahlplanbetrag": "0.00",
+    "faelligkeit": "2026-11-28"
+   }
+  ],
+  "keywords": [
+   "Baukasten",
+   "Digitale Medien",
+   "Ferien",
+   "Ferienbetreuung",
+   "Ferienprogramm",
+   "flexibel",
+   "individuell",
+   "Kinderbetreuung",
+   "Kinderferienbetreuung",
+   "KinderFerienBox",
+   "modular",
+   "Module"
+  ],
+  "kategorien": {
+   "1282": "Schulkinder & Jugendliche (ab 6 Jahren)"
+  },
+  "firmen_namen": [],
+  "themen": {
+   "184": "Digitale Familienwerkstatt"
+  },
+  "dozenten": [
+   {
+    "dnr": "68503",
+    "vorname": "Vorname",
+    "name": "Nachname",
+    "titel": "",
+    "email": "dozent@example.org",
+    "qualifikationen": {
+     "qualifikation": [
+      "Puppenspielerin",
+      "Wirtschaftsinformatikerin (M.A.)"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "knr": "261H207008",
+  "mandant_id": "0",
+  "hauptdozent_dnr": "69331",
+  "level": "0",
+  "haupttitel": "Spielerisch mit ScratchJunior eine grünere, saubere Welt programmieren",
+  "hauptuntertitel": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson",
+  "inhalt": "In diesem fröhlichen Mitmach-Workshop entdecken wir gemeinsam, wie spannend Programmieren sein kann. Programmieren ist eine eigene Sprache – und mit ScratchJunior können schon die Jüngsten sie spielerisch lernen. Ganz ohne Vorkenntnisse gestalten die kleinen Programmierer eigene interaktive Geschichten, lustige Animationen und spaßige Spiele. \nGemeinsam tauchen wir in eine nachhaltige Welt ein, in der wir bunte Blumen und Obstbäume pflanzen, summende Bienen und flatternde Schmetterling retten und Müll einsammeln. Dabei lernen die Kinder die ersten Grundlagen der Programmierung kennen, während sie gleichzeitig für Umweltschutz sensibilisiert werden. \nDer Fokus liegt auf dem gemeinsamen Lernen, Experimentieren und Entdecken. Eltern begleiten ihre Kinder aktiv und unterstützen den Bildungsprozess.",
+  "web_info": "In diesem fröhlichen Mitmach-Workshop entdecken wir gemeinsam, wie spannend Programmieren sein kann. Programmieren ist eine eigene Sprache – und mit ScratchJunior können schon die Jüngsten sie spielerisch lernen. Ganz ohne Vorkenntnisse gestalten die kleinen Programmierer eigene interaktive Geschichten, lustige Animationen und spaßige Spiele. \nGemeinsam tauchen wir in eine nachhaltige Welt ein, in der wir bunte Blumen und Obstbäume pflanzen, summende Bienen und flatternde Schmetterling retten und Müll einsammeln. Dabei lernen die Kinder die ersten Grundlagen der Programmierung kennen, während sie gleichzeitig für Umweltschutz sensibilisiert werden. \nDer Fokus liegt auf dem gemeinsamen Lernen, Experimentieren und Entdecken. Eltern begleiten ihre Kinder aktiv und unterstützen den Bildungsprozess.",
+  "internetaktiv": "W",
+  "semester": "H26",
+  "beginndat": "2027-01-30",
+  "endedat": "2027-01-30",
+  "beginnuhr": "09:30",
+  "endeuhr": "11:30",
+  "dauer": "1 x",
+  "kurstyp": "Eltern-Kind-Kurs",
+  "online_kurstyp": "Präsenzkurs",
+  "ort": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+  "ortplz": "74076",
+  "ortname": "Heilbronn",
+  "ortraumname": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+  "ortid": "160",
+  "fachb": "2",
+  "gebnorm": "10.00",
+  "tnanmeldungen": "7",
+  "tnmax": "16",
+  "tnmin": "8",
+  "material": "Tablet (sofern vorhanden)",
+  "highlightkurs": "F",
+  "offeneferienbetreuung": "F",
+  "related": "",
+  "letzte_sync": "2026-11-13 18:10:13",
+  "status": "1",
+  "termine": [
+   {
+    "kurs_knr": "261H207008",
+    "tag": "2027-01-30",
+    "zeitvon": "09:30:00",
+    "zeitbis": "11:30:00",
+    "termin_status": "normale Planung"
+   }
+  ],
+  "gebuehren": [
+   {
+    "kurs_knr": "261H207008",
+    "betragnorm": "10.00",
+    "text": "€",
+    "zahlplan": "",
+    "zahlplanbetrag": "0.00",
+    "faelligkeit": "2027-01-30"
+   }
+  ],
+  "keywords": [
+   ".now",
+   "App",
+   "Digital",
+   "Digitale Kompetenzen",
+   "Digitale Medien",
+   "Digitale Welt",
+   "EGC",
+   "European Green Capital",
+   "Familie",
+   "grün",
+   "Grüne Hauptstadt Europas",
+   "Medien",
+   "Medienkompetenz",
+   "Mediennutzung",
+   "nachhaltig",
+   "Nachhaltigkeit",
+   "Programmieren",
+   "Programmiersprache",
+   "ScratchJR",
+   "Umweltbewusst",
+   "Umweltbewusstsein",
+   "Zukunft"
+  ],
+  "kategorien": {
+   "13": "Eltern",
+   "199": "Kindergartenkind (3-6 Jahre)",
+   "1282": "Schulkinder & Jugendliche (ab 6 Jahren)"
+  },
+  "firmen_namen": [],
+  "themen": {
+   "184": "Digitale Familienwerkstatt",
+   "728914": "Nachhaltigkeit"
+  },
+  "dozenten": [
+   {
+    "dnr": "69331",
+    "vorname": "Vorname",
+    "name": "Nachname",
+    "titel": "",
+    "email": "dozent@example.org",
+    "qualifikationen": {
+     "qualifikation": [
+      "Software-Ingenieurin"
+     ]
+    }
+   }
+  ]
+ }
+]
