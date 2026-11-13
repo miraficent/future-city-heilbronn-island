@@ -1,0 +1,11 @@
+# Challenge-Unterlagen (nicht veröffentlichen)
+aim/
+
+node_modules/
+.next/
+out/
+coverage/
+.vercel
+.env
+.env*.local
+*.log
