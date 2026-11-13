@@ -47,7 +47,9 @@ export function parseThemen(csv: string): Thema[] {
   return leseZeilen(csv).map((z) => ({
     id: z.id?.trim() ?? "",
     name: z.name?.trim() ?? "",
+    ...(z.kindername?.trim() ? { kindername: z.kindername.trim() } : {}),
     emoji: z.emoji?.trim() ?? "",
+    ...(/^#[0-9a-f]{6}$/i.test(z.farbe?.trim() ?? "") ? { farbe: z.farbe?.trim() } : {}),
     schlagwoerter: liste(z.schlagwoerter),
   }));
 }

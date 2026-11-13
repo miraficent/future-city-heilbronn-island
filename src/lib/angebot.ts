@@ -75,7 +75,11 @@ export type Quelle = {
 export type Thema = {
   id: string;
   name: string;
+  /** Einfacher Name für den Kinder-Modus, z. B. „Code-Planet“. */
+  kindername?: string;
   emoji: string;
+  /** Planetenfarbe als Hex-Wert; ohne Angabe wählt die App eine Farbe. */
+  farbe?: string;
   schlagwoerter: string[];
 };
 

@@ -1,5 +1,5 @@
 {
-  "erstellt": "2026-11-13T19:29:41.397Z",
+  "erstellt": "2026-11-13T19:32:58.711Z",
   "quellen": [
     {
       "quelle": "aim",
@@ -18,7 +18,7 @@
         "aim:271994CMDB",
         "aim:271993AOER"
       ],
-      "dauerMs": 37
+      "dauerMs": 38
     },
     {
       "quelle": "experimenta",
@@ -30,7 +30,7 @@
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 4
+      "dauerMs": 3
     },
     {
       "quelle": "hdf",
@@ -49,7 +49,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 62
+      "dauerMs": 64
     },
     {
       "quelle": "ipai",

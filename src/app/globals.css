@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * COSMOS-Entdecker – „Gedruckter Sternatlas“
+ * Risograph-Ästhetik: warmes Papier, kräftige Druckfarben, Rasterpunkte, leicht versetzte Farbebenen.
+ * Drei Modi teilen dieselben Tokens; Teen ist der „Nachtdruck“.
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-atkinson), ui-sans-serif, sans-serif;
+  --font-display: var(--font-unbounded), var(--font-atkinson), sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
+
+  --color-papier: var(--papier);
+  --color-papier-2: var(--papier-2);
+  --color-tinte: var(--tinte);
+  --color-tinte-2: var(--tinte-2);
+  --color-linie: var(--linie);
+  --color-flaeche: var(--flaeche);
+  --color-akzent: var(--akzent);
+
+  --color-ki: #ff5a36;
+  --color-ki-text: #b8340f;
+  --color-coding: #00a3a3;
+  --color-coding-text: #006b6b;
+  --color-gaming: #ffbf1f;
+  --color-gaming-text: #7d5200;
+  --color-blau: #2f4bff;
+  --color-pink: #ff4fa3;
+  --color-nacht: #121022;
+  --color-nacht-2: #1e1b35;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --papier: #f3ecdc;
+  --papier-2: #e8dec8;
+  --tinte: #1c1934;
+  --tinte-2: #4a4560;
+  --linie: #1c193426;
+  --flaeche: #fbf7ee;
+  --akzent: #2f4bff;
+  --raster: radial-gradient(currentColor 1.1px, transparent 1.5px);
+  color-scheme: light;
+}
+
+[data-modus="teen"] {
+  --papier: #121022;
+  --papier-2: #1e1b35;
+  --tinte: #f3ecdc;
+  --tinte-2: #b9b2cc;
+  --linie: #f3ecdc26;
+  --flaeche: #1a1730;
+  --akzent: #ff4fa3;
+  color-scheme: dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+/* Papierkorn – liegt über allem, fängt keine Klicks ab. */
+.korn::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.2 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-modus="teen"].korn::after,
+[data-modus="teen"] .korn::after {
+  mix-blend-mode: screen;
+  opacity: 0.08;
+}
+
+/* Rasterpunkte in der aktuellen Textfarbe */
+.raster {
+  background-image: var(--raster);
+  background-size: 7px 7px;
+}
+
+.raster-fein {
+  background-image: var(--raster);
+  background-size: 4px 4px;
+}
+
+/* Riso-Versatz: zweite Farbebene leicht verschoben */
+.versatz {
+  box-shadow: 5px 5px 0 0 var(--versatz-farbe, var(--color-ki));
+}
+
+.versatz-text {
+  text-shadow: 3px 3px 0 var(--versatz-farbe, var(--color-ki));
+}
+
+/* Sichtbarer Fokus für Tastatur (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--akzent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.nur-screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes kreisen {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes funkeln {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kreisen {
+  animation: kreisen 60s linear infinite;
+}
+
+.funkeln {
+  animation: funkeln 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "aktualisiert": "2026-11-13T19:29:41.397Z",
+  "aktualisiert": "2026-11-13T19:32:58.711Z",
   "quellen": [
     {
       "id": "aim",
@@ -30,7 +30,9 @@
     {
       "id": "ki",
       "name": "Künstliche Intelligenz",
+      "kindername": "KI-Planet",
       "emoji": "🤖",
+      "farbe": "#FF5A36",
       "schlagwoerter": [
         "KI",
         "AI",
@@ -49,7 +51,9 @@
     {
       "id": "coding",
       "name": "Coding & Robotik",
+      "kindername": "Code-Planet",
       "emoji": "💻",
+      "farbe": "#00A3A3",
       "schlagwoerter": [
         "Programmier",
         "Coding",
@@ -74,7 +78,9 @@
     {
       "id": "gaming",
       "name": "Gaming & Games",
+      "kindername": "Spiele-Planet",
       "emoji": "🎮",
+      "farbe": "#FFBF1F",
       "schlagwoerter": [
         "Game",
         "Gaming",
