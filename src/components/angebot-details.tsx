@@ -10,7 +10,7 @@ import { erzeugeIcs } from "@/lib/ics";
 import { themenStile } from "@/lib/themen-stil";
 import { slugAusId } from "@/lib/routen";
 import { EinrichtungBadge, kurzname } from "./einrichtung-badge";
-import { useMerkzettel } from "./merkzettel";
+import { useSammlung } from "./sammlung";
 import { Planet } from "./planet";
 import { Seitenrahmen } from "./seitenrahmen";
 import { Symbol } from "./symbol";
@@ -23,7 +23,7 @@ export function AngebotDetails({ angebot: a, meta, jetzt }: { angebot: Angebot; 
   const [liest, setLiest] = useState(false);
   const [sprache, setSprache] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
-  const merk = useMerkzettel(modus);
+  const merk = useSammlung(modus);
   const quelle = meta.quellen.find((q) => q.id === a.quelle);
   const stil = themenStile(meta.themen)[a.themen[0] ?? ""];
   const termin = naechsterTermin(a, new Date(jetzt));
@@ -88,7 +88,7 @@ export function AngebotDetails({ angebot: a, meta, jetzt }: { angebot: Angebot; 
           <p className="mt-7 text-lg leading-relaxed">{a.teaser}</p>
           <p className="mt-3 text-sm text-tinte-2">Gekürzte Beschreibung des Veranstalters. Den vollständigen Inhalt und verbindliche Angaben findest du auf der Originalseite.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <button className="knopf" aria-pressed={merk.ids.includes(a.id)} onClick={() => merk.merken(a.id)}><Symbol name={merk.ids.includes(a.id)?"check":"backpack"}/>{merk.ids.includes(a.id) ? "Auf deinem Merkzettel" : "Das möchte ich mir merken"}</button>
+            <button className="knopf" aria-pressed={merk.ids.includes(a.id)} onClick={() => merk.merken(a.id)}><Symbol name={merk.ids.includes(a.id)?"check":"star"}/>{merk.ids.includes(a.id) ? "In deiner Sammlung" : "In meine Sammlung"}</button>
             {sprache && <button className="knopf" onClick={vorlesen}><Symbol name="volume"/>{liest ? "Vorlesen stoppen" : "Vorlesen"}</button>}
           </div>
           <h2 className="mt-10 font-display text-xl font-bold">Wann geht es los?</h2>
@@ -106,7 +106,7 @@ export function AngebotDetails({ angebot: a, meta, jetzt }: { angebot: Angebot; 
       </div>
       <p role="status" className="mt-5 text-sm">{meldung}</p>
       <p className="mt-8 text-xs text-tinte-2">Datenstand: {new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", dateStyle: "medium" }).format(new Date(meta.aktualisiert))}. Verfügbarkeit und Preise können sich ändern.</p>
-      <dialog ref={dialog} className="quiz-dialog" aria-labelledby="teilen-titel"><div className="p-7"><div className="flex justify-between gap-4"><h2 id="teilen-titel" className="font-display text-xl font-bold">Eine gute Idee zum Weiterzeigen.</h2><button className="chip" onClick={() => dialog.current?.close()} aria-label="Teilen schließen">✕</button></div><p className="mt-4 text-sm">Der Link enthält nur das Angebot. Deine Interessen und dein Merkzettel werden nicht mitgeschickt.</p>{qr && <div className="mt-5 flex justify-center">{/* Lokaler QR-Code, ohne externe Bild-Anfrage. */}<img width={240} height={240} src={qr} alt="QR-Code zum Link dieses Angebots" /></div>}<label className="feld-label mt-5">Link zum Angebot<input value={url} readOnly onFocus={(e) => e.target.select()} /></label><div className="mt-5 flex flex-wrap gap-3"><button className="knopf knopf-primaer" onClick={kopieren}>Link kopieren</button><button className="knopf" onClick={systemTeilen}>Teilen mit …</button></div><p role="status" className="mt-3 text-sm">{meldung}</p><p className="mt-4 text-xs text-tinte-2">Am selben Computer funktioniert auch eine lokale Adresse. Für ein anderes Gerät brauchst du eine veröffentlichte Website.</p></div></dialog>
+      <dialog ref={dialog} className="quiz-dialog" aria-labelledby="teilen-titel"><div className="p-7"><div className="flex justify-between gap-4"><h2 id="teilen-titel" className="font-display text-xl font-bold">Eine gute Idee zum Weiterzeigen.</h2><button className="chip" onClick={() => dialog.current?.close()} aria-label="Teilen schließen">✕</button></div><p className="mt-4 text-sm">Der Link enthält nur das Angebot. Deine Interessen und dein Sammlung werden nicht mitgeschickt.</p>{qr && <div className="mt-5 flex justify-center">{/* Lokaler QR-Code, ohne externe Bild-Anfrage. */}<img width={240} height={240} src={qr} alt="QR-Code zum Link dieses Angebots" /></div>}<label className="feld-label mt-5">Link zum Angebot<input value={url} readOnly onFocus={(e) => e.target.select()} /></label><div className="mt-5 flex flex-wrap gap-3"><button className="knopf knopf-primaer" onClick={kopieren}>Link kopieren</button><button className="knopf" onClick={systemTeilen}>Teilen mit …</button></div><p role="status" className="mt-3 text-sm">{meldung}</p><p className="mt-4 text-xs text-tinte-2">Am selben Computer funktioniert auch eine lokale Adresse. Für ein anderes Gerät brauchst du eine veröffentlichte Website.</p></div></dialog>
     </main>
   </Seitenrahmen>;
 }

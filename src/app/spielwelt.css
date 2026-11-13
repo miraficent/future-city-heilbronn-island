@@ -583,3 +583,6 @@
   .figur-laeuft .figur-koerper, .figur-laeuft .figur-bein-a, .figur-laeuft .figur-bein-b, .figur-laeuft .figur-arm-a, .figur-laeuft .figur-arm-b,
   .ziel-marke, .tuer-hinweis, .ente, .karte-puls { animation: none !important; }
 }
+
+.neu-anfangen { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+.neu-anfangen .symbol { width: 20px; height: 20px; }

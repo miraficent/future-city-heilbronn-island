@@ -30,7 +30,7 @@ export default function Start() {
             <span className="block text-[0.52em] tracking-[0.02em]">Entdecker</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg sm:text-xl">
-            Eine spielbare 2D-Lerninsel für Kinder. Mit echten Kursen zu <strong>KI, Coding und Gaming</strong> von aim, experimenta,
+            Eine Spielwelt für Kinder, ein eigener Bereich für Teens, eine Kurssuche und eine echte Heilbronn-Karte. Mit echten Kursen zu <strong>KI, Coding und Gaming</strong> von aim, experimenta,
             Haus der Familie und IPAI. Ohne Konto. Ohne Tracking.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Start() {
         <ul className="mt-6 grid gap-5 md:grid-cols-3">
           <li>
             <Link
-              href="/kind"
+              href="/kind/"
               className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-tinte bg-flaeche p-6 transition-transform hover:-translate-y-1 hover:-rotate-1"
               style={{ ["--versatz-farbe" as string]: erster?.farbe ?? "#ff5a36" }}
             >
@@ -66,12 +66,12 @@ export default function Start() {
                 <Symbol name="robot" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich bin ein Kind</span>
-              <span className="mt-1 text-base text-tinte-2">6 bis 11 Jahre · 2D-Spielwelt und echte Abenteuer</span>
+              <span className="mt-1 text-base text-tinte-2">6 bis 11 Jahre · Spielwelt: bau die COSMOS-Rakete</span>
             </Link>
           </li>
           <li>
             <Link
-              href="/teen"
+              href="/teen/"
               data-modus="teen"
               className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-nacht bg-nacht p-6 text-[#f3ecdc] transition-transform hover:-translate-y-1 hover:rotate-1"
               style={{ ["--versatz-farbe" as string]: "#ff4fa3" }}
@@ -92,12 +92,12 @@ export default function Start() {
                 <Symbol name="code" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich bin ein Teen</span>
-              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · Spielmissionen & neue Ideen</span>
+              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · Kurse, Lernpfade & deine Sammlung</span>
             </Link>
           </li>
           <li>
             <Link
-              href="/eltern"
+              href="/eltern/"
               className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-tinte bg-papier-2 p-6 transition-transform hover:-translate-y-1"
               style={{ ["--versatz-farbe" as string]: "#2f4bff" }}
             >
@@ -106,7 +106,7 @@ export default function Start() {
                 <Symbol name="compass" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich suche für mein Kind</span>
-              <span className="mt-1 text-base text-tinte-2">Eltern & Fachkräfte · Entdeckungen, Kurse & Kalender</span>
+              <span className="mt-1 text-base text-tinte-2">Eltern & Fachkräfte · Suche, Kalender & Karte</span>
             </Link>
           </li>
         </ul>
@@ -128,12 +128,12 @@ export default function Start() {
         <div className="sm:text-right">
           <p>
             Kein Konto, keine Cookies, kein Tracking.{" "}
-            <Link href="/datenschutz" className="font-bold underline underline-offset-4">
+            <Link href="/datenschutz/" className="font-bold underline underline-offset-4">
               So gehen wir mit Daten um
             </Link>
           </p>
           <p className="mt-1 text-tinte-2">Echte Angebotsdaten · letzter gespeicherter Stand vom {ausgabeFormat.format(new Date(META.aktualisiert))}.</p>
-          <p className="mt-2 flex flex-wrap gap-4 sm:justify-end"><Link className="underline underline-offset-4" href="/impressum">Impressum</Link><Link className="underline underline-offset-4" href="/projekt">Projekt & Datenstatus</Link></p>
+          <p className="mt-2 flex flex-wrap gap-4 sm:justify-end"><Link className="underline underline-offset-4" href="/impressum/">Impressum</Link><Link className="underline underline-offset-4" href="/projekt/">Projekt & Datenstatus</Link></p>
         </div>
       </footer>
     </main>

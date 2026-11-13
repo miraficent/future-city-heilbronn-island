@@ -35,7 +35,7 @@ export function Angebotskarte({ angebot: a, meta, modus, gemerkt, merken, jetzt 
         <p className={`mt-4 text-xs font-bold ${a.status === "ausgebucht" ? "text-tinte-2" : ""}`}>{statusText(a.status)}</p>
         <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-5">
           <Link className="inline-flex min-h-12 items-center font-bold underline underline-offset-4" href={`/angebot/${slugAusId(a.id)}?modus=${modus}`}>{modus === "kind" ? "Das will ich sehen →" : "Angebot ansehen →"}</Link>
-          <button className="merk-knopf gap-2" aria-pressed={gemerkt} aria-label={`${a.titel} ${gemerkt ? "vom Merkzettel entfernen" : "merken"}`} onClick={() => merken(a.id)}><Symbol name={gemerkt?"check":"backpack"} className="!size-4"/>{gemerkt ? "Gemerkt" : "Merken"}</button>
+          <button className="merk-knopf gap-2" aria-pressed={gemerkt} aria-label={`${a.titel} ${gemerkt ? "aus der Sammlung nehmen" : "sammeln"}`} onClick={() => merken(a.id)}><Symbol name={gemerkt?"check":"star"} className="!size-4"/>{gemerkt ? "Gesammelt" : "Sammeln"}</button>
         </div>
       </div>
     </article>

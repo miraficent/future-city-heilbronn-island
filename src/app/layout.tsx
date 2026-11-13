@@ -4,6 +4,7 @@ import "./spiel.css";
 import "./pixel.css";
 import "./abenteuer.css";
 import "./spielwelt.css";
+import "./karte.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASIS_URL ?? "http://localhost:3000"),

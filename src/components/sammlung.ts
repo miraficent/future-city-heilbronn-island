@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { lies, schreibe, loesche } from "@/lib/speicher";
 import type { Modus } from "@/lib/entdecken";
 
-export function useMerkzettel(modus: Modus) {
+export function useSammlung(modus: Modus) {
   const [ids, setIds] = useState<string[]>([]);
   const [dauerhaft, setDauerhaft] = useState(false);
   const schluessel = `merkliste.${modus}`;

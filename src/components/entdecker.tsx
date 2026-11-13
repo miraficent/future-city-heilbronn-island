@@ -11,7 +11,7 @@ import { themenStile } from "@/lib/themen-stil";
 import { slugAusId } from "@/lib/routen";
 import { Angebotskarte } from "./angebotskarte";
 import { kurzname } from "./einrichtung-badge";
-import { useMerkzettel } from "./merkzettel";
+import { useSammlung } from "./sammlung";
 import { Planet } from "./planet";
 import { Symbol } from "./symbol";
 
@@ -36,7 +36,7 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
   const [quizErgebnis, setQuizErgebnis] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const ergebnisRef = useRef<HTMLHeadingElement>(null);
-  const merk = useMerkzettel(modus);
+  const merk = useSammlung(modus);
   const stile = Object.values(themenStile(meta.themen));
   const inhalt = INHALTE[modus];
   const basis = useMemo(() => fuerModus(angebote, modus), [angebote, modus]);
@@ -82,9 +82,9 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
           <p className="relative font-mono text-xs uppercase tracking-widest">Dein Entdecker-Pass</p>
           <div className="relative mt-5 flex items-center gap-5">
             <Symbol name="backpack" className="!size-16"/>
-            <div><strong className="font-display text-3xl">{merk.ids.filter((id) => basis.some((a) => a.id === id)).length}</strong><p className="text-sm">{modus === "kind" ? "gesammelte Ideen" : "gemerkte Angebote"}</p></div>
+            <div><strong className="font-display text-3xl">{merk.ids.filter((id) => basis.some((a) => a.id === id)).length}</strong><p className="text-sm">{modus === "kind" ? "gesammelte Ideen" : "gesammelte Angebote"}</p></div>
           </div>
-          <button className="knopf relative mt-6 w-full justify-center bg-flaeche" onClick={() => { setMerkansicht(!merkansicht); ergebnisRef.current?.focus(); }}>{merkansicht ? "← Alle Angebote entdecken" : "Meinen Merkzettel öffnen"}</button>
+          <button className="knopf relative mt-6 w-full justify-center bg-flaeche" onClick={() => { setMerkansicht(!merkansicht); ergebnisRef.current?.focus(); }}>{merkansicht ? "← Alle Angebote entdecken" : "Meine Sammlung öffnen"}</button>
           <p className="relative mt-3 text-xs text-tinte-2">{modus === "kind" ? "Sammle, was dir gefällt. Zeig es danach einem Erwachsenen." : "Ideen sammeln, vergleichen und gemeinsam entscheiden."}</p>
         </aside>
       </section>
@@ -124,14 +124,14 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-          <h2 id="ergebnis" ref={ergebnisRef} tabIndex={-1} className="scroll-mt-8 font-display text-xl font-bold" aria-live="polite">{merkansicht ? "Dein Merkzettel" : quizErgebnis ? "Deine Missionen" : "Bereit zum Entdecken?"} <span className="font-sans text-base font-normal">({ergebnisse.length})</span></h2>
+          <h2 id="ergebnis" ref={ergebnisRef} tabIndex={-1} className="scroll-mt-8 font-display text-xl font-bold" aria-live="polite">{merkansicht ? "Deine Sammlung" : quizErgebnis ? "Deine Missionen" : "Bereit zum Entdecken?"} <span className="font-sans text-base font-normal">({ergebnisse.length})</span></h2>
           {modus !== "kind" && <div className="flex flex-wrap gap-2" aria-label="Ergebnisansicht"><button className="chip" aria-pressed={ansicht === "karten"} onClick={() => setAnsicht("karten")}>Karten</button><button className="chip" aria-pressed={ansicht === "zeit"} onClick={() => setAnsicht("zeit")}>Zeitreise</button>{modus === "teen" && <button className="chip" aria-pressed={ansicht === "pfad"} onClick={() => setAnsicht("pfad")}>Sternbild</button>}</div>}
         </div>
         {quizErgebnis && !merkansicht && <p className="mt-3 text-tinte-2">Zu deinen Ideen passen besonders {meta.themen.filter((t) => filter.themen.includes(t.id)).map((t) => t.name).join(" und ")}. Die Auswahl berücksichtigt dein Alter. Du kannst alle Filter weiter ändern.</p>}
         {merkansicht && <div className="mt-4 flex flex-wrap items-center gap-5 rounded-2xl bg-papier-2 p-4 text-sm">
-          <p>{modus === "kind" ? "Deine Ideen bleiben nur in dieser Browsersitzung. Bei wiederhergestellten Tabs können sie noch da sein." : "Standardmäßig bleibt dieser Merkzettel nur für die Browsersitzung."}</p>
+          <p>{modus === "kind" ? "Deine Ideen bleiben nur in dieser Browsersitzung. Bei wiederhergestellten Tabs können sie noch da sein." : "Standardmäßig bleibt dieser Sammlung nur für die Browsersitzung."}</p>
           {modus !== "kind" && <label className="check-label"><input type="checkbox" checked={merk.dauerhaft} onChange={(e) => merk.behalten(e.target.checked)} />Auf diesem Gerät behalten</label>}
-          <button className="min-h-11 underline" onClick={merk.leeren}>Merkzettel leeren</button>
+          <button className="min-h-11 underline" onClick={merk.leeren}>Sammlung leeren</button>
         </div>}
         {ergebnisse.length === 0 ? <div className="mt-6 rounded-3xl border-2 border-dashed border-tinte p-10 text-center"><Symbol name={merkansicht ? "backpack" : "search"} className="!size-12"/><h3 className="mt-4 text-xl font-bold">{merkansicht ? "Hier ist Platz für deine Ideen." : "Hier ist gerade noch kein Treffer."}</h3><p className="mx-auto mt-2 max-w-lg text-tinte-2">{merkansicht ? "Tippe bei einem Angebot auf „Merken“. Dann findest du es hier wieder." : "Versuche ein anderes Thema, einen größeren Zeitraum oder entferne einen Filter. Es werden keine Angebote erfunden."}</p><button className="knopf mt-5" onClick={() => { setMerkansicht(false); setFilter({ ...LEERER_FILTER }); setQuizErgebnis(false); }}>Alle Angebote entdecken</button></div>
           : ansicht === "pfad" && !merkansicht ? <div className="mt-6 rounded-3xl border-2 border-tinte bg-flaeche p-6"><p className="mb-5 text-sm text-tinte-2">Dein Sternbild verbindet echte Angebote verschiedener Einrichtungen. Nach Mindestalter sortiert; die Verbindung ist eine Entdeckungsidee, keine bestätigte Kursfolge.</p><ol className="sternpfad">{[...ergebnisse].sort((a, b) => (a.alterMin ?? 12) - (b.alterMin ?? 12)).map((a) => <li key={a.id}><span className="pfad-stern"><Symbol name="star"/></span><p className="font-mono text-xs">{a.alterMin ? `Ab ${a.alterMin} Jahren` : "Für Teens"} · {kurzname(meta.quellen.find((q) => q.id === a.quelle), a.quelle)}</p><Link className="mt-1 block text-lg font-bold underline underline-offset-4" href={`/angebot/${slugAusId(a.id)}?modus=teen`}>{a.titel}</Link></li>)}</ol></div>

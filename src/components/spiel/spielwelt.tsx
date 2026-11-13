@@ -9,10 +9,10 @@ import type { Meta } from "@/lib/daten";
 import { fuerModus } from "@/lib/entdecken";
 import { figurNachId, FIGUREN } from "@/lib/figuren";
 import { abstand, passendeSpielAngebote, STATIONEN, type Punkt } from "@/lib/spiel";
-import { lies, schreibe } from "@/lib/speicher";
+import { lies, loesche, schreibe } from "@/lib/speicher";
 import { amPlatz, bewege, bewegeAutos, erzeugeStadt, hausAn, nahesHaus, neueAutos, planeRoute, TEMPO_FIGUR, type Auto } from "@/lib/stadt";
 import { useVorlesen } from "@/lib/vorlesen";
-import { useMerkzettel } from "../merkzettel";
+import { useSammlung } from "../sammlung";
 import { Symbol } from "../symbol";
 import { FigurPortrait, type Blick } from "./figur";
 import { Lernaufgabe } from "./lernaufgabe";
@@ -126,6 +126,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const [jetzt, setJetzt] = useState(startJetzt);
   const [verhaeltnis, setVerhaeltnis] = useState(1.6);
   const [alleKurse, setAlleKurse] = useState(false);
+  const [neuFrage, setNeuFrage] = useState(false);
 
   const pos = useRef<Punkt>(stadt.start);
   const laeuftRef = useRef(false);
@@ -148,7 +149,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const nah = nahesHaus(stadt, position);
   const station = STATIONEN.find((s) => s.id === hausId) ?? STATIONEN[0]!;
   const klein = stand.alter <= 8;
-  const merk = useMerkzettel("kind");
+  const merk = useSammlung("kind");
   const vorlesen = useVorlesen();
   const jetztDatum = useMemo(() => new Date(jetzt), [jetzt]);
 
@@ -425,6 +426,21 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const gesammeltIds = useMemo(() => gesammelt.map((a) => a.id), [gesammelt]);
   const vorschlaege = useMemo(() => empfehlungen(angebote, stand, jetztDatum), [angebote, stand, jetztDatum]);
 
+  function neuAnfangen() {
+    loesche("sitzung", SPEICHER_STAND);
+    loesche("sitzung", SPEICHER_FIGUR);
+    merk.leeren();
+    stoppen();
+    pos.current = stadt.start;
+    setPosition(stadt.start);
+    setStand(neuerSpielstand());
+    startetRef.current = false;
+    setStartet(false);
+    setNeuFrage(false);
+    setBereit(false);
+    setHinweis("Tippe auf ein Haus!");
+  }
+
   function steuerDruck(taste: string, an: boolean) {
     if (an) {
       route.current = [];
@@ -606,6 +622,17 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               </motion.button>
             );
           })}
+        </div>
+        <div className="neu-anfangen">
+          {neuFrage ? (
+            <>
+              <span>Figur, Sterne und Rucksack löschen?</span>
+              <button className="spiel-knopf spiel-knopf-dunkel" onClick={neuAnfangen}><Symbol name="check" /> Ja, neu anfangen</button>
+              <button className="spiel-knopf" onClick={() => setNeuFrage(false)}><Symbol name="close" /> Nein</button>
+            </>
+          ) : (
+            <button className="spiel-knopf" onClick={() => setNeuFrage(true)}><Symbol name="refresh" /> Neu anfangen</button>
+          )}
         </div>
         <p className="haus-leiste-fuss">
           Die Häuser sind ausgedachte Lernspiele. Echte Kurse findest du in jedem Haus – und auf der <Link href="/einrichtungen/">Karte von Heilbronn</Link>.

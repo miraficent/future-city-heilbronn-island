@@ -7,12 +7,12 @@ import type { Meta } from "@/lib/daten";
 import { lies, schreibe } from "@/lib/speicher";
 import { STATIONEN } from "@/lib/spiel";
 import { Angebotskarte } from "../angebotskarte";
-import { useMerkzettel } from "../merkzettel";
+import { useSammlung } from "../sammlung";
 import { Symbol } from "../symbol";
 import { PixelBild } from "./pixel-grafik";
 export function Elternbericht({angebote,meta,jetzt}:{angebote:Angebot[];meta:Meta;jetzt:string}){
   const [stand,setStand]=useState<Spielstand>(neuerSpielstand),[geladen,setGeladen]=useState(false),[uhr,setUhr]=useState(jetzt);
-  const merk=useMerkzettel("eltern"),stufe=stufeFuerAlter(stand.alter),ids=stand.fortschritt[stufe],vorschlaege=empfehlungen(angebote,stand,new Date(uhr));
+  const merk=useSammlung("eltern"),stufe=stufeFuerAlter(stand.alter),ids=stand.fortschritt[stufe],vorschlaege=empfehlungen(angebote,stand,new Date(uhr));
   useEffect(()=>{setStand(pruefeSpielstand(lies("sitzung","abenteuer.v2",null)));setGeladen(true);setUhr(new Date().toISOString());},[]);
   function wunsch(id:string){const neu={...stand,wuensche:stand.wuensche.includes(id)?stand.wuensche.filter(x=>x!==id):[...stand.wuensche,id]};setStand(neu);schreibe("sitzung","abenteuer.v2",neu);}
   function exportieren(){const bericht={projekt:"COSMOS-Entdecker",altersstufe:STUFEN.find(s=>s.id===stufe)?.alter,erkundet:MISSIONEN.filter(m=>ids.includes(m.id)).map(m=>m.titel),wuensche:WUENSCHE.filter(w=>stand.wuensche.includes(w.id)).map(w=>w.titel),vorschlaege:vorschlaege.map(v=>({thema:v.titel,grund:v.grund,angebote:v.angebote.map(a=>({titel:a.titel,originalseite:a.url}))})),hinweis:"Interessenorientierung aus freiwilligem Spielen; keine Leistungs- oder Eignungsbeurteilung. Nichts wurde an Einrichtungen gesendet."};const url=URL.createObjectURL(new Blob([JSON.stringify(bericht,null,2)],{type:"application/json;charset=utf-8"})),a=document.createElement("a");a.href=url;a.download="COSMOS-Entdeckungen.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

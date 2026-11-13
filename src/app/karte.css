@@ -1,0 +1,78 @@
+/* Heilbronn-Karte (Seite „Karte“) und Navigation mit Symbolen */
+
+.haupt-nav .nav-symbol { width: 18px; height: 18px; margin-right: 6px; }
+@media (max-width: 520px) {
+  .haupt-nav { width: 100%; justify-content: space-between; }
+  .haupt-nav .nav-link { flex-direction: column; gap: 2px; padding: 6px 8px; font-size: 11px; line-height: 1.1; text-align: center; }
+  .haupt-nav .nav-symbol { margin: 0; }
+}
+
+.hn-seite { color: #254950; }
+.hn-ueberschrift { font-family: var(--font-display), sans-serif; font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 800; line-height: 1.02; margin-top: 6px; }
+.hn-intro { max-width: 760px; margin: 12px 0 20px; font-size: 18px; }
+.hn-inline-symbol { display: inline-block; width: 20px; height: 20px; vertical-align: -4px; }
+
+.hn-karte { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr); gap: 18px; align-items: start; }
+.hn-karte-flaeche { position: relative; border: 3px solid #254950; border-radius: 24px; overflow: hidden; background: #efe6d0; box-shadow: 6px 6px 0 #254950; }
+.hn-karte-svg { display: block; width: 100%; height: min(72vh, 680px); touch-action: none; cursor: grab; user-select: none; }
+.hn-karte-svg:active { cursor: grabbing; }
+.hn-wasser-text { font-size: 64px; font-style: italic; font-weight: 700; fill: #3f7f8a; letter-spacing: 12px; }
+.hn-wahrzeichen text { font-size: 44px; font-weight: 800; fill: #4a4560; paint-order: stroke; stroke: #efe6d0; stroke-width: 10px; }
+.hn-pin { cursor: pointer; outline: none; }
+.hn-pin:focus-visible circle:first-of-type { stroke: #2f4bff; stroke-width: 14px; }
+.hn-pin-name { font-size: 42px; font-weight: 800; fill: #1c1934; }
+.hn-puls { animation: hn-puls 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes hn-puls { 50% { transform: scale(1.35); opacity: 0.08; } }
+.hn-wege path { animation: hn-wandern 1.2s linear infinite; }
+@keyframes hn-wandern { to { stroke-dashoffset: -52; } }
+.hn-steuerung { position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.hn-quelle { position: absolute; left: 10px; bottom: 8px; padding: 2px 8px; border-radius: 8px; background: #fffaf0d9; font-size: 11px; }
+
+.hn-info { padding: 18px; border: 3px solid #254950; border-radius: 24px; background: #fffbef; box-shadow: 6px 6px 0 var(--ort-farbe); }
+.hn-info-kopf { display: flex; align-items: center; gap: 14px; }
+.hn-info-bild { width: 92px; height: 84px; flex-shrink: 0; }
+.hn-info h2 { font-family: var(--font-display), sans-serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
+.hn-info-text { margin: 12px 0; }
+.hn-fakten { display: grid; gap: 8px; }
+.hn-fakten li { display: flex; gap: 10px; align-items: flex-start; }
+.hn-fakten .symbol { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; }
+.hn-themen { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.hn-thema { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 2px solid #254950; border-radius: 999px; background: color-mix(in srgb, var(--ort-farbe) 18%, #fff); font-size: 14px; }
+.hn-thema .symbol { width: 18px; height: 18px; }
+.hn-naechste { margin-top: 16px; }
+.hn-naechste h3, .hn-schritte-titel { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; margin: 16px 0 8px; }
+.hn-naechste h3 .symbol, .hn-schritte-titel .symbol { width: 22px; height: 22px; }
+.hn-naechste ul { display: grid; gap: 8px; }
+.hn-naechste a { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 8px 10px; border: 2px solid #c8c0a8; border-radius: 14px; background: #fff; }
+.hn-naechste a:hover { border-color: #254950; }
+.hn-wann { font-family: var(--font-mono), monospace; font-size: 12px; white-space: nowrap; }
+.hn-titel { font-weight: 700; font-size: 14px; line-height: 1.3; }
+.hn-alter { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; font-size: 13px; white-space: nowrap; }
+.hn-alter .symbol { width: 16px; height: 16px; }
+.hn-schritte { display: grid; gap: 8px; counter-reset: none; }
+.hn-schritte li { display: flex; gap: 10px; align-items: center; }
+.hn-schritte span { display: grid; place-items: center; width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; background: var(--ort-farbe); border: 2px solid #254950; font-weight: 800; }
+.hn-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.hn-knoepfe .symbol { width: 20px; height: 20px; }
+.hn-spiel { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 15px; }
+.hn-spiel .symbol { width: 22px; height: 22px; }
+.hn-spiel a, .hn-daten a { text-decoration: underline; font-weight: 700; }
+.hn-daten { margin-top: 10px; font-size: 14px; }
+.hn-daten summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; }
+
+.hn-ortliste { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.hn-ortliste button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px; border: 2.5px solid #254950; border-radius: 18px; background: color-mix(in srgb, var(--ort-farbe) 18%, #fffbef); font-weight: 800; }
+.hn-ortliste button[aria-selected="true"] { box-shadow: 4px 4px 0 #254950; transform: translateY(-2px); }
+.hn-ortliste .pixel-bild { width: 70px; height: 62px; }
+.hn-ortliste small { font-weight: 400; font-size: 13px; }
+.hn-fuss { margin-top: 18px; max-width: 900px; font-size: 14px; color: #4a4560; }
+.hn-fuss a { text-decoration: underline; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .hn-karte { grid-template-columns: 1fr; }
+  .hn-karte-svg { height: 62vh; }
+  .hn-ortliste { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hn-puls, .hn-wege path { animation: none !important; }
+}
