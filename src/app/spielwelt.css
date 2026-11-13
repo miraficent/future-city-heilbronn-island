@@ -586,3 +586,7 @@
 
 .neu-anfangen { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
 .neu-anfangen .symbol { width: 20px; height: 20px; }
+
+.sammelkarte-knoepfe > a { flex: 0 0 52px; min-width: 52px; padding: 0 !important; }
+.sammelkarte-knoepfe .sammel-knopf { min-width: 0; padding-inline: 10px !important; font-size: 15px !important; }
+.sammelkarte-knoepfe .symbol { width: 20px; height: 20px; flex-shrink: 0; }
