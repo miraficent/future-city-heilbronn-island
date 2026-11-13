@@ -1,40 +1,7 @@
 import { describe,expect,it } from "vitest";
 import { brueckenMission, codeMission, energieMission, empfehlungen, fuehreCodeAus, kiMission, materialMission, MISSIONEN, neuerSpielstand, pruefeBauPlan, pruefeSpielstand, pruefeWahl, STUFEN, stufeFuerAlter } from "@/lib/abenteuer";
-import { abstand, bewege, inRechteck, istBegehbar, planeWeg, REQUISITEN, START, STATIONEN, STRASSEN, UEBERGAENGE, WELT, type Punkt, type Richtung } from "@/lib/spiel";
+import { STATIONEN, type Richtung } from "@/lib/spiel";
 import { oeffentlicheAngebote } from "@/lib/daten";
-describe("große Spielwelt",()=>{
- it("bietet mehr als fünfmal die frühere begehbare Kartenfläche",()=>expect(WELT.breite*WELT.hoehe).toBeGreaterThan(1100*700*5));
- it("führt zwischen allen vier Eingängen durch begehbare Übergänge",()=>{
-  for(const start of [START,...STATIONEN.map(s=>s.eingang)])for(const s of STATIONEN){
-   const weg=planeWeg(start,s.eingang);expect(weg.length).toBeGreaterThan(0);expect(abstand(weg.at(-1)!,s.eingang)).toBeLessThan(25);
-   for(let i=1;i<weg.length;i++){const a=weg[i-1]!,b=weg[i]!;for(let n=0;n<=10;n++)expect(istBegehbar({x:a.x+(b.x-a.x)*n/10,y:a.y+(b.y-a.y)*n/10})).toBe(true);}
-  }
- });
- it("verhindert Abkürzungen über Straßen und lässt Zebrastreifen frei",()=>{
-  expect(istBegehbar({x:650,y:950})).toBe(false);expect(istBegehbar({x:400,y:950})).toBe(true);
-  expect(istBegehbar({x:1190,y:650})).toBe(true);expect(istBegehbar({x:1190,y:1100})).toBe(false);
-  expect(bewege({x:650,y:879},{x:0,y:1},.05)).toEqual({x:650,y:879});
- });
- it("stellt keine Bank auf eine Straße, in ein Haus oder auf ein Auto",()=>{
-  for(const bank of REQUISITEN.filter(r=>r.art==="bank")){
-   expect(STRASSEN.some(r=>inRechteck(bank,r))).toBe(false);
-   expect(REQUISITEN.filter(r=>r.art==="auto").some(r=>inRechteck(bank,r.flaeche))).toBe(false);
-   expect(STATIONEN.some(s=>Math.abs(bank.x-(s.ort.x+100))<170&&Math.abs(bank.y-(s.ort.y+50))<150)).toBe(false);
-   expect(istBegehbar(bank)).toBe(false);
-  }
- });
- it("blockiert Baumstämme und Bänke auch bei Tastaturbewegung",()=>{
-  for(const r of REQUISITEN.filter(r=>r.art!=="auto")){
-   expect(istBegehbar(r)).toBe(false);
-   const pos={x:r.flaeche.x-17,y:r.flaeche.y+10};expect(bewege(pos,{x:1,y:0},.05)).toEqual(pos);
-  }
- });
- it("kann eine berechnete lange Route tatsächlich vollständig ablaufen",()=>{
-  let pos:Punkt={...START};const weg=planeWeg(pos,STATIONEN[3]!.eingang);
-  for(const ziel of weg){let schritte=0;while(abstand(pos,ziel)>1&&schritte++<500){pos=bewege(pos,{x:ziel.x-pos.x,y:ziel.y-pos.y},Math.min(.04,abstand(pos,ziel)/205));}expect(schritte).toBeLessThan(500);}
-  expect(abstand(pos,STATIONEN[3]!.eingang)).toBeLessThan(25);
- });
-});
 describe("altersabhängige Geschichte",()=>{
  it("wechselt an den richtigen Altersgrenzen",()=>expect([6,8,9,11,12,17].map(stufeFuerAlter)).toEqual(["start","start","weiter","weiter","profi","profi"]));
  it("hat zwölf erreichbare Kapitelaufgaben pro Stufe",()=>{

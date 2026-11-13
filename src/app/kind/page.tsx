@@ -1,7 +1,13 @@
-import { Lerninsel } from "@/components/spiel/lerninsel";
 import { Seitenrahmen } from "@/components/seitenrahmen";
+import { Spielwelt } from "@/components/spiel/spielwelt";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
-export const metadata = { title: "Dein 2D-Lernabenteuer" };
+
+export const metadata = { title: "Spielwelt – bau die COSMOS-Rakete" };
+
 export default function Kind() {
-  return <Seitenrahmen modus="kind"><Lerninsel angebote={oeffentlicheAngebote()} meta={META} jetzt={new Date().toISOString()} /></Seitenrahmen>;
+  return (
+    <Seitenrahmen modus="kind">
+      <Spielwelt angebote={oeffentlicheAngebote()} meta={META} jetzt={META.aktualisiert} />
+    </Seitenrahmen>
+  );
 }
