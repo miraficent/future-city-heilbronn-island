@@ -3,7 +3,7 @@
  * events.json wird nie von Hand oder in Komponenten verändert – nur von der Pipeline.
  */
 
-export type CategoryId = "astronomy" | "physics" | "biology" | "math" | "it" | "coding" | "art" | "family";
+export type CategoryId = "astronomy" | "physics" | "biology" | "math" | "it" | "coding" | "gaming" | "art" | "family";
 
 export type Category = {
   id: CategoryId;

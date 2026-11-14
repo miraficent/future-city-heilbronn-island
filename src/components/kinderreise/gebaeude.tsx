@@ -4,7 +4,7 @@
  */
 import { F, type Gebaeudeart, type PinSymbol } from "@/lib/kinderkarte";
 
-export const GEBAEUDE_HOEHE: Record<Gebaeudeart, number> = { experimenta: 138, ipai: 92, haus: 100 };
+export const GEBAEUDE_HOEHE: Record<Gebaeudeart, number> = { experimenta: 138, ipai: 92, haus: 100, platz: 88 };
 
 /** Einfache Linien-Symbole (~24px), Mittelpunkt (0,0) */
 export function PinZeichen({ name, farbe = "#fff" }: { name: PinSymbol; farbe?: string }) {
@@ -26,6 +26,12 @@ export function PinZeichen({ name, farbe = "#fff" }: { name: PinSymbol; farbe?: 
       {name === "code" && <path d="M-5 -7 L-11 0 L-5 7 M5 -7 L11 0 L5 7 M2 -9 L-2 9" />}
       {name === "herz" && (
         <path stroke="none" fill={farbe} d="M0 9 C-13 0 -11 -9 -5.5 -9 C-2.5 -9 0 -6.5 0 -4.5 C0 -6.5 2.5 -9 5.5 -9 C11 -9 13 0 0 9 Z" />
+      )}
+      {name === "kalender" && (
+        <>
+          <rect x={-9} y={-7} width={18} height={16} rx={3} />
+          <path d="M-9 -2 H9 M-4 -10 V-5 M4 -10 V-5" />
+        </>
       )}
       {name === "stern" && (
         <polygon stroke="none" fill={farbe} points="0,-10 2.9,-3.6 9.5,-3.1 4.5,1.4 6,8.1 0,4.6 -6,8.1 -4.5,1.4 -9.5,-3.1 -2.9,-3.6" />
@@ -104,8 +110,33 @@ function EinfachesHaus({ farbe, symbol }: { farbe: string; symbol: PinSymbol }) 
   );
 }
 
+/** COSMOS: kleiner Platz mit Kiosk und Infotafel (Kalender) = „alle Veranstaltungen“ */
+function CosmosPlatz({ farbe }: { farbe: string }) {
+  return (
+    <g>
+      <ellipse cx={0} cy={2} rx={70} ry={14} fill={F.sand} />
+      {/* Kiosk */}
+      <polygon points="18,0 18,-46 30,-52 30,-6" fill={F.klippe} />
+      <rect x={-22} y={-46} width={40} height={46} fill={F.wand} />
+      <polygon points="-28,-46 -2,-66 24,-46" fill={farbe} />
+      <polygon points="-2,-66 24,-46 36,-52 10,-72" fill={F.text} opacity={0.18} />
+      <rect x={-14} y={-34} width={24} height={14} rx={3} fill={F.welle} />
+      <rect x={-14} y={-16} width={24} height={16} rx={3} fill={farbe} />
+      {/* Infotafel mit Kalender */}
+      <rect x={-58} y={-58} width={6} height={58} fill={F.klippe} />
+      <rect x={-72} y={-80} width={34} height={30} rx={5} fill={F.wand} stroke={farbe} strokeWidth={3} />
+      <g transform="translate(-55,-65) scale(0.9)">
+        <PinZeichen name="kalender" farbe={farbe} />
+      </g>
+      {/* Bänke */}
+      <rect x={34} y={-8} width={26} height={6} rx={3} fill={F.klippe} />
+    </g>
+  );
+}
+
 export function Gebaeude({ art, farbe, symbol }: { art: Gebaeudeart; farbe: string; symbol: PinSymbol }) {
   if (art === "experimenta") return <ExperimentaHaus />;
   if (art === "ipai") return <IpaiHaus />;
+  if (art === "platz") return <CosmosPlatz farbe={farbe} />;
   return <EinfachesHaus farbe={farbe} symbol={symbol} />;
 }

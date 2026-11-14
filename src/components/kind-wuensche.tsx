@@ -8,6 +8,7 @@
 import type { Angebot } from "@/lib/angebot";
 import type { LiveEvent } from "@/types";
 import { useSammlung } from "./sammlung";
+import { Button, Card } from "./ui";
 
 const datum = (iso: string) =>
   new Date(iso).toLocaleDateString("de-DE", { timeZone: "Europe/Berlin", weekday: "short", day: "numeric", month: "long" });
@@ -28,25 +29,25 @@ export function KindWuensche({ angebote, liveEvents, quellenNamen }: { angebote:
   if (liste.length === 0) return null;
 
   return (
-    <section aria-labelledby="kind-wuensche" className="mx-auto max-w-6xl px-4 pt-10 sm:px-8">
-      <div className="rounded-[28px] border-2 border-tinte bg-flaeche p-6" style={{ boxShadow: "5px 5px 0 #f59e0b" }}>
+    <section aria-labelledby="kind-wuensche" className="mx-auto max-w-[1100px] px-4 pt-8 sm:px-8">
+      <Card>
         <h2 id="kind-wuensche" className="font-display text-2xl font-bold">Das möchte Ihr Kind besuchen</h2>
-        <p className="mt-1 text-tinte-2">Aus Mini-Heilbronn. Anmeldung bitte direkt bei der Einrichtung.</p>
+        <p className="mt-1 text-tinte-2">Aus Heilbronn Island. Anmeldung bitte direkt bei der Einrichtung.</p>
         <ul className="mt-4 grid gap-3">
           {liste.map((w) => (
-            <li key={w.id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-tinte/20 bg-papier p-4">
+            <li key={w.id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-tinte bg-papier p-4">
               <div>
                 <p className="font-bold">{w.titel}{w.beispiel && <span className="font-normal text-tinte-2"> (Beispiel-Eintrag)</span>}</p>
                 <p className="text-sm text-tinte-2">{w.ort} · {datum(w.start)}, {uhrzeit(w.start)} Uhr · {w.kosten}</p>
               </div>
-              <div className="flex gap-2">
-                <a className="knopf" href={w.url} target="_blank" rel="noopener noreferrer">Zur Anmeldung</a>
-                <button type="button" className="knopf" onClick={() => merk.merken(w.id)}>Entfernen</button>
+              <div className="flex flex-wrap gap-2">
+                <Button variante="primary" icon="external" href={w.url}>Zur Anmeldung</Button>
+                <Button variante="ghost" onClick={() => merk.merken(w.id)}>Entfernen</Button>
               </div>
             </li>
           ))}
         </ul>
-      </div>
+      </Card>
     </section>
   );
 }

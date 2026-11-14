@@ -1,20 +1,43 @@
 @import "tailwindcss";
 
-@font-face { font-family: "Atkinson Hyperlegible Next"; font-style: normal; font-weight: 200 800; font-display: swap; src: url("/fonts/atkinson-latin.woff2") format("woff2"); }
-@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 200 900; font-display: swap; src: url("/fonts/unbounded-latin.woff2") format("woff2"); }
-@font-face { font-family: "Martian Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("/fonts/martian-latin.woff2") format("woff2"); }
+/* Schriften lokal (Datenschutz: nichts von fremden Servern), OFL – siehe public/fonts/OFL.txt */
+@font-face { font-family: "Baloo 2"; font-style: normal; font-weight: 600 700; font-display: swap; src: url("/fonts/baloo2-latin.woff2") format("woff2"); }
+@font-face { font-family: "Nunito"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/fonts/nunito-latin.woff2") format("woff2"); }
 
 /*
- * COSMOS-Entdecker – „Gedruckter Sternatlas“
- * Risograph-Ästhetik: warmes Papier, kräftige Druckfarben, Rasterpunkte, leicht versetzte Farbebenen.
- * Drei Modi teilen dieselben Tokens; Teen ist der „Nachtdruck“.
+ * Heilbronn Island – Design-Tokens aus DESIGN.md (einzige Quelle für Farben, Schriften, Formen).
+ * Neue Farben/Schriften zuerst in DESIGN.md eintragen, dann hier.
+ * Die alten Namen (papier, tinte, …) bleiben als Verweise, damit alle bestehenden Seiten das Design übernehmen.
  */
-
 @theme inline {
-  --font-sans: var(--font-atkinson), ui-sans-serif, sans-serif;
-  --font-display: var(--font-unbounded), var(--font-atkinson), sans-serif;
-  --font-mono: var(--font-martian), ui-monospace, monospace;
+  --font-sans: "Nunito", ui-sans-serif, sans-serif;
+  --font-display: "Baloo 2", "Nunito", sans-serif;
+  --font-mono: "Nunito", ui-sans-serif, sans-serif;
 
+  /* DESIGN.md § Colors */
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-sea: var(--sea);
+  --color-sea-shallow: var(--sea-shallow);
+  --color-sea-deep: var(--sea-deep);
+  --color-land: var(--land);
+  --color-land-dark: var(--land-dark);
+  --color-sand: var(--sand);
+  --color-cliff: var(--cliff);
+  --color-paper: var(--paper);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-wish: var(--wish);
+  --color-wish-dark: var(--wish-dark);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-snow: var(--snow);
+  --color-success: var(--success);
+  --color-card-border: var(--card-border);
+
+  /* Alte Namen → Design-Tokens */
   --color-papier: var(--papier);
   --color-papier-2: var(--papier-2);
   --color-tinte: var(--tinte);
@@ -22,42 +45,70 @@
   --color-linie: var(--linie);
   --color-flaeche: var(--flaeche);
   --color-akzent: var(--akzent);
-
-  --color-ki: #ff5a36;
-  --color-ki-text: #b8340f;
-  --color-coding: #00a3a3;
-  --color-coding-text: #006b6b;
-  --color-gaming: #ffbf1f;
-  --color-gaming-text: #7d5200;
-  --color-blau: #2f4bff;
-  --color-pink: #ff4fa3;
-  --color-nacht: #121022;
-  --color-nacht-2: #1e1b35;
+  --color-ki: var(--primary);
+  --color-ki-text: var(--primary-dark);
+  --color-coding: #2BB3A3;
+  --color-coding-text: var(--ink);
+  --color-gaming: var(--accent);
+  --color-gaming-text: var(--ink);
+  --color-blau: var(--primary);
+  --color-pink: var(--wish);
+  --color-nacht: var(--night);
+  --color-nacht-2: var(--night-2);
 }
 
 :root {
-  --font-atkinson: "Trebuchet MS", "Atkinson Hyperlegible Next";
-  --font-unbounded: "Trebuchet MS", "Atkinson Hyperlegible Next";
-  --font-martian: "Martian Mono";
-  --papier: #f3ecdc;
-  --papier-2: #e8dec8;
-  --tinte: #1c1934;
-  --tinte-2: #4a4560;
-  --linie: #1c193426;
-  --flaeche: #fbf7ee;
-  --akzent: #2f4bff;
-  --raster: radial-gradient(currentColor 1.1px, transparent 1.5px);
+  --night: #1E2A5A;
+  --night-2: #2A3B7A;
+  --sea: #5BB8C4;
+  --sea-shallow: #8FD3DB;
+  --sea-deep: #4AA3AF;
+  --land: #7BC86C;
+  --land-dark: #4E9A4A;
+  --sand: #E8C88A;
+  --cliff: #C49A5A;
+  --paper: #F6F3EC;
+  --white: #FFFFFF;
+  --primary: #6C4CE0;
+  --primary-dark: #4F35B0;
+  --accent: #F59E0B;
+  --accent-dark: #C27C06;
+  --wish: #FF6B6B;
+  --wish-dark: #D94B4B;
+  --ink: #1F2937;
+  --ink-soft: #6B7280;
+  --snow: #FFFFFF;
+  --success: #22C55E;
+  --card-border: #E7E2D6;
+  /* Dächer der Stadt (DESIGN.md § Map, Start-Insel) */
+  --roof: #E07A4F;
+
+  /* Radien und Abstände (DESIGN.md § Shape) */
+  --radius-card: 24px;
+  --radius-input: 16px;
+  --radius-pill: 999px;
+
+  /* Alte Namen */
+  --papier: var(--paper);
+  --papier-2: var(--card-border);
+  --tinte: var(--ink);
+  --tinte-2: var(--ink-soft);
+  --linie: var(--card-border);
+  --flaeche: var(--white);
+  --akzent: var(--primary);
+  --raster: none;
   color-scheme: light;
 }
 
+/* Teens: gleicher Stil auf „night“-Hintergrund */
 [data-modus="teen"] {
-  --papier: #121022;
-  --papier-2: #1e1b35;
-  --tinte: #f3ecdc;
-  --tinte-2: #b9b2cc;
-  --linie: #f3ecdc26;
-  --flaeche: #1a1730;
-  --akzent: #ff4fa3;
+  --papier: var(--night);
+  --papier-2: var(--night-2);
+  --tinte: var(--snow);
+  --tinte-2: #D7DCF0;
+  --linie: #FFFFFF33;
+  --flaeche: var(--night-2);
+  --akzent: var(--accent);
   color-scheme: dark;
 }
 
@@ -69,53 +120,36 @@ html {
 body {
   background: var(--papier);
   color: var(--tinte);
-  font-family: var(--font-atkinson), sans-serif;
-  font-size: 1.125rem;
+  font-family: "Nunito", ui-sans-serif, sans-serif;
+  font-size: 1rem; /* Eltern: 16px (DESIGN.md § Typography) */
   line-height: 1.55;
 }
 
-/* Papierkorn – liegt über allem, fängt keine Klicks ab. */
-.korn::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.22;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.2 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+h1, h2, h3 {
+  font-family: "Baloo 2", "Nunito", sans-serif;
 }
 
-[data-modus="teen"].korn::after,
-[data-modus="teen"] .korn::after {
-  mix-blend-mode: screen;
-  opacity: 0.08;
-}
+/* Flach statt Papierkorn und Raster (DESIGN.md: keine Verläufe, kein Blur) */
+.korn::after { content: none; }
+.raster, .raster-fein { background-image: none; }
 
-/* Rasterpunkte in der aktuellen Textfarbe */
-.raster {
-  background-image: var(--raster);
-  background-size: 7px 7px;
-}
-
-.raster-fein {
-  background-image: var(--raster);
-  background-size: 4px 4px;
-}
-
-/* Riso-Versatz: zweite Farbebene leicht verschoben */
+/* „Chunky bottom“ statt weichem Schatten (DESIGN.md § Depth) */
 .versatz {
-  box-shadow: 5px 5px 0 0 var(--versatz-farbe, var(--color-ki));
+  box-shadow: 0 4px 0 0 var(--versatz-farbe, var(--card-border));
 }
 
 .versatz-text {
-  text-shadow: 3px 3px 0 var(--versatz-farbe, var(--color-ki));
+  text-shadow: none;
 }
 
-/* Sichtbarer Fokus für Tastatur (WCAG 2.4.7 / 2.4.11) */
+/* Karten-Ränder: hell statt dunkel (DESIGN.md § Depth: 2px #E7E2D6). Ohne @layer → gewinnt gegen Tailwind-Utilities. */
+.border-tinte { border-color: var(--card-border); }
+[data-modus="teen"] .border-tinte { border-color: var(--linie); }
+
+/* Fokus: 3px primary, Abstand 2px (DESIGN.md § Accessibility) */
 :focus-visible {
-  outline: 3px solid var(--akzent);
-  outline-offset: 3px;
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
   border-radius: 6px;
 }
 

@@ -1,28 +1,21 @@
-import { Kinderreise } from "@/components/kinderreise/kinderreise";
+import { KartenSeite } from "@/components/kinder/karten-seite";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
-import { isForKids } from "@/lib/events";
-import kategorien from "@/data/categories.json";
+import { kartenOrte } from "@/lib/kinderkarte";
+import { kinderKarten } from "@/lib/kinderkarten";
 import liveEvents from "@/data/events.json";
-import type { Category, LiveEvent } from "@/types";
+import type { LiveEvent } from "@/types";
 
 export const metadata = { title: "Heilbronn entdecken – für Kinder" };
 
 /**
- * Kinder-Modus: volle Breite, ohne Seitenrahmen – Karte, Mia und Entscheidungs-Spiele.
- * Live-Events werden schon hier (auf dem Server) auf Kinder-Events gefiltert:
- * „zur Prüfung“ markierte Einträge erreichen das Kindergerät gar nicht.
+ * Kinder-Karte. Die Daten (Kurse + Live-Events) werden hier auf dem Server zu Kinderkarten:
+ * nur bekanntes Alter, nur Kinder-Zielgruppe, nichts „zur Prüfung“ – der Rest erreicht das Gerät gar nicht.
  */
 export default function Kinder() {
-  const fuerKinder = (liveEvents as LiveEvent[]).filter(isForKids);
+  const karten = kinderKarten(oeffentlicheAngebote(), liveEvents as LiveEvent[], new Date(META.aktualisiert));
   return (
-    <main id="inhalt" className="kr-vollbild">
-      <Kinderreise
-        angebote={oeffentlicheAngebote()}
-        events={fuerKinder}
-        kategorien={kategorien as Category[]}
-        quellen={META.quellen}
-        jetzt={META.aktualisiert}
-      />
+    <main id="inhalt">
+      <KartenSeite orte={kartenOrte(META.quellen)} karten={karten} />
     </main>
   );
 }

@@ -1,64 +1,73 @@
 import Link from "next/link";
-import { Planet } from "@/components/planet";
+import { Owl } from "@/components/ui";
 import { Symbol } from "@/components/symbol";
 import { META } from "@/lib/daten";
-import { themenStile } from "@/lib/themen-stil";
+import { kartenOrte } from "@/lib/kinderkarte";
 
-/** Startseite: kurze Begrüßung und drei Türen – Kind, Teen, Eltern. Bewusst fast ohne Text. */
-export default function Start() {
-  const [erster] = Object.values(themenStile(META.themen));
+/**
+ * Startseite (DESIGN.md § Pages 1): Nachthimmel mit kleinen Sternen, Vorschau der Stadt,
+ * Titel und zwei große Wahlkarten – „Für mich“ (Kinder/Teens) und „Für mein Kind“ (Eltern).
+ */
 
+/** Sterne an festen Stellen (gleich bei jedem Laden) */
+const STERNE = Array.from({ length: 46 }, (_, i) => ({
+  x: (i * 137.5) % 100,
+  y: (i * 61.8) % 70,
+  r: i % 5 === 0 ? 2.2 : 1.2,
+}));
+
+/** Kleine Vorschau der Stadt: Grün, Neckar, Häuser, Kilianskirche, Pins der Orte */
+function StadtVorschau() {
   return (
-    <main id="inhalt" className="mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-4 py-10 sm:px-8">
-      <h1 className="text-center font-display text-4xl font-bold sm:text-5xl">Hallo, Heilbronn!</h1>
-      <p className="mt-3 text-center text-lg text-tinte-2">Wer schaut gerade?</p>
+    <svg viewBox="0 0 520 220" className="start__vorschau" aria-hidden="true">
+      <rect x={10} y={30} width={500} height={170} rx={40} style={{ fill: "var(--land)" }} />
+      <rect x={10} y={186} width={500} height={22} rx={11} style={{ fill: "var(--cliff)" }} />
+      <path d="M150 30 C130 90 190 120 160 200" style={{ fill: "none", stroke: "var(--sea)", strokeWidth: 22, strokeLinecap: "round" }} />
+      <path d="M60 150 C140 140 220 160 300 120 S420 90 470 110" style={{ fill: "none", stroke: "var(--snow)", strokeWidth: 5, strokeDasharray: "14 11", strokeLinecap: "round" }} />
+      {[[250, 120], [276, 112], [300, 128], [326, 116], [232, 140], [352, 132], [280, 150]].map(([x, y], i) => (
+        <g key={i} transform={`translate(${x},${y})`}>
+          <rect x={-9} y={-14} width={18} height={14} style={{ fill: "var(--paper)" }} />
+          <polygon points="-11,-14 0,-24 11,-14" style={{ fill: "var(--roof)" }} />
+        </g>
+      ))}
+      <g transform="translate(312,108)">
+        <rect x={-8} y={-62} width={16} height={62} style={{ fill: "var(--paper)" }} />
+        <polygon points="-11,-62 0,-86 11,-62" style={{ fill: "var(--roof)" }} />
+      </g>
+      {kartenOrte(META.quellen).map((o) => (
+        <path key={o.id} d="M0 0 C-3 -5 -12 -11 -12 -20 A12 12 0 1 1 12 -20 C12 -11 3 -5 0 0 Z"
+          transform={`translate(${20 + o.x * 0.4},${30 + o.y * 0.21})`}
+          style={{ fill: o.farbe, stroke: "var(--snow)", strokeWidth: 3 }} />
+      ))}
+    </svg>
+  );
+}
 
-      <ul className="mt-10 grid gap-5 md:grid-cols-3">
-        <li>
-          <Link
-            href="/kinder/"
-            className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-tinte bg-flaeche p-6 transition-transform hover:-translate-y-1 hover:-rotate-1"
-            style={{ ["--versatz-farbe" as string]: erster?.farbe ?? "#ff5a36" }}
-          >
-            {erster ? (
-              <Planet kennung="tuer-kind" farbe={erster.farbe} art="krater" className="absolute -right-8 -top-8 w-40 transition-transform duration-500 group-hover:rotate-12" />
-            ) : null}
-            <Symbol name="robot" className="!size-12" />
-            <span className="mt-3 font-display text-2xl font-bold">Kind</span>
-            <span className="mt-1 text-base text-tinte-2">6–11 Jahre</span>
+export default function Start() {
+  return (
+    <main id="inhalt" className="start">
+      <section className="start__hero">
+        <svg className="start__sterne" viewBox="0 0 100 70" preserveAspectRatio="none" aria-hidden="true">
+          {STERNE.map((s, i) => <circle key={i} className="start__stern" cx={s.x} cy={s.y} r={s.r / 10} />)}
+          <circle className="start__planet" cx={88} cy={10} r={2.6} />
+        </svg>
+        <Owl className="ui-guide__owl" />
+        <h1 className="start__titel">Heilbronn Island</h1>
+        <p className="start__unter">Entdecke, was es in Heilbronn für dich gibt.</p>
+        <StadtVorschau />
+        <div className="start__karten">
+          <Link href="/kinder/" className="start__karte start__karte--kind">
+            <Symbol name="rocket" />
+            <span className="start__karte-titel">Für mich</span>
+            <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
-        </li>
-        <li>
-          <Link
-            href="/teen/"
-            data-modus="teen"
-            className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-nacht bg-nacht p-6 text-[#f3ecdc] transition-transform hover:-translate-y-1 hover:rotate-1"
-            style={{ ["--versatz-farbe" as string]: "#ff4fa3" }}
-          >
-            <svg aria-hidden viewBox="0 0 200 120" className="absolute right-3 top-3 w-44 text-[#ff4fa3]">
-              <polyline points="10,90 60,40 110,60 150,15 190,45" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 5" />
-              {[[10, 90], [60, 40], [110, 60], [150, 15], [190, 45]].map(([x, y]) => (
-                <circle key={`${x}-${y}`} cx={x} cy={y} r="5" fill="currentColor" />
-              ))}
-            </svg>
-            <Symbol name="code" className="!size-12" />
-            <span className="mt-3 font-display text-2xl font-bold">Teen</span>
-            <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12–17 Jahre</span>
+          <Link href="/eltern/" className="start__karte">
+            <Symbol name="users" />
+            <span className="start__karte-titel">Für mein Kind</span>
+            <span className="start__karte-unter">Eltern</span>
           </Link>
-        </li>
-        <li>
-          <Link
-            href="/eltern/"
-            className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-tinte bg-papier-2 p-6 transition-transform hover:-translate-y-1"
-            style={{ ["--versatz-farbe" as string]: "#2f4bff" }}
-          >
-            <span aria-hidden className="raster absolute -right-6 -top-6 size-36 rounded-full text-blau opacity-70" />
-            <Symbol name="compass" className="!size-12" />
-            <span className="mt-3 font-display text-2xl font-bold">Eltern</span>
-            <span className="mt-1 text-base text-tinte-2">Alle Angebote in Heilbronn</span>
-          </Link>
-        </li>
-      </ul>
+        </div>
+      </section>
     </main>
   );
 }

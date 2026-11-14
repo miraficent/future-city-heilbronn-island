@@ -1,10 +1,11 @@
 [
-  { "id": "astronomy", "label_kids": "Sterne & Weltall", "icon": "planet", "color": "#6C4CE0", "keywords": ["weltall", "weltraum", "universum", "sterne", "stern", "planet", "sonnensystem", "mars", "kosmisch", "teleskop", "science dome", "astronom", "galaxie", "rakete"] },
-  { "id": "physics", "label_kids": "Physik & Experimente", "icon": "bulb", "color": "#F59E0B", "keywords": ["physik", "experiment", "strom", "energie", "licht", "optik", "magnet", "blitz", "löten", "elektronik", "solarmobil"] },
-  { "id": "biology", "label_kids": "Natur & Tiere", "icon": "leaf", "color": "#3E8E41", "keywords": ["biologie", "natur", "tiere", "pflanze", "riff", "meer", "dinosaurier", "körper", "ernährung", "wald", "klima"] },
-  { "id": "math", "label_kids": "Mathe & Rätsel", "icon": "plus", "color": "#3D7BE8", "keywords": ["mathe", "mathematik", "zahlen", "rätsel", "logik", "statistik", "problemlösen", "knobel"] },
-  { "id": "it", "label_kids": "Computer & KI", "icon": "robot", "color": "#2BB3A3", "keywords": ["ki", "künstliche intelligenz", "computer", "digital", "internet", "chatbot", "daten", "deepfake", "medien", "smartphone", "it "] },
-  { "id": "coding", "label_kids": "Programmieren", "icon": "code", "color": "#E07A4F", "keywords": ["programmier", "coding", "code", "scratch", "python", "calliope", "roboter", "robotik", "mikrocontroller", "app", "game", "spiel bauen", "unity", "minecraft", "lego league"] },
-  { "id": "art", "label_kids": "Kunst & Kreativ", "icon": "story", "color": "#D9433A", "keywords": ["kunst", "kreativ", "malen", "musik", "film", "trickfilm", "comic", "theater", "geschichte", "storytelling", "basteln", "design"] },
-  { "id": "family", "label_kids": "Mit der Familie", "icon": "home", "color": "#C99A5B", "keywords": ["familie", "familien", "eltern-kind", "für die ganze familie", "mit eltern", "plätzchen"] }
+  {"id": "astronomy", "label_kids": "Sterne & Weltall", "icon": "planet", "color": "#3B4CCA", "keywords": ["weltall", "weltraum", "universum", "sterne", "stern", "planet", "sonnensystem", "mars", "kosmisch", "teleskop", "science dome", "astronom", "galaxie", "rakete"]},
+  {"id": "physics", "label_kids": "Physik & Experimente", "icon": "bulb", "color": "#F59E0B", "keywords": ["physik", "experiment", "strom", "energie", "licht", "optik", "magnet", "blitz", "löten", "elektronik", "solarmobil"]},
+  {"id": "biology", "label_kids": "Natur & Tiere", "icon": "leaf", "color": "#4E9A4A", "keywords": ["biologie", "natur", "tiere", "pflanze", "riff", "meer", "dinosaurier", "körper", "ernährung", "wald", "klima"]},
+  {"id": "math", "label_kids": "Mathe & Rätsel", "icon": "plus", "color": "#6C4CE0", "keywords": ["mathe", "mathematik", "zahlen", "rätsel", "logik", "statistik", "problemlösen", "knobel"]},
+  {"id": "it", "label_kids": "Computer & KI", "icon": "robot", "color": "#2BB3A3", "keywords": ["ki", "künstliche intelligenz", "computer", "digital", "internet", "chatbot", "daten", "deepfake", "medien", "smartphone", "it "]},
+  {"id": "coding", "label_kids": "Programmieren", "icon": "code", "color": "#6C4CE0", "keywords": ["programmier", "coding", "code", "scratch", "python", "calliope", "roboter", "robotik", "mikrocontroller", "app", "lego league"]},
+  {"id": "gaming", "label_kids": "Spiele bauen", "icon": "controller", "color": "#F59E0B", "keywords": ["game", "gaming", "videospiel", "spieleentwicklung", "spiel bauen", "unity", "minecraft", "roblox", "level"]},
+  {"id": "art", "label_kids": "Kunst & Kreativ", "icon": "story", "color": "#FF6B6B", "keywords": ["kunst", "kreativ", "malen", "musik", "film", "trickfilm", "comic", "theater", "geschichte", "storytelling", "basteln", "design"]},
+  {"id": "family", "label_kids": "Mit der Familie", "icon": "home", "color": "#F28C6B", "keywords": ["familie", "familien", "eltern-kind", "für die ganze familie", "mit eltern", "plätzchen"]}
 ]

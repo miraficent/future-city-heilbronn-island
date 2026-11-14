@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Übersetzte Pipeline (npm run pipeline) – erzeugt, nicht im Repository
+    ".cache/**",
   ]),
 ]);
 

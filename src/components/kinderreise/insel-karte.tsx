@@ -6,14 +6,14 @@
  */
 import { useMemo } from "react";
 import {
-  ALTSTADT_HAEUSER, AUSSICHTSTURM, BAEUME, BRUECKEN, F, HAUPTBAHNHOF, KILIANSKIRCHE, NECKAR,
+  ALTSTADT_HAEUSER, AUSSICHTSTURM, BAEUME, BRUECKEN, F, HAUPTBAHNHOF, KILIANSKIRCHE, NECKAR, NEUER_ORT,
   PARKS, TEICH, WEGE, WEINBERG, punktAufKurve, type KartenOrt, type Kurve, type Pt,
 } from "@/lib/kinderkarte";
 import { GEBAEUDE_HOEHE, Gebaeude, PinZeichen } from "./gebaeude";
 
 const RAND = { x: -700, y: -450, w: 2600, h: 1700 };
 const BAHN_X = 118;
-const DAECHER = [F.dach, "#d0624a", F.klippe, "#e8935f"];
+const DAECHER = [F.dach, F.dach, F.klippe];
 
 const kurveD = (k: Kurve) => `M${k[0]} C${k[1]} ${k[2]} ${k[3]}`;
 const NECKAR_D = `M340 ${RAND.y} L${NECKAR[0]![0]} ` + NECKAR.map((s) => `C${s[1]} ${s[2]} ${s[3]}`).join(" ") + ` L300 ${RAND.y + RAND.h}`;
@@ -55,6 +55,7 @@ function verteileHaeuser(orte: KartenOrt[]) {
       if (Math.hypot(hx - 755, hy - 405) < 120) continue; // Altstadt (eigene Häuser)
       if (Math.abs(hx - HAUPTBAHNHOF[0]) < 105 && hy > HAUPTBAHNHOF[1] - 100 && hy < HAUPTBAHNHOF[1] + 40) continue;
       if (Math.hypot(hx - TEICH.x, hy - TEICH.y) < 60) continue;
+      if (Math.abs(hx - NEUER_ORT[0]) < 100 && hy > NEUER_ORT[1] - 90 && hy < NEUER_ORT[1] + 70) continue; // „Neuer Ort?“
       liste.push({ x: hx, y: hy, dach: DAECHER[Math.floor(r() * DAECHER.length)]!, s: 0.85 + r() * 0.35 });
     }
   }
@@ -82,9 +83,11 @@ type Props = {
   figur: Pt | null;
   gewaehlt: string | null;
   onWaehle: (id: string) => void;
+  /** „Neuer Ort?“ angetippt → Mitmach-Seite */
+  onNeuerOrt?: () => void;
 };
 
-export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehle }: Props) {
+export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehle, onNeuerOrt }: Props) {
   const haeuser = useMemo(() => verteileHaeuser(orte), [orte]);
   const wald = useMemo(() => verteileWald(), []);
   const [hx, hy] = HAUPTBAHNHOF;
@@ -111,12 +114,12 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
       <ellipse cx={920} cy={580} rx={140} ry={44} fill={F.grasDunkel} opacity={0.45} />
 
       {/* Wege, Neckar, Bahn */}
-      {WEGE.map((k, i) => <path key={i} d={kurveD(k)} fill="none" stroke={F.weg} strokeWidth={14} strokeLinecap="round" />)}
+      {WEGE.map((k, i) => <path key={i} d={kurveD(k)} fill="none" stroke={F.weg} strokeWidth={8} strokeDasharray="22 18" strokeLinecap="round" />)}
       <path d={NECKAR_D} fill="none" stroke={F.fluss} strokeWidth={50} strokeLinecap="round" />
       {WELLEN.map((w, i) => (
         <path key={i} d="M-10 0 q5 -5 10 0 t10 0" transform={`translate(${w.x},${w.y})`} fill="none" stroke={F.welle} strokeWidth={3} strokeLinecap="round" />
       ))}
-      <g stroke="#8a7a66">
+      <g stroke={F.klippe}>
         <line x1={BAHN_X - 9} y1={RAND.y} x2={BAHN_X - 9} y2={RAND.y + RAND.h} strokeWidth={3} />
         <line x1={BAHN_X + 9} y1={RAND.y} x2={BAHN_X + 9} y2={RAND.y + RAND.h} strokeWidth={3} />
         {Array.from({ length: 90 }, (_, i) => (
@@ -127,7 +130,7 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
       <g transform={`translate(${BAHN_X},${hy - 120})`}>
         {[0, 1, 2].map((i) => (
           <g key={i} transform={`translate(0,${i * 52})`}>
-            <rect x={-13} y={0} width={26} height={48} rx={8} fill="#d9433a" />
+            <rect x={-13} y={0} width={26} height={48} rx={8} fill={F.lila} />
             <rect x={-9} y={8} width={18} height={10} rx={3} fill={F.welle} />
             <rect x={-9} y={26} width={18} height={10} rx={3} fill={F.welle} />
           </g>
@@ -146,7 +149,7 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
         <g key={i}>
           <rect x={p.x} y={p.y} width={p.w} height={p.h} rx={22} fill={F.grasDunkel} />
           <circle cx={p.x + 18} cy={p.y + 16} r={11} fill={F.baum} />
-          <circle cx={p.x + p.w - 16} cy={p.y + 18} r={12} fill={F.baumHell} />
+          <circle cx={p.x + p.w - 16} cy={p.y + 18} r={12} fill={F.baum} opacity={0.85} />
         </g>
       ))}
 
@@ -159,15 +162,15 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
       <polygon points={`${tx - 11},${ty - 28} ${tx},${ty - 42} ${tx + 11},${ty - 28}`} fill={F.dach} />
 
       {/* Wald am Rand + einzelne Bäume */}
-      {wald.map((b, i) => <circle key={i} cx={b.x} cy={b.y} r={b.r} fill={i % 3 ? F.baum : F.baumHell} />)}
+      {wald.map((b, i) => <circle key={i} cx={b.x} cy={b.y} r={b.r} fill={F.baum} opacity={i % 3 ? 1 : 0.8} />)}
       {BAEUME.map(([x, y, r], i) => (
         <g key={i}>
           <circle cx={x + 3} cy={y + 4} r={r} fill={F.grasDunkel} />
-          <circle cx={x} cy={y} r={r} fill={i % 2 ? F.baum : F.baumHell} />
+          <circle cx={x} cy={y} r={r} fill={F.baum} opacity={i % 2 ? 1 : 0.85} />
         </g>
       ))}
 
-      <ellipse cx={755} cy={410} rx={56} ry={26} fill={F.weg} />
+      <ellipse cx={755} cy={410} rx={56} ry={26} fill={F.sand} />
 
       {/* Stadt: Häuser, Altstadt, Kilianskirche */}
       {stehend.map((h, i) =>
@@ -195,11 +198,11 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
       {/* Hauptbahnhof */}
       <g transform={`translate(${hx},${hy})`}>
         <polygon points="60,0 60,-40 76,-48 76,-8" fill={F.sand} />
-        <rect x={-60} y={-40} width={120} height={40} fill="#f0d79a" />
-        <rect x={-64} y={-46} width={128} height={8} rx={3} fill="#5b6b8a" />
+        <rect x={-60} y={-40} width={120} height={40} fill={F.sand} />
+        <rect x={-64} y={-46} width={128} height={8} rx={3} fill={F.nacht} />
         {[0, 1, 2, 3].map((i) => <rect key={i} x={-54 + i * 30} y={-30} width={18} height={22} rx={9} fill={F.welle} />)}
-        <rect x={-14} y={-72} width={28} height={28} fill="#f0d79a" />
-        <polygon points="-18,-72 0,-88 18,-72" fill="#5b6b8a" />
+        <rect x={-14} y={-72} width={28} height={28} fill={F.sand} />
+        <polygon points="-18,-72 0,-88 18,-72" fill={F.nacht} />
         <circle cx={0} cy={-58} r={9} fill="#fff" stroke={F.text} strokeWidth={2} />
         <path d="M0 -58 V-64 M0 -58 H5" stroke={F.text} strokeWidth={2} strokeLinecap="round" />
       </g>
@@ -229,16 +232,14 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
               <g className="kr-pin" style={{ animationDelay: `${i * 0.2}s` }}>
                 {/* Schild rechts vom Pin – am rechten Kartenrand links davon, damit nichts abgeschnitten wird */}
                 <g transform={o.x > 880 ? `translate(${-18 - breite},-48)` : "translate(18,-48)"}>
-                  <rect x={0} y={-21} width={breite} height={42} rx={21} fill={F.wand} stroke={F.text} strokeOpacity={0.15} strokeWidth={2} />
+                  <rect x={0} y={-21} width={breite} height={42} rx={21} fill="#FFFFFF" stroke={o.farbe} strokeWidth={2} />
                   <text x={o.x > 880 ? breite / 2 - 12 : breite / 2 + 12} y={7} textAnchor="middle" className="kr-name">{o.name}</text>
                 </g>
                 <path d="M0 0 C-6 -10 -26 -24 -26 -44 A26 26 0 1 1 26 -44 C26 -24 6 -10 0 0 Z" fill={o.farbe} stroke={F.wand} strokeWidth={4} />
                 <g transform="translate(0,-44)"><PinZeichen name={o.symbol} /></g>
                 {heute?.has(o.id) && (
-                  <g transform="translate(0,-112)" className="kr-heute">
-                    <rect x={-42} y={-17} width={84} height={34} rx={17} fill={F.orange} stroke={F.wand} strokeWidth={3} />
-                    <text y={7} textAnchor="middle" className="kr-heute-text">Heute!</text>
-                    <polygon className="kr-funkeln" points="48,-22 51,-14 59,-12 51,-9 48,-1 45,-9 37,-12 45,-14" fill="#FFE082" />
+                  <g transform="translate(26,-84)" className="kr-heute">
+                    <polygon className="kr-funkeln" points="0,-16 4.7,-5 16,-4.9 7,2.5 10,14 0,7.4 -10,14 -7,2.5 -16,-4.9 -4.7,-5" fill={F.orange} stroke="#FFFFFF" strokeWidth={3} strokeLinejoin="round" />
                   </g>
                 )}
                 {zahl > 0 && (
@@ -253,16 +254,37 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
         );
       })}
 
+      {/* „Neuer Ort?“ – freie Fläche für neue Einrichtungen (DESIGN.md: Nebel-Insel, hier als Bauplatz) */}
+      {onNeuerOrt && (
+        <g
+          transform={`translate(${NEUER_ORT[0]},${NEUER_ORT[1]})`}
+          className="kr-ort kr-neuer-ort"
+          role="link"
+          tabIndex={0}
+          aria-label="Neuer Ort? Hier kann eine neue Einrichtung dazukommen"
+          onClick={onNeuerOrt}
+          onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), onNeuerOrt())}
+        >
+          <rect x={-70} y={-62} width={140} height={78} rx={18} fill={F.gras} stroke="#FFFFFF" strokeWidth={4} strokeDasharray="12 10" />
+          <circle cx={0} cy={-24} r={20} fill="#FFFFFF" />
+          <path d="M0 -34 V-14 M-10 -24 H10" stroke={F.lila} strokeWidth={4} strokeLinecap="round" />
+          <g transform="translate(0,36)">
+            <rect x={-62} y={-17} width={124} height={34} rx={17} fill="#FFFFFF" stroke={F.lila} strokeWidth={2} />
+            <text y={6} textAnchor="middle" className="kr-name">Neuer Ort?</text>
+          </g>
+        </g>
+      )}
+
       {/* Figur – läuft per CSS-Übergang zum gewählten Haus */}
       {figur && (
         <g className="kr-figur" style={{ transform: `translate(${figur[0]}px, ${figur[1]}px)` }} aria-hidden="true">
           <ellipse cx={0} cy={2} rx={14} ry={5} fill={F.text} opacity={0.2} />
-          <rect x={-7} y={-20} width={5} height={14} rx={2} fill="#3d5a80" />
-          <rect x={2} y={-20} width={5} height={14} rx={2} fill="#3d5a80" />
-          <rect x={-10} y={-40} width={20} height={22} rx={8} fill="#3D7BE8" />
-          <circle cx={0} cy={-50} r={11} fill="#f5c9a0" />
-          <path d="M-11 -52 A11 11 0 0 1 11 -52 L11 -55 A11 9 0 0 0 -11 -55 Z" fill="#6b3e26" />
-          <circle cx={0} cy={-63} r={5} fill="#6b3e26" />
+          <rect x={-7} y={-20} width={5} height={14} rx={2} fill={F.nacht} />
+          <rect x={2} y={-20} width={5} height={14} rx={2} fill={F.nacht} />
+          <rect x={-10} y={-40} width={20} height={22} rx={8} fill={F.lila} />
+          <circle cx={0} cy={-50} r={11} fill={F.sand} />
+          <path d="M-11 -52 A11 11 0 0 1 11 -52 L11 -55 A11 9 0 0 0 -11 -55 Z" fill={F.text} />
+          <circle cx={0} cy={-63} r={5} fill={F.text} />
           <circle cx={-4} cy={-50} r={1.6} fill={F.text} />
           <circle cx={4} cy={-50} r={1.6} fill={F.text} />
           <path d="M-4 -45 Q0 -42 4 -45" stroke={F.text} strokeWidth={1.5} fill="none" strokeLinecap="round" />

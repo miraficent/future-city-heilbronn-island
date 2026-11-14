@@ -8,31 +8,35 @@
 /** Was die Karte von einer Einrichtung braucht (passt zu Quelle und QuelleMeta) */
 export type KartenQuelle = { id: string; name: string; farbe: string };
 
-/** Die einzigen Farben der Karte */
+/**
+ * Farben der Karte – ausschließlich Tokens aus DESIGN.md § Colors (gleiche Werte wie in globals.css).
+ * SVG braucht feste Werte, darum stehen sie hier noch einmal.
+ */
 export const F = {
-  gras: "#8BC34A",
-  grasDunkel: "#6FA83A",
-  fluss: "#4FB3E8",
-  welle: "#A8DCF5",
-  sand: "#E9C98B",
-  klippe: "#C99A5B",
-  dach: "#E07A4F",
-  wand: "#FFF7E8",
-  weg: "#F3E3C3",
-  baum: "#3E8E41",
-  baumHell: "#5DB35F",
-  lila: "#6C4CE0",
-  tuerkis: "#2BB3A3",
-  orange: "#F59E0B",
-  text: "#1F2937",
-  glas: "#2E3A8C",
-  glasHell: "#5B6BD6",
+  gras: "#7BC86C", // land
+  grasDunkel: "#4E9A4A", // land-dark
+  fluss: "#5BB8C4", // sea
+  welle: "#8FD3DB", // sea-shallow
+  sand: "#E8C88A", // sand
+  klippe: "#C49A5A", // cliff
+  dach: "#E07A4F", // Dächer der Altstadt (DESIGN.md § Map)
+  wand: "#F6F3EC", // paper – helle Hauswände
+  weg: "#FFFFFF", // Wege: weiß gestrichelt
+  baum: "#4E9A4A", // land-dark
+  baumHell: "#7BC86C", // land
+  lila: "#6C4CE0", // primary
+  tuerkis: "#2BB3A3", // IPAI
+  orange: "#F59E0B", // accent
+  text: "#1F2937", // ink
+  glas: "#3B4CCA", // experimenta
+  glasHell: "#5B6BD6", // experimenta Facetten
+  nacht: "#1E2A5A", // night
 } as const;
 
 export type Pt = [number, number];
 export type Kurve = [Pt, Pt, Pt, Pt];
-export type PinSymbol = "teleskop" | "chip" | "code" | "herz" | "stern";
-export type Gebaeudeart = "experimenta" | "ipai" | "haus";
+export type PinSymbol = "teleskop" | "chip" | "code" | "herz" | "stern" | "kalender";
+export type Gebaeudeart = "experimenta" | "ipai" | "haus" | "platz";
 
 export type KartenOrt = {
   id: string;
@@ -44,24 +48,36 @@ export type KartenOrt = {
   y: number;
 };
 
-/** Bekannte Einrichtungen (id wie in quellen.csv) */
+/**
+ * Bekannte Orte (id wie in quellen.csv). Farben aus DESIGN.md § Institution colors.
+ * Positionen folgen der echten Stadt: experimenta links am Neckar beim Hauptbahnhof,
+ * Bildungscampus (aim) nördlich, Zukunftspark (IPAI) im Süden.
+ */
 const ORTE: Record<string, Omit<KartenOrt, "id">> = {
-  aim: { name: "aim", farbe: F.orange, symbol: "code", gebaeude: "haus", x: 480, y: 215 },
-  experimenta: { name: "experimenta", farbe: F.lila, symbol: "teleskop", gebaeude: "experimenta", x: 185, y: 572 },
-  hdf: { name: "Haus der Familie", farbe: F.dach, symbol: "herz", gebaeude: "haus", x: 1000, y: 470 },
-  ipai: { name: "IPAI", farbe: F.tuerkis, symbol: "chip", gebaeude: "ipai", x: 620, y: 610 },
+  aim: { name: "aim", farbe: "#6C4CE0", symbol: "code", gebaeude: "haus", x: 480, y: 215 },
+  experimenta: { name: "experimenta", farbe: "#3B4CCA", symbol: "teleskop", gebaeude: "experimenta", x: 185, y: 572 },
+  hdf: { name: "Haus der Familie", farbe: "#F28C6B", symbol: "herz", gebaeude: "haus", x: 1000, y: 470 },
+  ipai: { name: "IPAI", farbe: "#2BB3A3", symbol: "chip", gebaeude: "ipai", x: 620, y: 610 },
 };
+
+/** COSMOS: der Platz für „alle Veranstaltungen“ – gehört zu keiner Quelle, steht immer auf der Karte */
+const COSMOS: KartenOrt = { id: "cosmos", name: "COSMOS", farbe: "#F59E0B", symbol: "kalender", gebaeude: "platz", x: 850, y: 610 };
+
+/** Freie Fläche „Neuer Ort?“ → Mitmach-Seite */
+export const NEUER_ORT: Pt = [1060, 690];
+
 /** Plätze für Einrichtungen, die neu in quellen.csv stehen */
-const FREIE_PLAETZE: Pt[] = [[850, 600], [905, 330], [330, 130], [560, 470]];
+const FREIE_PLAETZE: Pt[] = [[905, 330], [330, 130], [560, 470]];
 
 export function kartenOrte(quellen: KartenQuelle[]): KartenOrt[] {
   let frei = 0;
-  return quellen.map((q) => {
+  const orte = quellen.map((q) => {
     const bekannt = ORTE[q.id];
     if (bekannt) return { id: q.id, ...bekannt };
     const [x, y] = FREIE_PLAETZE[frei++ % FREIE_PLAETZE.length]!;
-    return { id: q.id, name: q.name.split(/\s[–-]\s/)[0] ?? q.name, farbe: q.farbe, symbol: "stern", gebaeude: "haus", x, y };
+    return { id: q.id, name: q.name.split(/\s[–-]\s/)[0] ?? q.name, farbe: q.farbe, symbol: "stern" as const, gebaeude: "haus" as const, x, y };
   });
+  return [...orte, COSMOS];
 }
 
 /** Wo die Figur am Anfang steht: vor dem Hauptbahnhof */

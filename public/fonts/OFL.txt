@@ -1,6 +1,8 @@
 Copyright 2020-2024 The Atkinson Hyperlegible Next Project Authors (https://github.com/googlefonts/atkinson-hyperlegible-next)
 Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded)
 Copyright 2021 The Martian Mono Project Authors (https://github.com/evilmartians/mono)
+Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)
+Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
 
 These fonts are licensed under the SIL Open Font License, Version 1.1.
 Source: https://github.com/google/fonts/tree/main/ofl

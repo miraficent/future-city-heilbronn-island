@@ -1,88 +1,136 @@
-# Aktuelle Kinderansicht: Heilbronn-Lernreise
+# Heilbronn Island
 
-Direkt öffnen: http://localhost:4173/kind/. Gemalte Ortsszenen, geografische Übersicht, modularer Figurenbaukasten und Einführung vor jeder Aufgabe sind umgesetzt. 138 Tests in 19 Dateien bestehen. Details und aktuelle Grenzen: [docs/heilbronn-lernreise.md](docs/heilbronn-lernreise.md). **Feste Sprachaufnahmen fehlen noch; der Player ist vorbereitet, nicht mit einer Ersatzstimme aktiviert.** Ältere Beschreibungen der Lauf-/Pixelwelt unten dokumentieren vorherige Entwicklungsstände.
+Ein Prototyp für die **aim-Challenge „Learning Guide“** (Future City Hackathon 2026, Hochschule Heilbronn):
+Alle Angebote zu **KI, Coding und Gaming** für Kinder und Jugendliche in Heilbronn an **einem** Ort –
+von **aim, experimenta, Haus der Familie und IPAI**.
 
-# COSMOS-Entdecker
+> **Neu im Team?** Lies zuerst diese Datei, dann [DESIGN.md](DESIGN.md) (das einheitliche Design),
+> [docs/regeln.md](docs/regeln.md) (wie wir arbeiten) und [docs/protokoll.md](docs/protokoll.md) (Entscheidungen, offene Fragen).
 
-Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. Kinder spielen in einer **Spielwelt** (Figur wählen, durch eine kleine Stadt laufen, in vier Lernhäusern Aufgaben lösen und die COSMOS-Rakete bauen) und finden von dort zu echten Angeboten zu **KI, Coding und Gaming** von aim, experimenta, Haus der Familie und IPAI in Heilbronn. Die gesamte Oberfläche ist ohne Emojis gestaltet.
+---
 
-## Website öffnen
+## 1. Worum geht es? (die Challenge in 5 Sätzen)
 
-**Fertige lokale Webansicht: http://localhost:4173/**
+1. In Heilbronn gibt es viele Kurse für Kinder, aber jede Einrichtung hat ihre eigene Webseite.
+2. Eltern finden das Passende schwer, kleine Kinder können gar nicht selbst suchen.
+3. Gesucht ist **ein Ort** für alle Angebote mit **einem eigenen Einstieg für Kinder, Jugendliche und Eltern**.
+4. Es soll **mehr als eine Liste** sein, eine **Suche mit Filtern** haben und sich **fast von selbst aktuell halten**.
+5. **Datenschutz:** Kinder brauchen kein Konto und melden sich nie selbst an – sie zeigen es ihren Eltern.
 
-**Direkt in die Spielwelt: http://localhost:4173/kind/** · **Heilbronn-Karte: http://localhost:4173/einrichtungen/**
+Die vollständige Gegenüberstellung mit dem Challenge-PDF: [docs/regeln-abgleich.md](docs/regeln-abgleich.md).
 
-Auf diesem Computer **`Website-starten.cmd` doppelt anklicken**. Das startet den lokalen Webserver und öffnet danach die Website im Browser. Das Fenster während der Vorführung offen lassen. `COSMOS-Entdecker.url` öffnet eine bereits laufende Vorschau. Diese Adresse funktioniert nur auf diesem Computer; sie ist kein öffentlicher Hosting-Link.
+## 2. Wer macht was?
 
-Der fertige statische Stand liegt in `out/`. Er benötigt zum Anzeigen Node.js, aber keine API-Schlüssel, Datenbank oder laufenden Internetverbindungen zu den Veranstaltern. Externe Originalseiten benötigen natürlich Internet.
+| Bereich | Wer | Was das heißt |
+|---|---|---|
+| **Daten** | **Cedric** | Liefert die Angebotsdaten (Import von den Webseiten, Pflege, Prüfung). Die Oberfläche verändert die Daten nie. |
+| **Darstellung** | **das restliche Team** | Zeigt die vorhandenen Daten so gut wie möglich: Karte, Einrichtungsseiten, Eltern-Bereich. |
 
-Nach Änderungen neu bauen und starten:
+Die Schnittstelle zwischen beiden ist die **Datendatei** (siehe Abschnitt 6). Solange ihr Format gleich bleibt,
+können beide Seiten unabhängig arbeiten.
 
-```powershell
-npm.cmd run export
-npm.cmd run preview
+## 3. Was die App enthält (Stand: 14.11.2026)
+
+| Seite | Was | Für wen |
+|---|---|---|
+| `/` **Start** | Nachthimmel mit Eule, kleine Stadtvorschau, zwei Karten: **„Für mich“** und **„Für mein Kind“** | alle |
+| `/kinder/` **Karte** | Stadtansicht von Heilbronn (Neckar, Altstadt, Kilianskirche, Hauptbahnhof). Jedes Gebäude ist ein **Link** zu seiner Einrichtung, mit Anzahl kommender Angebote und „Heute!“-Stern. Die Eule fragt einmal nach dem Alter. | Kinder, Teens |
+| `/checkpoint/[id]/` **Einrichtung** | Banner mit Gebäude, Eule, runde Kategorie-Knöpfe, Karten zum Wischen, Vorlesen, **„Da will ich hin!“**. COSMOS zeigt alle Angebote. | Kinder, Teens |
+| `/eltern/` **Eltern** | „Das möchte Ihr Kind besuchen“, Suche mit allen Filtern, Infos, offizielle Links | Eltern, Fachkräfte |
+| `/mitmachen/` | Neue Einrichtungen: Voraussetzungen und Formular (ohne Server) | Einrichtungen |
+| `/styleguide/` | Alle Farben, Schriften und Bausteine | Team |
+| `/pruefen/` | Unsichere Einträge – Kinder sehen sie nicht | Team |
+
+**Nicht mehr enthalten:** alle Spiele (Laufwelt, Robo-Coding, Orakel, Karten wischen, Lernhaus-Aufgaben, Rakete).
+**Noch offen:** der Teen-Bereich `/teen/`.
+
+**Design:** Es gilt [DESIGN.md](DESIGN.md) – eine Quelle für Farben, Schriften (Baloo 2, Nunito), Formen, Symbole
+(Lucide) und Bausteine (`src/components/ui/`). Wer etwas Neues braucht, trägt es zuerst dort ein.
+
+## 4. Die offene Hauptfrage
+
+> **Wie stellen wir die schon vorhandenen Daten besser dar?**
+
+Die Daten sind da (78 Angebote, davon 61 öffentlich sichtbar, plus Veranstaltungen aus dem Event-Import).
+Jetzt geht es nur noch um die Darstellung.
+Ideen und Fragen zum Besprechen stehen in [docs/protokoll.md](docs/protokoll.md#offene-frage-wie-stellen-wir-die-daten-besser-dar).
+
+## 5. Starten
+
+Voraussetzung: Node.js 22.12+ (oder 24).
+
+```bash
+npm ci                 # einmalig: Pakete installieren
+npm run dev            # Entwicklung mit automatischem Neuladen → http://localhost:3000
+npm test               # alle automatischen Tests
+npm run build          # Produktions-Build (vor jedem Push!)
 ```
 
-Unter Linux/macOS die Befehle als `npm run export` und `npm run preview` ausführen. Voraussetzungen für Entwicklung und Neubau: Node.js 22.12+ bzw. 24, `npm ci`.
+Statische Vorführversion (ohne Server): `npm run export`, dann `npm run preview` → http://localhost:4173.
+Unter Windows `npm.cmd` statt `npm` verwenden oder `Website-starten.cmd` doppelt anklicken.
 
-Entwicklung mit automatischem Neuladen: `npm.cmd run dev`, anschließend http://localhost:3000 öffnen. Produktions-Build mit Next-Server: `npm.cmd run build`, danach `npm.cmd start`.
+## 6. Daten – woher sie kommen (Bereich von Cedric)
 
-## Was funktioniert?
+Es gibt zurzeit zwei Datenwege. Welcher bleibt, entscheidet Cedric (siehe Protokoll).
 
-- **Spielwelt (6–11 Jahre):** sechs Spielfiguren zur Wahl (verschiedene Hautfarben, Frisuren, Kopftuch, Brille, ein Roboter) und Altersauswahl 6–11 (6–8 „Entdecken“, 9–11 „Tüfteln“). Die Stadt entsteht automatisch aus der Liste der Lernhäuser (mehr Häuser → längere Stadt). Die Figur läuft **nur auf Wegen**: Wiese, Bäume, Teich, Häuser und Fahrbahn sind gesperrt, die Straße wird nur am Zebrastreifen überquert. Steuerung per Antippen (Wegsuche über das Wegenetz), Steuerkreuz oder Pfeiltasten/WASD. Die Straße beginnt im Tunnel und endet im Wendehammer; Autos halten vor dem Zebrastreifen, solange die Figur darauf steht. Jedes Lernhaus (Code-Labor/aim, Forscherhaus/experimenta, Spielewerkstatt/Haus der Familie, KI-Atelier/IPAI) hat drei Aufgaben je Altersstufe (Roboter programmieren, Stromkreis, Level bauen, Muster erkennen) und gibt ein Raketenteil; mit allen vier Teilen startet die Rakete und es gibt einen Entdecker-Pass. Bedienknöpfe nur mit Symbolen, beschriftete Mini-Karte mit großer Kartenansicht und Zoom, Pause, Vollbild, Vorlesen mit lokaler Stimme.
-- **Echte Kurse im Spiel:** In jedem Haus erscheinen passende echte Kurse als Sammelkarten mit Alter, Datum, Ort und Preis – gefiltert nach Thema und gewähltem Alter. „Einpacken“ legt sie in den Rucksack; „Zeig's Mama oder Papa“ erzeugt lokal einen QR-Code bzw. Teilen-Link auf `/sammlung/` (nur Kurs-Kennungen). Kinder melden sich nie selbst an.
-- **Teens (12–17):** eigener, dunkler Bereich ohne Kinderspiel: Themen, Suche und Filter, Sammlung, Zeitreise und Sternbild mit echten Angeboten.
-- **Eltern/Fachkräfte:** Volltextsuche, Thema, Alter, Zeitraum, Einrichtung, Veranstaltungsart, Zielgruppe, kostenlose Angebote und gemeldete freie Plätze; Elternbericht aus der Spielsitzung.
-- **Heilbronn-Karte (`/einrichtungen/`):** echte Karte aus OpenStreetMap-Daten (Neckar, Seen, Straßen, Bahn, Parks; einmalig vorab vereinfacht, lokal ausgeliefert) mit den vier Lernorten an ihren echten Adressen. Pins mit Ziehen/Zoomen und Entdecker-Tour; je Ort: Beschreibung, Adresse, Gehzeit vom Hauptbahnhof, Anzahl und Themen der aktuellen Angebote, nächste Termine mit Alter, Anmeldeweg in drei Schritten, Links zu Anmeldung/Route/Kontakt und woher die Daten kommen.
-- **Details:** Termine, Ort, Preis, Verfügbarkeit, Link zum Original, lokaler ICS-Download, QR-Code und Web-Share mit Kopieralternative.
-- **Datenschutz:** keine Konten, keine Analyseübertragung, kein externer KI-Chat, keine nachgeladenen Karten oder Angebotsbilder. Schriften, Kartendaten und QR-Code-Erzeugung sind lokal. Spielstand und Rucksack nur in der Browsersitzung; „Neu anfangen“ und ein Löschknopf auf der Datenschutzseite entfernen alles.
-
-Der gespeicherte Datenbestand enthält derzeit 78 Angebote: 61 öffentlich sichtbar und 17 wegen unsicherer Themenzuordnung zurückgehalten. Nicht jede Quelle hat Angebote für jede Altersgruppe. Die Oberfläche erfindet bei fehlenden Treffern keine Kurse.
-
-## Datenpflege ohne Codeänderung
-
-1. `konfiguration/quellen.csv` in einer Tabellenkalkulation als UTF-8-CSV öffnen. Eine neue Einrichtung erhält eine Zeile mit eigener ID, Namen, Website, unterstütztem Adapter, Startadressen, Farbe und Standardadresse. Mehrere Startadressen mit `|` trennen.
-2. `konfiguration/themen.csv` enthält Themenname, SVG-Symbolkennung, Farbe, Kindername und durch `|` getrennte Schlagwörter. Eine neue Themenzeile erzeugt einen zusätzlichen Themenfilter. Die vier Spielhäuser sind kuratierte Stationen; eine weitere begehbare Station benötigt eine bewusste Platzierung.
-3. In `konfiguration/korrekturen.csv` gezielt ein Angebot korrigieren: `angebot_id,aktion,wert`. Aktionen: `ausblenden`, `thema`, `alter`, `zielgruppe`. Syntaxbeispiele stehen in [docs/pflege.md](docs/pflege.md).
-4. `npm.cmd run pipeline` liest die Quellen neu ein, validiert und schreibt `daten/` und `public/abo/`. Bei Quellfehlern bleiben die letzten gültigen Angebote mit künftigen Terminen erhalten. Der Prozess meldet trotzdem einen Fehler, damit Probleme auffallen.
-5. Den gespeicherten Lauf auf `/projekt/` prüfen und anschließend die Website mit `npm.cmd run export` neu bauen. Ein Import allein aktualisiert eine veröffentlichte statische Website nicht.
-
-Neue Einrichtungen funktionieren ohne Code, **wenn ihr Quellformat bereits unterstützt wird**. Ein neues Quellformat benötigt einen Adapter. Unterstützt sind momentan `kufer-wp-api`, `kufer-html`, `experimenta-kalender`, `wp-sitemap-events`. Ein im ursprünglichen Plan erwähnter allgemeiner iCal-Adapter ist noch nicht vorhanden.
-
-`.github/workflows/daten.yml` bereitet einen täglichen Lauf um 03:00 UTC und einen manuellen Start über GitHub Actions vor. Der Workflow ist hier lediglich angelegt; Repository-Einrichtung, Ausführung und automatisches erneutes Deployment sind nicht aktiviert worden. Ein Push mit dem Actions-Token löst nicht automatisch beliebige Folge-Workflows aus; die Hostinganbindung muss ausdrücklich eingerichtet werden.
-
-## Architektur und Prüfung
+| | Angebote (Kurse) | Live-Veranstaltungen |
+|---|---|---|
+| Datei | `daten/angebote.json` | `src/data/events.json` |
+| Erzeugt von | `pipeline/` – `npm run pipeline` | `scripts/events/` – `npm run events:update` |
+| Quellen eintragen | `konfiguration/quellen.csv` | `scripts/events/sources.json` |
+| Korrekturen | `konfiguration/korrekturen.csv` | Prüfliste `/pruefen/` |
+| Anleitung | [docs/pflege.md](docs/pflege.md) | [docs/data-pipeline.md](docs/data-pipeline.md) |
+| Automatisch | `.github/workflows/daten.yml` (vorbereitet) | `.github/workflows/update-events.yml` (täglich 05:00 UTC) |
 
 ```text
-Konfigurations-CSVs → vier Quelladapter → vereinheitlichen + klassifizieren
-  → Korrekturen + Validierung → angebote.json / bericht.json / meta.json
-  → Kalenderdateien → Next.js-Seiten → optional statischer Export
-
-Browser: Spielwelt, lokale Suche, Filter, Interessen-Kompass, Sammlung/Rucksack, Heilbronn-Karte
+Webseiten der Einrichtungen → Import → Themen- und Altersregeln (+ optional KI für Kindertexte)
+  → Prüfung durch Menschen → JSON-Datei → Darstellung (Karte, Einrichtungsseiten, Eltern-Bereich)
 ```
 
-Der Interessen-Kompass der Erwachsenenansichten ist regelbasiert, kein generativer KI-Chat. Auch die Musteraufgabe ist ein einfaches Lernspiel und trainiert kein echtes KI-Modell. Die Übungen und die Karte sind selbst erstellte Spielinhalte, keine bestätigten Kurse oder Gebäudepläne der Einrichtungen. Es werden keine Interessen, Bewegungen oder Suchtexte an einen Server gesendet. Eine Auswertung realer Nutzungsinteressen, eine geschützte Redaktion und ein externer KI-Berater sind in dieser Fassung nicht implementiert.
+Wichtig für die Darstellung:
 
-```powershell
-npm.cmd test
-npm.cmd run build
-npm.cmd run export
+- **Kinder sehen nur Angebote mit bekanntem Alter** und nur, was nicht „zur Prüfung“ markiert ist.
+- Eine **neue Einrichtung** in der Quellentabelle erscheint automatisch mit einem einfachen Haus auf der Karte
+  (eigenes Gebäude/Position: `src/lib/kinderkarte.ts`).
+- Unterstützte Quellformate: `kufer-html`, `kufer-wp-api`, `experimenta-kalender`, `wp-sitemap-events` (Angebote)
+  sowie iCal, experimenta-Seiten und Kufer-Listen (Veranstaltungen). Ein neues Webseiten-Format braucht einmalig Code.
+
+## 7. Wo liegt was?
+
+```text
+src/app/                Seiten (Next.js): page.tsx = Start, kinder/, checkpoint/, eltern/, mitmachen/, styleguide/ …
+src/components/ui/      Design-Bausteine (Button, Card, OwlGuide, EventCard …)
+src/components/kinder/  Kinderseiten (Karte, Einrichtung)
+src/components/kinderreise/  Stadtkarte (insel-karte.tsx) und Gebäude
+src/lib/                Logik ohne Darstellung (Filter, Alter, Events) – hier stehen die Tests dazu
+src/data/               categories.json, events.json (nur von der Pipeline geschrieben!)
+daten/                  angebote.json, bericht.json (nur von der Pipeline geschrieben!)
+konfiguration/          Tabellen zum Pflegen ohne Code
+pipeline/, scripts/     Datenimport
+tests/                  automatische Tests (Vitest)
+docs/                   Regeln, Protokoll, Entscheidungen, Anleitungen
 ```
 
-Aktuell: **125 automatisierte Tests erfolgreich** (darunter: Figur verlässt nie das Wegenetz, Straße nur am Zebrastreifen, jede Haustür per Antippen erreichbar, Route mit echten Laufschritten ablaufbar, Autos halten am besetzten Zebrastreifen, größere Stadt bei mehr Häusern), Produktions-Build und statischer Export erfolgreich. Browserprüfung (Chrome, 1280 px und 390 px): Figurenwahl, Antippen eines Hauses, Weg über den Zebrastreifen, Tastatur am Fahrbahnrand, Aufgabe mit Belohnung, Raketenstart und Finale, Rucksack mit QR-Code, große Karte, Heilbronn-Karte, alle internen Links. Einzelheiten und Grenzen: [docs/pruefbericht.md](docs/pruefbericht.md).
+## 8. Datenschutz und Freigabe
 
-## Datenschutz und Freigabestatus
+- Kein Konto, keine Cookies, keine Analyse, kein KI-Chat. Kinder-Daten (Wünsche, Alter) bleiben nur in der Browsersitzung.
+- Eine KI (falls aktiviert) bekommt **nur öffentliche Veranstaltungstexte**, nie Daten von Nutzenden.
+- Bilder von fremden Webseiten werden nicht nachgeladen (sonst sähen fremde Server die IP-Adresse der Familie).
+- Diese Fassung ist für die **lokale Vorführung**. Vor einer Veröffentlichung fehlen u. a. Betreiberangaben,
+  Hosting-Datenverarbeitung und Vereinbarungen mit den Einrichtungen zur Datenübernahme.
+  Einzelheiten: [docs/entscheidungen.md](docs/entscheidungen.md), [docs/quellen-check.md](docs/quellen-check.md).
 
-Diese Fassung dient der **lokalen Vorführung**. Vor öffentlicher Veröffentlichung sind Betreibername, ladungsfähige Anschrift, Kontakt, Hostinganbieter und dessen Datenverarbeitung einschließlich Auftragsverarbeitung/Transfers und Löschfristen verbindlich zu ergänzen. Dazu kommen die Nutzungsrechte bzw. Vereinbarungen zur Datenübernahme und die Prüfung der verbleibenden rechtlichen Anforderungen.
+## 9. Weitere Dokumente
 
-Die Datenschutzseite erklärt auch technische Verbindungsdaten und behauptet keine vollständige Anonymität eines späteren Hostings. Die Art.-8-Altersgrenze wird nicht pauschal auf jede Nutzung angewendet. Sitzungsspeicher kann bei wiederhergestellten Browsersitzungen fortbestehen. Dauerhafte Sammlungen für Teens/Eltern sind nur nach bewusster Aktivierung vorgesehen. Kinder haben keine dauerhafte Speicheroption.
+| Dokument | Inhalt |
+|---|---|
+| [DESIGN.md](DESIGN.md) | **Das einheitliche Design** (Tokens, Schriften, Karte, Seiten, Bausteine) |
+| [docs/regeln.md](docs/regeln.md) | **Verbindliche Team-Regeln** (Design, Kinder-UI, Daten, Code, Datenschutz) |
+| [docs/protokoll.md](docs/protokoll.md) | **Protokoll**: Entscheidungen, Zuständigkeiten, offene Fragen, nächste Schritte |
+| [docs/entscheidungen.md](docs/entscheidungen.md) | Ältere Architektur- und Designentscheidungen |
+| [docs/regeln-abgleich.md](docs/regeln-abgleich.md) | Challenge-Anforderungen ↔ Umsetzung |
+| [docs/pflege.md](docs/pflege.md), [docs/data-pipeline.md](docs/data-pipeline.md) | Daten pflegen ohne Programmieren |
+| [docs/demo-ablauf.md](docs/demo-ablauf.md) | Vorführablauf (wird nach der Entscheidung vom 14.11. angepasst) |
 
-Die ursprüngliche Spezifikation bleibt als Plan erhalten; sie beschreibt teilweise noch nicht gebaute Zusatzfunktionen. Maßgeblich für den aktuellen Stand sind diese README und [docs/entscheidungen.md](docs/entscheidungen.md). Challenge-PDF und Vortragsunterlagen unter `aim/` sind per `.gitignore` vom Repository ausgeschlossen.
-
-Die Challenge-README mit neun Seiten und die aim-Präsentation wurden lokal vollständig gelesen. Der KIT-Freigabeordner wurde abgerufen; er enthält genau diese beiden Dateien. Der [Regelabgleich](docs/regeln-abgleich.md) unterscheidet umgesetzte Anforderungen, Bonusfunktionen und offene Prüfpunkte. Die Spielwelt verwendet eigens generierte, lokal ausgelieferte Pixelgrafiken für Häuser, Baum, Bank und Roboter; die sechs Spielfiguren, Autos, Straßen und die Rakete sind Codegrafik. [Herkunft](docs/bildnachweise.md) und [vollständige Prompts](docs/pixel-prompts.json) sind dokumentiert. Die einzeln geprüften Links und Abrufgrenzen stehen im [Quellencheck](docs/quellen-check.md).
-
-## Vorbereitung für die spätere Präsentation
-
-Ein kurzer, überprüfbarer Vorführablauf liegt in [docs/demo-ablauf.md](docs/demo-ablauf.md). Präsentationsfolien sind entsprechend dem Wunsch für einen späteren Schritt zurückgestellt.
-
-Aktuelle Erweiterung und Altersentscheidungen: [docs/spielwelt-v2.md](docs/spielwelt-v2.md). Die Challenge nennt keine festen Altersgrenzen der Spielstufen; diese sind unsere Gestaltung. Neue Spielfigur und integrierter Erzeugungsprompt: [docs/pixel-prompts-v2.json](docs/pixel-prompts-v2.json).
+Frühere Stände (Laufwelt, Pixel-Spielwelt, Lernreise) sind in `docs/spielwelt-v2.md` und `docs/heilbronn-lernreise.md`
+beschrieben. Sie sind seit dem 14.11.2026 entfernt.
