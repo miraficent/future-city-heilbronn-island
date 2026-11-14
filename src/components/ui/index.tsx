@@ -130,11 +130,16 @@ export function Owl({ className = "" }: { className?: string }) {
 }
 
 /** Eule mit Sprechblase und Vorlese-Knopf. Antworten (Knöpfe) als children. */
-export function OwlGuide({ text, children, className = "" }: { text: string; children?: ReactNode; className?: string }) {
+export function OwlGuide({ text, children, className = "", onSchliessen }: { text: string; children?: ReactNode; className?: string; onSchliessen?: () => void }) {
   return (
     <section className={`ui-guide ${className}`} aria-live="polite">
       <Owl className="ui-guide__owl" />
       <div className="ui-guide__blase">
+        {onSchliessen && (
+          <button type="button" className="ui-guide__zu" aria-label="Eule schließen" onClick={onSchliessen}>
+            <Symbol name="close" />
+          </button>
+        )}
         <p className="ui-guide__text">
           {text}
           <button type="button" className="ui-vorlesen" aria-label="Vorlesen" onClick={() => vorlesen(text)}>

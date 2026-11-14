@@ -215,3 +215,14 @@
 .kinder-karte:has(.kr-bildkarte) { overflow: auto; overscroll-behavior: contain; }
 .kr-bildkarte { position: relative; width: 100%; height: 100%; overflow: hidden; }
 @media (max-aspect-ratio: 3/2) { .kr-bildkarte { width: auto; aspect-ratio: 3 / 2; } }
+
+/* Eule schließen / wieder öffnen (Karte frei sehen) */
+.ui-guide__zu { position: absolute; top: -14px; right: -14px; display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
+  box-shadow: 0 3px 0 0 var(--card-border); cursor: pointer; }
+.ui-guide__zu .symbol { width: 22px; height: 22px; }
+.kinder-karte__eule { position: fixed; left: 16px; bottom: 16px; z-index: 5; width: clamp(72px, 9vw, 104px); padding: 0; border: 0;
+  background: none; cursor: pointer; transition: transform .2s ease; }
+.kinder-karte__eule:hover { transform: translateY(-4px) rotate(-4deg); }
+.kinder-karte__eule svg { width: 100%; height: auto; display: block; }
+@media (prefers-reduced-motion: reduce) { .kinder-karte__eule { transition: none; } }

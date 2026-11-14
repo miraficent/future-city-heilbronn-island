@@ -6,7 +6,7 @@
  */
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AppShell, Button, OwlGuide } from "@/components/ui";
+import { AppShell, Button, Owl, OwlGuide } from "@/components/ui";
 import { BildKarte } from "@/components/kinderreise/bild-karte";
 import type { KartenOrt, Pt } from "@/lib/kinderkarte";
 import { BILD_START, bildOrte } from "@/lib/bildkarte";
@@ -31,6 +31,7 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
   const minute = useMinute();
   const [figur, setFigur] = useState<Pt>(BILD_START);
   const [gewaehlt, setGewaehlt] = useState<string | null>(null);
+  const [euleOffen, setEuleOffen] = useState(true);
 
   // Kommende Karten für dieses Alter (ohne Uhrzeit/Alter beim ersten Rendern: alle)
   const passend = useMemo(
@@ -67,16 +68,21 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
           onWaehle={laufeZu}
           onNeuerOrt={() => router.push("/mitmachen/")}
         />
-        {!gewaehlt && (
+        {!gewaehlt && !euleOffen && (
+          <button type="button" className="kinder-karte__eule" aria-label="Eule öffnen" onClick={() => setEuleOffen(true)}>
+            <Owl />
+          </button>
+        )}
+        {!gewaehlt && euleOffen && (
           <div className="kinder-karte__guide">
             {alter === null ? (
-              <OwlGuide text="Hallo! Ich bin die Eule. Wie alt bist du?">
+              <OwlGuide text="Hallo! Ich bin die Eule. Wie alt bist du?" onSchliessen={() => setEuleOffen(false)}>
                 {KINDER_ALTER.map((n) => (
                   <button key={n} type="button" className="kinder-alter" onClick={() => setAlter(n)}>{n}</button>
                 ))}
               </OwlGuide>
             ) : (
-              <OwlGuide text={`Hey! Heute ist ${wochentag ?? "ein schöner Tag"}. Wohin willst du?`}>
+              <OwlGuide text={`Hey! Heute ist ${wochentag ?? "ein schöner Tag"}. Wohin willst du?`} onSchliessen={() => setEuleOffen(false)}>
                 <Button variante="ghost" groesse="kids" icon="cake" onClick={() => setAlter(null)}>Alter ändern</Button>
               </OwlGuide>
             )}

@@ -13,9 +13,9 @@ export const BILD = { src: "/karte/heilbronn-karte.jpg", w: 1536, h: 1024 } as c
  */
 const BILD_POS: Record<string, Pt> = {
   aim: [900, 640],
-  experimenta: [590, 430],
+  experimenta: [650, 680],
   hdf: [1010, 450],
-  ipai: [650, 680],
+  ipai: [590, 430],
   cosmos: [1200, 760],
 };
 
