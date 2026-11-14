@@ -1,33 +1,28 @@
 import type { Angebot } from "./angebot";
 import { filtere, LEERER_FILTER } from "./filter";
 import { fuerModus } from "./entdecken";
+import type { Checkpoint, HausSymbol } from "./checkpoint";
+import aim from "../../konfiguration/checkpoints/aim.json";
+import experimenta from "../../konfiguration/checkpoints/experimenta.json";
+import hdf from "../../konfiguration/checkpoints/hdf.json";
+import ipai from "../../konfiguration/checkpoints/ipai.json";
 
 export type Punkt = { x: number; y: number };
 export type Rechteck = Punkt & { breite: number; hoehe: number };
 export type Richtung = "hoch" | "rechts" | "runter" | "links";
-export type MissionArt = "code" | "muster" | "level" | "strom";
-export type HausGrafik = "code-labor" | "forscherhaus" | "spielewerkstatt" | "ki-atelier";
+export type { Aktivitaet, HausGrafik, HausSymbol } from "./checkpoint";
+/** Aufgabenart für Einführung und Sprachaufnahmen; entspricht dem Haussymbol. */
+export type MissionArt = HausSymbol;
 
 /** Ein Lernhaus der Spielwelt. Die Position berechnet `erzeugeStadt` – neue Häuser brauchen keine Koordinaten. */
-export type Station = {
-  id: string;
-  name: string;
-  titel: string;
-  kurz: string;
-  farbe: string;
-  thema: string;
-  aufgabe: MissionArt;
-  grafik: HausGrafik;
-  /** Raketenteil, das dieses Haus beisteuert. */
-  teil: string;
-};
+export type Station = Checkpoint;
 
-export const STATIONEN: Station[] = [
-  { id: "aim", name: "aim", titel: "Der Roboter-Express", kurz: "Code-Labor", farbe: "#ed805c", thema: "coding", aufgabe: "code", grafik: "code-labor", teil: "Spitze" },
-  { id: "experimenta", name: "experimenta", titel: "Licht für die Stadt", kurz: "Forscherhaus", farbe: "#63bdb5", thema: "coding", aufgabe: "strom", grafik: "forscherhaus", teil: "Antrieb" },
-  { id: "hdf", name: "Haus der Familie", titel: "Ein Weg für alle", kurz: "Spielewerkstatt", farbe: "#ecc06b", thema: "gaming", aufgabe: "level", grafik: "spielewerkstatt", teil: "Flügel" },
-  { id: "ipai", name: "IPAI", titel: "Die Muster-Detektive", kurz: "KI-Atelier", farbe: "#aaa0db", thema: "ki", aufgabe: "muster", grafik: "ki-atelier", teil: "Fenster" },
-];
+/**
+ * Die Lernhäuser in Stadt-Reihenfolge. Inhalte stehen je Einrichtung in
+ * `konfiguration/checkpoints/<id>.json`; ein neues Haus = neue Datei + Eintrag hier.
+ * Geprüft werden die Dateien in `tests/lib/checkpoint.test.ts`.
+ */
+export const STATIONEN = [aim, experimenta, hdf, ipai] as Station[];
 
 export const abstand = (a: Punkt, b: Punkt) => Math.hypot(a.x - b.x, a.y - b.y);
 export const inRechteck = (p: Punkt, r: Rechteck) => p.x >= r.x && p.x <= r.x + r.breite && p.y >= r.y && p.y <= r.y + r.hoehe;

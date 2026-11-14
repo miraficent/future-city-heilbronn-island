@@ -4,8 +4,8 @@ import { STATIONEN, type Richtung } from "@/lib/spiel";
 import { oeffentlicheAngebote } from "@/lib/daten";
 describe("altersabhängige Geschichte",()=>{
  it("wechselt an den richtigen Altersgrenzen",()=>expect([6,8,9,11,12,17].map(stufeFuerAlter)).toEqual(["start","start","weiter","weiter","profi","profi"]));
- it("hat zwölf erreichbare Kapitelaufgaben pro Stufe",()=>{
-  expect(MISSIONEN).toHaveLength(12);
+ it("hat für jede konfigurierte Aktivität eine erreichbare Aufgabe pro Stufe",()=>{
+  expect(MISSIONEN).toHaveLength(STATIONEN.reduce((n,s)=>n+s.aktivitaeten.length,0));
   for(const stufe of STUFEN)for(let phase=0;phase<3;phase++){
    const m=codeMission(stufe.id,phase),befehle:Richtung[]=[];
    // Freie Randroute besucht alle Pakete, ohne die Wand zu durchqueren.

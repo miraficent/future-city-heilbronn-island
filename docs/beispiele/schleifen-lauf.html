@@ -1,0 +1,175 @@
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 17px/1.4 system-ui, sans-serif; color: #1c1934; background: #fffbee; }
+  .spiel { --feld: 48px; max-width: 640px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 12px; }
+  .spiel.gitter { --feld: 40px; }
+  h2 { margin: 0; font-size: 21px; }
+  p { margin: 0; }
+  .flaeche { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+  .flaeche .programm { flex: 1 1 300px; }
+  .bahn { display: grid; gap: 4px; justify-content: center; }
+  .feld { width: var(--feld); height: var(--feld); border-radius: 10px; background: #f1e6c8; display: grid; place-items: center; }
+  .feld.ziel { background: #ffd27a; outline: 3px dashed #ed805c; outline-offset: -3px; }
+  .roboter { width: 70%; height: 70%; border-radius: 9px; background: #ed805c; position: relative; }
+  .roboter::before, .roboter::after { content: ""; position: absolute; top: 30%; width: 20%; height: 20%; border-radius: 50%; background: #fff; }
+  .roboter::before { left: 20%; }
+  .roboter::after { right: 20%; }
+  .programm { background: #fff; border: 3px solid #1c1934; border-radius: 14px; padding: 10px 12px; display: grid; gap: 8px; }
+  .schleife { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .koerper { background: #e8f0ff; border-radius: 10px; padding: 6px 12px; }
+  .zahl { font-size: 26px; font-weight: 700; min-width: 2ch; text-align: center; }
+  .knoepfe { display: flex; flex-wrap: wrap; gap: 10px; }
+  button { font: inherit; min-width: 48px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 3px solid #1c1934; background: #fff; color: inherit; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: default; }
+  button:focus-visible { outline: 4px solid #4b7bec; outline-offset: 2px; }
+  .los { background: #1c1934; color: #fff; padding: 0 24px; }
+  #meldung { min-height: 2.8em; }
+</style>
+
+<div class="spiel" id="spiel">
+  <h2>Der Schleifen-Lauf</h2>
+  <p id="auftrag"></p>
+  <div class="flaeche">
+    <div class="bahn" id="bahn" aria-hidden="true"></div>
+    <div class="programm" id="programm" aria-label="Programm des Roboters"></div>
+  </div>
+  <div class="knoepfe">
+    <button class="los" id="los">Los!</button>
+    <button id="zurueck">Roboter zurückstellen</button>
+  </div>
+  <p id="meldung" role="status" aria-live="polite"></p>
+</div>
+
+<script>
+(function () {
+  // Die Spielwelt setzt die Altersstufe: "start" (6-8), "weiter" (9-11) oder "profi" (12-17).
+  var AUFGABEN = {
+    start: {
+      breite: 6, hoehe: 1, ziel: [4, 0],
+      auftrag: "Der Roboter soll zum gelben Feld. Wie oft muss er einen Schritt machen? Stelle die Zahl ein und drücke Los.",
+      schleifen: [{ richtung: "rechts", schritte: 1, text: "1 Schritt nach rechts" }]
+    },
+    weiter: {
+      breite: 9, hoehe: 1, ziel: [6, 0],
+      auftrag: "Jetzt macht der Roboter in jeder Runde 2 Schritte. Wie viele Runden braucht er bis zum gelben Feld?",
+      schleifen: [{ richtung: "rechts", schritte: 2, text: "2 Schritte nach rechts" }]
+    },
+    profi: {
+      breite: 5, hoehe: 4, ziel: [3, 2],
+      auftrag: "Zwei Schleifen nacheinander: erst nach rechts, dann nach oben. Stelle beide Zahlen so ein, dass der Roboter genau auf dem gelben Feld hält.",
+      schleifen: [
+        { richtung: "rechts", schritte: 1, text: "1 Schritt nach rechts" },
+        { richtung: "hoch", schritte: 1, text: "1 Schritt nach oben" }
+      ]
+    }
+  };
+  var aufgabe = AUFGABEN[window.COSMOS_STUFE] || AUFGABEN.start;
+  var zahlen = aufgabe.schleifen.map(function () { return 0; });
+  var pos = [0, 0];
+  var laeuft = false;
+  var gemeldet = false;
+
+  var spiel = document.getElementById("spiel");
+  var bahn = document.getElementById("bahn");
+  var programm = document.getElementById("programm");
+  var meldung = document.getElementById("meldung");
+
+  if (aufgabe.hoehe > 1) spiel.classList.add("gitter");
+  document.getElementById("auftrag").textContent = aufgabe.auftrag;
+  bahn.style.gridTemplateColumns = "repeat(" + aufgabe.breite + ", var(--feld))";
+
+  function zeichne() {
+    var html = "";
+    for (var y = aufgabe.hoehe - 1; y >= 0; y--) {
+      for (var x = 0; x < aufgabe.breite; x++) {
+        var ziel = x === aufgabe.ziel[0] && y === aufgabe.ziel[1];
+        var roboter = x === pos[0] && y === pos[1];
+        html += '<div class="feld' + (ziel ? " ziel" : "") + '">' + (roboter ? '<div class="roboter"></div>' : "") + "</div>";
+      }
+    }
+    bahn.innerHTML = html;
+  }
+
+  programm.innerHTML = aufgabe.schleifen.map(function (s, i) {
+    return '<div class="schleife"><span>Wiederhole</span>' +
+      '<button data-i="' + i + '" data-d="-1" aria-label="Eine Runde weniger">&minus;</button>' +
+      '<span class="zahl" id="zahl' + i + '">0</span>' +
+      '<button data-i="' + i + '" data-d="1" aria-label="Eine Runde mehr">+</button>' +
+      '<span>mal:</span><span class="koerper">' + s.text + "</span></div>";
+  }).join("");
+
+  programm.addEventListener("click", function (e) {
+    var knopf = e.target.closest("button");
+    if (!knopf || laeuft) return;
+    var i = Number(knopf.dataset.i);
+    zahlen[i] = Math.max(0, Math.min(9, zahlen[i] + Number(knopf.dataset.d)));
+    document.getElementById("zahl" + i).textContent = zahlen[i];
+  });
+
+  function sperre(an) {
+    spiel.querySelectorAll("button").forEach(function (b) { b.disabled = an; });
+  }
+
+  function los() {
+    if (laeuft) return;
+    laeuft = true;
+    sperre(true);
+    pos = [0, 0];
+    zeichne();
+    meldung.textContent = "Der Roboter fährt los ...";
+    var befehle = [];
+    aufgabe.schleifen.forEach(function (s, i) {
+      for (var runde = 0; runde < zahlen[i]; runde++) {
+        for (var k = 0; k < s.schritte; k++) befehle.push(s.richtung);
+      }
+    });
+    function schritt() {
+      if (!befehle.length) return fertig(false);
+      var r = befehle.shift();
+      var nx = pos[0] + (r === "rechts" ? 1 : 0);
+      var ny = pos[1] + (r === "hoch" ? 1 : 0);
+      if (nx >= aufgabe.breite || ny >= aufgabe.hoehe) return fertig(true);
+      pos = [nx, ny];
+      zeichne();
+      setTimeout(schritt, 320);
+    }
+    setTimeout(schritt, 320);
+  }
+
+  function fertig(amRand) {
+    laeuft = false;
+    sperre(false);
+    var dx = aufgabe.ziel[0] - pos[0];
+    var dy = aufgabe.ziel[1] - pos[1];
+    if (!amRand && dx === 0 && dy === 0) {
+      meldung.textContent = "Geschafft! Eine Schleife wiederholt Befehle. So musst du denselben Befehl nicht viele Male hinschreiben.";
+      if (!gemeldet) {
+        gemeldet = true;
+        parent.postMessage({ type: "cosmos:complete" }, "*");
+      }
+      return;
+    }
+    if (amRand) {
+      meldung.textContent = "Hoppla, der Roboter ist am Rand angekommen. Das waren zu viele Runden. Probier eine kleinere Zahl.";
+    } else if (aufgabe.hoehe === 1) {
+      meldung.textContent = dx > 0
+        ? "Fast! Noch " + dx + (dx === 1 ? " Feld" : " Felder") + " bis zum Ziel. Probier es noch einmal."
+        : "Ein bisschen zu weit. Probier eine kleinere Zahl.";
+    } else {
+      meldung.textContent = "Schau, wo der Roboter steht. " +
+        (dx > 0 ? "Nach rechts fehlt noch etwas. " : dx < 0 ? "Nach rechts war es zu weit. " : "Nach rechts passt es. ") +
+        (dy > 0 ? "Nach oben fehlt noch etwas." : dy < 0 ? "Nach oben war es zu weit." : "Nach oben passt es.");
+    }
+  }
+
+  document.getElementById("los").addEventListener("click", los);
+  document.getElementById("zurueck").addEventListener("click", function () {
+    if (laeuft) return;
+    pos = [0, 0];
+    zeichne();
+    meldung.textContent = "";
+  });
+
+  zeichne();
+})();
+</script>

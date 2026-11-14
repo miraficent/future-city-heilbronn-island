@@ -1,0 +1,21 @@
+{
+  "id": "aim",
+  "name": "aim",
+  "titel": "Der Roboter-Express",
+  "kurz": "Code-Labor",
+  "farbe": "#ed805c",
+  "thema": "coding",
+  "interesse": "coding",
+  "symbol": "code",
+  "grafik": "code-labor",
+  "teil": "Spitze",
+  "geschichte": {
+    "klein": "Hilf dem Roboter ans Ziel!",
+    "gross": "Die Lieferroboter haben ihren Weg vergessen. Programmiere ihnen eine Route."
+  },
+  "aktivitaeten": [
+    { "titel": "Die erste Lieferung", "modul": "roboter-code", "variante": 0 },
+    { "titel": "Ein Zwischenstopp", "modul": "roboter-code", "variante": 1 },
+    { "titel": "Die große Route", "modul": "roboter-code", "variante": 2 }
+  ]
+}

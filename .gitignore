@@ -2,6 +2,7 @@
 aim/
 
 node_modules/
+daten/plugins/
 .next/
 out/
 coverage/

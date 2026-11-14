@@ -1,5 +1,18 @@
 import { codeMission,kiMission,materialMission,energieMission,brueckenMission,type Stufe } from "./abenteuer";
-import type { MissionArt } from "./spiel";
+import type { Aktivitaet, MissionArt } from "./spiel";
+/** Welche Bildanleitung zu einem Lernmodul gehört. Lektionen und Plugins bringen ihre eigene Anleitung mit (`null`). */
+export function einstiegFuer(a:Aktivitaet):{art:MissionArt;phase:number}|null{
+ const v="variante" in a?a.variante??0:0;
+ switch(a.modul){
+  case "roboter-code":return {art:"code",phase:v};
+  case "muster-wahl":return {art:"muster",phase:v};
+  case "level-bau":return {art:"level",phase:v};
+  case "material-wahl":return {art:"strom",phase:0};
+  case "stromkreis":return {art:"strom",phase:1};
+  case "energie-wahl":return {art:"strom",phase:2};
+  default:return null;
+ }
+}
 export const LERNORTE=[
  {id:"aim",name:"aim",kurz:"Code entdecken",adresse:"Bildungscampus 7",farbe:"#cf7457",x:12855,y:7336,beschreibung:"Hier auf dem Bildungscampus entstehen neue Ideen fürs Lernen.",quelle:"https://www.heilbronn.de/kultur-freizeit/kultur-fuer-kinder-und-jugendliche/aim-akademie-fuer-innovative-bildung-und-management.html"},
  {id:"experimenta",name:"experimenta",kurz:"Forschen & staunen",adresse:"Experimenta-Platz",farbe:"#4f9290",x:12849,y:7727,beschreibung:"Glas, Dreiecke und Wasser: In der experimenta kannst du Wissenschaft entdecken.",quelle:"https://www.experimenta.science/experimenta/architektur/"},

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { AUFGABEN_TITEL, empfehlungen, neuerSpielstand, pruefeSpielstand, stufeFuerAlter, WUENSCHE, type Spielstand } from "@/lib/abenteuer";
+import { empfehlungen, neuerSpielstand, pruefeSpielstand, stufeFuerAlter, WUENSCHE, type Spielstand } from "@/lib/abenteuer";
 import type { Angebot } from "@/lib/angebot";
 import { alterAvatar, pruefeAvatar, STANDARD_AVATAR, type AvatarKonfiguration } from "@/lib/avatar";
 import { aussehenVon, gespraechVon, ORT_GESCHICHTE } from "@/lib/bewohner";
@@ -11,6 +11,8 @@ import type { Meta } from "@/lib/daten";
 import { fuerModus } from "@/lib/entdecken";
 import { fotoFuer } from "@/lib/fotos";
 import { klang, klangIstAus, setzeKlangAus, tonFreischalten } from "@/lib/klang";
+import { einstiegFuer } from "@/lib/lernwelt";
+import { aktivitaetenFuer, useSpielPlugins } from "@/lib/plugin-client";
 import { passendeSpielAngebote, STATIONEN } from "@/lib/spiel";
 import { lies, loesche, schreibe } from "@/lib/speicher";
 import { figurHoehe, frei, schritt, SPRECH_ABSTAND, SZENE_BREITE, SZENE_HOEHE, SZENEN, szeneVon, TUER_ABSTAND, type SzenenFigur } from "@/lib/szenen";
@@ -84,7 +86,9 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
   const [stand, setStand] = useState<Spielstand>(() => neuerSpielstand());
   const [ortId, setOrtId] = useState(SZENEN[0]!.station.id);
   const szene = szeneVon(ortId);
-  const station = szene.station;
+  // Aufgaben kommen aus den Checkpoint-Dateien; Einrichtungen können sie über Plugins ersetzen.
+  const { plugins, geladen: pluginsGeladen } = useSpielPlugins();
+  const station = useMemo(() => ({ ...szene.station, aktivitaeten: aktivitaetenFuer(plugins, szene.station) }), [szene.station, plugins]);
   const [position, setPosition] = useState<Punkt>(szene.start);
   const [blick, setBlick] = useState<FigurBlick>("vorne");
   const [laeuft, setLaeuft] = useState(false);
@@ -122,6 +126,8 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
   const merk = useSammlung("kind");
   const vorlesen = useVorlesen();
   const stufe = stufeFuerAlter(stand.alter);
+  const aktivitaet = station.aktivitaeten[phase] ?? station.aktivitaeten[0]!;
+  const einstieg = einstiegFuer(aktivitaet);
   const erfolge = stand.fortschritt[stufe];
   const klein = stand.alter <= 8;
   const teile = useMemo(() => STATIONEN.filter((s) => erfolge.some((id) => id.startsWith(`${s.id}-`))).map((s) => s.teil), [erfolge]);
@@ -191,14 +197,14 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
 
   const oeffneAufgaben = useCallback(() => {
     stoppen();
-    const erste = [0, 1, 2].find((n) => !erfolge.includes(`${station.id}-${n}`));
+    const erste = station.aktivitaeten.map((_, n) => n).find((n) => !erfolge.includes(`${station.id}-${n}`));
     setPhase(erste ?? 0);
     setBelohnung(null);
     setEingefuehrt(false);
     setAlleKurse(false);
     setFenster("aufgaben");
     klang.tuer();
-  }, [erfolge, station.id, stoppen]);
+  }, [erfolge, station, stoppen]);
 
   const geheZu = useCallback((p: Punkt, aktion: ZielAktion) => {
     tasten.current.clear();
@@ -620,7 +626,7 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
               <ol className="hud-teile" aria-label={`Raketenteile: ${teile.length} von ${STATIONEN.length}`}>
                 {STATIONEN.map((s) => (
                   <li key={s.id} className={teile.includes(s.teil) ? "hat-teil" : ""} title={`${s.teil} aus ${s.name}`} style={{ ["--teil-farbe" as string]: s.farbe }}>
-                    <svg viewBox="-16 -16 32 32" aria-hidden="true"><ThemenSymbol thema={s.aufgabe} groesse={22} /></svg>
+                    <svg viewBox="-16 -16 32 32" aria-hidden="true"><ThemenSymbol thema={s.symbol} groesse={22} /></svg>
                   </li>
                 ))}
                 <li className={`hud-rakete ${alleTeile ? "hat-teil" : ""}`}>
@@ -746,8 +752,8 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
                   <PixelBild motiv={s.grafik} />
                   <strong>{s.name}</strong>
                   <span className="haus-karte-ort">{s.id === station.id ? "Du bist hier" : s.kurz}</span>
-                  <span className="haus-karte-sterne" aria-label={`${geschafftAnzahl} von 3 Aufgaben`}>
-                    {[0, 1, 2].map((n) => <Symbol key={n} name="star" className={n < geschafftAnzahl ? "stern-an" : "stern-aus"} />)}
+                  <span className="haus-karte-sterne" aria-label={`${geschafftAnzahl} von ${s.aktivitaeten.length} Aufgaben`}>
+                    {s.aktivitaeten.map((_, n) => <Symbol key={n} name="star" className={n < geschafftAnzahl ? "stern-an" : "stern-aus"} />)}
                   </span>
                 </button>
               );
@@ -765,10 +771,10 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
         <Fensterrahmen offen={fenster === "aufgaben"} schliessen={() => setFenster(undefined)} kennung="haus-titel" titel={station.titel} breit kopfbild={<PixelBild motiv={station.grafik} className="fenster-kopfbild" />}>
           <div className="haus-inhalt">
             <nav className="aufgaben-reiter" aria-label="Aufgaben an diesem Ort">
-              {[0, 1, 2].map((n) => {
+              {station.aktivitaeten.map((a, n) => {
                 const fertig = erfolge.includes(`${station.id}-${n}`);
                 return (
-                  <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); setEingefuehrt(false); }} aria-label={`Aufgabe ${n + 1}: ${AUFGABEN_TITEL[station.id]?.[n] ?? ""}${fertig ? ", geschafft" : ""}`}>
+                  <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); setEingefuehrt(false); }} aria-label={`Aufgabe ${n + 1}: ${a.titel}${fertig ? ", geschafft" : ""}`}>
                     {fertig ? <Symbol name="star" /> : n + 1}
                   </button>
                 );
@@ -776,10 +782,12 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
               {eingefuehrt && <button className="aufgabe-erklaerung" onClick={() => setEingefuehrt(false)}><Symbol name="info" /> Erklärfilm</button>}
             </nav>
             <div className="aufgabe-flaeche">
-              {eingefuehrt ? (
-                <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} art={station.aufgabe} stufe={stufe} phase={phase} geschafft={geschafft} fehler={() => klang.falsch()} />
+              {!pluginsGeladen ? (
+                <p role="status">Aufgabe wird vorbereitet …</p>
+              ) : eingefuehrt || !einstieg ? (
+                <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} fehler={() => klang.falsch()} />
               ) : (
-                <AufgabenEinstieg key={`einstieg-${station.id}-${stufe}-${phase}`} art={station.aufgabe} stufe={stufe} phase={phase} stumm={tonAus} starten={() => { setEingefuehrt(true); klang.klick(); }} />
+                <AufgabenEinstieg key={`einstieg-${station.id}-${stufe}-${phase}`} art={einstieg.art} stufe={stufe} phase={einstieg.phase} stumm={tonAus} starten={() => { setEingefuehrt(true); klang.klick(); }} />
               )}
               <AnimatePresence>
                 {belohnung && (
@@ -792,7 +800,7 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
                     <div className="belohnung-bild" style={{ background: station.farbe }}>{belohnung === "Stern" ? <Symbol name="star" /> : <Symbol name="rocket" />}</div>
                     <strong>{belohnung === "Stern" ? "Ein Stern für dich!" : `Raketenteil: ${belohnung}!`}</strong>
                     <div className="belohnung-knoepfe">
-                      {phase < 2 && (
+                      {phase < station.aktivitaeten.length - 1 && (
                         <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { setPhase(phase + 1); setBelohnung(null); setEingefuehrt(false); }}><Symbol name="arrow" /> Nächste Aufgabe</button>
                       )}
                       <button className="spiel-knopf" onClick={() => { setBelohnung(null); setFenster(undefined); }}><Symbol name="map" /> Zurück nach draußen</button>

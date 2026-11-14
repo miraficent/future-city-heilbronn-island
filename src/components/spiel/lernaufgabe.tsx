@@ -3,11 +3,14 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { brueckenMission, codeMission, energieMission, fuehreCodeAus, kiMission, materialMission, pruefeBauPlan, pruefeWahl, type BildOption, type Stufe, type WahlMission } from "@/lib/abenteuer";
+import type { Aktivitaet, Lektion as LektionDaten, ModulId } from "@/lib/checkpoint";
 import type { Figur as FigurDaten } from "@/lib/figuren";
-import type { MissionArt, Richtung } from "@/lib/spiel";
+import { useVorlesen } from "@/lib/vorlesen";
+import type { Richtung } from "@/lib/spiel";
 import { Symbol } from "../symbol";
 import { Avatar,AufgabenFigur as Figur } from "./avatar";
 import { PixelBild, PixelGrafik } from "./pixel-grafik";
+import { HtmlPlugin } from "./html-plugin";
 
 const DREHUNG: Record<Richtung, number> = { rechts: 0, runter: 90, links: 180, hoch: 270 };
 const LINIE = "#1c1934";
@@ -304,6 +307,10 @@ export function AufgabenBild({ option }: { option: BildOption }) {
             <path d="M14 30q20-8 38-2t36-2M12 44q22-6 40 0t36-2" fill="none" stroke="#fff3df" strokeWidth="4" opacity="0.8" />
           </>
         );
+      case "lampe":
+        return <><path d="M50 8a25 25 0 0 0-15 45c4 3 6 7 6 11h18c0-4 2-8 6-11A25 25 0 0 0 50 8Z" fill={option.farbe??"#f1ca65"} stroke={LINIE} strokeWidth="4"/><path d="M41 70h18M43 78h14" stroke={LINIE} strokeWidth="5" strokeLinecap="round"/><path d="M44 50l6-14 6 14" fill="none" stroke={LINIE} strokeWidth="3"/></>;
+      case "batterie":
+        return <><rect x="14" y="24" width="64" height="38" rx="5" fill="#7bbfc4" stroke={LINIE} strokeWidth="4"/><rect x="78" y="34" width="9" height="18" rx="2" fill={LINIE}/><path d="M28 43h12M34 37v12M58 43h10" stroke="#fffbee" strokeWidth="5" strokeLinecap="round"/></>;
       default:
         return <rect x="20" y="16" width="60" height="54" rx="6" fill={f} stroke={LINIE} strokeWidth="3.5" />;
     }
@@ -627,9 +634,43 @@ function BauAufgabe({ stufe, phase, geschafft, fehler, figur }: { stufe: Stufe; 
   );
 }
 
-export function Lernaufgabe({ art, stufe, phase, geschafft, fehler, figur }: { art: MissionArt; stufe: Stufe; phase: number; geschafft: () => void; fehler?: () => void; figur?: FigurDaten }) {
-  if (art === "code") return <CodeAufgabe stufe={stufe} phase={phase} geschafft={geschafft} fehler={fehler} />;
-  if (art === "muster") return <WahlAufgabe mission={kiMission(stufe, phase)} geschafft={geschafft} fehler={fehler} />;
-  if (art === "strom") return phase === 1 ? <SchalterAufgabe stufe={stufe} geschafft={geschafft} fehler={fehler} /> : <WahlAufgabe mission={phase === 0 ? materialMission(stufe) : energieMission(stufe)} geschafft={geschafft} fehler={fehler} />;
-  return <BauAufgabe stufe={stufe} phase={phase} geschafft={geschafft} fehler={fehler} figur={figur} />;
+/** Demo-Lektion: Folien aus der Checkpoint-Datei, danach optional eine Abschlussfrage. */
+function Lektion({lektion,stufe,geschafft}:{lektion:LektionDaten;stufe:Stufe;geschafft:()=>void}){
+  const [nr,setNr]=useState(0),vorlesen=useVorlesen();
+  const anzahl=lektion.folien.length,folie=lektion.folien[nr];
+  if(!folie)return lektion.abschlussfrage
+    ?<div><p className="lektion-zaehler">Kurze Frage zum Schluss</p><WahlAufgabe mission={lektion.abschlussfrage} geschafft={geschafft}/><button className="spiel-knopf mt-4" onClick={()=>setNr(anzahl-1)}><Symbol name="arrow" style={{transform:"rotate(180deg)"}}/>Zurück zur Lektion</button></div>
+    :null;
+  const text=stufe==="start"&&folie.kurz?folie.kurz:folie.text;
+  const letzte=nr===anzahl-1;
+  function weiter(){if(!letzte)setNr(nr+1);else if(lektion.abschlussfrage)setNr(anzahl);else geschafft();}
+  return <div className="lernaufgabe lektion">
+    <p className="lektion-zaehler" aria-live="polite">Folie {nr+1} von {anzahl}</p>
+    <div className="lektion-folie">
+      {folie.bild?<img src={folie.bild} alt={folie.alt} className="lektion-bild"/>:folie.motiv?<AufgabenBild option={{id:"folie",titel:folie.titel,motiv:folie.motiv}}/>:null}
+      <div><h3>{folie.titel}</h3><p>{text}</p>
+        {vorlesen.kann&&<button className="rund-knopf rund-klein" onClick={()=>vorlesen.sprich(`${folie.titel}. ${text}`)} aria-label="Folie vorlesen"><Symbol name="volume"/></button>}
+      </div>
+    </div>
+    <div className="lektion-punkte" aria-hidden="true">{lektion.folien.map((_,i)=><span key={i} className={i===nr?"ist-aktiv":i<nr?"ist-fertig":""}/>)}</div>
+    <div className="flex flex-wrap gap-3">
+      <button className="spiel-knopf" disabled={nr===0} onClick={()=>setNr(nr-1)}><Symbol name="arrow" style={{transform:"rotate(180deg)"}}/>Zurück</button>
+      <button className="spiel-knopf spiel-knopf-dunkel" onClick={weiter}><Symbol name="arrow"/>{!letzte?"Weiter":lektion.abschlussfrage?"Zur Frage":"Verstanden"}</button>
+    </div>
+  </div>;
+}
+type ModulProps={aktivitaet:Aktivitaet;stufe:Stufe;variante:number;geschafft:()=>void;fehler?:()=>void;figur?:FigurDaten};
+/** Welche Ansicht zu welchem Lernmodul gehört. Ein fehlender Eintrag ist ein Typfehler. */
+const MODUL_ANSICHT:Record<ModulId,(p:ModulProps)=>React.ReactElement>={
+  plugin:({aktivitaet,stufe,geschafft})=>aktivitaet.modul==="plugin"?<HtmlPlugin html={aktivitaet.html} titel={aktivitaet.titel} stufe={stufe} geschafft={geschafft}/>:<></>,
+  "roboter-code":({stufe,variante,geschafft,fehler})=><CodeAufgabe stufe={stufe} phase={variante} geschafft={geschafft} fehler={fehler}/>,
+  "muster-wahl":({stufe,variante,geschafft,fehler})=><WahlAufgabe mission={kiMission(stufe,variante)} geschafft={geschafft} fehler={fehler}/>,
+  "material-wahl":({stufe,geschafft,fehler})=><WahlAufgabe mission={materialMission(stufe)} geschafft={geschafft} fehler={fehler}/>,
+  stromkreis:({stufe,geschafft,fehler})=><SchalterAufgabe stufe={stufe} geschafft={geschafft} fehler={fehler}/>,
+  "energie-wahl":({stufe,geschafft,fehler})=><WahlAufgabe mission={energieMission(stufe)} geschafft={geschafft} fehler={fehler}/>,
+  "level-bau":({stufe,variante,geschafft,fehler,figur})=><BauAufgabe stufe={stufe} phase={variante} geschafft={geschafft} fehler={fehler} figur={figur}/>,
+  lektion:({aktivitaet,stufe,geschafft})=>aktivitaet.modul==="lektion"?<Lektion lektion={aktivitaet} stufe={stufe} geschafft={geschafft}/>:<></>,
+};
+export function Lernaufgabe({aktivitaet,stufe,geschafft,fehler,figur}:{aktivitaet:Aktivitaet;stufe:Stufe;geschafft:()=>void;fehler?:()=>void;figur?:FigurDaten}){
+  return MODUL_ANSICHT[aktivitaet.modul]({aktivitaet,stufe,variante:"variante" in aktivitaet?aktivitaet.variante??0:0,geschafft,fehler,figur});
 }

@@ -8,6 +8,15 @@ Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. 
 
 ## Website öffnen
 
+**Neu: Spielplugins für alle Besucher:** `/admin/` bietet Upload, Vorschau,
+Veröffentlichung und Wiederherstellung pro Einrichtung. Dafür `COSMOS_ADMIN_PASSWORD`
+in `.env.local` setzen und **`npm.cmd run dev`** oder **`npm.cmd run build` +
+`npm.cmd start`** verwenden (http://localhost:3000/admin/).
+Ein beschreibbares, dauerhaftes `COSMOS_PLUGIN_DIR` ist für Hosting erforderlich.
+Format und Betrieb: [docs/spielplugins.md](docs/spielplugins.md).
+Die statische Demo in `out/` (siehe unten) funktioniert weiterhin, zeigt aber immer
+die eingebauten Spiele; Upload und Veröffentlichung gibt es nur mit Node.js-Server.
+
 **Fertige lokale Webansicht: http://localhost:4173/**
 
 **Direkt in die Spielwelt: http://localhost:4173/kind/** · **Heilbronn-Karte: http://localhost:4173/einrichtungen/**
@@ -42,7 +51,7 @@ Der gespeicherte Datenbestand enthält derzeit 78 Angebote: 61 öffentlich sicht
 ## Datenpflege ohne Codeänderung
 
 1. `konfiguration/quellen.csv` in einer Tabellenkalkulation als UTF-8-CSV öffnen. Eine neue Einrichtung erhält eine Zeile mit eigener ID, Namen, Website, unterstütztem Adapter, Startadressen, Farbe und Standardadresse. Mehrere Startadressen mit `|` trennen.
-2. `konfiguration/themen.csv` enthält Themenname, SVG-Symbolkennung, Farbe, Kindername und durch `|` getrennte Schlagwörter. Eine neue Themenzeile erzeugt einen zusätzlichen Themenfilter. Die vier Spielhäuser sind kuratierte Stationen; eine weitere begehbare Station benötigt eine bewusste Platzierung.
+2. `konfiguration/themen.csv` enthält Themenname, SVG-Symbolkennung, Farbe, Kindername und durch `|` getrennte Schlagwörter. Eine neue Themenzeile erzeugt einen zusätzlichen Themenfilter. Die Spielhäuser sind je Einrichtung in `konfiguration/checkpoints/<id>.json` beschrieben: Texte, Farbe, Gebäude und welche Lernmodule in welcher Reihenfolge erscheinen (siehe [docs/pflege.md](docs/pflege.md)).
 3. In `konfiguration/korrekturen.csv` gezielt ein Angebot korrigieren: `angebot_id,aktion,wert`. Aktionen: `ausblenden`, `thema`, `alter`, `zielgruppe`. Syntaxbeispiele stehen in [docs/pflege.md](docs/pflege.md).
 4. `npm.cmd run pipeline` liest die Quellen neu ein, validiert und schreibt `daten/` und `public/abo/`. Bei Quellfehlern bleiben die letzten gültigen Angebote mit künftigen Terminen erhalten. Der Prozess meldet trotzdem einen Fehler, damit Probleme auffallen.
 5. Den gespeicherten Lauf auf `/projekt/` prüfen und anschließend die Website mit `npm.cmd run export` neu bauen. Ein Import allein aktualisiert eine veröffentlichte statische Website nicht.

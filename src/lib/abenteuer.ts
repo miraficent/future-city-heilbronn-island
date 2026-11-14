@@ -1,4 +1,5 @@
 import type { Angebot } from "./angebot";
+import type { Motiv } from "./checkpoint";
 import { passendeSpielAngebote, STATIONEN, type Punkt, type Richtung } from "./spiel";
 
 export type Stufe = "start" | "weiter" | "profi";
@@ -8,13 +9,8 @@ export const STUFEN = [
   {id:"profi" as const,name:"Weiterdenken",alter:"12–17 Jahre",min:12,max:17},
 ];
 export const stufeFuerAlter=(alter:number):Stufe=>alter>=12?"profi":alter>=9?"weiter":"start";
-export const AUFGABEN_TITEL:Record<string,string[]>= {
-  aim:["Die erste Lieferung","Ein Zwischenstopp","Die große Route"],
-  experimenta:["Die Materialprobe","Die Lichtschalter","Energie für morgen"],
-  hdf:["Die Sprunghilfe","Brücken bauen","Dein eigener Parcours"],
-  ipai:["Beispiele entdecken","Fair und sicher","Im Zweifel nachfragen"],
-};
-export const MISSIONEN=STATIONEN.flatMap(s=>[0,1,2].map(phase=>({id:`${s.id}-${phase}`,station:s.id,phase,titel:AUFGABEN_TITEL[s.id]![phase]!,thema:s.id==="experimenta"?"forschen":s.thema})));
+/** Alle Aufgaben aller Häuser; Reihenfolge und Titel kommen aus der Checkpoint-Konfiguration. */
+export const MISSIONEN=STATIONEN.flatMap(s=>s.aktivitaeten.map((a,phase)=>({id:`${s.id}-${phase}`,station:s.id,phase,titel:a.titel,thema:s.interesse})));
 export type Spielstand={alter:number;fortschritt:Record<Stufe,string[]>;wuensche:string[]};
 export const neuerSpielstand=():Spielstand=>({alter:8,fortschritt:{start:[],weiter:[],profi:[]},wuensche:[]});
 export const WUENSCHE=[{id:"coding",titel:"Roboter & Code",text:"Ich möchte etwas programmieren."},{id:"gaming",titel:"Eigene Spiele",text:"Ich möchte ein Spiel gestalten."},{id:"ki",titel:"KI entdecken",text:"Ich möchte mehr über KI erfahren."}];
@@ -52,7 +48,7 @@ export function fuehreCodeAus(befehle:Richtung[],mission:CodeMission){
   return {ok:amZiel&&alle,weg,grund:!alle?"Besuche auch alle gelben Pakete.":"Ergänze den Weg bis zur Fahne."};
 }
 
-export type BildOption={id:string;titel:string;motiv:"ball"|"rad"|"fenster"|"block"|"frage"|"schild"|"gruppe"|"sonne"|"mond"|"metall"|"kupfer"|"holz"|"gummi"|"rotebaelle"|"foto"|"adresse"|"muster"|"wuerfel"|"akku"|"schalter"|"decke";farbe?:string};
+export type BildOption={id:string;titel:string;motiv:Motiv;farbe?:string};
 export type WahlMission={frage:string;tipp:string;antworten:string[];optionen:BildOption[];wissen:string};
 const bild=(id:string,titel:string,motiv:BildOption["motiv"],farbe?:string):BildOption=>({id,titel,motiv,farbe});
 export function kiMission(stufe:Stufe,phase:number):WahlMission {

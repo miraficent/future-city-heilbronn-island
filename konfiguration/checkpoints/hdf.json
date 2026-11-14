@@ -1,0 +1,21 @@
+{
+  "id": "hdf",
+  "name": "Haus der Familie",
+  "titel": "Ein Weg für alle",
+  "kurz": "Spielewerkstatt",
+  "farbe": "#ecc06b",
+  "thema": "gaming",
+  "interesse": "gaming",
+  "symbol": "level",
+  "grafik": "spielewerkstatt",
+  "teil": "Flügel",
+  "geschichte": {
+    "klein": "Bau einen Weg zum Ziel!",
+    "gross": "Der Weg zum Fest hat Lücken. Baue ein Level, das deine Figur schafft."
+  },
+  "aktivitaeten": [
+    { "titel": "Die Sprunghilfe", "modul": "level-bau", "variante": 0 },
+    { "titel": "Brücken bauen", "modul": "level-bau", "variante": 1 },
+    { "titel": "Dein eigener Parcours", "modul": "level-bau", "variante": 2 }
+  ]
+}
