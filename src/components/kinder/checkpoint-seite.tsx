@@ -45,7 +45,7 @@ const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 35, y: 22, s: 0.78, r: 1 },
 ];
 
-export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[] }) {
+export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; bild?: string | null }) {
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
@@ -83,7 +83,14 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
   return (
     <AppShell modus="kinder" voll>
       <div className="welt" style={raumStil}>
-        <WeltRaum licht={welt.licht} />
+        {bild ? (
+          <div className="welt__bild" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element -- statischer Export, eigenes Bild */}
+            <img src={bild} alt="" />
+          </div>
+        ) : (
+          <WeltRaum licht={welt.licht} />
+        )}
 
         <div className="welt__oben">
           <BackButton href="/kinder/">Zur Karte</BackButton>

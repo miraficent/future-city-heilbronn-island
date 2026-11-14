@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { notFound } from "next/navigation";
 import { CheckpointSeite } from "@/components/kinder/checkpoint-seite";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
@@ -23,5 +25,7 @@ export default async function Checkpoint({ params }: { params: Promise<{ id: str
   const ort = kartenOrte(META.quellen).find((o) => o.id === id);
   if (!ort) notFound();
   const karten = kartenFuerOrt(kinderKarten(oeffentlicheAngebote(), liveEvents as LiveEvent[], new Date(META.aktualisiert)), id);
-  return <CheckpointSeite ort={ort} karten={karten} kategorien={kategorien as Category[]} />;
+  // Eigenes Hintergrundbild der Themenwelt, falls vorhanden (public/welten/<id>.jpg) – sonst Leuchtgitter
+  const bild = existsSync(path.join(process.cwd(), "public", "welten", `${id}.jpg`)) ? `/welten/${id}.jpg` : null;
+  return <CheckpointSeite ort={ort} karten={karten} kategorien={kategorien as Category[]} bild={bild} />;
 }
