@@ -120,7 +120,36 @@ export const klang = {
   jubel() {
     [523, 659, 784, 1047, 1319].forEach((f, i) => ton(f, i * 0.12, 0.35, "triangle", 0.6));
   },
+  /** Klingel der Stadtbahn: zweimal „ding“. */
+  bahnKlingel() {
+    [0, 0.32].forEach((t) => {
+      ton(1568, t, 0.5, "sine", 0.5);
+      ton(2093, t, 0.35, "sine", 0.25);
+    });
+  },
+  /** Rollen auf den Schienen mit dem typischen Takt der Schienenstöße. */
+  bahnFahrt(sekunden: number) {
+    rauschen(0, sekunden, 0.35, 260, 420);
+    for (let t = 0.4; t < sekunden - 0.2; t += 0.62) {
+      ton(70, t, 0.08, "square", 0.35);
+      ton(70, t + 0.14, 0.08, "square", 0.3);
+    }
+  },
+  /** Roboter-Piepsen, wenn Bit spricht. */
+  piep() {
+    [988, 1319, 1175].forEach((f, i) => ton(f, i * 0.07, 0.07, "square", 0.18));
+  },
+  /** Kurzes Plopp beim Weiterblättern im Gespräch. */
+  blubb() {
+    ton(420, 0, 0.09, "sine", 0.5, 760);
+  },
 };
+
+/** Browser spielen Ton erst nach einer Berührung ab – diese Funktion weckt alles beim ersten Antippen auf. */
+export function tonFreischalten() {
+  kontext();
+  if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.resume();
+}
 
 export function klangIstAus(): boolean {
   if (typeof window === "undefined") return false;

@@ -27,3 +27,28 @@
 @media (prefers-reduced-motion: reduce) {
   .figur2 .fig-koerper, .figur2 .fig-augen, .figur2.laeuft .fig-bein-l, .figur2.laeuft .fig-bein-r, .figur2.laeuft .fig-arm-l, .figur2.laeuft .fig-arm-r, .figur2.spricht .fig-mund { animation: none !important; }
 }
+
+/* Bit, der Roboter */
+.roboter2 { overflow: visible; }
+.roboter2 .rob-koerper, .roboter2 .rob-augen, .roboter2 .rob-arm-l, .roboter2 .rob-arm-r, .roboter2 .rob-welle, .roboter2 .rob-schatten { transform-box: view-box; }
+.roboter2 .rob-koerper { animation: rob-schweben 2.6s ease-in-out infinite; }
+.roboter2 .rob-schatten { transform-origin: 60px 134px; animation: rob-schatten 2.6s ease-in-out infinite; }
+.roboter2 .rob-augen { animation: fig-blinzeln 4.2s infinite; }
+.roboter2 .rob-licht { animation: rob-licht 1.4s ease-in-out infinite; }
+.roboter2 .rob-arm-l { transform-origin: 28px 92px; animation: rob-arm 2.6s ease-in-out infinite; }
+.roboter2 .rob-arm-r { transform-origin: 92px 92px; animation: rob-arm 2.6s ease-in-out infinite reverse; }
+.roboter2.spricht .rob-arm-r { animation: rob-winken 0.5s ease-in-out infinite alternate; }
+.roboter2 .rob-welle { transform-origin: center; transform-box: fill-box; animation: rob-welle 0.36s ease-in-out infinite alternate; }
+.roboter2 .rob-welle-1 { animation-delay: -0.1s; }
+.roboter2 .rob-welle-2 { animation-delay: -0.22s; }
+.roboter2 .rob-welle-3 { animation-delay: -0.05s; }
+.roboter2 .rob-duese { animation: rob-licht 0.8s ease-in-out infinite; }
+@keyframes rob-schweben { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes rob-schatten { 0%, 100% { transform: scale(1); opacity: 0.22; } 50% { transform: scale(0.8); opacity: 0.14; } }
+@keyframes rob-licht { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes rob-arm { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-10deg); } }
+@keyframes rob-winken { from { transform: rotate(-20deg); } to { transform: rotate(-80deg); } }
+@keyframes rob-welle { from { transform: scaleY(0.4); } to { transform: scaleY(2); } }
+@media (prefers-reduced-motion: reduce) {
+  .roboter2 .rob-koerper, .roboter2 .rob-schatten, .roboter2 .rob-augen, .roboter2 .rob-licht, .roboter2 .rob-arm-l, .roboter2 .rob-arm-r, .roboter2 .rob-welle, .roboter2 .rob-duese { animation: none !important; }
+}

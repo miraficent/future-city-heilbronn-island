@@ -1,4 +1,5 @@
 import { STANDARD_AVATAR, type AvatarKonfiguration } from "./avatar";
+import type { Sprecher } from "./vorlesen";
 
 /**
  * Bewohner der Spielwelt. Sie stehen an den Lernorten, sprechen kurze Sätze und stellen eine kleine Frage.
@@ -10,13 +11,13 @@ export type Gespraech = { klein: string[]; gross: string[]; frage: { text: strin
 const a = (teile: Partial<AvatarKonfiguration>): AvatarKonfiguration => ({ ...STANDARD_AVATAR, ...teile });
 
 /** Aussehen aus demselben Baukasten wie die eigene Figur – bunt gemischt, ohne Rollenklischees. */
-const AUSSEHEN: Record<string, { name: string; aussehen: AvatarKonfiguration | "roboter" }> = {
-  emre: { name: "Emre", aussehen: a({ haut: 4, haar: 0, frisur: 1, oberteil: 2, oberfarbe: 5, unterteil: 0, unterfarbe: 8, schuhe: 0, schuhfarbe: 2 }) },
-  lina: { name: "Lina", aussehen: a({ gesicht: 1, augen: 2, sommersprossen: 1, haut: 1, haar: 7, frisur: 5, oberteil: 3, oberfarbe: 4, unterteil: 4, unterfarbe: 15, schuhe: 1, schuhfarbe: 11, zubehoer: 0, zubehoerfarbe: 2 }) },
-  amara: { name: "Amara", aussehen: a({ augen: 2, haut: 6, haar: 0, frisur: 7, oberteil: 5, oberfarbe: 2, aufdruck: 2, unterteil: 4, unterfarbe: 9, schuhe: 2, schuhfarbe: 0, zubehoer: 3, zubehoerfarbe: 10 }) },
-  bit: { name: "Bit", aussehen: "roboter" },
-  leo: { name: "Leo", aussehen: a({ gesicht: 1, haut: 0, haar: 5, frisur: 8, oberteil: 4, oberfarbe: 7, aufdruck: 1, unterteil: 1, unterfarbe: 14, schuhe: 0, schuhfarbe: 4, zubehoer: 1 }) },
-  mia: { name: "Mia", aussehen: a({ augen: 1, haut: 2, haar: 3, frisur: 4, oberteil: 0, oberfarbe: 11, aufdruck: 2, unterteil: 3, unterfarbe: 8, schuhe: 0, schuhfarbe: 12, zubehoer: 2, zubehoerfarbe: 6 }) },
+const AUSSEHEN: Record<string, { name: string; sprecher: Sprecher; aussehen: AvatarKonfiguration | "roboter" }> = {
+  emre: { name: "Emre", sprecher: "junge", aussehen: a({ haut: 4, haar: 0, frisur: 1, oberteil: 2, oberfarbe: 5, unterteil: 0, unterfarbe: 8, schuhe: 0, schuhfarbe: 2 }) },
+  lina: { name: "Lina", sprecher: "maedchen", aussehen: a({ gesicht: 1, augen: 2, sommersprossen: 1, haut: 1, haar: 7, frisur: 5, oberteil: 3, oberfarbe: 4, unterteil: 4, unterfarbe: 15, schuhe: 1, schuhfarbe: 11, zubehoer: 0, zubehoerfarbe: 2 }) },
+  amara: { name: "Amara", sprecher: "maedchen", aussehen: a({ augen: 2, haut: 6, haar: 0, frisur: 7, oberteil: 5, oberfarbe: 2, aufdruck: 2, unterteil: 4, unterfarbe: 9, schuhe: 2, schuhfarbe: 0, zubehoer: 3, zubehoerfarbe: 10 }) },
+  bit: { name: "Bit", sprecher: "roboter", aussehen: "roboter" },
+  leo: { name: "Leo", sprecher: "junge", aussehen: a({ gesicht: 1, haut: 0, haar: 5, frisur: 8, oberteil: 4, oberfarbe: 7, aufdruck: 1, unterteil: 1, unterfarbe: 14, schuhe: 0, schuhfarbe: 4, zubehoer: 1 }) },
+  mia: { name: "Mia", sprecher: "maedchen", aussehen: a({ augen: 1, haut: 2, haar: 3, frisur: 4, oberteil: 0, oberfarbe: 11, aufdruck: 2, unterteil: 3, unterfarbe: 8, schuhe: 0, schuhfarbe: 12, zubehoer: 2, zubehoerfarbe: 6 }) },
 };
 
 const GESPRAECHE: Record<string, Gespraech> = {
@@ -92,8 +93,8 @@ const GESPRAECHE: Record<string, Gespraech> = {
 /** Wer an welchem Lernort begrüßt – dieselben Bewohner wie in der Stadt. */
 export const GASTGEBER: Record<string, string> = { aim: "bit", experimenta: "amara", hdf: "mia", ipai: "leo" };
 
-export function aussehenVon(id: string): { name: string; aussehen: AvatarKonfiguration | "roboter" } {
-  return AUSSEHEN[id] ?? { name: "Pico", aussehen: "roboter" };
+export function aussehenVon(id: string): { name: string; sprecher: Sprecher; aussehen: AvatarKonfiguration | "roboter" } {
+  return AUSSEHEN[id] ?? { name: "Bit", sprecher: "roboter", aussehen: "roboter" };
 }
 
 /** Kurze Geschichte beim Betreten eines Ortes: Wo bin ich, was passiert hier, was ist meine Aufgabe? */

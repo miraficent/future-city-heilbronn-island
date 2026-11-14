@@ -10,7 +10,7 @@ import { aussehenVon, gespraechVon, ORT_GESCHICHTE } from "@/lib/bewohner";
 import type { Meta } from "@/lib/daten";
 import { fuerModus } from "@/lib/entdecken";
 import { fotoFuer } from "@/lib/fotos";
-import { klang, klangIstAus, setzeKlangAus } from "@/lib/klang";
+import { klang, klangIstAus, setzeKlangAus, tonFreischalten } from "@/lib/klang";
 import { passendeSpielAngebote, STATIONEN } from "@/lib/spiel";
 import { lies, loesche, schreibe } from "@/lib/speicher";
 import { figurHoehe, frei, schritt, SPRECH_ABSTAND, SZENE_BREITE, SZENE_HOEHE, SZENEN, szeneVon, TUER_ABSTAND, type SzenenFigur } from "@/lib/szenen";
@@ -27,6 +27,7 @@ import { Lernaufgabe } from "./lernaufgabe";
 import { PixelBild, Roboter } from "./pixel-grafik";
 import { Rakete } from "./rakete";
 import { Sammelkarte } from "./sammelkarte";
+import { BahnFahrt } from "./bahn-fahrt";
 import { StadtbahnKarte } from "./stadtbahn-karte";
 import { StartAuswahl, type StartSchritt } from "./start-auswahl";
 import { ThemenSymbol } from "./themen-symbol";
@@ -67,9 +68,7 @@ function SzenenPerson({ aussehen, punkt, blick, laeuft, spricht, name }: { ausse
     <g transform={`translate(${punkt.x.toFixed(1)} ${punkt.y.toFixed(1)})`}>
       <ellipse rx={b * 0.34} ry={h * 0.03} fill="#1c1934" opacity="0.28" />
       {aussehen === "roboter" ? (
-        <g className={spricht ? "roboter-spricht" : "roboter-schwebt"}>
-          <Roboter x={-h * 0.27} y={-h * 0.66} breite={h * 0.54} hoehe={h * 0.63} />
-        </g>
+        <Roboter x={-h * 0.27} y={-h * 0.66} breite={h * 0.54} hoehe={h * 0.63} spricht={spricht} blick={blick} />
       ) : (
         <Avatar wert={aussehen} x={-b / 2} y={-h * (349 / 360)} width={b} height={h} laeuft={laeuft} blick={blick} spricht={spricht} label={name} mini />
       )}
@@ -101,8 +100,8 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
   const [tonAus, setTonAus] = useState(false);
   const [vollbild, setVollbild] = useState(false);
   const [verhaeltnis, setVerhaeltnis] = useState(16 / 9);
-  const [hinweis, setHinweis] = useState("Lauf herum und sprich mit den Leuten!");
-  const [picoStand, setPicoStand] = useState({ text: "", offen: true, ungelesen: false });
+  const [hinweis, setHinweis] = useState("Tippe auf den Boden, dann läufst du hin.");
+  const [tonFrei, setTonFrei] = useState(false);
   const [alleKurse, setAlleKurse] = useState(false);
   const [halten, setHalten] = useState(false);
   const [fahrt, setFahrt] = useState<string | null>(null);
@@ -231,7 +230,6 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
 
   function erzaehle(text: string) {
     setHinweis(text);
-    setPicoStand({ text, offen: true, ungelesen: false });
     if (!tonAus && vorlesen.kann) vorlesen.sprich(text);
   }
 
@@ -368,12 +366,6 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
     else if (amEingang) setHinweis(`Hier ist der Eingang. Geh hinein!`);
   }, [nahFigur, amEingang, gesprochen]);
 
-  useEffect(() => {
-    const zu = setTimeout(() => setPicoStand({ text: hinweis, offen: false, ungelesen: true }), 6000);
-    return () => clearTimeout(zu);
-  }, [hinweis]);
-  const picoAktuell = picoStand.text === hinweis;
-  const picoOffen = picoAktuell ? picoStand.offen : true;
 
   /* ---------- Ansicht ---------- */
 
@@ -416,9 +408,12 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
   const gespraechText = !gespraech ? "" : gewaehlt ? gewaehlt.rueckmeldung : gespraech.zeile < zeilen.length ? zeilen[gespraech.zeile]! : (frage?.text ?? "");
   const { kann: kannVorlesen, sprich, stopp: stoppVorlesen } = vorlesen;
 
+  const sprecher = imGespraech?.sprecher ?? "erzaehler";
   useEffect(() => {
-    if (gespraechText && !tonAus && kannVorlesen) sprich(gespraechText);
-  }, [gespraechText, tonAus, kannVorlesen, sprich]);
+    if (!gespraechText || tonAus) return;
+    if (sprecher === "roboter") klang.piep();
+    if (kannVorlesen) sprich(gespraechText, sprecher);
+  }, [gespraechText, tonAus, kannVorlesen, sprich, sprecher, tonFrei]);
 
   function gespraechEnde() {
     if (!gespraech) return;
@@ -445,10 +440,11 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
     if (id === station.id) return;
     stoppen();
     setFahrt(id);
-    klang.klick();
+    klang.bahnKlingel();
+    klang.bahnFahrt(4.4);
     const ziel = szeneVon(id);
     const ansage = `Nächster Halt: ${ziel.station.name}.`;
-    if (!tonAus && vorlesen.kann) vorlesen.sprich(ansage);
+    if (!tonAus && vorlesen.kann) window.setTimeout(() => vorlesen.sprich(ansage), 2200);
     window.setTimeout(() => {
       setOrtId(id);
       schreibe("sitzung", SPEICHER.ort, id);
@@ -458,7 +454,8 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
       setBlick("vorne");
       setFahrt(null);
       setHinweis(`Willkommen: ${ziel.station.name}!`);
-    }, 2600);
+      klang.bahnKlingel();
+    }, 5000);
   }
 
   /* ---------- Aufgaben & Belohnung ---------- */
@@ -518,15 +515,6 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
     else klang.klick();
   }
 
-  function steuerDruck(taste: string, an: boolean) {
-    if (an) {
-      zielRef.current = null;
-      zielAktion.current = null;
-      setZiel(undefined);
-      tasten.current.add(taste);
-    } else tasten.current.delete(taste);
-  }
-
   function haltenStart() {
     if (halteUhr.current) return;
     setHalten(true);
@@ -572,7 +560,7 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
         </section>
 
         <div className="spielwelt-buehne">
-          <div ref={rahmen} className="spielwelt-rahmen abenteuer-rahmen" aria-describedby="spiel-erklaerung">
+          <div ref={rahmen} className="spielwelt-rahmen abenteuer-rahmen" aria-describedby="spiel-erklaerung" onPointerDownCapture={() => { if (!tonFrei) { tonFreischalten(); setTonFrei(true); } }}>
             <svg
               ref={svg}
               className="szene-svg"
@@ -647,43 +635,17 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
               </div>
             </div>
 
-            <p className="sr-only" role="status">{hinweis}</p>
-            {bereit && !gespraech && !fahrt && (
-              <div className="pico-funk">
-                <AnimatePresence mode="wait">
-                  {picoOffen && (
-                    <motion.div key={hinweis} className="pico-blase" initial={{ opacity: 0, scale: 0.5, x: 30 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={{ opacity: 0, scale: 0.5, x: 30 }} transition={{ type: "spring", stiffness: 420, damping: 28 }} style={{ originX: 1, originY: 1 }}>
-                      <span>{hinweis}</span>
-                      {vorlesen.kann && (
-                        <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(hinweis)} aria-label="Vorlesen"><Symbol name="volume" /></button>
-                      )}
-                    </motion.div>
+            {bereit && !gespraech && !fahrt && !fenster && (
+              <AnimatePresence mode="wait">
+                <motion.p key={hinweis} className="tipp-leiste" role="status" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
+                  <Symbol name="bulb" />
+                  <span>{hinweis}</span>
+                  {vorlesen.kann && (
+                    <button type="button" className="tipp-vorlesen" onClick={() => vorlesen.sprich(hinweis)} aria-label="Tipp vorlesen"><Symbol name="volume" /></button>
                   )}
-                </AnimatePresence>
-                <button className="pico-knopf" onClick={() => setPicoStand({ text: hinweis, offen: !picoOffen, ungelesen: false })} aria-label={picoOffen ? "Pico-Nachricht einklappen" : "Pico-Nachricht zeigen"} aria-expanded={picoOffen}>
-                  <PixelBild motiv="roboter" />
-                  {picoAktuell && picoStand.ungelesen && !picoOffen && <span className="pico-punkt" aria-hidden="true" />}
-                </button>
-              </div>
+                </motion.p>
+              </AnimatePresence>
             )}
-
-            <div className="steuerkreuz" role="group" aria-label="Figur bewegen">
-              {([["ArrowUp", "oben", 270, "Nach hinten"], ["ArrowLeft", "links", 180, "Nach links"], ["ArrowRight", "rechts", 0, "Nach rechts"], ["ArrowDown", "unten", 90, "Nach vorne"]] as const).map(([taste, klasse, drehung, text]) => (
-                <button
-                  key={taste}
-                  className={`steuer-${klasse}`}
-                  aria-label={text}
-                  onPointerDown={(e) => { e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); steuerDruck(taste, true); }}
-                  onPointerUp={() => steuerDruck(taste, false)}
-                  onPointerCancel={() => steuerDruck(taste, false)}
-                  onLostPointerCapture={() => steuerDruck(taste, false)}
-                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); const d = TASTEN[taste]!; geheZu({ x: pos.current.x + d.x * 160, y: pos.current.y + d.y * 60 }, null); } }}
-                >
-                  <Symbol name="arrow" style={{ transform: `rotate(${drehung}deg)` }} />
-                </button>
-              ))}
-            </div>
-
             <AnimatePresence>
               {bereit && !fenster && !gespraech && !fahrt && (nahFigur || amEingang || alleTeile) && (
                 <motion.div key="aktionen" className="aktion-leiste" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 30, opacity: 0 }}>
@@ -725,14 +687,14 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
                           <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => setGespraech({ ...gespraech, antwort: null })} autoFocus><Symbol name="refresh" /> Nochmal überlegen</button>
                         )
                       ) : gespraech.zeile < zeilen.length ? (
-                        <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { klang.klick(); setGespraech({ ...gespraech, zeile: gespraech.zeile + 1 }); }} autoFocus><Symbol name="arrow" /> Weiter</button>
+                        <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { klang.blubb(); setGespraech({ ...gespraech, zeile: gespraech.zeile + 1 }); }} autoFocus><Symbol name="arrow" /> Weiter</button>
                       ) : (
                         frage?.antworten.map((a, i) => (
                           <button key={a.text} className="spiel-knopf" onClick={() => { if (a.richtig) klang.richtig(); else klang.falsch(); setGespraech({ ...gespraech, antwort: i }); }} autoFocus={i === 0}>{a.text}</button>
                         ))
                       )}
                       {kannVorlesen && (
-                        <button className="rund-knopf rund-klein" onClick={() => sprich(gespraechText)} aria-label="Nochmal vorlesen"><Symbol name="volume" /></button>
+                        <button className="rund-knopf rund-klein" onClick={() => sprich(gespraechText, sprecher)} aria-label="Nochmal vorlesen"><Symbol name="volume" /></button>
                       )}
                     </div>
                   </div>
@@ -741,25 +703,8 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
               )}
             </AnimatePresence>
 
-            <AnimatePresence>
-              {fahrt && (
-                <motion.div key="fahrt" className="bahn-fahrt" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <div className="bahn-fahrt-landschaft" aria-hidden="true">
-                    <motion.svg viewBox="0 0 400 120" className="bahn-zug" initial={{ x: "-110%" }} animate={{ x: "110%" }} transition={{ duration: 2.4, ease: "easeInOut" }}>
-                      <rect x="10" y="30" width="380" height="64" rx="22" fill="#f4c430" stroke="#5a4a1c" strokeWidth="4" />
-                      <rect x="10" y="66" width="380" height="12" fill="#d64a3a" />
-                      {[40, 110, 180, 250, 320].map((x) => <rect key={x} x={x} y="40" width="50" height="22" rx="6" fill="#cfeaf0" />)}
-                      <circle cx="80" cy="100" r="11" fill="#2a2a33" />
-                      <circle cx="320" cy="100" r="11" fill="#2a2a33" />
-                      <path d="M190 30l-20-22h60l-20 22" stroke="#5a4a1c" strokeWidth="4" fill="none" />
-                    </motion.svg>
-                  </div>
-                  <p className="bahn-ansage" role="status">
-                    <Symbol name="train" /> Nächster Halt: <strong>{szeneVon(fahrt).station.name}</strong>
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+
+            <AnimatePresence>{fahrt && <BahnFahrt key="fahrt" von={station.id} nach={fahrt} />}</AnimatePresence>
 
             <AnimatePresence>
               {!bereit && (
@@ -787,7 +732,7 @@ export function HeilbronnAbenteuer({ angebote, meta, jetzt: startJetzt }: { ange
             </AnimatePresence>
           </div>
           <p id="spiel-erklaerung" className="spiel-erklaerung">
-            <Symbol name="info" /> Tippe auf den Platz, um zu laufen – oder nutze die Pfeile. Tippe auf Leute, um mit ihnen zu sprechen.
+            <Symbol name="info" /> Tippe auf den Boden – deine Figur läuft hin. Tippe auf Leute, um mit ihnen zu sprechen.
           </p>
         </div>
 

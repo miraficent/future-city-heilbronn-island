@@ -17,36 +17,62 @@ const HAUS: Record<string, { datei: string; breite: number; hoehe: number; name:
 
 export const hausBildMass = (motiv: string) => HAUS[motiv];
 
-/** Pico, der Spielbegleiter: ein runder Roboter mit Bildschirmgesicht. */
-export function Roboter({ x = 0, y = 0, breite = 120, hoehe = 140 }: { x?: number; y?: number; breite?: number; hoehe?: number }) {
-  const id = useId().replace(/:/g, "");
+/**
+ * Bit, der Lieferroboter: schwebt, blinzelt mit seinen Bildschirmaugen, schaut zur Seite und zeigt beim Sprechen
+ * eine kleine Klangwelle als Mund. Die Bewegungen stehen in figur.css.
+ */
+export function Roboter({ x = 0, y = 0, breite = 120, hoehe = 140, spricht = false, blick = "vorne" }: { x?: number; y?: number; breite?: number; hoehe?: number; spricht?: boolean; blick?: "vorne" | "links" | "rechts" }) {
+  const id = useId().replace(/[:«»]/g, "");
+  const v = blick === "links" ? -5 : blick === "rechts" ? 5 : 0;
   return (
-    <svg x={x} y={y} width={breite} height={hoehe} viewBox="0 0 120 140" aria-hidden="true" focusable="false">
+    <svg x={x} y={y} width={breite} height={hoehe} viewBox="0 0 120 140" className={`roboter2 ${spricht ? "spricht" : ""}`} aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id={`${id}k`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fdf6e6" />
-          <stop offset="1" stopColor="#d9cdb4" />
+        <linearGradient id={`${id}k`} x1="0" y1="0" x2="0.4" y2="1">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="0.55" stopColor="#e9eef2" />
+          <stop offset="1" stopColor="#b9c6cf" />
         </linearGradient>
-        <radialGradient id={`${id}g`} cx="0.5" cy="0.45" r="0.6">
-          <stop offset="0" stopColor="#3c6e7a" />
-          <stop offset="1" stopColor="#1e3d47" />
+        <radialGradient id={`${id}g`} cx="0.45" cy="0.35" r="0.75">
+          <stop offset="0" stopColor="#2c5664" />
+          <stop offset="1" stopColor="#10232b" />
+        </radialGradient>
+        <radialGradient id={`${id}l`}>
+          <stop offset="0" stopColor="#9ff6ff" stopOpacity="0.9" />
+          <stop offset="1" stopColor="#9ff6ff" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <ellipse cx="60" cy="134" rx="34" ry="5" fill="#1c1934" opacity="0.18" />
-      <path d="M60 6v14" stroke="#4b5d63" strokeWidth="4" strokeLinecap="round" />
-      <circle cx="60" cy="8" r="7" fill="#f2a24c" />
-      <circle cx="58" cy="6" r="2.4" fill="#fff4d6" />
-      <path d="M24 92q-14 6-12 22M96 92q14 6 12 22" stroke="#b9ad94" strokeWidth="9" strokeLinecap="round" fill="none" />
-      <rect x="30" y="80" width="60" height="46" rx="20" fill={`url(#${id}k)`} stroke="#4b5d63" strokeWidth="3" />
-      <circle cx="60" cy="102" r="8" fill="#63bdb5" stroke="#4b5d63" strokeWidth="2" />
-      <rect x="14" y="20" width="92" height="66" rx="28" fill={`url(#${id}k)`} stroke="#4b5d63" strokeWidth="3" />
-      <rect x="24" y="30" width="72" height="46" rx="20" fill={`url(#${id}g)`} />
-      <ellipse cx="46" cy="51" rx="7" ry="9" fill="#9ff0e4" />
-      <ellipse cx="74" cy="51" rx="7" ry="9" fill="#9ff0e4" />
-      <path d="M50 64q10 7 20 0" stroke="#9ff0e4" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <path d="M30 38q8-8 22-8" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" opacity="0.35" fill="none" />
-      <circle cx="34" cy="62" r="4" fill="#f08c8c" opacity="0.5" />
-      <circle cx="86" cy="62" r="4" fill="#f08c8c" opacity="0.5" />
+      <ellipse className="rob-schatten" cx="60" cy="134" rx="30" ry="5" fill="#1c1934" opacity="0.22" />
+      <g className="rob-koerper">
+        <g className="rob-antenne">
+          <path d="M60 8v13" stroke="#5b6b72" strokeWidth="3.5" strokeLinecap="round" />
+          <circle cx="60" cy="8" r="9" fill={`url(#${id}l)`} />
+          <circle className="rob-licht" cx="60" cy="8" r="5" fill="#f4a24c" />
+        </g>
+        <g className="rob-arm-l"><path d="M28 92q-14 4-14 20" stroke="#8796a0" strokeWidth="7" strokeLinecap="round" fill="none" /><circle cx="14" cy="114" r="6" fill="#dfe6ea" stroke="#5b6b72" strokeWidth="2" /></g>
+        <g className="rob-arm-r"><path d="M92 92q14 4 14 20" stroke="#8796a0" strokeWidth="7" strokeLinecap="round" fill="none" /><circle cx="106" cy="114" r="6" fill="#dfe6ea" stroke="#5b6b72" strokeWidth="2" /></g>
+        <path d="M30 84h60l-6 36q-24 10-48 0Z" fill={`url(#${id}k)`} stroke="#5b6b72" strokeWidth="2.5" strokeLinejoin="round" />
+        <rect x="50" y="94" width="20" height="12" rx="4" fill="#2f4bff" opacity="0.85" />
+        <path d="M54 100h12" stroke="#9ff6ff" strokeWidth="2" strokeLinecap="round" />
+        <path d="M46 124q14 10 28 0" stroke="#9ff6ff" strokeWidth="4" strokeLinecap="round" opacity="0.6" className="rob-duese" />
+        <rect x="14" y="20" width="92" height="68" rx="30" fill={`url(#${id}k)`} stroke="#5b6b72" strokeWidth="2.5" />
+        <rect x="23" y="29" width="74" height="50" rx="22" fill={`url(#${id}g)`} />
+        <g className="rob-augen" style={{ transformOrigin: "60px 50px" }}>
+          <ellipse cx={45 + v} cy="50" rx="8" ry="10" fill="#9ff6ff" />
+          <ellipse cx={75 + v} cy="50" rx="8" ry="10" fill="#9ff6ff" />
+          <circle cx={48 + v} cy="46" r="3" fill="#ffffff" />
+          <circle cx={78 + v} cy="46" r="3" fill="#ffffff" />
+        </g>
+        <g className="rob-mund" transform={`translate(${60 + v} 67)`}>
+          {spricht ? (
+            [-8, -3, 2, 7].map((mx, i) => <rect key={mx} className={`rob-welle rob-welle-${i}`} x={mx} y="-4" width="3" height="8" rx="1.5" fill="#9ff6ff" />)
+          ) : (
+            <path d="M-8-1q8 7 16 0" stroke="#9ff6ff" strokeWidth="3" strokeLinecap="round" fill="none" />
+          )}
+        </g>
+        <path d="M28 36q8-7 20-8" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" opacity="0.3" fill="none" />
+        <circle cx="31" cy="66" r="4" fill="#f08c8c" opacity="0.55" />
+        <circle cx="89" cy="66" r="4" fill="#f08c8c" opacity="0.55" />
+      </g>
     </svg>
   );
 }
