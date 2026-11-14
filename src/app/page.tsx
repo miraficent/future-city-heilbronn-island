@@ -55,7 +55,7 @@ export default function Start() {
           <Owl className="start__eule" />
           <h1 className="start__titel">Heilbronn Island</h1>
         </div>
-        <p className="start__unter">Entdecke, was es in Heilbronn für dich gibt.</p>
+        <p className="start__unter">Coden, forschen, spielen: <strong>Finde heraus, was in Heilbronn für dich los ist!</strong></p>
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
             <Symbol name="rocket" />

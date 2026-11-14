@@ -124,7 +124,9 @@
 .start { min-height: 100dvh; background: var(--night); color: var(--snow); }
 .start__hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; min-height: 100dvh; padding: 48px 16px 64px; text-align: center; overflow: hidden; }
 .start__titel { position: relative; margin: 0; font: 700 clamp(40px, 7vw, 64px)/1 "Baloo 2", sans-serif; }
-.start__unter { position: relative; margin: 0; font-size: 20px; color: var(--sea-shallow); }
+.start__unter { position: relative; margin: 0; max-width: 32ch; font: 600 clamp(20px, 2.4vw, 28px)/1.35 "Nunito", sans-serif; color: var(--sea-shallow);
+  animation: start-ploppen .6s cubic-bezier(.34, 1.56, .64, 1) .3s both; }
+.start__unter strong { display: block; font-family: "Baloo 2", sans-serif; font-weight: 700; color: var(--snow); }
 .start__karten { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; width: min(760px, 100%); }
 .start__karte { display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 220px; padding: 32px 24px;
   border-radius: var(--radius-card); background: var(--night-2); color: var(--snow); text-decoration: none; box-shadow: 0 4px 0 var(--primary-dark);
@@ -379,13 +381,14 @@
   .start__bild--gross { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .start__stern, .start__bild, .start__bild img, .start__eule, .start__eule .owl-fluegel { animation: none; }
+  .start__stern, .start__bild, .start__bild img, .start__eule, .start__eule .owl-fluegel, .start__unter { animation: none; }
 }
 
 /* Karte: Einrichtung ohne Veranstaltungen „schläft“ – Zzz steigen sanft auf */
 .kr-zzz__z { font: 800 28px/1 "Baloo 2", sans-serif; fill: var(--white); stroke: var(--night); stroke-width: 5px; paint-order: stroke;
-  transform-box: fill-box; transform-origin: center; animation: kr-zzz 3s ease-in-out infinite; }
+  opacity: 0; animation: kr-zzz 3s ease-in-out infinite; }
 .kr-zzz__z--2 { font-size: 38px; animation-delay: .6s; }
 .kr-zzz__z--3 { font-size: 50px; animation-delay: 1.2s; }
-@keyframes kr-zzz { 0% { opacity: 0; transform: translate(6px, 10px) scale(.6) rotate(-10deg); } 30%, 70% { opacity: 1; } 100% { opacity: 0; transform: translate(-6px, -12px) scale(1.1) rotate(8deg); } }
+/* nur Deckkraft – keine Verschiebung, damit die Z immer genau über dem Pin bleiben */
+@keyframes kr-zzz { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .kr-zzz__z { animation: none; opacity: 1; } }

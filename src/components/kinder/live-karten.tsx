@@ -38,7 +38,7 @@ export function KartenSeiteLive({ orte }: { orte: KartenOrt[] }) {
   const [karten, status] = useKarten();
   return (
     <>
-      <KartenSeite orte={orte} karten={karten} />
+      <KartenSeite orte={orte} karten={karten} geladen={status === "ok"} />
       <LiveHinweis status={status} />
     </>
   );

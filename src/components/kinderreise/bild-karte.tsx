@@ -19,6 +19,8 @@ type Props = {
   figur: Pt | null;
   /** Welche der drei Kinderfiguren läuft */
   figurArt: FigurArt;
+  /** Erst wenn die Veranstaltungen geladen sind, zeigt ein Haus ohne Angebote „Zzz“ (sonst schliefe beim Laden alles) */
+  geladen?: boolean;
   gewaehlt: string | null;
   onWaehle: (id: string) => void;
   onNeuerOrt?: () => void;
@@ -26,7 +28,7 @@ type Props = {
 
 const DAECHER = [F.dach, F.klippe];
 
-export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehlt, onWaehle, onNeuerOrt }: Props) {
+export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen = true, gewaehlt, onWaehle, onNeuerOrt }: Props) {
   // Häuser und Einrichtungen gemeinsam von hinten nach vorn zeichnen
   const stehend = [
     ...BILD_HAEUSER.map(([x, y, d], i) => ({ art: "haus" as const, key: `h${i}`, x, y, d })),
@@ -67,7 +69,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
             className={`kr-ort${aktiv !== null && !aktiv.has(o.id) ? " ist-gedimmt" : ""}${gewaehlt === o.id ? " ist-gewaehlt" : ""}`}
             role="button"
             tabIndex={0}
-            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : ": schläft gerade, keine Veranstaltungen"}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
+            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : geladen ? ": schläft gerade, keine Veranstaltungen" : ""}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
             onClick={waehle}
             onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), waehle())}
           >
@@ -90,7 +92,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
                   <circle r={15} fill={F.orange} stroke={F.wand} strokeWidth={3} />
                   <text y={6} textAnchor="middle" className="kr-badge">{zahl}</text>
                 </g>
-              ) : (
+              ) : geladen && (
                 /* Keine Veranstaltungen: das Haus „schläft“ – Zzz steigen über dem Pin auf */
                 <g transform="translate(-30,-78)" className="kr-zzz" aria-hidden="true">
                   <text x={0} y={0} className="kr-zzz__z kr-zzz__z--1">Z</text>
