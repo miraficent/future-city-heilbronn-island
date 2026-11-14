@@ -116,7 +116,8 @@ export function Owl({ className = "" }: { className?: string }) {
       <path className="owl-dunkel" d="M28 30 L38 6 L52 26 Z M92 30 L82 6 L68 26 Z" />
       <ellipse className="owl-koerper" cx={60} cy={70} rx={46} ry={52} />
       <ellipse className="owl-bauch" cx={60} cy={86} rx={28} ry={30} />
-      <path className="owl-dunkel" d="M16 70 Q8 96 30 112 L34 78 Z M104 70 Q112 96 90 112 L86 78 Z" />
+      <path className="owl-dunkel owl-fluegel owl-fluegel--links" d="M16 70 Q8 96 30 112 L34 78 Z" />
+      <path className="owl-dunkel owl-fluegel owl-fluegel--rechts" d="M104 70 Q112 96 90 112 L86 78 Z" />
       <circle className="owl-auge" cx={42} cy={52} r={17} />
       <circle className="owl-auge" cx={78} cy={52} r={17} />
       <circle className="owl-pupille" cx={45} cy={54} r={8} />
