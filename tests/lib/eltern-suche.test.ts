@@ -3,6 +3,7 @@ import type { Angebot } from "@/lib/angebot";
 import {
   aktiveFilter,
   alterHinweis,
+  angebotAusEvent,
   elternSuche,
   kindWuensche,
   kurzTitel,
@@ -12,6 +13,7 @@ import {
   preisText,
   tageszeitVon,
   terminband,
+  themenFuer,
   type ElternFilter,
 } from "@/lib/eltern-suche";
 import type { LiveEvent } from "@/types";
@@ -199,6 +201,7 @@ describe("Texte für Karten", () => {
     expect(alterHinweis(a("1"))).toEqual({ text: "8–11 Jahre", unklar: false });
     expect(alterHinweis(a("1", { alterMin: undefined, alterMax: undefined }))).toEqual({ text: "Alter unklar", unklar: true });
     expect(alterHinweis(a("1", { alterMin: undefined, alterMax: undefined, zielgruppen: ["fachkraefte"] }))).toEqual({ text: "für Fachkräfte", unklar: false });
+    expect(alterHinweis(a("1", { alterMin: undefined, alterMax: undefined, zielgruppen: [] }))).toEqual({ text: "Alter unklar", unklar: true });
   });
 });
 
@@ -218,5 +221,45 @@ describe("kindWuensche", () => {
   it("kennzeichnet Beispiel-Events und unbekannte Preise", () => {
     const [w] = kindWuensche(["ev:y"], [], [ev("y", { isDummy: true, cost: null, ageMin: null })], namen, JETZT);
     expect(w).toMatchObject({ beispiel: true, preis: "Preis beim Anbieter", alter: "Alter unklar" });
+  });
+});
+
+describe("angebotAusEvent", () => {
+  it("formt ein Live-Event in das Angebotsformat um, ohne etwas zu erfinden", () => {
+    const x = angebotAusEvent(ev("m1", { categories: ["it", "astronomy"], ageMin: 8, ageMax: 12, end: "2026-11-20T17:00:00+01:00", type: "course" }));
+    expect(x).toMatchObject({
+      id: "ev:m1",
+      quelle: "experimenta",
+      themen: ["ki", "astronomy"],
+      art: "kurs",
+      zielgruppen: ["kinder", "teens"],
+      alterMin: 8,
+      alterMax: 12,
+      termine: [{ start: "2026-11-20T15:00:00+01:00", ende: "2026-11-20T17:00:00+01:00" }],
+      kosten: { euro: 0, text: "kostenlos" },
+      status: "unbekannt",
+      url: "https://example.org/anmelden",
+    });
+  });
+
+  it("lässt ein unbekanntes Alter und einen unbekannten Preis offen", () => {
+    const x = angebotAusEvent(ev("m2", { ageMin: null, cost: null }));
+    expect(x.alterMin).toBeUndefined();
+    expect(alterHinweis(x)).toEqual({ text: "Alter unklar", unklar: true });
+    expect(preisText(x)).toBe("Preis beim Anbieter");
+  });
+
+  it("ist mit der Suche nutzbar", () => {
+    const treffer = elternSuche([angebotAusEvent(ev("m3"))], filter({ themen: ["coding"], alter: 9 }), JETZT);
+    expect(treffer.map((t) => t.angebot.id)).toEqual(["ev:m3"]);
+  });
+});
+
+describe("themenFuer", () => {
+  it("zeigt nur Themen, die vorkommen – Kurs-Themen zuerst", () => {
+    const basis = [{ id: "ki", name: "Künstliche Intelligenz", symbol: "robot", schlagwoerter: [] }, { id: "gaming", name: "Gaming", symbol: "controller", schlagwoerter: [] }];
+    const kategorien = [{ id: "astronomy" as const, label_kids: "Sterne & Weltall", icon: "planet", color: "#3B4CCA", keywords: [] }];
+    const liste = themenFuer(basis, kategorien, [a("1", { themen: ["astronomy", "ki"] })]);
+    expect(liste.map((t) => [t.id, t.name])).toEqual([["ki", "Künstliche Intelligenz"], ["astronomy", "Sterne & Weltall"]]);
   });
 });

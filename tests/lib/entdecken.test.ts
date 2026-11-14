@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { fuerModus, interessenThemen } from "@/lib/entdecken";
-import { oeffentlicheAngebote } from "@/lib/daten";
+import { beispielAngebote } from "../fixtures/angebote";
 import type { Angebot } from "@/lib/angebot";
 
 describe("Interessen-Kompass", () => {
@@ -14,8 +14,8 @@ describe("Interessen-Kompass", () => {
   });
 });
 
-describe("Altersgerechte Ansichten mit echten Projektdaten", () => {
-  const alle = oeffentlicheAngebote();
+describe("Altersgerechte Ansichten mit Beispiel-Kursen", () => {
+  const alle = beispielAngebote();
   it("zeigt Kindern keine reinen Erwachsenen- oder Teen-Angebote", () => {
     const kinder = fuerModus(alle, "kind");
     expect(kinder.length).toBeGreaterThan(0);

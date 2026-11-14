@@ -17,7 +17,7 @@ import { FIGUR_ARTEN, KinderFigurBild, figurLabel, type FigurArt } from "@/compo
 const KINDER_ALTER = [6, 7, 8, 9, 10, 11, 12, 13, 14];
 const LAUFZEIT_MS = 1200;
 
-export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; karten: KinderKarte[] }) {
+export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte: KartenOrt[]; karten: KinderKarte[]; geladen?: boolean }) {
   const router = useRouter();
   const orte = useMemo(() => bildOrte(kartenOrte), [kartenOrte]);
   const rahmen = useRef<HTMLDivElement>(null);
@@ -67,6 +67,7 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
           aktiv={null}
           figur={figur}
           figurArt={figurArt ?? "lila"}
+          geladen={geladen}
           gewaehlt={gewaehlt}
           onWaehle={laufeZu}
           onNeuerOrt={() => router.push("/mitmachen/")}

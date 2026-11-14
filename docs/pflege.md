@@ -41,6 +41,15 @@ Weitere Syntax:
 
 Zeilen werden nacheinander angewendet. Eine Alterskorrektur berechnet die Zielgruppen neu. Falls erforderlich, die passende Zielgruppenkorrektur danach eintragen. Erst die Originalseite prüfen, dann eine unsichere Themenzuordnung freigeben. Die Zahl zur Sicherheit ist ein Regelwert, keine statistisch kalibrierte Wahrscheinlichkeit.
 
+## Live-Veranstaltungen (Mobilizon)
+
+Die Kinderseiten zeigen nur Veranstaltungen aus Mobilizon. Sie erscheinen ohne Neubau beim nächsten Besuch (spätestens nach 10 Minuten).
+
+- **Einrichtung:** Veranstaltung in der Gruppe der Einrichtung anlegen (Gruppenname `aim`, `experimenta`, `hdf`, `ipai`).
+- **Für Kinder sichtbar:** Alter in den Text schreiben („ab 8 Jahren“, „8 bis 12 Jahre“, „Kl. 3-4“) oder einen Alters-Tag setzen („6-10 Jahre“). Ohne Alter steht die Veranstaltung nur unter `/pruefen/`.
+- **Standardbild:** Das Bild der Einrichtung als Avatar oder Banner der Gruppe hochladen (unverändert, nicht zugeschnitten). Veranstaltungen, die dieses Bild als Titelbild haben, erscheinen als Farbkachel. Ein eigenes Titelbild wird als Foto gezeigt.
+- **Kurse:** Die App zeigt keine Kurse mehr, `daten/angebote.json` ist leer (die früheren Demo-Kurse liegen nur noch als Testdaten in `tests/fixtures/`). `npm run pipeline` würde die Datei wieder füllen.
+
 ## Änderungen übernehmen
 
 ```powershell

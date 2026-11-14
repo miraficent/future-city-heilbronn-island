@@ -16,7 +16,7 @@ Read before larger changes: `README.md` (overview), `docs/regeln.md` (team rules
 
 ## Current scope (decisions of 2026-11-14)
 
-- **Start page** `/`: night sky, owl, city preview, two cards "Für mich" → `/kinder/` and "Für mein Kind" → `/eltern/`.
+- **Start page** `/`: night sky, owl flies in and lands on the title, floating theme pictures, two cards "Kind" → `/kinder/` and "Eltern" → `/eltern/`.
 - **Kids map** `/kinder/`: city view of Heilbronn (no sea, no islands). Buildings link to `/checkpoint/[id]/`;
   "Neuer Ort?" links to `/mitmachen/`. Owl asks the child's age once (sessionStorage).
 - **Institution page** `/checkpoint/[id]/`: banner, owl, category bubbles, card gallery, bottom sheet with
@@ -33,8 +33,7 @@ npm run dev            # http://localhost:3000
 npm test               # Vitest – must pass before every push
 npm run build          # must pass before every push
 npm run lint
-npm run pipeline       # offers import → daten/angebote.json (Cedric)
-npm run events:update  # live events → src/data/events.json (events:demo adds dummy events, events:seed offline)
+npm run pipeline       # offers import → daten/angebote.json (Cedric; currently emptied, the app shows no courses)
 ```
 
 ## Structure
@@ -46,7 +45,8 @@ npm run events:update  # live events → src/data/events.json (events:demo adds 
 - `src/lib/kinderkarten.ts` turns offers + live events into one kid card format (uses the safety filters)
 - `src/lib/` logic without UI, tested in `tests/lib/`
 - Data (generated, **never edit by hand or from components**): `daten/angebote.json` (from `pipeline/`, config in
-  `konfiguration/*.csv`), `src/data/events.json` (from `scripts/events/`, sources in `scripts/events/sources.json`)
+  `konfiguration/*.csv`). Live events are not stored: the browser loads them from Mobilizon
+  (`src/lib/mobilizon.ts`, `src/lib/live-events.ts`, `NEXT_PUBLIC_MOBILIZON_URL`, default `http://localhost:4000`)
 - Types: `src/lib/angebot.ts` (offers), `src/types.ts` (live events, categories)
 
 ## Rules (short version of docs/regeln.md)

@@ -1,6 +1,6 @@
 /**
  * Reine Funktionen für Live-Events (keine Seiteneffekte, gut testbar).
- * Alle Funktionen bekommen die Event-Liste übergeben; die Daten selbst kommen aus src/data/events.json.
+ * Alle Funktionen bekommen die Event-Liste übergeben; die Daten selbst kommen live aus Mobilizon (src/lib/live-events.ts).
  */
 import type { CategoryId, LiveEvent } from "@/types";
 

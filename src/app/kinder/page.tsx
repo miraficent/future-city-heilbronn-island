@@ -1,21 +1,17 @@
-import { KartenSeite } from "@/components/kinder/karten-seite";
-import { META, oeffentlicheAngebote } from "@/lib/daten";
+import { KartenSeiteLive } from "@/components/kinder/live-karten";
+import { META } from "@/lib/daten";
 import { kartenOrte } from "@/lib/kinderkarte";
-import { kinderKarten } from "@/lib/kinderkarten";
-import liveEvents from "@/data/events.json";
-import type { LiveEvent } from "@/types";
 
 export const metadata = { title: "Heilbronn entdecken – für Kinder" };
 
 /**
- * Kinder-Karte. Die Daten (Kurse + Live-Events) werden hier auf dem Server zu Kinderkarten:
- * nur bekanntes Alter, nur Kinder-Zielgruppe, nichts „zur Prüfung“ – der Rest erreicht das Gerät gar nicht.
+ * Kinder-Karte. Gezeigt werden nur Live-Events, die der Browser bei jedem Aufruf aus Mobilizon lädt
+ * (KartenSeiteLive → isForKids). Die Kurse aus daten/angebote.json erscheinen hier bewusst nicht.
  */
 export default function Kinder() {
-  const karten = kinderKarten(oeffentlicheAngebote(), liveEvents as LiveEvent[], new Date(META.aktualisiert));
   return (
     <main id="inhalt">
-      <KartenSeite orte={kartenOrte(META.quellen)} karten={karten} />
+      <KartenSeiteLive orte={kartenOrte(META.quellen)} />
     </main>
   );
 }

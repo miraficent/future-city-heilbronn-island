@@ -33,6 +33,8 @@ export function ElternKarte({ angebot: a, termin, weitere, meta, jetzt, gemerkt,
   const zeit = termin.ende ? `${formatZeit(termin.start)}–${formatZeit(termin.ende)} Uhr` : `${formatZeit(termin.start)} Uhr`;
   const detail = `/angebot/${slugAusId(a.id)}/`;
   const ausgebucht = a.status === "ausgebucht";
+  // Live-Events („ev:…“) haben keine eigene Detailseite – dort führt alles direkt zum Anbieter.
+  const hatDetails = !a.id.startsWith("ev:");
   const titelId = `karte-${slugAusId(a.id).replace(/[^\w-]/g, "-")}`;
 
   return (
@@ -44,7 +46,7 @@ export function ElternKarte({ angebot: a, termin, weitere, meta, jetzt, gemerkt,
           <span>{ART_TEXT[a.art]}</span>
           <span>{themen.join(" · ")}</span>
         </p>
-        <h3 id={titelId}><Link href={detail}>{titel}</Link></h3>
+        <h3 id={titelId}>{hatDetails ? <Link href={detail}>{titel}</Link> : titel}</h3>
         <ul className="el-infos">
           <li><Symbol name="cake" /><span className="nur-screenreader">Alter: </span>{alter.text}</li>
           <li><Symbol name="clock" /><span className="nur-screenreader">{formatTagLang(termin.start)}, </span>{zeit}</li>
@@ -63,7 +65,7 @@ export function ElternKarte({ angebot: a, termin, weitere, meta, jetzt, gemerkt,
         <Button variante={ausgebucht ? "ghost" : "primary"} icon="external" href={a.url} ariaLabel={`${ausgebucht ? "Beim Anbieter ansehen" : "Zur Anmeldung"}: ${titel} (öffnet die Seite von ${einrichtung})`}>
           {ausgebucht ? "Beim Anbieter ansehen" : "Zur Anmeldung"}
         </Button>
-        <Button variante="ghost" href={detail} ariaLabel={`Details zu ${titel}`}>Details</Button>
+        {hatDetails && <Button variante="ghost" href={detail} ariaLabel={`Details zu ${titel}`}>Details</Button>}
         <button type="button" className="el-merken" aria-pressed={gemerkt} aria-label={`${titel} ${gemerkt ? "von der Merkliste nehmen" : "merken"}`} onClick={() => merken(a.id)}>
           <Symbol name="star" />{gemerkt ? "Gemerkt" : "Merken"}
         </button>

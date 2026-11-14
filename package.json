@@ -10,19 +10,14 @@
     "preview": "node scripts/vorschau.mjs",
     "lint": "eslint",
     "pipeline": "node scripts/pipeline.mjs",
-    "test": "vitest run",
-    "events:update": "tsx scripts/events/build-events.ts",
-    "events:demo": "tsx scripts/events/build-events.ts --demo",
-    "events:seed": "tsx scripts/events/seed-dummy.ts"
+    "test": "vitest run"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^1.8.0",
     "cheerio": "^1.2.0",
     "csv-parse": "^7.0.3",
     "lucide-react": "^1.73.0",
     "motion": "^14.14.0",
     "next": "16.4.6",
-    "node-ical": "^0.27.6",
     "qrcode": "^1.5.4",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -39,7 +34,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "tailwindcss": "4.3.3",
-    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^5.1.0"
   }

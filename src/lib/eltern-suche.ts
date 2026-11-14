@@ -5,13 +5,13 @@
  * Baut auf filtere() auf. Die Regeln für Kinder (fuerModus, isForKids) bleiben unberührt –
  * Eltern sehen alle öffentlichen Angebote.
  */
-import type { Angebot, Status, Termin, Zielgruppe } from "./angebot";
+import type { Angebot, Art, Status, Termin, Thema, Zielgruppe } from "./angebot";
 import { hatAltersangabe } from "./entdecken";
 import { isFree } from "./events";
 import { filtere, LEERER_FILTER, type Filter } from "./filter";
 import { alterText, ART_TEXT, formatMonat } from "./format";
 import { slugAusId } from "./routen";
-import type { LiveEvent } from "@/types";
+import type { Category, CategoryId, EventType, LiveEvent } from "@/types";
 
 const ZONE = "Europe/Berlin";
 const TAG_MS = 24 * 60 * 60 * 1000;
@@ -184,11 +184,14 @@ export function preisText(a: Angebot): string {
   return a.kosten.text;
 }
 
-/** Alter ehrlich anzeigen: Fehlt es bei einem Kinderangebot, steht dort „Alter unklar“ – nie ein geschätzter Wert. */
+/**
+ * Alter ehrlich anzeigen: Fehlt es, steht dort „Alter unklar“ – nie ein geschätzter Wert.
+ * Angebote nur für Erwachsene (Eltern, Fachkräfte, Familien) nennen stattdessen die Zielgruppe.
+ */
 export function alterHinweis(a: Angebot): { text: string; unklar: boolean } {
   if (hatAltersangabe(a)) return { text: alterText(a), unklar: false };
-  if (a.zielgruppen.includes("kinder") || a.zielgruppen.includes("teens")) return { text: "Alter unklar", unklar: true };
-  return { text: alterText(a), unklar: false };
+  if (a.zielgruppen.some((z) => z !== "kinder" && z !== "teens")) return { text: alterText(a), unklar: false };
+  return { text: "Alter unklar", unklar: true };
 }
 
 function alterSpanne(min: number | null, max: number | null): string {
@@ -263,4 +266,50 @@ export function kindWuensche(ids: string[], angebote: Angebot[], events: LiveEve
     });
   }
   return liste.sort((x, y) => Number(x.vorbei) - Number(y.vorbei) || Date.parse(x.start) - Date.parse(y.start));
+}
+
+// ---------- Live-Events (Mobilizon) im selben Format wie Kurse ----------
+
+/** Kategorien der Live-Events → Themen-IDs der Kurse; alle anderen Kategorien bleiben eigene Themen. */
+const KATEGORIE_ZU_THEMA: Partial<Record<CategoryId, string>> = { it: "ki", coding: "coding", gaming: "gaming" };
+const TYP_ZU_ART: Record<EventType, Art> = { workshop: "workshop", course: "kurs", show: "veranstaltung", event: "veranstaltung" };
+
+/**
+ * Ein Live-Event als Angebot, damit Suche, Filter und Karten für Eltern nur ein Format kennen.
+ * Nur Umformen, nichts erfinden: Plätze sind unbekannt, ein fehlendes Alter bleibt leer.
+ */
+export function angebotAusEvent(e: LiveEvent): Angebot {
+  const frei = isFree(e);
+  const zielgruppen: Zielgruppe[] = [];
+  if (e.ageMin !== null && e.ageMin <= 11) zielgruppen.push("kinder");
+  if (e.ageMin !== null && e.ageMin <= 17 && (e.ageMax ?? 99) >= 12) zielgruppen.push("teens");
+  if (e.categories.includes("family")) zielgruppen.push("familien");
+  return {
+    id: `ev:${e.id}`,
+    quelle: e.institutionId,
+    titel: e.title,
+    teaser: e.description_parents,
+    url: e.registrationUrl || e.sourceUrl,
+    themen: [...new Set(e.categories.map((k) => KATEGORIE_ZU_THEMA[k] ?? k))],
+    art: TYP_ZU_ART[e.type],
+    zielgruppen,
+    alterMin: e.ageMin ?? undefined,
+    alterMax: e.ageMax ?? undefined,
+    termine: [{ start: e.start, ende: e.end ?? undefined }],
+    ort: { name: e.location, online: false },
+    kosten: { euro: frei ? 0 : null, text: frei ? "kostenlos" : e.cost ?? "siehe Anbieter" },
+    status: "unbekannt",
+    sicherheit: 1,
+    ausloeser: [],
+    erstmalsGesehen: e.lastUpdated,
+  };
+}
+
+/** Themen für den Filter: nur die, die in den Angeboten vorkommen – erst die Kurs-Themen, dann die Event-Kategorien. */
+export function themenFuer(basis: Thema[], kategorien: Category[], angebote: Angebot[]): Thema[] {
+  const vorhanden = new Set(angebote.flatMap((a) => a.themen));
+  const ausKategorien: Thema[] = kategorien
+    .filter((k) => !basis.some((t) => t.id === k.id))
+    .map((k) => ({ id: k.id, name: k.label_kids, symbol: k.icon, farbe: k.color, schlagwoerter: [] }));
+  return [...basis, ...ausKategorien].filter((t) => vorhanden.has(t.id));
 }

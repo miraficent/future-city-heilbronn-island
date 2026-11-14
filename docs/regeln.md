@@ -23,7 +23,7 @@ Oben in DESIGN.md stehen die „Projektentscheidungen“; sie gehen dem Rest der
 
 Stand 14.11.2026 (Details im Protokoll):
 
-- ✅ **Startseite** mit zwei Karten „Für mich“ / „Für mein Kind“.
+- ✅ **Startseite** mit zwei Karten „Kind“ / „Eltern“.
 - ✅ **Eltern-Bereich** – hier steht alles mit viel Text: Suche, Filter, Infos, offizielle Links.
 - ✅ **Karte** (Stadtansicht Heilbronn) – Gebäude sind Links zu den Einrichtungsseiten.
 - ✅ **Einrichtungsseiten** (`/checkpoint/…`) mit den Angeboten.
@@ -47,7 +47,7 @@ Grundlage: Challenge-PDF Paket A, NN/g, ICO Children's Code (siehe [regeln-abgle
 ## 4. Daten
 
 - **Cedric ist für die Daten zuständig.** Die Darstellung liest sie nur.
-- **Datendateien nie von Hand oder aus Komponenten ändern:** `daten/angebote.json`, `src/data/events.json`.
+- **Datendateien nie von Hand oder aus Komponenten ändern:** `daten/angebote.json`. Veranstaltungen werden in Mobilizon gepflegt.
   Korrekturen über `konfiguration/korrekturen.csv` bzw. die Prüfliste.
 - **Kinder sehen nur:** Angebote mit bekanntem Alter, passender Zielgruppe (Kinder/Teens) und ohne Prüf-Markierung.
   Dafür **immer** `kinderKarten()` (`src/lib/kinderkarten.ts`) benutzen – es nutzt `fuerModus` und `isForKids`. Nie eigene Filter für Kinder schreiben.
@@ -61,7 +61,7 @@ Grundlage: Challenge-PDF Paket A, NN/g, ICO Children's Code (siehe [regeln-abgle
 - Kinder-Daten (Alter, Wünsche) nur in `sessionStorage` – weg, wenn der Browser zu ist.
 - Keine Bilder, Schriften oder Skripte von fremden Servern nachladen. Schriften liegen in `public/fonts/`.
 - Eine KI bekommt nur **öffentliche Veranstaltungstexte**, nie Eingaben oder Daten von Nutzenden.
-- **Nie Schlüssel committen.** `ANTHROPIC_API_KEY` gehört in `.env` (lokal) oder in GitHub Secrets.
+- **Nie Schlüssel oder Passwörter committen.** Sie gehören in `.env.local` (lokal) oder in GitHub Secrets.
 
 ## 6. Code und Zusammenarbeit
 

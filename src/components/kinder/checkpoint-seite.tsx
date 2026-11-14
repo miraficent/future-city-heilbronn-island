@@ -48,7 +48,13 @@ const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 35, y: 16, s: 0.78, r: 1 },
 ];
 
-export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; bild?: string | null }) {
+/**
+ * laedt: die Live-Events sind noch unterwegs – der Raum bleibt leer (keine Platzhalter-Kacheln).
+ * bild: Hintergrundbild der Themenwelt (public/welten/<id>.jpg), sonst Leuchtgitter.
+ */
+export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild = null }: {
+  ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; laedt?: boolean; bild?: string | null;
+}) {
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
@@ -85,7 +91,7 @@ export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort:
 
   return (
     <AppShell modus="kinder" voll>
-      <div className="welt" style={raumStil}>
+      <div className="welt" style={raumStil} aria-busy={laedt}>
         {bild ? (
           <div className="welt__bild" aria-hidden="true">
             {/* eslint-disable-next-line @next/next/no-img-element -- statischer Export, eigenes Bild */}
@@ -100,7 +106,9 @@ export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort:
           <h1 className="welt__schild">{ort.name}</h1>
         </div>
 
-        {vorhanden.length > 1 && (
+        {laedt && <p role="status" className="sr-only">Veranstaltungen werden geladen …</p>}
+
+        {!laedt && vorhanden.length > 1 && (
           <div className="welt__themen" role="group" aria-label="Themen">
             <button type="button" className="welt__thema" aria-pressed={kategorie === null} onClick={() => waehleKategorie(null)}>
               <Symbol name="star" /> Alles
@@ -114,7 +122,7 @@ export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort:
           </div>
         )}
 
-        {passend.length === 0 ? (
+        {laedt ? null : passend.length === 0 ? (
           <div className="welt__leer">
             <EmptyState text="Hier ist gerade nichts – schau mal in einem anderen Haus!">
               <Button variante="primary" groesse="kids" icon="map" href="/kinder/">Zur Karte</Button>
@@ -135,9 +143,16 @@ export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort:
                 <div key={k.id} role="listitem" className="welt__platz" style={stil}>
                   <button type="button" className={`welt__kachel${offen?.id === k.id ? " ist-offen" : ""}`} onClick={() => oeffne(k)}
                     aria-label={`${k.titel}, ${wochentag(k.start)}, ${alterText(k)} Jahre${k.gratis ? ", gratis" : ""}${gewuenscht ? ", gewünscht" : ""}`}>
-                    <span className="welt__kachel-bild" aria-hidden="true">
-                      <Symbol name={c?.icon ?? "star"} />
-                    </span>
+                    {k.bild ? (
+                      // Plain <img>: kommt von der eigenen Mobilizon-Instanz, next/image bräuchte Server oder remotePatterns
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="welt__kachel-foto" src={k.bild} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"
+                        onError={(ev) => { ev.currentTarget.hidden = true; }} />
+                    ) : (
+                      <span className="welt__kachel-bild" aria-hidden="true">
+                        <Symbol name={c?.icon ?? "star"} />
+                      </span>
+                    )}
                     <span className="welt__kachel-titel">{k.titel}</span>
                     <span className="welt__kachel-zeit" aria-hidden="true">
                       <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kurzTag(k.start)} · {alterText(k)} J.
@@ -150,7 +165,7 @@ export function CheckpointSeite({ ort, karten, kategorien, bild = null }: { ort:
           </div>
         )}
 
-        {seiten > 1 && (
+        {!laedt && seiten > 1 && (
           <>
             <button type="button" className="welt__blaettern welt__blaettern--links" aria-label="Vorherige Kacheln"
               disabled={aktuelleSeite === 0} onClick={() => setSeite(aktuelleSeite - 1)}>

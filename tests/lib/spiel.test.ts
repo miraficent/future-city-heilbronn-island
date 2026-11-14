@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { gueltigeErfolge, passendeSpielAngebote, STATIONEN } from "@/lib/spiel";
-import { oeffentlicheAngebote } from "@/lib/daten";
+import { beispielAngebote } from "../fixtures/angebote";
 
 describe("Lernhäuser und Spielstand", () => {
   it("hat für jedes Lernhaus ein eigenes Raketenteil", () => {
@@ -13,7 +13,7 @@ describe("Lernhäuser und Spielstand", () => {
   });
 
   it("verknüpft Aufgaben mit echten, altersgerechten Kursen", () => {
-    const angebote = passendeSpielAngebote(oeffentlicheAngebote(), "coding", 8, new Date("2026-11-13T10:00:00+01:00"));
+    const angebote = passendeSpielAngebote(beispielAngebote(), "coding", 8, new Date("2026-11-13T10:00:00+01:00"));
     expect(angebote.length).toBeGreaterThan(0);
     expect(angebote.every((a) => a.themen.includes("coding") && (a.alterMin ?? 0) <= 8 && (a.alterMax ?? 99) >= 8)).toBe(true);
     expect(angebote.some((a) => a.id === "aim:262420PAI")).toBe(false);

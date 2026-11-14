@@ -2,11 +2,12 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Owl } from "@/components/ui";
 import { Symbol } from "@/components/symbol";
+import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 
 /**
  * Startseite (DESIGN.md § Pages 1): Nachthimmel, die Eule fliegt herein und setzt sich auf den Titel,
  * Themenbilder (public/grafik/themen/) ploppen nacheinander auf und schweben leicht.
- * Zwei große Wahlkarten – „Für mich“ (Kinder/Teens) und „Für mein Kind“ (Eltern).
+ * Zwei große Wahlkarten – „Kind“ (Kinder/Teens) und „Eltern“.
  * Nur CSS-Animationen; bei „Bewegung reduzieren“ steht alles still.
  */
 
@@ -55,17 +56,20 @@ export default function Start() {
           <Owl className="start__eule" />
           <h1 className="start__titel">Heilbronn Island</h1>
         </div>
-        <p className="start__unter">Entdecke, was es in Heilbronn für dich gibt.</p>
+        <p className="start__unter"><strong>Finde heraus, was in Heilbronn für dich los ist!</strong></p>
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
-            <Symbol name="rocket" />
-            <span className="start__karte-titel">Für mich</span>
+            <span className="start__karte-kinder" aria-hidden="true">
+              <KinderFigurBild art="tuerkis" />
+              <KinderFigurBild art="orange" />
+              <KinderFigurBild art="lila" />
+            </span>
+            <span className="start__karte-titel">Kind</span>
             <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
           <Link href="/eltern/" className="start__karte">
             <Symbol name="users" />
-            <span className="start__karte-titel">Für mein Kind</span>
-            <span className="start__karte-unter">Eltern</span>
+            <span className="start__karte-titel">Eltern</span>
           </Link>
         </div>
       </section>

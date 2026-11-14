@@ -184,11 +184,10 @@
 .el-merken[aria-pressed="true"] .symbol { color: var(--accent-dark); fill: var(--accent); }
 
 /* ---------- Kalender-Datei ---------- */
-.el-abo { display: grid; gap: 16px; margin-top: 32px; }
-.el-abo h2 { display: flex; align-items: center; gap: 10px; margin: 0; font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.el-abo { display: grid; gap: 16px; margin-top: 32px; padding: 20px; border: 2px dashed var(--card-border); border-radius: var(--radius-card); background: var(--white); }
+.el-abo h2 { display: flex; align-items: center; gap: 10px; margin: 0; font: 700 19px/1.2 "Baloo 2", sans-serif; }
 .el-abo h2 .symbol { width: 24px; height: 24px; color: var(--primary); }
 .el-abo p { margin: 4px 0 0; color: var(--ink-soft); }
-.el-abo__links { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Gut zu wissen ---------- */
 .el-infoteil { margin-top: 64px; scroll-margin-top: 16px; }

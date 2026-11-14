@@ -1,6 +1,6 @@
 /**
  * Ein gemeinsames Format für alles, was Kinder auf Karte und Einrichtungsseiten sehen –
- * egal ob es aus den Kursen (daten/angebote.json) oder den Live-Events (src/data/events.json) kommt.
+ * egal ob es aus den Kursen (daten/angebote.json) oder den Live-Events (Mobilizon, src/lib/mobilizon.ts) kommt.
  * Sicherheit: nur über fuerModus("kind") bzw. isForKids() – nie eigene Filter.
  */
 import type { Angebot } from "./angebot";
@@ -22,6 +22,8 @@ export type KinderKarte = {
   /** Kurzer Text, den die Eule vorliest */
   geschichte: string;
   anmeldeUrl: string;
+  /** Titelbild des Events (nur eigene Mobilizon-Instanz), sonst null → Farbe der Kategorie */
+  bild: string | null;
   beispiel: boolean;
 };
 
@@ -48,6 +50,7 @@ export function ausAngebot(a: Angebot, jetzt: Date): KinderKarte {
     gratis: a.kosten.euro === 0,
     geschichte: ersterSatz(a.teaser) || a.titel,
     anmeldeUrl: a.url,
+    bild: null,
     beispiel: false,
   };
 }
@@ -64,20 +67,30 @@ export function ausEvent(e: LiveEvent): KinderKarte {
     gratis: isFree(e),
     geschichte: e.story_kids || e.title_kids,
     anmeldeUrl: e.registrationUrl,
+    bild: e.image,
     beispiel: e.isDummy,
   };
 }
 
-/** Alle Karten, die Kinder sehen dürfen, kommende zuerst. Wird auf dem Server berechnet. */
+/** Karten aus Live-Events: nur was isForKids() erlaubt und noch nicht vorbei ist. Läuft im Browser (Mobilizon). */
+export function eventKarten(events: LiveEvent[], jetzt: Date): KinderKarte[] {
+  return events
+    .filter(isForKids)
+    .filter((e) => new Date(e.end ?? e.start).getTime() >= jetzt.getTime())
+    .map(ausEvent);
+}
+
+/** Kurs- und Event-Karten zusammen, kommende zuerst */
+export function mischeKarten(...listen: KinderKarte[][]): KinderKarte[] {
+  return listen.flat().sort((x, y) => x.start.localeCompare(y.start));
+}
+
+/** Alle Karten, die Kinder sehen dürfen, kommende zuerst. */
 export function kinderKarten(angebote: Angebot[], events: LiveEvent[], jetzt: Date): KinderKarte[] {
   const ausKursen = fuerModus(angebote, "kind")
     .filter((a) => Number.isFinite(naechsterStart(a, jetzt)))
     .map((a) => ausAngebot(a, jetzt));
-  const ausEvents = events
-    .filter(isForKids)
-    .filter((e) => new Date(e.end ?? e.start).getTime() >= jetzt.getTime())
-    .map(ausEvent);
-  return [...ausKursen, ...ausEvents].sort((x, y) => x.start.localeCompare(y.start));
+  return mischeKarten(ausKursen, eventKarten(events, jetzt));
 }
 
 /** Passt eine Karte zum Alter des Kindes? (ohne Alter: alles) */

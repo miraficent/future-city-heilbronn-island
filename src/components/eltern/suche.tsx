@@ -3,6 +3,8 @@
 import { useMemo, useRef, useState, type ReactNode } from "react";
 import type { Angebot } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
+import { erzeugeIcs } from "@/lib/ics";
+import { ladeLiveEventsVor } from "@/lib/live-events";
 import {
   aktiveFilter,
   elternSuche,
@@ -18,6 +20,7 @@ import { Symbol } from "../symbol";
 import { BottomSheet, Button, Card, EmptyState } from "../ui";
 import { FehltMelden } from "../wunsch-box";
 import { ElternKarte } from "./angebot-karte";
+import { useElternDaten } from "./daten";
 import { FilterFormular } from "./filter-formular";
 import { FilterSymbol } from "./symbole";
 import { Terminband } from "./terminband";
@@ -32,8 +35,9 @@ const angeboteText = (n: number) => (n === 1 ? "1 Angebot" : `${n} Angebote`);
  * Ergebnisse nach Woche/Monat und eine Merkliste, die sich als Link teilen lässt.
  * Filter und Suchtext bleiben nur im Arbeitsspeicher dieser Seite.
  */
-export function ElternSuche({ angebote, meta, jetzt: start }: { angebote: Angebot[]; meta: Meta; jetzt: string }) {
+export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: { angebote: Angebot[]; meta: Meta; jetzt: string }) {
   const jetzt = useJetzt(start);
+  const { status, alle: angebote, meta } = useElternDaten(kurse, grundMeta);
   const [filter, setFilter] = useState<ElternFilter>(LEERER_ELTERN_FILTER);
   const [anzahl, setAnzahl] = useState(SCHRITT);
   const [blattOffen, setBlattOffen] = useState(false);
@@ -78,6 +82,17 @@ export function ElternSuche({ angebote, meta, jetzt: start }: { angebote: Angebo
     setBlattOffen(false);
     ergebnisRef.current?.scrollIntoView({ block: "start" });
     ergebnisRef.current?.focus({ preventScroll: true });
+  }
+
+  /** Die angezeigten Treffer als Kalenderdatei – erzeugt im Browser, nichts wird gesendet. */
+  function kalenderLaden() {
+    const datei = new Blob([erzeugeIcs(liste.map((t) => t.angebot), "Heilbronn Island", new Date(jetzt))], { type: "text/calendar;charset=utf-8" });
+    const objektUrl = URL.createObjectURL(datei);
+    const link = document.createElement("a");
+    link.href = objektUrl;
+    link.download = "heilbronn-island-termine.ics";
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(objektUrl), 1000);
   }
 
   async function merklisteTeilen() {
@@ -171,7 +186,15 @@ export function ElternSuche({ angebote, meta, jetzt: start }: { angebote: Angebo
             </div>
           )}
 
-          {liste.length === 0 ? (
+          {angebote.length === 0 && status !== "ok" ? (
+            status === "laedt" ? (
+              <EmptyState text="Die aktuellen Termine werden geladen …" />
+            ) : (
+              <EmptyState text="Die Termine konnten gerade nicht geladen werden. Bitte versuchen Sie es in ein paar Minuten noch einmal.">
+                <Button variante="primary" icon="refresh" onClick={ladeLiveEventsVor}>Erneut versuchen</Button>
+              </EmptyState>
+            )
+          ) : liste.length === 0 ? (
             nurGemerkt ? (
               <EmptyState text="Noch nichts gemerkt. Tippen Sie bei einem Angebot auf „Merken“ – es bleibt dann in diesem Browserfenster.">
                 <Button variante="primary" onClick={() => setNurGemerkt(false)}>Alle Angebote zeigen</Button>
@@ -201,6 +224,16 @@ export function ElternSuche({ angebote, meta, jetzt: start }: { angebote: Angebo
             <Button variante="ghost" className="el-mehr" onClick={() => setAnzahl(anzahl + SCHRITT)}>
               Weitere Angebote zeigen (noch {liste.length - anzahl})
             </Button>
+          )}
+
+          {liste.length > 0 && (
+            <div className="el-abo">
+              <div>
+                <h2><Symbol name="calendar" /> Termine in Ihren Kalender</h2>
+                <p>Laden Sie {liste.length === 1 ? "diesen Termin" : `diese ${liste.length} Termine`} als Kalenderdatei – passend für Outlook, Google und Apple. Freie Plätze bitte vorher beim Anbieter prüfen.</p>
+              </div>
+              <Button variante="ghost" icon="calendar" onClick={kalenderLaden}>Kalenderdatei laden</Button>
+            </div>
           )}
         </div>
       </div>

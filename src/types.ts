@@ -1,6 +1,5 @@
 /**
- * Typen der Live-Events (src/data/events.json, erzeugt von scripts/events/).
- * events.json wird nie von Hand oder in Komponenten verändert – nur von der Pipeline.
+ * Typen der Live-Events. Sie kommen im Browser aus Mobilizon (src/lib/mobilizon.ts → src/lib/live-events.ts).
  */
 
 export type CategoryId = "astronomy" | "physics" | "biology" | "math" | "it" | "coding" | "gaming" | "art" | "family";
@@ -33,7 +32,7 @@ export type LiveEvent = {
   end: string | null;
   location: string;
   cost: string | null;
-  /** Bild-URL der Quelle (wird aus Datenschutzgründen nicht nachgeladen, siehe docs/data-pipeline.md) */
+  /** Titelbild – nur von der eigenen Mobilizon-Instanz (src/lib/mobilizon.ts), sonst null */
   image: string | null;
   /** Höchstens 2 kurze Sätze für Kinder */
   story_kids: string;

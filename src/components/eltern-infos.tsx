@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import { kurzname } from "@/components/einrichtung-badge";
 import { Symbol } from "@/components/symbol";
 import { Card } from "@/components/ui";
-import { META, oeffentlicheAngebote } from "@/lib/daten";
+import { META } from "@/lib/daten";
 
 /**
  * „Gut zu wissen“ für Eltern: Anmeldung, Alter, Wünsche, Datenschutz, woher die Daten kommen,
@@ -55,18 +55,15 @@ const FRAGEN = [
   },
   {
     frage: "Warum fehlt ein Kurs, den ich kenne?",
-    antwort: "Wir zeigen nur Angebote, die die Einrichtungen auf ihren Websites veröffentlichen, und nur mit einem kommenden Termin. Unsichere Einträge prüft unser Team, bevor sie erscheinen.",
+    antwort: "Wir zeigen nur Termine, die die Einrichtungen in unseren gemeinsamen Veranstaltungskalender eintragen, und nur, solange sie noch kommen. Fragen Sie gern bei der Einrichtung nach.",
   },
   {
     frage: "Was heißt „Plätze frei“ oder „Ausgebucht“?",
-    antwort: "Das melden manche Einrichtungen auf ihrer Website. Steht nichts dabei, wissen wir es nicht. Den aktuellen Stand sehen Sie immer beim Anbieter.",
+    antwort: "Das melden manche Einrichtungen selbst. Steht nichts dabei, wissen wir es nicht. Den aktuellen Stand sehen Sie immer beim Anbieter.",
   },
 ];
 
-const standFormat = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
-
 export function ElternInfos() {
-  const angebote = oeffentlicheAngebote();
   const einrichtungen = META.quellen.map((q) => kurzname(q, q.id));
 
   return (
@@ -93,14 +90,14 @@ export function ElternInfos() {
       <section aria-labelledby="daten-titel" className="el-infoteil">
         <h2 id="daten-titel" className="el-titel">Woher kommen die Angebote?</h2>
         <ol className="el-datenweg">
-          <li><span><strong>Websites der Einrichtungen</strong>{einrichtungen.join(", ")}</span></li>
-          <li><span><strong>Jede Nacht automatisch gelesen</strong>Neue Termine kommen von selbst dazu.</span></li>
-          <li><span><strong>Nach festen Regeln geordnet</strong>Thema und Alter stehen in einer offenen Tabelle.</span></li>
-          <li><span><strong>Hier für Sie</strong>{angebote.length} Angebote, ohne Tracking.</span></li>
+          <li><span><strong>Die Einrichtungen tragen ein</strong>{einrichtungen.join(", ")} – im gemeinsamen Veranstaltungskalender.</span></li>
+          <li><span><strong>Immer aktuell</strong>Neue Termine erscheinen beim nächsten Besuch, ohne Neubau der Seite.</span></li>
+          <li><span><strong>Nach festen Regeln geordnet</strong>Thema und Alter erkennen wir an Stichwörtern – ohne KI.</span></li>
+          <li><span><strong>Hier für Sie</strong>Alles an einem Ort, ohne Tracking.</span></li>
         </ol>
         <p className="el-stand">
           <Symbol name="info" />
-          <span>Stand der Daten: {standFormat.format(new Date(META.aktualisiert))} Uhr. Angaben können sich ändern – bitte prüfen Sie Termin, Preis und Alter vor der Anmeldung beim Anbieter.</span>
+          <span>Angaben können sich ändern. Bitte prüfen Sie Termin, Preis und Alter vor der Anmeldung beim Anbieter.</span>
         </p>
       </section>
 
@@ -129,7 +126,6 @@ export function ElternInfos() {
               <h3>{kurzname(q, q.id)}</h3>
               <p>{q.name}</p>
               {q.adresse && <p><Symbol name="pin" className="mr-1 inline !size-4 align-[-2px]" />{q.adresse}</p>}
-              <p>{angebote.filter((a) => a.quelle === q.id).length} Angebote bei uns</p>
               <ul>
                 {(QUELLEN_LINKS[q.id] ?? [{ text: "Website", url: q.website }]).map((l) => (
                   <li key={l.url}><a href={l.url} target="_blank" rel="noopener noreferrer"><Symbol name="external" />{l.text}</a></li>

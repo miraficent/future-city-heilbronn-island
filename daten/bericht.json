@@ -6,62 +6,42 @@
       "quelle": "aim",
       "name": "aim – Akademie für Innovative Bildung und Management",
       "ok": true,
-      "anzahlRoh": 109,
-      "anzahlAufgenommen": 49,
+      "anzahlRoh": 0,
+      "anzahlAufgenommen": 0,
       "neu": [],
-      "unsicher": [
-        "aim:271931",
-        "aim:271410PM",
-        "aim:271470IN",
-        "aim:262993CHNB",
-        "aim:271992BBMM",
-        "aim:271993SDMO",
-        "aim:271994CMDB",
-        "aim:271993AOER"
-      ],
+      "unsicher": [],
       "dauerMs": 292043
     },
     {
       "quelle": "experimenta",
       "name": "experimenta – Das Science Center",
       "ok": true,
-      "anzahlRoh": 35,
-      "anzahlAufgenommen": 5,
+      "anzahlRoh": 0,
+      "anzahlAufgenommen": 0,
       "neu": [],
-      "unsicher": [
-        "experimenta:meine-freundin-roxy"
-      ],
+      "unsicher": [],
       "dauerMs": 646
     },
     {
       "quelle": "hdf",
       "name": "Haus der Familie Heilbronn",
       "ok": true,
-      "anzahlRoh": 578,
-      "anzahlAufgenommen": 19,
+      "anzahlRoh": 0,
+      "anzahlAufgenommen": 0,
       "neu": [],
-      "unsicher": [
-        "hdf:261H207010",
-        "hdf:261H116302",
-        "hdf:261H116102",
-        "hdf:261H116303",
-        "hdf:272H116101",
-        "hdf:272H114102",
-        "hdf:272H114201",
-        "hdf:272H116103"
-      ],
+      "unsicher": [],
       "dauerMs": 12391
     },
     {
       "quelle": "ipai",
       "name": "IPAI – Innovation Park Artificial Intelligence",
       "ok": true,
-      "anzahlRoh": 41,
-      "anzahlAufgenommen": 5,
+      "anzahlRoh": 0,
+      "anzahlAufgenommen": 0,
       "neu": [],
       "unsicher": [],
       "dauerMs": 53656
     }
   ],
-  "gesamt": 78
+  "gesamt": 0
 }

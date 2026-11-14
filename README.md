@@ -33,7 +33,7 @@ können beide Seiten unabhängig arbeiten.
 
 | Seite | Was | Für wen |
 |---|---|---|
-| `/` **Start** | Nachthimmel mit Eule, kleine Stadtvorschau, zwei Karten: **„Für mich“** und **„Für mein Kind“** | alle |
+| `/` **Start** | Nachthimmel, die Eule fliegt herein, schwebende Themenbilder, zwei Karten: **„Kind“** und **„Eltern“** | alle |
 | `/kinder/` **Karte** | Stadtansicht von Heilbronn (Neckar, Altstadt, Kilianskirche, Hauptbahnhof). Jedes Gebäude ist ein **Link** zu seiner Einrichtung, mit Anzahl kommender Angebote und „Heute!“-Stern. Die Eule fragt einmal nach dem Alter. | Kinder, Teens |
 | `/checkpoint/[id]/` **Einrichtung** | Banner mit Gebäude, Eule, runde Kategorie-Knöpfe, Karten zum Wischen, Vorlesen, **„Da will ich hin!“**. COSMOS zeigt alle Angebote. | Kinder, Teens |
 | `/eltern/` **Eltern** | „Das möchte Ihr Kind besuchen“, Suche mit allen Filtern, Infos, offizielle Links | Eltern, Fachkräfte |
@@ -71,16 +71,15 @@ Unter Windows `npm.cmd` statt `npm` verwenden oder `Website-starten.cmd` doppelt
 
 ## 6. Daten – woher sie kommen (Bereich von Cedric)
 
-Es gibt zurzeit zwei Datenwege. Welcher bleibt, entscheidet Cedric (siehe Protokoll).
+Die Veranstaltungen kommen live aus **Mobilizon**: Der Browser lädt sie einmal pro Sitzung über die GraphQL-API
+(`NEXT_PUBLIC_MOBILIZON_URL`, Standard `http://localhost:4000`). Gepflegt wird direkt in Mobilizon, ohne Neubau.
 
-| | Angebote (Kurse) | Live-Veranstaltungen |
+| | Live-Veranstaltungen | Angebote (Kurse) |
 |---|---|---|
-| Datei | `daten/angebote.json` | `src/data/events.json` |
-| Erzeugt von | `pipeline/` – `npm run pipeline` | `scripts/events/` – `npm run events:update` |
-| Quellen eintragen | `konfiguration/quellen.csv` | `scripts/events/sources.json` |
-| Korrekturen | `konfiguration/korrekturen.csv` | Prüfliste `/pruefen/` |
-| Anleitung | [docs/pflege.md](docs/pflege.md) | [docs/data-pipeline.md](docs/data-pipeline.md) |
-| Automatisch | `.github/workflows/daten.yml` (vorbereitet) | `.github/workflows/update-events.yml` (täglich 05:00 UTC) |
+| Woher | Mobilizon (eine Gruppe je Einrichtung) | `daten/angebote.json` – zurzeit leer |
+| Erzeugt von | Mobilizon selbst, im Browser geladen (`src/lib/mobilizon.ts`) | `pipeline/` – `npm run pipeline` |
+| Korrekturen | in Mobilizon; ohne erkanntes Alter Prüfliste `/pruefen/` | `konfiguration/korrekturen.csv` |
+| Anleitung | [docs/pflege.md](docs/pflege.md) (Abschnitt Mobilizon) | [docs/pflege.md](docs/pflege.md) |
 
 ```text
 Webseiten der Einrichtungen → Import → Themen- und Altersregeln (+ optional KI für Kindertexte)
@@ -103,7 +102,7 @@ src/components/ui/      Design-Bausteine (Button, Card, OwlGuide, EventCard …)
 src/components/kinder/  Kinderseiten (Karte, Einrichtung)
 src/components/kinderreise/  Stadtkarte (insel-karte.tsx) und Gebäude
 src/lib/                Logik ohne Darstellung (Filter, Alter, Events) – hier stehen die Tests dazu
-src/data/               categories.json, events.json (nur von der Pipeline geschrieben!)
+src/data/               categories.json (Kategorien der Live-Veranstaltungen)
 daten/                  angebote.json, bericht.json (nur von der Pipeline geschrieben!)
 konfiguration/          Tabellen zum Pflegen ohne Code
 pipeline/, scripts/     Datenimport
@@ -129,7 +128,7 @@ docs/                   Regeln, Protokoll, Entscheidungen, Anleitungen
 | [docs/protokoll.md](docs/protokoll.md) | **Protokoll**: Entscheidungen, Zuständigkeiten, offene Fragen, nächste Schritte |
 | [docs/entscheidungen.md](docs/entscheidungen.md) | Ältere Architektur- und Designentscheidungen |
 | [docs/regeln-abgleich.md](docs/regeln-abgleich.md) | Challenge-Anforderungen ↔ Umsetzung |
-| [docs/pflege.md](docs/pflege.md), [docs/data-pipeline.md](docs/data-pipeline.md) | Daten pflegen ohne Programmieren |
+| [docs/pflege.md](docs/pflege.md) | Daten pflegen ohne Programmieren |
 | [docs/demo-ablauf.md](docs/demo-ablauf.md) | Vorführablauf (wird nach der Entscheidung vom 14.11. angepasst) |
 
 Frühere Stände (Laufwelt, Pixel-Spielwelt, Lernreise) sind in `docs/spielwelt-v2.md` und `docs/heilbronn-lernreise.md`

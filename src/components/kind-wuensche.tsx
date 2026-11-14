@@ -3,14 +3,14 @@
 /**
  * Eltern-Seite ganz oben: „Das möchte Ihr Kind besuchen“ – was das Kind im Kinderbereich mit
  * „Da will ich hin!“ gewählt hat (Kurse und Live-Events). Groß, mit Datum, Ort, Preis und Anmeldelink.
- * Die Wünsche liegen nur in dieser Browsersitzung auf diesem Gerät. Ohne Wünsche erklären drei Schritte,
- * wie sie hierherkommen.
+ * Die Wünsche liegen nur in dieser Browsersitzung auf diesem Gerät. Die Live-Events kommen aus Mobilizon
+ * (src/lib/live-events.ts). Ohne Wünsche erklären drei Schritte, wie sie hierherkommen.
  */
 import { useMemo } from "react";
 import type { Angebot } from "@/lib/angebot";
 import { kindWuensche, tagSchluessel, type Wunsch } from "@/lib/eltern-suche";
 import { formatTag, formatZeit, relativ } from "@/lib/format";
-import type { LiveEvent } from "@/types";
+import { useLiveEvents } from "@/lib/live-events";
 import { useJetzt } from "./browser-werte";
 import { DatumBlock } from "./eltern/datum-block";
 import { useSammlung } from "./sammlung";
@@ -71,10 +71,9 @@ function LeererWunschzettel() {
   );
 }
 
-export function KindWuensche({ angebote, liveEvents, einrichtungen, jetzt: start }: {
-  angebote: Angebot[]; liveEvents: LiveEvent[]; einrichtungen: Record<string, string>; jetzt: string;
-}) {
+export function KindWuensche({ angebote, einrichtungen, jetzt: start }: { angebote: Angebot[]; einrichtungen: Record<string, string>; jetzt: string }) {
   const merk = useSammlung("kind");
+  const liveEvents = useLiveEvents().events;
   const jetzt = useJetzt(start);
   const liste = useMemo(() => kindWuensche(merk.ids, angebote, liveEvents, einrichtungen, new Date(jetzt)), [merk.ids, angebote, liveEvents, einrichtungen, jetzt]);
 

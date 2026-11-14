@@ -124,13 +124,19 @@
 .start { min-height: 100dvh; background: var(--night); color: var(--snow); }
 .start__hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; min-height: 100dvh; padding: 48px 16px 64px; text-align: center; overflow: hidden; }
 .start__titel { position: relative; margin: 0; font: 700 clamp(40px, 7vw, 64px)/1 "Baloo 2", sans-serif; }
-.start__unter { position: relative; margin: 0; font-size: 20px; color: var(--sea-shallow); }
+.start__unter { position: relative; margin: 0; max-width: 46ch; text-wrap: balance; font: 600 clamp(20px, 2.4vw, 28px)/1.35 "Nunito", sans-serif; color: var(--sea-shallow);
+  animation: start-ploppen .6s cubic-bezier(.34, 1.56, .64, 1) .3s both; }
+.start__unter strong { display: block; font-family: "Baloo 2", sans-serif; font-weight: 700; color: var(--snow); }
 .start__karten { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; width: min(760px, 100%); }
 .start__karte { display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 220px; padding: 32px 24px;
   border-radius: var(--radius-card); background: var(--night-2); color: var(--snow); text-decoration: none; box-shadow: 0 4px 0 var(--primary-dark);
   transition: transform 150ms ease-out; }
 .start__karte:hover { transform: translateY(-4px); }
 .start__karte .symbol { width: 56px; height: 56px; color: var(--accent); }
+.start__karte-kinder { display: flex; align-items: flex-end; justify-content: center; height: 104px; padding: 8px 20px 0;
+  border-radius: 999px 999px 24px 24px; background: rgba(255, 255, 255, .9); }
+.start__karte-kinder svg { width: auto; height: 92px; margin: 0 -10px; }
+.start__karte-kinder svg:nth-child(2) { height: 100px; position: relative; z-index: 1; }
 .start__karte-titel { font: 700 32px/1.1 "Baloo 2", sans-serif; }
 .start__karte-unter { font-size: 18px; color: var(--sea-shallow); }
 .start__karte--kind { background: var(--primary); }
@@ -292,6 +298,12 @@
   66% { transform: rotate(calc(var(--r) - 0.8deg)) translateY(2px); }
 }
 .welt__kachel-bild { position: absolute; top: 10px; right: 12px; opacity: .9; }
+/* Titelbild aus Mobilizon statt Farbfläche; Verlauf unten hält Titel und Zeit lesbar */
+.welt__kachel-foto { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.welt__kachel:has(.welt__kachel-foto:not([hidden]))::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .35) 45%, transparent 75%); }
+.welt__kachel-titel, .welt__kachel-zeit { position: relative; z-index: 2; }
+.welt__kachel-herz { z-index: 2; }
 .welt__kachel-bild .symbol { width: clamp(56px, 5vw, 84px); height: auto; color: var(--white); filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .2)); }
 .welt__kachel-titel { align-self: flex-start; max-width: 92%; padding: 4px 10px; border-radius: 4px; transform: rotate(-2deg);
   background: rgba(0, 0, 0, .28); font: 700 clamp(16px, 1.3vw, 21px)/1.2 "Baloo 2", sans-serif;
@@ -373,5 +385,14 @@
   .start__bild--gross { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .start__stern, .start__bild, .start__bild img, .start__eule, .start__eule .owl-fluegel { animation: none; }
+  .start__stern, .start__bild, .start__bild img, .start__eule, .start__eule .owl-fluegel, .start__unter { animation: none; }
 }
+
+/* Karte: Einrichtung ohne Veranstaltungen „schläft“ – Zzz steigen sanft auf */
+.kr-zzz__z { font: 800 28px/1 "Baloo 2", sans-serif; fill: var(--white); stroke: var(--night); stroke-width: 5px; paint-order: stroke;
+  opacity: 0; animation: kr-zzz 3s ease-in-out infinite; }
+.kr-zzz__z--2 { font-size: 38px; animation-delay: .6s; }
+.kr-zzz__z--3 { font-size: 50px; animation-delay: 1.2s; }
+/* nur Deckkraft – keine Verschiebung, damit die Z immer genau über dem Pin bleiben */
+@keyframes kr-zzz { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .kr-zzz__z { animation: none; opacity: 1; } }
