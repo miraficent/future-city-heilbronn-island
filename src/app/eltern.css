@@ -1,0 +1,309 @@
+/*
+ * Eltern-Bereich (/eltern/, /angebot/…, /sammlung/) – nur Tokens aus globals.css (DESIGN.md).
+ * Ruhiger als der Kinderbereich: Papier, weiße Karten, „chunky bottom“, keine Verläufe, kein Blur.
+ * Leitidee: das Datum zuerst (Kalenderblatt auf jeder Karte) und die Wünsche des Kindes ganz oben.
+ * Farben über die Verweise (--flaeche, --tinte, --linie …), damit die Detailseite auch im Teen-Modus passt.
+ * Alle Klassen beginnen mit „el-“, damit nichts mit ui.css kollidiert.
+ */
+
+/* ---------- Seite und Kopf ---------- */
+.el-seite { max-width: 1100px; margin: 0 auto; padding: 0 16px 48px; }
+.el-kopf { padding: 24px 0 0; }
+.el-oben { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--tinte-2); font: 700 14px/1.3 "Nunito", sans-serif; }
+.el-oben .symbol { width: 18px; height: 18px; color: var(--primary); }
+.el-kopf h1 { max-width: 24ch; margin: 8px 0 0; font: 700 30px/1.15 "Baloo 2", sans-serif; }
+.el-kopf__text { max-width: 60ch; margin: 8px 0 0; color: var(--tinte-2); font-size: 17px; text-wrap: pretty; }
+.el-fakten { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+.el-fakt { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 2px solid var(--linie); border-radius: var(--radius-pill);
+  background: var(--flaeche); font-size: 14px; }
+.el-fakt .symbol { width: 16px; height: 16px; color: var(--primary); }
+/* Handy: nur die zwei wichtigsten Zahlen, damit die Wünsche schnell sichtbar sind */
+.el-fakt--extra { display: none; }
+
+/* ---------- Kalenderblatt (Datum zuerst) ---------- */
+.el-datum { display: flex; flex: none; flex-direction: column; align-items: center; align-self: start; width: 64px; overflow: hidden;
+  border: 2px solid var(--linie); border-radius: 16px; background: var(--flaeche); box-shadow: 0 3px 0 var(--linie); color: var(--tinte); text-align: center; line-height: 1; }
+.el-datum__tag { width: 100%; padding: 5px 0 4px; background: var(--primary); color: var(--snow); font: 700 12px/1 "Nunito", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.el-datum__zahl { padding-top: 6px; font: 700 28px/1 "Baloo 2", sans-serif; }
+.el-datum__monat { padding: 2px 0 7px; color: var(--tinte-2); font: 700 13px/1 "Nunito", sans-serif; }
+.el-datum--heute .el-datum__tag { background: var(--accent); color: var(--ink); }
+.el-datum--klein { width: 52px; border-radius: 12px; }
+.el-datum--klein .el-datum__zahl { font-size: 22px; }
+
+/* Kurze Fakten mit Symbol: Alter, Uhrzeit, Ort, Preis */
+.el-infos { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 8px 0 0; padding: 0; list-style: none; color: var(--tinte-2); font-size: 15px; }
+.el-infos li { display: inline-flex; align-items: flex-start; gap: 6px; }
+.el-infos .symbol { flex: none; width: 16px; height: 16px; margin-top: 4px; color: var(--tinte); }
+.el-infos strong { color: var(--tinte); }
+
+/* ---------- Wunschzettel: „Das möchte Ihr Kind besuchen“ ---------- */
+.el-wunsch { position: relative; margin-top: 24px; padding: 24px 16px 16px; overflow: hidden; border-radius: var(--radius-card);
+  background: var(--night); box-shadow: 0 4px 0 var(--night-2); color: var(--snow); }
+.el-wunsch__kopf { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.el-wunsch__oben { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--sea-shallow); font: 700 14px/1.3 "Nunito", sans-serif; }
+.el-wunsch__oben .symbol { width: 18px; height: 18px; color: var(--wish); fill: var(--wish); }
+.el-wunsch h2 { margin: 4px 0 0; color: var(--snow); font: 700 26px/1.15 "Baloo 2", sans-serif; }
+.el-wunsch__unter { margin: 6px 0 0; color: var(--sea-shallow); font-size: 15px; }
+.el-wunsch__eule { flex: none; width: 64px; height: auto; }
+.el-wunsch__liste { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 16px; margin: 20px 0 0; padding: 0; list-style: none; }
+.el-wunsch__fuss { display: flex; align-items: flex-start; gap: 8px; margin: 16px 0 0; color: var(--sea-shallow); font-size: 14px; }
+.el-wunsch__fuss .symbol { flex: none; width: 18px; height: 18px; margin-top: 2px; }
+
+.el-wunschkarte { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 16px; padding: 16px; border-radius: 20px; background: var(--white); color: var(--ink); }
+.el-wunschkarte h3 { margin: 0; font: 700 20px/1.2 "Baloo 2", sans-serif; }
+.el-wunschkarte .el-infos { color: var(--ink-soft); }
+.el-wunschkarte .el-infos .symbol, .el-wunschkarte .el-infos strong { color: var(--ink); }
+.el-wunschkarte .el-datum { border-color: var(--card-border); background: var(--white); box-shadow: 0 3px 0 var(--card-border); color: var(--ink); }
+.el-wunschkarte .el-datum__monat { color: var(--ink-soft); }
+.el-wunschkarte__badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.el-wunschkarte__aktionen { display: flex; flex-wrap: wrap; grid-column: 1 / -1; align-items: center; gap: 8px 12px; }
+
+/* Leerer Wunschzettel: erklärt in drei Schritten, wie Wünsche hierherkommen */
+.el-wunsch-leer { display: grid; gap: 16px; margin-top: 24px; padding: 20px 16px; border: 2px dashed var(--linie); border-radius: var(--radius-card); background: var(--flaeche); }
+.el-wunsch-leer h2 { margin: 0; font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.el-wunsch-leer__kopf { display: flex; align-items: center; gap: 12px; }
+.el-wunsch-leer__kopf .owl { flex: none; width: 52px; height: auto; }
+.el-schritte { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: schritt; }
+.el-schritte li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; counter-increment: schritt; }
+.el-schritte li::before { content: counter(schritt); display: grid; flex: none; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--primary); color: var(--snow); font: 700 16px/1 "Baloo 2", sans-serif; }
+
+/* ---------- Suche ---------- */
+.el-suche { margin-top: 48px; scroll-margin-top: 16px; }
+.el-suche__kopf h2 { margin: 0; font: 700 26px/1.2 "Baloo 2", sans-serif; }
+.el-suche__kopf p { margin: 4px 0 0; color: var(--tinte-2); }
+.el-suchfeld { position: relative; margin-top: 16px; }
+.el-suchfeld input { width: 100%; min-height: 56px; padding: 0 56px 0 52px; border: 2px solid var(--card-border); border-radius: var(--radius-input);
+  background: var(--white); box-shadow: 0 4px 0 var(--card-border); color: var(--ink); font: 400 17px "Nunito", sans-serif; }
+.el-suchfeld input::placeholder { color: var(--ink-soft); }
+.el-suchfeld input::-webkit-search-cancel-button { display: none; }
+.el-suchfeld input:focus-visible { border-color: var(--primary); }
+.el-suchfeld > .symbol { position: absolute; top: 50%; left: 18px; width: 22px; height: 22px; color: var(--ink-soft); pointer-events: none; transform: translateY(-50%); }
+.el-suchfeld__leeren { position: absolute; top: 50%; right: 6px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: var(--paper); color: var(--ink); transform: translateY(-50%); }
+.el-suchfeld__leeren .symbol { width: 20px; height: 20px; }
+
+.el-raster { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 16px; margin-top: 24px; }
+.el-seitenleiste { display: none; }
+
+/* Handy: Leiste mit Filter-Knopf und Trefferzahl, bleibt beim Scrollen oben */
+.el-handyleiste { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 0 -16px; padding: 10px 16px; border-bottom: 2px solid var(--card-border); background: var(--paper); }
+.el-handyleiste__zahl { font-weight: 700; }
+.el-zahl { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 6px; border-radius: var(--radius-pill);
+  background: var(--primary); color: var(--snow); font: 700 13px/1 "Nunito", sans-serif; }
+.ui-btn[aria-pressed="true"] .el-zahl, .ui-btn--primary .el-zahl { background: var(--snow); color: var(--primary); }
+
+/* ---------- Filter ---------- */
+.el-filter { display: flex; flex-direction: column; gap: 22px; }
+.el-filter fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.el-filter legend, .el-filter__titel { display: block; margin: 0 0 8px; padding: 0; color: var(--ink); font: 700 15px/1.3 "Nunito", sans-serif; }
+.el-filter h2 { margin: 0; font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.el-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.el-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border: 2px solid var(--card-border); border-radius: var(--radius-pill);
+  background: var(--white); box-shadow: 0 3px 0 var(--card-border); color: var(--ink); font: 700 15px/1.1 "Nunito", sans-serif; text-align: left; cursor: pointer;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out; }
+.el-chip:active { box-shadow: 0 0 0 transparent; transform: translateY(3px); }
+.el-chip[aria-pressed="true"] { border-color: var(--primary); background: var(--primary); box-shadow: 0 3px 0 var(--primary-dark); color: var(--snow); }
+.el-chip .symbol { width: 16px; height: 16px; }
+.el-chip__punkt { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--farbe, var(--ink-soft)); }
+.el-chip[aria-pressed="true"] .el-chip__punkt { box-shadow: 0 0 0 2px var(--snow); }
+.el-chip__zahl { color: var(--ink-soft); font-weight: 400; }
+.el-chip[aria-pressed="true"] .el-chip__zahl { color: var(--snow); }
+.el-auswahl { display: flex; flex-direction: column; gap: 8px; color: var(--ink); font: 700 15px/1.3 "Nunito", sans-serif; }
+.el-auswahl select { width: 100%; min-height: 48px; padding: 0 12px; border: 2px solid var(--card-border); border-radius: var(--radius-input);
+  background: var(--white); color: var(--ink); font: 400 16px "Nunito", sans-serif; }
+.el-schalter { display: flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 700; cursor: pointer; }
+.el-schalter input { flex: none; width: 22px; height: 22px; accent-color: var(--primary); }
+.el-textknopf { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0; border: 0; background: none; color: var(--tinte);
+  font: 700 15px "Nunito", sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.el-textknopf .symbol { width: 18px; height: 18px; }
+
+/* Filter im Handy-Blatt (BottomSheet): Knopf „… Angebote zeigen“ bleibt unten sichtbar */
+.el-blatt-fuss { position: sticky; bottom: -32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 24px -24px -32px; padding: 16px 24px max(16px, env(safe-area-inset-bottom)); border-top: 2px solid var(--card-border); background: var(--white); }
+
+/* ---------- Terminband: nächste vier Wochen auf einen Blick ---------- */
+.el-band { padding: 16px; border: 2px solid var(--card-border); border-radius: var(--radius-card); background: var(--white); box-shadow: 0 4px 0 var(--card-border); }
+.el-band__kopf { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.el-band__kopf h3 { margin: 0; font: 700 18px/1.2 "Baloo 2", sans-serif; }
+.el-band__hinweis { margin: 0; color: var(--ink-soft); font-size: 14px; }
+.el-band__spur { display: flex; gap: 4px; margin: 12px 0 0; padding: 0 0 6px; overflow-x: auto; list-style: none; overscroll-behavior-x: contain; }
+.el-band__spur li { display: flex; flex: 1 0 36px; }
+.el-band__tag { display: flex; flex: 1; flex-direction: column; align-items: center; gap: 4px; min-width: 36px; padding: 6px 0; border: 0; border-radius: 12px;
+  background: transparent; color: var(--ink); font: 700 12px/1 "Nunito", sans-serif; cursor: pointer; }
+.el-band__tag:disabled { cursor: default; opacity: 1; }
+.el-band__tag.ist-wochenende { background: var(--paper); }
+.el-band__monat { height: 12px; color: var(--ink-soft); font-size: 11px; }
+.el-band__wt { color: var(--ink-soft); }
+.el-band__raum { display: flex; align-items: flex-end; height: 56px; }
+.el-band__saeule { width: 12px; height: var(--hoehe, 6%); min-height: 4px; border-radius: 6px 6px 2px 2px; background: var(--sea-deep); }
+.el-band__tag:disabled .el-band__saeule { background: var(--card-border); }
+.el-band__datum { font: 700 15px/1 "Baloo 2", sans-serif; }
+.el-band__zahl { min-height: 12px; color: var(--ink-soft); font-size: 12px; }
+.el-band__tag.ist-heute .el-band__datum { padding: 0 4px; border-radius: 6px; background: var(--accent); }
+.el-band__tag:not(:disabled):hover .el-band__saeule { background: var(--primary); }
+.el-band__tag[aria-pressed="true"] { background: var(--primary); color: var(--snow); }
+.el-band__tag[aria-pressed="true"] .el-band__wt, .el-band__tag[aria-pressed="true"] .el-band__zahl, .el-band__tag[aria-pressed="true"] .el-band__monat { color: var(--snow); }
+.el-band__tag[aria-pressed="true"] .el-band__saeule { background: var(--snow); }
+.el-band__tag[aria-pressed="true"].ist-heute .el-band__datum { color: var(--ink); }
+
+/* ---------- Ergebnisse ---------- */
+.el-aktiv { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.el-aktiv__chip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 8px 0 14px; border: 0; border-radius: var(--radius-pill);
+  background: var(--card-border); color: var(--ink); font: 700 14px/1 "Nunito", sans-serif; cursor: pointer; }
+.el-aktiv__chip .symbol { width: 18px; height: 18px; }
+.el-aktiv__chip:hover { background: var(--sand); }
+
+.el-ergebnis__kopf { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
+.el-ergebnis__kopf h3 { margin: 0; font: 700 22px/1.2 "Baloo 2", sans-serif; scroll-margin-top: 72px; }
+.el-ergebnis__kopf h3:focus { outline: none; }
+.el-merkleiste { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin-top: 12px; padding: 8px 16px; border-radius: 16px; background: var(--card-border); font-size: 15px; }
+.el-gruppe { margin-top: 24px; }
+.el-gruppe__titel { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; color: var(--ink-soft); font: 700 15px/1.2 "Nunito", sans-serif; }
+.el-gruppe__titel::after { content: ""; flex: 1; height: 2px; background: var(--card-border); }
+.el-liste { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.el-mehr { width: 100%; margin-top: 24px; }
+
+/* Angebotskarte für Eltern: Kalenderblatt links, Fakten, Anmeldelink */
+.el-karte { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 16px; padding: 16px; border: 2px solid var(--linie); border-radius: var(--radius-card);
+  background: var(--flaeche); box-shadow: 0 4px 0 var(--linie); color: var(--tinte); }
+.el-karte__oben { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; color: var(--tinte-2); font-size: 14px; }
+.el-einrichtung { display: inline-flex; align-items: center; gap: 6px; color: var(--tinte); font-weight: 700; }
+.el-einrichtung i { width: 10px; height: 10px; border-radius: 50%; background: var(--farbe, var(--ink-soft)); }
+.el-karte h3 { margin: 4px 0 0; font: 700 20px/1.25 "Baloo 2", sans-serif; overflow-wrap: anywhere; }
+.el-karte h3 a { color: inherit; text-decoration: none; }
+.el-karte h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.el-karte__text { display: -webkit-box; margin: 8px 0 0; overflow: hidden; color: var(--tinte-2); font-size: 15px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.el-karte__badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.el-karte__aktionen { display: flex; flex-wrap: wrap; grid-column: 1 / -1; align-items: center; gap: 8px 12px; padding-top: 12px; border-top: 2px dashed var(--linie); }
+.el-merken { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin-left: auto; padding: 0 14px; border: 2px solid var(--card-border);
+  border-radius: var(--radius-pill); background: var(--white); color: var(--ink); font: 700 15px "Nunito", sans-serif; cursor: pointer; }
+.el-merken .symbol { width: 18px; height: 18px; }
+.el-merken[aria-pressed="true"] { border-color: var(--accent); }
+.el-merken[aria-pressed="true"] .symbol { color: var(--accent-dark); fill: var(--accent); }
+
+/* ---------- Kalender-Datei ---------- */
+.el-abo { display: grid; gap: 16px; margin-top: 32px; }
+.el-abo h2 { display: flex; align-items: center; gap: 10px; margin: 0; font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.el-abo h2 .symbol { width: 24px; height: 24px; color: var(--primary); }
+.el-abo p { margin: 4px 0 0; color: var(--ink-soft); }
+.el-abo__links { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ---------- Gut zu wissen ---------- */
+.el-infoteil { margin-top: 64px; scroll-margin-top: 16px; }
+.el-infoteil > h2, .el-infoteil h2.el-titel { margin: 0; font: 700 26px/1.2 "Baloo 2", sans-serif; }
+.el-infoteil__unter { margin: 4px 0 0; color: var(--ink-soft); }
+.el-wissen { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 20px; }
+.el-wissen .ui-card { display: flex; flex-direction: column; gap: 8px; padding: 20px; }
+.el-wissen h3 { margin: 0; font: 700 19px/1.25 "Baloo 2", sans-serif; }
+.el-wissen p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.el-wissen a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.el-symbolkreis { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--paper); color: var(--primary); }
+.el-symbolkreis .symbol { width: 22px; height: 22px; }
+.el-symbolkreis--wunsch { color: var(--wish-dark); }
+
+/* Datenweg: vier Schritte, verbunden wie die gestrichelten Wege auf der Karte */
+.el-datenweg { display: grid; gap: 12px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: weg; }
+.el-datenweg li { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 2px solid var(--card-border);
+  border-radius: 16px; background: var(--white); font-size: 15px; counter-increment: weg; }
+.el-datenweg li::before { content: counter(weg); display: grid; flex: none; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--sea-shallow); color: var(--ink); font: 700 16px/1 "Baloo 2", sans-serif; }
+.el-datenweg strong { display: block; }
+.el-stand { display: flex; align-items: flex-start; gap: 8px; margin: 16px 0 0; color: var(--ink-soft); font-size: 14px; }
+.el-stand .symbol { flex: none; width: 18px; height: 18px; margin-top: 2px; }
+
+.el-fragen { display: grid; gap: 12px; margin-top: 20px; }
+.el-fragen details { border: 2px solid var(--card-border); border-radius: 16px; background: var(--white); }
+.el-fragen summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 12px 16px;
+  font: 700 16px/1.3 "Nunito", sans-serif; cursor: pointer; list-style: none; }
+.el-fragen summary::-webkit-details-marker { display: none; }
+.el-fragen summary .symbol { flex: none; width: 20px; height: 20px; color: var(--primary); transition: transform 200ms ease-out; }
+.el-fragen details[open] summary .symbol { transform: rotate(45deg); }
+.el-fragen details p { margin: 0; padding: 0 16px 16px; color: var(--ink-soft); }
+.el-fragen details a { color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+.el-orte { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 20px; }
+.el-ort { display: flex; flex-direction: column; gap: 8px; overflow: hidden; padding: 0 0 20px; border: 2px solid var(--card-border); border-radius: var(--radius-card);
+  background: var(--white); box-shadow: 0 4px 0 var(--card-border); }
+.el-ort::before { content: ""; display: block; height: 10px; background: var(--farbe); }
+.el-ort > * { margin-right: 20px; margin-left: 20px; }
+.el-ort h3 { margin-top: 8px; margin-bottom: 0; font: 700 20px/1.2 "Baloo 2", sans-serif; }
+.el-ort p { margin-top: 0; margin-bottom: 0; color: var(--ink-soft); font-size: 15px; }
+.el-ort ul { display: grid; gap: 4px; margin-top: 4px; margin-bottom: 0; padding: 0; list-style: none; }
+.el-ort a { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; color: var(--ink); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.el-ort a .symbol { flex: none; width: 16px; height: 16px; }
+
+/* ---------- Detailseite eines Angebots ---------- */
+.el-detail { max-width: 1100px; margin: 0 auto; padding: 16px 16px 48px; }
+.el-detail__raster { display: grid; gap: 24px; margin-top: 20px; }
+.el-detail h1 { margin: 8px 0 0; font: 700 30px/1.15 "Baloo 2", sans-serif; overflow-wrap: anywhere; }
+.el-detail__themen { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.el-detail__themen .ui-pill { align-items: center; gap: 6px; color: var(--ink); font-size: 15px; }
+.el-detail__themen .symbol { width: 16px; height: 16px; }
+.el-detail__lead { max-width: 65ch; margin: 20px 0 0; font-size: 18px; line-height: 1.6; }
+.el-detail__quelle { margin: 8px 0 0; color: var(--tinte-2); font-size: 14px; }
+.el-detail h2 { margin: 32px 0 0; font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.el-detail__knoepfe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.el-termine { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.el-termine li { display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 8px; border: 2px solid var(--linie); border-radius: 16px; background: var(--flaeche); }
+.el-termine li.ist-vorbei { color: var(--tinte-2); }
+.el-termine li.ist-vorbei .el-datum { opacity: .55; }
+.el-blick { display: flex; flex-direction: column; gap: 16px; padding: 20px; border: 2px solid var(--linie); border-radius: var(--radius-card);
+  background: var(--flaeche); box-shadow: 0 4px 0 var(--linie); color: var(--tinte); }
+.el-blick h2 { margin: 0; font-size: 20px; }
+.el-blick__termin { display: flex; align-items: center; gap: 14px; }
+.el-blick__termin > div > strong { display: block; font-size: 17px; }
+.el-blick__termin > div > span { color: var(--tinte-2); font-size: 15px; }
+.el-blick dl { display: grid; gap: 12px; margin: 0; }
+.el-blick dl > div { display: grid; grid-template-columns: 24px 1fr; gap: 2px 10px; }
+.el-blick dl .symbol { grid-row: span 2; width: 20px; height: 20px; margin-top: 2px; color: var(--primary); }
+.el-blick dt { color: var(--tinte-2); font-size: 14px; }
+.el-blick dd { margin: 0; font-weight: 700; }
+.el-blick dd span { display: block; font-weight: 400; }
+.el-blick dd a { color: var(--tinte); text-decoration: underline; text-underline-offset: 3px; }
+.el-blick .ui-btn { width: 100%; }
+.el-blick__klein { margin: -6px 0 0; color: var(--tinte-2); font-size: 13px; }
+.el-blick__hinweis { padding: 14px; border-radius: 16px; background: var(--papier-2); font-size: 15px; }
+.el-blick__hinweis strong { display: block; }
+
+/* ---------- Größere Bildschirme ---------- */
+@media (min-width: 640px) {
+  .el-seite { padding: 0 32px 64px; }
+  .el-detail { padding: 24px 32px 64px; }
+  .el-kopf { padding-top: 32px; }
+  .el-kopf h1 { font-size: 34px; }
+  .el-fakt--extra { display: inline-flex; }
+  .el-handyleiste { margin: 0 -32px; padding: 10px 32px; }
+  .el-wunsch { padding: 28px 28px 24px; }
+  .el-wunsch__eule { width: 84px; }
+  .el-wunsch-leer { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto; align-items: center; gap: 24px; padding: 20px 24px; }
+  .el-karte { padding: 20px; gap: 12px 20px; }
+  .el-karte__aktionen { grid-column: 2; }
+  .el-abo { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .el-datenweg { grid-template-columns: repeat(4, 1fr); }
+  .el-datenweg li { flex-direction: column; align-items: flex-start; }
+  .el-detail h1 { font-size: 36px; }
+}
+@media (min-width: 960px) {
+  .el-raster { grid-template-columns: 300px minmax(0, 1fr); gap: 32px; }
+  .el-seitenleiste .ui-card { padding: 20px; }
+  .el-seitenleiste .el-chip { min-height: 40px; padding: 0 12px; font-size: 14px; }
+  .el-seitenleiste .el-filter { gap: 18px; }
+  .el-seitenleiste { position: sticky; top: 16px; display: block; max-height: calc(100dvh - 32px); padding: 0 4px 6px 0; overflow-y: auto; }
+  .el-handyleiste { display: none; }
+  .el-band__spur li { flex-basis: 22px; }
+  .el-band__tag { min-width: 22px; font-size: 11px; }
+  .el-band__saeule { width: 10px; }
+  .el-band__datum { font-size: 14px; }
+  .el-detail__raster { grid-template-columns: minmax(0, 1fr) 340px; align-items: start; gap: 40px; }
+  .el-detail__seite { position: sticky; top: 16px; }
+}
+
+/* ---------- Bewegung: kurz, ruhig, abschaltbar ---------- */
+.el-einblenden { animation: el-ein 280ms ease-out both; }
+@keyframes el-ein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .el-einblenden { animation: none; }
+  .el-chip, .el-fragen summary .symbol { transition: none; }
+}

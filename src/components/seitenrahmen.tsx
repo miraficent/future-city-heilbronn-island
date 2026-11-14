@@ -21,6 +21,9 @@ export function Seitenrahmen({ children, modus = "eltern", aktiv }: { children: 
   const markiert = aktiv ?? modus;
   return (
     <div data-modus={modus === "teen" ? "teen" : undefined}>
+      <a href="#inhalt" className="sr-only z-50 rounded-full bg-white px-5 py-3 font-bold text-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
+        Zum Inhalt springen
+      </a>
       <AppShell modus={modus === "kind" ? "kinder" : "eltern"}>
         <div className="mx-auto max-w-[1100px] px-4 pt-4 sm:px-8">
           <KopfNavigation eintraege={NAVIGATION} aktiv={markiert} />

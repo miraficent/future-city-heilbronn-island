@@ -1,3 +1,4 @@
+import "../../eltern.css";
 import { notFound } from "next/navigation";
 import { AngebotDetails } from "@/components/angebot-details";
 import { angebotNachSlug, META, oeffentlicheAngebote, slugAusId } from "@/lib/daten";

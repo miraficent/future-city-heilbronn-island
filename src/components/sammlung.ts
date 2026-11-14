@@ -1,37 +1,90 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { lies, schreibe, loesche } from "@/lib/speicher";
 import type { Modus } from "@/lib/entdecken";
 
-export function useSammlung(modus: Modus) {
-  const [ids, setIds] = useState<string[]>([]);
-  const [dauerhaft, setDauerhaft] = useState(false);
+/**
+ * Gemerkte Angebote je Bereich: Kinder („Da will ich hin!“), Teens und Eltern („Merken“).
+ * Standard: nur in der Browsersitzung. Teens und Eltern können „Auf diesem Gerät behalten“ wählen.
+ * Ein Zustand je Bereich im Modul – alle Komponenten einer Seite sehen sofort dasselbe.
+ * `geladen` ist false, solange der Server rendert (dort gibt es keinen Browserspeicher).
+ */
+type Zustand = { ids: string[]; dauerhaft: boolean; geladen: boolean };
+
+const SERVER: Zustand = { ids: [], dauerhaft: false, geladen: false };
+const EREIGNIS = "cosmos:merkliste";
+const zustaende = new Map<Modus, Zustand>();
+const abos = new Map<Modus, (melden: () => void) => () => void>();
+
+function ausSpeicher(modus: Modus): Zustand {
   const schluessel = `merkliste.${modus}`;
-  function verteile(neu:string[],speichern:boolean){window.dispatchEvent(new CustomEvent("cosmos:merkliste",{detail:{modus,ids:neu,dauerhaft:speichern}}));}
-  useEffect(() => {
-    const behalten = modus !== "kind" && lies<unknown>("geraet", `${schluessel}.erlaubt`, false) === true;
-    const gespeichert = lies<unknown>(behalten ? "geraet" : "sitzung", schluessel, []);
-    setDauerhaft(behalten);
-    setIds(Array.isArray(gespeichert) ? gespeichert.filter((id): id is string => typeof id === "string") : []);
-    const aktualisieren=(event:Event)=>{
-      const detail=(event as CustomEvent<{modus:Modus;ids:string[];dauerhaft:boolean}>).detail;
-      if(detail?.modus===modus&&Array.isArray(detail.ids)){setIds(detail.ids.filter(id=>typeof id==="string"));setDauerhaft(detail.dauerhaft===true);}
+  const dauerhaft = modus !== "kind" && lies<unknown>("geraet", `${schluessel}.erlaubt`, false) === true;
+  const gespeichert = lies<unknown>(dauerhaft ? "geraet" : "sitzung", schluessel, []);
+  const ids = Array.isArray(gespeichert) ? gespeichert.filter((id): id is string => typeof id === "string") : [];
+  return { ids, dauerhaft, geladen: true };
+}
+
+const gleich = (x: Zustand, y: Zustand) => x.dauerhaft === y.dauerhaft && x.ids.join("\n") === y.ids.join("\n");
+
+function zustand(modus: Modus): Zustand {
+  let z = zustaende.get(modus);
+  if (!z) {
+    z = ausSpeicher(modus);
+    zustaende.set(modus, z);
+  }
+  return z;
+}
+
+function setze(modus: Modus, neu: Zustand) {
+  zustaende.set(modus, neu);
+  window.dispatchEvent(new CustomEvent(EREIGNIS, { detail: { modus, ids: neu.ids, dauerhaft: neu.dauerhaft } }));
+}
+
+/** Eine feste Abo-Funktion je Bereich (sonst meldet React sich bei jedem Rendern neu an). */
+function abonnent(modus: Modus) {
+  let abo = abos.get(modus);
+  if (!abo) {
+    abo = (melden) => {
+      // Beim Öffnen einer Seite frisch lesen – z. B. nach „Alles löschen“ auf der Datenschutzseite.
+      const frisch = ausSpeicher(modus);
+      const vorher = zustaende.get(modus);
+      if (!vorher || !gleich(vorher, frisch)) {
+        zustaende.set(modus, frisch);
+        melden();
+      }
+      const anderesFenster = (e: StorageEvent) => {
+        if (e.key?.startsWith(`cosmos.merkliste.${modus}`)) {
+          zustaende.set(modus, ausSpeicher(modus));
+          melden();
+        }
+      };
+      window.addEventListener(EREIGNIS, melden);
+      window.addEventListener("storage", anderesFenster);
+      return () => {
+        window.removeEventListener(EREIGNIS, melden);
+        window.removeEventListener("storage", anderesFenster);
+      };
     };
-    window.addEventListener("cosmos:merkliste",aktualisieren);
-    return()=>window.removeEventListener("cosmos:merkliste",aktualisieren);
-  }, [modus, schluessel]);
+    abos.set(modus, abo);
+  }
+  return abo;
+}
+
+export function useSammlung(modus: Modus) {
+  const z = useSyncExternalStore(abonnent(modus), () => zustand(modus), () => SERVER);
+  const schluessel = `merkliste.${modus}`;
 
   function merken(id: string) {
-    const neu = ids.includes(id) ? ids.filter((i) => i !== id) : [...ids, id];
-    setIds(neu);
-    schreibe(dauerhaft ? "geraet" : "sitzung", schluessel, neu);
-    verteile(neu,dauerhaft);
+    const aktuell = zustand(modus);
+    const ids = aktuell.ids.includes(id) ? aktuell.ids.filter((i) => i !== id) : [...aktuell.ids, id];
+    schreibe(aktuell.dauerhaft ? "geraet" : "sitzung", schluessel, ids);
+    setze(modus, { ...aktuell, ids });
   }
 
   function behalten(wert: boolean) {
     if (modus === "kind") return;
-    setDauerhaft(wert);
+    const { ids } = zustand(modus);
     if (wert) {
       schreibe("geraet", `${schluessel}.erlaubt`, true);
       schreibe("geraet", schluessel, ids);
@@ -41,14 +94,14 @@ export function useSammlung(modus: Modus) {
       loesche("geraet", schluessel);
       schreibe("sitzung", schluessel, ids);
     }
-    verteile(ids,wert);
+    setze(modus, { ids, dauerhaft: wert, geladen: true });
   }
 
   function leeren() {
-    setIds([]);
     loesche("geraet", schluessel);
     loesche("sitzung", schluessel);
-    verteile([],dauerhaft);
+    setze(modus, { ...zustand(modus), ids: [] });
   }
-  return { ids, merken, dauerhaft, behalten, leeren };
+
+  return { ids: z.ids, merken, dauerhaft: z.dauerhaft, behalten, leeren, geladen: z.geladen };
 }
