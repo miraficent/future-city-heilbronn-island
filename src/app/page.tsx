@@ -6,7 +6,7 @@ import { Symbol } from "@/components/symbol";
 /**
  * Startseite (DESIGN.md § Pages 1): Nachthimmel, die Eule fliegt herein und setzt sich auf den Titel,
  * Themenbilder (public/grafik/themen/) ploppen nacheinander auf und schweben leicht.
- * Zwei große Wahlkarten – „Für mich“ (Kinder/Teens) und „Für mein Kind“ (Eltern).
+ * Zwei große Wahlkarten – „Kind“ (Kinder/Teens) und „Eltern“.
  * Nur CSS-Animationen; bei „Bewegung reduzieren“ steht alles still.
  */
 
@@ -59,13 +59,13 @@ export default function Start() {
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
             <Symbol name="rocket" />
-            <span className="start__karte-titel">Für mich</span>
+            <span className="start__karte-titel">Kind</span>
             <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
           <Link href="/eltern/" className="start__karte">
             <Symbol name="users" />
-            <span className="start__karte-titel">Für mein Kind</span>
-            <span className="start__karte-unter">Eltern</span>
+            <span className="start__karte-titel">Eltern</span>
+            <span className="start__karte-unter">Mütter und Väter</span>
           </Link>
         </div>
       </section>

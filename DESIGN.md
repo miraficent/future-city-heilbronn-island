@@ -9,7 +9,7 @@ Read this file together with CLAUDE.md before changing any UI.
 >    Pins, Gebäude, Abzeichen, „Heute!“-Stern, laufende Figur. Positionen folgen der echten Geografie
 >    (experimenta links am Neckar beim Hauptbahnhof). Die Nebel-Insel heißt „Neuer Ort?“ (Bauplatz) → `/mitmachen/`.
 > 2. **Keine Spiele.** Alle Mini-Spiele sind entfernt; § 4 Punkt 5 und die Spiele-Hinweise in § 7 entfallen.
-> 3. **Startseite:** zwei Karten „Für mich“ (→ `/kinder/`) und „Für mein Kind“ (→ `/eltern/`).
+> 3. **Startseite:** zwei Karten „Kind“ (→ `/kinder/`) und „Eltern“ (→ `/eltern/`).
 > 4. **Schriften lokal** in `public/fonts/` statt von Google Fonts (Datenschutz: nichts von fremden Servern).
 > 5. **Icons:** Lucide über `src/components/symbol.tsx`. **Keine Emojis**, auch nicht Fluent Emoji
 >    (Teamregel, geprüft von `tests/lib/emoji.test.ts`). Kategorie-Symbole ebenfalls Lucide.
@@ -156,7 +156,7 @@ front face lighter, side face darker, door + 2 windows, roof in institution colo
 
 Pages:
 1. Start: night hero with tiny stars, small map preview (island cluster), title,
-   two huge choice cards: "Für mich" (kids/teens) and "Für mein Kind" (parents).
+   two huge choice cards: "Kind" (kids/teens) and "Eltern" (parents).
 2. Map (kids): full-screen map, owl greeting "Hey! Heute ist <Wochentag>. Wohin willst du?"
 3. Institution page (kids): banner in institution color with the building illustration;
    owl bubble; category bubbles (72px round, icon + label + count badge, only categories

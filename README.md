@@ -33,7 +33,7 @@ können beide Seiten unabhängig arbeiten.
 
 | Seite | Was | Für wen |
 |---|---|---|
-| `/` **Start** | Nachthimmel mit Eule, kleine Stadtvorschau, zwei Karten: **„Für mich“** und **„Für mein Kind“** | alle |
+| `/` **Start** | Nachthimmel, die Eule fliegt herein, schwebende Themenbilder, zwei Karten: **„Kind“** und **„Eltern“** | alle |
 | `/kinder/` **Karte** | Stadtansicht von Heilbronn (Neckar, Altstadt, Kilianskirche, Hauptbahnhof). Jedes Gebäude ist ein **Link** zu seiner Einrichtung, mit Anzahl kommender Angebote und „Heute!“-Stern. Die Eule fragt einmal nach dem Alter. | Kinder, Teens |
 | `/checkpoint/[id]/` **Einrichtung** | Banner mit Gebäude, Eule, runde Kategorie-Knöpfe, Karten zum Wischen, Vorlesen, **„Da will ich hin!“**. COSMOS zeigt alle Angebote. | Kinder, Teens |
 | `/eltern/` **Eltern** | „Das möchte Ihr Kind besuchen“, Suche mit allen Filtern, Infos, offizielle Links | Eltern, Fachkräfte |

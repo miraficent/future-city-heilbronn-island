@@ -16,7 +16,7 @@ Read before larger changes: `README.md` (overview), `docs/regeln.md` (team rules
 
 ## Current scope (decisions of 2026-11-14)
 
-- **Start page** `/`: night sky, owl, city preview, two cards "Für mich" → `/kinder/` and "Für mein Kind" → `/eltern/`.
+- **Start page** `/`: night sky, owl flies in and lands on the title, floating theme pictures, two cards "Kind" → `/kinder/` and "Eltern" → `/eltern/`.
 - **Kids map** `/kinder/`: city view of Heilbronn (no sea, no islands). Buildings link to `/checkpoint/[id]/`;
   "Neuer Ort?" links to `/mitmachen/`. Owl asks the child's age once (sessionStorage).
 - **Institution page** `/checkpoint/[id]/`: banner, owl, category bubbles, card gallery, bottom sheet with

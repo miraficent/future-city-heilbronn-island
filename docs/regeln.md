@@ -23,7 +23,7 @@ Oben in DESIGN.md stehen die „Projektentscheidungen“; sie gehen dem Rest der
 
 Stand 14.11.2026 (Details im Protokoll):
 
-- ✅ **Startseite** mit zwei Karten „Für mich“ / „Für mein Kind“.
+- ✅ **Startseite** mit zwei Karten „Kind“ / „Eltern“.
 - ✅ **Eltern-Bereich** – hier steht alles mit viel Text: Suche, Filter, Infos, offizielle Links.
 - ✅ **Karte** (Stadtansicht Heilbronn) – Gebäude sind Links zu den Einrichtungsseiten.
 - ✅ **Einrichtungsseiten** (`/checkpoint/…`) mit den Angeboten.
