@@ -11,7 +11,8 @@ import { BildKarte } from "@/components/kinderreise/bild-karte";
 import type { KartenOrt, Pt } from "@/lib/kinderkarte";
 import { BILD_START, bildOrte } from "@/lib/bildkarte";
 import { istHeute, kartenFuerOrt, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
-import { useKinderAlter, useMinute } from "@/lib/kinder-zustand";
+import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
+import { FIGUR_ARTEN, KinderFigurBild, figurLabel, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 
 const KINDER_ALTER = [6, 7, 8, 9, 10, 11, 12, 13, 14];
 const LAUFZEIT_MS = 1200;
@@ -28,6 +29,7 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
     el.scrollTop = (el.scrollHeight - el.clientHeight) / 2;
   }, []);
   const [alter, setAlter] = useKinderAlter();
+  const [figurArt, setFigurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
   const [figur, setFigur] = useState<Pt>(BILD_START);
   const [gewaehlt, setGewaehlt] = useState<string | null>(null);
@@ -64,6 +66,7 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
           heute={heute}
           aktiv={null}
           figur={figur}
+          figurArt={figurArt ?? "lila"}
           gewaehlt={gewaehlt}
           onWaehle={laufeZu}
           onNeuerOrt={() => router.push("/mitmachen/")}
@@ -81,9 +84,18 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
                   <button key={n} type="button" className="kinder-alter" onClick={() => setAlter(n)}>{n}</button>
                 ))}
               </OwlGuide>
+            ) : figurArt === null ? (
+              <OwlGuide text="Super! Wer bist du? Such dir eine Figur aus." onSchliessen={() => setEuleOffen(false)}>
+                {FIGUR_ARTEN.map((art) => (
+                  <button key={art} type="button" className="kinder-figurwahl" aria-label={figurLabel(art)} onClick={() => setFigurArt(art)}>
+                    <KinderFigurBild art={art} />
+                  </button>
+                ))}
+              </OwlGuide>
             ) : (
               <OwlGuide text={`Hey! Heute ist ${wochentag ?? "ein schöner Tag"}. Wohin willst du?`} onSchliessen={() => setEuleOffen(false)}>
                 <Button variante="ghost" groesse="kids" icon="cake" onClick={() => setAlter(null)}>Alter ändern</Button>
+                <Button variante="ghost" groesse="kids" icon="users" onClick={() => setFigurArt(null)}>Figur ändern</Button>
               </OwlGuide>
             )}
           </div>

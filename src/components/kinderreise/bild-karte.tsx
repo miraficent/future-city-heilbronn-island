@@ -8,6 +8,7 @@ import { BILD, BILD_HAEUSER, BILD_NEUER_ORT } from "@/lib/bildkarte";
 import { Fachwerkhaus } from "./fachwerkhaus";
 import { PinZeichen } from "./gebaeude";
 import { InstitutGebaeude, institutHoehe } from "./institut-gebaeude";
+import { KinderFigur, type FigurArt } from "./kinder-figuren";
 
 type Props = {
   /** Orte bereits in Bildkoordinaten (bildOrte) */
@@ -16,6 +17,8 @@ type Props = {
   heute?: Set<string>;
   aktiv: Set<string> | null;
   figur: Pt | null;
+  /** Welche der drei Kinderfiguren läuft */
+  figurArt: FigurArt;
   gewaehlt: string | null;
   onWaehle: (id: string) => void;
   onNeuerOrt?: () => void;
@@ -23,7 +26,7 @@ type Props = {
 
 const DAECHER = [F.dach, F.klippe];
 
-export function BildKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehle, onNeuerOrt }: Props) {
+export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehlt, onWaehle, onNeuerOrt }: Props) {
   // Häuser und Einrichtungen gemeinsam von hinten nach vorn zeichnen
   const stehend = [
     ...BILD_HAEUSER.map(([x, y, d], i) => ({ art: "haus" as const, key: `h${i}`, x, y, d })),
@@ -115,16 +118,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehl
 
       {figur && (
         <g className="kr-figur" style={{ transform: `translate(${figur[0]}px, ${figur[1]}px)` }} aria-hidden="true">
-          <ellipse cx={0} cy={2} rx={14} ry={5} fill={F.text} opacity={0.2} />
-          <rect x={-7} y={-20} width={5} height={14} rx={2} fill={F.nacht} />
-          <rect x={2} y={-20} width={5} height={14} rx={2} fill={F.nacht} />
-          <rect x={-10} y={-40} width={20} height={22} rx={8} fill={F.lila} />
-          <circle cx={0} cy={-50} r={11} fill={F.sand} />
-          <path d="M-11 -52 A11 11 0 0 1 11 -52 L11 -55 A11 9 0 0 0 -11 -55 Z" fill={F.text} />
-          <circle cx={0} cy={-63} r={5} fill={F.text} />
-          <circle cx={-4} cy={-50} r={1.6} fill={F.text} />
-          <circle cx={4} cy={-50} r={1.6} fill={F.text} />
-          <path d="M-4 -45 Q0 -42 4 -45" stroke={F.text} strokeWidth={1.5} fill="none" strokeLinecap="round" />
+          <g transform="scale(0.42) translate(-80,-222)"><KinderFigur art={figurArt} /></g>
         </g>
       )}
     </svg>

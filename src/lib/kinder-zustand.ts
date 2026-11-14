@@ -36,3 +36,25 @@ const nichts = () => () => {};
 export function useMinute(): number | null {
   return useSyncExternalStore(nichts, () => Math.floor(Date.now() / 60_000) * 60_000, () => null);
 }
+
+const FIGUR_SCHLUESSEL = "kinder.figur";
+const FIGUR_EREIGNIS = "cosmos:kinder-figur";
+
+function abonniereFigur(melden: () => void) {
+  window.addEventListener(FIGUR_EREIGNIS, melden);
+  return () => window.removeEventListener(FIGUR_EREIGNIS, melden);
+}
+
+/** Gewählte Kinderfigur ("lila" | "tuerkis" | "orange"), nur in der Browsersitzung */
+export function useKinderFigur<T extends string>(): [T | null, (figur: T | null) => void] {
+  const figur = useSyncExternalStore(
+    abonniereFigur,
+    () => lies<T | null>("sitzung", FIGUR_SCHLUESSEL, null),
+    () => null,
+  );
+  const setzen = (neu: T | null) => {
+    schreibe("sitzung", FIGUR_SCHLUESSEL, neu);
+    window.dispatchEvent(new Event(FIGUR_EREIGNIS));
+  };
+  return [figur, setzen];
+}

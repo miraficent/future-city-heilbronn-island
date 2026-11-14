@@ -226,3 +226,10 @@
 .kinder-karte__eule:hover { transform: translateY(-4px) rotate(-4deg); }
 .kinder-karte__eule svg { width: 100%; height: auto; display: block; }
 @media (prefers-reduced-motion: reduce) { .kinder-karte__eule { transition: none; } }
+
+/* Figurenwahl in der Eulen-Blase */
+.kinder-figurwahl { width: 96px; height: 128px; padding: 6px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
+  box-shadow: 0 4px 0 0 var(--card-border); cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
+.kinder-figurwahl:hover { transform: translateY(-3px); border-color: var(--primary); }
+.kinder-figurwahl svg { width: 100%; height: 100%; display: block; }
+@media (prefers-reduced-motion: reduce) { .kinder-figurwahl { transition: none; } }

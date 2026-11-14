@@ -25,8 +25,8 @@ const FREIE_BILD_PLAETZE: Pt[] = [[300, 640], [1330, 590], [1250, 520]];
 /** „Neuer Ort?“-Bauplatz */
 export const BILD_NEUER_ORT: Pt = [1400, 790];
 
-/** Figur startet vor dem Hauptbahnhof */
-export const BILD_START: Pt = [420, 790];
+/** Figur startet am Kreisverkehr in der Kartenmitte (immer sichtbar, nicht hinter der Eule) */
+export const BILD_START: Pt = [1150, 540];
 
 /** Orte aus kartenOrte() auf die Bildkarte umrechnen */
 export function bildOrte(orte: KartenOrt[]): KartenOrt[] {
