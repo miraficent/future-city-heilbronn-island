@@ -7,7 +7,7 @@ import type { Angebot } from "./angebot";
 import { fuerModus } from "./entdecken";
 import { naechsterStart } from "./filter";
 import { isForKids, isFree } from "./events";
-import type { CategoryId, LiveEvent } from "@/types";
+import type { CategoryId, EventType, LiveEvent } from "@/types";
 
 export type KinderKarte = {
   /** Kurs-ID oder "ev:" + Event-ID – dieselbe ID landet im Wunsch-Rucksack */
@@ -25,6 +25,8 @@ export type KinderKarte = {
   /** Titelbild des Events (nur eigene Mobilizon-Instanz), sonst null → Farbe der Kategorie */
   bild: string | null;
   beispiel: boolean;
+  /** Art der Veranstaltung (Mitmachen, Show, Kurs …) – für „Was erwartet dich?“; bei Kursen unbekannt */
+  art: EventType | null;
 };
 
 /** Themen der Kurse (konfiguration/themen.csv) → Kategorien der Kinder-Ansicht */
@@ -52,6 +54,7 @@ export function ausAngebot(a: Angebot, jetzt: Date): KinderKarte {
     anmeldeUrl: a.url,
     bild: null,
     beispiel: false,
+    art: null,
   };
 }
 
@@ -65,10 +68,12 @@ export function ausEvent(e: LiveEvent): KinderKarte {
     ageMin: e.ageMin,
     ageMax: e.ageMax,
     gratis: isFree(e),
-    geschichte: e.story_kids || e.title_kids,
+    // Ohne Kindertext bleibt die Geschichte leer – die Oberfläche bildet dann einen Satz (kinderGeschichte)
+    geschichte: e.story_kids,
     anmeldeUrl: e.registrationUrl,
     bild: e.image,
     beispiel: e.isDummy,
+    art: e.type,
   };
 }
 

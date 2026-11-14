@@ -15,7 +15,7 @@ import type { KartenOrt } from "@/lib/kinderkarte";
 import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
-import { kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
+import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann, THEMA_SATZ } from "@/lib/kinder-text";
 import type { Category, CategoryId } from "@/types";
 
 const wochentag = (iso: string) =>
@@ -81,6 +81,11 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 
   const jetzt = minute === null ? new Date() : new Date(minute);
   const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt)} ${kinderTageszeit(k.start)}`;
+  const sagt = (k: KinderKarte) =>
+    euleSagt(kinderTitel(k.titel), kinderGeschichte({
+      titel: k.titel, geschichte: k.geschichte, art: k.art, gratis: k.gratis,
+      themen: k.kategorien.map((id) => THEMA_SATZ[id]).filter((t): t is string => !!t),
+    }));
 
   function waehleKategorie(id: CategoryId | null, name: string) {
     setKategorie(id);
@@ -91,7 +96,7 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   function oeffne(k: KinderKarte) {
     setOffen(k);
     // Mit „Eule spricht von selbst“ liest der OwlGuide; sonst einmal hier (das Antippen erlaubt die Sprache)
-    if (!autoVorlesen()) vorlesen(`${kinderTitel(k.titel)}. ${k.geschichte}`);
+    if (!autoVorlesen()) vorlesen(sagt(k));
   }
 
   const raumStil = { "--welt-grund": welt.grund, "--welt-licht": welt.licht } as CSSProperties;
@@ -195,7 +200,8 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 
         {offen && (
           <div className="welt__eule">
-            <OwlGuide text={`${kinderTitel(offen.titel)}. ${offen.geschichte}`} onSchliessen={() => setOffen(null)}>
+            <OwlGuide text={sagt(offen)} onSchliessen={() => setOffen(null)}>
+              <ErwartetDich karte={offen} thema={kat(offen)} alter={alterText(offen)} />
               <p className="welt__eule-info">
                 <Symbol name="calendar" /> {wann(offen)} · {wochentag(offen.start)}, {uhrzeit(offen.start)} Uhr{offen.gratis ? " · gratis" : ""}
               </p>
@@ -214,6 +220,36 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
         )}
       </div>
     </AppShell>
+  );
+}
+
+/** Art der Veranstaltung als Bild-Hinweis: Was macht das Kind dort? */
+const ART_HINWEIS: Record<string, { icon: string; text: string }> = {
+  workshop: { icon: "tools", text: "Selbst machen" },
+  show: { icon: "sparkles", text: "Zuschauen" },
+  course: { icon: "calendar", text: "Mehrere Treffen" },
+  event: { icon: "star", text: "Vorbeikommen" },
+};
+
+/** „Was erwartet dich?“ – große Bild-Hinweise statt Text: Art, Thema, Alter, mit Familie, kostenlos */
+function ErwartetDich({ karte, thema, alter }: { karte: KinderKarte; thema?: Category; alter: string }) {
+  const art = karte.art ? ART_HINWEIS[karte.art] : null;
+  const hinweise = [
+    art && { icon: art.icon, text: art.text, farbe: "var(--primary)" },
+    thema && { icon: thema.icon, text: thema.label_kids.split(" & ")[0]!, farbe: thema.color },
+    { icon: "cake", text: `${alter} Jahre`, farbe: "var(--accent-dark)" },
+    karte.kategorien.includes("family") && { icon: "users", text: "Mit Familie", farbe: "var(--wish-dark)" },
+    karte.gratis && { icon: "heart", text: "Kostenlos", farbe: "var(--success)" },
+  ].filter((h): h is { icon: string; text: string; farbe: string } => !!h);
+  return (
+    <ul className="welt__erwartet" aria-label="Was erwartet dich?">
+      {hinweise.map((h) => (
+        <li key={h.text} style={{ "--farbe": h.farbe } as CSSProperties}>
+          <span className="welt__erwartet-rund"><Symbol name={h.icon} /></span>
+          {h.text}
+        </li>
+      ))}
+    </ul>
   );
 }
 

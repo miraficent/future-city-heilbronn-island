@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
+import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
 
 describe("kinderTitel", () => {
   it("nimmt bei Titel: Untertitel nur den Titel", () => {
@@ -32,5 +32,17 @@ describe("kinderWann", () => {
     expect(kinderTageszeit("2026-11-21T09:30:00+01:00")).toBe("morgens");
     expect(kinderTageszeit("2026-11-21T15:00:00+01:00")).toBe("nachmittags");
     expect(kinderTageszeit("2026-11-21T19:00:00+01:00")).toBe("abends");
+  });
+});
+
+describe("kinderGeschichte – die Eule wiederholt nie nur den Titel", () => {
+  it("bildet ohne Kindertext einen Satz aus Thema, Art und Kosten", () => {
+    const g = kinderGeschichte({ titel: "Capcom Go!", geschichte: "Capcom Go!", art: "show", themen: ["Spiele"], gratis: true });
+    expect(g).toBe("Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
+    expect(euleSagt("Capcom Go!", g)).toBe("Capcom Go! Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
+  });
+  it("nimmt einen echten Kindertext und setzt keinen doppelten Punkt", () => {
+    expect(kinderGeschichte({ titel: "Blitze", geschichte: "Es knistert und blitzt", art: "workshop", themen: [], gratis: false })).toBe("Es knistert und blitzt.");
+    expect(euleSagt("Blitze im Labor", "x")).toBe("Blitze im Labor. x");
   });
 });

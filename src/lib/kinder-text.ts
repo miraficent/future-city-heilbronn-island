@@ -55,3 +55,53 @@ export function kinderTageszeit(iso: string): string {
   if (h < 17) return "nachmittags";
   return "abends";
 }
+
+/** Satz mit Punkt am Ende – aber kein „Go!.“ */
+export function alsSatz(text: string): string {
+  const t = text.trim();
+  return /[.!?…]$/.test(t) ? t : `${t}.`;
+}
+
+const vergleich = (s: string) => s.toLowerCase().replace(/[^a-z0-9äöüß]/g, "");
+
+type FuerGeschichte = {
+  titel: string;
+  geschichte: string;
+  art: "workshop" | "show" | "course" | "event" | null;
+  themen: string[];
+  gratis: boolean;
+};
+
+/** Themen so, wie man sie einem Kind sagt („Hier geht es um …“) */
+export const THEMA_SATZ: Record<string, string> = {
+  astronomy: "Sterne und das Weltall", physics: "spannende Experimente", biology: "Natur und Tiere", math: "Zahlen und Rätsel",
+  it: "Computer und KI", coding: "Programmieren", gaming: "Spiele", art: "Malen und Basteln", family: "Spaß mit der Familie",
+};
+
+/** Was das Kind dort tut – kurz und anschaulich */
+export const ART_SATZ: Record<"workshop" | "show" | "course" | "event", string> = {
+  workshop: "Du machst selbst mit.",
+  show: "Du schaust zu und staunst.",
+  course: "Ihr trefft euch mehrmals und lernt Schritt für Schritt.",
+  event: "Komm vorbei und probier es aus.",
+};
+
+/**
+ * Text, den die Eule vorliest. Gibt es keinen eigenen Kindertext (oder ist er nur der Titel),
+ * bildet sie einen Satz aus Thema, Art und Kosten – statt den Titel zweimal zu sagen.
+ */
+export function kinderGeschichte(k: FuerGeschichte): string {
+  const titel = vergleich(k.titel);
+  const eigene = k.geschichte.trim();
+  if (eigene && vergleich(eigene) !== titel && !vergleich(eigene).startsWith(titel)) return alsSatz(eigene);
+  const teile: string[] = [];
+  if (k.themen.length) teile.push(`Hier geht es um ${k.themen.slice(0, 2).join(" und ")}.`);
+  teile.push(ART_SATZ[k.art ?? "event"]);
+  if (k.gratis) teile.push("Es kostet nichts.");
+  return teile.join(" ");
+}
+
+/** Vorlesetext der Eule: Titel, dann Geschichte – ohne Wiederholung */
+export function euleSagt(titel: string, geschichte: string): string {
+  return `${alsSatz(titel)} ${geschichte}`.trim();
+}
