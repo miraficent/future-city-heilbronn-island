@@ -48,15 +48,20 @@ export function StartAuswahl({ figurId, alter, waehleFigur, waehleAlter, los }: 
           Wie alt bist du?
         </h2>
         <div className="alter-wahl" role="radiogroup" aria-label="Alter wählen">
-          {ALTER.map((a) => (
-            <motion.button key={a} role="radio" aria-checked={alter === a} className={`alter-knopf ${a <= 8 ? "alter-klein" : "alter-gross"}`} onClick={() => waehleAlter(a)} whileTap={{ scale: 0.9 }}>
-              {a}
-            </motion.button>
+          {[{ name: "Entdecken", alter: ALTER.slice(0, 3) }, { name: "Tüfteln", alter: ALTER.slice(3) }].map((gruppe) => (
+            <div key={gruppe.name} className={`alter-gruppe ${gruppe.alter.includes(alter) ? "ist-aktiv" : ""}`}>
+              <div className="alter-knoepfe">
+                {gruppe.alter.map((a) => (
+                  <motion.button key={a} role="radio" aria-checked={alter === a} className="alter-knopf" onClick={() => waehleAlter(a)} whileTap={{ scale: 0.9 }}>
+                    {a}
+                  </motion.button>
+                ))}
+              </div>
+              <span className="alter-gruppe-name">{gruppe.name}</span>
+            </div>
           ))}
         </div>
-        <p className="alter-stufe">
-          {alter <= 8 ? "Entdecken · leichte Aufgaben mit Bildern" : "Tüfteln · kniffligere Aufgaben"}
-        </p>
+        <p className="alter-stufe">{alter <= 8 ? "Leichte Aufgaben mit Bildern" : "Kniffligere Aufgaben"} · passende Kurse für {alter} Jahre</p>
 
         <motion.button className="spiel-knopf spiel-knopf-dunkel los-knopf" onClick={los} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.96 }}>
           <Symbol name="play" />

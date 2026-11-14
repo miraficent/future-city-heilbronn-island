@@ -11,6 +11,7 @@ import { figurNachId, FIGUREN } from "@/lib/figuren";
 import { abstand, passendeSpielAngebote, STATIONEN, type Punkt } from "@/lib/spiel";
 import { lies, loesche, schreibe } from "@/lib/speicher";
 import { amPlatz, bewege, bewegeAutos, erzeugeStadt, hausAn, nahesHaus, neueAutos, planeRoute, TEMPO_FIGUR, type Auto } from "@/lib/stadt";
+import { klang, klangIstAus, setzeKlangAus } from "@/lib/klang";
 import { useVorlesen } from "@/lib/vorlesen";
 import { useSammlung } from "../sammlung";
 import { Symbol } from "../symbol";
@@ -19,8 +20,9 @@ import { Lernaufgabe } from "./lernaufgabe";
 import { PixelBild } from "./pixel-grafik";
 import { Sammelkarte } from "./sammelkarte";
 import { StadtKarte } from "./stadtkarte";
-import { StadtKulisse, StadtLeben } from "./stadt-grafik";
+import { StadtKulisse, StadtLeben, TunnelHuegel } from "./stadt-grafik";
 import { StartAuswahl } from "./start-auswahl";
+import { Anleitung } from "./anleitung";
 import { ThemenSymbol } from "./themen-symbol";
 import { ZeigEltern } from "./zeig-eltern";
 
@@ -34,6 +36,9 @@ const ZOOM_MIN = 0.7;
 const ZOOM_MAX = 1.6;
 const SPEICHER_STAND = "abenteuer.v2";
 const SPEICHER_FIGUR = "spielwelt.figur";
+const SPEICHER_RAKETE = "spielwelt.rakete";
+
+export type RaketenZustand = "bereit" | "startet" | "weg";
 
 type Fenster = "haus" | "rucksack" | "karte" | "finale" | undefined;
 type ZielAktion = { art: "haus"; id: string } | { art: "rakete" } | null;
@@ -121,16 +126,20 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const [hausId, setHausId] = useState(STATIONEN[0]!.id);
   const [phase, setPhase] = useState(0);
   const [belohnung, setBelohnung] = useState<string | null>(null);
-  const [startet, setStartet] = useState(false);
+  const [rakete, setRakete] = useState<RaketenZustand>("bereit");
+  const startet = rakete === "startet";
+  const [tonAus, setTonAus] = useState(false);
   const [hinweis, setHinweis] = useState("Tippe auf ein Haus!");
   const [jetzt, setJetzt] = useState(startJetzt);
   const [verhaeltnis, setVerhaeltnis] = useState(1.6);
   const [alleKurse, setAlleKurse] = useState(false);
   const [neuFrage, setNeuFrage] = useState(false);
+  const [anleitung, setAnleitung] = useState(false);
 
   const pos = useRef<Punkt>(stadt.start);
   const laeuftRef = useRef(false);
-  const startetRef = useRef(false);
+  const raketeRef = useRef<RaketenZustand>("bereit");
+  const warAmPlatz = useRef(false);
   const autosRef = useRef<Auto[]>(autos);
   const tasten = useRef(new Set<string>());
   const route = useRef<Punkt[]>([]);
@@ -159,6 +168,12 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const geladen = pruefeSpielstand(lies<unknown>("sitzung", SPEICHER_STAND, null));
     if (geladen.alter > 11) geladen.alter = 11;
     setStand(geladen);
+    const gespeicherteRakete = lies<RaketenZustand>("sitzung", SPEICHER_RAKETE, "bereit");
+    if (gespeicherteRakete === "weg") {
+      raketeRef.current = "weg";
+      setRakete("weg");
+    }
+    setTonAus(klangIstAus());
     const gespeicherteFigur = lies<string>("sitzung", SPEICHER_FIGUR, "");
     if (FIGUREN.some((f) => f.id === gespeicherteFigur)) {
       setFigurId(gespeicherteFigur);
@@ -192,6 +207,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       setBelohnung(null);
       setAlleKurse(false);
       setFenster("haus");
+      klang.tuer();
       gesperrteTuer.current = id;
     },
     [stand, stoppen],
@@ -221,18 +237,32 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
 
   const zurRakete = useCallback(() => laufeZu(stadt.platz, { art: "rakete" }), [stadt, laufeZu]);
 
+  const raketeStarten = useCallback(() => {
+    if (raketeRef.current === "startet") return;
+    raketeRef.current = "startet";
+    setRakete("startet");
+    setHinweis("3 … 2 … 1 … Start!");
+    klang.countdown();
+    window.setTimeout(() => klang.start(), 2400);
+    window.setTimeout(() => {
+      setFenster("finale");
+      klang.jubel();
+    }, 3600);
+  }, []);
+
+  /** Wird nur beim Ankommen bzw. Betreten des Platzes ausgelöst – nie dauerhaft, solange man dort steht. */
   const raketeErreicht = useCallback(() => {
-    if (startetRef.current) return;
-    if (alleTeile) {
-      startetRef.current = true;
-      setStartet(true);
-      setHinweis("3 … 2 … 1 … Start!");
-      window.setTimeout(() => setFenster("finale"), 3300);
-    } else {
-      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil)).map((s) => s.teil);
-      setHinweis(`Es fehlt noch: ${fehlt.join(", ")}`);
+    if (raketeRef.current === "startet") return;
+    if (raketeRef.current === "weg") {
+      setHinweis("Die Rakete ist im All! Du hast es geschafft.");
+      return;
     }
-  }, [alleTeile, teile]);
+    if (alleTeile) raketeStarten();
+    else {
+      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil));
+      setHinweis(`Noch ${fehlt.length} Teil${fehlt.length === 1 ? "" : "e"}: ${fehlt.map((s) => s.kurz).join(", ")}`);
+    }
+  }, [alleTeile, teile, raketeStarten]);
 
   function weltPunkt(e: React.PointerEvent<SVGSVGElement>): Punkt | null {
     const m = e.currentTarget.getScreenCTM()?.inverse();
@@ -303,7 +333,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const tick = (zeit: number) => {
       const dt = vorher ? Math.min((zeit - vorher) / 1000, 0.05) : 0;
       vorher = zeit;
-      if (!pausiert && !fenster) {
+      if (!pausiert && !fenster && !anleitung) {
         let richtung: Punkt = { x: 0, y: 0 };
         let dauer = dt;
         for (const t of tasten.current) {
@@ -335,6 +365,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             } else setBlick(dy < 0 ? "hinten" : "vorne");
             pos.current = neu;
             setPosition(neu);
+            klang.schritt();
           } else if (route.current.length) {
             // Sicherheitsnetz: Ein Wegpunkt ist nicht erreichbar → Route neu planen statt stehen zu bleiben.
             const endpunkt = route.current.at(-1)!;
@@ -364,15 +395,21 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     };
     rahmenId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rahmenId);
-  }, [bereit, pausiert, fenster, stadt, oeffneHaus]);
+  }, [bereit, pausiert, fenster, anleitung, stadt, oeffneHaus]);
 
   // Hinweistexte passend zur Situation
   useEffect(() => {
     if (startet) return;
+    const jetztAmPlatz = amPlatz(stadt, position);
+    const betreten = jetztAmPlatz && !warAmPlatz.current;
+    warAmPlatz.current = jetztAmPlatz;
     if (nah) setHinweis(`${nah.station.kurz} – tippe auf die Tür!`);
-    else if (amPlatz(stadt, position)) raketeErreicht();
-    else if (alleTeile) setHinweis("Alle Teile da! Lauf zur Rakete!");
-  }, [nah, position, stadt, alleTeile, startet, raketeErreicht]);
+    else if (betreten) raketeErreicht();
+    else if (!jetztAmPlatz && rakete === "bereit") {
+      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil));
+      setHinweis(fehlt.length ? `Hol ${fehlt.length === STATIONEN.length ? "die" : "noch"} ${fehlt.length} Raketenteil${fehlt.length === 1 ? "" : "e"} aus den Häusern!` : "Alle Teile da! Lauf zur Rakete!");
+    }
+  }, [nah, position, stadt, teile, rakete, startet, raketeErreicht]);
 
   /* ---------- Ansicht ---------- */
 
@@ -419,6 +456,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const neuesTeil = !erfolge.some((e) => e.startsWith(`${station.id}-`));
     speichere({ ...stand, fortschritt: { ...stand.fortschritt, [stufe]: [...erfolge, id] } });
     setBelohnung(neuesTeil ? station.teil : "Stern");
+    klang.richtig();
+    window.setTimeout(() => (neuesTeil ? klang.teil() : klang.stern()), 350);
   }
 
   const passende = useMemo(() => passendeSpielAngebote(angebote, station.thema, stand.alter, jetztDatum), [angebote, station.thema, stand.alter, jetztDatum]);
@@ -434,11 +473,26 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     pos.current = stadt.start;
     setPosition(stadt.start);
     setStand(neuerSpielstand());
-    startetRef.current = false;
-    setStartet(false);
+    loesche("sitzung", SPEICHER_RAKETE);
+    loesche("sitzung", "spielwelt.anleitung");
+    raketeRef.current = "bereit";
+    setRakete("bereit");
+    warAmPlatz.current = false;
     setNeuFrage(false);
     setBereit(false);
     setHinweis("Tippe auf ein Haus!");
+  }
+
+  function einpacken(id: string) {
+    if (!merk.ids.includes(id)) klang.einpacken();
+    merk.merken(id);
+  }
+
+  function tonUmschalten() {
+    const neu = !tonAus;
+    setTonAus(neu);
+    setzeKlangAus(neu);
+    if (!neu) klang.klick();
   }
 
   function steuerDruck(taste: string, an: boolean) {
@@ -477,8 +531,9 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             role="img"
             aria-label="Spielwelt: eine kleine Stadt mit vier Lernhäusern, einer Straße mit Zebrastreifen und einer Rakete auf dem Platz."
           >
-            <StadtKulisse stadt={stadt} teile={teile} erledigt={mitTeilIds} nahesHausId={nah?.station.id} startet={startet} />
+            <StadtKulisse stadt={stadt} teile={teile} erledigt={mitTeilIds} nahesHausId={nah?.station.id} rakete={rakete} />
             <StadtLeben stadt={stadt} figur={figur} position={position} blick={blick} spiegeln={spiegeln} laeuft={laeuft} autos={autos} ziel={ziel} />
+            <TunnelHuegel stadt={stadt} />
           </svg>
 
           {/* Kopfleiste im Spiel: nur Symbole */}
@@ -501,6 +556,12 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               </li>
             </ol>
             <div className="hud-knoepfe">
+              <button className="rund-knopf" onClick={() => { stoppen(); setAnleitung(true); }} aria-label="So geht's">
+                <Symbol name="info" />
+              </button>
+              <button className="rund-knopf" onClick={tonUmschalten} aria-label={tonAus ? "Ton an" : "Ton aus"} aria-pressed={!tonAus}>
+                <Symbol name={tonAus ? "mute" : "volume"} />
+              </button>
               <button className="rund-knopf" onClick={() => { stoppen(); setPausiert(!pausiert); }} aria-label={pausiert ? "Weiterspielen" : "Pause"} aria-pressed={pausiert}>
                 <Symbol name={pausiert ? "play" : "pause"} />
               </button>
@@ -556,6 +617,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <AnimatePresence>
             {nah && !fenster && (
               <motion.button
+                key="haus"
                 className="aktion-knopf"
                 initial={{ scale: 0.6, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -566,10 +628,23 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                 {nah.station.kurz}
               </motion.button>
             )}
+            {!nah && !fenster && amPlatz(stadt, position) && (rakete === "weg" || (alleTeile && rakete === "bereit")) && (
+              <motion.button
+                key="rakete"
+                className="aktion-knopf aktion-rakete"
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.6, opacity: 0 }}
+                onClick={raketeStarten}
+              >
+                <Symbol name="rocket" />
+                {rakete === "weg" ? "Nochmal fliegen" : "Rakete starten"}
+              </motion.button>
+            )}
           </AnimatePresence>
 
           <button className="mini-karte" onClick={() => { stoppen(); setKartenZoom(1); setFenster("karte"); }} aria-label="Karte öffnen">
-            <StadtKarte stadt={stadt} position={position} erledigt={mitTeilIds} />
+            <StadtKarte stadt={stadt} position={position} erledigt={mitTeilIds} figur={figur} teile={teile.length} />
             <span className="mini-karte-symbol"><Symbol name="expand" /></span>
           </button>
 
@@ -593,7 +668,19 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                 los={() => {
                   schreibe("sitzung", SPEICHER_FIGUR, figurId);
                   setBereit(true);
-                  setHinweis("Tippe auf ein Haus!");
+                  klang.klick();
+                  if (!lies<boolean>("sitzung", "spielwelt.anleitung", false)) setAnleitung(true);
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {bereit && anleitung && (
+              <Anleitung
+                weiter={() => {
+                  schreibe("sitzung", "spielwelt.anleitung", true);
+                  setAnleitung(false);
+                  klang.klick();
                 }}
               />
             )}
@@ -670,7 +757,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             })}
           </nav>
           <div className="aufgabe-flaeche">
-            <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} art={station.aufgabe} stufe={stufe} phase={phase} geschafft={geschafft} />
+            <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} art={station.aufgabe} stufe={stufe} phase={phase} geschafft={geschafft} fehler={() => klang.falsch()} figur={figur} />
             <AnimatePresence>
               {belohnung && (
                 <motion.div className="belohnung" initial={{ scale: 0.4, opacity: 0, rotate: -8 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} exit={{ scale: 0.6, opacity: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}>
@@ -707,7 +794,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               <>
                 <div className="sammelkarten">
                   {(alleKurse ? passende : passende.slice(0, 3)).map((a, i) => (
-                    <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={merk.merken} jetzt={jetzt} index={i} />
+                    <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={einpacken} jetzt={jetzt} index={i} />
                   ))}
                 </div>
                 {passende.length > 3 && (
@@ -730,7 +817,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <>
             <div className="sammelkarten">
               {gesammelt.map((a, i) => (
-                <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt sammeln={merk.merken} jetzt={jetzt} index={i} />
+                <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt sammeln={einpacken} jetzt={jetzt} index={i} />
               ))}
             </div>
             <ZeigEltern ids={gesammeltIds} />
@@ -754,6 +841,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             erledigt={mitTeilIds}
             gross
             zoom={kartenZoom}
+            figur={figur}
+            teile={teile.length}
             onHaus={(id) => { setFenster(undefined); zumHaus(id); }}
             onPlatz={() => { setFenster(undefined); zurRakete(); }}
           />
@@ -771,7 +860,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
 
       <Fensterrahmen
         offen={fenster === "finale"}
-        schliessen={() => { setFenster(undefined); startetRef.current = false; setStartet(false); setHinweis("Toll gemacht! Spiel weiter oder pack Kurse ein."); }}
+        schliessen={() => { setFenster(undefined); raketeRef.current = "weg"; setRakete("weg"); schreibe("sitzung", SPEICHER_RAKETE, "weg"); setHinweis("Die Rakete ist im All! Pack dir echte Kurse ein."); }}
         kennung="finale-titel"
         titel="Die Rakete fliegt!"
         breit
@@ -806,7 +895,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         {vorschlaege.length > 0 && (
           <div className="sammelkarten">
             {vorschlaege.flatMap((v) => v.angebote.slice(0, 2)).slice(0, 4).map((a, i) => (
-              <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={merk.merken} jetzt={jetzt} index={i} />
+              <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={einpacken} jetzt={jetzt} index={i} />
             ))}
           </div>
         )}

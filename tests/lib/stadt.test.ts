@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { STATIONEN, abstand, type Punkt } from "@/lib/spiel";
-import { aufBahn, aufsWegenetz, bewege, bewegeAutos, erzeugeStadt, hausAn, istBegehbar, nahesHaus, neueAutos, planeRoute, zebraBei } from "@/lib/stadt";
+import { aufBahn, aufsWegenetz, INSEL_RADIUS, bewege, bewegeAutos, erzeugeStadt, hausAn, istBegehbar, nahesHaus, neueAutos, planeRoute, zebraBei } from "@/lib/stadt";
 
 const stadt = erzeugeStadt(STATIONEN);
 
@@ -116,11 +116,20 @@ describe("Antippen und Wegsuche", () => {
 });
 
 describe("Autos", () => {
-  it("fahren auf der rechten Spur und nie auf den Gehweg", () => {
-    for (let s = 0; s < 3000; s += 25) {
+  it("fahren nur auf der Fahrbahn oder im Wendehammer – nie auf den Gehweg", () => {
+    for (let s = 0; s < 3200; s += 20) {
       const { punkt } = aufBahn(stadt.autoBahn, s);
-      expect(punkt.y).toBeGreaterThan(stadt.strasse.oben);
-      expect(punkt.y).toBeLessThan(stadt.strasse.unten);
+      const aufStrasse = punkt.y > stadt.strasse.oben && punkt.y < stadt.strasse.unten;
+      const imWendehammer = abstand(punkt, stadt.strasse.wende) <= stadt.strasse.wende.r - 20;
+      expect(aufStrasse || imWendehammer).toBe(true);
+    }
+  });
+
+  it("fahren im Wendehammer um die Mittelinsel herum statt hindurch", () => {
+    const AUTO_HALBE_BREITE = 20;
+    for (let s = 0; s < 3200; s += 10) {
+      const { punkt } = aufBahn(stadt.autoBahn, s);
+      expect(abstand(punkt, stadt.strasse.wende)).toBeGreaterThan(INSEL_RADIUS + AUTO_HALBE_BREITE);
     }
   });
 

@@ -42,6 +42,9 @@ const GEHWEG_BREITE = 60;
 const ZEBRA_BREITE = 76;
 export const TEMPO_FIGUR = 230;
 export const TEMPO_AUTO = 140;
+/** Radius der Kreisbahn im Wendehammer – groß genug, dass Autos um die Mittelinsel fahren. */
+export const KEHRE_RADIUS = 66;
+export const INSEL_RADIUS = 30;
 
 const Y = {
   dachOben: 225,
@@ -144,15 +147,18 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
 
   const zebras = querX.map((qx) => ({ x: qx - ZEBRA_BREITE / 2, y: Y.strasseOben, breite: ZEBRA_BREITE, hoehe: Y.strasseUnten - Y.strasseOben }));
 
-  // Autos: aus dem Tunnel nach Osten, um den Wendehammer, zurück nach Westen in den Tunnel.
-  const autoBahn: Punkt[] = [{ x: -120, y: Y.spurOst }, { x: wende.x, y: Y.spurOst }];
-  const halbSpur = (Y.spurOst - Y.spurWest) / 2;
-  const mitteSpur = (Y.spurOst + Y.spurWest) / 2;
-  for (let i = 1; i < 18; i++) {
-    const w = Math.PI / 2 - (i / 18) * Math.PI;
-    autoBahn.push({ x: wende.x + Math.cos(w) * 62, y: mitteSpur + Math.sin(w) * halbSpur });
+  // Autos: aus dem Tunnel nach Osten, einmal rund um die Mittelinsel des Wendehammers
+  // (gegen den Uhrzeigersinn, wie bei Rechtsverkehr) und zurück nach Westen in den Tunnel.
+  const dy = Y.spurOst - wende.y;
+  const einfahrtX = wende.x - Math.sqrt(KEHRE_RADIUS ** 2 - dy ** 2);
+  const startWinkel = Math.atan2(dy, einfahrtX - wende.x);
+  const autoBahn: Punkt[] = [{ x: -160, y: Y.spurOst }, { x: einfahrtX, y: Y.spurOst }];
+  const SCHRITTE = 36;
+  for (let i = 1; i < SCHRITTE; i++) {
+    const w = startWinkel - (i / SCHRITTE) * (2 * startWinkel);
+    autoBahn.push({ x: wende.x + Math.cos(w) * KEHRE_RADIUS, y: wende.y + Math.sin(w) * KEHRE_RADIUS });
   }
-  autoBahn.push({ x: wende.x, y: Y.spurWest }, { x: -120, y: Y.spurWest });
+  autoBahn.push({ x: einfahrtX, y: Y.spurWest }, { x: -160, y: Y.spurWest });
 
   const stadt: Stadt = {
     breite,
@@ -167,7 +173,8 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
     zebras,
     knoten: [...knoten.values()],
     kanten,
-    start: { x: platz.x, y: Y.gehwegNord },
+    // Start direkt vor der Rakete: das Ziel ist sofort zu sehen.
+    start: { x: platz.x, y: platz.y + 85 },
     deko: [],
     autoBahn,
   };
@@ -328,7 +335,7 @@ export function zebraBei(stadt: Stadt, p: Punkt): number {
 
 /* ---------- Autos ---------- */
 
-export type Auto = { id: number; s: number; farbe: string; wartet: boolean };
+export type Auto = { id: number; s: number; farbe: string; wartet: boolean; art?: "auto" | "bus" };
 
 function bahnLaenge(bahn: Punkt[]) {
   let summe = 0;
@@ -355,12 +362,17 @@ export function aufBahn(bahn: Punkt[], s: number): { punkt: Punkt; winkel: numbe
 
 export function neueAutos(stadt: Stadt): Auto[] {
   const laenge = bahnLaenge(stadt.autoBahn);
-  const farben = ["#e8513a", "#2f7fb8", "#f2a900"];
-  return farben.map((farbe, i) => ({ id: i, s: (laenge / farben.length) * i, farbe, wartet: false }));
+  const fahrzeuge: Array<Pick<Auto, "farbe" | "art">> = [
+    { farbe: "#e8513a", art: "auto" },
+    { farbe: "#f2c94c", art: "bus" },
+    { farbe: "#2f7fb8", art: "auto" },
+    { farbe: "#5dbb63", art: "auto" },
+  ];
+  return fahrzeuge.map((f, i) => ({ id: i, s: (laenge / fahrzeuge.length) * i, wartet: false, ...f }));
 }
 
 const HALTEABSTAND = 120;
-const AUTO_ABSTAND = 120;
+const AUTO_ABSTAND = 150;
 
 /**
  * Autos fahren im Kreis durch Tunnel und Wendehammer. Steht die Figur auf einem

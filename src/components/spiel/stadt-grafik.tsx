@@ -1,11 +1,17 @@
 import { memo, type ReactNode } from "react";
 import type { Figur as FigurDaten } from "@/lib/figuren";
 import type { Punkt } from "@/lib/spiel";
-import { aufBahn, type Auto, type Stadt } from "@/lib/stadt";
+import { aufBahn, INSEL_RADIUS, type Auto, type Stadt } from "@/lib/stadt";
 import { Figur, type Blick } from "./figur";
 import { PixelGrafik } from "./pixel-grafik";
 import { Rakete } from "./rakete";
 import { ThemenSymbol } from "./themen-symbol";
+
+function abdunkeln(hex: string, faktor: number): string {
+  const n = Number.parseInt(hex.slice(1), 16);
+  const k = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => Math.round(faktor >= 1 ? c + (255 - c) * (faktor - 1) : c * faktor));
+  return `#${k.map((c) => Math.max(0, Math.min(255, c)).toString(16).padStart(2, "0")).join("")}`;
+}
 
 const WEG = "#f1dfb5";
 const WEG_RAND = "#c9b483";
@@ -14,19 +20,42 @@ const GEHWEG_RAND = "#b5ab98";
 const ASPHALT = "#5d6b6e";
 
 /** Auto von oben gesehen, im Pixel-Stil. Ursprung = Mitte, Fahrtrichtung = +x. */
-export function AutoGrafik({ farbe }: { farbe: string }) {
+export function AutoGrafik({ farbe, art = "auto" }: { farbe: string; art?: "auto" | "bus" }) {
+  const dunkel = abdunkeln(farbe, 0.75);
+  if (art === "bus") {
+    return (
+      <g>
+        <rect x="-62" y="-24" width="124" height="48" rx="10" fill="#1c1934" opacity="0.16" transform="translate(4 5)" />
+        {[-44, 34].map((x) => [-25, 19].map((y) => <rect key={`${x}${y}`} x={x} y={y} width="16" height="7" rx="3" fill="#1c1934" />))}
+        <rect x="-60" y="-22" width="120" height="44" rx="10" fill={farbe} stroke="#254950" strokeWidth="3" />
+        <rect x="-56" y="-18" width="112" height="36" rx="7" fill={abdunkeln(farbe, 1.08)} />
+        {[-44, -26, -8, 10, 28].map((x) => <rect key={x} x={x} y="-14" width="14" height="28" rx="3" fill="#bfe3ea" stroke="#254950" strokeWidth="1.5" />)}
+        <rect x="46" y="-16" width="10" height="32" rx="3" fill="#bfe3ea" stroke="#254950" strokeWidth="2" />
+        <rect x="-60" y="-3" width="120" height="6" fill={dunkel} opacity="0.5" />
+        <rect x="56" y="-18" width="5" height="8" rx="2" fill="#fff4b0" />
+        <rect x="56" y="10" width="5" height="8" rx="2" fill="#fff4b0" />
+        <rect x="-61" y="-17" width="4" height="7" fill="#e8513a" />
+        <rect x="-61" y="10" width="4" height="7" fill="#e8513a" />
+      </g>
+    );
+  }
   return (
-    <g shapeRendering="crispEdges">
-      <rect x="-37" y="-20" width="74" height="40" rx="9" fill="#1c1934" opacity="0.18" transform="translate(3 4)" />
-      {[-24, 18].map((x) => [-21, 15].map((y) => <rect key={`${x}${y}`} x={x} y={y} width="12" height="6" rx="2" fill="#1c1934" />))}
-      <rect x="-36" y="-18" width="72" height="36" rx="10" fill={farbe} stroke="#254950" strokeWidth="3" />
-      <rect x="-14" y="-14" width="30" height="28" rx="6" fill="#ffffff" opacity="0.18" />
-      <rect x="14" y="-14" width="11" height="28" rx="3" fill="#bfe3ea" stroke="#254950" strokeWidth="2" />
-      <rect x="-28" y="-13" width="8" height="26" rx="3" fill="#bfe3ea" stroke="#254950" strokeWidth="2" />
-      <rect x="31" y="-15" width="5" height="7" rx="1" fill="#fff4b0" />
-      <rect x="31" y="8" width="5" height="7" rx="1" fill="#fff4b0" />
-      <rect x="-36" y="-15" width="4" height="6" fill="#e8513a" />
-      <rect x="-36" y="9" width="4" height="6" fill="#e8513a" />
+    <g>
+      <rect x="-38" y="-21" width="76" height="42" rx="12" fill="#1c1934" opacity="0.16" transform="translate(4 5)" />
+      {[-26, 14].map((x) => [-23, 16].map((y) => <rect key={`${x}${y}`} x={x} y={y} width="14" height="7" rx="3" fill="#1c1934" />))}
+      <rect x="-37" y="-19" width="74" height="38" rx="13" fill={farbe} stroke="#254950" strokeWidth="3" />
+      <rect x="-31" y="-15" width="60" height="9" rx="4" fill="#ffffff" opacity="0.22" />
+      <rect x="-37" y="9" width="74" height="10" rx="5" fill={dunkel} opacity="0.55" />
+      <path d="M8-15h13q5 0 5 5v20q0 5-5 5H8Z" fill="#bfe3ea" stroke="#254950" strokeWidth="2" />
+      <path d="M-24-14h7v28h-7q-4 0-4-4v-20q0-4 4-4Z" fill="#bfe3ea" stroke="#254950" strokeWidth="2" />
+      <rect x="-15" y="-14" width="21" height="28" rx="4" fill={dunkel} />
+      <rect x="-12" y="-11" width="8" height="5" rx="2" fill="#ffffff" opacity="0.3" />
+      <rect x="10" y="-22" width="6" height="4" rx="1.5" fill={farbe} stroke="#254950" strokeWidth="1.5" />
+      <rect x="10" y="18" width="6" height="4" rx="1.5" fill={farbe} stroke="#254950" strokeWidth="1.5" />
+      <rect x="32" y="-16" width="5" height="8" rx="2" fill="#fff4b0" />
+      <rect x="32" y="8" width="5" height="8" rx="2" fill="#fff4b0" />
+      <rect x="-38" y="-15" width="4" height="7" rx="1" fill="#e8513a" />
+      <rect x="-38" y="8" width="4" height="7" rx="1" fill="#e8513a" />
     </g>
   );
 }
@@ -38,12 +67,23 @@ function Baum({ x, y, variante }: { x: number; y: number; variante: number }) {
 
 function Busch({ x, y, variante }: { x: number; y: number; variante: number }) {
   const gruen = ["#6f9e5b", "#7fae62", "#5f8f50"][variante] ?? "#6f9e5b";
+  const hell = abdunkeln(gruen, 1.25);
+  const dunkel = abdunkeln(gruen, 0.72);
+  const bluete = ["#f08cb4", "#f2c94c", "#ffffff"][variante] ?? "#ffffff";
+  const kugeln: Array<[number, number, number]> = [[-18, -14, 17], [18, -14, 17], [0, -26, 20], [-6, -10, 18], [10, -8, 16]];
   return (
-    <g transform={`translate(${x} ${y})`} shapeRendering="crispEdges">
-      <ellipse cy="2" rx="30" ry="7" fill="#254950" opacity="0.15" />
-      <rect x="-28" y="-26" width="56" height="28" rx="12" fill={gruen} stroke="#3f6b45" strokeWidth="3" />
-      <rect x="-16" y="-36" width="32" height="18" rx="9" fill={gruen} stroke="#3f6b45" strokeWidth="3" />
-      {variante === 1 && <><rect x="-12" y="-20" width="6" height="6" fill="#e8513a" /><rect x="8" y="-14" width="6" height="6" fill="#e8513a" /></>}
+    <g transform={`translate(${x} ${y})`}>
+      <ellipse cy="3" rx="34" ry="8" fill="#254950" opacity="0.15" />
+      {kugeln.map(([cx, cy, r], i) => <circle key={`k${i}`} cx={cx} cy={cy} r={r + 3} fill="#3f6b45" />)}
+      {kugeln.map(([cx, cy, r], i) => <circle key={`f${i}`} cx={cx} cy={cy} r={r} fill={gruen} />)}
+      <path d="M-30-6q30 14 60 0v6q-30 10-60 0Z" fill={dunkel} opacity="0.6" />
+      {[[-8, -34, 7], [12, -22, 6], [-22, -20, 5]].map(([cx, cy, r], i) => <circle key={`h${i}`} cx={cx} cy={cy} r={r} fill={hell} opacity="0.8" />)}
+      {[[-14, -18], [6, -30], [16, -12], [-2, -12]].map(([bx, by], i) => (
+        <g key={`b${i}`} transform={`translate(${bx} ${by})`}>
+          <circle r="3.2" fill={bluete} stroke={dunkel} strokeWidth="1" />
+          <circle r="1.2" fill="#f2a900" />
+        </g>
+      ))}
     </g>
   );
 }
@@ -72,14 +112,39 @@ function Laterne({ x, y }: { x: number; y: number }) {
 
 function Tunnel({ stadt }: { stadt: Stadt }) {
   const { oben, unten, tunnelBreite } = stadt.strasse;
+  const h = unten - oben;
   return (
-    <g shapeRendering="crispEdges">
-      <rect x="0" y={oben - 46} width={tunnelBreite + 26} height={unten - oben + 70} fill="#8d8a7e" stroke="#4f4c45" strokeWidth="4" />
-      {Array.from({ length: 5 }, (_, i) => (
-        <rect key={i} x={6 + (i % 2) * 18} y={oben - 40 + i * 30} width="26" height="14" fill="#a9a597" />
+    <g>
+      <rect x={tunnelBreite - 4} y={oben - 22} width="34" height={h + 44} rx="6" fill="#9b968a" stroke="#4f4c45" strokeWidth="3" />
+      {Array.from({ length: 6 }, (_, i) => (
+        <rect key={i} x={tunnelBreite + (i % 2) * 12} y={oben - 16 + i * ((h + 32) / 6)} width="16" height="12" rx="2" fill="#b7b2a4" />
       ))}
-      <rect x="0" y={oben - 4} width={tunnelBreite} height={unten - oben + 8} rx="6" fill="#1c1934" />
-      <rect x="6" y={oben + 6} width={tunnelBreite - 18} height={unten - oben - 12} fill="#2b2846" />
+      <rect x="0" y={oben} width={tunnelBreite + 4} height={h} fill="#1c1934" />
+      <rect x={tunnelBreite - 26} y={oben + 6} width="26" height={h - 12} fill="#2b2846" />
+      {[oben + 14, unten - 18].map((ly) => <rect key={ly} x={tunnelBreite - 18} y={ly} width="10" height="4" rx="2" fill="#f6d77a" />)}
+    </g>
+  );
+}
+
+/** Der Hügel über dem Tunnel – liegt über den Autos, damit sie wirklich im Tunnel verschwinden. */
+export function TunnelHuegel({ stadt }: { stadt: Stadt }) {
+  const { oben, unten, tunnelBreite } = stadt.strasse;
+  const mitte = (oben + unten) / 2;
+  return (
+    <g pointerEvents="none">
+      <path d={`M-40 ${oben - 130} Q${tunnelBreite + 40} ${oben - 110} ${tunnelBreite + 6} ${mitte} Q${tunnelBreite + 40} ${unten + 110} -40 ${unten + 130} Z`} fill="#8fb874" stroke="#4f7a45" strokeWidth="4" />
+      <path d={`M-40 ${oben - 100} Q${tunnelBreite} ${oben - 80} ${tunnelBreite - 16} ${mitte} Q${tunnelBreite} ${unten + 80} -40 ${unten + 100} Z`} fill="#a3c98a" />
+      {[[10, oben - 70], [26, unten + 60], [-6, mitte - 10]].map(([bx, by], i) => (
+        <g key={i} transform={`translate(${bx} ${by})`}>
+          <rect x="-3" y="-4" width="6" height="12" fill="#7a5233" />
+          <circle cy="-14" r="16" fill="#5f8f50" stroke="#3f6b45" strokeWidth="3" />
+          <circle cx="-5" cy="-19" r="6" fill="#7fae62" />
+        </g>
+      ))}
+      <g transform={`translate(${tunnelBreite + 16} ${oben - 34})`}>
+        <rect x="-26" y="-14" width="52" height="24" rx="5" fill="#fbf7ee" stroke="#254950" strokeWidth="3" />
+        <path d="M-15 6v-6a15 15 0 0 1 30 0v6" fill="#1c1934" />
+      </g>
     </g>
   );
 }
@@ -93,8 +158,10 @@ function Strasse({ stadt }: { stadt: Stadt }) {
       <circle cx={wende.x} cy={wende.y} r={wende.r + 8} fill="#a7a99c" />
       <rect x="0" y={oben} width={wende.x} height={unten - oben} fill={ASPHALT} />
       <circle cx={wende.x} cy={wende.y} r={wende.r} fill={ASPHALT} />
-      <circle cx={wende.x + 10} cy={wende.y} r={34} fill="#7fae62" stroke="#a7a99c" strokeWidth="6" />
-      <Busch x={wende.x + 10} y={wende.y + 14} variante={1} />
+      <circle cx={wende.x} cy={wende.y} r={INSEL_RADIUS} fill="#7fae62" stroke="#c9c5b5" strokeWidth="6" />
+      <g transform={`translate(${wende.x} ${wende.y + 12}) scale(0.6)`}>
+        <Busch x={0} y={0} variante={1} />
+      </g>
       <path d={`M${stadt.strasse.tunnelBreite + 30} ${mitte}H${wende.x - 70}`} stroke="#f3ecdc" strokeWidth="4" strokeDasharray="28 24" />
       {stadt.zebras.map((z, i) => (
         <g key={i} shapeRendering="crispEdges">
@@ -157,11 +224,11 @@ type KulisseProps = {
   teile: string[];
   erledigt: string[];
   nahesHausId?: string;
-  startet: boolean;
+  rakete: "bereit" | "startet" | "weg";
 };
 
 /** Alles, was stillsteht. Wird nur neu gezeichnet, wenn sich Fortschritt oder Türhinweis ändern. */
-export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt, nahesHausId, startet }: KulisseProps) {
+export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt, nahesHausId, rakete }: KulisseProps) {
   const schichten: Array<{ id: string; y: number; node: ReactNode }> = [];
 
   for (const d of stadt.deko) {
@@ -203,7 +270,7 @@ export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt,
     y: stadt.platz.y + 40,
     node: (
       <g data-rakete transform={`translate(${stadt.platz.x} ${stadt.platz.y + 40})`}>
-        <Rakete teile={teile} startet={startet} />
+        <Rakete teile={teile} zustand={rakete} stationen={stadt.haeuser.map((h) => ({ teil: h.station.teil, farbe: h.station.farbe, aufgabe: h.station.aufgabe }))} />
       </g>
     ),
   });
@@ -227,11 +294,18 @@ export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt,
       <rect width={stadt.breite} height={stadt.hoehe} fill="url(#rasen)" />
       <ellipse cx={stadt.teich.x} cy={stadt.teich.y} rx={stadt.teich.rx + 12} ry={stadt.teich.ry + 12} fill="#a5bd8b" />
       <ellipse cx={stadt.teich.x} cy={stadt.teich.y} rx={stadt.teich.rx} ry={stadt.teich.ry} fill="url(#wasser)" />
-      <g transform={`translate(${stadt.teich.x + 40} ${stadt.teich.y - 10})`}>
-        <g className="ente">
-          <rect x="-14" y="-8" width="26" height="14" rx="6" fill="#fbf7ee" stroke="#254950" strokeWidth="2" />
-          <rect x="6" y="-18" width="12" height="12" rx="4" fill="#fbf7ee" stroke="#254950" strokeWidth="2" />
-          <rect x="17" y="-13" width="7" height="4" fill="#f2a900" />
+      <g transform={`translate(${stadt.teich.x} ${stadt.teich.y})`}>
+        <g className="enten">
+          {[{ x: 40, y: -6, k: 1 }, { x: 78, y: 4, k: 0.6 }, { x: 104, y: 10, k: 0.6 }].map((e, i) => (
+            <g key={i} transform={`translate(${e.x} ${e.y}) scale(${e.k})`}>
+              <ellipse cy="9" rx="24" ry="5" fill="#ffffff" opacity="0.35" />
+              <path d="M-20 0q0-14 18-14h12q10 0 12 10l4-6v12q-4 10-24 10H-8q-12 0-12-12Z" fill={i ? "#f6d77a" : "#fbf7ee"} stroke="#254950" strokeWidth="2.5" />
+              <path d="M-8-4q6 8 16 0" fill="none" stroke={i ? "#d9b24f" : "#c9c2b0"} strokeWidth="2.5" />
+              <circle cx="-14" cy="-16" r="9" fill={i ? "#f6d77a" : "#fbf7ee"} stroke="#254950" strokeWidth="2.5" />
+              <circle cx="-17" cy="-18" r="1.8" fill="#1c1934" />
+              <path d="M-23-15h-9l3 4h6Z" fill="#f2a900" stroke="#254950" strokeWidth="1.5" />
+            </g>
+          ))}
         </g>
       </g>
       <Strasse stadt={stadt} />
@@ -272,7 +346,7 @@ export function StadtLeben({ stadt, figur, position, blick, spiegeln, laeuft, au
         const { punkt, winkel } = aufBahn(stadt.autoBahn, auto.s);
         return (
           <g key={auto.id} transform={`translate(${punkt.x.toFixed(1)} ${punkt.y.toFixed(1)}) rotate(${((winkel * 180) / Math.PI).toFixed(1)})`}>
-            <AutoGrafik farbe={auto.farbe} />
+            <AutoGrafik farbe={auto.farbe} art={auto.art} />
           </g>
         );
       })}
