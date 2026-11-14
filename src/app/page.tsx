@@ -92,7 +92,7 @@ export default function Start() {
                 <Symbol name="code" className="!size-12"/>
               </span>
               <span className="mt-3 font-display text-2xl font-bold">Ich bin ein Teen</span>
-              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · Kurse, Lernpfade & deine Sammlung</span>
+              <span className="mt-1 font-mono text-sm text-[#b9b2cc]">12 bis 17 Jahre · echte Kurse statt Kinderspiel</span>
             </Link>
           </li>
           <li>

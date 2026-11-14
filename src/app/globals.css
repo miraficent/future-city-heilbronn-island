@@ -200,3 +200,25 @@ input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--akzent);
 .lesetext summary { min-height: 50px; padding-block: 10px; cursor: pointer; font-weight: 700; }
 [data-modus="kind"] button, [data-modus="kind"] .knopf { min-height: 56px; }
 @media (max-width: 420px) { .nav-link { padding: 8px; font-size: 12px; } .font-display { overflow-wrap: anywhere; } }
+
+/* Seitenwechsel: sanft einblenden, damit der Wechsel zwischen hellem und dunklem Bereich die Augen schont */
+.seiten-einblendung { animation: seite-ein 0.45s ease-out both; }
+@keyframes seite-ein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+/* Teens: etwas weicheres Dunkel statt fast Schwarz */
+[data-modus="teen"] { --papier: #1d1a36; --papier-2: #28244a; --flaeche: #242043; }
+
+/* Kopfleiste: Kompass dreht sich langsam, Menüpunkte blenden nacheinander ein */
+.logo-kompass { animation: kompass 14s linear infinite; }
+.logo-link:hover .logo-kompass { animation-duration: 2s; }
+@keyframes kompass { to { transform: rotate(360deg); } }
+.nav-einblenden { animation: nav-ein 0.5s ease-out both; }
+@keyframes nav-ein { from { opacity: 0; transform: translateY(-8px); } }
+
+/* Kurskarten blenden beim Scrollen weich ein (wo der Browser das kann) */
+@supports (animation-timeline: view()) {
+  .einblenden-beim-scrollen { animation: karte-ein linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+  @keyframes karte-ein { from { opacity: 0; transform: translateY(24px) scale(0.97); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-kompass, .nav-einblenden, .einblenden-beim-scrollen, .seiten-einblendung { animation: none !important; }
+}
