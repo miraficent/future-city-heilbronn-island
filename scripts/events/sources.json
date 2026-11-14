@@ -1,8 +1,0 @@
-[
-  { "institutionId": "auto", "type": "ical", "url": "https://www.cosmos-hn.de/veranstaltungen/?ical=1", "name": "COSMOS HN Kalender (iCal)" },
-  { "institutionId": "experimenta", "type": "html", "parser": "experimenta", "url": "https://www.experimenta.science/besuchen/", "name": "experimenta Veranstaltungen" },
-  { "institutionId": "aim", "type": "html", "parser": "kufer", "url": "https://www.aim-akademie.org/kurse?kathaupt=18&suchesetzen=false&kfs_kursbereich=1278&kfs_sonderrubrik=1277", "name": "aim Coding" },
-  { "institutionId": "aim", "type": "html", "parser": "kufer", "url": "https://www.aim-akademie.org/kurse?kathaupt=18&suchesetzen=false&kfs_sonderrubrik=1277", "name": "aim Digitale Bildung" },
-  { "institutionId": "aim", "type": "html", "parser": "kufer", "url": "https://www.aim-akademie.org/kurse?kathaupt=18&suchesetzen=false&kfs_sonderrubrik=1264", "name": "aim Ferien & Freizeit" },
-  { "institutionId": "aim", "type": "html", "parser": "kufer", "url": "https://www.aim-akademie.org/kurse/suche?clearallkatfilter=true&suchesetzen=true&kfs_stichwort_schlagwort=juniorakademie&kfs_sonderrubrik=-1&kfs_ort_select=-1&kfs_kennz=&kfs_veranartselect=-1&kfs_aussenst_select=-1&kfs_kursbereich=-1&kfs_beginn_dat1=&kfs_beginn_dat2=", "name": "aim Juniorakademie" }
-]

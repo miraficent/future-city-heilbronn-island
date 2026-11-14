@@ -1,6 +1,5 @@
 /**
- * Typen der Live-Events (src/data/events.json, erzeugt von scripts/events/).
- * events.json wird nie von Hand oder in Komponenten verändert – nur von der Pipeline.
+ * Typen der Live-Events. Sie kommen im Browser aus Mobilizon (src/lib/mobilizon.ts → src/lib/live-events.ts).
  */
 
 export type CategoryId = "astronomy" | "physics" | "biology" | "math" | "it" | "coding" | "gaming" | "art" | "family";
