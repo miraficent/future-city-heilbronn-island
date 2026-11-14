@@ -1,0 +1,29 @@
+/* Bewegungen der Spielfigur (Gliederpuppe aus avatar.tsx). Drehpunkte stehen als transform-origin an den Gelenken. */
+.figur2 { overflow: visible; }
+.figur2 .fig-arm, .figur2 .fig-bein, .figur2 .fig-koerper, .figur2 .fig-kopf, .figur2 .fig-augen { transform-box: view-box; }
+.figur2 .fig-koerper { transform-origin: 100px 348px; animation: fig-atmen 3.2s ease-in-out infinite; }
+.figur2 .fig-augen { animation: fig-blinzeln 5s infinite; }
+.figur2.laeuft .fig-koerper { animation: fig-wippen 0.26s ease-in-out infinite alternate; }
+.figur2.laeuft .fig-bein-l { animation: fig-schritt 0.52s ease-in-out infinite; }
+.figur2.laeuft .fig-bein-r { animation: fig-schritt 0.52s ease-in-out infinite; animation-delay: -0.26s; }
+.figur2.laeuft .fig-arm-l { animation: fig-schwingen 0.52s ease-in-out infinite; animation-delay: -0.26s; }
+.figur2.laeuft .fig-arm-r { animation: fig-schwingen 0.52s ease-in-out infinite; }
+.figur2.spricht .fig-mund { transform-box: fill-box; transform-origin: 50% 0; animation: fig-reden 0.28s ease-in-out infinite alternate; }
+.figur2.winkt .fig-arm-r { animation: fig-winken 0.6s ease-in-out 3 alternate; }
+
+@keyframes fig-atmen { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.012); } }
+@keyframes fig-blinzeln { 0%, 93%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes fig-wippen { from { transform: translateY(0); } to { transform: translateY(-5px); } }
+@keyframes fig-schritt {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(4deg) scaleY(0.94); }
+  50% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+@keyframes fig-schwingen { 0%, 100% { transform: rotate(-14deg); } 50% { transform: rotate(14deg); } }
+@keyframes fig-reden { from { transform: scaleY(1); } to { transform: scaleY(1.5); } }
+@keyframes fig-winken { from { transform: rotate(0deg); } to { transform: rotate(-150deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .figur2 .fig-koerper, .figur2 .fig-augen, .figur2.laeuft .fig-bein-l, .figur2.laeuft .fig-bein-r, .figur2.laeuft .fig-arm-l, .figur2.laeuft .fig-arm-r, .figur2.spricht .fig-mund { animation: none !important; }
+}

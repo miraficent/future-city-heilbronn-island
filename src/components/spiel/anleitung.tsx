@@ -6,14 +6,14 @@ import { Symbol } from "../symbol";
 import { PixelBild } from "./pixel-grafik";
 
 const SCHRITTE = [
-  { bild: <PixelBild motiv="code-labor" />, text: "Lauf zu einem Haus" },
-  { bild: <PixelBild motiv="roboter" />, text: "Löse Picos Aufgabe" },
-  { bild: <Symbol name="star" className="anleitung-symbol" />, text: "Hol das Raketenteil" },
-  { bild: <Symbol name="rocket" className="anleitung-symbol" />, text: "Starte die Rakete!" },
+  { bild: <Symbol name="story" className="anleitung-symbol" />, text: "Lauf herum und sprich mit den Leuten" },
+  { bild: <PixelBild motiv="code-labor" />, text: "Geh durch den Eingang und löse Aufgaben" },
+  { bild: <Symbol name="train" className="anleitung-symbol" />, text: "Fahr mit der Stadtbahn zum nächsten Ort" },
+  { bild: <Symbol name="rocket" className="anleitung-symbol" />, text: "Vier Raketenteile – dann startet die Rakete!" },
 ];
 
 const VORLESETEXT =
-  "So geht's: Lauf zu einem Haus. Löse Picos Aufgabe. Hol das Raketenteil. Wenn du alle vier Teile hast, starte die Rakete! Danach findest du echte Kurse in Heilbronn.";
+  "So geht's: Lauf herum und sprich mit den Leuten. Geh durch den Eingang und löse Aufgaben. Fahr mit der Stadtbahn zum nächsten Ort. Mit vier Raketenteilen startet die Rakete!";
 
 /** Kurze Bild-Anleitung: vier Schritte, wenig Text. */
 export function Anleitung({ weiter }: { weiter: () => void }) {

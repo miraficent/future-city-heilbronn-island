@@ -8,6 +8,7 @@ import "./karte.css";
 import "./einblicke.css";
 import "./lernreise.css";
 import "./fotos.css";
+import "./figur.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASIS_URL ?? "http://localhost:3000"),

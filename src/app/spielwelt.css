@@ -833,3 +833,58 @@ img.fenster-kopfbild { width: 96px; height: 58px; object-fit: contain; flex-shri
   .szene-buehne { aspect-ratio: 4 / 3.6; }
   .szene-blase h3 { font-size: 14px; }
 }
+
+/* ======================= Heilbronn-Abenteuer: man steht vor Ort ======================= */
+.spielwelt.abenteuer .abenteuer-rahmen { height: auto; min-height: 0; aspect-ratio: 16 / 9; max-height: 80vh; margin: 0 auto; background: #cfe3ea; }
+.spielwelt.abenteuer .abenteuer-rahmen:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; max-height: none; border-radius: 0; box-shadow: none; }
+.abenteuer .szene-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: pointer; }
+.ort-chip { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border: 3px solid var(--ink); border-radius: 999px; background: #fffaf0ee; box-shadow: 0 4px 0 var(--ink); pointer-events: none; font-size: 15px; white-space: nowrap; }
+.ort-chip img.haus-bild { width: 54px; height: 32px; }
+.ort-chip strong { margin-right: 4px; }
+.aktion-leiste { position: absolute; left: 0; right: 0; bottom: 70px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; pointer-events: none; z-index: 5; }
+.aktion-leiste .aktion-knopf { position: static; transform: none; pointer-events: auto; }
+.eingang-pfeil { animation: eingang-wippen 1.6s ease-in-out infinite; }
+.eingang-pfeil.ist-nah { animation-duration: 0.7s; }
+@keyframes eingang-wippen { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+.roboter-schwebt { animation: roboter-schweben 2.4s ease-in-out infinite; }
+.roboter-spricht { animation: roboter-schweben 0.6s ease-in-out infinite; }
+@keyframes roboter-schweben { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.abenteuer .bewohner-blase > g { transform-box: fill-box; transform-origin: 50% 100%; }
+.haus-karte.ist-hier { outline: 4px solid #2f4bff; outline-offset: 3px; }
+.bahn-knopf { background: #f4c430; }
+
+/* Stadtbahn-Fahrt */
+.bahn-fahrt { position: absolute; inset: 0; z-index: 9; display: grid; place-items: center; background: linear-gradient(#bfe3f0 0 62%, #b9d68f 62% 100%); overflow: hidden; }
+.bahn-fahrt-landschaft { position: absolute; left: 0; right: 0; top: 46%; height: 30%; }
+.bahn-fahrt-landschaft::before { content: ""; position: absolute; left: 0; right: 0; bottom: 6%; height: 10px; background: repeating-linear-gradient(90deg, #6b5a40 0 26px, transparent 26px 40px); }
+.bahn-zug { position: absolute; left: 0; width: 70%; height: 100%; }
+.bahn-ansage { position: absolute; top: 12%; display: flex; align-items: center; gap: 10px; padding: 12px 22px; border: 3px solid var(--ink); border-radius: 18px; background: #fffaf0; font-size: clamp(18px, 2.4vw, 26px); box-shadow: 0 5px 0 var(--ink); }
+.bahn-ansage .symbol { width: 28px; height: 28px; }
+
+/* Stadtbahn-Plan */
+.bahn-karte svg { display: block; width: 100%; max-height: 66vh; border: 3px solid var(--ink); border-radius: 18px; background: #f4eedf; }
+.bahn-karte-text { margin-bottom: 10px; font-size: 19px; font-weight: 700; }
+.bahn-karte-fuss { display: flex; gap: 6px; align-items: center; margin-top: 8px; font-size: 13px; color: #4a4560; }
+.bahn-karte-fuss .symbol { width: 16px; height: 16px; }
+.bahn-halt { cursor: pointer; }
+.bahn-halt:hover > circle:nth-of-type(1), .bahn-halt:focus-visible > circle { stroke-width: 26; }
+.bahn-halt:focus-visible { outline: none; }
+.bahn-name { font-family: var(--font-display), sans-serif; font-size: 40px; font-weight: 800; fill: #1d2b3a; }
+.bahn-sterne { font-size: 26px; fill: #d9a441; }
+.bahn-hier { font-size: 30px; font-weight: 800; fill: #fffaf0; }
+.bahn-neckar { font-size: 70px; font-style: italic; font-weight: 700; fill: #4c8ea0; letter-spacing: 12px; }
+.bahn-wahrzeichen { font-size: 34px; font-weight: 700; fill: #4a4560; }
+
+/* Finale */
+.finale-himmel { position: relative; height: 260px; margin-bottom: 14px; overflow: hidden; border: 3px solid var(--ink); border-radius: 20px; background: linear-gradient(#1d2b5a, #5b8ee0 70%, #b9d68f 70%); }
+.finale-rakete { position: absolute; left: 50%; bottom: 10px; width: 140px; height: 180px; margin-left: -70px; }
+.finale-figur { position: absolute; left: 14%; bottom: 6px; width: 70px; height: 126px; }
+
+@media (max-width: 700px) {
+  .spielwelt.abenteuer .abenteuer-rahmen { aspect-ratio: 3 / 4; max-height: 76vh; }
+  .ort-chip { bottom: auto; top: 76px; font-size: 13px; }
+  .aktion-leiste { bottom: 150px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eingang-pfeil, .roboter-schwebt, .roboter-spricht { animation: none !important; }
+}
