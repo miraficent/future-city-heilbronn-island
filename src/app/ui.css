@@ -27,7 +27,7 @@
 .ui-mode__item .symbol { width: 20px; height: 20px; color: var(--accent); }
 .ui-mode__kind { display: inline-flex; align-items: flex-end; justify-content: center; width: 28px; height: 28px; margin-left: -6px;
   border-radius: 50%; background: var(--snow); overflow: hidden; }
-.ui-mode__kind svg { width: auto; height: 27px; }
+.ui-mode__kind svg, .ui-mode__kind img { width: auto; height: 27px; }
 
 /* ---------- Buttons ---------- */
 .ui-btn {
@@ -140,7 +140,7 @@
 .start__karte .symbol { width: 56px; height: 56px; color: var(--accent); }
 .start__karte-kinder { display: flex; align-items: flex-end; justify-content: center; width: 104px; height: 104px; padding-top: 8px;
   border-radius: 50%; background: rgba(255, 255, 255, .9); overflow: hidden; }
-.start__karte-kinder svg { width: auto; height: 100px; }
+.start__karte-kinder svg, .start__karte-kinder img { width: auto; height: 100px; }
 .start__karte-titel { font: 700 32px/1.1 "Baloo 2", sans-serif; }
 .start__karte-unter { font-size: 18px; color: var(--sea-shallow); }
 .start__karte--kind { background: var(--primary); }
@@ -400,3 +400,6 @@
 /* nur Deckkraft – keine Verschiebung, damit die Z immer genau über dem Pin bleiben */
 @keyframes kr-zzz { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .kr-zzz__z { animation: none; opacity: 1; } }
+/* Elternfigur hat mehr Rand in ihrer Grafik – etwas größer, damit sie so groß wirkt wie das Kind */
+.start__karte-kinder img { height: 124px; margin-bottom: -10px; }
+.ui-mode__kind img { height: 34px; margin-bottom: -4px; }

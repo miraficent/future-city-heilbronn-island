@@ -88,7 +88,10 @@ export function ModeSwitch({ aktiv }: { aktiv: "kinder" | "eltern" }) {
         Kinder
       </Link>
       <Link href="/eltern/" className="ui-mode__item" aria-current={aktiv === "eltern" ? "page" : undefined}>
-        <Symbol name="users" />
+        <span className="ui-mode__kind" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik, statischer Export */}
+          <img src="/grafik/eltern-neutral.svg" alt="" width={240} height={320} />
+        </span>
         Eltern
       </Link>
     </nav>
