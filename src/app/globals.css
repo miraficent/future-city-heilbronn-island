@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@font-face { font-family: "Atkinson Hyperlegible Next"; font-style: normal; font-weight: 200 800; font-display: swap; src: url("/fonts/atkinson-latin.woff2") format("woff2"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 200 900; font-display: swap; src: url("/fonts/unbounded-latin.woff2") format("woff2"); }
+@font-face { font-family: "Martian Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("/fonts/martian-latin.woff2") format("woff2"); }
+
+/*
+ * COSMOS-Entdecker – „Gedruckter Sternatlas“
+ * Risograph-Ästhetik: warmes Papier, kräftige Druckfarben, Rasterpunkte, leicht versetzte Farbebenen.
+ * Drei Modi teilen dieselben Tokens; Teen ist der „Nachtdruck“.
+ */
+
+@theme inline {
+  --font-sans: var(--font-atkinson), ui-sans-serif, sans-serif;
+  --font-display: var(--font-unbounded), var(--font-atkinson), sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
+
+  --color-papier: var(--papier);
+  --color-papier-2: var(--papier-2);
+  --color-tinte: var(--tinte);
+  --color-tinte-2: var(--tinte-2);
+  --color-linie: var(--linie);
+  --color-flaeche: var(--flaeche);
+  --color-akzent: var(--akzent);
+
+  --color-ki: #ff5a36;
+  --color-ki-text: #b8340f;
+  --color-coding: #00a3a3;
+  --color-coding-text: #006b6b;
+  --color-gaming: #ffbf1f;
+  --color-gaming-text: #7d5200;
+  --color-blau: #2f4bff;
+  --color-pink: #ff4fa3;
+  --color-nacht: #121022;
+  --color-nacht-2: #1e1b35;
+}
+
+:root {
+  --font-atkinson: "Trebuchet MS", "Atkinson Hyperlegible Next";
+  --font-unbounded: "Trebuchet MS", "Atkinson Hyperlegible Next";
+  --font-martian: "Martian Mono";
+  --papier: #f3ecdc;
+  --papier-2: #e8dec8;
+  --tinte: #1c1934;
+  --tinte-2: #4a4560;
+  --linie: #1c193426;
+  --flaeche: #fbf7ee;
+  --akzent: #2f4bff;
+  --raster: radial-gradient(currentColor 1.1px, transparent 1.5px);
+  color-scheme: light;
+}
+
+[data-modus="teen"] {
+  --papier: #121022;
+  --papier-2: #1e1b35;
+  --tinte: #f3ecdc;
+  --tinte-2: #b9b2cc;
+  --linie: #f3ecdc26;
+  --flaeche: #1a1730;
+  --akzent: #ff4fa3;
+  color-scheme: dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: var(--font-atkinson), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+/* Papierkorn – liegt über allem, fängt keine Klicks ab. */
+.korn::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.2 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-modus="teen"].korn::after,
+[data-modus="teen"] .korn::after {
+  mix-blend-mode: screen;
+  opacity: 0.08;
+}
+
+/* Rasterpunkte in der aktuellen Textfarbe */
+.raster {
+  background-image: var(--raster);
+  background-size: 7px 7px;
+}
+
+.raster-fein {
+  background-image: var(--raster);
+  background-size: 4px 4px;
+}
+
+/* Riso-Versatz: zweite Farbebene leicht verschoben */
+.versatz {
+  box-shadow: 5px 5px 0 0 var(--versatz-farbe, var(--color-ki));
+}
+
+.versatz-text {
+  text-shadow: 3px 3px 0 var(--versatz-farbe, var(--color-ki));
+}
+
+/* Sichtbarer Fokus für Tastatur (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--akzent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.nur-screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes kreisen {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes funkeln {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kreisen {
+  animation: kreisen 60s linear infinite;
+}
+
+.funkeln {
+  animation: funkeln 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: 0.45; }
+.nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border-radius: 999px; }
+.nav-link[aria-current="page"] { background: var(--tinte); color: var(--papier); }
+.knopf { display: inline-flex; min-height: 50px; align-items: center; gap: 8px; padding: 12px 20px; border: 2px solid var(--tinte); border-radius: 14px; font-weight: 700; transition: transform .16s; }
+.knopf:hover:not(:disabled) { transform: translateY(-2px); }
+.knopf-primaer { background: var(--tinte); color: var(--papier); box-shadow: 4px 4px 0 var(--akzent); }
+.chip, .merk-knopf { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; border: 1.5px solid var(--tinte); border-radius: 999px; padding: 7px 14px; font-size: 14px; }
+.chip[aria-pressed="true"], .merk-knopf[aria-pressed="true"] { background: var(--tinte); color: var(--papier); }
+.planet-wahl { transition: transform .18s, box-shadow .18s; }
+.planet-wahl:hover { transform: translateY(-3px); }
+.planet-wahl[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--akzent); }
+.feld-label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; font-weight: 700; }
+.feld-label input, .feld-label select { width: 100%; min-height: 48px; padding: 10px 12px; border: 1.5px solid var(--tinte); border-radius: 10px; background: var(--papier); color: var(--tinte); font: inherit; font-weight: 400; }
+.check-label { display: inline-flex; min-height: 44px; align-items: center; gap: 9px; }
+input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--akzent); }
+.quiz-dialog { position: fixed; inset: 0; margin: auto; width: min(720px, calc(100% - 24px)); max-height: 90dvh; overflow-y: auto; border: 2px solid var(--tinte); border-radius: 28px; background: var(--flaeche); color: var(--tinte); }
+.quiz-dialog::backdrop { background: #121022bb; backdrop-filter: blur(5px); }
+.interesse { min-height: 150px; padding: 16px 10px; border: 2px solid var(--linie); border-radius: 18px; background: var(--papier); text-align: center; }
+.interesse[aria-pressed="true"] { border-color: var(--akzent); box-shadow: inset 0 0 0 1px var(--akzent); }
+.sternpfad { margin-left: 16px; padding-left: 32px; border-left: 2px dashed var(--akzent); }
+.sternpfad li { position: relative; padding: 0 0 32px; }
+.pfad-stern { position: absolute; left: -46px; top: -5px; display: grid; width: 26px; height: 30px; place-items: center; background: var(--flaeche); color: var(--akzent); font-size: 28px; }
+.lesetext { max-width: 780px; }
+.lesetext h2 { margin-top: 32px; font-size: 22px; font-weight: 700; }
+.lesetext p, .lesetext ul { margin-top: 14px; }
+.lesetext ul { list-style: disc; padding-left: 24px; }
+.lesetext a { text-decoration: underline; text-underline-offset: 3px; }
+.lesetext summary { min-height: 50px; padding-block: 10px; cursor: pointer; font-weight: 700; }
+[data-modus="kind"] button, [data-modus="kind"] .knopf { min-height: 56px; }
+@media (max-width: 420px) { .nav-link { padding: 8px; font-size: 12px; } .font-display { overflow-wrap: anywhere; } }

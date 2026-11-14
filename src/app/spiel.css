@@ -1,0 +1,124 @@
+.symbol { display:inline-block; width:24px; height:24px; flex-shrink:0; vertical-align:middle; }
+.lerninsel { --spiel-tinte:#254950; --spiel-papier:#fffbef; --spiel-gruen:#d5e3bf; max-width:1280px; margin:0 auto; padding:40px 28px 0; color:var(--spiel-tinte); }
+.spiel-kennung { font-family:var(--font-mono),monospace; font-size:10px; letter-spacing:.13em; font-weight:500; }
+.spiel-einstieg { display:grid; grid-template-columns:1.15fr 1fr; gap:50px; align-items:center; padding:0 12px 38px; }
+.spiel-einstieg h1 { font-family:var(--font-display),sans-serif; font-size:clamp(34px,4.8vw,62px); line-height:1.1; letter-spacing:-.045em; font-weight:800; margin-top:15px; }
+.spiel-einstieg h1 span { color:#477c66; }
+.spiel-einstieg p:not(.spiel-kennung) { max-width:530px; font-size:18px; line-height:1.6; margin:20px 0 22px; }
+.spiel-willkommen { max-width:440px; justify-self:center; }
+.spiel-willkommen img { width:100%; height:auto; }
+.spiel-willkommen figcaption { margin-top:8px; font-size:10px; text-align:center; color:#51686c; }
+.spiel-knopf { display:inline-flex; min-height:52px; align-items:center; justify-content:center; gap:10px; padding:11px 18px; border:1.5px solid #254950; border-radius:12px; background:#fffbef; color:#254950; font-size:14px; line-height:1.35; font-weight:700; transition:background .16s,transform .16s; }
+.spiel-knopf:hover:not(:disabled) { background:#e7edda; }
+.spiel-knopf[aria-pressed="true"] { background:#dce8ca; box-shadow:inset 0 0 0 1px #254950; }
+.spiel-knopf-dunkel { background:#254950; color:#fffbef; }
+.spiel-knopf-dunkel:hover:not(:disabled) { background:#386269; }
+.spiel-zaehler { display:grid; min-width:24px; height:24px; place-items:center; border-radius:50%; background:#e7edda; font-size:12px; }
+.spiel-bereich { border:2px solid #254950; border-radius:26px; background:#fffbef; overflow:hidden; box-shadow:0 8px 0 #25495012; }
+.spiel-werkzeugleiste { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding:16px 22px; }
+.spiel-farben { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; }
+.spiel-farben>span { margin-right:8px; }
+.spiel-farben button { display:grid; width:44px; height:44px; padding:7px; place-items:center; border:2px solid transparent; border-radius:50%; }
+.spiel-farben button[aria-pressed="true"] { border-color:#254950; }
+.spiel-farben button span { width:25px; height:25px; background:var(--figur-farbe); border-radius:50%; border:1px solid #254950; }
+.spiel-alter { display:flex; align-items:center; gap:10px; font-size:13px; }
+.spiel-alter select { min-height:44px; border:1px solid #a3b0a3; border-radius:9px; padding:8px 10px; background:#fffbef; font:inherit; font-weight:700; }
+.spiel-pause { min-height:44px; padding:8px 13px; }
+.spiel-pause .symbol { width:18px; height:18px; }
+.spielwelt-rahmen { position:relative; aspect-ratio:11/7; background:#d5e3bf; border-top:2px solid #254950; border-bottom:2px solid #254950; overflow:hidden; outline-offset:-5px; }
+.spielwelt-kamera,.spielwelt-svg { width:100%; height:100%; display:block; touch-action:manipulation; }
+.welt-gebaeude { cursor:pointer; }
+.welt-gebaeude:hover>rect { stroke-width:4px; }
+.spielwelt-info { position:absolute; left:20px; top:18px; display:flex; align-items:center; gap:8px; border:1px solid #25495036; border-radius:999px; background:#fffbefed; padding:7px 13px; font-size:12px; pointer-events:none; }
+.status-punkt { width:7px; height:7px; border-radius:50%; background:#5c9775; }
+.spiel-erfolge { position:absolute; right:18px; top:18px; display:flex; flex-direction:column; align-items:center; background:#fffbefed; border:1px solid #25495036; border-radius:16px; padding:8px 14px; pointer-events:none; }
+.spiel-erfolge span:first-child { font-size:18px; font-weight:800; }
+.spiel-erfolge span:last-child { font-size:10px; }
+.kartenzoom { position:absolute; bottom:12px; left:12px; min-height:44px; padding:8px 12px; background:#fffbef; border:1px solid #254950; border-radius:10px; font-size:12px; font-weight:700; }
+.spiel-bedienung { display:flex; align-items:center; gap:24px; padding:16px 22px; }
+.spiel-bedienung>p { font-size:14px; line-height:1.5; flex:1; }
+.spiel-bedienung>p span { font-size:12px; color:#5c7071; }
+.steuerkreuz { display:grid; grid-template-columns:repeat(3,44px); grid-template-rows:repeat(2,44px); gap:3px; flex-shrink:0; }
+.steuerkreuz button { display:grid; min-height:44px!important; place-items:center; background:#e6ecd9; border:1px solid #b1bca7; border-radius:9px; touch-action:none; user-select:none; }
+.steuerkreuz button:active { background:#bdceac; }
+.steuerkreuz .oben { grid-column:2; grid-row:1; }
+.steuerkreuz .links { grid-column:1; grid-row:2; }
+.steuerkreuz .unten { grid-column:2; grid-row:2; }
+.steuerkreuz .rechts { grid-column:3; grid-row:2; }
+.pause-flaeche { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; gap:18px; background:#f7f5e9ed; text-align:center; }
+.pause-flaeche>.symbol { width:50px; height:50px; }
+.pause-flaeche h2 { font-family:var(--font-display),sans-serif; font-size:25px; font-weight:700; }
+.spiel-stationen { margin:55px 0 45px; }
+.spiel-stationen h2,.spiel-kurswelt h2 { font-family:var(--font-display),sans-serif; font-size:clamp(21px,2.3vw,29px); line-height:1.3; font-weight:700; margin:10px 0 12px; letter-spacing:-.02em; }
+.spiel-stationen>div>p:not(.spiel-kennung),.spiel-kurswelt p:not(.spiel-kennung) { font-size:16px; color:#51686c; }
+.stationen-karten { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:26px; }
+.stationskarte { display:flex; flex-direction:column; text-align:left; padding:22px 19px; border:1.5px solid #254950; border-radius:20px; background:#fffbef; border-top:7px solid var(--stationsfarbe); transition:transform .15s; }
+.stationskarte:hover { transform:translateY(-4px); }
+.station-symbol { display:grid; width:48px; height:48px; place-items:center; border-radius:14px; background:var(--stationsfarbe); margin-bottom:18px; }
+.station-symbol .symbol { width:29px; height:29px; }
+.stationskarte strong { font-family:var(--font-display),sans-serif; font-size:15px; }
+.stationskarte>span:not(.station-symbol):not(.station-aktion) { font-size:13px; margin:6px 0 18px; }
+.station-aktion { display:flex; align-items:center; justify-content:space-between; gap:5px; margin-top:auto; padding-top:12px; border-top:1px solid #d8ddca; font-size:12px; font-weight:700; }
+.station-aktion .symbol { width:18px; height:18px; }
+.spiel-kurswelt { display:grid; grid-template-columns:1.4fr 1fr; gap:45px; align-items:center; border:1.5px solid #254950; border-radius:24px; background:#e1e9d4; padding:32px; }
+.themen-knoepfe { display:flex; flex-direction:column; gap:10px; }
+.themen-knoepfe .spiel-knopf { justify-content:flex-start; }
+.themen-knoepfe .symbol:last-child { margin-left:auto; width:19px; }
+.spiel-datenhinweis { display:flex; justify-content:space-between; gap:25px; align-items:center; padding:25px 5px 0; font-size:12px; color:#51686c; }
+.spiel-datenhinweis p { max-width:680px; }
+.spiel-datenhinweis button { flex-shrink:0; min-height:44px; text-decoration:underline; text-underline-offset:3px; }
+.spiel-dialog { position:fixed; inset:0; width:min(940px,calc(100% - 28px)); max-height:92dvh; margin:auto; overflow:auto; border:2px solid #254950; border-radius:24px; background:#fffbef; color:#254950; }
+.spiel-dialog::backdrop { background:#173239b8; backdrop-filter:blur(4px); }
+.spiel-dialog-kopf { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding:25px 28px 20px; border-bottom:1px solid #ccd6c7; }
+.spiel-dialog-kopf h2 { font-family:var(--font-display),sans-serif; font-size:clamp(18px,3vw,27px); line-height:1.3; font-weight:700; margin-top:10px; }
+.spiel-schliessen { display:grid; width:48px; min-height:48px; place-items:center; flex-shrink:0; border:1px solid #aebbaa; border-radius:50%; background:#f2f0e0; }
+.spiel-aufgabe,.spiel-empfehlungen { padding:24px 28px; }
+.spiel-kleingedruckt { font-size:12px; color:#5b7272; }
+.lernaufgabe { margin-top:18px; }
+.lernaufgabe>p:first-child { font-size:18px; line-height:1.5; max-width:680px; }
+.code-spielfeld { display:block; max-width:360px; width:100%; margin:20px auto; }
+.befehlsleiste { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; }
+.befehlsleiste .spiel-knopf { padding:9px 13px; }
+.programm { display:flex; align-items:center; flex-wrap:wrap; gap:6px; min-height:64px; padding:12px; border:1.5px dashed #a3b198; border-radius:12px; background:#eef0df; margin:16px 0; font-size:13px; }
+.programm>span { display:grid; width:32px; height:32px; place-items:center; background:#fffbef; border:1px solid #bcc7b0; border-radius:7px; }
+.programm .symbol { width:20px; height:20px; }
+.aufgaben-meldung { min-height:25px; font-size:16px; font-weight:700; margin-top:18px; }
+.mission-erledigt { display:flex; gap:15px; align-items:center; border:1px solid #83ac8f; border-radius:14px; background:#e3efda; padding:18px; margin-top:20px; }
+.mission-erledigt>.symbol { width:32px; height:32px; }
+.mission-erledigt p { margin-top:3px; font-size:14px; }
+.spiel-empfehlungen { background:#f2f1e4; }
+.spiel-empfehlungen h3 { font-size:21px; font-weight:700; }
+.spiel-empfehlungen>p { font-size:14px; margin-top:7px; }
+.spiel-kurskarten { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+.spiel-kurskarten .angebot-karte { border-color:#345457; }
+.spiel-kurskarten .angebot-karte h3 { font-family:var(--font-sans),sans-serif; font-size:19px; }
+.spiel-dialog-fuss { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding:18px 28px; border-top:1px solid #ccd6c7; }
+.spiel-dialog-fuss>span { font-size:12px; }
+.rucksack-leer { text-align:center; padding:20px; }
+.rucksack-leer svg { width:100px; margin:0 auto 10px; }
+.spiel-leer { border:1px dashed #9aaf98; padding:22px; border-radius:14px; margin-top:20px!important; }
+.muster-auswahl { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:22px 0; }
+.muster-karte { display:flex; flex-direction:column; align-items:center; padding:14px; background:#f1f0df; border:2px solid #c2ceb8; border-radius:16px; font-size:16px; font-weight:700; }
+.muster-karte svg { width:100%; max-width:110px; height:auto; }
+.muster-karte[aria-pressed="true"] { border-color:#254950; background:#d6e5ca; }
+.strom-spielfeld { display:block; max-width:450px; margin:20px auto; width:100%; }
+.level-buehne { position:relative; height:220px; margin:22px 0; overflow:hidden; border:1.5px solid #bcc9b1; border-radius:18px; background:linear-gradient(#d8efec 0 75%,#c5d6af 75%); }
+.level-boden { position:absolute; bottom:0; height:70px; background:#95b280; border-top:12px solid #638c64; }
+.level-boden-links { left:0; width:43%; }
+.level-boden-rechts { right:0; width:33%; }
+.level-luecke { position:absolute; left:43%; width:24%; bottom:15px; text-align:center; font-size:13px; }
+.level-figur { position:absolute; left:7%; bottom:70px; width:44px; height:48px; display:grid; place-items:center; border-radius:10px; background:#ed805c; border:2px solid #345457; }
+.level-figur .symbol { width:31px; height:31px; }
+.level-ziel { position:absolute; right:6%; bottom:74px; border-left:3px solid #345457; padding:0 0 20px 7px; font-size:13px; font-weight:700; }
+.sprunghilfe { position:absolute; bottom:70px; padding:1px 10px; border:2px solid #345457; border-radius:6px; background:#e9b45c; }
+.sprung-0 { left:33%; }.sprung-1 { left:51%; bottom:8px; }.sprung-2 { right:1%; }
+.level-laeuft .level-figur { animation:level-warten 1.5s linear forwards; }
+.level-laeuft[data-richtig="true"] .level-figur { animation:level-sprung 1.5s linear forwards; }
+.level-gut .level-figur { left:82%; }.level-nochmal .level-figur { left:33%; }
+@keyframes level-warten { from { left:7%; } to { left:33%; } }
+@keyframes level-sprung { 0% { left:7%;bottom:70px; } 30% { left:33%;bottom:70px; } 53% { left:51%;bottom:145px; } 76% { left:70%;bottom:70px; } 100% { left:82%;bottom:70px; } }
+@keyframes roboter-schritte { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-3px); } }
+.figur-laeuft .figur-koerper { animation:roboter-schritte .3s linear infinite; }
+@media(max-width:900px) { .spiel-einstieg { gap:25px; }.spiel-bedienung { flex-wrap:wrap;gap:15px; }.station-start { margin-left:auto; }.stationen-karten { grid-template-columns:repeat(2,1fr); }.spiel-kurswelt { grid-template-columns:1fr;gap:22px; } }
+@media(max-width:640px) { .lerninsel { padding:25px 14px 0; }.spiel-einstieg { grid-template-columns:1fr;padding:0 5px 25px;gap:15px; }.spiel-einstieg h1 { font-size:36px; }.spiel-einstieg p:not(.spiel-kennung) { font-size:17px; }.spiel-willkommen { width:220px; }.spiel-willkommen figcaption { font-size:9px; }.spiel-werkzeugleiste { padding:12px;gap:10px; }.spiel-farben { width:calc(100% - 102px);order:0;gap:3px; }.spiel-alter { order:2;width:100%;justify-content:space-between; }.spiel-pause { order:1; }.spielwelt-rahmen { aspect-ratio:1/1; }.spielwelt-info { left:10px;top:10px;max-width:64%;font-size:10px;padding:6px 9px; }.spiel-erfolge { top:10px;right:10px;padding:5px 9px; }.spiel-erfolge span:first-child { font-size:15px; }.spiel-erfolge span:last-child { font-size:8px; }.spiel-bedienung { padding:12px;gap:12px; }.spiel-bedienung>p { min-width:100px;font-size:12px; }.spiel-bedienung>p span { font-size:10px; }.station-start { width:100%; }.spiel-stationen { margin:35px 5px; }.stationen-karten { gap:10px; }.stationskarte { padding:15px 12px; }.stationskarte strong { font-size:12px; }.station-aktion { font-size:11px; }.spiel-kurswelt { padding:23px 19px; }.spiel-datenhinweis { flex-direction:column;gap:8px;align-items:flex-start; }.spiel-dialog { width:calc(100% - 14px);max-height:95dvh;border-radius:19px; }.spiel-dialog-kopf { padding:18px;gap:12px; }.spiel-schliessen { width:44px;min-height:44px; }.spiel-aufgabe,.spiel-empfehlungen { padding:20px 16px; }.spiel-kurskarten { grid-template-columns:1fr; }.spiel-dialog-fuss { padding:16px; }.muster-auswahl { grid-template-columns:repeat(2,minmax(0,1fr)); }.befehlsleiste .spiel-knopf { padding:7px 10px;font-size:12px; }.befehlsleiste .symbol { width:18px;height:18px; } }
+@media(prefers-reduced-motion:reduce) { .figur-laeuft .figur-koerper,.level-laeuft .level-figur { animation:none!important; } }

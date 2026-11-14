@@ -1,0 +1,67 @@
+{
+  "erstellt": "2026-11-13T20:59:54.324Z",
+  "lesemodus": "cache",
+  "quellen": [
+    {
+      "quelle": "aim",
+      "name": "aim – Akademie für Innovative Bildung und Management",
+      "ok": true,
+      "anzahlRoh": 110,
+      "anzahlAufgenommen": 49,
+      "neu": [],
+      "unsicher": [
+        "aim:271931",
+        "aim:271410PM",
+        "aim:271470IN",
+        "aim:262993CHNB",
+        "aim:271992BBMM",
+        "aim:271993SDMO",
+        "aim:271994CMDB",
+        "aim:271993AOER"
+      ],
+      "dauerMs": 39
+    },
+    {
+      "quelle": "experimenta",
+      "name": "experimenta – Das Science Center",
+      "ok": true,
+      "anzahlRoh": 35,
+      "anzahlAufgenommen": 5,
+      "neu": [],
+      "unsicher": [
+        "experimenta:meine-freundin-roxy"
+      ],
+      "dauerMs": 4
+    },
+    {
+      "quelle": "hdf",
+      "name": "Haus der Familie Heilbronn",
+      "ok": true,
+      "anzahlRoh": 581,
+      "anzahlAufgenommen": 19,
+      "neu": [],
+      "unsicher": [
+        "hdf:261H207010",
+        "hdf:261H116302",
+        "hdf:261H116102",
+        "hdf:261H116303",
+        "hdf:272H116101",
+        "hdf:272H114102",
+        "hdf:272H114201",
+        "hdf:272H116103"
+      ],
+      "dauerMs": 70
+    },
+    {
+      "quelle": "ipai",
+      "name": "IPAI – Innovation Park Artificial Intelligence",
+      "ok": true,
+      "anzahlRoh": 41,
+      "anzahlAufgenommen": 5,
+      "neu": [],
+      "unsicher": [],
+      "dauerMs": 3
+    }
+  ],
+  "gesamt": 78
+}

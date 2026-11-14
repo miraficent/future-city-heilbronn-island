@@ -1,0 +1,101 @@
+{
+  "aktualisiert": "2026-11-13T20:59:54.324Z",
+  "lesemodus": "cache",
+  "quellen": [
+    {
+      "id": "aim",
+      "name": "aim – Akademie für Innovative Bildung und Management",
+      "website": "https://www.aim-akademie.org/",
+      "farbe": "#E8513A"
+    },
+    {
+      "id": "experimenta",
+      "name": "experimenta – Das Science Center",
+      "website": "https://www.experimenta.science/",
+      "farbe": "#00A0B0"
+    },
+    {
+      "id": "hdf",
+      "name": "Haus der Familie Heilbronn",
+      "website": "https://hdf-hn.de/",
+      "farbe": "#F2A900"
+    },
+    {
+      "id": "ipai",
+      "name": "IPAI – Innovation Park Artificial Intelligence",
+      "website": "https://ipai-foundation.ai/",
+      "farbe": "#6C4BD8"
+    }
+  ],
+  "themen": [
+    {
+      "id": "ki",
+      "name": "Künstliche Intelligenz",
+      "kindername": "KI-Planet",
+      "symbol": "robot",
+      "farbe": "#FF5A36",
+      "schlagwoerter": [
+        "KI",
+        "AI",
+        "künstliche Intelligenz",
+        "ChatGPT",
+        "Machine Learning",
+        "maschinelles Lernen",
+        "neuronale",
+        "Data Literacy",
+        "Datenkompetenz",
+        "Chatbot",
+        "KI-Agent",
+        "Prompt"
+      ]
+    },
+    {
+      "id": "coding",
+      "name": "Coding & Robotik",
+      "kindername": "Code-Planet",
+      "symbol": "code",
+      "farbe": "#00A3A3",
+      "schlagwoerter": [
+        "Programmier",
+        "Coding",
+        "Scratch",
+        "Python",
+        "Calliope",
+        "Arduino",
+        "Mikrocontroller",
+        "Microcontroller",
+        "ESP32",
+        "Roboter",
+        "Robotik",
+        "Lego League",
+        "App-Entwicklung",
+        "Web-App",
+        "Informatik",
+        "Hacker",
+        "Algorithm",
+        "Maker"
+      ]
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming & Games",
+      "kindername": "Spiele-Planet",
+      "symbol": "controller",
+      "farbe": "#FFBF1F",
+      "schlagwoerter": [
+        "Game",
+        "Gaming",
+        "Spieleentwicklung",
+        "Spiele-Entwicklung",
+        "Videospiel",
+        "Computerspiel",
+        "Unity",
+        "Minecraft",
+        "Roblox",
+        "E-Sport",
+        "Esport",
+        "Konsole"
+      ]
+    }
+  ]
+}

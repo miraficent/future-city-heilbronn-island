@@ -1,0 +1,6 @@
+{
+  "modus": "built-in image_gen",
+  "datei": "public/medien/pixel/kind-v2.png",
+  "verwendung": "Überarbeitete fiktive Spielfigur; Original bleibt erhalten.",
+  "prompt": "Edit target: the attached existing fictional child game sprite. Keep the same friendly original character identity: medium brown skin, curly dark brown hair, mint green jacket, cream shirt, coral backpack straps, navy shorts and honey yellow boots. Redesign as a polished authentic low resolution 2D pixel game sprite, front facing standing full body, at a logical 32 by 48 pixel grid, scaled nearest neighbor for display. Especially simplify the face: two tiny dark single-block eyes, no glossy anime irises, no highlights in eyes, a small relaxed smile. Clear chunky squared-off clusters and a restrained 16 colour palette, entirely hard flat pixel colours, no gradients, no texture, no soft lighting, no distressed edges, no blurred antialiasing, no photorealism, no gloss. Suitable for an original welcoming children's exploration game, professional deliberate readable sprite. Give short legs and readable arms, balanced silhouette. One character only, centered, with generous empty margin, no shadow ground, no text, no frame, transparent background. Preserve transparency."
+}

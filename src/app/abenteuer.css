@@ -1,0 +1,140 @@
+/* Größere, begehbare Spielwelt; selbst gezeichnete Wege und generierte Figuren. */
+.abenteuer {max-width:1440px}
+.abenteuer .spielwelt-rahmen {height:clamp(430px,52vw,690px);min-height:0;aspect-ratio:auto;position:relative}
+.abenteuer .spielwelt-svg {display:block;width:100%;height:100%;touch-action:none}
+.spieler-portrait small {display:block;font-size:11px;font-weight:400;margin-top:3px}
+.welt-zoom {position:absolute;bottom:12px;left:12px;display:flex;gap:5px}
+.welt-zoom button {min-width:44px;min-height:44px;background:#fff9e8;border:2px solid #658b61;border-radius:5px;padding:5px 10px;font-size:15px;font-weight:700}
+.welt-zoom button:disabled {opacity:.45}
+.mini-karte {position:absolute;right:12px;bottom:12px;width:150px;border:3px solid #fff9e8;box-shadow:0 0 0 2px #658b61;border-radius:3px;pointer-events:none}
+.story-schild {position:absolute;bottom:78px;left:24px;display:flex;gap:15px;align-items:center;max-width:480px;padding:20px 26px 20px 20px;border:2px solid #345457;border-radius:8px;background:#fff9e8f5;box-shadow:4px 4px 0 #3454572b}
+.story-schild>.pixel-bild {flex:0 0 50px;width:50px;height:80px}
+.story-schild strong {font-size:20px;line-height:1.3}
+.story-schild p {font-size:15px;margin:7px 0 12px;line-height:1.4}
+.story-schild .spiel-knopf {font-size:15px;min-height:45px}
+.story-schliessen {position:absolute;top:0;right:0;width:36px;height:36px;font-size:24px}
+.story-fortschritt {display:flex;align-items:center;justify-content:space-between;gap:20px;border:2px solid #9caf8b;padding:18px 22px;margin-top:18px;border-radius:8px;background:#e4edce}
+.story-fortschritt strong {font-size:20px}
+.story-fortschritt p {margin:5px 0 0;font-size:15px;line-height:1.4}
+.abenteuer .begleiter-knopf {background:#e7def4;margin-left:auto;white-space:nowrap}
+.kapitel-schritte {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:16px 24px 0}
+.kapitel-geschichte {font-size:15px;line-height:1.5;padding:17px 24px 0;max-width:700px}
+.story-abschluss {padding:24px;text-align:center}
+.story-abschluss>.pixel-bild {width:180px;height:210px;margin:0 auto 20px}
+.story-abschluss h3 {font-size:27px;font-weight:800;margin:12px 0}
+.story-abschluss p {max-width:600px;margin:12px auto;line-height:1.6}
+.story-abschluss .bot-fragen {justify-content:center}
+.story-abschluss>.spiel-knopf {margin:10px}
+.kapitel-schritte .spiel-knopf {align-items:center;justify-content:flex-start;text-align:left;font-size:13px;line-height:1.3;background:#e9edda;padding:10px;gap:8px}
+.kapitel-schritte .spiel-knopf>span {flex:0 0 25px;width:25px;height:25px;background:#fff9e8;border:1px solid #9caf8b;display:flex;align-items:center;justify-content:center}
+.kapitel-schritte [aria-current=step] {background:#f4cf79;border-color:#345457}
+.abenteuer .muster-auswahl {display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:12px}
+.abenteuer .muster-karte {font-size:16px;line-height:1.35}
+.aufgaben-bild {width:100%;height:95px}
+.begleiter-inhalt {padding:24px}
+.bot-antwort {display:flex;align-items:center;gap:22px;background:#e6edce;border:1px solid #b4c7a0;padding:20px;border-radius:7px;margin-bottom:18px}
+.bot-antwort .pixel-bild {width:55px;height:90px;flex:0 0 55px}
+.bot-antwort p {font-size:19px;line-height:1.5}
+.bot-fragen,.bericht-aktionen {display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.bot-fragen [aria-pressed=true],.themen-knoepfe [aria-pressed=true] {background:#f1cf7f;box-shadow:inset 0 0 0 1px #345457}
+.bot-hinweis {font-size:12px;color:#526b5f;margin-top:20px;line-height:1.5}
+.abenteuer .spiel-kurswelt {grid-template-columns:1fr}
+.bau-welt {padding:20px 12px 16px;background:#dceee3;border:2px solid #b4c7a0;border-radius:6px;margin:20px 0;overflow:hidden}
+.bau-himmel {height:98px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;padding:0 10px}
+.bau-himmel>.pixel-bild {position:absolute;width:32px;height:76px;bottom:0;left:var(--figur-weg,2%);transition:left .22s linear,transform .2s ease}
+.bau-himmel>span {font-size:12px}
+.bau-fahne {border-left:3px solid #345457;padding-left:7px;background:#f3cc72}
+.bau-flug>.pixel-bild {transform:translateY(-30px)}
+.bau-felder {display:grid;gap:3px}
+.bau-felder>button {min-width:0;min-height:48px;aspect-ratio:1;border:2px solid #749269;font-size:22px;font-weight:700;padding:0;border-radius:3px}
+.bau-boden {background:#b9cba1}
+.bau-luecke {background:#345457!important;color:#fff9e8;border-style:dashed!important}
+.bau-bruecke {background:#dba565!important;color:#345457}
+.bau-huerde::before {content:"";display:block;width:12px;height:17px;background:#bd7656;margin:-20px auto 3px}
+.bau-vorrat {font-size:14px;line-height:1.4;margin:14px 0}
+.abenteuer.ist-vollbild {position:fixed;inset:0;z-index:90;max-width:none;width:100%;height:100dvh;padding:12px 20px;background:#f3ecdc;overflow:auto}
+.ist-vollbild .spiel-einstieg {margin-bottom:10px}
+.ist-vollbild .spiel-einstieg h1 {font-size:24px}
+.ist-vollbild .spiel-einstieg p {display:none}
+.ist-vollbild .rucksack-knopf {min-height:44px}
+.ist-vollbild .spielwelt-rahmen {height:calc(100dvh - 225px)}
+.ist-vollbild>.story-fortschritt,.ist-vollbild>.spiel-stationen,.ist-vollbild>.spiel-kurswelt,.ist-vollbild>.spiel-datenhinweis {display:none}
+.teen-katalog {max-width:1400px;margin:40px auto 0;padding:0 24px}
+.teen-katalog>summary {font-size:22px;font-weight:700;cursor:pointer;padding:20px;border:2px solid #345457;border-radius:8px}
+.familienbericht {max-width:1280px;margin:40px auto;padding:28px;background:#fff9e8;border:2px solid #345457;border-radius:12px;scroll-margin-top:20px}
+.bericht-kopf {display:flex;gap:24px;align-items:center;margin-bottom:22px}
+.bericht-kopf>.pixel-bild {width:65px;height:110px;flex-shrink:0}
+.bericht-kopf h1 {font-size:clamp(25px,3vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin:8px 0}
+.bericht-kopf p {line-height:1.5}
+.bericht-kapitel {display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:25px 0}
+.bericht-kapitel>div {display:flex;flex-direction:column;align-items:center;gap:5px;background:#e6edce;border-radius:7px;padding:12px;text-align:center;font-size:13px}
+.bericht-kapitel .pixel-bild {width:135px;height:95px}
+.bericht-einordnung,.bericht-grund {line-height:1.6;color:#50655a;font-size:14px;max-width:900px;margin:15px 0 22px}
+.familienbericht h2 {font-weight:800;font-size:24px;margin-top:25px}
+.bericht-vorschlaege>section {margin:25px 0;border-top:1px solid #bccab0;padding-top:5px}
+.bericht-leer {background:#e6edce;padding:20px;margin:20px 0;border-radius:7px}
+.bericht-leer p {margin-bottom:16px;line-height:1.5}
+.lernorte h1 {font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.1;max-width:800px;margin:16px 0}
+.lernorte-intro {font-size:18px;line-height:1.6;max-width:800px}
+.lernorte-raster {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0}
+.lernort {border:2px solid #345457;background:#fff9e8;border-radius:10px;padding:24px}
+.lernort>.pixel-bild {width:100%;height:190px;margin-bottom:18px;background:#e4edce;border-radius:6px;padding:14px}
+.lernort h2 {font-weight:800;font-size:26px;margin:8px 0 12px;line-height:1.2}
+.lernort p {line-height:1.6}
+.lernort-links {display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:20px 0}
+.lernort .spiel-wissen ul {list-style:disc;padding-left:20px}
+.lernort .spiel-wissen li a {display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
+.lernorte-fuss {line-height:1.6;font-size:14px;margin:24px 0}
+@media(max-width:700px){
+ .abenteuer {padding:14px 10px 0}
+ .abenteuer .spielwelt-rahmen {height:clamp(355px,102vw,490px);aspect-ratio:auto}
+ .abenteuer .spiel-werkzeugleiste {flex-wrap:wrap;gap:6px;padding:8px}
+ .abenteuer .spieler-portrait {margin-right:auto}
+ .abenteuer .spieler-portrait small {font-size:10px}
+ .abenteuer .spiel-alter {margin:0}
+ .abenteuer .vollbild-knopf {font-size:11px}
+ .abenteuer .spiel-pause {padding:5px 8px}
+ .abenteuer .spiel-bedienung {gap:8px;padding:10px 8px}
+ .abenteuer .steuerkreuz {gap:4px}
+ .abenteuer .steuerkreuz button {width:45px;height:48px;min-height:48px!important}
+ .abenteuer .begleiter-knopf {font-size:12px;padding:6px 8px;min-height:48px;gap:4px}
+ .abenteuer .begleiter-knopf .symbol {width:18px;height:18px}
+ .abenteuer .mini-karte {width:100px;right:8px;bottom:8px}
+ .welt-zoom {bottom:8px;left:8px;gap:3px}
+ .welt-zoom button {padding:4px 8px;min-width:40px;font-size:12px}
+ .story-schild {left:12px;right:12px;bottom:95px;padding:14px;gap:10px;max-width:430px}
+ .story-schild>.pixel-bild {width:36px;height:65px;flex-basis:36px}
+ .story-schild strong {font-size:17px}
+ .story-schild p {font-size:13px}
+ .story-schild .spiel-knopf {font-size:13px}
+ .story-fortschritt {padding:14px;gap:14px;align-items:flex-start;flex-direction:column}
+ .story-fortschritt strong {font-size:19px}
+ .kapitel-schritte {padding:12px 12px 0;gap:5px}
+ .kapitel-schritte .spiel-knopf {flex-direction:column;font-size:11px;line-height:1.3;padding:8px 5px;min-height:82px}
+ .begleiter-inhalt {padding:15px}
+ .bot-antwort {gap:12px;padding:14px}
+ .bot-antwort p {font-size:16px}
+ .bot-antwort .pixel-bild {width:38px;height:70px;flex-basis:38px}
+ .bot-fragen .spiel-knopf {font-size:14px;padding:9px 12px}
+ .bau-felder {gap:2px}
+ .bau-felder>button {font-size:17px;min-height:44px}
+ .bau-welt {padding:15px 6px 10px}
+ .abenteuer.ist-vollbild {padding:8px}
+ .ist-vollbild .spielwelt-rahmen {height:calc(100dvh - 220px)}
+ .ist-vollbild .spiel-einstieg h1 {font-size:22px}
+ .ist-vollbild .rucksack-knopf {height:42px;min-height:42px;width:50px}
+ .familienbericht {margin:24px 12px;padding:18px}
+ .bericht-kopf {gap:15px}
+ .bericht-kopf>.pixel-bild {width:43px;height:85px}
+ .bericht-kopf .spiel-kennung {font-size:10px}
+ .bericht-kapitel {grid-template-columns:repeat(2,1fr);gap:10px}
+ .bericht-kapitel .pixel-bild {width:105px;height:80px}
+ .bericht-kapitel strong {font-size:13px}
+ .bericht-kapitel span {font-size:11px}
+ .lernorte-raster {grid-template-columns:1fr}
+ .lernort {padding:19px}
+ .lernort h2 {font-size:24px}
+ .lernorte-intro {font-size:16px}
+ .teen-katalog {padding:0 12px}
+}
+@media(prefers-reduced-motion:reduce){.bau-himmel>.pixel-bild{transition:none}.figur-laeuft .figur-koerper{animation:none}}

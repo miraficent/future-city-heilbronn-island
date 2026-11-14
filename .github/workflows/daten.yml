@@ -1,0 +1,36 @@
+name: Angebotsdaten aktualisieren
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: angebotsdaten
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Quellen laden und letzte gültige Daten bei Quellfehlern erhalten
+        id: pipeline
+        continue-on-error: true
+        run: npm run pipeline
+      - name: Datenänderungen sichern
+        run: |
+          git add daten/ public/abo/
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='COSMOS Datenpflege' -c user.email='cosmos-bot@users.noreply.github.com' commit -m 'chore: Angebotsdaten aktualisieren'
+          git push
+      - name: Quellfehler sichtbar melden
+        if: steps.pipeline.outcome == 'failure'
+        run: |
+          echo 'Mindestens eine Quelle ist fehlgeschlagen. Bericht prüfen; verfügbare letzte Daten wurden gesichert.'
+          exit 1
