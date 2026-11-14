@@ -1,18 +1,97 @@
+import "../eltern.css";
 import Link from "next/link";
 import { Seitenrahmen } from "@/components/seitenrahmen";
-import { SpeicherVerwalten } from "@/components/speicher-verwalten";
-export const metadata = { title: "Datenschutz – einfach erklärt" };
+import { Symbol } from "@/components/symbol";
+import { Card } from "@/components/ui";
+
+export const metadata = { title: "Datenschutz", description: "Kein Konto, keine Cookies, kein Tracking – kurz erklärt." };
+
+/** Datenschutz in kurzen Sätzen für Eltern. Ausführliche Rechtstexte stehen in den verlinkten Quellen. */
+const ABSCHNITTE = [
+  {
+    symbol: "share",
+    titel: "Teilen",
+    text: "Der QR-Code entsteht direkt in Ihrem Browser. Ein geteilter Link enthält nur die Nummern der Angebote – keinen Namen, kein Alter. Ein Messenger bekommt den Link erst, wenn Sie ihn selbst teilen.",
+  },
+  {
+    symbol: "calendar",
+    titel: "Kalender",
+    text: "Kalenderdateien erzeugt Ihr Browser selbst. Es wird nichts an uns gesendet. Beim Import gelten die Bedingungen Ihrer Kalender-App.",
+  },
+  {
+    symbol: "volume",
+    titel: "Vorlesen",
+    text: "Vorgelesen wird nur mit einer deutschen Stimme, die auf Ihrem Gerät installiert ist. Der Text geht an keinen Sprachdienst. Mikrofon und Kamera nutzen wir nie.",
+  },
+  {
+    symbol: "users",
+    titel: "Minderjährige",
+    text: "Kinder brauchen kein Konto und melden sich nie selbst an. Sie zeigen ihre Wünsche den Eltern. Die Anmeldung erledigen Erwachsene direkt beim Anbieter – dort gelten dessen Datenschutz und Bedingungen.",
+  },
+];
+
+const QUELLEN = [
+  { text: "DSGVO, insbesondere Art. 5, 6, 8, 12–22 und 25", url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679" },
+  { text: "§ 25 TDDDG – Speichern auf Ihrem Gerät", url: "https://www.gesetze-im-internet.de/ttdsg/__25.html" },
+  { text: "LfDI Baden-Württemberg (Aufsichtsbehörde)", url: "https://www.baden-wuerttemberg.datenschutz.de/" },
+];
 
 export default function Datenschutz() {
-  return <Seitenrahmen><main id="inhalt" className="lesetext mx-auto px-5 pt-12 sm:px-8"><p className="font-mono text-xs">DEINE DATEN GEHÖREN DIR · STAND 14.11.2026</p><h1 className="mt-5 font-display text-3xl font-bold sm:text-4xl">Dein Abenteuer braucht keinen Namen.</h1>
-    <section className="mt-7 rounded-3xl border-2 border-tinte bg-flaeche p-6"><h2 className="!mt-0">Für Kinder erklärt</h2><ul><li>Du brauchst kein Konto. Wir fragen nicht nach deinem Namen oder deiner Adresse.</li><li>Wenn du Aufgaben ausprobierst oder Wünsche auswählst, bleibt das in deinem Browser. Wir bekommen diese Auswahl nicht.</li><li>Deine Figur und deine Entdeckungen bleiben in der Browsersitzung. Wiederhergestellte Tabs können sie behalten.</li><li>Wenn du einen Kurs in den Rucksack packst, legt dein Browser eine kleine Liste an. Sie gilt für die Browsersitzung. Beim Wiederherstellen von Tabs kann sie noch da sein.</li><li>Zeigst du deinen Rucksack mit einem Link oder QR-Code, stehen darin nur Kurs-Nummern. Nicht dein Name, nicht dein Alter.</li><li>Du kannst deine Liste jederzeit selbst löschen.</li><li>Wir zeigen keine Werbung und verfolgen dich nicht durch andere Websites.</li><li>Bitte öffne die Veranstalterseite zusammen mit einem Erwachsenen.</li></ul></section>
-    <SpeicherVerwalten />
-    <h2>Welche Daten verarbeitet diese Version?</h2><p>Suche, Filter, Interessen-Kompass und Sammlung laufen im Browser. Es gibt keine Benutzerkonten, Analyse-Pixel, Werbe-Tracker, nachgeladenen Kartendienste oder externen KI-Chatdienste. Die Heilbronn-Karte besteht aus OpenStreetMap-Daten, die einmalig vorab vereinfacht und als Datei in diese Website eingebaut wurden; beim Ansehen der Karte wird kein Kartenserver kontaktiert. Angebotsbilder von Drittseiten werden nicht geladen. Die verwendeten Schriften werden durch diese Website ausgeliefert.</p>
-    <h2>Speicherung auf deinem Gerät</h2><p>Eine Sammlung wird erst gespeichert, wenn du diese Funktion benutzt. Im Kinderbereich verwenden wir ausschließlich sessionStorage. Die Spielwelt speichert die Grafik- und Farbkennungen deiner selbst gestalteten Figur unter „cosmos.spielwelt.avatar“ (nur Zahlen wie „Frisur 2, Farbe 4“, kein Foto, kein Name), ob die Anleitung schon gezeigt wurde, ob die Rakete gestartet ist und mit welchen ausgedachten Bewohnern du schon gesprochen hast („cosmos.spielwelt.gespraeche“, nur deren Kennungen). Außerdem merkt sie sich, welche Lernorte du schon betreten hast („cosmos.spielwelt.besucht“), damit die Begrüßung nur einmal kommt. Ein früherer Figurenwert unter „cosmos.spielwelt.figur“ wird nur als Gestaltungsvorlage gelesen. Außerdem werden gepackte Kurse im Rucksack unter „cosmos.merkliste.kind“ sowie das ausgewählte Alter als ganze Jahreszahl, die Kennungen gelöster Aufgaben getrennt nach Aufgabenstufen und freiwillig gewählte Themenwünsche unter „cosmos.abenteuer.v2“ gespeichert. Es werden keine Namen, Geburtsdaten oder Kontakte erfasst. Antworten in Gesprächen, Bewegungen, Programmierbefehle und Fehlversuche werden nicht dauerhaft gespeichert und nicht übertragen. Über „Für Erwachsene“ → „Alles löschen“ in der Spielwelt entfernst du Figur, Spielfortschritt, Gespräche und Rucksack; über den Löschknopf hier alle Daten dieser Anwendung.</p><p>Im Teen- und Elternbereich gilt standardmäßig Sitzungsspeicherung. Nur wenn du dort „Auf diesem Gerät behalten“ aktivierst, speichert localStorage die Angebots-IDs und diese Einstellung bis zum Löschen. Der Suchtext und die Filter des Kurskatalogs bleiben im Arbeitsspeicher der geöffneten Ansicht. Für das Spiel gelten auch im Teenbereich die oben beschriebenen Sitzungsdaten.</p><p>Die Speicherfunktionen dienen deiner ausdrücklich gewünschten Spiel- und Kursauswahl (§ 25 Abs. 2 Nr. 2 TDDDG); die dauerhafte Speicherung schaltest du selbst ein und jederzeit wieder aus. Es werden keine Nutzungsprofile an einen Server gesendet. Der Löschknopf entfernt ausschließlich Schlüssel dieser Anwendung mit dem Präfix „cosmos.“.</p>
-    <h2>Spielbegleiter, Elternbericht und Wünsche</h2><p>Die selbst gestaltete Figur begleitet vorbereitete Bildanleitungen direkt auf dem Gerät. Die Gespräche mit den Bewohnern sind fest vorbereitete Sätze mit Antwortknöpfen. Es gibt kein Freitextfeld, keine externe KI-Verbindung und kein Chatprotokoll. Der Elternbericht liest in derselben Browsersitzung die abgeschlossenen Aufgaben und freiwilligen Interessen. Er schlägt anhand nachvollziehbarer Regeln Kursthemen vor. Fehler, Spieltempo, Bewegungsverläufe oder vermeintliche Fähigkeiten werden weder gespeichert noch bewertet. Wünsche aus der Kinder-Spielwelt werden nicht gesendet. Beim Herunterladen des Berichts wird lokal eine Datei erzeugt; wer sie weitergibt, bestimmt selbst den Empfänger.</p><h2>Anonyme Wünsche („Was fehlt?“)</h2><p>Teens und Eltern können freiwillig per Klick melden, welches Thema sie sich für welche Altersgruppe wünschen, optional mit einem Stichwort. Ebenso lässt sich eine Suche ohne Treffer als „fehlt“ melden. Übertragen werden nur Thema, Altersgruppe und das Stichwort. Gespeichert wird je Tag ein Zähler – ohne Uhrzeit, ohne IP-Adresse, ohne Kennung, ohne Cookie, ohne Verknüpfung mehrerer Meldungen. E-Mail-Adressen, Telefonnummern, Postleitzahlen, Datumsangaben, Adressen und Sätze wie „ich heiße …“ werden vor dem Zählen automatisch entfernt. Die Kinder-Spielwelt sendet nichts. In der lokalen Vorführung zählt der Vorschau-Server auf diesem Computer; ohne Server bleibt der Zähler in der Browsersitzung. Die Summen erscheinen auf der Seite „Einblicke“.</p><p>Auf der Kartenseite gibt es externe Links zur Anmeldung bei den Einrichtungen und einen Routen-Link zu OpenStreetMap. Es werden keine Social-Media-Inhalte, Videos, Kartenkacheln oder Tracking-Skripte eingebettet. Eine Verbindung zum jeweiligen Dienst entsteht erst beim Öffnen des Links.</p><h2>Technischer Abruf und Hosting</h2><p>Auch eine Website ohne Tracking benötigt technisch eine Verbindung. Bei einer Veröffentlichung können der Hostinganbieter und der Netzbetreiber IP-Adresse, angeforderte Adresse, Zeitpunkt und technische Browserinformationen verarbeiten. Diese Daten sind nicht automatisch anonym. Im lokalen Vorführbetrieb wird die Anwendung auf diesem Computer bereitgestellt.</p><p>Verantwortlicher, konkreter Hostinganbieter, Zwecke und Rechtsgrundlagen dieser technischen Verarbeitung, Empfänger, gegebenenfalls Drittlandtransfers und Speicherdauern müssen vor einem öffentlichen Betrieb verbindlich eingetragen und geprüft werden. Siehe <Link href="/impressum">Betreiberstatus im Impressum</Link>. Diese Angaben sind derzeit offen; diese Fassung ist für die lokale Vorführung bestimmt.</p>
-    <h2>Teilen, Kalender und Vorlesen</h2><p>Ein QR-Code wird direkt im Browser erzeugt. Der geteilte Link enthält nur Angebots-IDs (bei einem geteilten Rucksack mehrere), keine Namen, kein Alter und keinen Spielstand. Ein Messenger oder ein anderes Zielprogramm erhält den Link erst, wenn du ihn selbst teilst. Kalenderdateien werden lokal erzeugt oder von dieser Website heruntergeladen; beim Import gelten zusätzlich die Bedingungen deiner Kalender-App.</p><p>Vorlesen (Knopf „Anhören“, Lautsprecher-Symbol und Gespräche in der Spielwelt bei eingeschaltetem Ton) nutzt ausschließlich eine deutsche Stimme, die der Browser als lokal installiert meldet. Der Text wird auf dem Gerät gesprochen und nicht an einen Sprachdienst geschickt. Gibt es auf dem Gerät keine solche Stimme, bleibt der Knopf ausgeschaltet; die Bildanleitungen funktionieren auch ohne Ton. Es werden keine Mikrofon- oder Kameraaufnahmen gemacht.</p>
-    <h2>Externe Veranstalter und Minderjährige</h2><p>Erst wenn du einen externen Link öffnest, entsteht eine Verbindung zum jeweiligen Veranstalter. Dort gelten dessen Datenschutzinformationen und Teilnahmebedingungen. Diese Anwendung nimmt keine Anmeldungen oder Zahlungen entgegen. Minderjährige sollen die Anmeldung gemeinsam mit einem Erwachsenen erledigen.</p><p>Die zwölf Kapitelaufgaben mit Altersstufen, die Bewohner der Spielwelt und ihre Gespräche sind eigene, ausgedachte Spielinhalte von COSMOS-Entdecker. Sie sind keine bestätigten Kurse der genannten Einrichtungen. Die Fotos von aim (Bildungscampus), experimenta und IPAI SPACES stammen von Wikimedia Commons (Lizenz CC BY-SA 4.0, Urheber jeweils am Foto genannt) und werden von dieser Website selbst ausgeliefert – beim Ansehen entsteht keine Verbindung zu Wikimedia. Für das Haus der Familie gibt es noch kein frei lizenziertes Foto; dort steht eine gekennzeichnete Zeichnung. Die gemalten Ansichten der vier Lernorte im Spiel sind vorab erzeugte Illustrationen nach den echten Gebäuden, keine maßgetreuen Abbildungen; sie liegen lokal im Projekt. Die 3D-Karte wird mit der Programmbibliothek three.js im Browser aus denselben lokal gespeicherten OpenStreetMap-Daten gezeichnet wie die 2D-Karte; es werden keine Kartenkacheln oder 3D-Dienste nachgeladen.</p><p>Art. 8 DSGVO betrifft bestimmte, unmittelbar Kindern angebotene Online-Dienste, wenn personenbezogene Daten auf Grundlage einer Einwilligung verarbeitet werden. In Deutschland gilt dabei grundsätzlich die Grenze von 16 Jahren. Das bedeutet keine pauschale Einwilligungspflicht für jede Nutzung durch Kinder. Diese Version führt keine serverseitigen Kinderkonten oder Verhaltensprofile und übermittelt keine Interessen an externe KI-Dienste.</p>
-    <h2>Deine Rechte</h2><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie auf Widerruf einer erteilten Einwilligung. Außerdem kannst du dich bei einer Datenschutzaufsichtsbehörde beschweren, in Baden-Württemberg beispielsweise beim LfDI Baden-Württemberg. Der zuständige Verantwortliche und sein Kontakt müssen für den späteren Betrieb ergänzt werden.</p>
-    <h2>Rechtsgrundlagen zum Nachlesen</h2><ul><li><a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener noreferrer">DSGVO, insbesondere Art. 5, 6, 8, 12–22 und 25</a></li><li><a href="https://www.gesetze-im-internet.de/ttdsg/__25.html" target="_blank" rel="noopener noreferrer">§ 25 TDDDG – Speicherzugriff auf Endgeräte</a></li><li><a href="https://www.baden-wuerttemberg.datenschutz.de/" target="_blank" rel="noopener noreferrer">LfDI Baden-Württemberg</a></li></ul>
-  </main></Seitenrahmen>;
+  return (
+    <Seitenrahmen>
+      <main id="inhalt" className="el-seite">
+        <header className="el-kopf">
+          <p className="el-oben"><Symbol name="check" /> Datenschutz</p>
+          <h1>Ihre Daten bleiben bei Ihnen</h1>
+          <p className="el-kopf__text">Kein Konto, keine Cookies, kein Tracking, keine Werbung. Hier steht kurz, was trotzdem passiert.</p>
+        </header>
+
+        <section aria-labelledby="kurz-titel" className="el-infoteil !mt-10">
+          <h2 id="kurz-titel" className="el-titel">Datenschutz in Kürze</h2>
+          <ul className="el-schritte mt-5 !list-none">
+            <li>Suche, Filter, Wünsche und Merkliste laufen in Ihrem Browser. Wir sehen davon nichts.</li>
+            <li>Wünsche und Merkliste bleiben nur, solange das Browserfenster offen ist. Die Merkliste können Sie auf Wunsch auf dem Gerät behalten.</li>
+            <li>Die Termine lädt Ihr Browser aus unserem Veranstaltungskalender. Dabei wird nur die Liste abgerufen – ohne Kennung, ohne Cookie.</li>
+            <li>Schriften, Bilder und Karten kommen von dieser Website selbst, nicht von fremden Servern.</li>
+            <li>„Was fehlt?“ zählt nur Thema, Altersgruppe und Tag – nur wenn Sie es selbst abschicken.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="themen-titel" className="el-infoteil !mt-12">
+          <h2 id="themen-titel" className="el-titel">Teilen, Kalender, Vorlesen</h2>
+          <div className="el-wissen">
+            {ABSCHNITTE.map((a) => (
+              <Card key={a.titel}>
+                <span className="el-symbolkreis"><Symbol name={a.symbol} /></span>
+                <h3>{a.titel}</h3>
+                <p>{a.text}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="rechte-titel" className="el-infoteil !mt-12">
+          <h2 id="rechte-titel" className="el-titel">Ihre Rechte</h2>
+          <p className="mt-3 max-w-[65ch] text-ink-soft">
+            Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.
+            Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren, in Baden-Württemberg beim LfDI.
+            Wer die Seite betreibt, steht im <Link href="/impressum/" className="font-bold text-ink underline underline-offset-4">Impressum</Link>.
+          </p>
+        </section>
+
+        <section aria-labelledby="quellen-titel" className="el-infoteil !mt-12">
+          <h2 id="quellen-titel" className="el-titel">Rechtsgrundlagen zum Nachlesen</h2>
+          <ul className="mt-4 grid gap-2">
+            {QUELLEN.map((q) => (
+              <li key={q.url}>
+                <a href={q.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4">
+                  <Symbol name="external" className="!size-4" />{q.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+    </Seitenrahmen>
+  );
 }

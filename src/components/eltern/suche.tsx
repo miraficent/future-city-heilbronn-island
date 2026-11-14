@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Angebot } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { erzeugeIcs } from "@/lib/ics";
@@ -22,6 +22,7 @@ import { FehltMelden } from "../wunsch-box";
 import { ElternKarte } from "./angebot-karte";
 import { useElternDaten } from "./daten";
 import { FilterFormular } from "./filter-formular";
+import { FILTER_EREIGNIS } from "./kopf";
 import { FilterSymbol } from "./symbole";
 import { Terminband } from "./terminband";
 
@@ -77,6 +78,17 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
     setNurGemerkt(false);
   }
   const aendere = (teil: Partial<ElternFilter>) => setze({ ...filter, ...teil });
+
+  // „Schnell finden“ im Kopf: setzt einen frischen Filter (alle anderen Filter zurück).
+  useEffect(() => {
+    const schnell = (e: Event) => {
+      setFilter({ ...LEERER_ELTERN_FILTER, ...(e as CustomEvent<Partial<ElternFilter>>).detail });
+      setAnzahl(SCHRITT);
+      setNurGemerkt(false);
+    };
+    window.addEventListener(FILTER_EREIGNIS, schnell);
+    return () => window.removeEventListener(FILTER_EREIGNIS, schnell);
+  }, []);
 
   function zurListe() {
     setBlattOffen(false);
