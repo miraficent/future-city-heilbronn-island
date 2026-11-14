@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { eingebautePlugins, MAX_PLUGIN_BYTES, PluginSchema } from "@/lib/plugins";
@@ -48,6 +48,14 @@ describe("Spielplugins", () => {
     const reset = await DELETE(new Request(`http://localhost/api/plugins/?institution=${plugin.institution}`, { method: "DELETE", headers: { Authorization: "Bearer test-secret" } }));
     expect(reset.status).toBe(200);
     expect((await (await GET()).json())[0]).toEqual(eingebautePlugins()[0]);
+  });
+  it("Beispiel-Plugin ist gültig, emojifrei und zum HTML passend gebaut", async () => {
+    const json = await readFile("docs/beispiele/aim-plugin.json", "utf8");
+    expect(PluginSchema.safeParse(JSON.parse(json)).success).toBe(true);
+    expect(/\p{Extended_Pictographic}|[️‍]/u.test(json)).toBe(false);
+    const html = (await readFile("docs/beispiele/schleifen-lauf.html", "utf8")).replace(/\r\n/g, "\n");
+    // Abweichung: `node docs/beispiele/baue-plugin.mjs` ausführen.
+    expect(JSON.parse(json).aktivitaeten.at(-1).html).toBe(html);
   });
   it("lehnt fehlerhafte und zu große Uploads ab und behält aktive Spiele", async () => {
     await setup();

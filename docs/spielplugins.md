@@ -57,6 +57,12 @@ Beispiel für eine einzelne Aktivität (in die heruntergeladene Vorlage einsetze
 }
 ```
 
+Ein vollständiges Beispiel liegt in `docs/beispiele/`: `aim-plugin.json` ist direkt
+hochladbar (Einrichtung `aim` wählen). Es behält die ersten zwei Roboter-Aufgaben und
+ersetzt die dritte durch das eigene Spiel „Der Schleifen-Lauf“, das sich je Altersstufe
+ändert. Der lesbare Quelltext steht in `schleifen-lauf.html`; nach Änderungen
+`node docs/beispiele/baue-plugin.mjs` ausführen (ein Test prüft, dass beides passt).
+
 `window.COSMOS_STUFE` ist `start`, `weiter` oder `profi`. Erfolg meldet das Spiel
 mit `parent.postMessage({type: 'cosmos:complete'}, '*')`. Die Anwendung akzeptiert
 Nachrichten nur vom aktiven Spielframe und belohnt dessen ersten Abschluss.
