@@ -104,3 +104,34 @@
 /* Karte im dunklen Teens-Bereich: Karte und Infokarte behalten ihre hellen Farben und dunkle Schrift. */
 .teen-orte .hn-karte { color: #254950; }
 .teen-orte .hn-info, .teen-orte .hn-ortliste button { color: #1c1934; }
+
+/* ---------- 3D-Karte mit 2D-Alternative ---------- */
+.hn-ansicht { position: absolute; left: 10px; top: 10px; z-index: 3; display: flex; gap: 2px; padding: 3px; border: 2px solid #254950; border-radius: 999px; background: #fffaf0; box-shadow: 0 3px 0 #254950; }
+.hn-ansicht button { min-width: 52px; min-height: 40px; padding: 4px 14px; border-radius: 999px; font-weight: 800; color: #254950; }
+.hn-ansicht button[aria-pressed="true"] { background: #254950; color: #fffaf0; }
+.hn-ansicht button:disabled { opacity: 0.45; cursor: not-allowed; }
+.hn-ansicht button:focus-visible { outline: 3px solid #2f4bff; outline-offset: 2px; }
+.hn-karte-flaeche .hn-legende { top: 66px; }
+.hn-ohne3d { position: absolute; left: 10px; right: 70px; bottom: 34px; z-index: 3; padding: 6px 10px; border: 2px solid #254950; border-radius: 10px; background: #fffaf0; font-size: 13px; }
+.k3d { position: relative; }
+.k3d-flaeche { position: relative; isolation: isolate; width: 100%; height: min(72vh, 680px); overflow: hidden; touch-action: none; cursor: grab; }
+.k3d-flaeche:active { cursor: grabbing; }
+.k3d-flaeche:focus-visible { outline: 4px solid #2f4bff; outline-offset: -4px; }
+.k3d-canvas { display: block; width: 100%; height: 100%; }
+.k3d-beschriftung { position: absolute; top: 0; left: 0; pointer-events: none; }
+.k3d-ort { pointer-events: auto; padding: 4px 12px 4px 8px; border: 3px solid #254950; border-left: 10px solid var(--ort-farbe); border-radius: 12px; background: #fffaf0; color: #1d2b3a; font-weight: 800; font-size: 15px; white-space: nowrap; box-shadow: 0 3px 0 #254950; cursor: pointer; }
+.k3d-ort:hover { background: #fff3cf; }
+.k3d-ort:focus-visible { outline: 3px solid #2f4bff; outline-offset: 2px; }
+.k3d-stadtteil { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #5e5644; text-shadow: 0 0 3px #fffaf0, 0 0 6px #fffaf0; pointer-events: none; }
+.k3d-wasser { font-style: italic; font-weight: 800; color: #1f5f69; text-shadow: 0 0 4px #e6f3f5; pointer-events: none; }
+.k3d-wahrzeichen { padding: 2px 6px; border-radius: 6px; background: #fffaf0e6; color: #3a3550; font-size: 12px; font-weight: 700; pointer-events: none; }
+.k3d-laden { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; }
+.k3d-steuerung { top: 12px; right: 12px; }
+@media (max-width: 900px) {
+  .k3d-flaeche { height: 62vh; }
+}
+.k3d-sammel { display: none; pointer-events: auto; padding: 8px 16px; border: 3px solid #254950; border-radius: 999px; background: #2f4bff; color: #fffaf0; font-weight: 800; box-shadow: 0 3px 0 #254950; cursor: pointer; }
+.k3d-sammel:focus-visible { outline: 3px solid #ffd84d; outline-offset: 2px; }
+.k3d-fern .k3d-sammel { display: block; }
+.k3d-fern .k3d-ort, .k3d-fern .k3d-wahrzeichen { display: none; }
+.k3d-nah .k3d-stadtteil { display: none; }

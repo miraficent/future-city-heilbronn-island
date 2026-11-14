@@ -48,32 +48,7 @@ export default function Start() {
         <span>{angebote.length} Angebote</span>
       </header>
 
-      <section className="relative grid gap-8 pt-8 sm:pt-12 lg:grid-cols-[1.25fr_1fr] lg:items-end">
-        <div className="relative z-10">
-          <h1 className="font-display text-[clamp(2.9rem,11vw,7.5rem)] font-extrabold uppercase leading-[0.86] tracking-tight">
-            <span className="versatz-text block" style={{ ["--versatz-farbe" as string]: erster?.farbe }}>
-              Cosmos
-            </span>
-            <span className="block text-[0.52em] tracking-[0.02em]">Entdecker</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg sm:text-xl">
-            Eine Spielwelt für Kinder, ein eigener Bereich für Teens, eine Kurssuche und eine echte Heilbronn-Karte. Mit echten Kursen zu <strong>KI, Coding und Gaming</strong> von aim, experimenta,
-            Haus der Familie und IPAI. Ohne Konto. Ohne Tracking.
-          </p>
-        </div>
-        <div aria-hidden className="relative mx-auto h-56 w-full max-w-sm sm:h-72">
-          <Sternenhimmel anzahl={24} className="text-tinte" />
-          {erster ? (
-            <Planet kennung="start-1" farbe={erster.farbe} art={erster.planet} className="absolute left-0 top-6 w-40 sm:w-52" />
-          ) : null}
-          {zweiter ? (
-            <Planet kennung="start-2" farbe={zweiter.farbe} art={zweiter.planet} className="absolute right-0 top-0 w-28 sm:w-36" />
-          ) : null}
-          {dritter ? (
-            <Planet kennung="start-3" farbe={dritter.farbe} art={dritter.planet} className="absolute bottom-0 right-10 w-24 sm:w-32" />
-          ) : null}
-        </div>
-      </section>
+      <section className="heimat-einstieg"><div><span className="welt-augenbraue">ECHTE ORTE. DEINE EIGENE FIGUR.</span><h1>Hallo, Heilbronn.<br/>Lass uns etwas entdecken.</h1><p>Gestalte deine Figur, lauf durch die Stadt, sprich mit den Leuten und baue in vier Lernhäusern unsere Rakete.</p><Link href="/kind/" className="welt-knopf">Mein Abenteuer starten →</Link></div><figure className="heimat-foto"><img src="/medien/fotos/experimenta.jpg" width={1280} height={854} alt="Foto: Die experimenta in Heilbronn, gespiegelt im Wasser"/><figcaption>Foto: Sciencemarker, CC BY-SA 4.0, Wikimedia Commons</figcaption></figure></section>
 
       <section aria-labelledby="wer" className="pt-12">
         <h2 id="wer" className="font-display text-2xl font-bold sm:text-3xl">

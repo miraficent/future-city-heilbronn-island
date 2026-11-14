@@ -667,3 +667,169 @@
   .anleitung-schritte { grid-template-columns: repeat(2, 1fr); }
   .alter-wahl { flex-direction: column; align-items: center; }
 }
+
+/* ---------- Start in zwei Schritten: Alter, dann eigene Figur ---------- */
+
+.start-auswahl { place-items: unset; display: flex; }
+.start-karte { margin: auto; }
+.start-karte-breit { width: min(1080px, 100%); text-align: left; }
+.start-schritt { margin-bottom: 4px; font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; color: #3f5a66; }
+.start-gemeinsam { display: flex; gap: 8px; align-items: center; justify-content: center; margin: 4px 0 12px; font-size: 15px; }
+.start-gemeinsam .symbol { width: 20px; height: 20px; flex-shrink: 0; }
+.start-karte .avatar-baukasten { padding: 4px 0 0; }
+.start-karte .avatar-baukasten h1 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; }
+.start-karte .baukasten-layout { grid-template-columns: 230px 1fr; gap: 20px; margin-top: 12px; }
+.start-karte .avatar-vorschau > .eigener-avatar { height: 270px; }
+.start-karte .welt-knopf { font-size: 18px; min-height: 52px; padding: 12px 20px; }
+.start-karte .avatar-baukasten > footer { justify-content: space-between; margin-top: 14px; }
+.avatar-optionen > button:disabled { opacity: 0.45; cursor: not-allowed; }
+@media (max-width: 720px) {
+  .start-karte .baukasten-layout { grid-template-columns: 1fr; }
+  .start-karte .avatar-vorschau { flex-direction: row; gap: 12px; border-radius: 22px; }
+  .start-karte .avatar-vorschau > .eigener-avatar { height: 170px; width: 110px; margin: 0; }
+}
+
+/* ---------- Bewohner und Gespräche ---------- */
+
+.bewohner-wippen { animation: bewohner-wippen 2.6s ease-in-out infinite; }
+@keyframes bewohner-wippen { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.5px); } }
+.bewohner-blase > g { animation: blase-schweben 2s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.bewohner-blase.ist-nah > g { animation: blase-puls 0.9s ease-in-out infinite; }
+@keyframes blase-schweben { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes blase-puls { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+.bewohner-name { font-family: var(--font-atkinson), sans-serif; font-size: 15px; font-weight: 800; fill: #254950; paint-order: stroke; stroke: #fffaf0; stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+
+.aktion-reden { background: #fffaf0; color: #254950; }
+
+.gespraech {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  width: min(700px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 12px 12px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  background: #fffaf0;
+  box-shadow: 0 6px 0 var(--ink);
+}
+.gespraech-portrait { width: 82px; height: 120px; border-radius: 16px; background: radial-gradient(circle at 50% 35%, #fff4cf, #cfe6dd); }
+.gespraech-inhalt h2 { font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 800; }
+.gespraech-text { margin: 4px 0 10px; font-size: 19px; line-height: 1.4; }
+.gespraech-knoepfe { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.gespraech-zu { align-self: start; }
+@media (max-width: 640px) {
+  .gespraech { grid-template-columns: 56px minmax(0, 1fr) auto; gap: 8px; bottom: 8px; padding: 10px; }
+  .gespraech-portrait { width: 56px; height: 82px; }
+  .gespraech-text { font-size: 17px; }
+}
+
+/* ---------- Haus: Erklärung vor jeder Aufgabe ---------- */
+
+.aufgabe-erklaerung { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; padding: 8px 14px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fffaf0; font-weight: 800; }
+.aufgabe-erklaerung .symbol { width: 18px; height: 18px; }
+.aufgabe-flaeche .aufgaben-einstieg { padding: 4px 2px 8px; }
+.aufgabe-flaeche .einstieg-guide > .eigener-avatar { width: 96px; height: 156px; }
+.aufgabe-flaeche .einstieg-guide h2 { font-family: var(--font-display), sans-serif; font-size: 24px; font-weight: 800; }
+.aufgabe-flaeche .einstieg-guide p:not(.welt-augenbraue) { font-size: 19px; margin: 8px 0 12px; }
+.aufgabe-flaeche .bild-schritte { margin: 14px 0; gap: 12px; }
+.aufgabe-flaeche .welt-knopf { font-size: 18px; min-height: 54px; padding: 12px 22px; }
+.haus-echt-zeichnung { margin: 0; }
+.haus-echt-zeichnung .ortsbild { display: block; width: 100%; height: auto; border-radius: 12px; }
+.haus-echt-tipp { margin-top: 4px; font-size: 13px !important; color: #3f5a66; }
+@media (max-width: 560px) {
+  .aufgabe-flaeche .einstieg-guide { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .aufgabe-flaeche .bild-schritte { grid-template-columns: 1fr; }
+}
+
+/* ---------- Bereich für Erwachsene ---------- */
+
+.erwachsene-knopf { background: #fffaf0; }
+.erwachsenen-tor .halteknopf { margin: 0 auto; }
+.halteknopf.haelt { animation: tor-halten var(--halten-ms, 3s) linear forwards; }
+.erwachsenen-bereich { display: grid; gap: 16px; }
+.erwachsenen-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.erwachsenen-loeschen { padding: 14px; border: 2px dashed var(--ink); border-radius: 16px; }
+.erwachsenen-loeschen h3 { font-weight: 800; }
+.erwachsenen-loeschen p { margin: 4px 0 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bewohner-wippen, .bewohner-blase > g, .halteknopf.haelt { animation: none !important; }
+}
+
+/* ---------- Gemalter Stil: Häuser als Bilder, Figuren in Bewegung, Heilbronn ---------- */
+
+.pixel-bild { image-rendering: auto; }
+img.haus-bild { display: block; object-fit: contain; object-position: center bottom; }
+.haus-karte img.haus-bild { width: 100%; max-width: 170px; height: 82px; margin: 0 auto; }
+img.fenster-kopfbild { width: 96px; height: 58px; object-fit: contain; flex-shrink: 0; }
+.stempel img.haus-bild { width: 100%; height: 70px; }
+.sammelkarte-bild img.haus-bild { width: 120px; height: 86px; }
+.hn-info-kopf img.haus-bild { width: 84px; height: 58px; flex-shrink: 0; }
+.welt-figur.laeuft .welt-figur-koerper { animation: welt-gehen 0.34s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes welt-gehen { from { transform: rotate(-5deg) translateY(0); } to { transform: rotate(5deg) translateY(-5px); } }
+.neckar-schiff { animation: schiff-fahrt 70s linear infinite; }
+@keyframes schiff-fahrt { from { transform: translateX(-120px); } to { transform: translateX(1950px); } }
+.neckar-name { font-family: var(--font-display), serif; font-size: 30px; font-style: italic; font-weight: 700; fill: #f3fbfb; opacity: 0.75; letter-spacing: 0.2em; }
+.wahrzeichen { cursor: pointer; }
+.wahrzeichen:hover { filter: brightness(1.06); }
+.hud-portrait.eigener-avatar { width: 40px; height: 56px; }
+.gespraech-portrait.eigener-avatar, svg.gespraech-portrait { padding: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .welt-figur.laeuft .welt-figur-koerper, .neckar-schiff { animation: none !important; }
+}
+
+/* ---------- Ort betreten: gemalte Szene mit Geschichte ---------- */
+.ort-szene { display: grid; gap: 12px; }
+.szene-buehne { position: relative; overflow: hidden; border: 3px solid var(--ink); border-radius: 22px; background: #cfe3ea; aspect-ratio: 16 / 9; max-height: 60vh; }
+.szene-bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.szene-figuren { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; }
+.szene-sprechend { animation: bewohner-wippen 1.6s ease-in-out infinite; }
+.szene-blase { position: absolute; left: 4%; right: 4%; top: 5%; max-width: 620px; margin: 0 auto; padding: 12px 18px 14px; border: 3px solid var(--ink); border-radius: 20px; background: #fffaf0f2; box-shadow: 0 5px 0 var(--ink); }
+.szene-blase h3 { font-family: var(--font-display), sans-serif; font-size: 17px; font-weight: 800; color: #3f5a66; }
+.szene-blase p { margin-top: 2px; font-size: clamp(19px, 2.4vw, 24px); line-height: 1.35; font-weight: 600; }
+.szene-knoepfe { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.szene-weiter { margin-left: auto; font-size: 20px; min-height: 56px; padding: 0 24px; }
+.szene-ueberspringen { background: transparent; box-shadow: none; }
+.szene-punkte { display: inline-flex; gap: 6px; }
+.szene-punkte i { width: 12px; height: 12px; border: 2px solid var(--ink); border-radius: 999px; background: #fffaf0; }
+.szene-punkte i.ist-an { background: #2f4bff; }
+
+/* ---------- Erklärfilm vor jeder Aufgabe ---------- */
+.erklaer-film { display: grid; gap: 10px; margin: 12px 0 16px; }
+.film-leinwand { position: relative; border: 3px solid var(--ink); border-radius: 20px; overflow: hidden; background: #f6f1e1; }
+.film-leinwand svg { display: block; width: 100%; height: auto; max-height: 300px; }
+.film-nochmal { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fffaf0; font-weight: 800; box-shadow: 0 3px 0 var(--ink); }
+.film-nochmal .symbol { width: 18px; height: 18px; }
+.film-schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; list-style: none; margin: 0; padding: 0; }
+.film-schritte li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 2.5px solid #c9c2ad; border-radius: 16px; background: #fffaf0; font-size: 18px; font-weight: 700; transition: border-color 0.3s, background 0.3s; }
+.film-schritte li > span { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 999px; background: #e8e1cc; font-weight: 900; }
+.film-schritte li > span .symbol { width: 18px; height: 18px; }
+.film-schritte li.ist-jetzt { border-color: #2f4bff; background: #eef1ff; }
+.film-schritte li.ist-jetzt > span { background: #2f4bff; color: #fff; }
+.film-schritte li.ist-fertig > span { background: #5dbb63; color: #fff; }
+@media (max-width: 560px) {
+  .film-schritte { grid-template-columns: 1fr; }
+  .szene-blase { top: 3%; padding: 8px 12px; }
+  .szene-blase p { font-size: 17px; }
+}
+
+/* ---------- Größere Schrift im Spiel ---------- */
+.spielwelt { font-size: 1.12rem; }
+.spiel-fenster { font-size: 1.1rem; }
+.pico-blase { font-size: 18px; }
+.haus-geschichte { font-size: 19px; }
+.aufgabe-flaeche .lernaufgabe { font-size: 1.08rem; }
+@media (prefers-reduced-motion: reduce) {
+  .szene-sprechend { animation: none !important; }
+}
+@media (max-width: 560px) {
+  .szene-buehne { aspect-ratio: 4 / 3.6; }
+  .szene-blase h3 { font-size: 14px; }
+}

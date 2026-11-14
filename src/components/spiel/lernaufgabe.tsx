@@ -6,7 +6,7 @@ import { brueckenMission, codeMission, energieMission, fuehreCodeAus, kiMission,
 import type { Figur as FigurDaten } from "@/lib/figuren";
 import type { MissionArt, Richtung } from "@/lib/spiel";
 import { Symbol } from "../symbol";
-import { Figur } from "./figur";
+import { Avatar,AufgabenFigur as Figur } from "./avatar";
 import { PixelBild, PixelGrafik } from "./pixel-grafik";
 
 const DREHUNG: Record<Richtung, number> = { rechts: 0, runter: 90, links: 180, hoch: 270 };
@@ -20,14 +20,7 @@ type Stimmung = "erklaert" | "froh" | "hmm";
 export function PicoSagt({ children, stimmung = "erklaert" }: { children: ReactNode; stimmung?: Stimmung }) {
   return (
     <div className={`pico-sagt pico-${stimmung}`}>
-      <motion.div
-        className="pico-figur"
-        key={stimmung}
-        animate={stimmung === "froh" ? { y: [0, -12, 0, -6, 0], rotate: [0, -6, 6, 0] } : stimmung === "hmm" ? { rotate: [0, -8, 8, -4, 0] } : { y: [0, -3, 0] }}
-        transition={{ duration: stimmung === "erklaert" ? 2.4 : 0.7, repeat: stimmung === "erklaert" ? Infinity : 0 }}
-      >
-        <PixelBild motiv="roboter" />
-      </motion.div>
+      <div className="pico-figur"><Avatar/></div>
       <AnimatePresence mode="wait">
         <motion.p key={String(children)} className="pico-text" role="status" initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }}>
           {children}
@@ -353,7 +346,7 @@ function WahlAufgabe({ mission, geschafft, fehler }: { mission: WahlMission; ges
         ))}
       </div>
       <button className="spiel-knopf spiel-knopf-dunkel" disabled={!wahl.length} onClick={pruefen}>
-        <Symbol name="check" /> Prüfen
+        <Symbol name="check" /> Ausprobieren
       </button>
       <details className="spiel-wissen">
         <summary>Erklär mir die Idee</summary>
@@ -578,7 +571,7 @@ function BauAufgabe({ stufe, phase, geschafft, fehler, figur }: { stufe: Stufe; 
         <div className="bau-himmel">
           <motion.div className="bau-figur" animate={{ left: `${anteil}%`, y: flug ? -34 : 0 }} transition={{ type: "spring", stiffness: 220, damping: 20 }}>
             <svg viewBox="-24 -100 48 104" aria-hidden="true">
-              {figur ? <Figur figur={figur} blick="seite" laeuft={test === "laeuft"} /> : <PixelGrafik motiv="roboter" x={-16} y={-60} breite={32} hoehe={60} />}
+              <Figur figur={figur} />
             </svg>
           </motion.div>
           <svg className="bau-ziel" viewBox="0 0 40 60" aria-label="Ziel">

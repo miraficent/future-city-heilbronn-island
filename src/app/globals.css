@@ -70,7 +70,7 @@ body {
   background: var(--papier);
   color: var(--tinte);
   font-family: var(--font-atkinson), sans-serif;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.55;
 }
 

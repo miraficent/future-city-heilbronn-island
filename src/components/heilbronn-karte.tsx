@@ -5,6 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import karte from "@/lib/heilbronn-karte.json";
 import type { HausGrafik } from "@/lib/spiel";
+import { fotoFuer } from "@/lib/fotos";
+import { FotoZoom } from "./foto-zoom";
+import { Karte3D } from "./karte-3d";
 import { OrtsBild } from "./ortsbild";
 import { Symbol } from "./symbol";
 import { PixelBild } from "./spiel/pixel-grafik";
@@ -35,7 +38,6 @@ export type OrtInfo = {
 };
 
 type Sicht = { x: number; y: number; b: number; h: number };
-type Weitere = (typeof karte.weitere)[number];
 
 const P = karte.projektion;
 const COS = Math.cos((P.lat0 * Math.PI) / 180);
@@ -44,12 +46,9 @@ const projiziere = (lat: number, lon: number) => ({ x: (lon - P.west) * P.meterP
 const GANZE_STADT: Sicht = { x: 0, y: 0, b: karte.breite, h: karte.hoehe };
 /** Ab dieser Sichtbreite (Meter) werden die Lernorte zu einer Blase zusammengefasst. */
 const BLASE_AB = 7000;
-const WEITERE_BIS = 9000;
 const GEH_TEMPO_M_PRO_MIN = 75;
 const UMWEG = 1.3;
 
-const ART_SYMBOL: Record<string, string> = { bibliothek: "book", schule: "music", museum: "museum", theater: "masks", rathaus: "building" };
-const ART_NAME: Record<string, string> = { bibliothek: "Bibliothek", schule: "Schule", museum: "Museum", theater: "Theater", rathaus: "Rathaus" };
 const THEMA_SYMBOL: Record<string, string> = { ki: "robot", coding: "code", gaming: "controller" };
 
 function gehminuten(a: { x: number; y: number }, b: { x: number; y: number }) {
@@ -70,9 +69,10 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
 
   const [sicht, setSicht] = useState<Sicht>(GANZE_STADT);
   const [auswahl, setAuswahl] = useState<string>("");
-  const [weiteresAuswahl, setWeiteresAuswahl] = useState<Weitere | null>(null);
-  const [zeigeWeitere, setZeigeWeitere] = useState(true);
   const [tour, setTour] = useState(false);
+  // Erst 3D; scheitert WebGL auf dem Gerät, bleibt die gleichwertige 2D-Karte.
+  const [ansicht, setAnsicht] = useState<"3d" | "2d">("3d");
+  const [ohne3d, setOhne3d] = useState(false);
   const svg = useRef<SVGSVGElement>(null);
   const ziehen = useRef<{ x: number; y: number; sicht: Sicht; bewegt: boolean } | null>(null);
   const animation = useRef(0);
@@ -105,7 +105,6 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
       const p = punkte.find((o) => o.id === id);
       if (!p) return;
       setAuswahl(id);
-      setWeiteresAuswahl(null);
       fliegeZu({ x: p.x - 650, y: p.y - 800, b: 1300, h: 1500 });
     },
     [punkte, fliegeZu],
@@ -140,7 +139,20 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
 
   return (
     <div className="hn-karte">
-      <div className="hn-karte-flaeche">
+      <div className={`hn-karte-flaeche ${ansicht === "3d" ? "ist-3d" : ""}`}>
+        <div className="hn-ansicht" role="group" aria-label="Kartenansicht wählen">
+          <button type="button" aria-pressed={ansicht === "3d"} disabled={ohne3d} onClick={() => setAnsicht("3d")}>3D</button>
+          <button type="button" aria-pressed={ansicht === "2d"} onClick={() => setAnsicht("2d")}>2D</button>
+        </div>
+        {ohne3d && <p className="hn-ohne3d" role="status">3D wird von diesem Gerät nicht unterstützt. Die 2D-Karte zeigt dasselbe.</p>}
+        {ansicht === "3d" ? (
+          <Karte3D
+            orte={punkte}
+            auswahl={auswahl}
+            waehle={(id) => { setTour(false); waehle(id); }}
+            fehler={() => { setAnsicht("2d"); setOhne3d(true); }}
+          />
+        ) : (
         <svg
           ref={svg}
           className="hn-karte-svg"
@@ -204,26 +216,6 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
             );
           })}
 
-          {zeigeWeitere && sicht.b < WEITERE_BIS &&
-            karte.weitere.map((w) => (
-              <g
-                key={w.name}
-                data-pin
-                role="button"
-                tabIndex={0}
-                aria-label={`${w.name} (${ART_NAME[w.art] ?? "Ort"})`}
-                className={`hn-weiteres ${weiteresAuswahl?.name === w.name ? "ist-gewaehlt" : ""}`}
-                transform={`translate(${w.x} ${w.y}) scale(${s * 1.1})`}
-                onClick={() => { setTour(false); setWeiteresAuswahl(w); setAuswahl(""); }}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setWeiteresAuswahl(w); setAuswahl(""); } }}
-              >
-                <circle r="26" fill="#fffaf0" stroke="#6c4bd8" strokeWidth="5" />
-                <g transform="translate(-13 -13) scale(1.08)" fill="none" stroke="#6c4bd8" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <path d={WEITERE_PFADE[w.art] ?? WEITERE_PFADE.museum} />
-                </g>
-              </g>
-            ))}
-
           {ort && (
             <path d={`M${bahnhof.x} ${bahnhof.y}L${ort.x} ${ort.y}`} className="hn-weg" stroke="#2f4bff" strokeWidth="5" strokeDasharray="2 12" strokeLinecap="round" fill="none" vectorEffect="non-scaling-stroke" />
           )}
@@ -280,17 +272,18 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
             })
           )}
         </svg>
+        )}
 
+        {ansicht === "2d" && (
         <div className="hn-steuerung">
           <button className="rund-knopf" onClick={() => zoom(0.7)} aria-label="Näher heran"><Symbol name="plus" /></button>
           <button className="rund-knopf" onClick={() => zoom(1.4)} aria-label="Weiter weg"><Symbol name="minus" /></button>
           <button className="rund-knopf" onClick={() => { setTour(false); fliegeZu(GANZE_STADT); }} aria-label="Ganz Heilbronn zeigen"><Symbol name="map" /></button>
           <button className="rund-knopf" onClick={() => setTour(!tour)} aria-pressed={tour} aria-label={tour ? "Tour anhalten" : "Entdecker-Tour starten"}><Symbol name={tour ? "pause" : "play"} /></button>
-          <button className="rund-knopf" onClick={() => setZeigeWeitere(!zeigeWeitere)} aria-pressed={zeigeWeitere} aria-label={zeigeWeitere ? "Weitere Orte ausblenden" : "Weitere Orte zeigen"}><Symbol name="book" /></button>
         </div>
+        )}
         <div className="hn-legende" aria-hidden="true">
           <span><i className="hn-l-pin" /> Lernort mit Kursen</span>
-          <span><i className="hn-l-weiteres" /> weitere Orte</span>
           <span><i className="hn-l-autobahn" /> Autobahn</span>
         </div>
         <p className="hn-quelle">Kartendaten {karte.quelle}</p>
@@ -299,7 +292,14 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
       <AnimatePresence mode="wait">
         {ort ? (
           <motion.aside key={ort.id} className="hn-info" style={{ ["--ort-farbe" as string]: ort.farbe }} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ type: "spring", stiffness: 260, damping: 26 }} aria-live="polite">
-            <OrtsBild id={ort.id} name={ort.name} farbe={ort.farbe} className="hn-info-foto" />
+            {fotoFuer(ort.id) ? (
+              <FotoZoom foto={fotoFuer(ort.id)!} className="hn-info-foto" />
+            ) : (
+              <figure className="hn-info-foto hn-illustration">
+                <OrtsBild id={ort.id} name={ort.name} farbe={ort.farbe} />
+                <figcaption>Illustration – für diesen Ort gibt es noch kein frei nutzbares Foto.</figcaption>
+              </figure>
+            )}
             <div className="hn-info-kopf">
               <PixelBild motiv={ort.grafik} className="hn-info-bild" />
               <div>
@@ -361,28 +361,13 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
               </p>
             </details>
           </motion.aside>
-        ) : weiteresAuswahl ? (
-          <motion.aside key={weiteresAuswahl.name} className="hn-info hn-info-weiteres" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0 }} aria-live="polite">
-            <div className="hn-info-kopf">
-              <span className="hn-weiteres-symbol"><Symbol name={ART_SYMBOL[weiteresAuswahl.art] ?? "museum"} /></span>
-              <div>
-                <p className="spiel-kennung">{ART_NAME[weiteresAuswahl.art] ?? "Ort"}</p>
-                <h2>{weiteresAuswahl.name}</h2>
-              </div>
-            </div>
-            <p className="hn-info-text">Noch ohne Kurse im COSMOS-Entdecker. Mit einer Zeile in der Quellen-Tabelle kommt so ein Ort dazu.</p>
-            <div className="hn-knoepfe">
-              <a className="spiel-knopf" href={`https://www.openstreetmap.org/?mlat=${weiteresAuswahl.lat}&mlon=${weiteresAuswahl.lon}#map=17/${weiteresAuswahl.lat}/${weiteresAuswahl.lon}`} target="_blank" rel="noopener noreferrer"><Symbol name="map" /> In OpenStreetMap</a>
-            </div>
-          </motion.aside>
         ) : (
           <motion.aside key="start" className="hn-info hn-info-start" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <h2><Symbol name="map" /> Ganz Heilbronn</h2>
-            <p className="hn-info-text">Tippe auf die blaue Blase oder einen Lernort unten.</p>
+            <p className="hn-info-text">{ansicht === "3d" ? "Tippe auf einen Lernort in der Karte oder unten. Ziehen dreht die Karte." : "Tippe auf die blaue Blase oder einen Lernort unten."}</p>
             <ul className="hn-start-liste">
               <li><i className="hn-l-pin" /> {punkte.length} Lernorte mit Kursen</li>
-              <li><i className="hn-l-weiteres" /> {karte.weitere.length} weitere Orte zum Entdecken</li>
-              <li><Symbol name="play" /> Entdecker-Tour startet alle nacheinander</li>
+              {ansicht === "2d" && <li><Symbol name="play" /> Entdecker-Tour startet alle nacheinander</li>}
             </ul>
           </motion.aside>
         )}
@@ -391,7 +376,11 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
       <div className="hn-ortliste" role="tablist" aria-label="Lernorte">
         {punkte.map((o) => (
           <motion.button key={o.id} role="tab" aria-selected={o.id === auswahl} onClick={() => { setTour(false); waehle(o.id); }} style={{ ["--ort-farbe" as string]: o.farbe }} whileHover={{ y: -4 }} whileTap={{ scale: 0.96 }}>
-            <OrtsBild id={o.id} name={o.name} farbe={o.farbe} className="hn-ort-foto" />
+            {fotoFuer(o.id) ? (
+              <img className="hn-ort-foto" src={fotoFuer(o.id)!.datei} alt="" width={fotoFuer(o.id)!.breite} height={fotoFuer(o.id)!.hoehe} loading="lazy" decoding="async" />
+            ) : (
+              <OrtsBild id={o.id} name={o.name} farbe={o.farbe} className="hn-ort-foto" />
+            )}
             <span>{o.name}</span>
             <small>{o.anzahl} Angebote</small>
           </motion.button>
@@ -401,10 +390,3 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
   );
 }
 
-const WEITERE_PFADE: Record<string, string> = {
-  bibliothek: "M4 19V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h14M8 7h8",
-  schule: "M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
-  museum: "M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M2 10l10-7 10 7H2Z",
-  theater: "M3 4h10v6a5 5 0 0 1-10 0V4Zm3 4h.01M10 8h.01M6 12q2 2 4 0M13 9h8v6a5 5 0 0 1-8 2",
-  rathaus: "M4 21V5l8-3 8 3v16M9 21v-5h6v5M8 8h2m4 0h2M8 12h2m4 0h2",
-};

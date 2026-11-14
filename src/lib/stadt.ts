@@ -1,3 +1,4 @@
+import { bewohnerFuer } from "./bewohner";
 import { abstand, inRechteck, type Punkt, type Rechteck, type Station } from "./spiel";
 
 /*
@@ -13,6 +14,8 @@ export type WegArt = "gehweg" | "hausweg" | "zebra" | "platz";
 export type Knoten = Punkt & { id: string };
 export type Kante = { von: string; nach: string; breite: number; art: WegArt };
 export type Haus = { station: Station; mitteX: number; dachY: number; bodenY: number; tuer: Punkt; flaeche: Rechteck; reihe: "oben" | "unten" };
+/** Heilbronner Wahrzeichen am Rand der Spielwelt. Antippen erzählt etwas über den echten Ort. */
+export type Wahrzeichen = { id: "kilianskirche" | "rathaus" | "wartberg"; x: number; y: number; breite: number; hoehe: number; fakt: string };
 export type Deko = { id: string; art: "baum" | "busch" | "blume" | "laterne" | "bank"; x: number; y: number; variante: number };
 
 export type Stadt = {
@@ -31,11 +34,14 @@ export type Stadt = {
   start: Punkt;
   deko: Deko[];
   autoBahn: Punkt[];
+  wahrzeichen: Wahrzeichen[];
+  /** Oberkante des Neckars am unteren Rand. */
+  neckarY: number;
 };
 
 const SPALTE = 470;
 const X0 = 300;
-const HAUS_BREITE = 250;
+const HAUS_BREITE = 400;
 const HAUS_HOEHE = 240;
 const WEG_BREITE = 56;
 const GEHWEG_BREITE = 60;
@@ -180,6 +186,13 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
     start: { x: platz.x, y: platz.y + 85 },
     deko: [],
     autoBahn,
+    // Hinten am Horizont: Kilianskirche und Rathaus mit Kunstuhr, rechts die Weinberge am Wartberg.
+    wahrzeichen: [
+      { id: "kilianskirche", x: Math.round((x(0) + platz.x) / 2) - 10, y: 255, breite: 120, hoehe: 250, fakt: "Das ist die Kilianskirche. Ihr hoher Turm ist ein Wahrzeichen von Heilbronn." },
+      { id: "rathaus", x: Math.round((platz.x + x(2)) / 2) + 10, y: 255, breite: 200, hoehe: 165, fakt: "Das Rathaus am Marktplatz hat eine Kunstuhr von 1580. Sie zeigt Uhrzeit, Wochentag und Mond." },
+      { id: "wartberg", x: x(2) + 400, y: 250, breite: 420, hoehe: 185, fakt: "Rund um Heilbronn wachsen Weinberge. Oben auf dem Wartberg steht ein Aussichtsturm." },
+    ],
+    neckarY: Y.hoehe - 95,
   };
   stadt.deko = verteileDeko(stadt);
   return stadt;
@@ -336,6 +349,10 @@ export function hausAn(stadt: Stadt, p: Punkt): Haus | undefined {
   return stadt.haeuser.find((h) => inRechteck(p, { ...h.flaeche, y: h.flaeche.y - SCHILD, hoehe: h.flaeche.hoehe + SCHILD }));
 }
 
+export function wahrzeichenAn(stadt: Stadt, p: Punkt): Wahrzeichen | undefined {
+  return stadt.wahrzeichen.find((w) => Math.abs(p.x - w.x) < w.breite / 2 && p.y > w.y - w.hoehe && p.y < w.y);
+}
+
 export function nahesHaus(stadt: Stadt, p: Punkt, radius = 46): Haus | undefined {
   return stadt.haeuser.find((h) => abstand(p, h.tuer) <= radius);
 }
@@ -427,7 +444,8 @@ export function bewegeAutos(stadt: Stadt, autos: Auto[], sekunden: number, spiel
 /* ---------- Dekoration: nur auf der Wiese, nie auf Wegen, Straße oder Häusern ---------- */
 
 function frei(stadt: Stadt, p: Punkt, rand: number): boolean {
-  if (p.x < 30 || p.y < 40 || p.x > stadt.breite - 30 || p.y > stadt.hoehe - 20) return false;
+  if (p.x < 30 || p.y < 40 || p.x > stadt.breite - 30 || p.y > stadt.neckarY - 20) return false;
+  if (stadt.wahrzeichen.some((w) => Math.abs(p.x - w.x) < w.breite / 2 + rand && p.y > w.y - w.hoehe - rand && p.y < w.y + rand)) return false;
   if (p.y > stadt.strasse.oben - rand && p.y < stadt.strasse.unten + rand && p.x < stadt.strasse.wende.x + stadt.strasse.wende.r + rand) return false;
   if (abstand(p, stadt.strasse.wende) < stadt.strasse.wende.r + rand + 20) return false;
   if (stadt.haeuser.some((h) => p.x > h.flaeche.x - rand && p.x < h.flaeche.x + h.flaeche.breite + rand && p.y > h.flaeche.y - rand && p.y < h.bodenY + rand)) return false;
@@ -439,6 +457,8 @@ function frei(stadt: Stadt, p: Punkt, rand: number): boolean {
 }
 
 function verteileDeko(stadt: Stadt): Deko[] {
+  const bewohnerOrte = bewohnerFuer(stadt).map((b) => b.ort);
+  const beiBewohner = (p: Punkt, r: number) => bewohnerOrte.some((b) => abstand(b, p) < r);
   let samen = 11;
   const zufall = () => {
     samen = (samen * 16807) % 2147483647;
@@ -448,7 +468,7 @@ function verteileDeko(stadt: Stadt): Deko[] {
   const plaziere = (art: Deko["art"], anzahl: number, rand: number, versuche = 400) => {
     for (let i = 0, gesetzt = 0; i < versuche && gesetzt < anzahl; i++) {
       const p = { x: zufall() * stadt.breite, y: zufall() * stadt.hoehe };
-      if (!frei(stadt, p, rand)) continue;
+      if (!frei(stadt, p, rand) || beiBewohner(p, art === "baum" ? 110 : 60)) continue;
       // Bäume brauchen Platz für ihre Krone: untereinander viel Abstand, zu Büschen und Blumen etwas weniger.
       const mindest = (d: Deko) => (art === "baum" && d.art === "baum" ? 190 : art === "baum" || d.art === "baum" ? 85 : 55);
       if (deko.some((d) => abstand(d, p) < mindest(d))) continue;
@@ -461,7 +481,7 @@ function verteileDeko(stadt: Stadt): Deko[] {
   plaziere("blume", Math.round(stadt.breite / 60), 10);
   // Laternen stehen am Rand der Gehwege, Bänke am Platz.
   for (let px = 200; px < stadt.strasse.wende.x - 180; px += 360) {
-    deko.push({ id: `laterne-n-${px}`, art: "laterne", x: px, y: stadt.gehwegNord - 40, variante: 0 });
+    if (!beiBewohner({ x: px, y: stadt.gehwegNord - 40 }, 50)) deko.push({ id: `laterne-n-${px}`, art: "laterne", x: px, y: stadt.gehwegNord - 40, variante: 0 });
   }
   deko.push({ id: "bank-platz-l", art: "bank", x: stadt.platz.x - stadt.platz.r - 30, y: stadt.platz.y + 30, variante: 0 });
   deko.push({ id: "bank-platz-r", art: "bank", x: stadt.platz.x + stadt.platz.r + 30, y: stadt.platz.y + 30, variante: 1 });

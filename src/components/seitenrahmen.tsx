@@ -16,6 +16,19 @@ const NAVIGATION: Array<{ id: Bereich; href: string; text: string; symbol: strin
 
 export function Seitenrahmen({ children, modus = "eltern", aktiv }: { children: ReactNode; modus?: Modus; aktiv?: Bereich }) {
   const markiert = aktiv ?? modus;
+  // Kinderbereich wie bei Kinder-Apps üblich: keine Navigation nach draußen. Erwachsene kommen über den Halte-Knopf weiter.
+  if (modus === "kind")
+    return (
+      <div data-modus={modus} className="min-h-dvh bg-papier text-tinte">
+        <header className="mx-auto flex max-w-7xl items-center gap-2 border-b-2 border-tinte px-5 py-3 font-display text-sm font-extrabold tracking-tight sm:px-8">
+          <Symbol name="compass" className="logo-kompass" />COSMOS<span className="font-sans text-xs font-normal">SPIELWELT</span>
+        </header>
+        {children}
+        <footer className="mx-auto mt-10 max-w-7xl border-t-2 border-tinte px-5 py-6 text-sm sm:px-8">
+          <p>Ohne Konto. Ohne Namen. Für Eltern: Knopf „Für Erwachsene“ oben – dort gibt es Kurse, Datenschutz und Impressum.</p>
+        </footer>
+      </div>
+    );
   return (
     <div data-modus={modus} className="min-h-dvh bg-papier text-tinte">
       <header className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 border-b-2 border-tinte px-5 py-4 sm:px-8">
