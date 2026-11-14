@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { EinrichtungBadge } from "@/components/einrichtung-badge";
+import { EinrichtungBadge, kurzname } from "@/components/einrichtung-badge";
+import { Start3D } from "@/components/start-3d";
 import { Planet } from "@/components/planet";
 import { Sternenhimmel } from "@/components/sternenhimmel";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
@@ -39,6 +40,12 @@ export default function Start() {
   const [erster, zweiter, dritter] = stile;
   const matrix = angebotsMatrix(angebote, META.themen);
   const luecken = matrix.filter((z) => z.angebote === 0).length;
+  const stilNach = themenStile(META.themen);
+  const daten3d = {
+    gesamt: angebote.length,
+    quellen: META.quellen.map((q) => ({ id: q.id, name: kurzname(q, q.id), farbe: q.farbe, anzahl: angebote.filter((a) => a.quelle === q.id).length })),
+    themen: META.themen.map((t) => ({ id: t.id, name: t.name.split("&")[0]!.trim(), farbe: stilNach[t.id]?.farbe ?? "#2f4bff", anzahl: angebote.filter((a) => a.themen.includes(t.id)).length })),
+  };
 
   return (
     <main id="inhalt" className="relative mx-auto max-w-6xl px-4 pb-16 pt-5 sm:px-8">
@@ -47,6 +54,9 @@ export default function Start() {
         <span>Ausgabe {ausgabeFormat.format(new Date(META.aktualisiert))}</span>
         <span>{angebote.length} Angebote</span>
       </header>
+
+      <Start3D daten={daten3d} />
+
 
       <section className="heimat-einstieg"><div><span className="welt-augenbraue">ECHTE ORTE. DEINE EIGENE FIGUR.</span><h1>Hallo, Heilbronn.<br/>Lass uns etwas entdecken.</h1><p>Gestalte deine Figur, lauf durch die Stadt, sprich mit den Leuten und baue in vier Lernhäusern unsere Rakete.</p><Link href="/kind/" className="welt-knopf">Mein Abenteuer starten →</Link></div><figure className="heimat-foto"><img src="/medien/fotos/experimenta.jpg" width={1280} height={854} alt="Foto: Die experimenta in Heilbronn, gespiegelt im Wasser"/><figcaption>Foto: Sciencemarker, CC BY-SA 4.0, Wikimedia Commons</figcaption></figure></section>
 
