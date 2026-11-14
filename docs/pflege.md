@@ -25,7 +25,9 @@ Jedes Haus der Spielwelt hat eine eigene Datei `konfiguration/checkpoints/<id>.j
 ]
 ```
 
-Verfügbare Module (`MODULE` in `src/lib/checkpoint.ts`): `roboter-code` (Varianten 0–2), `muster-wahl` (0–2), `level-bau` (0–2), `material-wahl`, `stromkreis`, `energie-wahl`. `thema` muss eine ID aus `themen.csv` sein; danach werden die echten Kurse im Haus gefiltert. `interesse` (`coding`, `gaming`, `ki`, `forschen`) bestimmt, worauf die Aufgaben im Elternbericht einzahlen. `grafik` und `symbol` wählen aus den vorhandenen Gebäuden und Symbolen.
+Verfügbare Module (`MODULE` in `src/lib/checkpoint.ts`): `roboter-code` (Varianten 0–2), `muster-wahl` (0–2), `level-bau` (0–2), `material-wahl`, `stromkreis`, `energie-wahl` und `lektion`.
+
+Eine **Demo-Lektion** (`"modul": "lektion"`) hat keinen Code-Inhalt: Folien und Abschlussfrage stehen vollständig in der Datei (Beispiel: `experimenta.json`). Jede Folie hat `titel`, `text` (ab 9 Jahren), optional `kurz` (6–8 Jahre) und entweder ein eingebautes `motiv` oder ein eigenes `bild`. Eigene Bilder liegen unter `public/medien/…` und brauchen `alt`; externe Bild- oder Videolinks sind absichtlich nicht erlaubt. Die optionale `abschlussfrage` hat dasselbe Format wie die Bildauswahl-Aufgaben (`frage`, `optionen`, `antworten`, `tipp`, `wissen`). Ohne Abschlussfrage zählt die Lektion nach der letzten Folie als geschafft. `thema` muss eine ID aus `themen.csv` sein; danach werden die echten Kurse im Haus gefiltert. `interesse` (`coding`, `gaming`, `ki`, `forschen`) bestimmt, worauf die Aufgaben im Elternbericht einzahlen. `grafik` und `symbol` wählen aus den vorhandenen Gebäuden und Symbolen.
 
 Die `id` und die Position einer Aufgabe in der Liste bilden die Fortschrittskennung (`aim-0`, `aim-1`, …). Bei laufenden Sitzungen ordnet ein Umsortieren den bisherigen Fortschritt also neu zu. `npm.cmd test` prüft alle Dateien und meldet z. B. unbekannte Module oder zu hohe Varianten. Ein zusätzliches Haus braucht eine neue Datei und einen Importeintrag in `STATIONEN` (`src/lib/spiel.ts`); die Stadt wächst dann automatisch. Neue Modularten, Gebäudegrafiken oder Symbole benötigen Code.
 

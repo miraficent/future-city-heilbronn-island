@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { brueckenMission, codeMission, energieMission, fuehreCodeAus, kiMission, materialMission, pruefeBauPlan, pruefeWahl, type BildOption, type Stufe, type WahlMission } from "@/lib/abenteuer";
-import type { Aktivitaet, ModulId } from "@/lib/checkpoint";
+import type { Aktivitaet, Lektion as LektionDaten, ModulId } from "@/lib/checkpoint";
+import { useVorlesen } from "@/lib/vorlesen";
 import type { Richtung } from "@/lib/spiel";
 import { Symbol } from "../symbol";
 import { PixelBild, PixelGrafik } from "./pixel-grafik";
@@ -14,6 +15,9 @@ export function AufgabenBild({option}:{option:BildOption}){
     :option.motiv==="frage"?<><rect x="20" y="12" width="60" height="57" rx="8" fill="#aaa0db"/><text x="50" y="57" textAnchor="middle" fontSize="44" fill="#254950">?</text></>
     :option.motiv==="gruppe"?<>{[[28,40,16,"#ed805c"],[62,26,12,"#7bbfc4"],[65,61,18,"#ecc06b"]].map(([x,y,r,c],i)=><circle key={i} cx={x} cy={y} r={r} fill={c as string}/>)}</>
     :option.motiv==="sonne"?<><path d="M50 3v12m0 56v11M10 43H0m88 0h12M15 8l10 12m50 48 10 10M14 76l12-12M76 20 86 8" stroke="#ddaa42" strokeWidth="5"/><circle cx="50" cy="43" r="24" fill="#f1ca65"/></>
+    :option.motiv==="schild"?<><path d="M50 8 90 76H10Z" fill={option.farbe??"#f1ca65"} stroke="#345457" strokeWidth="5" strokeLinejoin="round"/><path d="M50 30v24" stroke="#345457" strokeWidth="8" strokeLinecap="round"/><circle cx="50" cy="65" r="4.5" fill="#345457"/></>
+    :option.motiv==="lampe"?<><path d="M50 8a25 25 0 0 0-15 45c4 3 6 7 6 11h18c0-4 2-8 6-11A25 25 0 0 0 50 8Z" fill={option.farbe??"#f1ca65"} stroke="#345457" strokeWidth="4"/><path d="M41 70h18M43 78h14" stroke="#345457" strokeWidth="5" strokeLinecap="round"/><path d="M44 50l6-14 6 14" fill="none" stroke="#345457" strokeWidth="3"/></>
+    :option.motiv==="batterie"?<><rect x="14" y="24" width="64" height="38" rx="5" fill="#7bbfc4" stroke="#345457" strokeWidth="4"/><rect x="78" y="34" width="9" height="18" rx="2" fill="#345457"/><path d="M28 43h12M34 37v12M58 43h10" stroke="#fffbee" strokeWidth="5" strokeLinecap="round"/></>
     :option.motiv==="mond"?<><rect x="8" y="5" width="84" height="74" fill="#345457" rx="8"/><path d="M65 15a28 28 0 1 0 10 48A31 31 0 0 1 65 15" fill="#fff2c7"/></>
     :<><rect x="18" y="15" width="64" height="57" rx="3" fill={option.motiv==="metall"?"#9cafb4":option.motiv==="gummi"?"#40544c":option.motiv==="holz"?"#b88b64":option.motiv==="fenster"?(option.farbe??"#7bbfc4"):option.farbe??"#e9b45c"} stroke="#345457" strokeWidth="3"/>{option.motiv==="fenster"?<path d="M50 15v57M18 43h64" stroke="#345457" strokeWidth="3"/>:<path d="M30 30h40M30 45h40M30 60h40" stroke="#fff2c7" strokeWidth="3" opacity=".6"/>}</>}
   </svg>;
@@ -71,7 +75,32 @@ function BauAufgabe({stufe,phase,geschafft}:{stufe:Stufe;phase:number;geschafft:
     {phase>0&&<p className="bau-vorrat">Brücken: {bruecken.length} / {m.luecken.length}. Tippe eine Brücke zum Entfernen an.</p>}
     <div className="flex flex-wrap gap-3 mt-4"><button className="spiel-knopf spiel-knopf-dunkel" disabled={test==="laeuft"||(phase!==1&&sprung===undefined)} onClick={testen}>Weg testen</button><button className="spiel-knopf" disabled={test==="laeuft"} onClick={()=>{setBruecken([]);setSprung(undefined);setSchritt(0);setFlug(false);setTest("bereit");setMeldung("");}}>Neu bauen</button></div><p role="status" className="aufgaben-meldung">{meldung}</p><details className="spiel-wissen"><summary>Was steckt dahinter?</summary><p>Beim Gestalten eines Spiels baust du Wege und Regeln. Ausprobieren zeigt, ob dein Level funktioniert. Ein Fehler ist ein Hinweis zum Weiterbauen.</p></details></div>;
 }
-type ModulProps={stufe:Stufe;variante:number;geschafft:()=>void};
+/** Demo-Lektion: Folien aus der Checkpoint-Datei, danach optional eine Abschlussfrage. */
+function Lektion({lektion,stufe,geschafft}:{lektion:LektionDaten;stufe:Stufe;geschafft:()=>void}){
+  const [nr,setNr]=useState(0),vorlesen=useVorlesen();
+  const anzahl=lektion.folien.length,folie=lektion.folien[nr];
+  if(!folie)return lektion.abschlussfrage
+    ?<div><p className="lektion-zaehler">Kurze Frage zum Schluss</p><WahlAufgabe mission={lektion.abschlussfrage} geschafft={geschafft}/><button className="spiel-knopf mt-4" onClick={()=>setNr(anzahl-1)}><Symbol name="arrow" style={{transform:"rotate(180deg)"}}/>Zurück zur Lektion</button></div>
+    :null;
+  const text=stufe==="start"&&folie.kurz?folie.kurz:folie.text;
+  const letzte=nr===anzahl-1;
+  function weiter(){if(!letzte)setNr(nr+1);else if(lektion.abschlussfrage)setNr(anzahl);else geschafft();}
+  return <div className="lernaufgabe lektion">
+    <p className="lektion-zaehler" aria-live="polite">Folie {nr+1} von {anzahl}</p>
+    <div className="lektion-folie">
+      {folie.bild?<img src={folie.bild} alt={folie.alt} className="lektion-bild"/>:folie.motiv?<AufgabenBild option={{id:"folie",titel:folie.titel,motiv:folie.motiv}}/>:null}
+      <div><h3>{folie.titel}</h3><p>{text}</p>
+        {vorlesen.kann&&<button className="rund-knopf rund-klein" onClick={()=>vorlesen.sprich(`${folie.titel}. ${text}`)} aria-label="Folie vorlesen"><Symbol name="volume"/></button>}
+      </div>
+    </div>
+    <div className="lektion-punkte" aria-hidden="true">{lektion.folien.map((_,i)=><span key={i} className={i===nr?"ist-aktiv":i<nr?"ist-fertig":""}/>)}</div>
+    <div className="flex flex-wrap gap-3">
+      <button className="spiel-knopf" disabled={nr===0} onClick={()=>setNr(nr-1)}><Symbol name="arrow" style={{transform:"rotate(180deg)"}}/>Zurück</button>
+      <button className="spiel-knopf spiel-knopf-dunkel" onClick={weiter}><Symbol name="arrow"/>{!letzte?"Weiter":lektion.abschlussfrage?"Zur Frage":"Verstanden"}</button>
+    </div>
+  </div>;
+}
+type ModulProps={aktivitaet:Aktivitaet;stufe:Stufe;variante:number;geschafft:()=>void};
 /** Welche Ansicht zu welchem Lernmodul gehört. Ein fehlender Eintrag ist ein Typfehler. */
 const MODUL_ANSICHT:Record<ModulId,(p:ModulProps)=>React.ReactElement>={
   "roboter-code":({stufe,variante,geschafft})=><CodeAufgabe stufe={stufe} phase={variante} geschafft={geschafft}/>,
@@ -80,7 +109,8 @@ const MODUL_ANSICHT:Record<ModulId,(p:ModulProps)=>React.ReactElement>={
   stromkreis:({stufe,geschafft})=><SchalterAufgabe stufe={stufe} geschafft={geschafft}/>,
   "energie-wahl":({stufe,geschafft})=><WahlAufgabe mission={energieMission(stufe)} geschafft={geschafft}/>,
   "level-bau":({stufe,variante,geschafft})=><BauAufgabe stufe={stufe} phase={variante} geschafft={geschafft}/>,
+  lektion:({aktivitaet,stufe,geschafft})=>aktivitaet.modul==="lektion"?<Lektion lektion={aktivitaet} stufe={stufe} geschafft={geschafft}/>:<></>,
 };
 export function Lernaufgabe({aktivitaet,stufe,geschafft}:{aktivitaet:Aktivitaet;stufe:Stufe;geschafft:()=>void}){
-  return MODUL_ANSICHT[aktivitaet.modul]({stufe,variante:aktivitaet.variante??0,geschafft});
+  return MODUL_ANSICHT[aktivitaet.modul]({aktivitaet,stufe,variante:"variante" in aktivitaet?aktivitaet.variante??0:0,geschafft});
 }

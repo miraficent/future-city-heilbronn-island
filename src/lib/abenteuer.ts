@@ -1,4 +1,5 @@
 import type { Angebot } from "./angebot";
+import type { Motiv } from "./checkpoint";
 import { passendeSpielAngebote, STATIONEN, type Punkt, type Richtung } from "./spiel";
 
 export type Stufe = "start" | "weiter" | "profi";
@@ -47,7 +48,7 @@ export function fuehreCodeAus(befehle:Richtung[],mission:CodeMission){
   return {ok:amZiel&&alle,weg,grund:!alle?"Besuche auch alle gelben Pakete.":"Ergänze den Weg bis zur Fahne."};
 }
 
-export type BildOption={id:string;titel:string;motiv:"ball"|"rad"|"fenster"|"block"|"frage"|"schild"|"gruppe"|"sonne"|"mond"|"metall"|"holz"|"gummi";farbe?:string};
+export type BildOption={id:string;titel:string;motiv:Motiv;farbe?:string};
 export type WahlMission={frage:string;tipp:string;antworten:string[];optionen:BildOption[];wissen:string};
 const bild=(id:string,titel:string,motiv:BildOption["motiv"],farbe?:string):BildOption=>({id,titel,motiv,farbe});
 export function kiMission(stufe:Stufe,phase:number):WahlMission {

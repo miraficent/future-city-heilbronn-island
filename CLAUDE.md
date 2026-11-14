@@ -36,7 +36,7 @@ On Windows PowerShell use `npm.cmd` instead of `npm`.
 - `lib/`: pure logic, unit-tested in `tests/lib/`. Key game modules:
   - `stadt.ts`: town generation from the station list, walkable path network, collision, route planning, cars, zebra crossing
   - `spiel.ts`: `STATIONEN` (loaded from `konfiguration/checkpoints/<id>.json`, one file per institution) and matching real offers to stations by topic and age
-  - `checkpoint.ts`: zod schema for those files plus the `MODULE` list of reusable learning modules. It is validated only in `tests/lib/checkpoint.test.ts`, not at runtime, so zod stays out of the client bundle. A new module needs an entry in `MODULE` and a view in `MODUL_ANSICHT` (`components/spiel/lernaufgabe.tsx`). Progress IDs are `<station id>-<activity index>`.
+  - `checkpoint.ts`: zod schema for those files plus the `MODULE` list of reusable learning modules. It is validated only in `tests/lib/checkpoint.test.ts`, not at runtime, so zod stays out of the client bundle. A new module needs an entry in `MODULE` and a view in `MODUL_ANSICHT` (`components/spiel/lernaufgabe.tsx`). Progress IDs are `<station id>-<activity index>`. The `lektion` module is the exception to "content lives in code": its slides and final question are defined in the JSON itself.
   - `abenteuer.ts`: the tasks
   - `figuren.ts`: the player characters
 - `components/spiel/spielwelt.tsx`: the child game. It runs a `requestAnimationFrame` loop that combines React state with refs (`pos`, `route`, `startetRef`, `gesperrteTuer`, …) for values the loop reads every frame. It is paused whenever a popup (`fenster`) is open. Each station gives one rocket part, and once all parts are collected the rocket launches and the finale opens.

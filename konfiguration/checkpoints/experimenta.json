@@ -14,6 +14,46 @@
     "gross": "Abends bleibt die Stadt dunkel. Finde heraus, wie Strom zum Licht kommt."
   },
   "aktivitaeten": [
+    {
+      "titel": "Wie kommt Strom ins Licht?",
+      "modul": "lektion",
+      "folien": [
+        {
+          "titel": "Strom braucht einen Kreis",
+          "text": "Eine Lampe leuchtet nur, wenn der Strom einen geschlossenen Weg hat: von der Batterie durch das Kabel zur Lampe und wieder zurück zur Batterie.",
+          "kurz": "Strom läuft im Kreis. Ist der Kreis zu, leuchtet die Lampe.",
+          "motiv": "lampe"
+        },
+        {
+          "titel": "Die Batterie gibt den Schwung",
+          "text": "Die Batterie hat einen Plus- und einen Minuspol. Erst wenn beide Pole über den Kreis verbunden sind, kann Strom fließen.",
+          "kurz": "Die Batterie hat zwei Enden: Plus und Minus. Beide müssen verbunden sein.",
+          "motiv": "batterie"
+        },
+        {
+          "titel": "Leiter und Isolatoren",
+          "text": "Metalle wie Kupfer leiten Strom gut. Gummi und Kunststoff leiten ihn kaum. Darum stecken Kabel aus Kupfer in einer Hülle aus Kunststoff.",
+          "kurz": "Metall leitet Strom. Gummi nicht.",
+          "motiv": "metall"
+        },
+        {
+          "titel": "Sicher forschen",
+          "text": "Experimentiere nur mit kleinen Batterien. Der Strom aus der Steckdose ist sehr gefährlich, dort wird nie geforscht.",
+          "kurz": "Forsche nur mit kleinen Batterien. Nie an der Steckdose!",
+          "motiv": "schild"
+        }
+      ],
+      "abschlussfrage": {
+        "frage": "Wann leuchtet die Lampe?",
+        "optionen": [
+          { "id": "zu", "titel": "Der Kreis ist geschlossen", "motiv": "lampe", "farbe": "#f1ca65" },
+          { "id": "offen", "titel": "Der Kreis hat eine Lücke", "motiv": "lampe", "farbe": "#9cafb4" }
+        ],
+        "antworten": ["zu"],
+        "tipp": "Denk an die erste Folie: Strom braucht einen geschlossenen Weg.",
+        "wissen": "Ein offener Schalter oder ein loses Kabel ist eine Lücke im Kreis. Dann kann kein Strom fließen und die Lampe bleibt dunkel."
+      }
+    },
     { "titel": "Die Materialprobe", "modul": "material-wahl" },
     { "titel": "Die Lichtschalter", "modul": "stromkreis" },
     { "titel": "Energie für morgen", "modul": "energie-wahl" }
