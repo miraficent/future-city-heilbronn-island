@@ -128,7 +128,6 @@
 .start__planet { fill: var(--accent); }
 .start__titel { position: relative; margin: 0; font: 700 clamp(40px, 7vw, 64px)/1 "Baloo 2", sans-serif; }
 .start__unter { position: relative; margin: 0; font-size: 20px; color: var(--sea-shallow); }
-.start__vorschau { position: relative; width: min(520px, 90vw); height: auto; }
 .start__karten { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; width: min(760px, 100%); }
 .start__karte { display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 220px; padding: 32px 24px;
   border-radius: var(--radius-card); background: var(--night-2); color: var(--snow); text-decoration: none; box-shadow: 0 4px 0 var(--primary-dark);
