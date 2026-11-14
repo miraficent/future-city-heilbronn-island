@@ -131,6 +131,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const pos = useRef<Punkt>(stadt.start);
   const laeuftRef = useRef(false);
   const startetRef = useRef(false);
+  // Nach dem Finale startet die Rakete erst wieder automatisch, wenn man den Platz verlassen hat.
+  const platzGesperrt = useRef(false);
   const autosRef = useRef<Auto[]>(autos);
   const tasten = useRef(new Set<string>());
   const route = useRef<Punkt[]>([]);
@@ -369,8 +371,12 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   // Hinweistexte passend zur Situation
   useEffect(() => {
     if (startet) return;
+    const aufPlatz = amPlatz(stadt, position);
+    if (!aufPlatz) platzGesperrt.current = false;
     if (nah) setHinweis(`${nah.station.kurz} – tippe auf die Tür!`);
-    else if (amPlatz(stadt, position)) raketeErreicht();
+    else if (aufPlatz) {
+      if (!platzGesperrt.current) raketeErreicht();
+    }
     else if (alleTeile) setHinweis("Alle Teile da! Lauf zur Rakete!");
   }, [nah, position, stadt, alleTeile, startet, raketeErreicht]);
 
@@ -771,7 +777,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
 
       <Fensterrahmen
         offen={fenster === "finale"}
-        schliessen={() => { setFenster(undefined); startetRef.current = false; setStartet(false); setHinweis("Toll gemacht! Spiel weiter oder pack Kurse ein."); }}
+        schliessen={() => { setFenster(undefined); platzGesperrt.current = true; startetRef.current = false; setStartet(false); setHinweis("Toll gemacht! Spiel weiter oder pack Kurse ein."); }}
         kennung="finale-titel"
         titel="Die Rakete fliegt!"
         breit
