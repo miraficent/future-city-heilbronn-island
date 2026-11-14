@@ -13,6 +13,7 @@ import {
   preisText,
   tageszeitVon,
   terminband,
+  themaName,
   themenFuer,
   type ElternFilter,
 } from "@/lib/eltern-suche";
@@ -261,5 +262,19 @@ describe("themenFuer", () => {
     const kategorien = [{ id: "astronomy" as const, label_kids: "Sterne & Weltall", icon: "planet", color: "#3B4CCA", keywords: [] }];
     const liste = themenFuer(basis, kategorien, [a("1", { themen: ["astronomy", "ki"] })]);
     expect(liste.map((t) => [t.id, t.name])).toEqual([["ki", "Künstliche Intelligenz"], ["astronomy", "Sterne & Weltall"]]);
+  });
+});
+
+describe("Englisch", () => {
+  it("übersetzt Gruppen, Filter, Alter und Preis", () => {
+    const treffer = elternSuche([a("1", { termine: [{ start: "2026-11-15T10:00:00+01:00" }] }), a("2", { termine: [{ start: "2026-12-03T10:00:00+01:00" }] })], LEERER_ELTERN_FILTER, JETZT);
+    expect(nachZeitGruppieren(treffer, JETZT, "en").map((g) => g.titel)).toEqual(["This week", "December 2026"]);
+    const liste = aktiveFilter(filter({ alter: 9, wochentage: "wochenende", nurKostenlos: true, tag: "2026-11-21" }), { themen: {}, quellen: {} }, "en");
+    expect(liste.map((x) => x.text)).toEqual(["9 years", "Sat 21 Nov", "Weekends", "Free"]);
+    expect(alterHinweis(a("1"), "en")).toEqual({ text: "8–11 years", unklar: false });
+    expect(alterHinweis(a("1", { alterMin: undefined, alterMax: undefined, zielgruppen: ["eltern"] }), "en").text).toBe("for parents");
+    expect(preisText(a("1", { kosten: { euro: null, text: "siehe Anbieter" } }), "en")).toBe("Price: see provider");
+    expect(themaName({ id: "ki", name: "Künstliche Intelligenz" }, "en")).toBe("Artificial intelligence");
+    expect(themaName({ id: "neu", name: "Neues Thema" }, "en")).toBe("Neues Thema");
   });
 });

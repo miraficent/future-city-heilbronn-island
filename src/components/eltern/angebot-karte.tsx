@@ -2,19 +2,20 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { Angebot, Termin } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
-import { alterHinweis, kurzTitel, ortText, preisText, tagSchluessel } from "@/lib/eltern-suche";
-import { ART_TEXT, formatTagLang, formatZeit } from "@/lib/format";
+import { alterHinweis, ART_TEXTE, kurzTitel, ortText, preisText, tagSchluessel } from "@/lib/eltern-suche";
 import { slugAusId } from "@/lib/routen";
 import { kurzname } from "../einrichtung-badge";
 import { Symbol } from "../symbol";
 import { Badge, Button } from "../ui";
 import { DatumBlock } from "./datum-block";
+import { datum, useSprache } from "./sprache";
+import { TEXTE, type Texte } from "./texte";
 
 /** Plätze nur zeigen, wenn der Anbieter etwas gemeldet hat. */
-function PlatzBadge({ status }: { status: Angebot["status"] }) {
-  if (status === "frei") return <Badge art="success" icon="check">Plätze frei</Badge>;
-  if (status === "wenige") return <Badge art="accent">Nur noch wenige Plätze</Badge>;
-  if (status === "ausgebucht") return <Badge>Ausgebucht</Badge>;
+function PlatzBadge({ status, t }: { status: Angebot["status"]; t: Texte["karte"] }) {
+  if (status === "frei") return <Badge art="success" icon="check">{t.frei}</Badge>;
+  if (status === "wenige") return <Badge art="accent">{t.wenige}</Badge>;
+  if (status === "ausgebucht") return <Badge>{t.ausgebucht}</Badge>;
   return null;
 }
 
@@ -25,17 +26,20 @@ function PlatzBadge({ status }: { status: Angebot["status"] }) {
 export function ElternKarte({ angebot: a, termin, weitere, meta, jetzt, gemerkt, merken }: {
   angebot: Angebot; termin: Termin; weitere: number; meta: Meta; jetzt: string; gemerkt: boolean; merken: (id: string) => void;
 }) {
+  const sprache = useSprache();
+  const t = TEXTE[sprache].karte;
+  const d = datum(sprache);
   const quelle = meta.quellen.find((q) => q.id === a.quelle);
   const einrichtung = kurzname(quelle, a.quelle);
   const titel = kurzTitel(a.titel);
-  const alter = alterHinweis(a);
-  const themen = a.themen.map((id) => meta.themen.find((t) => t.id === id)?.name ?? id);
-  const zeit = termin.ende ? `${formatZeit(termin.start)}–${formatZeit(termin.ende)} Uhr` : `${formatZeit(termin.start)} Uhr`;
+  const alter = alterHinweis(a, sprache);
+  const themen = a.themen.map((id) => meta.themen.find((x) => x.id === id)?.name ?? id);
   const detail = `/angebot/${slugAusId(a.id)}/`;
   const ausgebucht = a.status === "ausgebucht";
   // Live-Events („ev:…“) haben keine eigene Detailseite – dort führt alles direkt zum Anbieter.
   const hatDetails = !a.id.startsWith("ev:");
   const titelId = `karte-${slugAusId(a.id).replace(/[^\w-]/g, "-")}`;
+  const aktion = ausgebucht ? t.ansehen : t.anmelden;
 
   return (
     <article className="el-karte el-einblenden" aria-labelledby={titelId}>
@@ -43,31 +47,29 @@ export function ElternKarte({ angebot: a, termin, weitere, meta, jetzt, gemerkt,
       <div>
         <p className="el-karte__oben">
           <span className="el-einrichtung" style={{ ["--farbe" as string]: quelle?.farbe } as CSSProperties}><i aria-hidden="true" />{einrichtung}</span>
-          <span>{ART_TEXT[a.art]}</span>
+          <span>{ART_TEXTE[sprache][a.art]}</span>
           <span>{themen.join(" · ")}</span>
         </p>
         <h3 id={titelId}>{hatDetails ? <Link href={detail}>{titel}</Link> : titel}</h3>
         <ul className="el-infos">
-          <li><Symbol name="cake" /><span className="nur-screenreader">Alter: </span>{alter.text}</li>
-          <li><Symbol name="clock" /><span className="nur-screenreader">{formatTagLang(termin.start)}, </span>{zeit}</li>
-          <li><Symbol name="pin" /><span className="nur-screenreader">Ort: </span>{ortText(a)}</li>
-          <li><Symbol name="euro" /><span className="nur-screenreader">Preis: </span>{preisText(a)}</li>
+          <li><Symbol name="cake" /><span className="nur-screenreader">{t.alter}</span>{alter.text}</li>
+          <li><Symbol name="clock" /><span className="nur-screenreader">{d.tagLang(termin.start)}, </span>{d.zeit(termin.start, termin.ende)}</li>
+          <li><Symbol name="pin" /><span className="nur-screenreader">{t.ort}</span>{ortText(a)}</li>
+          <li><Symbol name="euro" /><span className="nur-screenreader">{t.preis}</span>{preisText(a, sprache)}</li>
         </ul>
-        {a.teaser && <p className="el-karte__text">{a.teaser}</p>}
+        {a.teaser && <p className="el-karte__text" lang="de">{a.teaser}</p>}
         {(a.status !== "unbekannt" || weitere > 0) && (
           <div className="el-karte__badges">
-            <PlatzBadge status={a.status} />
-            {weitere > 0 && <Badge icon="calendar">{weitere === 1 ? "1 weiterer Termin" : `${weitere} weitere Termine`}</Badge>}
+            <PlatzBadge status={a.status} t={t} />
+            {weitere > 0 && <Badge icon="calendar">{t.weitere(weitere)}</Badge>}
           </div>
         )}
       </div>
       <div className="el-karte__aktionen">
-        <Button variante={ausgebucht ? "ghost" : "primary"} icon="external" href={a.url} ariaLabel={`${ausgebucht ? "Beim Anbieter ansehen" : "Zur Anmeldung"}: ${titel} (öffnet die Seite von ${einrichtung})`}>
-          {ausgebucht ? "Beim Anbieter ansehen" : "Zur Anmeldung"}
-        </Button>
-        {hatDetails && <Button variante="ghost" href={detail} ariaLabel={`Details zu ${titel}`}>Details</Button>}
-        <button type="button" className="el-merken" aria-pressed={gemerkt} aria-label={`${titel} ${gemerkt ? "von der Merkliste nehmen" : "merken"}`} onClick={() => merken(a.id)}>
-          <Symbol name="star" />{gemerkt ? "Gemerkt" : "Merken"}
+        <Button variante={ausgebucht ? "ghost" : "primary"} icon="external" href={a.url} ariaLabel={t.anmeldenLabel(aktion, titel, einrichtung)}>{aktion}</Button>
+        {hatDetails && <Button variante="ghost" href={detail} ariaLabel={t.detailsLabel(titel)}>{t.details}</Button>}
+        <button type="button" className="el-merken" aria-pressed={gemerkt} aria-label={t.merkenLabel(titel, gemerkt)} onClick={() => merken(a.id)}>
+          <Symbol name="star" />{gemerkt ? t.gemerkt : t.merken}
         </button>
       </div>
     </article>

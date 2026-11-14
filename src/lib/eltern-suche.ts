@@ -9,7 +9,7 @@ import type { Angebot, Art, Status, Termin, Thema, Zielgruppe } from "./angebot"
 import { hatAltersangabe } from "./entdecken";
 import { isFree } from "./events";
 import { filtere, LEERER_FILTER, type Filter } from "./filter";
-import { alterText, ART_TEXT, formatMonat } from "./format";
+import { alterText, ART_TEXT } from "./format";
 import { slugAusId } from "./routen";
 import type { Category, CategoryId, EventType, LiveEvent } from "@/types";
 
@@ -29,22 +29,59 @@ export type ElternFilter = Filter & {
 
 export const LEERER_ELTERN_FILTER: ElternFilter = { ...LEERER_FILTER, wochentage: "alle", tageszeiten: [] };
 
-export const TAGESZEIT_TEXT: Record<Tageszeit, string> = { vormittags: "Vormittags", nachmittags: "Nachmittags", abends: "Abends" };
-export const WOCHENTAGE_TEXT: Record<Wochentage, string> = { alle: "Alle Tage", werktags: "Unter der Woche", wochenende: "Am Wochenende" };
-export const ZIELGRUPPE_TEXT: Record<Zielgruppe, string> = {
-  kinder: "Kinder",
-  teens: "Teens",
-  eltern: "Eltern",
-  familien: "Familien",
-  fachkraefte: "Fachkräfte",
-  erwachsene: "Erwachsene",
+/** Sprache des Eltern-Bereichs. Texte der Anbieter (Titel, Beschreibung) bleiben im Original. */
+export type Sprache = "de" | "en";
+export const LOCALE: Record<Sprache, string> = { de: "de-DE", en: "en-GB" };
+
+export const TAGESZEIT_TEXTE: Record<Sprache, Record<Tageszeit, string>> = {
+  de: { vormittags: "Vormittags", nachmittags: "Nachmittags", abends: "Abends" },
+  en: { vormittags: "Mornings", nachmittags: "Afternoons", abends: "Evenings" },
 };
+export const WOCHENTAGE_TEXTE: Record<Sprache, Record<Wochentage, string>> = {
+  de: { alle: "Alle Tage", werktags: "Unter der Woche", wochenende: "Am Wochenende" },
+  en: { alle: "All days", werktags: "Weekdays", wochenende: "Weekends" },
+};
+export const ZIELGRUPPE_TEXTE: Record<Sprache, Record<Zielgruppe, string>> = {
+  de: { kinder: "Kinder", teens: "Teens", eltern: "Eltern", familien: "Familien", fachkraefte: "Fachkräfte", erwachsene: "Erwachsene" },
+  en: { kinder: "Children", teens: "Teens", eltern: "Parents", familien: "Families", fachkraefte: "Educators", erwachsene: "Adults" },
+};
+export const ART_TEXTE: Record<Sprache, Record<Art, string>> = {
+  de: ART_TEXT,
+  en: { kurs: "Course", workshop: "Workshop", veranstaltung: "Event", ferienprogramm: "Holiday programme", vortrag: "Talk" },
+};
+/** Englische Namen der Themen und Event-Kategorien; unbekannte Themen behalten ihren Namen. */
+const THEMA_EN: Record<string, string> = {
+  ki: "Artificial intelligence",
+  coding: "Coding & robotics",
+  gaming: "Gaming & games",
+  astronomy: "Space & stars",
+  physics: "Physics & experiments",
+  biology: "Nature & animals",
+  math: "Maths & puzzles",
+  it: "Computers & AI",
+  art: "Art & creativity",
+  family: "With the family",
+};
+export function themaName(t: { id: string; name: string }, sprache: Sprache = "de"): string {
+  return sprache === "en" ? THEMA_EN[t.id] ?? t.name : t.name;
+}
+
+export const TAGESZEIT_TEXT = TAGESZEIT_TEXTE.de;
+export const WOCHENTAGE_TEXT = WOCHENTAGE_TEXTE.de;
+export const ZIELGRUPPE_TEXT = ZIELGRUPPE_TEXTE.de;
 
 // ---------- Datum in Berliner Zeit ----------
 
 const tagSchluesselFormat = new Intl.DateTimeFormat("en-CA", { timeZone: ZONE, year: "numeric", month: "2-digit", day: "2-digit" });
 const stundeFormat = new Intl.DateTimeFormat("en-GB", { timeZone: ZONE, hour: "numeric", hourCycle: "h23" });
-const tagKurzFormat = new Intl.DateTimeFormat("de-DE", { timeZone: "UTC", weekday: "short", day: "numeric", month: "short" });
+const tagKurzFormat: Record<Sprache, Intl.DateTimeFormat> = {
+  de: new Intl.DateTimeFormat("de-DE", { timeZone: "UTC", weekday: "short", day: "numeric", month: "short" }),
+  en: new Intl.DateTimeFormat("en-GB", { timeZone: "UTC", weekday: "short", day: "numeric", month: "short" }),
+};
+const monatFormat: Record<Sprache, Intl.DateTimeFormat> = {
+  de: new Intl.DateTimeFormat("de-DE", { timeZone: ZONE, month: "long", year: "numeric" }),
+  en: new Intl.DateTimeFormat("en-GB", { timeZone: ZONE, month: "long", year: "numeric" }),
+};
 
 /** Kalendertag in Berlin als „2026-11-17“ */
 export function tagSchluessel(zeit: string | number | Date): string {
@@ -64,8 +101,8 @@ function wochentagVon(tag: string): number {
 }
 
 /** „Sa., 21. Nov.“ für einen Tag-Schlüssel */
-export function tagText(tag: string): string {
-  return tagKurzFormat.format(new Date(`${tag}T12:00:00Z`));
+export function tagText(tag: string, sprache: Sprache = "de"): string {
+  return tagKurzFormat[sprache].format(new Date(`${tag}T12:00:00Z`));
 }
 
 export function tageszeitVon(iso: string): Tageszeit {
@@ -129,14 +166,16 @@ export function terminband(angebote: Angebot[], f: ElternFilter, jetzt: Date, ta
 
 export type Zeitgruppe = { titel: string; treffer: Treffer[] };
 
-export function nachZeitGruppieren(treffer: Treffer[], jetzt: Date): Zeitgruppe[] {
+const WOCHE_TEXT: Record<Sprache, [string, string]> = { de: ["Diese Woche", "Nächste Woche"], en: ["This week", "Next week"] };
+
+export function nachZeitGruppieren(treffer: Treffer[], jetzt: Date, sprache: Sprache = "de"): Zeitgruppe[] {
   const heute = tagSchluessel(jetzt);
   const naechsterMontag = plusTage(heute, 7 - ((wochentagVon(heute) + 6) % 7));
   const uebernaechsterMontag = plusTage(naechsterMontag, 7);
   const gruppen = new Map<string, Treffer[]>();
   for (const t of treffer) {
     const tag = tagSchluessel(t.termin.start);
-    const titel = tag < naechsterMontag ? "Diese Woche" : tag < uebernaechsterMontag ? "Nächste Woche" : formatMonat(t.termin.start);
+    const titel = tag < naechsterMontag ? WOCHE_TEXT[sprache][0] : tag < uebernaechsterMontag ? WOCHE_TEXT[sprache][1] : monatFormat[sprache].format(new Date(t.termin.start));
     gruppen.set(titel, [...(gruppen.get(titel) ?? []), t]);
   }
   return [...gruppen].map(([titel, liste]) => ({ titel, treffer: liste }));
@@ -146,21 +185,25 @@ export function nachZeitGruppieren(treffer: Treffer[], jetzt: Date): Zeitgruppe[
 
 export type AktiverFilter = { id: string; text: string; ohne: ElternFilter };
 
-export function aktiveFilter(f: ElternFilter, namen: { themen: Record<string, string>; quellen: Record<string, string> }): AktiverFilter[] {
+export function aktiveFilter(f: ElternFilter, namen: { themen: Record<string, string>; quellen: Record<string, string> }, sprache: Sprache = "de"): AktiverFilter[] {
+  const en = sprache === "en";
   const liste: AktiverFilter[] = [];
   const dazu = (id: string, text: string, ohne: Partial<ElternFilter>) => liste.push({ id, text, ohne: { ...f, ...ohne } });
-  if (f.suche.trim()) dazu("suche", `„${f.suche.trim()}“`, { suche: "" });
+  if (f.suche.trim()) dazu("suche", en ? `“${f.suche.trim()}”` : `„${f.suche.trim()}“`, { suche: "" });
   for (const t of f.themen) dazu(`thema-${t}`, namen.themen[t] ?? t, { themen: f.themen.filter((x) => x !== t) });
-  if (f.alter !== undefined) dazu("alter", `${f.alter} Jahre`, { alter: undefined });
-  if (f.zeitraum !== "alle") dazu("zeitraum", f.zeitraum === "woche" ? "Nächste 7 Tage" : "Nächster Monat", { zeitraum: "alle" });
-  if (f.tag) dazu("tag", tagText(f.tag), { tag: undefined });
-  if (f.wochentage !== "alle") dazu("wochentage", WOCHENTAGE_TEXT[f.wochentage], { wochentage: "alle" });
-  for (const z of f.tageszeiten) dazu(`zeit-${z}`, TAGESZEIT_TEXT[z], { tageszeiten: f.tageszeiten.filter((x) => x !== z) });
+  if (f.alter !== undefined) dazu("alter", en ? `${f.alter} years` : `${f.alter} Jahre`, { alter: undefined });
+  if (f.zeitraum !== "alle") {
+    const text = f.zeitraum === "woche" ? (en ? "Next 7 days" : "Nächste 7 Tage") : en ? "Next month" : "Nächster Monat";
+    dazu("zeitraum", text, { zeitraum: "alle" });
+  }
+  if (f.tag) dazu("tag", tagText(f.tag, sprache), { tag: undefined });
+  if (f.wochentage !== "alle") dazu("wochentage", WOCHENTAGE_TEXTE[sprache][f.wochentage], { wochentage: "alle" });
+  for (const z of f.tageszeiten) dazu(`zeit-${z}`, TAGESZEIT_TEXTE[sprache][z], { tageszeiten: f.tageszeiten.filter((x) => x !== z) });
   for (const q of f.quellen) dazu(`quelle-${q}`, namen.quellen[q] ?? q, { quellen: f.quellen.filter((x) => x !== q) });
-  for (const art of f.arten) dazu(`art-${art}`, ART_TEXT[art], { arten: f.arten.filter((x) => x !== art) });
-  for (const z of f.zielgruppen) dazu(`fuer-${z}`, `Für ${ZIELGRUPPE_TEXT[z]}`, { zielgruppen: f.zielgruppen.filter((x) => x !== z) });
-  if (f.nurKostenlos) dazu("kostenlos", "Kostenlos", { nurKostenlos: false });
-  if (f.nurFrei) dazu("frei", "Freie Plätze", { nurFrei: false });
+  for (const art of f.arten) dazu(`art-${art}`, ART_TEXTE[sprache][art], { arten: f.arten.filter((x) => x !== art) });
+  for (const z of f.zielgruppen) dazu(`fuer-${z}`, `${en ? "For" : "Für"} ${ZIELGRUPPE_TEXTE[sprache][z]}`, { zielgruppen: f.zielgruppen.filter((x) => x !== z) });
+  if (f.nurKostenlos) dazu("kostenlos", en ? "Free" : "Kostenlos", { nurKostenlos: false });
+  if (f.nurFrei) dazu("frei", en ? "Places available" : "Freie Plätze", { nurFrei: false });
   return liste;
 }
 
@@ -178,9 +221,9 @@ export function ortText(a: Angebot): string {
   return a.ort.name;
 }
 
-export function preisText(a: Angebot): string {
-  if (a.kosten.euro === 0) return "Kostenlos";
-  if (a.kosten.text === "siehe Anbieter") return "Preis beim Anbieter";
+export function preisText(a: Angebot, sprache: Sprache = "de"): string {
+  if (a.kosten.euro === 0) return sprache === "en" ? "Free" : "Kostenlos";
+  if (a.kosten.text === "siehe Anbieter") return sprache === "en" ? "Price: see provider" : "Preis beim Anbieter";
   return a.kosten.text;
 }
 
@@ -188,17 +231,33 @@ export function preisText(a: Angebot): string {
  * Alter ehrlich anzeigen: Fehlt es, steht dort „Alter unklar“ – nie ein geschätzter Wert.
  * Angebote nur für Erwachsene (Eltern, Fachkräfte, Familien) nennen stattdessen die Zielgruppe.
  */
-export function alterHinweis(a: Angebot): { text: string; unklar: boolean } {
-  if (hatAltersangabe(a)) return { text: alterText(a), unklar: false };
-  if (a.zielgruppen.some((z) => z !== "kinder" && z !== "teens")) return { text: alterText(a), unklar: false };
-  return { text: "Alter unklar", unklar: true };
+export function alterHinweis(a: Angebot, sprache: Sprache = "de"): { text: string; unklar: boolean } {
+  if (sprache === "de") {
+    if (hatAltersangabe(a)) return { text: alterText(a), unklar: false };
+    if (a.zielgruppen.some((z) => z !== "kinder" && z !== "teens")) return { text: alterText(a), unklar: false };
+    return { text: "Alter unklar", unklar: true };
+  }
+  if (hatAltersangabe(a)) return { text: alterSpanne(a.alterMin ?? null, a.alterMax ?? null, "en"), unklar: false };
+  for (const [gruppe, text] of [["fachkraefte", "for educators"], ["eltern", "for parents"], ["familien", "for families"], ["erwachsene", "for adults"]] as const) {
+    if (a.zielgruppen.includes(gruppe)) return { text, unklar: false };
+  }
+  return { text: "Age not stated", unklar: true };
 }
 
-function alterSpanne(min: number | null, max: number | null): string {
-  if (min !== null && max !== null) return `${min}–${max} Jahre`;
-  if (min !== null) return `ab ${min} Jahren`;
-  if (max !== null) return `bis ${max} Jahre`;
-  return "Alter unklar";
+function alterSpanne(min: number | null, max: number | null, sprache: Sprache = "de"): string {
+  const en = sprache === "en";
+  if (min !== null && max !== null) return en ? `${min}–${max} years` : `${min}–${max} Jahre`;
+  if (min !== null) return en ? `from ${min}` : `ab ${min} Jahren`;
+  if (max !== null) return en ? `up to ${max}` : `bis ${max} Jahre`;
+  return en ? "Age not stated" : "Alter unklar";
+}
+
+const STATUS_TEXTE: Record<Sprache, Record<Status, string>> = {
+  de: { frei: "Plätze frei", wenige: "Wenige Plätze gemeldet", ausgebucht: "Ausgebucht", unbekannt: "Plätze: beim Anbieter" },
+  en: { frei: "Places available", wenige: "Few places left", ausgebucht: "Fully booked", unbekannt: "Places: see provider" },
+};
+export function statusAnzeige(status: Status, sprache: Sprache = "de"): string {
+  return STATUS_TEXTE[sprache][status];
 }
 
 // ---------- Wünsche des Kindes ----------
@@ -224,7 +283,7 @@ export type Wunsch = {
  * Was das Kind mit „Da will ich hin!“ gewählt hat (IDs aus der Browsersitzung) –
  * Kurse und Live-Events („ev:“ + ID) in einem Format. Unbekannte IDs fallen weg. Kommende zuerst.
  */
-export function kindWuensche(ids: string[], angebote: Angebot[], events: LiveEvent[], einrichtungen: Record<string, string>, jetzt: Date): Wunsch[] {
+export function kindWuensche(ids: string[], angebote: Angebot[], events: LiveEvent[], einrichtungen: Record<string, string>, jetzt: Date, sprache: Sprache = "de"): Wunsch[] {
   const liste: Wunsch[] = [];
   for (const id of new Set(ids)) {
     if (id.startsWith("ev:")) {
@@ -237,8 +296,8 @@ export function kindWuensche(ids: string[], angebote: Angebot[], events: LiveEve
         ort: e.location,
         start: e.start,
         ende: e.end ?? undefined,
-        alter: alterSpanne(e.ageMin, e.ageMax),
-        preis: isFree(e) ? "Kostenlos" : e.cost ?? "Preis beim Anbieter",
+        alter: alterSpanne(e.ageMin, e.ageMax, sprache),
+        preis: isFree(e) ? (sprache === "en" ? "Free" : "Kostenlos") : e.cost ?? (sprache === "en" ? "Price: see provider" : "Preis beim Anbieter"),
         anmeldeUrl: e.registrationUrl,
         beispiel: e.isDummy,
         vorbei: new Date(e.end ?? e.start).getTime() < jetzt.getTime(),
@@ -256,8 +315,8 @@ export function kindWuensche(ids: string[], angebote: Angebot[], events: LiveEve
       ort: ortText(a),
       start: termin.start,
       ende: termin.ende,
-      alter: alterHinweis(a).text,
-      preis: preisText(a),
+      alter: alterHinweis(a, sprache).text,
+      preis: preisText(a, sprache),
       anmeldeUrl: a.url,
       detailPfad: `/angebot/${slugAusId(a.id)}/`,
       status: a.status,
