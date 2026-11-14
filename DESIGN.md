@@ -26,6 +26,9 @@ Read this file together with CLAUDE.md before changing any UI.
 >    Weniger Häuser als zuvor, damit die Karte ruhig bleibt.
 > 11. **Kinder-Karte ist eine gemalte Illustration** (`/kinder/`): Hintergrund `public/karte/heilbronn-karte.jpg` (1536 × 1024, ohne Gebäude). Darauf liegen Fachwerkhäuser (`fachwerkhaus.tsx`) auf den früheren Schattenflächen und isometrische Einrichtungsgebäude im Stil der experimenta-Zeichnung (`institut-gebaeude.tsx`). **Nur in diesen Gebäuden und in den drei Kinderfiguren (`kinder-figuren.tsx`, Figurenwahl über die Eule) sind Verläufe erlaubt.** 
 >    Positionen: `src/lib/bildkarte.ts`. Die gezeichnete Stadtkarte (`insel-karte.tsx`) bleibt als Rückfall.
+> 12. **Einrichtungsseite = Themenwelt** (`/checkpoint/[id]/`): leuchtender Raum mit Fluchtgitter in den Farben der Einrichtung,
+>    Angebote als Kacheln kreuz und quer im Raum (leichtes Wackeln), unten die gewählte Kinderfigur von hinten.
+>    Kachel antippen → Eule liest vor → „Da will ich hin!“. Verläufe nur für den Lichtschein und die Kachel-Struktur.
 Goal: ONE consistent look for the whole website: map, kids pages, parent dashboard, games.
 Do not invent new colors, fonts or component styles. If something is missing, add it here first.
 

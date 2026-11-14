@@ -260,3 +260,77 @@
 @media (prefers-reduced-motion: reduce) {
   .ig-wippen, .ig-glanz, .ig-schweben, .ig-puls, .ig-rauch, .ig-blinken, .ig-welle, .ig-wehen, .kf-huepfen, .kf-winken { animation: none; }
 }
+
+/* ---------- Themenwelt (Einrichtungsseite für Kinder, DESIGN.md Entscheidung 12) ---------- */
+.welt { position: absolute; inset: 0; overflow: hidden; background: var(--welt-grund); color: var(--white); }
+.welt__raum { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.welt__oben { position: absolute; top: 16px; left: 16px; z-index: 30; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.welt__schild { margin: 0; padding: 8px 28px; font: 700 clamp(28px, 3.4vw, 48px)/1.1 "Baloo 2", sans-serif; color: var(--ink);
+  background: rgba(255, 255, 255, .85); transform: rotate(-1.5deg); border-radius: 6px; box-shadow: 0 4px 0 0 rgba(0, 0, 0, .25); }
+.welt__themen { position: absolute; top: 16px; right: 16px; z-index: 30; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 50%; }
+.welt__thema { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .12); color: var(--white); font: 700 16px/1 "Nunito", sans-serif; }
+.welt__thema .symbol { width: 20px; height: 20px; }
+.welt__thema[aria-pressed="true"] { background: var(--white); color: var(--ink); border-color: var(--farbe, var(--welt-licht)); }
+
+.welt__kacheln { position: absolute; inset: 0; z-index: 10; }
+.welt__platz { position: absolute; left: var(--x); top: var(--y); width: clamp(190px, 17vw, 290px); transform: translate(-50%, -50%) scale(var(--s)); }
+.welt__platz:hover, .welt__platz:focus-within { z-index: 25 !important; }
+.welt__kachel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; width: 100%; aspect-ratio: 16 / 10;
+  padding: 14px; border: 0; border-radius: 6px; cursor: pointer; text-align: left; color: var(--white); overflow: hidden;
+  background-color: var(--farbe);
+  background-image: repeating-linear-gradient(100deg, rgba(255, 255, 255, .07) 0 3px, transparent 3px 9px);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .25), 0 14px 30px rgba(0, 0, 0, .45);
+  transform: rotate(var(--r)); animation: welt-wackeln var(--dauer, 3.6s) ease-in-out var(--verz, 0s) infinite;
+  transition: box-shadow .2s ease; }
+.welt__kachel:hover, .welt__kachel.ist-offen { box-shadow: 0 0 0 4px var(--white), 0 0 40px var(--welt-licht), 0 14px 30px rgba(0, 0, 0, .45); }
+.welt__kachel:focus-visible { outline: 4px solid var(--white); outline-offset: 4px; }
+@keyframes welt-wackeln {
+  0%, 100% { transform: rotate(var(--r)) translateY(0); }
+  33% { transform: rotate(calc(var(--r) + 1.2deg)) translateY(-5px); }
+  66% { transform: rotate(calc(var(--r) - 0.8deg)) translateY(2px); }
+}
+.welt__kachel-bild { position: absolute; top: 10px; right: 12px; opacity: .9; }
+.welt__kachel-bild .symbol { width: clamp(56px, 5vw, 84px); height: auto; color: var(--white); filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .2)); }
+.welt__kachel-titel { align-self: flex-start; max-width: 92%; padding: 4px 10px; border-radius: 4px; transform: rotate(-2deg);
+  background: rgba(0, 0, 0, .28); font: 700 clamp(16px, 1.3vw, 21px)/1.2 "Baloo 2", sans-serif;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.welt__kachel-zeit { display: inline-flex; align-items: center; gap: 6px; font: 700 14px/1 "Nunito", sans-serif; opacity: .95; }
+.welt__kachel-zeit .symbol { width: 16px; height: 16px; }
+.welt__kachel-herz { position: absolute; top: 10px; left: 10px; display: inline-flex; padding: 6px; border-radius: 999px; background: var(--wish); }
+.welt__kachel-herz .symbol { width: 18px; height: 18px; }
+
+.welt__blaettern { position: absolute; top: 74%; z-index: 28; display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px;
+  border-radius: 999px; border: 0; background: rgba(255, 255, 255, .9); color: var(--ink); cursor: pointer; box-shadow: 0 4px 0 0 rgba(0, 0, 0, .3); }
+.welt__blaettern:disabled { opacity: .3; cursor: default; }
+.welt__blaettern .symbol { width: 28px; height: 28px; }
+.welt__blaettern--links { left: 12px; }
+.welt__blaettern--rechts { right: 12px; }
+
+.welt__figur { position: absolute; left: 50%; bottom: -3vh; z-index: 20; height: clamp(200px, 38vh, 380px); width: auto;
+  transform: translateX(-50%); transform-origin: 50% 100%; animation: welt-figur 3s ease-in-out infinite; pointer-events: none;
+  filter: drop-shadow(0 0 24px rgba(0, 0, 0, .35)); }
+@keyframes welt-figur { 0%, 100% { transform: translateX(-50%) rotate(0deg); } 50% { transform: translateX(-50%) rotate(1.2deg) translateY(-4px); } }
+
+.welt__eule { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40; color: var(--ink); animation: welt-eule .35s ease-out; }
+@keyframes welt-eule { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+.welt__eule-info { display: flex; align-items: center; gap: 8px; width: 100%; margin: 0; font: 600 18px/1.4 "Nunito", sans-serif; color: var(--ink-soft); }
+.welt__eule-info .symbol { width: 20px; height: 20px; }
+.welt__leer { position: absolute; inset: 0; z-index: 25; display: grid; place-items: center; padding: 16px; color: var(--ink); }
+
+@media (max-width: 640px) {
+  .welt { overflow-y: auto; }
+  .welt__raum { position: fixed; top: 68px; height: calc(100% - 68px); }
+  .welt__themen { position: relative; top: auto; right: auto; max-width: none; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 84px 16px 0; }
+  .welt__thema { white-space: nowrap; flex: none; }
+  .welt__kacheln { position: relative; inset: auto; display: flex; flex-direction: column; gap: 22px; padding: 24px 16px 42vh; }
+  .welt__platz { position: relative; left: auto; top: auto; width: 80%; transform: none; }
+  .welt__platz:nth-child(odd) { align-self: flex-start; }
+  .welt__platz:nth-child(even) { align-self: flex-end; }
+  .welt__kachel-bild .symbol { width: 48px; }
+  .welt__blaettern { position: fixed; top: auto; bottom: 16px; width: 52px; height: 52px; }
+  .welt__figur { position: fixed; height: 19vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welt__kachel, .welt__figur, .welt__eule { animation: none; }
+}

@@ -178,3 +178,96 @@ export function KinderFigurBild({ art, className = "" }: { art: FigurArt; classN
     </svg>
   );
 }
+
+/** Haare von hinten: bedecken fast den ganzen Kopf */
+function HaareHinten({ art }: { art: FigurArt }) {
+  if (art === "orange") {
+    const locken: [number, number, number][] = [
+      [50, 60, 11], [56, 44, 12], [68, 34, 12], [80, 31, 12], [92, 34, 12], [104, 44, 12], [110, 60, 11],
+      [50, 78, 11], [62, 92, 12], [80, 98, 12], [98, 92, 12], [110, 78, 11],
+    ];
+    return (
+      <>
+        {locken.map(([cx, cy, r]) => <circle key={`l${cx}${cy}`} cx={cx} cy={cy} r={r} fill="#2a1d24" stroke={LINIE} strokeWidth={3} />)}
+        <circle cx={80} cy={64} r={30} fill="#2a1d24" />
+        <circle cx={66} cy={74} r={14} fill="#2a1d24" />
+        <circle cx={94} cy={74} r={14} fill="#2a1d24" />
+      </>
+    );
+  }
+  const farbe = art === "lila" ? "#3a2a4a" : "#8a4b2a";
+  const glanz = art === "lila" ? "#5e4a72" : "#b06a3e";
+  return (
+    <>
+      <path d="M44 76 Q40 30 80 32 Q120 30 116 76 Q118 96 104 102 Q80 108 56 102 Q42 96 44 76Z" fill={farbe} stroke={LINIE} strokeWidth={3.5} />
+      <path d="M62 44 Q72 38 84 40" fill="none" stroke={glanz} strokeWidth={3} />
+      <path d="M80 34 V100" fill="none" stroke={glanz} strokeWidth={2} opacity={0.6} />
+      {art === "lila" && <path d="M74 34 Q76 18 92 20 Q84 25 86 34Z" fill={farbe} stroke={LINIE} strokeWidth={3} />}
+    </>
+  );
+}
+
+/** Dieselbe Figur von hinten (für die Themenwelt: das Kind schaut auf die Kacheln) */
+export function KinderFigurRuecken({ art }: { art: FigurArt }) {
+  const s = STIL[art];
+  const id = useId().replace(/:/g, "");
+  const pulli = `${id}-pulli`, tasche = `${id}-tasche`;
+  return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <defs>
+        <linearGradient id={pulli} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={s.pulli[0]} /><stop offset="1" stopColor={s.pulli[1]} /></linearGradient>
+        <linearGradient id={tasche} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={s.tasche[0]} /><stop offset="1" stopColor={s.tasche[1]} /></linearGradient>
+      </defs>
+      <ellipse cx={80} cy={224} rx={42} ry={8} fill={LINIE} opacity={0.25} />
+
+      {/* Zöpfe */}
+      {art === "tuerkis" && (
+        <>
+          <path d="M44 66 Q26 72 28 98 Q30 112 38 116 Q36 100 48 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
+          <path d="M116 66 Q134 72 132 98 Q130 112 122 116 Q124 100 112 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
+        </>
+      )}
+
+      {/* Beine und Schuhe (Fersen) */}
+      <path d="M68 172 L66 204 M92 172 L94 204" stroke={LINIE} strokeWidth={20} />
+      <path d="M68 172 L66 204" stroke={s.hose[0]} strokeWidth={14} />
+      <path d="M92 172 L94 204" stroke={s.hose[1]} strokeWidth={14} />
+      <path d="M54 216 Q53 202 66 201 Q78 202 78 216Z" fill="#ffffff" stroke={LINIE} strokeWidth={3.5} />
+      <path d="M82 216 Q82 202 94 201 Q107 202 106 216Z" fill="#ffffff" stroke={LINIE} strokeWidth={3.5} />
+      <path d="M58 211 H74 M86 211 H102" stroke={s.schuh} strokeWidth={4} />
+
+      {/* Arme hängen locker */}
+      <path d="M56 124 Q46 146 50 166 M104 124 Q114 146 110 166" fill="none" stroke={LINIE} strokeWidth={19} />
+      <path d="M56 124 Q46 146 50 166" fill="none" stroke={s.pulli[1]} strokeWidth={13} />
+      <path d="M104 124 Q114 146 110 166" fill="none" stroke={s.pulli[1]} strokeWidth={13} />
+      <circle cx={50} cy={170} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3} />
+      <circle cx={110} cy={170} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3} />
+
+      {/* Pulli mit Kapuze */}
+      <path d="M54 116 Q80 104 106 116 Q114 146 108 178 Q80 186 52 178 Q46 146 54 116Z" fill={`url(#${pulli})`} stroke={LINIE} strokeWidth={3.5} />
+      <path d="M50 170 Q80 178 110 170 L108 178 Q80 186 52 178Z" fill={s.dunkel} />
+      <path d="M58 112 Q80 142 102 112 Q80 102 58 112Z" fill={s.dunkel} stroke={LINIE} strokeWidth={3} />
+
+      {/* Rucksack von hinten */}
+      <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={LINIE} strokeWidth={8} />
+      <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={s.gurt} strokeWidth={4.5} />
+      <rect x={50} y={124} width={60} height={56} rx={16} fill={`url(#${tasche})`} stroke={LINIE} strokeWidth={3.5} />
+      <path d="M50 142 Q80 134 110 142 L110 136 Q110 124 94 124 H66 Q50 124 50 136Z" fill={s.tasche[1]} stroke={LINIE} strokeWidth={3} />
+      <rect x={62} y={152} width={36} height={20} rx={7} fill={s.tasche[0]} stroke={LINIE} strokeWidth={2.5} />
+      <circle cx={80} cy={142} r={4} fill="#6c4ce0" stroke={LINIE} strokeWidth={2} />
+
+      {/* Kopf von hinten */}
+      <circle cx={45} cy={76} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
+      <circle cx={115} cy={76} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
+      <rect x={72} y={98} width={16} height={12} rx={5} fill={s.haut[1]} />
+      <circle cx={80} cy={70} r={36} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
+      <HaareHinten art={art} />
+      {art === "tuerkis" && (
+        <>
+          <circle cx={42} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
+          <circle cx={118} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
+        </>
+      )}
+    </g>
+  );
+}
