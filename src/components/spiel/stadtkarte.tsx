@@ -61,7 +61,7 @@ export function StadtKarte({ stadt, position, erledigt, gross = false, zoom = 1,
           >
             <rect x={h.flaeche.x} y={h.flaeche.y} width={h.flaeche.breite} height={h.flaeche.hoehe} rx="24" fill={h.station.farbe} stroke="#254950" strokeWidth="10" />
             <g transform={`translate(${h.mitteX} ${h.flaeche.y + h.flaeche.hoehe * 0.42})`}>
-              <ThemenSymbol thema={h.station.aufgabe} groesse={gross ? 150 : 120} />
+              <ThemenSymbol thema={h.station.symbol} groesse={gross ? 150 : 120} />
             </g>
             {gross ? (
               <g transform={`translate(${h.mitteX} ${h.reihe === "oben" ? h.flaeche.y - 20 : h.flaeche.y + h.flaeche.hoehe + 20})`}>

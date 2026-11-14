@@ -183,7 +183,7 @@ export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt,
         <g data-haus={h.station.id} className={`stadt-haus ${nah ? "ist-nah" : ""}`}>
           <PixelGrafik motiv={h.station.grafik} x={h.flaeche.x} y={h.flaeche.y + 10} breite={h.flaeche.breite} hoehe={h.flaeche.hoehe - 10} />
           <g transform={`translate(${h.mitteX} ${h.dachY})`}>
-            <Hausschild name={h.station.name} kurz={h.station.kurz} thema={h.station.aufgabe} farbe={h.station.farbe} erledigt={fertig} />
+            <Hausschild name={h.station.name} kurz={h.station.kurz} thema={h.station.symbol} farbe={h.station.farbe} erledigt={fertig} />
           </g>
           {nah && (
             <g transform={`translate(${h.tuer.x} ${h.tuer.y - 74})`}>

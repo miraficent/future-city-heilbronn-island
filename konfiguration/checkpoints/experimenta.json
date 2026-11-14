@@ -1,0 +1,21 @@
+{
+  "id": "experimenta",
+  "name": "experimenta",
+  "titel": "Licht für die Stadt",
+  "kurz": "Forscherhaus",
+  "farbe": "#63bdb5",
+  "thema": "coding",
+  "interesse": "forschen",
+  "symbol": "strom",
+  "grafik": "forscherhaus",
+  "teil": "Antrieb",
+  "geschichte": {
+    "klein": "Mach das Licht an!",
+    "gross": "Abends bleibt die Stadt dunkel. Finde heraus, wie Strom zum Licht kommt."
+  },
+  "aktivitaeten": [
+    { "titel": "Die Materialprobe", "modul": "material-wahl" },
+    { "titel": "Die Lichtschalter", "modul": "stromkreis" },
+    { "titel": "Energie für morgen", "modul": "energie-wahl" }
+  ]
+}

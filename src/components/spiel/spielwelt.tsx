@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { AUFGABEN_TITEL, empfehlungen, neuerSpielstand, pruefeSpielstand, stufeFuerAlter, WUENSCHE, type Spielstand } from "@/lib/abenteuer";
+import { empfehlungen, neuerSpielstand, pruefeSpielstand, stufeFuerAlter, WUENSCHE, type Spielstand } from "@/lib/abenteuer";
 import type { Angebot } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { fuerModus } from "@/lib/entdecken";
@@ -37,14 +37,6 @@ const SPEICHER_FIGUR = "spielwelt.figur";
 
 type Fenster = "haus" | "rucksack" | "karte" | "finale" | undefined;
 type ZielAktion = { art: "haus"; id: string } | { art: "rakete" } | null;
-
-/** Kurze Sätze für kleine Leser:innen (6–8) und etwas mehr für Größere (9–11). */
-const GESCHICHTE: Record<string, [klein: string, gross: string]> = {
-  aim: ["Hilf dem Roboter ans Ziel!", "Die Lieferroboter haben ihren Weg vergessen. Programmiere ihnen eine Route."],
-  experimenta: ["Mach das Licht an!", "Abends bleibt die Stadt dunkel. Finde heraus, wie Strom zum Licht kommt."],
-  hdf: ["Bau einen Weg zum Ziel!", "Der Weg zum Fest hat Lücken. Baue ein Level, das deine Figur schafft."],
-  ipai: ["Hilf Pico beim Sortieren!", "Pico verwechselt Bilder. Zeig ihm, wie man Muster erkennt und prüft."],
-};
 
 function Fensterrahmen({ titel, kennung, offen, schliessen, kopfbild, children, breit = false }: {
   titel: string;
@@ -151,6 +143,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const nah = nahesHaus(stadt, position);
   const station = STATIONEN.find((s) => s.id === hausId) ?? STATIONEN[0]!;
   const klein = stand.alter <= 8;
+  const geschichte = station.geschichte[klein ? "klein" : "gross"];
+  const aktivitaet = station.aktivitaeten[phase] ?? station.aktivitaeten[0]!;
   const merk = useSammlung("kind");
   const vorlesen = useVorlesen();
   const jetztDatum = useMemo(() => new Date(jetzt), [jetzt]);
@@ -188,7 +182,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const oeffneHaus = useCallback(
     (id: string) => {
       stoppen();
-      const erste = [0, 1, 2].find((n) => !stand.fortschritt[stufeFuerAlter(stand.alter)].includes(`${id}-${n}`));
+      const anzahl = STATIONEN.find((s) => s.id === id)?.aktivitaeten.length ?? 0;
+      const erste = Array.from({ length: anzahl }, (_, n) => n).find((n) => !stand.fortschritt[stufeFuerAlter(stand.alter)].includes(`${id}-${n}`));
       setHausId(id);
       setPhase(erste ?? 0);
       setBelohnung(null);
@@ -499,7 +494,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             <ol className="hud-teile" aria-label={`Raketenteile: ${teile.length} von ${STATIONEN.length}`}>
               {STATIONEN.map((s) => (
                 <li key={s.id} className={teile.includes(s.teil) ? "hat-teil" : ""} title={`${s.teil} aus ${s.kurz}`} style={{ ["--teil-farbe" as string]: s.farbe }}>
-                  <svg viewBox="-16 -16 32 32" aria-hidden="true"><ThemenSymbol thema={s.aufgabe} groesse={22} /></svg>
+                  <svg viewBox="-16 -16 32 32" aria-hidden="true"><ThemenSymbol thema={s.symbol} groesse={22} /></svg>
                 </li>
               ))}
               <li className={`hud-rakete ${alleTeile ? "hat-teil" : ""}`}>
@@ -620,8 +615,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                 <PixelBild motiv={s.grafik} />
                 <strong>{s.kurz}</strong>
                 <span className="haus-karte-ort">{s.name}</span>
-                <span className="haus-karte-sterne" aria-label={`${geschafftAnzahl} von 3 Aufgaben`}>
-                  {[0, 1, 2].map((n) => (
+                <span className="haus-karte-sterne" aria-label={`${geschafftAnzahl} von ${s.aktivitaeten.length} Aufgaben`}>
+                  {s.aktivitaeten.map((_, n) => (
                     <Symbol key={n} name="star" className={n < geschafftAnzahl ? "stern-an" : "stern-aus"} />
                   ))}
                 </span>
@@ -658,25 +653,25 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         <div className="haus-inhalt">
           <p className="haus-geschichte">
             <span className="haus-ort" style={{ background: station.farbe }}>{station.kurz} · {station.name}</span>
-            {GESCHICHTE[station.id]?.[klein ? 0 : 1]}
+            {geschichte}
             {vorlesen.kann && (
-              <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(GESCHICHTE[station.id]?.[klein ? 0 : 1] ?? "")} aria-label="Vorlesen">
+              <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(geschichte)} aria-label="Vorlesen">
                 <Symbol name="volume" />
               </button>
             )}
           </p>
           <nav className="aufgaben-reiter" aria-label="Aufgaben in diesem Haus">
-            {[0, 1, 2].map((n) => {
+            {station.aktivitaeten.map((a, n) => {
               const fertig = erfolge.includes(`${station.id}-${n}`);
               return (
-                <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); }} aria-label={`Aufgabe ${n + 1}: ${AUFGABEN_TITEL[station.id]?.[n] ?? ""}${fertig ? ", geschafft" : ""}`}>
+                <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); }} aria-label={`Aufgabe ${n + 1}: ${a.titel}${fertig ? ", geschafft" : ""}`}>
                   {fertig ? <Symbol name="star" /> : n + 1}
                 </button>
               );
             })}
           </nav>
           <div className="aufgabe-flaeche">
-            <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} art={station.aufgabe} stufe={stufe} phase={phase} geschafft={geschafft} />
+            <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} />
             <AnimatePresence>
               {belohnung && (
                 <motion.div className="belohnung" initial={{ scale: 0.4, opacity: 0, rotate: -8 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} exit={{ scale: 0.6, opacity: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}>
@@ -690,7 +685,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                   </div>
                   <strong>{belohnung === "Stern" ? "Ein Stern für dich!" : `Raketenteil: ${belohnung}!`}</strong>
                   <div className="belohnung-knoepfe">
-                    {phase < 2 && (
+                    {phase < station.aktivitaeten.length - 1 && (
                       <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { setPhase(phase + 1); setBelohnung(null); }}>
                         <Symbol name="arrow" /> Nächste Aufgabe
                       </button>

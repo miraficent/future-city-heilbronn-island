@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { brueckenMission, codeMission, energieMission, fuehreCodeAus, kiMission, materialMission, pruefeBauPlan, pruefeWahl, type BildOption, type Stufe, type WahlMission } from "@/lib/abenteuer";
-import type { MissionArt, Richtung } from "@/lib/spiel";
+import type { Aktivitaet, ModulId } from "@/lib/checkpoint";
+import type { Richtung } from "@/lib/spiel";
 import { Symbol } from "../symbol";
 import { PixelBild, PixelGrafik } from "./pixel-grafik";
 const DREHUNG:Record<Richtung,number>={rechts:0,runter:90,links:180,hoch:270};
@@ -70,9 +71,16 @@ function BauAufgabe({stufe,phase,geschafft}:{stufe:Stufe;phase:number;geschafft:
     {phase>0&&<p className="bau-vorrat">Brücken: {bruecken.length} / {m.luecken.length}. Tippe eine Brücke zum Entfernen an.</p>}
     <div className="flex flex-wrap gap-3 mt-4"><button className="spiel-knopf spiel-knopf-dunkel" disabled={test==="laeuft"||(phase!==1&&sprung===undefined)} onClick={testen}>Weg testen</button><button className="spiel-knopf" disabled={test==="laeuft"} onClick={()=>{setBruecken([]);setSprung(undefined);setSchritt(0);setFlug(false);setTest("bereit");setMeldung("");}}>Neu bauen</button></div><p role="status" className="aufgaben-meldung">{meldung}</p><details className="spiel-wissen"><summary>Was steckt dahinter?</summary><p>Beim Gestalten eines Spiels baust du Wege und Regeln. Ausprobieren zeigt, ob dein Level funktioniert. Ein Fehler ist ein Hinweis zum Weiterbauen.</p></details></div>;
 }
-export function Lernaufgabe({art,stufe,phase,geschafft}:{art:MissionArt;stufe:Stufe;phase:number;geschafft:()=>void}){
-  if(art==="code")return <CodeAufgabe stufe={stufe} phase={phase} geschafft={geschafft}/>;
-  if(art==="muster")return <WahlAufgabe mission={kiMission(stufe,phase)} geschafft={geschafft}/>;
-  if(art==="strom")return phase===1?<SchalterAufgabe stufe={stufe} geschafft={geschafft}/>:<WahlAufgabe mission={phase===0?materialMission(stufe):energieMission(stufe)} geschafft={geschafft}/>;
-  return <BauAufgabe stufe={stufe} phase={phase} geschafft={geschafft}/>;
+type ModulProps={stufe:Stufe;variante:number;geschafft:()=>void};
+/** Welche Ansicht zu welchem Lernmodul gehört. Ein fehlender Eintrag ist ein Typfehler. */
+const MODUL_ANSICHT:Record<ModulId,(p:ModulProps)=>React.ReactElement>={
+  "roboter-code":({stufe,variante,geschafft})=><CodeAufgabe stufe={stufe} phase={variante} geschafft={geschafft}/>,
+  "muster-wahl":({stufe,variante,geschafft})=><WahlAufgabe mission={kiMission(stufe,variante)} geschafft={geschafft}/>,
+  "material-wahl":({stufe,geschafft})=><WahlAufgabe mission={materialMission(stufe)} geschafft={geschafft}/>,
+  stromkreis:({stufe,geschafft})=><SchalterAufgabe stufe={stufe} geschafft={geschafft}/>,
+  "energie-wahl":({stufe,geschafft})=><WahlAufgabe mission={energieMission(stufe)} geschafft={geschafft}/>,
+  "level-bau":({stufe,variante,geschafft})=><BauAufgabe stufe={stufe} phase={variante} geschafft={geschafft}/>,
+};
+export function Lernaufgabe({aktivitaet,stufe,geschafft}:{aktivitaet:Aktivitaet;stufe:Stufe;geschafft:()=>void}){
+  return MODUL_ANSICHT[aktivitaet.modul]({stufe,variante:aktivitaet.variante??0,geschafft});
 }

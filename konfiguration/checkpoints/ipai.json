@@ -1,0 +1,21 @@
+{
+  "id": "ipai",
+  "name": "IPAI",
+  "titel": "Die Muster-Detektive",
+  "kurz": "KI-Atelier",
+  "farbe": "#aaa0db",
+  "thema": "ki",
+  "interesse": "ki",
+  "symbol": "muster",
+  "grafik": "ki-atelier",
+  "teil": "Fenster",
+  "geschichte": {
+    "klein": "Hilf Pico beim Sortieren!",
+    "gross": "Pico verwechselt Bilder. Zeig ihm, wie man Muster erkennt und prüft."
+  },
+  "aktivitaeten": [
+    { "titel": "Beispiele entdecken", "modul": "muster-wahl", "variante": 0 },
+    { "titel": "Fair und sicher", "modul": "muster-wahl", "variante": 1 },
+    { "titel": "Im Zweifel nachfragen", "modul": "muster-wahl", "variante": 2 }
+  ]
+}

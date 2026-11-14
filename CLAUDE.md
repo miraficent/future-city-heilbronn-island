@@ -35,7 +35,8 @@ On Windows PowerShell use `npm.cmd` instead of `npm`.
 - `app/`: App Router pages. They are server components that pass the data to client components. Styles are plain CSS files per area (`spielwelt.css`, `pixel.css`, `karte.css`, …) plus Tailwind 4 via the Turbopack loader.
 - `lib/`: pure logic, unit-tested in `tests/lib/`. Key game modules:
   - `stadt.ts`: town generation from the station list, walkable path network, collision, route planning, cars, zebra crossing
-  - `spiel.ts`: the four stations (`STATIONEN`) and matching real offers to stations by topic and age
+  - `spiel.ts`: `STATIONEN` (loaded from `konfiguration/checkpoints/<id>.json`, one file per institution) and matching real offers to stations by topic and age
+  - `checkpoint.ts`: zod schema for those files plus the `MODULE` list of reusable learning modules. It is validated only in `tests/lib/checkpoint.test.ts`, not at runtime, so zod stays out of the client bundle. A new module needs an entry in `MODULE` and a view in `MODUL_ANSICHT` (`components/spiel/lernaufgabe.tsx`). Progress IDs are `<station id>-<activity index>`.
   - `abenteuer.ts`: the tasks
   - `figuren.ts`: the player characters
 - `components/spiel/spielwelt.tsx`: the child game. It runs a `requestAnimationFrame` loop that combines React state with refs (`pos`, `route`, `startetRef`, `gesperrteTuer`, …) for values the loop reads every frame. It is paused whenever a popup (`fenster`) is open. Each station gives one rocket part, and once all parts are collected the rocket launches and the finale opens.
@@ -43,7 +44,7 @@ On Windows PowerShell use `npm.cmd` instead of `npm`.
 
 ## Project constraints (enforced or deliberate)
 
-- **No emoji** anywhere in `src/`, `daten/` or `konfiguration/themen.csv`. `tests/lib/emoji.test.ts` fails on them. Use the SVG `Symbol` component instead.
+- **No emoji** anywhere in `src/`, `daten/`, `konfiguration/checkpoints/` or `konfiguration/themen.csv`. `tests/lib/emoji.test.ts` fails on them. Use the SVG `Symbol` component instead.
 - **Privacy by design:** no accounts, analytics, external AI chat, or externally loaded fonts, map tiles or images. QR codes, the map (pre-simplified OSM data in `src/lib/heilbronn-karte.json`) and text-to-speech (local voices only) all run locally.
 - Never invent offers, free places or availability. Missing data stays missing.
 - Children never sign up themselves. Registration links are marked as being for adults.
