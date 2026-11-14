@@ -1,30 +1,42 @@
 {
-  "aktualisiert": "2026-11-13T20:59:54.324Z",
+  "aktualisiert": "2026-11-14T03:55:01.066Z",
   "lesemodus": "cache",
   "quellen": [
     {
       "id": "aim",
       "name": "aim – Akademie für Innovative Bildung und Management",
       "website": "https://www.aim-akademie.org/",
-      "farbe": "#E8513A"
+      "farbe": "#E8513A",
+      "adresse": "Bildungscampus 7, 74076 Heilbronn",
+      "lat": 49.1480204,
+      "lon": 9.2149954
     },
     {
       "id": "experimenta",
       "name": "experimenta – Das Science Center",
       "website": "https://www.experimenta.science/",
-      "farbe": "#00A0B0"
+      "farbe": "#00A0B0",
+      "adresse": "Experimenta-Platz, 74072 Heilbronn",
+      "lat": 49.1441706,
+      "lon": 9.2148391
     },
     {
       "id": "hdf",
       "name": "Haus der Familie Heilbronn",
       "website": "https://hdf-hn.de/",
-      "farbe": "#F2A900"
+      "farbe": "#F2A900",
+      "adresse": "Erich-Mendelsohn-Straße 1C, 74076 Heilbronn",
+      "lat": 49.1453958,
+      "lon": 9.2089472
     },
     {
       "id": "ipai",
       "name": "IPAI – Innovation Park Artificial Intelligence",
       "website": "https://ipai-foundation.ai/",
-      "farbe": "#6C4BD8"
+      "farbe": "#6C4BD8",
+      "adresse": "Im Zukunftspark 11, 74076 Heilbronn",
+      "lat": 49.1555884,
+      "lon": 9.2076931
     }
   ],
   "themen": [

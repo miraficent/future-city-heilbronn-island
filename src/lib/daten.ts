@@ -8,7 +8,7 @@ export { slugAusId, idAusSlug } from "./routen";
 /** Gleiche Grenze wie in der Pipeline: darunter erst nach menschlicher Freigabe sichtbar. */
 export const MIN_SICHERHEIT_OEFFENTLICH = 0.6;
 
-export type QuelleMeta = { id: string; name: string; website: string; farbe: string };
+export type QuelleMeta = { id: string; name: string; website: string; farbe: string; adresse?: string; lat?: number; lon?: number };
 export type Meta = { aktualisiert: string; lesemodus?: "live" | "cache"; quellen: QuelleMeta[]; themen: Thema[] };
 
 // Die JSON-Dateien schreibt die Pipeline; sie wurden dort mit zod validiert.

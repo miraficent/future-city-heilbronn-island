@@ -1,0 +1,199 @@
+/* Heilbronn: ruhige gemalte Szenen, echte Kartengeometrie, kombinierbare Figur. */
+.text-sm {font-size:1.125rem}
+body:has(.lernreise)::after {display:none}
+.lernreise {--reise-tinte:#304b40;--reise-creme:#fff9e9;--reise-gruen:#416b54;max-width:1600px;margin:0 auto;padding:0 36px 25px;background:#f3efdf;color:var(--reise-tinte);font-family:"Trebuchet MS","Atkinson Hyperlegible Next",sans-serif;min-height:100dvh}
+.lernreise button,.lernreise a,.lernreise select {font-family:inherit}
+.lernreise button:focus-visible,.lernreise a:focus-visible {outline:3px solid #a76b34;outline-offset:5px}
+.reise-kopf {display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #73866c50;padding:22px 0}
+.reise-logo {display:flex;align-items:center;gap:12px;text-align:left;font-size:23px;font-weight:800;letter-spacing:.04em}
+.reise-logo small {display:block;font-size:10px;letter-spacing:.2em;font-weight:500;margin-top:2px}
+.logo-sonne {font-size:44px;line-height:1;color:#b18b40}
+.reise-werkzeuge {display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.welt-knopf,.welt-chip {display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;text-decoration:none;border:1px solid #416b5470;border-radius:15px;cursor:pointer;line-height:1.25;transition:background .15s}
+.welt-knopf {font-size:21px;min-height:64px;padding:17px 27px;background:#416b54;color:#fff9e9;box-shadow:0 4px 0 #2c4c39}
+.welt-knopf:hover {background:#335e47}
+.welt-knopf.hell {background:#fff9e9;color:#304b40;box-shadow:0 3px 0 #d6d7bc}
+.welt-chip {font-size:16px;min-height:48px;padding:10px 17px;color:#304b40;background:#faf6e8}
+.welt-chip:hover {background:#e6e9d5}
+.welt-chip[aria-pressed=true] {background:#e7c780;border-color:#9a783e;box-shadow:inset 0 0 0 1px #9a783e}
+.welt-knopf:disabled {opacity:.45;cursor:default;box-shadow:none}
+.welt-augenbraue {font-size:12px!important;letter-spacing:.16em;font-weight:700;color:#69816b;margin-bottom:12px!important}
+.lernreise h1 {font-size:clamp(34px,4.2vw,62px);line-height:1.05;letter-spacing:-.04em;font-weight:800;margin:0 0 20px}
+.lernreise h2 {font-size:clamp(25px,2.4vw,35px);line-height:1.15;font-weight:700;letter-spacing:-.025em}
+.lernreise h3 {font-size:25px;font-weight:700}
+.lernreise p {font-size:21px;line-height:1.5}
+.welt-aktionen {display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin:25px 0}
+.reise-kleindruck {font-size:14px!important;line-height:1.5;color:#657566;margin:22px 0}
+.reise-willkommen {display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:45px;padding:45px 0}
+.willkommen-bild {position:relative;border-radius:140px 140px 20px 20px;overflow:hidden;aspect-ratio:1.05}
+.willkommen-bild>img {width:100%;height:100%;object-fit:cover}
+.willkommen-bild>.eigener-avatar {position:absolute;width:36%;height:62%;left:4%;bottom:0;filter:drop-shadow(0 6px 3px #273d2530)}
+.ort-fahne {position:absolute;right:0;bottom:25px;padding:13px 24px;background:#fff8e8e8;font-size:16px;font-weight:700;letter-spacing:.15em}
+.gemeinsam-hinweis {display:flex;flex-direction:column;gap:4px;background:#e7ead6;padding:18px 24px;border-radius:15px;margin:25px 0}
+.gemeinsam-hinweis strong {font-size:23px}
+.gemeinsam-hinweis span {font-size:19px}
+.reise-fuss {display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #73866c50;padding:20px 0;margin-top:35px;font-size:14px;color:#607261}
+.reise-fuss>div {display:flex;gap:20px;flex-wrap:wrap}
+.reise-fuss button {text-decoration:underline;text-underline-offset:4px;min-height:44px}
+.eigener-avatar {display:block;width:100%;height:100%;max-height:100%;overflow:visible}
+.avatar-wechsel {padding:2px 12px 2px 5px}
+.avatar-wechsel>.eigener-avatar {width:30px;height:45px}
+.avatar-baukasten {padding:35px 0;max-width:1250px;margin:auto}
+.avatar-baukasten header {text-align:center}
+.avatar-baukasten h1 {font-size:clamp(30px,3.5vw,48px)}
+.baukasten-layout {display:grid;grid-template-columns:330px 1fr;gap:40px;margin-top:28px}
+.avatar-vorschau {display:flex;align-items:center;flex-direction:column;border-radius:160px 160px 25px 25px;background:radial-gradient(ellipse at center,#f9f4d9,#dbe4c9);padding:20px}
+.avatar-vorschau>.eigener-avatar {height:390px;max-width:260px;margin:0 auto 15px}
+.avatar-vorschau .welt-knopf {font-size:17px;min-height:50px;padding:12px 20px}
+.avatar-vorlagen {display:flex;gap:8px;flex-wrap:wrap;margin:5px 0 20px}
+.avatar-kategorien {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.avatar-kategorien>button {min-height:50px;padding:12px 16px;border-bottom:3px solid transparent;border-radius:8px;font-size:18px}
+.avatar-kategorien [aria-pressed=true] {background:#e3e8d1;border-bottom-color:#416b54;font-weight:700}
+.avatar-optionen {display:flex;gap:10px;flex-wrap:wrap;padding:15px 0}
+.avatar-optionen legend,.avatar-farben legend {font-size:16px;font-weight:700;margin-bottom:10px}
+.avatar-optionen>button {border:2px solid #dddcc9;background:#fff9e9;border-radius:14px;width:100px;padding:8px;min-height:145px;font-size:14px}
+.avatar-optionen>button>.eigener-avatar {height:100px;margin-bottom:5px}
+.avatar-optionen [aria-pressed=true] {background:#ebefd9;border-color:#416b54}
+.avatar-farben {display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.avatar-farben>button {height:48px;width:48px;border-radius:50%;border:3px solid #fff9e9;box-shadow:0 0 0 1px #c1c4af;position:relative}
+.avatar-farben [aria-pressed=true] {box-shadow:0 0 0 3px #345a45}
+.avatar-farben span {background:#fff9e9;border-radius:50%;color:#345a45;padding:0 4px;font-size:16px}
+.avatar-frei {font-size:15px!important;color:#6b7a69}
+.reise-anleitung {max-width:1150px;margin:auto;padding:50px 0;text-align:center}
+.reise-bildanleitung {display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin:35px 0}
+.reise-bildanleitung>div {position:relative;border:1px solid #d4d7bd;border-radius:22px;background:#fff9e9;overflow:hidden;padding-bottom:25px}
+.reise-bildanleitung img,.reise-bildanleitung svg {width:100%;height:180px;object-fit:cover;padding:10px}
+.reise-bildanleitung img {padding:0}
+.reise-bildanleitung b {display:block;border-radius:50%;width:38px;height:38px;background:#d8b66e;font-size:22px;margin:15px auto}
+.reise-bildanleitung h2 {font-size:23px;margin:0 15px}
+.reise-stufen {display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}
+.reise-stufen h2,.reise-stufen legend {width:100%;font-size:22px;margin-bottom:12px}
+.reise-stufen .welt-chip {flex-direction:column;font-size:19px;padding:15px 22px}
+.reise-stufen small {font-size:13px;font-weight:400}
+.reise-titel {display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin:35px 0 28px}
+.reise-titel h1 {margin-bottom:12px}
+.reise-fortschritt {text-align:right}
+.reise-fortschritt>span {font-size:42px;display:block;font-weight:700;margin-bottom:10px}
+.reise-fortschritt small {font-size:17px;font-weight:400}
+.reise-stadt-layout {display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:stretch}
+.gemalte-stadtkarte {border:1px solid #b9c6a8;background:#e8e6ce;border-radius:130px 130px 20px 20px;overflow:hidden;position:relative;min-height:600px;box-shadow:inset 0 0 40px #6d845c20}
+.gemalte-stadtkarte>svg {width:100%;height:100%;position:absolute;inset:0;display:block;filter:sepia(.04)}
+.stadt-pin {cursor:pointer}
+.stadt-pin:hover>circle {fill:#f3d8a0}
+.stadt-zoom {position:absolute;bottom:34px;left:15px;background:#fff9e9;border:1px solid #6b846a;border-radius:8px;padding:8px 15px;min-height:48px;font-size:14px}
+.stadt-quelle {position:absolute;bottom:0;left:0;right:0;background:#fff9e9b3;font-size:10px;text-align:center;padding:4px}
+.reise-ortskarten {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.reise-ortskarte {background:#fff9e9;border:1px solid #c8cfb5;border-radius:20px;overflow:hidden;box-shadow:0 4px 0 #d1d7c1;text-align:left;display:flex;flex-direction:column;transition:box-shadow .15s}
+.reise-ortskarte:hover {box-shadow:0 5px 0 #9daf8d}
+.ortskarte-bild {position:relative;width:100%;height:160px}
+.ortskarte-bild>img {width:100%;height:100%;object-fit:cover}
+.ortskarte-bild>span {position:absolute;left:12px;top:12px;border:2px solid #fff9e9;background:var(--ort-farbe);color:#fff9e9;width:35px;height:35px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.reise-ortskarte>div:last-child {padding:18px;flex:1;display:flex;flex-direction:column}
+.reise-ortskarte small {font-size:13px;color:#6f7b65;margin-bottom:8px}
+.reise-ortskarte h2 {font-size:26px;margin-bottom:14px}
+.ortskarte-weiter {border-top:1px solid #d5dac5;padding-top:12px;font-size:15px;margin-top:auto;width:100%;display:flex;justify-content:space-between}
+.ortskarte-weiter b {font-size:24px;color:var(--ort-farbe)}
+.reise-rakete {display:flex;align-items:center;gap:25px;background:#e5ead6;padding:20px 30px;border-radius:22px;margin-top:30px}
+.reise-rakete>svg {width:90px;height:125px;flex-shrink:0}
+.reise-rakete>div {flex:1}
+.reise-rakete p {font-size:18px;max-width:700px;margin-top:10px}
+.reise-ort {margin-top:25px}
+.zur-stadt {margin-bottom:20px}
+.ort-buehne {position:relative;width:100%;min-width:0;aspect-ratio:16/9;border-radius:24px;overflow:hidden;min-height:520px}
+.ort-kulisse {position:absolute;width:100%;height:100%;object-fit:cover}
+.ort-schild {position:absolute;top:25px;left:25px;background:#fff9e9ed;padding:20px 25px;border-radius:15px;max-width:85%;box-shadow:0 3px 0 #536c4c25}
+.ort-schild h1 {font-size:clamp(32px,3.5vw,52px);margin-bottom:0}
+.ort-schild p {font-size:12px;letter-spacing:.08em;margin-bottom:6px}
+.ort-guide {position:absolute;bottom:0;left:3%;right:5%;display:flex;gap:20px;align-items:center}
+.ort-guide>.eigener-avatar {width:175px;height:290px;flex-shrink:0;filter:drop-shadow(3px 8px 2px #354d3125)}
+.guide-sprechblase {background:#fff9e9f5;border:1px solid #b6c2a6;border-radius:25px 25px 25px 0;padding:22px 26px;max-width:520px;margin-bottom:25px}
+.guide-sprechblase p {font-size:23px;line-height:1.4;margin-bottom:15px}
+.sprachknopf {font-size:16px;min-height:46px;padding:10px 18px;box-shadow:none!important}
+.ort-aufgaben {padding:30px 0}
+.ort-aufgaben>div {display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}
+.ort-aufgabe {display:flex;align-items:center;gap:16px;border:1px solid #bec8ae;background:#fff9e9;border-radius:17px;padding:22px 18px;text-align:left;min-height:100px}
+.ort-aufgabe>span {display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#e7c780;font-size:23px}
+.ort-aufgabe strong {font-size:20px;line-height:1.3;flex:1}
+.ort-aufgabe>b {font-size:27px}
+.reise-aufgabe>header {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;padding:25px 0;font-size:16px}
+.aufgaben-raum {border-radius:25px;background:linear-gradient(#f1efdeeb,#f1efdeeb),var(--raum-bild) center/cover;padding:35px}
+.aufgaben-papier {max-width:950px;margin:auto;background:#fff9ed;border:1px solid #c5ccb2;border-radius:24px;padding:30px}
+.einstieg-guide {display:flex;align-items:center;gap:25px}
+.einstieg-guide>.eigener-avatar {width:140px;height:225px;flex-shrink:0}
+.einstieg-guide p:not(.welt-augenbraue) {font-size:24px;margin:15px 0}
+.bild-schritte {display:grid;grid-template-columns:repeat(3,1fr);list-style:none;gap:18px;margin:25px 0;padding:0}
+.bild-schritte>li {background:#eaf0db;border-radius:15px;padding:15px;text-align:center}
+.schritt-bild {position:relative}
+.schritt-bild>svg {width:100%;height:100px;margin:20px 0 8px}
+.schritt-nummer {position:absolute;top:0;left:0;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#d8b66e;font-size:18px}
+.bild-schritte strong {font-size:19px;line-height:1.3}
+.aufgabe-starten {display:flex;margin:25px auto 5px}
+.lernreise .lernaufgabe {font-size:22px}
+.lernreise .pico-sagt {background:#e8ecd8;border:0;margin-bottom:25px;align-items:center;min-height:0}
+.lernreise .pico-sagt .pico-text {font-size:24px;line-height:1.4}
+.lernreise .pico-figur {width:65px;height:105px;flex-shrink:0}
+.lernreise .pico-figur .eigener-avatar {width:100%;height:100%}
+.lernreise .spiel-knopf {font-family:inherit;font-size:20px;min-height:64px;border-radius:12px;box-shadow:none}
+.lernreise .muster-karte {min-height:145px;font-size:21px;background:#f4f0dc;border-radius:15px;border:2px solid #b8c4a7}
+.lernreise .muster-karte[aria-pressed=true] {background:#e6d4a0;border-color:#416b54}
+.lernreise .muster-karte svg {height:105px}
+.lernreise .lernaufgabe .code-spielfeld {max-width:390px;margin:20px auto}
+.lernreise .programm {background:#f2eddc}
+.lernreise .pico-figur,.lernreise .pico-sagt * {animation:none!important;transform:none!important}
+.reise-erfolg {padding:25px;text-align:center;border:1px solid #adbf98;background:#e8efd9;border-radius:20px;margin-top:25px}
+.erfolgs-blume {display:block;font-size:40px;color:#416b54;margin-bottom:15px}
+.reise-erfolg h2 {font-size:27px}
+.reise-finale {max-width:1000px;text-align:center;padding:45px 0;margin:auto}
+.finale-illustration {display:flex;justify-content:center;align-items:center;gap:60px;background:#e5ead6;border-radius:100px;margin:30px 0;padding:30px}
+.finale-illustration>.eigener-avatar {width:150px;height:250px}
+.finale-illustration>svg:last-child {width:160px;height:250px}
+.reise-dialog {width:min(1050px,calc(100% - 28px));max-height:90dvh;background:#fff9ed;color:#304b40;border:2px solid #607758;border-radius:24px;padding:28px;font-family:inherit}
+.reise-dialog::backdrop {background:#233c32a6;backdrop-filter:blur(4px)}
+.reise-dialog>header {display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #c8cfb5;padding-bottom:20px;margin-bottom:20px}
+.reise-dialog p {font-size:19px}
+.reise-dialog a:not(.welt-knopf) {text-decoration:underline;text-underline-offset:4px}
+.erwachsenen-tor {max-width:650px;margin:auto;padding:20px 0;text-align:center}
+.erwachsenen-tor>p {margin-bottom:20px}
+.erwachsenen-tor small {display:block;font-size:13px;margin:20px}
+.halteknopf {user-select:none;touch-action:none;position:relative;overflow:hidden}
+.halteknopf.haelt {animation:tor-halten 3s linear forwards}
+@keyframes tor-halten {from{box-shadow:inset 0 -5px #d7b66a}to{box-shadow:inset 0 -100px #a58b3c}}
+.erwachsenen-inhalt details {margin:25px 0;background:#edf0dc;border-radius:12px;padding:18px}
+.erwachsenen-inhalt summary {cursor:pointer;font-size:19px;min-height:44px;font-weight:700}
+.erwachsenen-inhalt details p {margin:14px 0}
+.erwachsenen-inhalt>.spiel-kurskarten {margin-top:20px}
+.erwachsenen-inhalt>h3 {margin-top:30px}
+.kursalter {display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;font-size:19px}
+.kursalter select {background:#fff9ed;border:1px solid #8d9c7e;border-radius:10px;min-height:50px;padding:10px}
+.reset-frage {padding:20px;border:1px solid #c6b385;border-radius:12px;margin:20px 0}
+.reset-frage button {margin:15px 10px 0 0}
+.reise-hilfe {display:flex;gap:30px;flex-wrap:wrap;align-items:center}
+.reise-hilfe>.eigener-avatar {width:100px;height:160px}
+.reise-hilfe ol {flex:1;list-style:decimal;padding-left:22px;min-width:200px;font-size:22px;line-height:1.6}
+.lernreise-vollbild {position:fixed;inset:0;z-index:100;max-width:none;overflow:auto}
+.heimat-einstieg {display:grid;grid-template-columns:1fr 1.2fr;border:1px solid #a8b89b;border-radius:30px;overflow:hidden;background:#e7ebd8;margin-top:30px;color:#304b40}
+.heimat-einstieg>div {padding:35px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.heimat-einstieg h1 {font-size:clamp(35px,4vw,60px);font-weight:800;line-height:1.05;letter-spacing:-.04em;margin:10px 0 20px}
+.heimat-einstieg p {font-size:20px;line-height:1.5;margin-bottom:25px}
+.heimat-einstieg>img {width:100%;height:100%;object-fit:cover;min-height:420px}
+@media(max-width:1050px){
+ .lernreise{padding:0 22px 20px}.reise-stadt-layout{grid-template-columns:1fr 1fr;gap:18px}.reise-ortskarten{gap:12px}.ortskarte-bild{height:130px}.reise-ortskarte>div:last-child{padding:13px}.reise-ortskarte h2{font-size:22px}.gemalte-stadtkarte{min-height:560px}.baukasten-layout{grid-template-columns:260px 1fr;gap:25px}.ort-aufgabe{padding:18px 13px;gap:10px}.ort-aufgabe strong{font-size:18px}
+}
+@media(max-width:700px){
+ .lernreise{padding:0 15px 15px}.reise-kopf{padding:15px 0;gap:10px;align-items:flex-start}.reise-logo{font-size:19px;gap:7px}.reise-logo small{font-size:8px;letter-spacing:.1em}.logo-sonne{font-size:30px}.reise-werkzeuge{gap:5px;justify-content:flex-end}.reise-werkzeuge .welt-chip{font-size:12px;padding:7px 9px;min-height:44px}.avatar-wechsel span{display:none}.avatar-wechsel>.eigener-avatar{width:22px;height:30px}
+ .welt-knopf{font-size:19px;padding:16px 20px}.welt-chip{font-size:15px}.lernreise h1{font-size:36px}.lernreise p{font-size:19px}
+ .reise-willkommen{grid-template-columns:1fr;gap:25px;padding:25px 0}.willkommen-bild{aspect-ratio:1.7;border-radius:65px 65px 15px 15px}.willkommen-bild>.eigener-avatar{height:80%;width:30%}.ort-fahne{font-size:12px;padding:10px 15px;bottom:15px}.willkommen-text h1{font-size:38px}.gemeinsam-hinweis{margin:20px 0}
+ .avatar-baukasten{padding-top:25px}.avatar-baukasten h1{font-size:31px}.baukasten-layout{display:block}.avatar-vorschau{position:relative;flex-direction:row;justify-content:center;gap:10px;border-radius:50px 50px 15px 15px;margin-bottom:20px;padding:8px}.avatar-vorschau>.eigener-avatar{height:215px;width:145px;margin:0}.avatar-vorschau .welt-knopf{font-size:14px;padding:12px;max-width:135px}
+ .avatar-vorlagen{justify-content:center}.avatar-vorlagen .welt-chip{font-size:13px;padding:10px}.avatar-kategorien{gap:4px;justify-content:center}.avatar-kategorien>button{font-size:15px;padding:9px}.avatar-optionen{justify-content:center;gap:8px}.avatar-optionen>button{width:85px;min-height:130px}.avatar-optionen>button>.eigener-avatar{height:80px}.avatar-farben{gap:9px}.avatar-farben>button{width:44px;height:44px}
+ .reise-anleitung{padding:30px 0}.reise-bildanleitung{gap:10px;grid-template-columns:1fr}.reise-bildanleitung>div{display:grid;grid-template-columns:100px 25px 1fr;align-items:center;padding:0 15px 0 0;gap:10px;text-align:left}.reise-bildanleitung img,.reise-bildanleitung svg{height:100px}.reise-bildanleitung b{width:26px;height:26px;font-size:16px;margin:0}.reise-bildanleitung h2{font-size:20px;margin:0}.reise-stufen .welt-chip{padding:12px;font-size:16px}
+ .reise-titel{margin-top:25px;gap:15px;align-items:flex-start}.reise-titel .welt-augenbraue{font-size:10px!important}.reise-titel h1{font-size:36px}.reise-titel p{font-size:17px}.reise-fortschritt>span{font-size:28px}.reise-fortschritt small{display:block;font-size:12px}.reise-fortschritt .welt-chip{font-size:11px;padding:8px;white-space:nowrap}
+ .reise-stadt-layout{display:flex;flex-direction:column}.gemalte-stadtkarte{min-height:430px;max-height:540px;border-radius:75px 75px 18px 18px}.reise-ortskarten{gap:12px}.ortskarte-bild{height:110px}.reise-ortskarte>div:last-child{padding:12px}.reise-ortskarte h2{font-size:22px}.reise-ortskarte small{font-size:11px}.ortskarte-weiter{font-size:13px}
+ .reise-rakete{padding:18px;gap:15px;flex-wrap:wrap}.reise-rakete>svg{width:55px;height:90px}.reise-rakete h2{font-size:23px}.reise-rakete p{font-size:16px}.reise-rakete .welt-knopf{width:100%}
+ .ort-buehne{min-height:560px;aspect-ratio:auto;border-radius:18px;background:#d7e4cc;padding-bottom:0}.ort-kulisse{height:350px;object-position:center top}.ort-schild{top:14px;left:14px;padding:13px 17px;max-width:93%}.ort-schild h1{font-size:30px}.ort-schild p{font-size:10px;max-width:250px}.ort-guide{bottom:0;left:3%;right:3%;gap:5px;align-items:flex-end}.ort-guide>.eigener-avatar{width:105px;height:195px;align-self:flex-end;margin-bottom:12px}.guide-sprechblase{padding:17px 16px;margin-bottom:20px;border-radius:20px 20px 20px 0}.guide-sprechblase p{font-size:19px}.guide-sprechblase .sprachknopf{font-size:14px}
+ .ort-aufgaben>div{grid-template-columns:1fr;gap:12px}.ort-aufgabe{min-height:85px;padding:18px}.ort-aufgabe strong{font-size:21px}
+ .reise-aufgabe>header{font-size:13px;gap:8px}.reise-aufgabe>header>.welt-chip{font-size:13px;padding:10px}.aufgaben-raum{padding:10px;border-radius:17px}.aufgaben-papier{padding:17px 12px;border-radius:15px}.einstieg-guide{gap:12px;align-items:center}.einstieg-guide>.eigener-avatar{width:73px;height:135px}.einstieg-guide .welt-augenbraue{font-size:9px!important;letter-spacing:.1em}.einstieg-guide h2{font-size:25px}.einstieg-guide p:not(.welt-augenbraue){font-size:21px}.bild-schritte{gap:7px}.bild-schritte>li{padding:8px 6px}.bild-schritte strong{font-size:15px}.schritt-bild>svg{height:65px}.schritt-nummer{width:23px;height:23px;font-size:14px}
+ .lernreise .pico-sagt .pico-text{font-size:22px}.lernreise .pico-figur{width:47px;height:80px}.lernreise .muster-auswahl{grid-template-columns:repeat(2,minmax(0,1fr))}.lernreise .muster-karte{font-size:19px;padding:12px 8px}.lernreise .spiel-knopf{font-size:18px;padding:12px 15px;min-height:60px}.lernreise .befehlsleiste{gap:7px}.lernreise .befehlsleiste .spiel-knopf{min-width:52px;padding:10px}.lernreise .lernaufgabe .code-spielfeld{width:100%}.lernreise .bild-schritte strong{font-size:15px}
+ .reise-dialog{padding:18px 15px;border-radius:18px;width:calc(100% - 18px)}.reise-dialog>header{gap:10px}.reise-dialog h2{font-size:25px}.reise-dialog .welt-knopf{font-size:17px}.reise-hilfe ol{font-size:20px}.reise-hilfe>.eigener-avatar{width:70px;height:120px}.reise-fuss{font-size:12px;gap:8px}.reise-fuss>div{gap:17px}.reise-finale{padding:30px 0}.finale-illustration{gap:20px;padding:20px;border-radius:45px}.finale-illustration>.eigener-avatar{width:100px;height:185px}.finale-illustration>svg:last-child{width:110px;height:185px}
+ .heimat-einstieg{grid-template-columns:1fr}.heimat-einstieg>div{padding:25px}.heimat-einstieg>img{min-height:0;height:240px;grid-row:1}.heimat-einstieg h1{font-size:38px}.heimat-einstieg p{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){.lernreise *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

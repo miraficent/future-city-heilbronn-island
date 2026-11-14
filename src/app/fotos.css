@@ -1,0 +1,47 @@
+/* Echte Fotos mit Vergrößerung (FotoZoom) */
+.foto-zoom { margin: 0; }
+.foto-knopf { position: relative; display: block; width: 100%; padding: 0; border: 0; background: #254950; cursor: zoom-in; overflow: hidden; border-radius: inherit; }
+.foto-knopf img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.foto-knopf:hover img, .foto-knopf:focus-visible img { transform: scale(1.04); }
+.foto-knopf:focus-visible { outline: 4px solid #ffd84d; outline-offset: -4px; }
+.foto-lupe { position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 40px; height: 40px; border: 2px solid #254950; border-radius: 999px; background: #fffaf0; color: #254950; box-shadow: 0 3px 0 #254950; }
+.foto-lupe .symbol { width: 22px; height: 22px; }
+.foto-nachweis { padding: 6px 2px 0; font-size: 12px; line-height: 1.35; color: #4a4560; }
+.foto-nachweis a { text-decoration: underline; }
+
+.foto-dialog { margin: auto; width: min(96vw, 1200px); max-width: none; max-height: 94vh; padding: 0; border: 3px solid #254950; border-radius: 22px; background: #fffaf0; color: #1d2b3a; box-shadow: 0 10px 0 #254950; }
+.foto-dialog::backdrop { background: rgb(18 30 40 / 0.78); }
+.foto-dialog-innen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; max-height: calc(94vh - 6px); }
+.foto-dialog-leiste { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 2px solid #254950; font-weight: 700; }
+.foto-dialog-leiste .foto-schliessen { margin-left: auto; }
+.foto-flaeche { overflow: auto; overscroll-behavior: contain; touch-action: pan-x pan-y; background: #1d2b3a; max-height: 72vh; }
+.foto-flaeche:focus-visible { outline: 4px solid #ffd84d; outline-offset: -4px; }
+.foto-flaeche img { display: block; max-width: none; height: auto; margin: 0 auto; cursor: zoom-in; user-select: none; }
+.foto-flaeche.ist-gross img { cursor: grab; }
+.foto-dialog-text { padding: 10px 14px 14px; font-size: 14px; line-height: 1.45; }
+.foto-dialog-text span { display: block; margin-top: 4px; font-size: 12px; color: #4a4560; }
+.foto-dialog-text a { text-decoration: underline; }
+
+/* Karte: Foto oben im Infokasten, Illustration klar gekennzeichnet */
+.hn-info .foto-zoom.hn-info-foto { aspect-ratio: auto; height: auto; border-bottom: 0; }
+.hn-info .foto-zoom.hn-info-foto .foto-knopf { aspect-ratio: 16 / 9; border-bottom: 3px solid #254950; border-radius: 21px 21px 0 0; }
+.hn-info .foto-zoom.hn-info-foto .foto-nachweis { padding: 6px 18px 0; }
+.hn-illustration { position: relative; }
+.hn-illustration .ortsbild { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-bottom: 3px solid #254950; border-radius: 21px 21px 0 0; }
+.hn-illustration figcaption { padding: 6px 18px 0; font-size: 12px; color: #4a4560; }
+img.hn-ort-foto { display: block; object-fit: cover; }
+
+/* Spielhaus: „So sieht es in echt aus“ */
+.haus-echt { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 14px; align-items: center; margin: 4px 0 14px; padding: 10px; border: 2px solid #254950; border-radius: 18px; background: #fffaf0; }
+.haus-echt .foto-knopf { aspect-ratio: 4 / 3; border-radius: 12px; }
+.haus-echt h3 { font-weight: 800; font-size: 17px; }
+.haus-echt p { font-size: 15px; }
+@media (max-width: 560px) {
+  .haus-echt { grid-template-columns: 1fr; }
+}
+
+/* Startseite: echtes Foto statt gemalter Szene */
+.heimat-foto { position: relative; margin: 0; min-height: 420px; }
+.heimat-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.heimat-foto figcaption { position: absolute; right: 10px; bottom: 10px; padding: 3px 8px; border-radius: 8px; background: rgb(255 250 240 / 0.9); font-size: 12px; color: #2c3a33; }
+@media (max-width: 760px) { .heimat-foto { min-height: 240px; grid-row: 1; } }

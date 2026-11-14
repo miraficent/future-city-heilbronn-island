@@ -7,23 +7,32 @@ import { empfehlungen, neuerSpielstand, pruefeSpielstand, stufeFuerAlter, WUENSC
 import type { Angebot } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { fuerModus } from "@/lib/entdecken";
-import { figurNachId, FIGUREN } from "@/lib/figuren";
+import { alterAvatar, figurAusAvatar, pruefeAvatar, STANDARD_AVATAR, type AvatarKonfiguration } from "@/lib/avatar";
+import { bewohnerFuer, SPRECH_RADIUS, type Bewohner } from "@/lib/bewohner";
+import { fotoFuer } from "@/lib/fotos";
 import { abstand, passendeSpielAngebote, STATIONEN, type Punkt } from "@/lib/spiel";
 import { lies, loesche, schreibe } from "@/lib/speicher";
-import { amPlatz, bewege, bewegeAutos, erzeugeStadt, hausAn, nahesHaus, neueAutos, planeRoute, TEMPO_FIGUR, type Auto } from "@/lib/stadt";
+import { amPlatz, bewege, bewegeAutos, erzeugeStadt, hausAn, nahesHaus, neueAutos, planeRoute, TEMPO_FIGUR, wahrzeichenAn, type Auto } from "@/lib/stadt";
+import { klang, klangIstAus, setzeKlangAus } from "@/lib/klang";
 import { useVorlesen } from "@/lib/vorlesen";
 import { useSammlung } from "../sammlung";
+import { FotoZoom } from "../foto-zoom";
+import { OrtsBild } from "../ortsbild";
 import { Symbol } from "../symbol";
-import { FigurPortrait, type Blick } from "./figur";
+import { AufgabenEinstieg } from "./aufgaben-einstieg";
+import { OrtSzene } from "./ortsszene";
+import { Avatar, AvatarKontext } from "./avatar";
+import type { Blick } from "./figur";
 import { Lernaufgabe } from "./lernaufgabe";
-import { PixelBild } from "./pixel-grafik";
+import { PixelBild, Roboter } from "./pixel-grafik";
 import { Sammelkarte } from "./sammelkarte";
-import { StadtKarte } from "./stadtkarte";
-import { StadtKulisse, StadtLeben } from "./stadt-grafik";
-import { StartAuswahl } from "./start-auswahl";
+import { StadtKulisse, StadtLeben, TunnelHuegel } from "./stadt-grafik";
+import { StartAuswahl, type StartSchritt } from "./start-auswahl";
+import { Anleitung } from "./anleitung";
 import { ThemenSymbol } from "./themen-symbol";
 import { ZeigEltern } from "./zeig-eltern";
 import { aktivitaetenFuer, useSpielPlugins } from "@/lib/plugin-client";
+import { einstiegFuer } from "@/lib/lernwelt";
 
 const TASTEN: Record<string, Punkt> = {
   ArrowUp: { x: 0, y: -1 }, w: { x: 0, y: -1 },
@@ -35,9 +44,24 @@ const ZOOM_MIN = 0.7;
 const ZOOM_MAX = 1.6;
 const SPEICHER_STAND = "abenteuer.v2";
 const SPEICHER_FIGUR = "spielwelt.figur";
+const SPEICHER_AVATAR = "spielwelt.avatar";
+const SPEICHER_GESPRAECHE = "spielwelt.gespraeche";
+const SPEICHER_BESUCHT = "spielwelt.besucht";
+const HALTEN_MS = 3000;
+const SPEICHER_RAKETE = "spielwelt.rakete";
 
-type Fenster = "haus" | "rucksack" | "karte" | "finale" | undefined;
-type ZielAktion = { art: "haus"; id: string } | { art: "rakete" } | null;
+export type RaketenZustand = "bereit" | "startet" | "weg";
+
+type Fenster = "haus" | "rucksack" | "finale" | "tor" | "erwachsene" | undefined;
+type ZielAktion = { art: "haus"; id: string } | { art: "rakete" } | { art: "bewohner"; id: string } | null;
+/** Ein laufendes Gespräch: erst die Sätze, dann die Frage, dann die Rückmeldung zur gewählten Antwort. */
+type GespraechStand = { id: string; zeile: number; antwort: number | null };
+
+function naechsterBewohner(liste: Bewohner[], p: Punkt): Bewohner | undefined {
+  let bester: Bewohner | undefined;
+  for (const b of liste) if (abstand(b.ort, p) < SPRECH_RADIUS && (!bester || abstand(b.ort, p) < abstand(bester.ort, p))) bester = b;
+  return bester;
+}
 
 function Fensterrahmen({ titel, kennung, offen, schliessen, kopfbild, children, breit = false }: {
   titel: string;
@@ -101,7 +125,15 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const { plugins, geladen: pluginsGeladen } = useSpielPlugins();
   const stadt = useMemo(() => erzeugeStadt(STATIONEN), []);
   const [bereit, setBereit] = useState(false);
-  const [figurId, setFigurId] = useState(FIGUREN[0]!.id);
+  const [avatar, setAvatar] = useState<AvatarKonfiguration>(STANDARD_AVATAR);
+  const [startSchritt, setStartSchritt] = useState<StartSchritt>("alter");
+  const [eingefuehrt, setEingefuehrt] = useState(false);
+  const [besucht, setBesucht] = useState<string[]>([]);
+  const [szeneFertig, setSzeneFertig] = useState(true);
+  const [gespraech, setGespraech] = useState<GespraechStand | null>(null);
+  const [gesprochen, setGesprochen] = useState<string[]>([]);
+  const [halten, setHalten] = useState(false);
+  const halteUhr = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [stand, setStand] = useState<Spielstand>(() => neuerSpielstand());
   const [position, setPosition] = useState<Punkt>(stadt.start);
   const [blick, setBlick] = useState<Blick>("vorne");
@@ -110,25 +142,49 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const [autos, setAutos] = useState<Auto[]>(() => neueAutos(stadt));
   const [ziel, setZiel] = useState<Punkt>();
   const [zoom, setZoom] = useState(1);
-  const [kartenZoom, setKartenZoom] = useState(1);
   const [vollbild, setVollbild] = useState(false);
   const [pausiert, setPausiert] = useState(false);
   const [fenster, setFenster] = useState<Fenster>();
   const [hausId, setHausId] = useState(STATIONEN[0]!.id);
   const [phase, setPhase] = useState(0);
   const [belohnung, setBelohnung] = useState<string | null>(null);
-  const [startet, setStartet] = useState(false);
+  const [rakete, setRakete] = useState<RaketenZustand>("bereit");
+  const startet = rakete === "startet";
+  const [tonAus, setTonAus] = useState(false);
   const [hinweis, setHinweis] = useState("Tippe auf ein Haus!");
+  // Eine neue Nachricht ist immer erst offen; eingeklappt wird sie per Zeitgeber oder Antippen.
+  const [picoStand, setPicoStand] = useState({ text: "", offen: true, ungelesen: false });
+  const picoAktuell = picoStand.text === hinweis;
+  const picoOffen = picoAktuell ? picoStand.offen : true;
+  const picoUngelesen = picoAktuell && picoStand.ungelesen;
   const [jetzt, setJetzt] = useState(startJetzt);
   const [verhaeltnis, setVerhaeltnis] = useState(1.6);
   const [alleKurse, setAlleKurse] = useState(false);
   const [neuFrage, setNeuFrage] = useState(false);
+  const [anleitung, setAnleitung] = useState(false);
 
   const pos = useRef<Punkt>(stadt.start);
   const laeuftRef = useRef(false);
-  const startetRef = useRef(false);
-  // Nach dem Finale startet die Rakete erst wieder automatisch, wenn man den Platz verlassen hat.
-  const platzGesperrt = useRef(false);
+  const stillSeit = useRef(0);
+  const blickRef = useRef<{ blick: Blick; spiegeln: boolean }>({ blick: "vorne", spiegeln: false });
+  /** Setzt die Blickrichtung mit etwas Spielraum: Fast-diagonale Eingaben behalten die alte Richtung. */
+  const schaue = useCallback((r: Punkt) => {
+    const ax = Math.abs(r.x);
+    const ay = Math.abs(r.y);
+    const alt = blickRef.current;
+    const seitlich = ax > ay * 1.3 || (ay <= ax * 1.3 && alt.blick === "seite");
+    const neu = seitlich ? { blick: "seite" as const, spiegeln: r.x < 0 } : { blick: r.y < 0 ? ("hinten" as const) : ("vorne" as const), spiegeln: alt.spiegeln };
+    if (neu.blick === alt.blick && neu.spiegeln === alt.spiegeln) return;
+    blickRef.current = neu;
+    setBlick(neu.blick);
+    setSpiegeln(neu.spiegeln);
+  }, []);
+  const raketeRef = useRef<RaketenZustand>("bereit");
+  const gespraechOffen = useRef(false);
+  useEffect(() => {
+    gespraechOffen.current = Boolean(gespraech);
+  }, [gespraech]);
+  const warAmPlatz = useRef(false);
   const autosRef = useRef<Auto[]>(autos);
   const tasten = useRef(new Set<string>());
   const route = useRef<Punkt[]>([]);
@@ -137,7 +193,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const rahmen = useRef<HTMLDivElement>(null);
   const welt = useRef<SVGSVGElement>(null);
 
-  const figur = figurNachId(figurId);
+  const figur = useMemo(() => figurAusAvatar(avatar), [avatar]);
+  const bewohner = useMemo(() => bewohnerFuer(stadt), [stadt]);
   const stufe = stufeFuerAlter(stand.alter);
   const erfolge = stand.fortschritt[stufe];
   const mitTeil = useMemo(() => STATIONEN.filter((s) => erfolge.some((id) => id.startsWith(`${s.id}-`))), [erfolge]);
@@ -145,11 +202,14 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const teile = useMemo(() => mitTeil.map((s) => s.teil), [mitTeil]);
   const alleTeile = teile.length === STATIONEN.length;
   const nah = nahesHaus(stadt, position);
+  const nachbar = useMemo(() => naechsterBewohner(bewohner, position), [bewohner, position]);
+  const imGespraech = gespraech ? bewohner.find((b) => b.id === gespraech.id) : undefined;
   const basisStation = STATIONEN.find((s) => s.id === hausId) ?? STATIONEN[0]!;
   const station = { ...basisStation, aktivitaeten: aktivitaetenFuer(plugins, basisStation) };
   const klein = stand.alter <= 8;
   const geschichte = station.geschichte[klein ? "klein" : "gross"];
   const aktivitaet = station.aktivitaeten[phase] ?? station.aktivitaeten[0]!;
+  const einstieg = einstiegFuer(aktivitaet);
   const merk = useSammlung("kind");
   const vorlesen = useVorlesen();
   const jetztDatum = useMemo(() => new Date(jetzt), [jetzt]);
@@ -160,11 +220,23 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const geladen = pruefeSpielstand(lies<unknown>("sitzung", SPEICHER_STAND, null));
     if (geladen.alter > 11) geladen.alter = 11;
     setStand(geladen);
-    const gespeicherteFigur = lies<string>("sitzung", SPEICHER_FIGUR, "");
-    if (FIGUREN.some((f) => f.id === gespeicherteFigur)) {
-      setFigurId(gespeicherteFigur);
-      setBereit(true);
+    const gespeicherteRakete = lies<RaketenZustand>("sitzung", SPEICHER_RAKETE, "bereit");
+    if (gespeicherteRakete === "weg") {
+      raketeRef.current = "weg";
+      setRakete("weg");
     }
+    setTonAus(klangIstAus());
+    // Die eigene Figur aus dem Baukasten. Eine Figur aus der alten Auswahl dient nur als Vorlage.
+    const gespeicherterAvatar = lies<unknown>("sitzung", SPEICHER_AVATAR, null);
+    const alteFigur = lies<string>("sitzung", SPEICHER_FIGUR, "");
+    if (gespeicherterAvatar) {
+      setAvatar(pruefeAvatar(gespeicherterAvatar));
+      setBereit(true);
+    } else if (alteFigur) {
+      setAvatar(alterAvatar(alteFigur));
+    }
+    setGesprochen(lies<string[]>("sitzung", SPEICHER_GESPRAECHE, []).filter((x) => typeof x === "string"));
+    setBesucht(lies<string[]>("sitzung", SPEICHER_BESUCHT, []).filter((x) => typeof x === "string"));
     setJetzt(new Date().toISOString());
     const uhr = setInterval(() => setJetzt(new Date().toISOString()), 60_000);
     return () => clearInterval(uhr);
@@ -193,10 +265,13 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       setPhase(erste ?? 0);
       setBelohnung(null);
       setAlleKurse(false);
+      setEingefuehrt(false);
+      setSzeneFertig(besucht.includes(id));
       setFenster("haus");
+      klang.tuer();
       gesperrteTuer.current = id;
     },
-    [stand, stoppen],
+    [stand, stoppen, besucht],
   );
 
   const laufeZu = useCallback(
@@ -223,18 +298,50 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
 
   const zurRakete = useCallback(() => laufeZu(stadt.platz, { art: "rakete" }), [stadt, laufeZu]);
 
+  const sprichMit = useCallback(
+    (id: string) => {
+      stoppen();
+      setGespraech({ id, zeile: 0, antwort: null });
+      klang.klick();
+    },
+    [stoppen],
+  );
+
+  const zuBewohner = useCallback(
+    (b: Bewohner) => {
+      if (abstand(pos.current, b.ort) < SPRECH_RADIUS) sprichMit(b.id);
+      // Seitlich neben die Person laufen, nicht direkt davor – sonst verdecken sich die beiden Figuren.
+      else laufeZu({ x: b.ort.x + (pos.current.x < b.ort.x ? -58 : 58), y: b.ort.y }, { art: "bewohner", id: b.id });
+    },
+    [laufeZu, sprichMit],
+  );
+
+  const raketeStarten = useCallback(() => {
+    if (raketeRef.current === "startet") return;
+    raketeRef.current = "startet";
+    setRakete("startet");
+    setHinweis("3 … 2 … 1 … Start!");
+    klang.countdown();
+    window.setTimeout(() => klang.start(), 2400);
+    window.setTimeout(() => {
+      setFenster("finale");
+      klang.jubel();
+    }, 3600);
+  }, []);
+
+  /** Wird nur beim Ankommen bzw. Betreten des Platzes ausgelöst – nie dauerhaft, solange man dort steht. */
   const raketeErreicht = useCallback(() => {
-    if (startetRef.current) return;
-    if (alleTeile) {
-      startetRef.current = true;
-      setStartet(true);
-      setHinweis("3 … 2 … 1 … Start!");
-      window.setTimeout(() => setFenster("finale"), 3300);
-    } else {
-      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil)).map((s) => s.teil);
-      setHinweis(`Es fehlt noch: ${fehlt.join(", ")}`);
+    if (raketeRef.current === "startet") return;
+    if (raketeRef.current === "weg") {
+      setHinweis("Die Rakete ist im All! Du hast es geschafft.");
+      return;
     }
-  }, [alleTeile, teile]);
+    if (alleTeile) raketeStarten();
+    else {
+      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil));
+      setHinweis(`Noch ${fehlt.length} Teil${fehlt.length === 1 ? "" : "e"}: ${fehlt.map((s) => s.kurz).join(", ")}`);
+    }
+  }, [alleTeile, teile, raketeStarten]);
 
   function weltPunkt(e: React.PointerEvent<SVGSVGElement>): Punkt | null {
     const m = e.currentTarget.getScreenCTM()?.inverse();
@@ -244,18 +351,28 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   }
 
   function weltAntippen(e: React.PointerEvent<SVGSVGElement>) {
-    if (pausiert || fenster || !bereit) return;
+    if (pausiert || fenster || !bereit || gespraech) return;
     const p = weltPunkt(e);
     if (!p) return;
+    const getroffen = bewohner.find((b) => Math.abs(p.x - b.ort.x) < 34 && p.y > b.ort.y - 110 && p.y < b.ort.y + 14);
+    if (getroffen) return zuBewohner(getroffen);
     const haus = hausAn(stadt, p);
     if (haus) return zumHaus(haus.station.id);
+    const wahrzeichen = wahrzeichenAn(stadt, p);
+    if (wahrzeichen) {
+      setHinweis(wahrzeichen.fakt);
+      setPicoStand({ text: wahrzeichen.fakt, offen: true, ungelesen: false });
+      if (!tonAus && vorlesen.kann) vorlesen.sprich(wahrzeichen.fakt);
+      klang.klick();
+      return;
+    }
     if (abstand(p, { x: stadt.platz.x, y: stadt.platz.y - 60 }) < stadt.platz.r) return zurRakete();
     laufeZu(p, null);
   }
 
   // Tastatur: Pfeile/WASD bewegen, Enter/E öffnet ein nahes Haus.
   useEffect(() => {
-    if (!bereit || fenster) return;
+    if (!bereit || fenster || gespraech) return;
     const eingabe = (el: EventTarget | null) => el instanceof HTMLElement && (el.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName));
     const imSpiel = () => {
       const aktiv = document.activeElement;
@@ -273,6 +390,9 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       } else if ((e.key === "Enter" || taste === "e") && nahesHaus(stadt, pos.current)) {
         e.preventDefault();
         oeffneHaus(nahesHaus(stadt, pos.current)!.station.id);
+      } else if ((e.key === "Enter" || taste === "e") && naechsterBewohner(bewohner, pos.current)) {
+        e.preventDefault();
+        sprichMit(naechsterBewohner(bewohner, pos.current)!.id);
       }
     };
     const hoch = (e: KeyboardEvent) => tasten.current.delete(e.key.length === 1 ? e.key.toLowerCase() : e.key);
@@ -285,7 +405,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       window.removeEventListener("keyup", hoch);
       window.removeEventListener("blur", weg);
     };
-  }, [bereit, fenster, stadt, oeffneHaus]);
+  }, [bereit, fenster, gespraech, stadt, oeffneHaus, bewohner, sprichMit]);
 
   /* ---------- Spielschleife ---------- */
 
@@ -296,6 +416,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     setZiel(undefined);
     if (aktion?.art === "haus") oeffneHaus(aktion.id);
     if (aktion?.art === "rakete") raketeErreicht();
+    if (aktion?.art === "bewohner") sprichMit(aktion.id);
   };
 
   useEffect(() => {
@@ -305,7 +426,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const tick = (zeit: number) => {
       const dt = vorher ? Math.min((zeit - vorher) / 1000, 0.05) : 0;
       vorher = zeit;
-      if (!pausiert && !fenster) {
+      if (!pausiert && !fenster && !anleitung && !gespraechOffen.current) {
         let richtung: Punkt = { x: 0, y: 0 };
         let dauer = dt;
         for (const t of tasten.current) {
@@ -326,26 +447,26 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         }
         let bewegt = false;
         if (richtung.x || richtung.y) {
+          // Die Blickrichtung folgt der gewollten Richtung, nicht den kleinen Ausweichschritten am Bordstein.
+          schaue(richtung);
           const neu = bewege(stadt, pos.current, richtung, dauer);
           bewegt = abstand(neu, pos.current) > 0.05;
           if (bewegt) {
-            const dx = neu.x - pos.current.x;
-            const dy = neu.y - pos.current.y;
-            if (Math.abs(dx) > Math.abs(dy)) {
-              setBlick("seite");
-              setSpiegeln(dx < 0);
-            } else setBlick(dy < 0 ? "hinten" : "vorne");
             pos.current = neu;
             setPosition(neu);
+            klang.schritt();
           } else if (route.current.length) {
             // Sicherheitsnetz: Ein Wegpunkt ist nicht erreichbar → Route neu planen statt stehen zu bleiben.
             const endpunkt = route.current.at(-1)!;
             route.current = planeRoute(stadt, pos.current, endpunkt);
           }
         }
-        if (bewegt !== laeuftRef.current) {
-          laeuftRef.current = bewegt;
-          setLaeuft(bewegt);
+        // Laufen erst nach einer kurzen Pause beenden – sonst springt die Animation bei jedem Mini-Stopp neu an.
+        if (bewegt) stillSeit.current = zeit;
+        const laeuftJetzt = bewegt || zeit - stillSeit.current < 140;
+        if (laeuftJetzt !== laeuftRef.current) {
+          laeuftRef.current = laeuftJetzt;
+          setLaeuft(laeuftJetzt);
         }
 
         // Tür erreicht (auch mit Tastatur): Haus öffnet sich – erst wieder, wenn man sich entfernt hat.
@@ -366,19 +487,27 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     };
     rahmenId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rahmenId);
-  }, [bereit, pausiert, fenster, stadt, oeffneHaus]);
+  }, [bereit, pausiert, fenster, anleitung, stadt, oeffneHaus, schaue]);
 
   // Hinweistexte passend zur Situation
   useEffect(() => {
     if (startet) return;
-    const aufPlatz = amPlatz(stadt, position);
-    if (!aufPlatz) platzGesperrt.current = false;
+    const jetztAmPlatz = amPlatz(stadt, position);
+    const betreten = jetztAmPlatz && !warAmPlatz.current;
+    warAmPlatz.current = jetztAmPlatz;
     if (nah) setHinweis(`${nah.station.kurz} – tippe auf die Tür!`);
-    else if (aufPlatz) {
-      if (!platzGesperrt.current) raketeErreicht();
+    else if (nachbar && !gesprochen.includes(nachbar.id)) setHinweis(`Da ist ${nachbar.name}. Sag Hallo!`);
+    else if (betreten) raketeErreicht();
+    else if (!jetztAmPlatz && rakete === "bereit") {
+      const fehlt = STATIONEN.filter((s) => !teile.includes(s.teil));
+      setHinweis(fehlt.length ? `Hol ${fehlt.length === STATIONEN.length ? "die" : "noch"} ${fehlt.length} Raketenteil${fehlt.length === 1 ? "" : "e"} aus den Häusern!` : "Alle Teile da! Lauf zur Rakete!");
     }
-    else if (alleTeile) setHinweis("Alle Teile da! Lauf zur Rakete!");
-  }, [nah, position, stadt, alleTeile, startet, raketeErreicht]);
+  }, [nah, nachbar, gesprochen, position, stadt, teile, rakete, startet, raketeErreicht]);
+
+  useEffect(() => {
+    const zu = setTimeout(() => setPicoStand({ text: hinweis, offen: false, ungelesen: true }), 5500);
+    return () => clearTimeout(zu);
+  }, [hinweis]);
 
   /* ---------- Ansicht ---------- */
 
@@ -425,6 +554,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     const neuesTeil = !erfolge.some((e) => e.startsWith(`${station.id}-`));
     speichere({ ...stand, fortschritt: { ...stand.fortschritt, [stufe]: [...erfolge, id] } });
     setBelohnung(neuesTeil ? station.teil : "Stern");
+    klang.richtig();
+    window.setTimeout(() => (neuesTeil ? klang.teil() : klang.stern()), 350);
   }
 
   const passende = useMemo(() => passendeSpielAngebote(angebote, station.thema, stand.alter, jetztDatum), [angebote, station.thema, stand.alter, jetztDatum]);
@@ -435,17 +566,98 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   function neuAnfangen() {
     loesche("sitzung", SPEICHER_STAND);
     loesche("sitzung", SPEICHER_FIGUR);
+    loesche("sitzung", SPEICHER_AVATAR);
+    loesche("sitzung", SPEICHER_GESPRAECHE);
+    setAvatar(STANDARD_AVATAR);
+    setGesprochen([]);
+    setGespraech(null);
+    setStartSchritt("alter");
+    setFenster(undefined);
     merk.leeren();
     stoppen();
     pos.current = stadt.start;
     setPosition(stadt.start);
     setStand(neuerSpielstand());
-    startetRef.current = false;
-    setStartet(false);
+    loesche("sitzung", SPEICHER_RAKETE);
+    loesche("sitzung", "spielwelt.anleitung");
+    raketeRef.current = "bereit";
+    setRakete("bereit");
+    warAmPlatz.current = false;
     setNeuFrage(false);
     setBereit(false);
     setHinweis("Tippe auf ein Haus!");
   }
+
+  function einpacken(id: string) {
+    if (!merk.ids.includes(id)) klang.einpacken();
+    merk.merken(id);
+  }
+
+  function tonUmschalten() {
+    const neu = !tonAus;
+    setTonAus(neu);
+    setzeKlangAus(neu);
+    if (!neu) klang.klick();
+  }
+
+  /* ---------- Gespräche ---------- */
+
+  const zeilen = imGespraech ? (klein ? imGespraech.gespraech.klein : imGespraech.gespraech.gross) : [];
+  const frage = imGespraech?.gespraech.frage;
+  const gewaehlt = gespraech?.antwort != null ? frage?.antworten[gespraech.antwort] : undefined;
+  const gespraechText = !gespraech || !imGespraech ? "" : gewaehlt ? gewaehlt.rueckmeldung : gespraech.zeile < zeilen.length ? zeilen[gespraech.zeile]! : frage?.text ?? "";
+  const { kann: kannVorlesen, sprich, stopp: stoppVorlesen } = vorlesen;
+
+  // Bei Ton an liest die Stimme des Geräts jede neue Gesprächszeile vor.
+  useEffect(() => {
+    if (!gespraechText) return;
+    if (!tonAus && kannVorlesen) sprich(gespraechText);
+  }, [gespraechText, tonAus, kannVorlesen, sprich]);
+
+  function gespraechWeiter() {
+    if (!gespraech) return;
+    klang.klick();
+    setGespraech({ ...gespraech, zeile: gespraech.zeile + 1 });
+  }
+
+  function antworte(i: number) {
+    if (!gespraech || !frage) return;
+    const a = frage.antworten[i];
+    if (!a) return;
+    if (a.richtig) klang.richtig();
+    else klang.falsch();
+    setGespraech({ ...gespraech, antwort: i });
+  }
+
+  function gespraechEnde() {
+    if (gespraech && gewaehlt?.richtig && !gesprochen.includes(gespraech.id)) {
+      const neu = [...gesprochen, gespraech.id];
+      setGesprochen(neu);
+      schreibe("sitzung", SPEICHER_GESPRAECHE, neu);
+      klang.stern();
+    }
+    stoppVorlesen();
+    setGespraech(null);
+  }
+
+  /* ---------- Bereich für Erwachsene: drei Sekunden halten ---------- */
+
+  function haltenStart() {
+    if (halteUhr.current) return;
+    setHalten(true);
+    halteUhr.current = setTimeout(() => {
+      halteUhr.current = null;
+      setHalten(false);
+      setFenster("erwachsene");
+      klang.tuer();
+    }, HALTEN_MS);
+  }
+  function haltenEnde() {
+    if (halteUhr.current) clearTimeout(halteUhr.current);
+    halteUhr.current = null;
+    setHalten(false);
+  }
+  useEffect(() => () => { if (halteUhr.current) clearTimeout(halteUhr.current); }, []);
 
   function steuerDruck(taste: string, an: boolean) {
     if (an) {
@@ -457,6 +669,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   }
 
   return (
+    <AvatarKontext.Provider value={avatar}>
     <main id="inhalt" className={`spielwelt ${vollbild ? "ist-vollbild" : ""}`}>
       <section className="spielwelt-kopf">
         <div>
@@ -464,6 +677,10 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <h1>Bau die COSMOS-Rakete!</h1>
         </div>
         <div className="kopf-knoepfe">
+          <button className="spiel-knopf erwachsene-knopf" onClick={() => { stoppen(); setFenster("tor"); }}>
+            <Symbol name="user" />
+            Für Erwachsene
+          </button>
           <button className="spiel-knopf rucksack-knopf" onClick={() => { stoppen(); setFenster("rucksack"); }}>
             <Symbol name="backpack" />
             Rucksack
@@ -483,14 +700,15 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             role="img"
             aria-label="Spielwelt: eine kleine Stadt mit vier Lernhäusern, einer Straße mit Zebrastreifen und einer Rakete auf dem Platz."
           >
-            <StadtKulisse stadt={stadt} teile={teile} erledigt={mitTeilIds} nahesHausId={nah?.station.id} startet={startet} />
-            <StadtLeben stadt={stadt} figur={figur} position={position} blick={blick} spiegeln={spiegeln} laeuft={laeuft} autos={autos} ziel={ziel} />
+            <StadtKulisse stadt={stadt} teile={teile} erledigt={mitTeilIds} nahesHausId={nah?.station.id} rakete={rakete} />
+            <StadtLeben stadt={stadt} avatar={avatar} position={position} blick={blick} spiegeln={spiegeln} laeuft={laeuft} autos={autos} ziel={ziel} bewohner={bewohner} sprichtMit={gespraech?.id} nahBei={nachbar?.id} gesprochen={gesprochen} />
+            <TunnelHuegel stadt={stadt} />
           </svg>
 
           {/* Kopfleiste im Spiel: nur Symbole */}
           <div className="hud-oben">
-            <button className="hud-figur" onClick={() => { stoppen(); setBereit(false); }} aria-label={`Figur ${figur.name} wechseln`}>
-              <FigurPortrait figur={figur} className="hud-portrait" />
+            <button className="hud-figur" onClick={() => { stoppen(); setGespraech(null); setStartSchritt("figur"); setBereit(false); }} aria-label="Meine Figur ändern">
+              <Avatar wert={avatar} className="hud-portrait" mini />
               <span className="hud-sterne" aria-label={`${erfolge.length} von 12 Sternen`}>
                 <Symbol name="star" />
                 {erfolge.length}
@@ -507,6 +725,12 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               </li>
             </ol>
             <div className="hud-knoepfe">
+              <button className="rund-knopf" onClick={() => { stoppen(); setAnleitung(true); }} aria-label="So geht's">
+                <Symbol name="info" />
+              </button>
+              <button className="rund-knopf" onClick={tonUmschalten} aria-label={tonAus ? "Ton an" : "Ton aus"} aria-pressed={!tonAus}>
+                <Symbol name={tonAus ? "mute" : "volume"} />
+              </button>
               <button className="rund-knopf" onClick={() => { stoppen(); setPausiert(!pausiert); }} aria-label={pausiert ? "Weiterspielen" : "Pause"} aria-pressed={pausiert}>
                 <Symbol name={pausiert ? "play" : "pause"} />
               </button>
@@ -522,19 +746,45 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             </div>
           </div>
 
-          <AnimatePresence mode="wait">
-            {bereit && !pausiert && (
-              <motion.div key={hinweis} className="pico-blase" initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -10, opacity: 0 }}>
-                <PixelBild motiv="roboter" />
-                <span>{hinweis}</span>
-                {vorlesen.kann && (
-                  <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(hinweis)} aria-label="Vorlesen">
-                    <Symbol name="volume" />
-                  </button>
+          {/* Pico funkt aus der Ecke: Die Nachricht klappt kurz auf und wird dann wieder klein – so bleiben die Autos im Blick. */}
+          <p className="sr-only" role="status">{hinweis}</p>
+          {bereit && !pausiert && !gespraech && (
+            <div className="pico-funk">
+              <AnimatePresence mode="wait">
+                {picoOffen && (
+                  <motion.div
+                    key={hinweis}
+                    className="pico-blase"
+                    initial={{ opacity: 0, scale: 0.5, x: 30 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, x: 30 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 28 }}
+                    style={{ originX: 1, originY: 1 }}
+                  >
+                    <span>{hinweis}</span>
+                    {vorlesen.kann && (
+                      <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(hinweis)} aria-label="Vorlesen">
+                        <Symbol name="volume" />
+                      </button>
+                    )}
+                  </motion.div>
                 )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </AnimatePresence>
+              <motion.button
+                key={`pico-${hinweis}`}
+                className="pico-knopf"
+                onClick={() => setPicoStand({ text: hinweis, offen: !picoOffen, ungelesen: false })}
+                aria-label={picoOffen ? "Pico-Nachricht einklappen" : "Pico-Nachricht zeigen"}
+                aria-expanded={picoOffen}
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [0, -14, 12, -6, 0], y: [0, -8, 0] }}
+                transition={{ duration: 0.6 }}
+              >
+                <PixelBild motiv="roboter" />
+                {picoUngelesen && !picoOffen && <span className="pico-punkt" aria-hidden="true" />}
+              </motion.button>
+            </div>
+          )}
 
           <div className="steuerkreuz" role="group" aria-label="Figur bewegen">
             {([
@@ -562,6 +812,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <AnimatePresence>
             {nah && !fenster && (
               <motion.button
+                key="haus"
                 className="aktion-knopf"
                 initial={{ scale: 0.6, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -572,12 +823,78 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                 {nah.station.kurz}
               </motion.button>
             )}
+            {!nah && !fenster && !gespraech && nachbar && (
+              <motion.button
+                key={`bewohner-${nachbar.id}`}
+                className="aktion-knopf aktion-reden"
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.6, opacity: 0 }}
+                onClick={() => sprichMit(nachbar.id)}
+              >
+                <Symbol name="story" />
+                Mit {nachbar.name} sprechen
+              </motion.button>
+            )}
+            {!nah && !nachbar && !fenster && amPlatz(stadt, position) && (rakete === "weg" || (alleTeile && rakete === "bereit")) && (
+              <motion.button
+                key="rakete"
+                className="aktion-knopf aktion-rakete"
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.6, opacity: 0 }}
+                onClick={raketeStarten}
+              >
+                <Symbol name="rocket" />
+                {rakete === "weg" ? "Nochmal fliegen" : "Rakete starten"}
+              </motion.button>
+            )}
           </AnimatePresence>
 
-          <button className="mini-karte" onClick={() => { stoppen(); setKartenZoom(1); setFenster("karte"); }} aria-label="Karte öffnen">
-            <StadtKarte stadt={stadt} position={position} erledigt={mitTeilIds} />
-            <span className="mini-karte-symbol"><Symbol name="expand" /></span>
-          </button>
+
+          <AnimatePresence>
+            {imGespraech && gespraech && (
+              <motion.section
+                key="gespraech"
+                className="gespraech"
+                aria-labelledby="gespraech-name"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 40, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                onKeyDown={(e) => { if (e.key === "Escape") gespraechEnde(); }}
+              >
+                {imGespraech.aussehen === "roboter" ? <svg className="gespraech-portrait" viewBox="0 0 120 140" aria-hidden="true"><Roboter /></svg> : <Avatar wert={imGespraech.aussehen} className="gespraech-portrait" mini label={imGespraech.name} />}
+                <div className="gespraech-inhalt">
+                  <h2 id="gespraech-name">{imGespraech.name}</h2>
+                  <p className="gespraech-text" aria-live="polite">{gespraechText}</p>
+                  <div className="gespraech-knoepfe">
+                    {gewaehlt ? (
+                      gewaehlt.richtig ? (
+                        <button className="spiel-knopf spiel-knopf-dunkel" onClick={gespraechEnde} autoFocus><Symbol name="check" /> Tschüss, {imGespraech.name}!</button>
+                      ) : (
+                        <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => setGespraech({ ...gespraech, antwort: null })} autoFocus><Symbol name="refresh" /> Nochmal überlegen</button>
+                      )
+                    ) : gespraech.zeile < zeilen.length ? (
+                      <button className="spiel-knopf spiel-knopf-dunkel" onClick={gespraechWeiter} autoFocus><Symbol name="arrow" /> Weiter</button>
+                    ) : (
+                      frage?.antworten.map((a, i) => (
+                        <button key={a.text} className="spiel-knopf" onClick={() => antworte(i)} autoFocus={i === 0}>{a.text}</button>
+                      ))
+                    )}
+                    {kannVorlesen && (
+                      <button className="rund-knopf rund-klein" onClick={() => sprich(gespraechText)} aria-label="Nochmal vorlesen">
+                        <Symbol name="volume" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <button className="rund-knopf gespraech-zu" onClick={gespraechEnde} aria-label="Gespräch beenden">
+                  <Symbol name="close" />
+                </button>
+              </motion.section>
+            )}
+          </AnimatePresence>
 
           {pausiert && (
             <div className="pause-flaeche">
@@ -592,14 +909,29 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <AnimatePresence>
             {!bereit && (
               <StartAuswahl
-                figurId={figurId}
+                schritt={startSchritt}
+                setSchritt={setStartSchritt}
+                avatar={avatar}
+                setAvatar={setAvatar}
                 alter={stand.alter}
-                waehleFigur={(id) => setFigurId(id)}
                 waehleAlter={(alter) => speichere({ ...stand, alter })}
                 los={() => {
-                  schreibe("sitzung", SPEICHER_FIGUR, figurId);
+                  schreibe("sitzung", SPEICHER_AVATAR, avatar);
+                  loesche("sitzung", SPEICHER_FIGUR);
                   setBereit(true);
-                  setHinweis("Tippe auf ein Haus!");
+                  klang.klick();
+                  if (!lies<boolean>("sitzung", "spielwelt.anleitung", false)) setAnleitung(true);
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {bereit && anleitung && (
+              <Anleitung
+                weiter={() => {
+                  schreibe("sitzung", "spielwelt.anleitung", true);
+                  setAnleitung(false);
+                  klang.klick();
                 }}
               />
             )}
@@ -641,7 +973,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           )}
         </div>
         <p className="haus-leiste-fuss">
-          Die Häuser sind ausgedachte Lernspiele. Echte Kurse findest du in jedem Haus – und auf der <Link href="/einrichtungen/">Karte von Heilbronn</Link>.
+          Die Häuser zeigen echte Heilbronner Lernorte, die Aufgaben sind ausgedachte Lernspiele. Echte Kurse findest du in jedem Haus. Mehr zeigen dir deine Eltern über „Für Erwachsene“.
         </p>
       </section>
 
@@ -655,6 +987,20 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         breit
         kopfbild={<PixelBild motiv={station.grafik} className="fenster-kopfbild" />}
       >
+        {!szeneFertig ? (
+          <OrtSzene
+            station={station}
+            avatar={avatar}
+            klein={klein}
+            stumm={tonAus}
+            fertig={() => {
+              setSzeneFertig(true);
+              const neu = besucht.includes(station.id) ? besucht : [...besucht, station.id];
+              setBesucht(neu);
+              schreibe("sitzung", SPEICHER_BESUCHT, neu);
+            }}
+          />
+        ) : (
         <div className="haus-inhalt">
           <p className="haus-geschichte">
             <span className="haus-ort" style={{ background: station.farbe }}>{station.kurz} · {station.name}</span>
@@ -665,20 +1011,47 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               </button>
             )}
           </p>
+          {fotoFuer(station.id) ? (
+            <div className="haus-echt">
+              <FotoZoom foto={fotoFuer(station.id)!} links={false} />
+              <div>
+                <h3>So sieht es in echt aus</h3>
+                <p>{fotoFuer(station.id)!.zeigt}</p>
+                <p className="haus-echt-tipp">Tippe aufs Foto, dann wird es groß.</p>
+              </div>
+            </div>
+          ) : (
+            <div className="haus-echt">
+              <figure className="haus-echt-zeichnung"><OrtsBild id={station.id} name={station.name} farbe={station.farbe} /></figure>
+              <div>
+                <h3>Der echte Ort</h3>
+                <p>Das {station.name} ist in Heilbronn. Ein Foto fehlt uns noch – das hier ist eine Zeichnung.</p>
+              </div>
+            </div>
+          )}
           <nav className="aufgaben-reiter" aria-label="Aufgaben in diesem Haus">
             {station.aktivitaeten.map((a, n) => {
               const fertig = erfolge.includes(`${station.id}-${n}`);
               return (
-                <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); }} aria-label={`Aufgabe ${n + 1}: ${a.titel}${fertig ? ", geschafft" : ""}`}>
+                <button key={n} aria-current={phase === n ? "step" : undefined} className={fertig ? "ist-fertig" : ""} onClick={() => { setPhase(n); setBelohnung(null); setEingefuehrt(false); }} aria-label={`Aufgabe ${n + 1}: ${a.titel}${fertig ? ", geschafft" : ""}`}>
                   {fertig ? <Symbol name="star" /> : n + 1}
                 </button>
               );
             })}
+            {eingefuehrt && (
+              <button className="aufgabe-erklaerung" onClick={() => setEingefuehrt(false)}>
+                <Symbol name="info" /> Erklärung
+              </button>
+            )}
           </nav>
           <div className="aufgabe-flaeche">
-            {pluginsGeladen
-              ? <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} />
-              : <p role="status">Aufgabe wird vorbereitet …</p>}
+            {!pluginsGeladen ? (
+              <p role="status">Aufgabe wird vorbereitet …</p>
+            ) : eingefuehrt || !einstieg ? (
+              <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} fehler={() => klang.falsch()} figur={figur} />
+            ) : (
+              <AufgabenEinstieg key={`einstieg-${station.id}-${stufe}-${phase}`} art={einstieg.art} stufe={stufe} phase={einstieg.phase} stumm={tonAus} starten={() => { setEingefuehrt(true); klang.klick(); }} />
+            )}
             <AnimatePresence>
               {belohnung && (
                 <motion.div className="belohnung" initial={{ scale: 0.4, opacity: 0, rotate: -8 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} exit={{ scale: 0.6, opacity: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}>
@@ -693,7 +1066,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
                   <strong>{belohnung === "Stern" ? "Ein Stern für dich!" : `Raketenteil: ${belohnung}!`}</strong>
                   <div className="belohnung-knoepfe">
                     {phase < station.aktivitaeten.length - 1 && (
-                      <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { setPhase(phase + 1); setBelohnung(null); }}>
+                      <button className="spiel-knopf spiel-knopf-dunkel" onClick={() => { setPhase(phase + 1); setBelohnung(null); setEingefuehrt(false); }}>
                         <Symbol name="arrow" /> Nächste Aufgabe
                       </button>
                     )}
@@ -715,7 +1088,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               <>
                 <div className="sammelkarten">
                   {(alleKurse ? passende : passende.slice(0, 3)).map((a, i) => (
-                    <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={merk.merken} jetzt={jetzt} index={i} />
+                    <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={einpacken} jetzt={jetzt} index={i} />
                   ))}
                 </div>
                 {passende.length > 3 && (
@@ -726,10 +1099,50 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
               </>
             ) : (
               <p className="leer-hinweis">
-                <Symbol name="info" /> Gerade kein passender Kurs für {stand.alter} Jahre. Schau auf die <Link href="/einrichtungen/">Karte</Link>!
+                <Symbol name="info" /> Gerade kein passender Kurs für {stand.alter} Jahre. Deine Eltern finden mehr über „Für Erwachsene“.
               </p>
             )}
           </section>
+        </div>
+        )}
+      </Fensterrahmen>
+
+      <Fensterrahmen offen={fenster === "tor"} schliessen={() => { haltenEnde(); setFenster(undefined); }} kennung="tor-titel" titel="Für Erwachsene" kopfbild={<Symbol name="user" className="fenster-symbol" />}>
+        <div className="erwachsenen-tor">
+          <p>Hier geht es zu Kursen, Einstellungen und Seiten außerhalb des Spiels.</p>
+          <p>Halten Sie den Knopf drei Sekunden gedrückt. Mit der Tastatur: Leertaste oder Enter gedrückt halten.</p>
+          <button
+            className={`spiel-knopf spiel-knopf-dunkel halteknopf ${halten ? "haelt" : ""}`}
+            style={{ ["--halten-ms" as string]: `${HALTEN_MS}ms` }}
+            onPointerDown={(e) => { e.currentTarget.setPointerCapture(e.pointerId); haltenStart(); }}
+            onPointerUp={haltenEnde}
+            onPointerCancel={haltenEnde}
+            onLostPointerCapture={haltenEnde}
+            onKeyDown={(e) => { if ((e.key === " " || e.key === "Enter") && !e.repeat) { e.preventDefault(); haltenStart(); } }}
+            onKeyUp={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); haltenEnde(); } }}
+            onBlur={haltenEnde}
+          >
+            {halten ? "Bitte halten …" : "Gedrückt halten"}
+          </button>
+          <small>Schutz vor versehentlichem Öffnen, keine Altersprüfung.</small>
+        </div>
+      </Fensterrahmen>
+
+      <Fensterrahmen offen={fenster === "erwachsene"} schliessen={() => setFenster(undefined)} kennung="erwachsene-titel" titel="Für Eltern und Begleitpersonen" breit kopfbild={<Symbol name="user" className="fenster-symbol" />}>
+        <div className="erwachsenen-bereich">
+          <p>Das Kind spielt ohne Konto und ohne Namen. Figur, Sterne, Gespräche und Rucksack liegen nur in dieser Browsersitzung.</p>
+          <div className="erwachsenen-links">
+            <Link className="spiel-knopf spiel-knopf-dunkel" href="/eltern/#spielbericht"><Symbol name="star" /> Entdeckungen & passende Kurse</Link>
+            <Link className="spiel-knopf" href="/einrichtungen/"><Symbol name="map" /> Lernorte auf der Karte</Link>
+            <Link className="spiel-knopf" href="/datenschutz/"><Symbol name="info" /> Datenschutz</Link>
+            <Link className="spiel-knopf" href="/impressum/"><Symbol name="info" /> Impressum</Link>
+            <Link className="spiel-knopf" href="/"><Symbol name="home" /> Startseite</Link>
+          </div>
+          <div className="erwachsenen-loeschen">
+            <h3>Alles löschen</h3>
+            <p>Löscht Figur, Alter, Sterne, Gespräche, Wünsche und Rucksack aus dieser Sitzung.</p>
+            <button className="spiel-knopf" onClick={neuAnfangen}><Symbol name="refresh" /> Jetzt löschen und neu beginnen</button>
+          </div>
         </div>
       </Fensterrahmen>
 
@@ -738,7 +1151,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
           <>
             <div className="sammelkarten">
               {gesammelt.map((a, i) => (
-                <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt sammeln={merk.merken} jetzt={jetzt} index={i} />
+                <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt sammeln={einpacken} jetzt={jetzt} index={i} />
               ))}
             </div>
             <ZeigEltern ids={gesammeltIds} />
@@ -754,32 +1167,10 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         )}
       </Fensterrahmen>
 
-      <Fensterrahmen offen={fenster === "karte"} schliessen={() => setFenster(undefined)} kennung="karte-titel" titel="Karte" breit kopfbild={<Symbol name="map" className="fenster-symbol" />}>
-        <div className="grosse-karte">
-          <StadtKarte
-            stadt={stadt}
-            position={position}
-            erledigt={mitTeilIds}
-            gross
-            zoom={kartenZoom}
-            onHaus={(id) => { setFenster(undefined); zumHaus(id); }}
-            onPlatz={() => { setFenster(undefined); zurRakete(); }}
-          />
-          <div className="karten-zoom">
-            <button className="rund-knopf" onClick={() => setKartenZoom((z) => Math.min(2.4, z + 0.4))} aria-label="Karte vergrößern" disabled={kartenZoom >= 2.4}>
-              <Symbol name="plus" />
-            </button>
-            <button className="rund-knopf" onClick={() => setKartenZoom((z) => Math.max(1, z - 0.4))} aria-label="Karte verkleinern" disabled={kartenZoom <= 1}>
-              <Symbol name="minus" />
-            </button>
-          </div>
-        </div>
-        <p className="karten-hinweis"><Symbol name="info" /> Tippe auf ein Haus – deine Figur läuft hin.</p>
-      </Fensterrahmen>
 
       <Fensterrahmen
         offen={fenster === "finale"}
-        schliessen={() => { setFenster(undefined); platzGesperrt.current = true; startetRef.current = false; setStartet(false); setHinweis("Toll gemacht! Spiel weiter oder pack Kurse ein."); }}
+        schliessen={() => { setFenster(undefined); raketeRef.current = "weg"; setRakete("weg"); schreibe("sitzung", SPEICHER_RAKETE, "weg"); setHinweis("Die Rakete ist im All! Pack dir echte Kurse ein."); }}
         kennung="finale-titel"
         titel="Die Rakete fliegt!"
         breit
@@ -787,10 +1178,10 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       >
         <div className="entdecker-pass">
           <div className="pass-kopf">
-            <FigurPortrait figur={figur} className="pass-portrait" />
+            <Avatar wert={avatar} className="pass-portrait" mini />
             <div>
               <p className="spiel-kennung">Entdecker-Pass</p>
-              <strong>{figur.name} · {erfolge.length} Sterne</strong>
+              <strong>{erfolge.length} Sterne · {gesprochen.length} Gespräche</strong>
             </div>
           </div>
           <div className="pass-stempel">
@@ -814,12 +1205,13 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         {vorschlaege.length > 0 && (
           <div className="sammelkarten">
             {vorschlaege.flatMap((v) => v.angebote.slice(0, 2)).slice(0, 4).map((a, i) => (
-              <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={merk.merken} jetzt={jetzt} index={i} />
+              <Sammelkarte key={a.id} angebot={a} meta={meta} gesammelt={merk.ids.includes(a.id)} sammeln={einpacken} jetzt={jetzt} index={i} />
             ))}
           </div>
         )}
         <ZeigEltern ids={gesammeltIds} />
       </Fensterrahmen>
     </main>
+    </AvatarKontext.Provider>
   );
 }

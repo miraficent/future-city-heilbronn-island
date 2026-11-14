@@ -1,0 +1,31 @@
+{
+  "modus": "built-in image_gen",
+  "bilder": [
+    {
+      "id": "experimenta",
+      "datei": "public/medien/heilbronn/experimenta.png",
+      "prompt": "Wide landscape 16:9 environment background for an original cozy children's 2D educational game. Beautiful deliberate hand-painted gouache and watercolor animation background, airy warm afternoon daylight, natural lush green trees, restrained soft blue sky, warm cream stone, believable architectural drawing. No pixel art, no photorealism, no plastic gloss, no characters, no text or lettering anywhere. Keep lower foreground open for a separately drawn standing guide and interface. One coherent complete scene, no panels. Architecture must retain stated real-world distinguishing features, simplified as a painterly illustration, not replaced by a cottage. Transform the reference photograph of experimenta Heilbronn into this painted game environment. Preserve the distinctive stacked offset pentagonal white steel-and-glass building and its visible diagonal triangular facade members, red glazing interiors, glazed ground floor and low Science Dome pavilion on right. Take a waterfront view with a little Neckar water at lower right and the brick Hagenbucher building partly visible on the left. Keep building geometry recognizable, pleasant blue sky and leafy trees. No added fictional towers.",
+      "referenzen": [
+        "C:/Users/arvin/Downloads/2-q==.jpg"
+      ]
+    },
+    {
+      "id": "aim",
+      "datei": "public/medien/heilbronn/aim.png",
+      "prompt": "Wide landscape 16:9 environment background for an original cozy children's 2D educational game. Beautiful deliberate hand-painted gouache and watercolor animation background, airy warm afternoon daylight, natural lush green trees, restrained soft blue sky, warm cream stone, believable architectural drawing. No pixel art, no photorealism, no plastic gloss, no characters, no text or lettering anywhere. Keep lower foreground open for a separately drawn standing guide and interface. One coherent complete scene, no panels. Architecture must retain stated real-world distinguishing features, simplified as a painterly illustration, not replaced by a cottage. Real location: aim academy, Bildungscampus 7, Heilbronn, Germany. Architectural reference is the city of Heilbronn official photograph AIM_Gebaude.jpg: a modern four-storey rectilinear academy clad in pale beige/light brick, broad horizontal rows of dark framed glass windows, taller transparent glass entrance/stairwell element, flat roofs. Campus courtyard at ground level with pale paving, mature green trees, understated benches and bikes. Render a welcoming three-quarter exterior view, not a historic school or fantasy house. Do not write aim lettering; interface will add it.",
+      "referenzen": "Architekturmerkmale aus dokumentierter Recherche; keine vollständige Fotorekonstruktion."
+    },
+    {
+      "id": "hdf",
+      "datei": "public/medien/heilbronn/hdf.png",
+      "prompt": "Wide landscape 16:9 environment background for an original cozy children's 2D educational game. Beautiful deliberate hand-painted gouache and watercolor animation background, airy warm afternoon daylight, natural lush green trees, restrained soft blue sky, warm cream stone, believable architectural drawing. No pixel art, no photorealism, no plastic gloss, no characters, no text or lettering anywhere. Keep lower foreground open for a separately drawn standing guide and interface. One coherent complete scene, no panels. Architecture must retain stated real-world distinguishing features, simplified as a painterly illustration, not replaced by a cottage. Real location Haus der Familie in Josef-Schwarz-Schule, Erich-Mendelsohn-Strasse 1C Heilbronn Neckarbogen. Referenced architectural features from official 2025 exterior photos: contemporary large multi-storey rectangular building with horizontal light timber slat facade, large continuous glass window bands, wraparound balconies, sheltered glazed entrance under concrete columns, bicycle racks. A sliver of rail infrastructure in the far background, not on the walking forecourt. Show welcoming entrance with timber surfaces, green planting and flowers, no cottage and no gabled roof. This is an exterior illustration of the current location, not the previous address.",
+      "referenzen": "Architekturmerkmale aus dokumentierter Recherche; keine vollständige Fotorekonstruktion."
+    },
+    {
+      "id": "ipai",
+      "datei": "public/medien/heilbronn/ipai.png",
+      "prompt": "Wide landscape 16:9 environment background for an original cozy children's 2D educational game. Beautiful deliberate hand-painted gouache and watercolor animation background, airy warm afternoon daylight, natural lush green trees, restrained soft blue sky, warm cream stone, believable architectural drawing. No pixel art, no photorealism, no plastic gloss, no characters, no text or lettering anywhere. Keep lower foreground open for a separately drawn standing guide and interface. One coherent complete scene, no panels. Architecture must retain stated real-world distinguishing features, simplified as a painterly illustration, not replaced by a cottage. Real location IPAI SPACES, Im Zukunftspark 11/13, Heilbronn. Based on SIIN architecture completed 2024: four-storey L-shaped modern modular steel-framed office and public visitor centre, broad dark gray grid framing and floor-to-ceiling glass, flat roof, exceptional lush vertical green planted facade strips wrapping building corners, terraces and planters, sheltered glass visitor entrance and accessible ground-level paved forecourt. Show the existing green-facade building, NOT future circular IPAI campus renderings. Add natural trees and bike racks.",
+      "referenzen": "Architekturmerkmale aus dokumentierter Recherche; keine vollständige Fotorekonstruktion."
+    }
+  ]
+}

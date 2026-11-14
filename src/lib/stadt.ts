@@ -1,3 +1,4 @@
+import { bewohnerFuer } from "./bewohner";
 import { abstand, inRechteck, type Punkt, type Rechteck, type Station } from "./spiel";
 
 /*
@@ -13,6 +14,8 @@ export type WegArt = "gehweg" | "hausweg" | "zebra" | "platz";
 export type Knoten = Punkt & { id: string };
 export type Kante = { von: string; nach: string; breite: number; art: WegArt };
 export type Haus = { station: Station; mitteX: number; dachY: number; bodenY: number; tuer: Punkt; flaeche: Rechteck; reihe: "oben" | "unten" };
+/** Heilbronner Wahrzeichen am Rand der Spielwelt. Antippen erzählt etwas über den echten Ort. */
+export type Wahrzeichen = { id: "kilianskirche" | "rathaus" | "wartberg"; x: number; y: number; breite: number; hoehe: number; fakt: string };
 export type Deko = { id: string; art: "baum" | "busch" | "blume" | "laterne" | "bank"; x: number; y: number; variante: number };
 
 export type Stadt = {
@@ -31,17 +34,23 @@ export type Stadt = {
   start: Punkt;
   deko: Deko[];
   autoBahn: Punkt[];
+  wahrzeichen: Wahrzeichen[];
+  /** Oberkante des Neckars am unteren Rand. */
+  neckarY: number;
 };
 
 const SPALTE = 470;
 const X0 = 300;
-const HAUS_BREITE = 250;
+const HAUS_BREITE = 400;
 const HAUS_HOEHE = 240;
 const WEG_BREITE = 56;
 const GEHWEG_BREITE = 60;
 const ZEBRA_BREITE = 76;
 export const TEMPO_FIGUR = 230;
 export const TEMPO_AUTO = 140;
+/** Radius der Kreisbahn im Wendehammer – groß genug, dass Autos um die Mittelinsel fahren. */
+export const KEHRE_RADIUS = 66;
+export const INSEL_RADIUS = 30;
 
 const Y = {
   dachOben: 225,
@@ -144,15 +153,21 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
 
   const zebras = querX.map((qx) => ({ x: qx - ZEBRA_BREITE / 2, y: Y.strasseOben, breite: ZEBRA_BREITE, hoehe: Y.strasseUnten - Y.strasseOben }));
 
-  // Autos: aus dem Tunnel nach Osten, um den Wendehammer, zurück nach Westen in den Tunnel.
-  const autoBahn: Punkt[] = [{ x: -120, y: Y.spurOst }, { x: wende.x, y: Y.spurOst }];
-  const halbSpur = (Y.spurOst - Y.spurWest) / 2;
-  const mitteSpur = (Y.spurOst + Y.spurWest) / 2;
-  for (let i = 1; i < 18; i++) {
-    const w = Math.PI / 2 - (i / 18) * Math.PI;
-    autoBahn.push({ x: wende.x + Math.cos(w) * 62, y: mitteSpur + Math.sin(w) * halbSpur });
+  // Autos: aus dem Tunnel nach Osten, in einer weichen S-Kurve hinein in den Wendehammer,
+  // im Halbkreis rechts um die Mittelinsel (gegen den Uhrzeigersinn, wie bei Rechtsverkehr)
+  // und genauso weich zurück auf die Spur nach Westen in den Tunnel.
+  const unten = { x: wende.x, y: wende.y + KEHRE_RADIUS };
+  const oben = { x: wende.x, y: wende.y - KEHRE_RADIUS };
+  const kurveAb = wende.x - 150;
+  const autoBahn: Punkt[] = [{ x: -160, y: Y.spurOst }];
+  autoBahn.push(...bezier({ x: kurveAb, y: Y.spurOst }, { x: kurveAb + 75, y: Y.spurOst }, { x: unten.x - 75, y: unten.y }, unten, 18));
+  const SCHRITTE = 32;
+  for (let i = 1; i < SCHRITTE; i++) {
+    const w = Math.PI / 2 - (i / SCHRITTE) * Math.PI;
+    autoBahn.push({ x: wende.x + Math.cos(w) * KEHRE_RADIUS, y: wende.y + Math.sin(w) * KEHRE_RADIUS });
   }
-  autoBahn.push({ x: wende.x, y: Y.spurWest }, { x: -120, y: Y.spurWest });
+  autoBahn.push(...bezier(oben, { x: oben.x - 75, y: oben.y }, { x: kurveAb + 75, y: Y.spurWest }, { x: kurveAb, y: Y.spurWest }, 18));
+  autoBahn.push({ x: -160, y: Y.spurWest });
 
   const stadt: Stadt = {
     breite,
@@ -167,15 +182,35 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
     zebras,
     knoten: [...knoten.values()],
     kanten,
-    start: { x: platz.x, y: Y.gehwegNord },
+    // Start direkt vor der Rakete: das Ziel ist sofort zu sehen.
+    start: { x: platz.x, y: platz.y + 85 },
     deko: [],
     autoBahn,
+    // Hinten am Horizont: Kilianskirche und Rathaus mit Kunstuhr, rechts die Weinberge am Wartberg.
+    wahrzeichen: [
+      { id: "kilianskirche", x: Math.round((x(0) + platz.x) / 2) - 10, y: 255, breite: 120, hoehe: 250, fakt: "Das ist die Kilianskirche. Ihr hoher Turm ist ein Wahrzeichen von Heilbronn." },
+      { id: "rathaus", x: Math.round((platz.x + x(2)) / 2) + 10, y: 255, breite: 200, hoehe: 165, fakt: "Das Rathaus am Marktplatz hat eine Kunstuhr von 1580. Sie zeigt Uhrzeit, Wochentag und Mond." },
+      { id: "wartberg", x: x(2) + 400, y: 250, breite: 420, hoehe: 185, fakt: "Rund um Heilbronn wachsen Weinberge. Oben auf dem Wartberg steht ein Aussichtsturm." },
+    ],
+    neckarY: Y.hoehe - 95,
   };
   stadt.deko = verteileDeko(stadt);
   return stadt;
 }
 
 /* ---------- Geometrie ---------- */
+
+/** Punkte auf einer kubischen Bézierkurve (inklusive Anfang und Ende). */
+function bezier(a: Punkt, b: Punkt, c: Punkt, d: Punkt, schritte: number): Punkt[] {
+  return Array.from({ length: schritte + 1 }, (_, i) => {
+    const t = i / schritte;
+    const u = 1 - t;
+    return {
+      x: u * u * u * a.x + 3 * u * u * t * b.x + 3 * u * t * t * c.x + t * t * t * d.x,
+      y: u * u * u * a.y + 3 * u * u * t * b.y + 3 * u * t * t * c.y + t * t * t * d.y,
+    };
+  });
+}
 
 function knotenNach(stadt: Stadt) {
   return new Map(stadt.knoten.map((n) => [n.id, n]));
@@ -314,6 +349,10 @@ export function hausAn(stadt: Stadt, p: Punkt): Haus | undefined {
   return stadt.haeuser.find((h) => inRechteck(p, { ...h.flaeche, y: h.flaeche.y - SCHILD, hoehe: h.flaeche.hoehe + SCHILD }));
 }
 
+export function wahrzeichenAn(stadt: Stadt, p: Punkt): Wahrzeichen | undefined {
+  return stadt.wahrzeichen.find((w) => Math.abs(p.x - w.x) < w.breite / 2 && p.y > w.y - w.hoehe && p.y < w.y);
+}
+
 export function nahesHaus(stadt: Stadt, p: Punkt, radius = 46): Haus | undefined {
   return stadt.haeuser.find((h) => abstand(p, h.tuer) <= radius);
 }
@@ -328,7 +367,7 @@ export function zebraBei(stadt: Stadt, p: Punkt): number {
 
 /* ---------- Autos ---------- */
 
-export type Auto = { id: number; s: number; farbe: string; wartet: boolean };
+export type Auto = { id: number; s: number; farbe: string; wartet: boolean; art?: "auto" | "bus" };
 
 function bahnLaenge(bahn: Punkt[]) {
   let summe = 0;
@@ -336,31 +375,45 @@ function bahnLaenge(bahn: Punkt[]) {
   return summe;
 }
 
-export function aufBahn(bahn: Punkt[], s: number): { punkt: Punkt; winkel: number } {
-  let rest = s;
+function punktAufBahn(bahn: Punkt[], s: number): Punkt {
+  let rest = Math.max(0, s);
   for (let i = 1; i < bahn.length; i++) {
     const a = bahn[i - 1]!;
     const b = bahn[i]!;
     const l = abstand(a, b);
     if (rest <= l) {
       const t = l ? rest / l : 0;
-      return { punkt: { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }, winkel: Math.atan2(b.y - a.y, b.x - a.x) };
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
     }
     rest -= l;
   }
-  const a = bahn.at(-2) ?? bahn[0]!;
-  const b = bahn.at(-1) ?? bahn[0]!;
-  return { punkt: b, winkel: Math.atan2(b.y - a.y, b.x - a.x) };
+  return bahn.at(-1) ?? bahn[0]!;
+}
+
+/** Fahrtrichtung aus einem Blick nach vorn und zurück – so lenkt das Auto weich statt eckig. */
+const LENK_BLICK = 16;
+
+export function aufBahn(bahn: Punkt[], s: number): { punkt: Punkt; winkel: number } {
+  const laenge = bahnLaenge(bahn);
+  const punkt = punktAufBahn(bahn, s);
+  const vor = punktAufBahn(bahn, Math.min(laenge, s + LENK_BLICK));
+  const zurueck = punktAufBahn(bahn, Math.max(0, s - LENK_BLICK));
+  return { punkt, winkel: Math.atan2(vor.y - zurueck.y, vor.x - zurueck.x) };
 }
 
 export function neueAutos(stadt: Stadt): Auto[] {
   const laenge = bahnLaenge(stadt.autoBahn);
-  const farben = ["#e8513a", "#2f7fb8", "#f2a900"];
-  return farben.map((farbe, i) => ({ id: i, s: (laenge / farben.length) * i, farbe, wartet: false }));
+  const fahrzeuge: Array<Pick<Auto, "farbe" | "art">> = [
+    { farbe: "#e8513a", art: "auto" },
+    { farbe: "#f2c94c", art: "bus" },
+    { farbe: "#2f7fb8", art: "auto" },
+    { farbe: "#5dbb63", art: "auto" },
+  ];
+  return fahrzeuge.map((f, i) => ({ id: i, s: (laenge / fahrzeuge.length) * i, wartet: false, ...f }));
 }
 
 const HALTEABSTAND = 120;
-const AUTO_ABSTAND = 120;
+const AUTO_ABSTAND = 150;
 
 /**
  * Autos fahren im Kreis durch Tunnel und Wendehammer. Steht die Figur auf einem
@@ -391,7 +444,8 @@ export function bewegeAutos(stadt: Stadt, autos: Auto[], sekunden: number, spiel
 /* ---------- Dekoration: nur auf der Wiese, nie auf Wegen, Straße oder Häusern ---------- */
 
 function frei(stadt: Stadt, p: Punkt, rand: number): boolean {
-  if (p.x < 30 || p.y < 40 || p.x > stadt.breite - 30 || p.y > stadt.hoehe - 20) return false;
+  if (p.x < 30 || p.y < 40 || p.x > stadt.breite - 30 || p.y > stadt.neckarY - 20) return false;
+  if (stadt.wahrzeichen.some((w) => Math.abs(p.x - w.x) < w.breite / 2 + rand && p.y > w.y - w.hoehe - rand && p.y < w.y + rand)) return false;
   if (p.y > stadt.strasse.oben - rand && p.y < stadt.strasse.unten + rand && p.x < stadt.strasse.wende.x + stadt.strasse.wende.r + rand) return false;
   if (abstand(p, stadt.strasse.wende) < stadt.strasse.wende.r + rand + 20) return false;
   if (stadt.haeuser.some((h) => p.x > h.flaeche.x - rand && p.x < h.flaeche.x + h.flaeche.breite + rand && p.y > h.flaeche.y - rand && p.y < h.bodenY + rand)) return false;
@@ -403,6 +457,8 @@ function frei(stadt: Stadt, p: Punkt, rand: number): boolean {
 }
 
 function verteileDeko(stadt: Stadt): Deko[] {
+  const bewohnerOrte = bewohnerFuer(stadt).map((b) => b.ort);
+  const beiBewohner = (p: Punkt, r: number) => bewohnerOrte.some((b) => abstand(b, p) < r);
   let samen = 11;
   const zufall = () => {
     samen = (samen * 16807) % 2147483647;
@@ -412,18 +468,20 @@ function verteileDeko(stadt: Stadt): Deko[] {
   const plaziere = (art: Deko["art"], anzahl: number, rand: number, versuche = 400) => {
     for (let i = 0, gesetzt = 0; i < versuche && gesetzt < anzahl; i++) {
       const p = { x: zufall() * stadt.breite, y: zufall() * stadt.hoehe };
-      if (!frei(stadt, p, rand)) continue;
-      if (deko.some((d) => abstand(d, p) < (art === "baum" ? 95 : 55))) continue;
+      if (!frei(stadt, p, rand) || beiBewohner(p, art === "baum" ? 110 : 60)) continue;
+      // Bäume brauchen Platz für ihre Krone: untereinander viel Abstand, zu Büschen und Blumen etwas weniger.
+      const mindest = (d: Deko) => (art === "baum" && d.art === "baum" ? 190 : art === "baum" || d.art === "baum" ? 85 : 55);
+      if (deko.some((d) => abstand(d, p) < mindest(d))) continue;
       deko.push({ id: `${art}-${gesetzt}`, art, x: Math.round(p.x), y: Math.round(p.y), variante: Math.floor(zufall() * 3) });
       gesetzt++;
     }
   };
-  plaziere("baum", Math.round(stadt.breite / 85), 38);
+  plaziere("baum", Math.round(stadt.breite / 160), 44, 900);
   plaziere("busch", Math.round(stadt.breite / 120), 22);
   plaziere("blume", Math.round(stadt.breite / 60), 10);
   // Laternen stehen am Rand der Gehwege, Bänke am Platz.
   for (let px = 200; px < stadt.strasse.wende.x - 180; px += 360) {
-    deko.push({ id: `laterne-n-${px}`, art: "laterne", x: px, y: stadt.gehwegNord - 40, variante: 0 });
+    if (!beiBewohner({ x: px, y: stadt.gehwegNord - 40 }, 50)) deko.push({ id: `laterne-n-${px}`, art: "laterne", x: px, y: stadt.gehwegNord - 40, variante: 0 });
   }
   deko.push({ id: "bank-platz-l", art: "bank", x: stadt.platz.x - stadt.platz.r - 30, y: stadt.platz.y + 30, variante: 0 });
   deko.push({ id: "bank-platz-r", art: "bank", x: stadt.platz.x + stadt.platz.r + 30, y: stadt.platz.y + 30, variante: 1 });

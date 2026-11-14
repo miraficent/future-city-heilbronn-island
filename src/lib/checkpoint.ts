@@ -32,7 +32,7 @@ export type ModulId = keyof typeof MODULE;
 const CODE_MODULE = Object.keys(MODULE).filter((m) => m !== "lektion" && m !== "plugin") as [Exclude<ModulId, "lektion" | "plugin">, ...Exclude<ModulId, "lektion" | "plugin">[]];
 
 /** Eingebaute Bildmotive (SVG, siehe `AufgabenBild`). */
-export const MOTIVE = ["ball", "rad", "fenster", "block", "frage", "schild", "gruppe", "sonne", "mond", "metall", "holz", "gummi", "lampe", "batterie"] as const;
+export const MOTIVE = ["ball", "rad", "fenster", "block", "frage", "schild", "gruppe", "sonne", "mond", "metall", "kupfer", "holz", "gummi", "lampe", "batterie", "rotebaelle", "foto", "adresse", "muster", "wuerfel", "akku", "schalter", "decke"] as const;
 export type Motiv = (typeof MOTIVE)[number];
 
 export const HAUS_GRAFIKEN = ["code-labor", "forscherhaus", "spielewerkstatt", "ki-atelier"] as const;

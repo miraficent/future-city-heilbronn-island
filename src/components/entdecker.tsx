@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Angebot, Art, Zielgruppe } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { fuerModus, INTERESSEN, interessenThemen, type Modus } from "@/lib/entdecken";
@@ -14,14 +14,16 @@ import { kurzname } from "./einrichtung-badge";
 import { useSammlung } from "./sammlung";
 import { Planet } from "./planet";
 import { Symbol } from "./symbol";
+import { FehltMelden, WunschBox } from "./wunsch-box";
 
 const INHALTE = {
   kind: { oben: "DEIN NÄCHSTES ABENTEUER · HEILBRONN", titel: "Wohin fliegst du heute?", text: "Roboter bauen. Spiele erfinden. KI durchschauen. Such dir deinen Planeten aus!", quiz: "Finde meine Mission" },
-  teen: { oben: "NEUE SKILLS. DEINE IDEEN. DEIN KOSMOS.", titel: "Mach mehr aus deiner Neugier.", text: "Von der ersten Codezeile bis zum eigenen Game. Entdecke, was in Heilbronn für dich geht.", quiz: "Interessen-Kompass" },
-  eltern: { oben: "KLEINE INTERESSEN. GROSSE MÖGLICHKEITEN.", titel: "Das nächste Aha-Erlebnis wartet.", text: "Echte Lernangebote aus Heilbronn, an einem Ort. Für neugierige Kinder, Teens und die Menschen an ihrer Seite.", quiz: "Passendes Angebot finden" },
+  teen: { oben: "FÜR TEENS · 12 BIS 17 JAHRE", titel: "Mach mehr aus deiner Neugier.", text: "Kein Kinderspiel – echte Kurse: von der ersten Codezeile bis zum eigenen Game. Filtern, Lernpfade ansehen, Favoriten sammeln.", quiz: "Interessen-Kompass" },
+  eltern: { oben: "FÜR ELTERN & PÄDAGOGISCHE FACHKRÄFTE", titel: "Alle Kurse zu KI, Coding und Gaming in Heilbronn.", text: "Aus vier Einrichtungen, jede Nacht automatisch aktualisiert. Filtern Sie nach Alter, Termin und Kosten – die Anmeldung erfolgt direkt beim Anbieter.", quiz: "Passendes Angebot finden" },
 };
 
-export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebettet=false }: { modus: Modus; angebote: Angebot[]; meta: Meta; jetzt: string; eingebettet?:boolean }) {
+/** `zusatz` erscheint direkt unter dem Kopfbereich – z. B. die Heilbronn-Karte im Teens-Bereich. */
+export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebettet=false, zusatz }: { modus: Modus; angebote: Angebot[]; meta: Meta; jetzt: string; eingebettet?:boolean; zusatz?: ReactNode }) {
   const Rahmen=eingebettet?"section":"main";
   const [jetzt, setJetzt] = useState(initialJetzt);
   useEffect(() => {
@@ -75,29 +77,31 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
           <h1 className="mt-5 max-w-3xl font-display text-[clamp(2rem,5.1vw,4.5rem)] font-extrabold leading-[1.12] tracking-tight">{inhalt.titel}</h1>
           <p className="mt-5 max-w-xl text-lg text-tinte-2">{inhalt.text}</p>
           <button className="knopf knopf-primaer mt-6" onClick={() => dialog.current?.showModal()}>{inhalt.quiz}</button>
-          <p className="mt-3 text-xs text-tinte-2">Ohne Konto. Deine Auswahl bleibt in diesem Browser.</p>
+          <p className="mt-3 text-xs text-tinte-2">{modus === "eltern" ? "Ohne Konto. Ihre Auswahl bleibt in diesem Browser." : "Ohne Konto. Deine Auswahl bleibt in diesem Browser."}</p>
         </div>
         <aside className="relative overflow-hidden rounded-[32px] border-2 border-tinte bg-papier-2 p-6 sm:p-8">
           <div aria-hidden className="raster pointer-events-none absolute inset-0 opacity-10" />
-          <p className="relative font-mono text-xs uppercase tracking-widest">Dein Entdecker-Pass</p>
+          <p className="relative font-mono text-xs uppercase tracking-widest">{modus === "eltern" ? "Ihre Sammlung" : "Dein Entdecker-Pass"}</p>
           <div className="relative mt-5 flex items-center gap-5">
             <Symbol name="backpack" className="!size-16"/>
             <div><strong className="font-display text-3xl">{merk.ids.filter((id) => basis.some((a) => a.id === id)).length}</strong><p className="text-sm">{modus === "kind" ? "gesammelte Ideen" : "gesammelte Angebote"}</p></div>
           </div>
           <button className="knopf relative mt-6 w-full justify-center bg-flaeche" onClick={() => { setMerkansicht(!merkansicht); ergebnisRef.current?.focus(); }}>{merkansicht ? "← Alle Angebote entdecken" : "Meine Sammlung öffnen"}</button>
-          <p className="relative mt-3 text-xs text-tinte-2">{modus === "kind" ? "Sammle, was dir gefällt. Zeig es danach einem Erwachsenen." : "Ideen sammeln, vergleichen und gemeinsam entscheiden."}</p>
+          <p className="relative mt-3 text-xs text-tinte-2">{modus === "kind" ? "Sammle, was dir gefällt. Zeig es danach einem Erwachsenen." : modus === "eltern" ? "Angebote vormerken, vergleichen und gemeinsam mit dem Kind entscheiden." : "Ideen sammeln, vergleichen und gemeinsam entscheiden."}</p>
         </aside>
       </section>
 
+      {zusatz}
+
       <section aria-labelledby="planeten" className="mt-12">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="planeten" className="font-display text-lg font-bold">{modus === "kind" ? `${stile.length === 3 ? "Drei" : stile.length} Planeten. Viele Möglichkeiten.` : "Welches Thema weckt deine Neugier?"}</h2>
+          <h2 id="planeten" className="font-display text-lg font-bold">{modus === "kind" ? `${stile.length === 3 ? "Drei" : stile.length} Planeten. Viele Möglichkeiten.` : modus === "eltern" ? "Nach Thema stöbern" : "Welches Thema weckt deine Neugier?"}</h2>
           <span className="font-mono text-xs text-tinte-2">{basis.length} Angebote · {meta.quellen.length} Einrichtungen</span>
         </div>
         <div className="mt-5 grid gap-4 sm:grid-cols-3">
           {stile.map((t) => (
             <button key={t.id} aria-pressed={filter.themen.includes(t.id)} onClick={() => themaWaehlen(t.id)} className="planet-wahl relative flex min-h-40 items-center overflow-hidden rounded-3xl border-2 border-tinte bg-flaeche p-5 text-left" style={{ borderBottomColor: t.farbe, borderBottomWidth: 7 }}>
-              <div className="relative z-10 max-w-[68%]"><span className="font-display text-base font-bold">{modus === "kind" ? t.kindername : t.name}</span><span className="mt-2 block text-sm text-tinte-2">{basis.filter((a) => a.themen.includes(t.id)).length} Entdeckungen {filter.themen.includes(t.id) ? "✓" : "→"}</span></div>
+              <div className="relative z-10 max-w-[68%]"><span className="font-display text-base font-bold">{modus === "kind" ? t.kindername : t.name}</span><span className="mt-2 block text-sm text-tinte-2">{basis.filter((a) => a.themen.includes(t.id)).length} {modus === "eltern" ? "Angebote" : "Entdeckungen"} {filter.themen.includes(t.id) ? "✓" : "→"}</span></div>
               <Planet kennung={`wahl-${t.id}`} farbe={t.farbe} art={t.planet} className="absolute -right-8 w-44" />
             </button>
           ))}
@@ -108,7 +112,7 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
         <div className="rounded-3xl border-2 border-tinte bg-flaeche p-5 sm:p-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {modus !== "kind" && <label className="feld-label sm:col-span-2">Angebote durchsuchen<input type="search" value={filter.suche} maxLength={100} onChange={(e) => aendere("suche", e.target.value)} placeholder="Zum Beispiel Scratch, Roboter oder Python" /></label>}
-            <label className="feld-label">{modus === "kind" ? "Wie alt bist du?" : "Alter der teilnehmenden Person"}<select value={filter.alter ?? ""} onChange={(e) => aendere("alter", e.target.value ? Number(e.target.value) : undefined)}><option value="">{modus === "kind" ? "6 bis 11 Jahre" : modus === "teen" ? "12 bis 17 Jahre" : "Alle Altersgruppen"}</option>{Array.from({ length: modus === "kind" ? 6 : modus === "teen" ? 6 : 16 }, (_, i) => (modus === "teen" ? 12 : modus === "kind" ? 6 : 3) + i).map((a) => <option key={a} value={a}>{a} Jahre</option>)}</select></label>
+            <label className="feld-label">{modus === "kind" ? "Wie alt bist du?" : modus === "eltern" ? "Alter des Kindes" : "Dein Alter"}<select value={filter.alter ?? ""} onChange={(e) => aendere("alter", e.target.value ? Number(e.target.value) : undefined)}><option value="">{modus === "kind" ? "6 bis 11 Jahre" : modus === "teen" ? "12 bis 17 Jahre" : "Alle Altersgruppen"}</option>{Array.from({ length: modus === "kind" ? 6 : modus === "teen" ? 6 : 16 }, (_, i) => (modus === "teen" ? 12 : modus === "kind" ? 6 : 3) + i).map((a) => <option key={a} value={a}>{a} Jahre</option>)}</select></label>
             <label className="feld-label">Wann soll es losgehen?<select value={filter.zeitraum} onChange={(e) => aendere("zeitraum", e.target.value as Filter["zeitraum"])}><option value="alle">Alle kommenden Termine</option><option value="woche">In den nächsten 7 Tagen</option><option value="monat">In den nächsten 31 Tagen</option></select></label>
             {modus !== "kind" && <>
               <label className="feld-label">Einrichtung<select value={filter.quellen[0] ?? ""} onChange={(e) => aendere("quellen", e.target.value ? [e.target.value] : [])}><option value="">Alle Einrichtungen</option>{meta.quellen.map((q) => <option key={q.id} value={q.id}>{kurzname(q, q.id)}</option>)}</select></label>
@@ -124,8 +128,8 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-          <h2 id="ergebnis" ref={ergebnisRef} tabIndex={-1} className="scroll-mt-8 font-display text-xl font-bold" aria-live="polite">{merkansicht ? "Deine Sammlung" : quizErgebnis ? "Deine Missionen" : "Bereit zum Entdecken?"} <span className="font-sans text-base font-normal">({ergebnisse.length})</span></h2>
-          {modus !== "kind" && <div className="flex flex-wrap gap-2" aria-label="Ergebnisansicht"><button className="chip" aria-pressed={ansicht === "karten"} onClick={() => setAnsicht("karten")}>Karten</button><button className="chip" aria-pressed={ansicht === "zeit"} onClick={() => setAnsicht("zeit")}>Zeitreise</button>{modus === "teen" && <button className="chip" aria-pressed={ansicht === "pfad"} onClick={() => setAnsicht("pfad")}>Sternbild</button>}</div>}
+          <h2 id="ergebnis" ref={ergebnisRef} tabIndex={-1} className="scroll-mt-8 font-display text-xl font-bold" aria-live="polite">{merkansicht ? (modus === "eltern" ? "Ihre Sammlung" : "Deine Sammlung") : quizErgebnis ? (modus === "eltern" ? "Passende Angebote" : "Deine Missionen") : modus === "eltern" ? "Alle Angebote" : "Bereit zum Entdecken?"} <span className="font-sans text-base font-normal">({ergebnisse.length})</span></h2>
+          {modus !== "kind" && <div className="flex flex-wrap gap-2" aria-label="Ergebnisansicht"><button className="chip" aria-pressed={ansicht === "karten"} onClick={() => setAnsicht("karten")}>Karten</button><button className="chip" aria-pressed={ansicht === "zeit"} onClick={() => setAnsicht("zeit")}>{modus === "eltern" ? "Kalender" : "Zeitreise"}</button>{modus === "teen" && <button className="chip" aria-pressed={ansicht === "pfad"} onClick={() => setAnsicht("pfad")}>Sternbild</button>}</div>}
         </div>
         {quizErgebnis && !merkansicht && <p className="mt-3 text-tinte-2">Zu deinen Ideen passen besonders {meta.themen.filter((t) => filter.themen.includes(t.id)).map((t) => t.name).join(" und ")}. Die Auswahl berücksichtigt dein Alter. Du kannst alle Filter weiter ändern.</p>}
         {merkansicht && <div className="mt-4 flex flex-wrap items-center gap-5 rounded-2xl bg-papier-2 p-4 text-sm">
@@ -133,15 +137,17 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
           {modus !== "kind" && <label className="check-label"><input type="checkbox" checked={merk.dauerhaft} onChange={(e) => merk.behalten(e.target.checked)} />Auf diesem Gerät behalten</label>}
           <button className="min-h-11 underline" onClick={merk.leeren}>Sammlung leeren</button>
         </div>}
-        {ergebnisse.length === 0 ? <div className="mt-6 rounded-3xl border-2 border-dashed border-tinte p-10 text-center"><Symbol name={merkansicht ? "backpack" : "search"} className="!size-12"/><h3 className="mt-4 text-xl font-bold">{merkansicht ? "Hier ist Platz für deine Ideen." : "Hier ist gerade noch kein Treffer."}</h3><p className="mx-auto mt-2 max-w-lg text-tinte-2">{merkansicht ? "Tippe bei einem Angebot auf „Merken“. Dann findest du es hier wieder." : "Versuche ein anderes Thema, einen größeren Zeitraum oder entferne einen Filter. Es werden keine Angebote erfunden."}</p><button className="knopf mt-5" onClick={() => { setMerkansicht(false); setFilter({ ...LEERER_FILTER }); setQuizErgebnis(false); }}>Alle Angebote entdecken</button></div>
+        {ergebnisse.length === 0 ? <div className="mt-6 rounded-3xl border-2 border-dashed border-tinte p-10 text-center"><Symbol name={merkansicht ? "backpack" : "search"} className="!size-12"/><h3 className="mt-4 text-xl font-bold">{merkansicht ? "Hier ist Platz für deine Ideen." : "Hier ist gerade noch kein Treffer."}</h3><p className="mx-auto mt-2 max-w-lg text-tinte-2">{merkansicht ? "Tippe bei einem Angebot auf „Merken“. Dann findest du es hier wieder." : "Versuche ein anderes Thema, einen größeren Zeitraum oder entferne einen Filter. Es werden keine Angebote erfunden."}</p><button className="knopf mt-5" onClick={() => { setMerkansicht(false); setFilter({ ...LEERER_FILTER }); setQuizErgebnis(false); }}>Alle Angebote entdecken</button>{!merkansicht && modus !== "kind" && filter.suche.trim().length >= 2 && <div><FehltMelden key={filter.suche} begriff={filter.suche} alter={filter.alter} /></div>}</div>
           : ansicht === "pfad" && !merkansicht ? <div className="mt-6 rounded-3xl border-2 border-tinte bg-flaeche p-6"><p className="mb-5 text-sm text-tinte-2">Dein Sternbild verbindet echte Angebote verschiedener Einrichtungen. Nach Mindestalter sortiert; die Verbindung ist eine Entdeckungsidee, keine bestätigte Kursfolge.</p><ol className="sternpfad">{[...ergebnisse].sort((a, b) => (a.alterMin ?? 12) - (b.alterMin ?? 12)).map((a) => <li key={a.id}><span className="pfad-stern"><Symbol name="star"/></span><p className="font-mono text-xs">{a.alterMin ? `Ab ${a.alterMin} Jahren` : "Für Teens"} · {kurzname(meta.quellen.find((q) => q.id === a.quelle), a.quelle)}</p><Link className="mt-1 block text-lg font-bold underline underline-offset-4" href={`/angebot/${slugAusId(a.id)}?modus=teen`}>{a.titel}</Link></li>)}</ol></div>
           : ansicht === "zeit" && !merkansicht ? <div className="mt-6 space-y-10">{[...gruppen].map(([monat, liste]) => <section key={monat}><h3 className="mb-4 border-b-2 border-tinte pb-2 font-display text-lg">{monat}</h3><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{liste.map(karte)}</div></section>)}</div>
           : <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{ergebnisse.map(karte)}</div>}
       </section>
 
-      {modus !== "kind" && <section className="mt-12 grid gap-6 rounded-3xl border-2 border-tinte bg-papier-2 p-6 sm:grid-cols-[1fr_auto] sm:p-8">
-        <div><h2 className="font-display text-lg font-bold">Mehr Platz für Vorfreude.</h2><p className="mt-2 max-w-2xl text-sm">Lade die Termine als Kalenderdatei herunter. Ein Download wird nicht automatisch aktualisiert. Prüfe freie Plätze und Änderungen vor der Anmeldung beim Veranstalter.</p></div>
-        <a className="knopf self-center bg-flaeche" href="/abo/alle.ics" download>↧ Kalender herunterladen</a>
+      {modus !== "kind" && <WunschBox themen={meta.themen} modus={modus === "teen" ? "teen" : "eltern"} />}
+
+      {modus !== "kind" && <section className="mt-8 grid gap-6 rounded-3xl border-2 border-tinte bg-papier-2 p-6 sm:p-8 lg:grid-cols-[1fr_auto]">
+        <div><h2 className="font-display text-lg font-bold">{modus === "teen" ? "Nichts mehr verpassen." : "Neue Termine im eigenen Kalender."}</h2><p className="mt-2 max-w-2xl text-sm">{modus === "teen" ? "Hol dir die Termine deines Themas in deinen Kalender." : "Termine je Thema als Kalenderdatei – passend für Kinder."} Jede Nacht werden die Dateien neu erzeugt. Freie Plätze und Änderungen vor der Anmeldung beim Veranstalter prüfen.</p></div>
+        <div className="flex flex-wrap gap-2 self-center">{meta.themen.map((t) => <a key={t.id} className="knopf bg-flaeche" href={`/abo/${t.id}-${modus === "teen" ? "teens" : "kinder"}.ics`} download><Symbol name="calendar" /> {t.name.split("&")[0]?.trim()}</a>)}<a className="knopf bg-flaeche" href="/abo/alle.ics" download>Alle Termine</a></div>
       </section>}
       <p className="mt-7 text-xs text-tinte-2">Datenstand: {new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", dateStyle: "medium", timeStyle: "short" }).format(new Date(meta.aktualisiert))} · Preise, Altersangaben und Verfügbarkeit bitte beim Veranstalter bestätigen.</p>
 

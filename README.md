@@ -1,3 +1,7 @@
+# Aktuelle Kinderansicht: Heilbronn-Lernreise
+
+Direkt öffnen: http://localhost:4173/kind/. Gemalte Ortsszenen, geografische Übersicht, modularer Figurenbaukasten und Einführung vor jeder Aufgabe sind umgesetzt. 138 Tests in 19 Dateien bestehen. Details und aktuelle Grenzen: [docs/heilbronn-lernreise.md](docs/heilbronn-lernreise.md). **Feste Sprachaufnahmen fehlen noch; der Player ist vorbereitet, nicht mit einer Ersatzstimme aktiviert.** Ältere Beschreibungen der Lauf-/Pixelwelt unten dokumentieren vorherige Entwicklungsstände.
+
 # COSMOS-Entdecker
 
 Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. Kinder spielen in einer **Spielwelt** (Figur wählen, durch eine kleine Stadt laufen, in vier Lernhäusern Aufgaben lösen und die COSMOS-Rakete bauen) und finden von dort zu echten Angeboten zu **KI, Coding und Gaming** von aim, experimenta, Haus der Familie und IPAI in Heilbronn. Die gesamte Oberfläche ist ohne Emojis gestaltet.

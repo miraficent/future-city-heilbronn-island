@@ -1,15 +1,14 @@
-# Vorführung: Bau die COSMOS-Rakete
+# Vorführung der Heilbronn-Lernreise
 
-1. `Website-starten.cmd` doppelklicken (oder http://localhost:4173/ öffnen). Startseite: „Wer schaut gerade?“ – Kind, Teen, Eltern.
-2. **Spielwelt** (`/kind/`): Figur wählen (sechs Figuren), Alter antippen (6–8 leichte Aufgaben, 9–11 kniffliger), „Los geht's“.
-3. Auf ein Haus tippen: Die Figur läuft über den Gehweg, quert die Straße am Zebrastreifen (Autos halten an) und das Haus öffnet sich. Zeigen: Antippen der Wiese führt nur bis zum Wegrand; mit Pfeiltasten bleibt die Figur am Bordstein stehen.
-4. Im KI-Atelier: „Finde die zwei runden Dinge“ → Ball + Rad → Ausprobieren → **Raketenteil!** Darunter die echten Kurse für das gewählte Alter (Alter, Datum, Ort, Preis). Einen Kurs „einpacken“.
-5. Rucksack öffnen → „Zeig's Mama oder Papa“: QR-Code mit dem Handy scannen → `/sammlung/` zeigt die Auswahl mit Anmelde-Links. Kinder melden sich nie selbst an.
-6. Mini-Karte unten rechts antippen → große Karte mit Namen und Zoom → Haus antippen, die Figur läuft hin.
-7. Wenn alle vier Häuser je eine Aufgabe haben: zur Rakete laufen → Countdown und Start → Entdecker-Pass mit Stempeln, Wünschen und Kursvorschlägen.
-8. **Karte** (`/einrichtungen/`): echte Heilbronn-Karte, Pins antippen oder ▶ Entdecker-Tour. Pro Ort: was es dort gibt, wie viele Angebote, nächste Termine, Gehzeit vom Hauptbahnhof, Anmeldung in drei Schritten, Herkunft der Daten.
-9. **Teens** und **Eltern & Fachkräfte**: Suche und Filter nach Thema, Alter, Zeitraum, kostenlos. **Datenschutz**: was gespeichert wird und Löschknopf.
+1. http://localhost:4173/ öffnen: Der größte Einstieg führt in die neue Kinderwelt.
+2. Gemeinsam starten. Ohne Konto eine Figur mit Frisur, Hautfarbe, Oberteil, Hose oder Rock, Schuhen und Extras gestalten. Alle Kombinationen sind frei.
+3. Die drei Bildschritte erklären: Lernort wählen, Idee ausprobieren, Raketenteil entdecken. Eine Aufgabenstufe wählen.
+4. Die Karte zeigt echte Stadtpositionen mit Norden oben. IPAI liegt im Zukunftspark im Norden, aim auf dem Bildungscampus, das Haus der Familie westlich der experimenta. Bildkarten und Markierungen führen zu denselben Orten.
+5. experimenta öffnen: Architektur mit Dreiecksstruktur zeigen. Die eigene Figur steht ruhig im Vordergrund. Erste Aufgabe öffnen: Das Spiel startet erst nach Bildanleitung und bewusstem Klick. Trockenes Holz ausprobieren, danach Metall.
+6. Weitere Aufgaben und drei Schwierigkeitsstufen erklären. Drei fertige Aufgaben pro Ort geben ein Raketenteil. Alle zwölf Aufgaben einer Stufe ergeben den gemeinsamen Abschluss. Keine Zeitlimits, Ranglisten oder verlorenen Leben.
+7. Für Erwachsene drei Sekunden halten. Konkretes Kursalter wählen: Die Spielstufe allein wird nicht als genaue Altersangabe verwendet. Echte Kurse, Sammlung und Elternbericht zeigen.
+8. Datenschutzseite erklären: neue Figurenkennungen und Spielstand bleiben in der Sitzung. Alle COSMOS-Daten können gelöscht werden.
 
-## Ehrlich benennen
+## Offen benennen
 
-Kursdaten sind echte, automatisch eingelesene Daten (Stand des letzten Pipeline-Laufs). Die Spielaufgaben und Häuser sind selbst erstellt und keine bestätigten Angebote der Einrichtungen. Eine öffentliche Bereitstellung verlangt noch Betreiber- und Hostingangaben. Der tägliche Datenabruf per GitHub Actions ist vorbereitet, aber nicht aktiviert. Ein Test mit echten Kindern und ein Screenreader-Audit stehen noch aus.
+Die festen natürlichen Sprachaufnahmen sind noch nicht produziert. Die Bildanleitungen funktionieren vollständig; die deaktivierte Anhören-Funktion täuscht keine Stimme vor. 43 Sprechertexte sind vorbereitet. Die Szenen sind vereinfachte eigene Architekturillustrationen, keine maßgenauen Rekonstruktionen. Der zusätzliche KIT-Ordner bleibt nicht abrufbar. Betreiber-/Hostingangaben und Rechteprüfung für öffentlichen Betrieb sowie ein echter begleiteter Test mit Kindern stehen aus.

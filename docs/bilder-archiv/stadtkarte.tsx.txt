@@ -1,0 +1,21 @@
+"use client";
+import { useState } from "react";
+import karte from "@/lib/heilbronn-karte.json";
+import { LERNORTE } from "@/lib/lernwelt";
+/** Echte lokale OSM-Geometrie; Illustrationen verändern die Standortkoordinaten nicht. */
+export function Stadtkarte({besuchen,erfolge}:{besuchen:(id:string)=>void;erfolge:string[]}){
+ const [zoom,setZoom]=useState(false);
+ return <div className="gemalte-stadtkarte"><svg viewBox={zoom?"11900 6850 1550 1500":"11650 6100 2100 2250"} role="img" aria-label="Heilbronn, Norden oben. IPAI im Zukunftspark im Norden, aim auf dem Bildungscampus, Haus der Familie westlich und experimenta an der Neckarinsel. Wähle einen Lernort über die Bildkarten.">
+ <defs><pattern id="stadt-papier" width="90" height="90" patternUnits="userSpaceOnUse"><rect width="90" height="90" fill="#ede7d1"/><circle cx="20" cy="30" r="2" fill="#829e6c" opacity=".16"/><circle cx="64" cy="73" r="3" fill="#c9bb97" opacity=".18"/></pattern></defs>
+ <rect x="9000" y="4000" width="7000" height="7000" fill="url(#stadt-papier)"/>
+ {karte.parks.map((p,i)=><path d={p} fill="#b8cba1" opacity=".8" key={`park${i}`}/>)}
+ {karte.strassen.map((p,i)=><path d={p} fill="none" stroke="#d7cdb3" strokeWidth="9" key={`s${i}`}/>)}
+ {karte.hauptstrassen.map((p,i)=><path d={p} fill="none" stroke="#fff8e7" strokeWidth="16" strokeLinecap="round" key={`h${i}`}/>)}
+ {karte.bahn.map((p,i)=><path d={p} fill="none" stroke="#a79986" strokeWidth="5" strokeDasharray="12 7" opacity=".6" key={`b${i}`}/>)}
+ {karte.seen.map((p,i)=><path d={p} fill="#a2c7c2" key={`see${i}`}/>)}
+ {karte.fluss.map((p,i)=><path d={p} fill="none" stroke="#8ab6b4" strokeWidth="45" strokeLinecap="round" key={`f${i}`}/>)}
+ {karte.kanal.map((p,i)=><path d={p} fill="none" stroke="#a2c7c2" strokeWidth="27" key={`k${i}`}/>)}
+ <g fill="#657a65" fontSize="38" fontFamily="Trebuchet MS,sans-serif"><text x="11900" y="6760">Zukunftspark</text><text x="12930" y="7190">Bildungscampus</text><text x="11750" y="7350">Neckarbogen</text><text x="13090" y="8080">Innenstadt</text><text x="11970" y="8090">Hauptbahnhof</text><text x="13160" y="7660" transform="rotate(-75 13160 7660)">Neckar</text></g>
+ {LERNORTE.map((o,i)=><g key={o.id} data-lernort={o.id} transform={`translate(${o.x} ${o.y})`} onClick={()=>besuchen(o.id)} className="stadt-pin"><title>{o.name}</title><circle r="75" fill="#fff8e6" stroke={o.farbe} strokeWidth="10"/><text y="20" textAnchor="middle" fontSize="63" fontWeight="700" fill={o.farbe}>{i+1}</text><rect x={o.id==="hdf"?-410:95} y="-38" width={o.id==="hdf"?320:300} height="78" rx="15" fill="#fff8e6" stroke="#66785c" strokeWidth="2"/><text x={o.id==="hdf"?-250:245} y="14" textAnchor="middle" fontSize="33" fill="#334b3b" fontWeight="700">{o.name}</text>{erfolge.filter(id=>id.startsWith(o.id+"-")).length===3&&<text x="-70" y="-75" fontSize="48" fill="#386f54">✓</text>}</g>)}
+ <g transform="translate(13340 6330)" fill="#49634d"><path d="m0 0-25 70 25-15 25 15Z"/><text x="0" y="-20" textAnchor="middle" fontSize="40">N</text></g></svg><button className="stadt-zoom" onClick={()=>setZoom(!zoom)}>{zoom?"Alle vier Orte":"Innenstadt näher"}</button><span className="stadt-quelle">© OpenStreetMap-Mitwirkende · ODbL · lokal gespeicherte Karte</span></div>;
+}

@@ -1,7 +1,7 @@
 import type { Angebot } from "./angebot";
 import { filtere, LEERER_FILTER } from "./filter";
 import { fuerModus } from "./entdecken";
-import type { Checkpoint } from "./checkpoint";
+import type { Checkpoint, HausSymbol } from "./checkpoint";
 import aim from "../../konfiguration/checkpoints/aim.json";
 import experimenta from "../../konfiguration/checkpoints/experimenta.json";
 import hdf from "../../konfiguration/checkpoints/hdf.json";
@@ -11,6 +11,8 @@ export type Punkt = { x: number; y: number };
 export type Rechteck = Punkt & { breite: number; hoehe: number };
 export type Richtung = "hoch" | "rechts" | "runter" | "links";
 export type { Aktivitaet, HausGrafik, HausSymbol } from "./checkpoint";
+/** Aufgabenart für Einführung und Sprachaufnahmen; entspricht dem Haussymbol. */
+export type MissionArt = HausSymbol;
 
 /** Ein Lernhaus der Spielwelt. Die Position berechnet `erzeugeStadt` – neue Häuser brauchen keine Koordinaten. */
 export type Station = Checkpoint;

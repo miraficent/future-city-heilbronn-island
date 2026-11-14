@@ -1,3 +1,5 @@
+Aktueller Stand der neuen Kinderansicht: [Heilbronn-Lernreise](heilbronn-lernreise.md). 138 Tests in 19 Dateien; 36 Aufgabenvarianten im Browser geprüft, keine Browserfehler oder Drittanfragen. Vier neue Architekturillustrationen: public/medien/heilbronn/. Feste natürliche Sprachaufnahmen fehlen noch. Die folgenden Abschnitte enthalten auch historische Prüfstände.
+
 # Prüfbericht zum lokalen Prototyp
 
 Stand: 13.11.2026. Geprüft unter Windows mit Node.js 24.14.0, Next.js 16.4.6 und Google Chrome 157. Die fertige Webansicht wird lokal unter http://localhost:4173 bereitgestellt.

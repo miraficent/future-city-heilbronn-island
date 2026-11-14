@@ -1,5 +1,5 @@
 /** Spielfiguren. Bewusst vielfältig – jedes Kind soll sich wiederfinden können. Keine echten Personen. */
-export type Frisur = "kurz" | "seitenscheitel" | "pferdeschwanz" | "puffs" | "kopftuch" | "roboter";
+export type Frisur = "kurz" | "seitenscheitel" | "locken" | "pferdeschwanz" | "puffs" | "kopftuch" | "roboter";
 export type Kleidung = "hose" | "hoodie" | "kleid" | "rock" | "langrock" | "roboter";
 
 export type Figur = {
@@ -15,6 +15,11 @@ export type Figur = {
   schuhe: string;
   maedchen: boolean;
   brille?: boolean;
+  /** Aus dem Figurenbaukasten: Schnitt von Oberteil, Unterteil und Schuhen sowie die Farbe einer Kappe. */
+  oberteilArt?: "shirt" | "pullover" | "jacke";
+  unterteilArt?: "hose" | "shorts" | "rock";
+  schuhArt?: "sneaker" | "stiefel" | "sandalen";
+  kappe?: string;
 };
 
 export const FIGUREN: Figur[] = [

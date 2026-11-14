@@ -2,6 +2,18 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+/** Freundliche, gut verständliche lokale Stimmen zuerst (Windows: Katja/Hedda, macOS: Anna). */
+const BEVORZUGT = [/katja/i, /hedda/i, /anna/i, /petra/i, /helena/i, /marlene/i];
+
+export function besteStimme(stimmen: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
+  const lokal = stimmen.filter((v) => v.localService && v.lang.toLowerCase().startsWith("de"));
+  for (const muster of BEVORZUGT) {
+    const treffer = lokal.find((v) => muster.test(v.name));
+    if (treffer) return treffer;
+  }
+  return lokal.find((v) => v.lang.toLowerCase() === "de-de") ?? lokal[0];
+}
+
 /**
  * Vorlesen mit der Sprachausgabe des Geräts. Es wird nur eine lokal installierte
  * deutsche Stimme genutzt – kein Text verlässt das Gerät.
@@ -29,13 +41,14 @@ export function useVorlesen() {
   const sprich = useCallback(
     (text: string) => {
       if (!("speechSynthesis" in window)) return;
-      const stimme = window.speechSynthesis.getVoices().find((v) => v.localService && v.lang.startsWith("de"));
+      const stimme = besteStimme(window.speechSynthesis.getVoices());
       if (!stimme) return;
       window.speechSynthesis.cancel();
       const satz = new SpeechSynthesisUtterance(text);
       satz.voice = stimme;
       satz.lang = "de-DE";
-      satz.rate = 0.92;
+      satz.rate = 1;
+      satz.pitch = 1.1;
       satz.onend = () => setLiest(false);
       satz.onerror = () => setLiest(false);
       setLiest(true);

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "motion/react";
 import type { Angebot } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import type { Modus } from "@/lib/entdecken";
@@ -20,7 +21,7 @@ export function Angebotskarte({ angebot: a, meta, modus, gemerkt, merken, jetzt 
   const termin = naechsterTermin(a, new Date(jetzt));
   const quelle = meta.quellen.find((q) => q.id === a.quelle);
   return (
-    <article className={`angebot-karte ${modus === "kind" ? "angebot-kind" : ""} group flex h-full flex-col overflow-hidden rounded-3xl border-2 border-tinte bg-flaeche`}>
+    <motion.article whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className={`angebot-karte einblenden-beim-scrollen ${modus === "kind" ? "angebot-kind" : ""} group flex h-full flex-col overflow-hidden rounded-3xl border-2 border-tinte bg-flaeche`}>
       <div className="kartenbild relative flex h-36 items-end overflow-hidden border-b-2 border-tinte px-5 pb-4" style={{ background: modus === "kind" ? "#e4edce" : stil?.farbe ?? "#00a3a3", color: "#1c1934" }}>
         <div aria-hidden className="raster absolute inset-0 opacity-15" />
         {modus === "kind" ? <PixelBild motiv={a.themen.includes("gaming")?"spielewerkstatt":a.themen.includes("ki")?"ki-atelier":"code-labor"} className="kurs-pixelbild"/> : stil && <Planet kennung={`karte-${a.id.replace(/[^\w-]/g, "-")}`} farbe={stil.farbe} art={stil.planet} className="absolute -right-4 -top-9 w-56 transition-transform duration-500 group-hover:rotate-12" />}
@@ -38,6 +39,6 @@ export function Angebotskarte({ angebot: a, meta, modus, gemerkt, merken, jetzt 
           <button className="merk-knopf gap-2" aria-pressed={gemerkt} aria-label={`${a.titel} ${gemerkt ? "aus der Sammlung nehmen" : "sammeln"}`} onClick={() => merken(a.id)}><Symbol name={gemerkt?"check":"star"} className="!size-4"/>{gemerkt ? "Gesammelt" : "Sammeln"}</button>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
