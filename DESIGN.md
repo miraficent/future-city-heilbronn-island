@@ -24,6 +24,8 @@ Read this file together with CLAUDE.md before changing any UI.
 > 10. **Stadthäuser = Fachwerkhäuser** (eigene flache Zeichnung, `src/components/kinderreise/fachwerkhaus.tsx`,
 >    Einzeldatei `public/grafik/fachwerkhaus.svg`). Neuer Token `timber` #7A4A2A für die Balken.
 >    Weniger Häuser als zuvor, damit die Karte ruhig bleibt.
+> 11. **Kinder-Karte ist eine gemalte Illustration** (`/kinder/`): Hintergrund `public/karte/heilbronn-karte.jpg` (1536 × 1024, ohne Gebäude). Darauf liegen Fachwerkhäuser (`fachwerkhaus.tsx`) auf den früheren Schattenflächen und isometrische Einrichtungsgebäude im Stil der experimenta-Zeichnung (`institut-gebaeude.tsx`). **Nur in diesen Gebäuden sind Verläufe erlaubt.** 
+>    Positionen: `src/lib/bildkarte.ts`. Die gezeichnete Stadtkarte (`insel-karte.tsx`) bleibt als Rückfall.
 Goal: ONE consistent look for the whole website: map, kids pages, parent dashboard, games.
 Do not invent new colors, fonts or component styles. If something is missing, add it here first.
 

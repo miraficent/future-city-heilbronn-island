@@ -5,21 +5,29 @@
  * Jedes Gebäude ist ein Link zu seiner Einrichtungsseite – die Figur läuft hin, dann geht es weiter.
  */
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AppShell, Button, OwlGuide } from "@/components/ui";
-import { InselKarte } from "@/components/kinderreise/insel-karte";
-import { START, type KartenOrt, type Pt } from "@/lib/kinderkarte";
+import { BildKarte } from "@/components/kinderreise/bild-karte";
+import type { KartenOrt, Pt } from "@/lib/kinderkarte";
+import { BILD_START, bildOrte } from "@/lib/bildkarte";
 import { istHeute, kartenFuerOrt, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useMinute } from "@/lib/kinder-zustand";
 
 const KINDER_ALTER = [6, 7, 8, 9, 10, 11, 12, 13, 14];
 const LAUFZEIT_MS = 1200;
 
-export function KartenSeite({ orte, karten }: { orte: KartenOrt[]; karten: KinderKarte[] }) {
+export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; karten: KinderKarte[] }) {
   const router = useRouter();
+  const orte = useMemo(() => bildOrte(kartenOrte), [kartenOrte]);
+  const rahmen = useRef<HTMLDivElement>(null);
+  // Handy: Karte ist breiter als der Bildschirm – mittig starten
+  useEffect(() => {
+    const el = rahmen.current;
+    if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+  }, []);
   const [alter, setAlter] = useKinderAlter();
   const minute = useMinute();
-  const [figur, setFigur] = useState<Pt>(START);
+  const [figur, setFigur] = useState<Pt>(BILD_START);
   const [gewaehlt, setGewaehlt] = useState<string | null>(null);
 
   // Kommende Karten für dieses Alter (ohne Uhrzeit/Alter beim ersten Rendern: alle)
@@ -37,7 +45,7 @@ export function KartenSeite({ orte, karten }: { orte: KartenOrt[]; karten: Kinde
     if (gewaehlt) return;
     const ort = orte.find((o) => o.id === id)!;
     setGewaehlt(id);
-    setFigur([ort.x - 60, ort.y + 10]);
+    setFigur([ort.x - 70, ort.y + 30]);
     const sanft = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setTimeout(() => router.push(`/checkpoint/${id}/`), sanft ? LAUFZEIT_MS : 0);
   }
@@ -46,8 +54,9 @@ export function KartenSeite({ orte, karten }: { orte: KartenOrt[]; karten: Kinde
 
   return (
     <AppShell modus="kinder" voll>
-      <div className="kinder-karte">
-        <InselKarte
+      <div className="kinder-karte" ref={rahmen}>
+        <div className="kinder-karte__grund" aria-hidden="true" />
+        <BildKarte
           orte={orte}
           zahlen={zahlen}
           heute={heute}
