@@ -20,11 +20,23 @@ export function interessenThemen(ids: string[]): string[] {
   return [...stimmen].filter(([, zahl]) => zahl === maximum).map(([id]) => id);
 }
 
+/**
+ * Kinder und Teens sehen nur Angebote mit bekannter Altersangabe (aus Titel, Beschreibung,
+ * Quell-Kategorie oder einer Korrektur). Eine nur geratene Zielgruppe reicht nicht –
+ * Eltern sehen in ihrer Suche trotzdem alles.
+ */
+export function hatAltersangabe(a: Angebot): boolean {
+  return a.alterMin !== undefined || a.alterMax !== undefined;
+}
+
 export function fuerModus(angebote: Angebot[], modus: Modus): Angebot[] {
   if (modus === "eltern") return angebote;
   const gruppe = modus === "kind" ? "kinder" : "teens";
   const [min, max] = modus === "kind" ? [6, 11] : [12, 17];
   return angebote.filter((a) =>
-    a.zielgruppen.includes(gruppe) && (a.alterMin ?? 0) <= max && (a.alterMax ?? 99) >= min,
+    a.zielgruppen.includes(gruppe) &&
+    hatAltersangabe(a) &&
+    (a.alterMin ?? 0) <= max &&
+    (a.alterMax ?? 99) >= min,
   );
 }

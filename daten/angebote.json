@@ -31,11 +31,99 @@
    "euro": 0,
    "text": "kostenlos"
   },
-  "status": "frei",
+  "status": "ausgebucht",
   "sicherheit": 0.9,
   "ausloeser": [
    "KI",
    "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262420PAI",
+  "quelle": "aim",
+  "titel": "Python lernen mit KI (ab 16 Jahren)",
+  "teaser": "Dein smarter Start in Python: mit erfahrenem Dozenten und persönlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem Kurs lernst du Schritt für Schritt die Grundlagen von Python, einer weltweit eingesetzten und für Einsteigende super geeigneten Programmiersprache, kennen. Dabei…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI",
+  "themen": [
+   "ki",
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens",
+   "erwachsene",
+   "eltern"
+  ],
+  "alterMin": 16,
+  "termine": [
+   {
+    "start": "2026-11-16T16:30:00+01:00",
+    "ende": "2026-11-16T18:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "Programmier",
+   "Python"
+  ],
+  "erstmalsGesehen": "2026-11-13"
+ },
+ {
+  "id": "aim:262430DSW",
+  "quelle": "aim",
+  "titel": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen",
+  "teaser": "Digitale Spiele verstehen und Kinder kompetent begleiten Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern",
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-16T17:00:00+01:00",
+    "ende": "2026-11-16T19:30:00+01:00"
+   },
+   {
+    "start": "2026-11-23T17:00:00+01:00",
+    "ende": "2026-11-23T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "wenige",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Game",
+   "Gaming",
+   "Minecraft",
+   "Roblox"
   ],
   "erstmalsGesehen": "2026-11-13"
  },
@@ -56,10 +144,6 @@
   ],
   "alterMin": 6,
   "termine": [
-   {
-    "start": "2026-11-14T11:30:00+01:00",
-    "ende": "2026-11-14T12:05:00+01:00"
-   },
    {
     "start": "2026-11-17T09:30:00+01:00",
     "ende": "2026-11-17T10:05:00+01:00"
@@ -224,94 +308,6 @@
   "sicherheit": 0.5,
   "ausloeser": [
    "Roboter"
-  ],
-  "erstmalsGesehen": "2026-11-13"
- },
- {
-  "id": "aim:262420PAI",
-  "quelle": "aim",
-  "titel": "Python lernen mit KI (ab 16 Jahren)",
-  "teaser": "Dein smarter Start in Python: mit erfahrenem Dozenten und persönlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem Kurs lernst du Schritt für Schritt die Grundlagen von Python, einer weltweit eingesetzten und für Einsteigende super geeigneten Programmiersprache, kennen. Dabei…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI",
-  "themen": [
-   "ki",
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens",
-   "erwachsene",
-   "eltern"
-  ],
-  "alterMin": 16,
-  "termine": [
-   {
-    "start": "2026-11-16T16:30:00+01:00",
-    "ende": "2026-11-16T18:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "Programmier",
-   "Python"
-  ],
-  "erstmalsGesehen": "2026-11-13"
- },
- {
-  "id": "aim:262430DSW",
-  "quelle": "aim",
-  "titel": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen",
-  "teaser": "Digitale Spiele verstehen und Kinder kompetent begleiten Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW",
-  "themen": [
-   "gaming"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "eltern",
-   "fachkraefte"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-16T17:00:00+01:00",
-    "ende": "2026-11-16T19:30:00+01:00"
-   },
-   {
-    "start": "2026-11-23T17:00:00+01:00",
-    "ende": "2026-11-23T19:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Online",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "wenige",
-  "sicherheit": 0.7,
-  "ausloeser": [
-   "Game",
-   "Gaming",
-   "Minecraft",
-   "Roblox"
   ],
   "erstmalsGesehen": "2026-11-13"
  },
@@ -1238,6 +1234,7 @@
   ],
   "art": "veranstaltung",
   "zielgruppen": [
+   "kinder",
    "teens"
   ],
   "termine": [
@@ -1262,7 +1259,9 @@
   "ausloeser": [
    "Lego League"
   ],
-  "erstmalsGesehen": "2026-11-13"
+  "erstmalsGesehen": "2026-11-13",
+  "alterMin": 9,
+  "alterMax": 16
  },
  {
   "id": "ipai:ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-an-die-wand",

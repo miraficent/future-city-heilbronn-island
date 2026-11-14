@@ -30,5 +30,9 @@
   "adresse:Experimenta-Platz, 74072 Heilbronn": {
     "lat": 49.1441706,
     "lon": 9.2148391
+  },
+  "adresse:Erich-Mendelsohn-Straße 1C, 74076 Heilbronn": {
+    "lat": 49.1453958,
+    "lon": 9.2089472
   }
 }
