@@ -26,5 +26,9 @@
   "Im Zukunftspark 11, Heilbronn": {
     "lat": 49.1555884,
     "lon": 9.2076931
+  },
+  "adresse:Experimenta-Platz, 74072 Heilbronn": {
+    "lat": 49.1441706,
+    "lon": 9.2148391
   }
 }

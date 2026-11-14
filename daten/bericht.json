@@ -1,5 +1,5 @@
 {
-  "erstellt": "2026-11-13T20:59:54.324Z",
+  "erstellt": "2026-11-14T03:55:01.066Z",
   "lesemodus": "cache",
   "quellen": [
     {
@@ -31,7 +31,7 @@
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 4
+      "dauerMs": 3
     },
     {
       "quelle": "hdf",
@@ -50,7 +50,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 70
+      "dauerMs": 67
     },
     {
       "quelle": "ipai",
@@ -60,7 +60,7 @@
       "anzahlAufgenommen": 5,
       "neu": [],
       "unsicher": [],
-      "dauerMs": 3
+      "dauerMs": 2
     }
   ],
   "gesamt": 78

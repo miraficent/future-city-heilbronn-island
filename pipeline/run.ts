@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { AngebotSchema, type Angebot, type Bericht, type Quelle, type QuellenBericht, type RohAngebot } from "../src/lib/angebot";
 import { ADAPTER } from "./adapters";
 import { schreibeAbos } from "./ausgabe/abos";
-import { ergaenzeKoordinaten } from "./geo";
+import { ergaenzeKoordinaten, koordinatenFuerAdresse } from "./geo";
 import { erstelleHttp, type Http } from "./http";
 import { ladeKonfiguration } from "./konfiguration";
 import { wendeKorrekturenAn } from "./verarbeitung/korrekturen";
@@ -104,7 +104,16 @@ async function main() {
       {
         aktualisiert: jetzt.toISOString(),
         lesemodus,
-        quellen: quellen.map(({ id, name, website, farbe }) => ({ id, name, website, farbe })),
+        quellen: await Promise.all(
+          quellen.map(async ({ id, name, website, farbe, adresse }) => ({
+            id,
+            name,
+            website,
+            farbe,
+            adresse,
+            ...((await koordinatenFuerAdresse(adresse, PFAD_GEO, GEO_USER_AGENT)) ?? {}),
+          })),
+        ),
         themen,
       },
       null,

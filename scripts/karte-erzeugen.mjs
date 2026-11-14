@@ -175,6 +175,8 @@ function schwerpunkt(punkte) {
 
 const karte = {
   quelle: "© OpenStreetMap-Mitwirkende, ODbL 1.0",
+  projektion: { west: BBOX.west, nord: BBOX.nord, lat0, meterProGrad: M },
+  flussName: null,
   stand: new Date().toISOString().slice(0, 10),
   breite,
   hoehe,
@@ -218,6 +220,32 @@ for (const e of elemente) {
 }
 
 for (const [id, ort] of Object.entries(ORTE)) karte.orte[id] = proj(ort);
+
+// Beschriftung des Neckars: in der Innenstadt, wo die Lernorte liegen
+const bezug = proj({ lat: 49.152, lon: 9.205 });
+let neckar = null;
+let bestI = 0;
+let bestD = Infinity;
+for (const e of elemente.filter((x) => x.type === "way" && x.tags?.waterway === "river" && x.geometry)) {
+  e.geometry.map(proj).forEach((p, i) => {
+    const d = Math.hypot(p.x - bezug.x, p.y - bezug.y);
+    if (d < bestD) {
+      bestD = d;
+      neckar = e;
+      bestI = i;
+    }
+  });
+}
+if (neckar) {
+  const pk = neckar.geometry.map(proj);
+  const i = bestI;
+  const a = pk[Math.max(0, i - 3)];
+  const b = pk[Math.min(pk.length - 1, i + 3)];
+  let winkel = (Math.atan2(b.y - a.y, b.x - a.x) * 180) / Math.PI;
+  if (winkel > 90) winkel -= 180;
+  if (winkel < -90) winkel += 180;
+  karte.flussName = { text: neckar.tags.name ?? "Neckar", x: pk[i].x, y: pk[i].y, winkel: Math.round(winkel) };
+}
 
 const poiNachName = new Map();
 for (const e of elemente) {

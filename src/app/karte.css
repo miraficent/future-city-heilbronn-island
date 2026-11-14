@@ -76,3 +76,26 @@
 @media (prefers-reduced-motion: reduce) {
   .hn-puls, .hn-wege path { animation: none !important; }
 }
+
+/* Ganze Stadt: Stadtteile, weitere Orte, Legende */
+.hn-stadtteil { font-weight: 800; fill: #6f6552; paint-order: stroke; stroke: #f4eedf; stroke-width: 0.25em; letter-spacing: 0.05em; pointer-events: none; }
+.hn-weiteres { cursor: pointer; }
+.hn-weiteres.ist-gewaehlt circle { fill: #6c4bd8; }
+.hn-weiteres.ist-gewaehlt path { stroke: #fffaf0; }
+.hn-weg { animation: hn-wandern 1.2s linear infinite; }
+.hn-legende { position: absolute; left: 10px; top: 10px; display: flex; flex-wrap: wrap; gap: 6px 12px; max-width: calc(100% - 80px); padding: 6px 10px; border: 2px solid #254950; border-radius: 12px; background: #fffaf0e6; font-size: 12px; font-weight: 700; }
+.hn-legende span, .hn-start-liste li { display: inline-flex; align-items: center; gap: 6px; }
+.hn-legende i, .hn-start-liste i { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
+.hn-l-pin { background: #e8513a; border: 2px solid #254950; }
+.hn-l-weiteres { background: #fffaf0; border: 3px solid #6c4bd8; }
+.hn-l-autobahn { width: 22px !important; height: 5px !important; border-radius: 3px !important; background: #f0a05e; }
+.hn-info-start h2 { display: flex; align-items: center; gap: 10px; }
+.hn-info-start h2 .symbol { width: 30px; height: 30px; }
+.hn-start-liste { display: grid; gap: 10px; margin-top: 8px; font-weight: 700; }
+.hn-start-liste .symbol { width: 18px; height: 18px; }
+.hn-weiteres-symbol { display: grid; place-items: center; width: 70px; height: 70px; border: 3px solid #6c4bd8; border-radius: 50%; background: #fffaf0; color: #6c4bd8; flex-shrink: 0; }
+.hn-weiteres-symbol .symbol { width: 36px; height: 36px; }
+.hn-schritte { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.hn-schritte li { flex-direction: column; text-align: center; font-size: 13px; font-weight: 700; padding: 8px 4px; border: 2px solid #c8c0a8; border-radius: 14px; background: #fff; }
+.hn-schritte span { width: 40px; height: 40px; }
+.hn-schritte span .symbol { width: 22px; height: 22px; }

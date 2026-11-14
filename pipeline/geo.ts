@@ -58,3 +58,21 @@ export async function ergaenzeKoordinaten(angebote: Angebot[], cachePfad: string
     return punkt ? { ...a, ort: { ...a.ort, lat: punkt.lat, lon: punkt.lon } } : a;
   });
 }
+
+/** Koordinaten einer vollständigen Postadresse (für die Kartenpins der Einrichtungen). */
+export async function koordinatenFuerAdresse(adresse: string, cachePfad: string, userAgent: string): Promise<{ lat: number; lon: number } | null> {
+  if (!adresse.trim()) return null;
+  const cache = await ladeGeoCache(cachePfad);
+  const schluessel = `adresse:${adresse}`;
+  if (!(schluessel in cache)) {
+    try {
+      cache[schluessel] = await geokodiere(adresse, userAgent);
+    } catch {
+      cache[schluessel] = null;
+    }
+    await writeFile(cachePfad, `${JSON.stringify(cache, null, 2)}
+`);
+    await new Promise((r) => setTimeout(r, PAUSE_MS));
+  }
+  return cache[schluessel] ?? null;
+}
