@@ -1,10 +1,38 @@
 import { createServer } from "node:http";
-import { readFile, stat } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import { dirname, extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
+import { leererStand, pruefeSignal, pruefeStand, zaehle } from "../src/lib/signal-regeln.mjs";
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), "../out");
+// Anonyme Wunsch-Zähler („Was fehlt?“): nur Tageszähler, keine IP, keine Kennung, kein Log.
+const signalDatei = resolve(dirname(fileURLToPath(import.meta.url)), "../.cache/signale.json");
+let signale = leererStand();
+try { signale = pruefeStand(JSON.parse(await readFile(signalDatei, "utf8"))); } catch { /* noch keine Signale */ }
+const MAX_SIGNALE_PRO_MINUTE = 60;
+let minute = { start: Date.now(), anzahl: 0 };
+let speichern = Promise.resolve();
+function json(res, status, daten) {
+  res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" });
+  res.end(daten === undefined ? undefined : JSON.stringify(daten));
+}
+async function signalAnnehmen(req, res) {
+  if (Date.now() - minute.start > 60_000) minute = { start: Date.now(), anzahl: 0 };
+  if (++minute.anzahl > MAX_SIGNALE_PRO_MINUTE) return json(res, 429, { fehler: "Zu viele Meldungen – bitte später erneut." });
+  let roh = "";
+  for await (const teil of req) {
+    roh += teil;
+    if (roh.length > 1024) return json(res, 413, { fehler: "Zu groß." });
+  }
+  let signal = null;
+  try { signal = pruefeSignal(JSON.parse(roh)); } catch { /* ungültiges JSON */ }
+  if (!signal) return json(res, 400, { fehler: "Ungültiges Signal." });
+  signale = zaehle(signale, signal, new Date().toISOString().slice(0, 10));
+  const kopie = JSON.stringify(signale);
+  speichern = speichern.then(() => mkdir(dirname(signalDatei), { recursive: true })).then(() => writeFile(signalDatei, kopie)).catch(() => {});
+  return json(res, 204);
+}
 const port = Number(process.env.COSMOS_PORT || 4173);
 const adresse = `http://localhost:${port}`;
 function oeffnen() {
@@ -19,6 +47,9 @@ catch { console.error("Die gebaute Website fehlt. Bitte zuerst npm run export au
 const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url || "/", `http://127.0.0.1:${port}`);
+    if (url.pathname === "/api/signal" && req.method === "POST") return await signalAnnehmen(req, res);
+    if (url.pathname === "/api/signale" && req.method === "GET") return json(res, 200, signale);
+    if (url.pathname.startsWith("/api/")) return json(res, 405, { fehler: "Nicht erlaubt." });
     let pfad = resolve(wurzel, `.${decodeURIComponent(url.pathname)}`);
     if (pfad !== wurzel && !pfad.startsWith(wurzel + sep)) { res.writeHead(403).end(); return; }
     if ((await stat(pfad)).isDirectory()) pfad = resolve(pfad, "index.html");

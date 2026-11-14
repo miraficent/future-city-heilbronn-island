@@ -21,16 +21,17 @@
 .hn-pin { cursor: pointer; outline: none; }
 .hn-pin:focus-visible circle:first-of-type { stroke: #2f4bff; stroke-width: 14px; }
 .hn-pin-name { font-size: 42px; font-weight: 800; fill: #1c1934; }
-.hn-puls { animation: hn-puls 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes hn-puls { 50% { transform: scale(1.35); opacity: 0.08; } }
+.hn-pin:hover > path, .hn-pin.ist-gewaehlt > path { filter: brightness(1.08) saturate(1.1); }
 .hn-wege path { animation: hn-wandern 1.2s linear infinite; }
 @keyframes hn-wandern { to { stroke-dashoffset: -52; } }
 .hn-steuerung { position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 8px; }
 .hn-quelle { position: absolute; left: 10px; bottom: 8px; padding: 2px 8px; border-radius: 8px; background: #fffaf0d9; font-size: 11px; }
 
-.hn-info { padding: 18px; border: 3px solid #254950; border-radius: 24px; background: #fffbef; box-shadow: 6px 6px 0 var(--ort-farbe); }
+.hn-info { overflow: hidden; padding: 18px; border: 3px solid #254950; border-radius: 24px; background: #fffbef; box-shadow: 6px 6px 0 var(--ort-farbe); }
 .hn-info-kopf { display: flex; align-items: center; gap: 14px; }
-.hn-info-bild { width: 92px; height: 84px; flex-shrink: 0; }
+.hn-info-bild { width: 64px; height: 58px; flex-shrink: 0; }
+.hn-info-foto { display: block; width: calc(100% + 36px); height: auto; aspect-ratio: 16 / 9; margin: -18px -18px 14px; border-bottom: 3px solid #254950; border-radius: 21px 21px 0 0; }
+.ortsbild { display: block; }
 .hn-info h2 { font-family: var(--font-display), sans-serif; font-size: 26px; font-weight: 800; line-height: 1.1; }
 .hn-info-text { margin: 12px 0; }
 .hn-fakten { display: grid; gap: 8px; }
@@ -61,9 +62,9 @@
 .hn-daten summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-weight: 700; }
 
 .hn-ortliste { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.hn-ortliste button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px; border: 2.5px solid #254950; border-radius: 18px; background: color-mix(in srgb, var(--ort-farbe) 18%, #fffbef); font-weight: 800; }
+.hn-ortliste button { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 8px 10px; color: #1c1934; border: 2.5px solid #254950; border-radius: 18px; background: color-mix(in srgb, var(--ort-farbe) 18%, #fffbef); font-weight: 800; }
 .hn-ortliste button[aria-selected="true"] { box-shadow: 4px 4px 0 #254950; transform: translateY(-2px); }
-.hn-ortliste .pixel-bild { width: 70px; height: 62px; }
+.hn-ort-foto { width: 100%; height: auto; aspect-ratio: 16 / 9; margin-bottom: 6px; border: 2px solid #254950; border-radius: 12px; }
 .hn-ortliste small { font-weight: 400; font-size: 13px; }
 .hn-fuss { margin-top: 18px; max-width: 900px; font-size: 14px; color: #4a4560; }
 .hn-fuss a { text-decoration: underline; font-weight: 700; }
@@ -74,7 +75,7 @@
   .hn-ortliste { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hn-puls, .hn-wege path { animation: none !important; }
+  .hn-wege path { animation: none !important; }
 }
 
 /* Ganze Stadt: Stadtteile, weitere Orte, Legende */
@@ -99,3 +100,7 @@
 .hn-schritte li { flex-direction: column; text-align: center; font-size: 13px; font-weight: 700; padding: 8px 4px; border: 2px solid #c8c0a8; border-radius: 14px; background: #fff; }
 .hn-schritte span { width: 40px; height: 40px; }
 .hn-schritte span .symbol { width: 22px; height: 22px; }
+
+/* Karte im dunklen Teens-Bereich: Karte und Infokarte behalten ihre hellen Farben und dunkle Schrift. */
+.teen-orte .hn-karte { color: #254950; }
+.teen-orte .hn-info, .teen-orte .hn-ortliste button { color: #1c1934; }

@@ -147,18 +147,21 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
 
   const zebras = querX.map((qx) => ({ x: qx - ZEBRA_BREITE / 2, y: Y.strasseOben, breite: ZEBRA_BREITE, hoehe: Y.strasseUnten - Y.strasseOben }));
 
-  // Autos: aus dem Tunnel nach Osten, einmal rund um die Mittelinsel des Wendehammers
-  // (gegen den Uhrzeigersinn, wie bei Rechtsverkehr) und zurück nach Westen in den Tunnel.
-  const dy = Y.spurOst - wende.y;
-  const einfahrtX = wende.x - Math.sqrt(KEHRE_RADIUS ** 2 - dy ** 2);
-  const startWinkel = Math.atan2(dy, einfahrtX - wende.x);
-  const autoBahn: Punkt[] = [{ x: -160, y: Y.spurOst }, { x: einfahrtX, y: Y.spurOst }];
-  const SCHRITTE = 36;
+  // Autos: aus dem Tunnel nach Osten, in einer weichen S-Kurve hinein in den Wendehammer,
+  // im Halbkreis rechts um die Mittelinsel (gegen den Uhrzeigersinn, wie bei Rechtsverkehr)
+  // und genauso weich zurück auf die Spur nach Westen in den Tunnel.
+  const unten = { x: wende.x, y: wende.y + KEHRE_RADIUS };
+  const oben = { x: wende.x, y: wende.y - KEHRE_RADIUS };
+  const kurveAb = wende.x - 150;
+  const autoBahn: Punkt[] = [{ x: -160, y: Y.spurOst }];
+  autoBahn.push(...bezier({ x: kurveAb, y: Y.spurOst }, { x: kurveAb + 75, y: Y.spurOst }, { x: unten.x - 75, y: unten.y }, unten, 18));
+  const SCHRITTE = 32;
   for (let i = 1; i < SCHRITTE; i++) {
-    const w = startWinkel - (i / SCHRITTE) * (2 * startWinkel);
+    const w = Math.PI / 2 - (i / SCHRITTE) * Math.PI;
     autoBahn.push({ x: wende.x + Math.cos(w) * KEHRE_RADIUS, y: wende.y + Math.sin(w) * KEHRE_RADIUS });
   }
-  autoBahn.push({ x: einfahrtX, y: Y.spurWest }, { x: -160, y: Y.spurWest });
+  autoBahn.push(...bezier(oben, { x: oben.x - 75, y: oben.y }, { x: kurveAb + 75, y: Y.spurWest }, { x: kurveAb, y: Y.spurWest }, 18));
+  autoBahn.push({ x: -160, y: Y.spurWest });
 
   const stadt: Stadt = {
     breite,
@@ -183,6 +186,18 @@ export function erzeugeStadt(stationen: Station[]): Stadt {
 }
 
 /* ---------- Geometrie ---------- */
+
+/** Punkte auf einer kubischen Bézierkurve (inklusive Anfang und Ende). */
+function bezier(a: Punkt, b: Punkt, c: Punkt, d: Punkt, schritte: number): Punkt[] {
+  return Array.from({ length: schritte + 1 }, (_, i) => {
+    const t = i / schritte;
+    const u = 1 - t;
+    return {
+      x: u * u * u * a.x + 3 * u * u * t * b.x + 3 * u * t * t * c.x + t * t * t * d.x,
+      y: u * u * u * a.y + 3 * u * u * t * b.y + 3 * u * t * t * c.y + t * t * t * d.y,
+    };
+  });
+}
 
 function knotenNach(stadt: Stadt) {
   return new Map(stadt.knoten.map((n) => [n.id, n]));
@@ -343,21 +358,30 @@ function bahnLaenge(bahn: Punkt[]) {
   return summe;
 }
 
-export function aufBahn(bahn: Punkt[], s: number): { punkt: Punkt; winkel: number } {
-  let rest = s;
+function punktAufBahn(bahn: Punkt[], s: number): Punkt {
+  let rest = Math.max(0, s);
   for (let i = 1; i < bahn.length; i++) {
     const a = bahn[i - 1]!;
     const b = bahn[i]!;
     const l = abstand(a, b);
     if (rest <= l) {
       const t = l ? rest / l : 0;
-      return { punkt: { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }, winkel: Math.atan2(b.y - a.y, b.x - a.x) };
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
     }
     rest -= l;
   }
-  const a = bahn.at(-2) ?? bahn[0]!;
-  const b = bahn.at(-1) ?? bahn[0]!;
-  return { punkt: b, winkel: Math.atan2(b.y - a.y, b.x - a.x) };
+  return bahn.at(-1) ?? bahn[0]!;
+}
+
+/** Fahrtrichtung aus einem Blick nach vorn und zurück – so lenkt das Auto weich statt eckig. */
+const LENK_BLICK = 16;
+
+export function aufBahn(bahn: Punkt[], s: number): { punkt: Punkt; winkel: number } {
+  const laenge = bahnLaenge(bahn);
+  const punkt = punktAufBahn(bahn, s);
+  const vor = punktAufBahn(bahn, Math.min(laenge, s + LENK_BLICK));
+  const zurueck = punktAufBahn(bahn, Math.max(0, s - LENK_BLICK));
+  return { punkt, winkel: Math.atan2(vor.y - zurueck.y, vor.x - zurueck.x) };
 }
 
 export function neueAutos(stadt: Stadt): Auto[] {
@@ -425,12 +449,14 @@ function verteileDeko(stadt: Stadt): Deko[] {
     for (let i = 0, gesetzt = 0; i < versuche && gesetzt < anzahl; i++) {
       const p = { x: zufall() * stadt.breite, y: zufall() * stadt.hoehe };
       if (!frei(stadt, p, rand)) continue;
-      if (deko.some((d) => abstand(d, p) < (art === "baum" ? 95 : 55))) continue;
+      // Bäume brauchen Platz für ihre Krone: untereinander viel Abstand, zu Büschen und Blumen etwas weniger.
+      const mindest = (d: Deko) => (art === "baum" && d.art === "baum" ? 190 : art === "baum" || d.art === "baum" ? 85 : 55);
+      if (deko.some((d) => abstand(d, p) < mindest(d))) continue;
       deko.push({ id: `${art}-${gesetzt}`, art, x: Math.round(p.x), y: Math.round(p.y), variante: Math.floor(zufall() * 3) });
       gesetzt++;
     }
   };
-  plaziere("baum", Math.round(stadt.breite / 85), 38);
+  plaziere("baum", Math.round(stadt.breite / 160), 44, 900);
   plaziere("busch", Math.round(stadt.breite / 120), 22);
   plaziere("blume", Math.round(stadt.breite / 60), 10);
   // Laternen stehen am Rand der Gehwege, Bänke am Platz.

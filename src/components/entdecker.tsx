@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Angebot, Art, Zielgruppe } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { fuerModus, INTERESSEN, interessenThemen, type Modus } from "@/lib/entdecken";
@@ -14,6 +14,7 @@ import { kurzname } from "./einrichtung-badge";
 import { useSammlung } from "./sammlung";
 import { Planet } from "./planet";
 import { Symbol } from "./symbol";
+import { FehltMelden, WunschBox } from "./wunsch-box";
 
 const INHALTE = {
   kind: { oben: "DEIN NÄCHSTES ABENTEUER · HEILBRONN", titel: "Wohin fliegst du heute?", text: "Roboter bauen. Spiele erfinden. KI durchschauen. Such dir deinen Planeten aus!", quiz: "Finde meine Mission" },
@@ -21,7 +22,8 @@ const INHALTE = {
   eltern: { oben: "FÜR ELTERN & PÄDAGOGISCHE FACHKRÄFTE", titel: "Alle Kurse zu KI, Coding und Gaming in Heilbronn.", text: "Aus vier Einrichtungen, jede Nacht automatisch aktualisiert. Filtern Sie nach Alter, Termin und Kosten – die Anmeldung erfolgt direkt beim Anbieter.", quiz: "Passendes Angebot finden" },
 };
 
-export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebettet=false }: { modus: Modus; angebote: Angebot[]; meta: Meta; jetzt: string; eingebettet?:boolean }) {
+/** `zusatz` erscheint direkt unter dem Kopfbereich – z. B. die Heilbronn-Karte im Teens-Bereich. */
+export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebettet=false, zusatz }: { modus: Modus; angebote: Angebot[]; meta: Meta; jetzt: string; eingebettet?:boolean; zusatz?: ReactNode }) {
   const Rahmen=eingebettet?"section":"main";
   const [jetzt, setJetzt] = useState(initialJetzt);
   useEffect(() => {
@@ -89,6 +91,8 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
         </aside>
       </section>
 
+      {zusatz}
+
       <section aria-labelledby="planeten" className="mt-12">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 id="planeten" className="font-display text-lg font-bold">{modus === "kind" ? `${stile.length === 3 ? "Drei" : stile.length} Planeten. Viele Möglichkeiten.` : modus === "eltern" ? "Nach Thema stöbern" : "Welches Thema weckt deine Neugier?"}</h2>
@@ -133,15 +137,17 @@ export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebet
           {modus !== "kind" && <label className="check-label"><input type="checkbox" checked={merk.dauerhaft} onChange={(e) => merk.behalten(e.target.checked)} />Auf diesem Gerät behalten</label>}
           <button className="min-h-11 underline" onClick={merk.leeren}>Sammlung leeren</button>
         </div>}
-        {ergebnisse.length === 0 ? <div className="mt-6 rounded-3xl border-2 border-dashed border-tinte p-10 text-center"><Symbol name={merkansicht ? "backpack" : "search"} className="!size-12"/><h3 className="mt-4 text-xl font-bold">{merkansicht ? "Hier ist Platz für deine Ideen." : "Hier ist gerade noch kein Treffer."}</h3><p className="mx-auto mt-2 max-w-lg text-tinte-2">{merkansicht ? "Tippe bei einem Angebot auf „Merken“. Dann findest du es hier wieder." : "Versuche ein anderes Thema, einen größeren Zeitraum oder entferne einen Filter. Es werden keine Angebote erfunden."}</p><button className="knopf mt-5" onClick={() => { setMerkansicht(false); setFilter({ ...LEERER_FILTER }); setQuizErgebnis(false); }}>Alle Angebote entdecken</button></div>
+        {ergebnisse.length === 0 ? <div className="mt-6 rounded-3xl border-2 border-dashed border-tinte p-10 text-center"><Symbol name={merkansicht ? "backpack" : "search"} className="!size-12"/><h3 className="mt-4 text-xl font-bold">{merkansicht ? "Hier ist Platz für deine Ideen." : "Hier ist gerade noch kein Treffer."}</h3><p className="mx-auto mt-2 max-w-lg text-tinte-2">{merkansicht ? "Tippe bei einem Angebot auf „Merken“. Dann findest du es hier wieder." : "Versuche ein anderes Thema, einen größeren Zeitraum oder entferne einen Filter. Es werden keine Angebote erfunden."}</p><button className="knopf mt-5" onClick={() => { setMerkansicht(false); setFilter({ ...LEERER_FILTER }); setQuizErgebnis(false); }}>Alle Angebote entdecken</button>{!merkansicht && modus !== "kind" && filter.suche.trim().length >= 2 && <div><FehltMelden key={filter.suche} begriff={filter.suche} alter={filter.alter} /></div>}</div>
           : ansicht === "pfad" && !merkansicht ? <div className="mt-6 rounded-3xl border-2 border-tinte bg-flaeche p-6"><p className="mb-5 text-sm text-tinte-2">Dein Sternbild verbindet echte Angebote verschiedener Einrichtungen. Nach Mindestalter sortiert; die Verbindung ist eine Entdeckungsidee, keine bestätigte Kursfolge.</p><ol className="sternpfad">{[...ergebnisse].sort((a, b) => (a.alterMin ?? 12) - (b.alterMin ?? 12)).map((a) => <li key={a.id}><span className="pfad-stern"><Symbol name="star"/></span><p className="font-mono text-xs">{a.alterMin ? `Ab ${a.alterMin} Jahren` : "Für Teens"} · {kurzname(meta.quellen.find((q) => q.id === a.quelle), a.quelle)}</p><Link className="mt-1 block text-lg font-bold underline underline-offset-4" href={`/angebot/${slugAusId(a.id)}?modus=teen`}>{a.titel}</Link></li>)}</ol></div>
           : ansicht === "zeit" && !merkansicht ? <div className="mt-6 space-y-10">{[...gruppen].map(([monat, liste]) => <section key={monat}><h3 className="mb-4 border-b-2 border-tinte pb-2 font-display text-lg">{monat}</h3><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{liste.map(karte)}</div></section>)}</div>
           : <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{ergebnisse.map(karte)}</div>}
       </section>
 
-      {modus !== "kind" && <section className="mt-12 grid gap-6 rounded-3xl border-2 border-tinte bg-papier-2 p-6 sm:grid-cols-[1fr_auto] sm:p-8">
-        <div><h2 className="font-display text-lg font-bold">Mehr Platz für Vorfreude.</h2><p className="mt-2 max-w-2xl text-sm">Lade die Termine als Kalenderdatei herunter. Ein Download wird nicht automatisch aktualisiert. Prüfe freie Plätze und Änderungen vor der Anmeldung beim Veranstalter.</p></div>
-        <a className="knopf self-center bg-flaeche" href="/abo/alle.ics" download>↧ Kalender herunterladen</a>
+      {modus !== "kind" && <WunschBox themen={meta.themen} modus={modus === "teen" ? "teen" : "eltern"} />}
+
+      {modus !== "kind" && <section className="mt-8 grid gap-6 rounded-3xl border-2 border-tinte bg-papier-2 p-6 sm:p-8 lg:grid-cols-[1fr_auto]">
+        <div><h2 className="font-display text-lg font-bold">{modus === "teen" ? "Nichts mehr verpassen." : "Neue Termine im eigenen Kalender."}</h2><p className="mt-2 max-w-2xl text-sm">{modus === "teen" ? "Hol dir die Termine deines Themas in deinen Kalender." : "Termine je Thema als Kalenderdatei – passend für Kinder."} Jede Nacht werden die Dateien neu erzeugt. Freie Plätze und Änderungen vor der Anmeldung beim Veranstalter prüfen.</p></div>
+        <div className="flex flex-wrap gap-2 self-center">{meta.themen.map((t) => <a key={t.id} className="knopf bg-flaeche" href={`/abo/${t.id}-${modus === "teen" ? "teens" : "kinder"}.ics`} download><Symbol name="calendar" /> {t.name.split("&")[0]?.trim()}</a>)}<a className="knopf bg-flaeche" href="/abo/alle.ics" download>Alle Termine</a></div>
       </section>}
       <p className="mt-7 text-xs text-tinte-2">Datenstand: {new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", dateStyle: "medium", timeStyle: "short" }).format(new Date(meta.aktualisiert))} · Preise, Altersangaben und Verfügbarkeit bitte beim Veranstalter bestätigen.</p>
 

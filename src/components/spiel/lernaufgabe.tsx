@@ -105,13 +105,17 @@ export function AufgabenBild({ option }: { option: BildOption }) {
           </>
         );
       case "sonne":
+        // Sonne über einer Solarzelle – passt zu „Sonnenlicht“ und „heller Platz“.
         return (
           <>
             {Array.from({ length: 8 }, (_, i) => (
-              <path key={i} d="M50 4v12" transform={`rotate(${i * 45} 50 42)`} stroke="#e0a42e" strokeWidth="6" strokeLinecap="round" />
+              <path key={i} d="M38 2v9" transform={`rotate(${i * 45} 38 30)`} stroke="#e0a42e" strokeWidth="5" strokeLinecap="round" />
             ))}
-            <circle cx="50" cy="42" r="22" fill="#f6c94c" stroke={LINIE} strokeWidth="3.5" />
-            <path d="M42 46q8 7 16 0" fill="none" stroke={LINIE} strokeWidth="3" strokeLinecap="round" />
+            <circle cx="38" cy="30" r="16" fill="#f6c94c" stroke={LINIE} strokeWidth="3.5" />
+            <path d="M32 33q6 5 12 0" fill="none" stroke={LINIE} strokeWidth="2.5" strokeLinecap="round" />
+            <path d="M48 64 58 46h32l-10 18Z" fill="#2f5f9e" stroke={LINIE} strokeWidth="3" strokeLinejoin="round" />
+            <path d="M68 46l-10 18M79 46l-10 18M53 55h32" stroke="#9cc4ee" strokeWidth="1.6" />
+            <path d="M68 64v12M60 76h16" stroke={LINIE} strokeWidth="3" strokeLinecap="round" />
           </>
         );
       case "mond":
@@ -123,26 +127,188 @@ export function AufgabenBild({ option }: { option: BildOption }) {
           </>
         );
       case "holz":
+        // Ein Stück Baumstamm: Rinde, ein Aststummel mit Blatt und die Schnittfläche mit Jahresringen.
         return (
           <>
-            <rect x="12" y="22" width="76" height="40" rx="4" fill="#c99561" stroke={LINIE} strokeWidth="3.5" />
-            <path d="M16 34q20-6 36 0t32-2M16 48q22 5 40-2t28 3" fill="none" stroke="#8a5a32" strokeWidth="2.5" />
-            <ellipse cx="62" cy="40" rx="6" ry="3.5" fill="none" stroke="#8a5a32" strokeWidth="2.5" />
+            <ellipse cx="48" cy="76" rx="38" ry="4.5" fill="#000" opacity="0.12" />
+            <path d="M36 27 31 14l9 3 3 10" fill="#7a4a26" stroke={LINIE} strokeWidth="3" strokeLinejoin="round" />
+            <path d="M31 15q-10-6-6-14 8 4 6 14Z" fill="#7bc46b" stroke={LINIE} strokeWidth="2.5" strokeLinejoin="round" />
+            <path d="M18 26h50a16 22 0 0 1 0 44H18a14 22 0 0 1 0-44Z" fill="#8a5a32" stroke={LINIE} strokeWidth="3.5" />
+            <path d="M10 38q14-3 26 1t26-2M8 52q16 3 30-1t24 2M16 62q12-2 22 0" fill="none" stroke="#5e3a1d" strokeWidth="2.5" strokeLinecap="round" />
+            <ellipse cx="68" cy="48" rx="16" ry="22" fill="#eac08a" stroke={LINIE} strokeWidth="3.5" />
+            <ellipse cx="68" cy="48" rx="11" ry="15.5" fill="none" stroke="#c48d55" strokeWidth="2" />
+            <ellipse cx="68" cy="48" rx="6" ry="9" fill="none" stroke="#c48d55" strokeWidth="2" />
+            <circle cx="68" cy="48" r="2.2" fill="#9c6634" />
+            <path d="M62 34q3-2 6-2" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" opacity="0.6" />
+          </>
+        );
+      case "kupfer":
+        // Kupfer erkennt man an der rötlich-braunen Farbe: eine Spule mit Kupferdraht.
+        return (
+          <>
+            <ellipse cx="50" cy="78" rx="34" ry="4" fill="#000" opacity="0.12" />
+            <rect x="26" y="18" width="48" height="52" fill="#b87333" stroke={LINIE} strokeWidth="3.5" />
+            {Array.from({ length: 9 }, (_, i) => (
+              <path key={i} d={`M${31 + i * 5} 19l-3 50`} stroke="#8a4f24" strokeWidth="2" />
+            ))}
+            <rect x="27" y="27" width="46" height="6" fill="#f2b07f" opacity="0.75" />
+            <rect x="27" y="56" width="46" height="8" fill="#000" opacity="0.12" />
+            <ellipse cx="26" cy="44" rx="8" ry="28" fill="#6b4a2f" stroke={LINIE} strokeWidth="3.5" />
+            <ellipse cx="74" cy="44" rx="8" ry="28" fill="#8b6a4c" stroke={LINIE} strokeWidth="3.5" />
+            <ellipse cx="74" cy="44" rx="3" ry="8" fill="#3f2c1c" />
+            <path d="M52 70q4 10 16 9t20-13" fill="none" stroke={LINIE} strokeWidth="7" strokeLinecap="round" />
+            <path d="M52 70q4 10 16 9t20-13" fill="none" stroke="#c97f45" strokeWidth="3.5" strokeLinecap="round" />
+            <circle cx="88" cy="66" r="3" fill="#f2b07f" stroke={LINIE} strokeWidth="2" />
           </>
         );
       case "metall":
+        // Ein Schlüssel aus glänzendem Metall.
         return (
           <>
-            <rect x="12" y="24" width="76" height="36" rx="5" fill="#b8c6cc" stroke={LINIE} strokeWidth="3.5" />
-            <path d="M24 56 46 28M38 56 60 28" stroke="#fff" strokeWidth="6" opacity="0.6" />
-            <rect x="12" y="50" width="76" height="10" rx="3" fill="#000" opacity="0.1" />
+            <ellipse cx="52" cy="76" rx="36" ry="4" fill="#000" opacity="0.12" />
+            <path d="M62 45v12h7V45ZM74 45v15h7V45Z" fill="#c9d3d8" stroke={LINIE} strokeWidth="3" strokeLinejoin="round" />
+            <rect x="40" y="36" width="48" height="11" rx="2.5" fill="#c9d3d8" stroke={LINIE} strokeWidth="3.5" />
+            <circle cx="27" cy="41" r="18" fill="#c9d3d8" stroke={LINIE} strokeWidth="3.5" />
+            <circle cx="27" cy="41" r="6.5" fill="#fffbee" stroke={LINIE} strokeWidth="3" />
+            <path d="M16 31q6-7 15-6" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
+            <path d="M47 39.5h34" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" opacity="0.85" />
           </>
         );
-      case "gummi":
+      case "gummi": {
+        // Ein Gummihandschuh, wie ihn Elektriker tragen. Erst die Kontur, dann die Füllung – so wirkt er aus einem Stück.
+        const teile = (
+          <>
+            <rect x="35" y="10" width="11" height="32" rx="5.5" />
+            <rect x="47" y="5" width="11" height="36" rx="5.5" />
+            <rect x="59" y="8" width="11" height="34" rx="5.5" />
+            <rect x="70" y="16" width="10" height="28" rx="5" />
+            <rect x="19" y="34" width="11" height="28" rx="5.5" transform="rotate(-38 24 48)" />
+            <path d="M34 30h46v26q0 10-10 10H44q-10 0-10-10Z" />
+            <rect x="38" y="62" width="38" height="15" rx="3" />
+          </>
+        );
         return (
           <>
-            <rect x="16" y="26" width="68" height="34" rx="10" fill="#4f5d57" stroke={LINIE} strokeWidth="3.5" />
-            {[30, 42, 54, 66].map((x) => <path key={x} d={`M${x} 32v22`} stroke="#3a4541" strokeWidth="4" strokeLinecap="round" />)}
+            <ellipse cx="56" cy="80" rx="26" ry="3.5" fill="#000" opacity="0.12" />
+            <g fill={LINIE} stroke={LINIE} strokeWidth="6" strokeLinejoin="round">{teile}</g>
+            <g fill="#f08a24">{teile}</g>
+            <rect x="38" y="62" width="38" height="15" rx="3" fill="#d46c10" />
+            <path d="M45 64v11M52 64v11M59 64v11M66 64v11" stroke="#a9520a" strokeWidth="2" />
+            <path d="M40 36q1-10-1-20M52 33q1-12 0-22" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" opacity="0.5" />
+          </>
+        );
+      }
+      case "rotebaelle":
+        return (
+          <>
+            <ellipse cx="50" cy="76" rx="38" ry="4" fill="#000" opacity="0.12" />
+            {([[26, 54], [50, 32], [74, 54]] as const).map(([x, y]) => (
+              <g key={x}>
+                <circle cx={x} cy={y} r="17" fill={f} stroke={LINIE} strokeWidth="3" />
+                <path d={`M${x} ${y - 17}v34M${x - 17} ${y}h34`} stroke={LINIE} strokeWidth="2.2" />
+                <ellipse cx={x - 6} cy={y - 8} rx="4" ry="2.5" fill="#fff" opacity="0.5" />
+              </g>
+            ))}
+          </>
+        );
+      case "foto":
+        // Ein Klassenfoto mit Namensschildern – genau das gehört nicht ins Netz.
+        return (
+          <>
+            <rect x="12" y="6" width="76" height="72" rx="4" fill="#fffdf6" stroke={LINIE} strokeWidth="3.5" />
+            <rect x="18" y="12" width="64" height="44" fill="#bfe3ea" stroke={LINIE} strokeWidth="2.5" />
+            {([[32, "#ed805c", "#5b3a29"], [50, "#7bbfc4", "#e0b25a"], [68, "#aaa0db", "#2f2a26"]] as const).map(([x, shirt, haare]) => (
+              <g key={x}>
+                <path d={`M${x - 10} 56q0-14 10-14t10 14Z`} fill={shirt} stroke={LINIE} strokeWidth="2.5" />
+                <circle cx={x} cy="33" r="8" fill="#f2c6a0" stroke={LINIE} strokeWidth="2.5" />
+                <path d={`M${x - 8} 31q0-8 8-8t8 8q-4-3-8-3t-8 3Z`} fill={haare} />
+              </g>
+            ))}
+            {[22, 42, 62].map((x) => (
+              <g key={x}>
+                <rect x={x} y="62" width="16" height="9" rx="2" fill="#f6c94c" stroke={LINIE} strokeWidth="2" />
+                <path d={`M${x + 3} 66.5h10`} stroke={LINIE} strokeWidth="2" />
+              </g>
+            ))}
+          </>
+        );
+      case "adresse":
+        return (
+          <>
+            <rect x="8" y="16" width="84" height="56" rx="5" fill="#fff7df" stroke={LINIE} strokeWidth="3.5" />
+            <rect x="70" y="22" width="16" height="18" rx="1" fill="#ed805c" stroke="#fff" strokeWidth="2" strokeDasharray="3 2" />
+            <path d="M74 34l4-4 4 4v3h-8Z" fill="#fff" />
+            <path d="M16 50l11-10 11 10v15H16Z" fill="#7bbfc4" stroke={LINIE} strokeWidth="2.5" strokeLinejoin="round" />
+            <rect x="24" y="55" width="6" height="10" fill="#fff7df" stroke={LINIE} strokeWidth="2" />
+            <path d="M46 48h34M46 56h28M46 64h20" stroke={LINIE} strokeWidth="3" strokeLinecap="round" />
+          </>
+        );
+      case "muster":
+        // Ein selbst gemaltes Muster mit Stift – ganz ohne Personendaten.
+        return (
+          <>
+            <rect x="12" y="8" width="62" height="68" rx="3" fill="#fffdf6" stroke={LINIE} strokeWidth="3.5" transform="rotate(-4 43 42)" />
+            {[0, 1, 2].flatMap((r) =>
+              [0, 1, 2].map((c) => {
+                const x = 24 + c * 18;
+                const y = 22 + r * 20;
+                const art = (r + c) % 3;
+                return art === 0 ? (
+                  <circle key={`${r}${c}`} cx={x} cy={y} r="6" fill="#ed805c" stroke={LINIE} strokeWidth="2" />
+                ) : art === 1 ? (
+                  <path key={`${r}${c}`} d={`M${x} ${y - 7}l7 12h-14Z`} fill="#7bbfc4" stroke={LINIE} strokeWidth="2" strokeLinejoin="round" />
+                ) : (
+                  <rect key={`${r}${c}`} x={x - 6} y={y - 6} width="12" height="12" rx="2" fill="#f6c94c" stroke={LINIE} strokeWidth="2" />
+                );
+              }),
+            )}
+            <g transform="rotate(35 80 52)">
+              <rect x="74" y="20" width="11" height="44" rx="2" fill="#f2c94c" stroke={LINIE} strokeWidth="2.5" />
+              <path d="M74 64h11l-5.5 11Z" fill="#eac08a" stroke={LINIE} strokeWidth="2.5" strokeLinejoin="round" />
+              <path d="M77.5 71h4l-2 4Z" fill={LINIE} />
+              <rect x="74" y="16" width="11" height="6" rx="2" fill="#ed805c" stroke={LINIE} strokeWidth="2.5" />
+            </g>
+          </>
+        );
+      case "wuerfel":
+        return (
+          <>
+            <ellipse cx="50" cy="78" rx="30" ry="4" fill="#000" opacity="0.12" />
+            <g transform="rotate(-12 50 42)">
+              <rect x="22" y="14" width="56" height="56" rx="12" fill="#fffdf6" stroke={LINIE} strokeWidth="3.5" />
+              {([[36, 28], [64, 28], [50, 42], [36, 56], [64, 56]] as const).map(([x, y]) => <circle key={`${x}${y}`} cx={x} cy={y} r="5" fill={LINIE} />)}
+            </g>
+            <text x="86" y="22" textAnchor="middle" fontSize="20" fontWeight="900" fill="#aaa0db" stroke={LINIE} strokeWidth="1">?</text>
+          </>
+        );
+      case "akku":
+        return (
+          <>
+            <ellipse cx="50" cy="76" rx="34" ry="4" fill="#000" opacity="0.12" />
+            <rect x="74" y="32" width="9" height="20" rx="2" fill="#8fa3ab" stroke={LINIE} strokeWidth="3" />
+            <rect x="14" y="20" width="62" height="44" rx="8" fill="#2f3a40" stroke={LINIE} strokeWidth="3.5" />
+            {[0, 1, 2].map((i) => <rect key={i} x={21 + i * 17} y="27" width="13" height="30" rx="2.5" fill="#5dbb63" />)}
+            <path d="M47 23 37 44h9l-4 17 13-23h-9l5-15Z" fill="#fff" stroke={LINIE} strokeWidth="2" strokeLinejoin="round" />
+          </>
+        );
+      case "schalter":
+        return (
+          <>
+            <rect x="26" y="10" width="48" height="66" rx="9" fill="#fffdf6" stroke={LINIE} strokeWidth="3.5" />
+            <rect x="38" y="22" width="24" height="42" rx="5" fill="#e7e1d2" stroke={LINIE} strokeWidth="3" />
+            <path d="M38 43h24" stroke={LINIE} strokeWidth="2" />
+            <rect x="41" y="25" width="18" height="16" rx="3" fill="#fff" />
+            <circle cx="50" cy="56" r="2.5" fill="#8fa3ab" />
+          </>
+        );
+      case "decke":
+        // Eine Decke liegt über der Solarzelle: kein Licht, kein Strom.
+        return (
+          <>
+            <rect x="12" y="44" width="76" height="28" rx="2" fill="#2f5f9e" stroke={LINIE} strokeWidth="3" />
+            <path d="M31 44v28M50 44v28M69 44v28M12 58h76" stroke="#9cc4ee" strokeWidth="1.8" />
+            <path d="M8 22q22-12 42-4t42-2l-2 40q-10 8-20 2t-20 2-22-2-18 2Z" fill="#ed805c" stroke={LINIE} strokeWidth="3.5" strokeLinejoin="round" />
+            <path d="M14 30q20-8 38-2t36-2M12 44q22-6 40 0t36-2" fill="none" stroke="#fff3df" strokeWidth="4" opacity="0.8" />
           </>
         );
       default:
@@ -219,10 +385,21 @@ function CodeAufgabe({ stufe, phase, geschafft, fehler }: { stufe: Stufe; phase:
       if (kennung !== lauf.current) return;
       setPos(p);
     }
+    if (ergebnis.ok) {
+      setLaeuft(false);
+      setAntwort({ text: "Angekommen! Dein Programm funktioniert.", stimmung: "froh" });
+      geschafft();
+      return;
+    }
+    // Falsch: kurz zeigen, wo der Roboter hängen blieb – dann alles zurück auf Anfang, Pfeile weg.
+    setAntwort({ text: ergebnis.grund, stimmung: "hmm" });
+    fehler?.();
+    await warte(1100);
+    if (kennung !== lauf.current) return;
+    setBefehle([]);
+    setPos(mission.start);
     setLaeuft(false);
-    setAntwort(ergebnis.ok ? { text: "Angekommen! Dein Programm funktioniert.", stimmung: "froh" } : { text: ergebnis.grund, stimmung: "hmm" });
-    if (ergebnis.ok) geschafft();
-    else fehler?.();
+    setAntwort({ text: `${ergebnis.grund} Wir fangen von vorn an!`, stimmung: "hmm" });
   }
 
   return (

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import karte from "@/lib/heilbronn-karte.json";
 import type { HausGrafik } from "@/lib/spiel";
+import { OrtsBild } from "./ortsbild";
 import { Symbol } from "./symbol";
 import { PixelBild } from "./spiel/pixel-grafik";
 
@@ -238,36 +239,32 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
               onClick={() => { setTour(false); fliegeZu(kern); }}
               onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fliegeZu(kern); } }}
             >
-              <motion.g initial={{ scale: 0 }} animate={{ scale: [1, 1.08, 1] }} transition={{ duration: 1.6, repeat: Infinity }}>
-                <circle r="92" fill="#2f4bff" opacity="0.2" />
-                <circle r="66" fill="#2f4bff" stroke="#fffaf0" strokeWidth="10" />
-                <text y="22" textAnchor="middle" fontSize="64" fontWeight="800" fill="#fffaf0">{punkte.length}</text>
-              </motion.g>
+              <circle r="92" fill="#2f4bff" opacity="0.2" />
+              <circle r="66" fill="#2f4bff" stroke="#fffaf0" strokeWidth="10" />
+              <text y="22" textAnchor="middle" fontSize="64" fontWeight="800" fill="#fffaf0">{punkte.length}</text>
               <g transform="translate(0 120)">
                 <rect x="-170" y="-40" width="340" height="62" rx="20" fill="#fffaf0" stroke="#254950" strokeWidth="6" />
                 <text y="2" textAnchor="middle" className="hn-pin-name">Lernorte · antippen</text>
               </g>
             </g>
           ) : (
-            punkte.map((o, i) => {
+            // Die Pins stehen fest an ihrer echten Adresse: kein Hüpfen, kein Pulsieren. Die Auswahl zeigt ein ruhiger Ring.
+            punkte.map((o) => {
               const gewaehlt = o.id === auswahl;
               return (
                 <g key={o.id} transform={`translate(${o.x} ${o.y}) scale(${s})`}>
-                  <motion.g
+                  <g
                     data-pin
                     role="button"
                     tabIndex={0}
                     aria-label={`${o.name} auswählen`}
                     aria-pressed={gewaehlt}
-                    className="hn-pin"
-                    initial={{ y: -260, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, scale: gewaehlt ? 1.18 : 1 }}
-                    transition={{ delay: 0.1 + i * 0.1, type: "spring", stiffness: 260, damping: 14 }}
-                    whileHover={{ scale: 1.15 }}
+                    className={`hn-pin ${gewaehlt ? "ist-gewaehlt" : ""}`}
                     onClick={() => { setTour(false); waehle(o.id); }}
                     onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setTour(false); waehle(o.id); } }}
                   >
-                    {gewaehlt && <circle r="150" fill={o.farbe} opacity="0.2" className="hn-puls" />}
+                    <ellipse cx="0" cy="0" rx="46" ry="16" fill="#1c1934" opacity="0.25" />
+                    {gewaehlt && <circle cy="-168" r="128" fill="none" stroke={o.farbe} strokeWidth="18" opacity="0.55" />}
                     <path d="M0 0C-60-70-95-110-95-165a95 95 0 1 1 190 0C95-110 60-70 0 0Z" fill={o.farbe} stroke="#254950" strokeWidth="10" />
                     <circle cy="-168" r="72" fill="#fffaf0" stroke="#254950" strokeWidth="6" />
                     <foreignObject x="-60" y="-225" width="120" height="110" style={{ pointerEvents: "none" }}>
@@ -277,7 +274,7 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
                       <rect x={-o.name.length * 17 - 24} y="-46" width={o.name.length * 34 + 48} height="64" rx="18" fill="#fffaf0" stroke="#254950" strokeWidth="6" />
                       <text y="0" textAnchor="middle" className="hn-pin-name">{o.name}</text>
                     </g>
-                  </motion.g>
+                  </g>
                 </g>
               );
             })
@@ -302,6 +299,7 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
       <AnimatePresence mode="wait">
         {ort ? (
           <motion.aside key={ort.id} className="hn-info" style={{ ["--ort-farbe" as string]: ort.farbe }} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ type: "spring", stiffness: 260, damping: 26 }} aria-live="polite">
+            <OrtsBild id={ort.id} name={ort.name} farbe={ort.farbe} className="hn-info-foto" />
             <div className="hn-info-kopf">
               <PixelBild motiv={ort.grafik} className="hn-info-bild" />
               <div>
@@ -393,7 +391,7 @@ export function HeilbronnKarte({ orte }: { orte: OrtInfo[] }) {
       <div className="hn-ortliste" role="tablist" aria-label="Lernorte">
         {punkte.map((o) => (
           <motion.button key={o.id} role="tab" aria-selected={o.id === auswahl} onClick={() => { setTour(false); waehle(o.id); }} style={{ ["--ort-farbe" as string]: o.farbe }} whileHover={{ y: -4 }} whileTap={{ scale: 0.96 }}>
-            <PixelBild motiv={o.grafik} />
+            <OrtsBild id={o.id} name={o.name} farbe={o.farbe} className="hn-ort-foto" />
             <span>{o.name}</span>
             <small>{o.anzahl} Angebote</small>
           </motion.button>

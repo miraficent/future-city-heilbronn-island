@@ -270,7 +270,7 @@ export const StadtKulisse = memo(function StadtKulisse({ stadt, teile, erledigt,
     y: stadt.platz.y + 40,
     node: (
       <g data-rakete transform={`translate(${stadt.platz.x} ${stadt.platz.y + 40})`}>
-        <Rakete teile={teile} zustand={rakete} stationen={stadt.haeuser.map((h) => ({ teil: h.station.teil, farbe: h.station.farbe, aufgabe: h.station.aufgabe }))} />
+        <Rakete teile={teile} zustand={rakete} />
       </g>
     ),
   });

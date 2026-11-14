@@ -19,7 +19,6 @@ import { FigurPortrait, type Blick } from "./figur";
 import { Lernaufgabe } from "./lernaufgabe";
 import { PixelBild } from "./pixel-grafik";
 import { Sammelkarte } from "./sammelkarte";
-import { StadtKarte } from "./stadtkarte";
 import { StadtKulisse, StadtLeben, TunnelHuegel } from "./stadt-grafik";
 import { StartAuswahl } from "./start-auswahl";
 import { Anleitung } from "./anleitung";
@@ -40,7 +39,7 @@ const SPEICHER_RAKETE = "spielwelt.rakete";
 
 export type RaketenZustand = "bereit" | "startet" | "weg";
 
-type Fenster = "haus" | "rucksack" | "karte" | "finale" | undefined;
+type Fenster = "haus" | "rucksack" | "finale" | undefined;
 type ZielAktion = { art: "haus"; id: string } | { art: "rakete" } | null;
 
 /** Kurze Sätze für kleine Leser:innen (6–8) und etwas mehr für Größere (9–11). */
@@ -119,7 +118,6 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const [autos, setAutos] = useState<Auto[]>(() => neueAutos(stadt));
   const [ziel, setZiel] = useState<Punkt>();
   const [zoom, setZoom] = useState(1);
-  const [kartenZoom, setKartenZoom] = useState(1);
   const [vollbild, setVollbild] = useState(false);
   const [pausiert, setPausiert] = useState(false);
   const [fenster, setFenster] = useState<Fenster>();
@@ -130,6 +128,11 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const startet = rakete === "startet";
   const [tonAus, setTonAus] = useState(false);
   const [hinweis, setHinweis] = useState("Tippe auf ein Haus!");
+  // Eine neue Nachricht ist immer erst offen; eingeklappt wird sie per Zeitgeber oder Antippen.
+  const [picoStand, setPicoStand] = useState({ text: "", offen: true, ungelesen: false });
+  const picoAktuell = picoStand.text === hinweis;
+  const picoOffen = picoAktuell ? picoStand.offen : true;
+  const picoUngelesen = picoAktuell && picoStand.ungelesen;
   const [jetzt, setJetzt] = useState(startJetzt);
   const [verhaeltnis, setVerhaeltnis] = useState(1.6);
   const [alleKurse, setAlleKurse] = useState(false);
@@ -138,6 +141,20 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
 
   const pos = useRef<Punkt>(stadt.start);
   const laeuftRef = useRef(false);
+  const stillSeit = useRef(0);
+  const blickRef = useRef<{ blick: Blick; spiegeln: boolean }>({ blick: "vorne", spiegeln: false });
+  /** Setzt die Blickrichtung mit etwas Spielraum: Fast-diagonale Eingaben behalten die alte Richtung. */
+  const schaue = useCallback((r: Punkt) => {
+    const ax = Math.abs(r.x);
+    const ay = Math.abs(r.y);
+    const alt = blickRef.current;
+    const seitlich = ax > ay * 1.3 || (ay <= ax * 1.3 && alt.blick === "seite");
+    const neu = seitlich ? { blick: "seite" as const, spiegeln: r.x < 0 } : { blick: r.y < 0 ? ("hinten" as const) : ("vorne" as const), spiegeln: alt.spiegeln };
+    if (neu.blick === alt.blick && neu.spiegeln === alt.spiegeln) return;
+    blickRef.current = neu;
+    setBlick(neu.blick);
+    setSpiegeln(neu.spiegeln);
+  }, []);
   const raketeRef = useRef<RaketenZustand>("bereit");
   const warAmPlatz = useRef(false);
   const autosRef = useRef<Auto[]>(autos);
@@ -354,15 +371,11 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         }
         let bewegt = false;
         if (richtung.x || richtung.y) {
+          // Die Blickrichtung folgt der gewollten Richtung, nicht den kleinen Ausweichschritten am Bordstein.
+          schaue(richtung);
           const neu = bewege(stadt, pos.current, richtung, dauer);
           bewegt = abstand(neu, pos.current) > 0.05;
           if (bewegt) {
-            const dx = neu.x - pos.current.x;
-            const dy = neu.y - pos.current.y;
-            if (Math.abs(dx) > Math.abs(dy)) {
-              setBlick("seite");
-              setSpiegeln(dx < 0);
-            } else setBlick(dy < 0 ? "hinten" : "vorne");
             pos.current = neu;
             setPosition(neu);
             klang.schritt();
@@ -372,9 +385,12 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             route.current = planeRoute(stadt, pos.current, endpunkt);
           }
         }
-        if (bewegt !== laeuftRef.current) {
-          laeuftRef.current = bewegt;
-          setLaeuft(bewegt);
+        // Laufen erst nach einer kurzen Pause beenden – sonst springt die Animation bei jedem Mini-Stopp neu an.
+        if (bewegt) stillSeit.current = zeit;
+        const laeuftJetzt = bewegt || zeit - stillSeit.current < 140;
+        if (laeuftJetzt !== laeuftRef.current) {
+          laeuftRef.current = laeuftJetzt;
+          setLaeuft(laeuftJetzt);
         }
 
         // Tür erreicht (auch mit Tastatur): Haus öffnet sich – erst wieder, wenn man sich entfernt hat.
@@ -395,7 +411,7 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
     };
     rahmenId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(rahmenId);
-  }, [bereit, pausiert, fenster, anleitung, stadt, oeffneHaus]);
+  }, [bereit, pausiert, fenster, anleitung, stadt, oeffneHaus, schaue]);
 
   // Hinweistexte passend zur Situation
   useEffect(() => {
@@ -410,6 +426,11 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
       setHinweis(fehlt.length ? `Hol ${fehlt.length === STATIONEN.length ? "die" : "noch"} ${fehlt.length} Raketenteil${fehlt.length === 1 ? "" : "e"} aus den Häusern!` : "Alle Teile da! Lauf zur Rakete!");
     }
   }, [nah, position, stadt, teile, rakete, startet, raketeErreicht]);
+
+  useEffect(() => {
+    const zu = setTimeout(() => setPicoStand({ text: hinweis, offen: false, ungelesen: true }), 5500);
+    return () => clearTimeout(zu);
+  }, [hinweis]);
 
   /* ---------- Ansicht ---------- */
 
@@ -577,19 +598,45 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             </div>
           </div>
 
-          <AnimatePresence mode="wait">
-            {bereit && !pausiert && (
-              <motion.div key={hinweis} className="pico-blase" initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -10, opacity: 0 }}>
-                <PixelBild motiv="roboter" />
-                <span>{hinweis}</span>
-                {vorlesen.kann && (
-                  <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(hinweis)} aria-label="Vorlesen">
-                    <Symbol name="volume" />
-                  </button>
+          {/* Pico funkt aus der Ecke: Die Nachricht klappt kurz auf und wird dann wieder klein – so bleiben die Autos im Blick. */}
+          <p className="sr-only" role="status">{hinweis}</p>
+          {bereit && !pausiert && (
+            <div className="pico-funk">
+              <AnimatePresence mode="wait">
+                {picoOffen && (
+                  <motion.div
+                    key={hinweis}
+                    className="pico-blase"
+                    initial={{ opacity: 0, scale: 0.5, x: 30 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, x: 30 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 28 }}
+                    style={{ originX: 1, originY: 1 }}
+                  >
+                    <span>{hinweis}</span>
+                    {vorlesen.kann && (
+                      <button className="rund-knopf rund-klein" onClick={() => vorlesen.sprich(hinweis)} aria-label="Vorlesen">
+                        <Symbol name="volume" />
+                      </button>
+                    )}
+                  </motion.div>
                 )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </AnimatePresence>
+              <motion.button
+                key={`pico-${hinweis}`}
+                className="pico-knopf"
+                onClick={() => setPicoStand({ text: hinweis, offen: !picoOffen, ungelesen: false })}
+                aria-label={picoOffen ? "Pico-Nachricht einklappen" : "Pico-Nachricht zeigen"}
+                aria-expanded={picoOffen}
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [0, -14, 12, -6, 0], y: [0, -8, 0] }}
+                transition={{ duration: 0.6 }}
+              >
+                <PixelBild motiv="roboter" />
+                {picoUngelesen && !picoOffen && <span className="pico-punkt" aria-hidden="true" />}
+              </motion.button>
+            </div>
+          )}
 
           <div className="steuerkreuz" role="group" aria-label="Figur bewegen">
             {([
@@ -643,10 +690,6 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             )}
           </AnimatePresence>
 
-          <button className="mini-karte" onClick={() => { stoppen(); setKartenZoom(1); setFenster("karte"); }} aria-label="Karte öffnen">
-            <StadtKarte stadt={stadt} position={position} erledigt={mitTeilIds} figur={figur} teile={teile.length} />
-            <span className="mini-karte-symbol"><Symbol name="expand" /></span>
-          </button>
 
           {pausiert && (
             <div className="pause-flaeche">
@@ -833,30 +876,6 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
         )}
       </Fensterrahmen>
 
-      <Fensterrahmen offen={fenster === "karte"} schliessen={() => setFenster(undefined)} kennung="karte-titel" titel="Karte" breit kopfbild={<Symbol name="map" className="fenster-symbol" />}>
-        <div className="grosse-karte">
-          <StadtKarte
-            stadt={stadt}
-            position={position}
-            erledigt={mitTeilIds}
-            gross
-            zoom={kartenZoom}
-            figur={figur}
-            teile={teile.length}
-            onHaus={(id) => { setFenster(undefined); zumHaus(id); }}
-            onPlatz={() => { setFenster(undefined); zurRakete(); }}
-          />
-          <div className="karten-zoom">
-            <button className="rund-knopf" onClick={() => setKartenZoom((z) => Math.min(2.4, z + 0.4))} aria-label="Karte vergrößern" disabled={kartenZoom >= 2.4}>
-              <Symbol name="plus" />
-            </button>
-            <button className="rund-knopf" onClick={() => setKartenZoom((z) => Math.max(1, z - 0.4))} aria-label="Karte verkleinern" disabled={kartenZoom <= 1}>
-              <Symbol name="minus" />
-            </button>
-          </div>
-        </div>
-        <p className="karten-hinweis"><Symbol name="info" /> Tippe auf ein Haus – deine Figur läuft hin.</p>
-      </Fensterrahmen>
 
       <Fensterrahmen
         offen={fenster === "finale"}

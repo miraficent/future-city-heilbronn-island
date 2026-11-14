@@ -1,0 +1,104 @@
+/* Einblicke: Angebot × Wünsche (Säule 3 der Challenge) – und die Übersicht auf der Startseite */
+
+.einblick-kacheln { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0; }
+.einblick-kacheln > div { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 2px solid var(--tinte); border-radius: 20px; background: var(--flaeche); }
+.einblick-kacheln strong { font-family: var(--font-display), sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1; }
+.einblick-kacheln span { font-size: 14px; color: var(--tinte-2); }
+
+.einblick-karte { margin-top: 18px; padding: 20px; border: 2px solid var(--tinte); border-radius: 24px; background: var(--flaeche); }
+.einblick-karte h2 { display: flex; align-items: center; gap: 8px; font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 800; }
+.einblick-karte h2 .symbol { width: 22px; height: 22px; }
+.einblick-kopf { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.einblick-kopf p { margin-top: 4px; font-size: 14px; color: var(--tinte-2); }
+.einblick-inline { display: inline-block; width: 16px; height: 16px; vertical-align: -3px; }
+.einblick-kennzahlen { display: flex; gap: 16px; }
+.einblick-kennzahlen strong { font-size: 20px; color: var(--tinte); margin-right: 4px; }
+.einblick-hinweis { margin-top: 6px; font-size: 14px; color: var(--tinte-2); }
+.einblick-raster { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.einblick-quelle { margin-top: 10px; font-size: 13px; color: var(--tinte-2); }
+
+.einblick-tabelle-rahmen { margin-top: 16px; overflow-x: auto; }
+.einblick-tabelle { width: 100%; min-width: 520px; border-collapse: separate; border-spacing: 4px; }
+.einblick-tabelle th { padding: 6px 8px; font-size: 14px; text-align: left; white-space: nowrap; }
+.einblick-tabelle thead th { font-weight: 700; color: var(--tinte-2); text-align: center; }
+.einblick-tabelle tbody th .symbol { width: 20px; height: 20px; vertical-align: -4px; margin-right: 4px; }
+.einblick-tabelle td {
+  position: relative;
+  height: 74px;
+  border-radius: 12px;
+  background: color-mix(in srgb, #2f4bff var(--anteil, 12%), var(--flaeche));
+  text-align: center;
+  vertical-align: middle;
+  cursor: default;
+  outline: 2px solid transparent;
+  transition: outline-color 0.15s;
+}
+.einblick-tabelle td:hover { outline-color: var(--tinte); }
+.einblick-tabelle td.ist-luecke {
+  background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--tinte) 14%, transparent) 6px 8px), var(--flaeche);
+  border: 2px dashed color-mix(in srgb, var(--tinte) 45%, transparent);
+}
+.einblick-zahl { display: block; font-family: var(--font-display), sans-serif; font-size: 26px; font-weight: 800; line-height: 1; }
+.einblick-luecke { display: block; margin-top: 2px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.einblick-wunsch { position: absolute; top: 5px; right: 6px; display: inline-flex; align-items: center; gap: 2px; padding: 1px 6px 1px 3px; border-radius: 999px; background: #f6d26b; color: #1c1934; font-size: 12px; font-weight: 800; }
+.einblick-wunsch .symbol { width: 14px; height: 14px; }
+
+.einblick-chancen { display: grid; gap: 8px; margin-top: 12px; }
+.einblick-chancen li { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2px 10px; padding: 10px 12px; border-radius: 14px; background: var(--papier-2); }
+.einblick-chancen li .symbol { grid-row: span 2; width: 26px; height: 26px; }
+.einblick-chancen small { color: var(--tinte-2); }
+
+.einblick-balken { display: grid; gap: 10px; margin-top: 14px; }
+.einblick-balken li { display: grid; grid-template-columns: minmax(90px, 34%) 1fr auto; align-items: center; gap: 10px; font-size: 14px; }
+.einblick-balken-name { display: inline-flex; align-items: center; gap: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.einblick-balken-name i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.einblick-balken-spur { height: 12px; border-radius: 4px; background: var(--papier-2); overflow: hidden; }
+.einblick-balken-spur span { display: block; height: 100%; border-radius: 0 4px 4px 0; background: #2f4bff; }
+
+.einblick-saeulen { display: grid; grid-template-columns: repeat(6, 1fr); align-items: end; gap: 10px; height: 200px; margin-top: 16px; padding-bottom: 4px; border-bottom: 2px solid var(--linie); }
+.einblick-saeulen li { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%; font-size: 13px; }
+.einblick-saeulen strong { font-size: 14px; }
+.einblick-saeule { width: min(36px, 70%); border-radius: 4px 4px 0 0; background: #2f4bff; }
+
+.einblick-wie ul { display: grid; gap: 8px; margin-top: 10px; padding-left: 18px; list-style: disc; }
+
+@media (max-width: 760px) {
+  .einblick-kacheln { grid-template-columns: repeat(2, 1fr); }
+  .einblick-raster { grid-template-columns: 1fr; }
+}
+
+/* ---------- Startseite: Überblick zur Challenge ---------- */
+
+.ueberblick-weg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.ueberblick-weg li { position: relative; padding: 18px; border: 2px solid var(--tinte); border-radius: 22px; background: var(--flaeche); }
+.ueberblick-weg li:last-child { background: #2f4bff; color: #fff; border-color: #2f4bff; }
+.ueberblick-weg small { display: block; font-family: var(--font-mono, monospace); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; }
+.ueberblick-weg strong { display: block; margin-top: 6px; font-family: var(--font-display), sans-serif; font-size: 19px; line-height: 1.2; }
+.ueberblick-weg p { margin-top: 6px; font-size: 14px; }
+.ueberblick-saeulen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+.ueberblick-saeule { display: flex; flex-direction: column; gap: 10px; padding: 20px; border: 2px solid var(--tinte); border-radius: 26px; background: var(--flaeche); box-shadow: 5px 5px 0 var(--saeulen-farbe, #2f4bff); }
+.ueberblick-symbol { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--saeulen-farbe); color: #fff; }
+.ueberblick-symbol .symbol { width: 26px; height: 26px; }
+.ueberblick-saeule h3 { font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 800; line-height: 1.15; }
+.ueberblick-zitat { font-size: 12px; font-family: var(--font-mono, monospace); text-transform: uppercase; letter-spacing: 0.1em; color: var(--tinte-2); }
+.ueberblick-saeule ul { display: grid; gap: 6px; font-size: 14px; }
+.ueberblick-saeule ul li { display: flex; gap: 8px; }
+.ueberblick-saeule ul li::before { content: ""; flex-shrink: 0; width: 8px; height: 8px; margin-top: 6px; border-radius: 2px; background: var(--saeulen-farbe); }
+.ueberblick-saeule .knopf { margin-top: auto; align-self: flex-start; }
+.ueberblick-ablauf { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; font-size: 14px; }
+.ueberblick-ablauf span { padding: 8px 12px; border: 2px solid var(--tinte); border-radius: 999px; background: var(--flaeche); font-weight: 700; }
+.ueberblick-ablauf i { font-style: normal; color: var(--tinte-2); }
+.ueberblick-quellen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
+.ueberblick-quellen > div { padding: 14px; border-radius: 18px; background: var(--papier-2); }
+.ueberblick-quellen h3 { display: flex; align-items: center; gap: 6px; font-weight: 800; }
+.ueberblick-quellen h3 i { width: 10px; height: 10px; border-radius: 3px; }
+.ueberblick-quellen ul { display: grid; gap: 4px; margin-top: 6px; font-size: 14px; }
+.ueberblick-quellen a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 860px) {
+  .ueberblick-weg, .ueberblick-saeulen { grid-template-columns: 1fr; }
+  .ueberblick-quellen { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .ueberblick-quellen { grid-template-columns: 1fr; }
+}
