@@ -124,7 +124,7 @@
 .start { min-height: 100dvh; background: var(--night); color: var(--snow); }
 .start__hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; min-height: 100dvh; padding: 48px 16px 64px; text-align: center; overflow: hidden; }
 .start__titel { position: relative; margin: 0; font: 700 clamp(40px, 7vw, 64px)/1 "Baloo 2", sans-serif; }
-.start__unter { position: relative; margin: 0; max-width: 32ch; font: 600 clamp(20px, 2.4vw, 28px)/1.35 "Nunito", sans-serif; color: var(--sea-shallow);
+.start__unter { position: relative; margin: 0; max-width: 46ch; text-wrap: balance; font: 600 clamp(20px, 2.4vw, 28px)/1.35 "Nunito", sans-serif; color: var(--sea-shallow);
   animation: start-ploppen .6s cubic-bezier(.34, 1.56, .64, 1) .3s both; }
 .start__unter strong { display: block; font-family: "Baloo 2", sans-serif; font-weight: 700; color: var(--snow); }
 .start__karten { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; width: min(760px, 100%); }
