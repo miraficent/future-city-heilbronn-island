@@ -61,7 +61,7 @@ export function kiMission(stufe:Stufe,phase:number):WahlMission {
 }
 export function materialMission(stufe:Stufe):WahlMission{
   const isolator=stufe!=="start";
-  return {frage:isolator?"Welches Material isoliert die Leitung?":"Was schließt die Lücke im Stromkreis?",tipp:isolator?"Gummi leitet elektrischen Strom normalerweise sehr schlecht.":"Metall leitet Strom. Holz und Gummi hier nicht.",antworten:[isolator?"gummi":"metall"],optionen:[bild("holz","Trockenes Holz","holz"),bild("metall",isolator?"Kupfer":"Metall","metall"),bild("gummi","Gummi","gummi")],wissen:"Das ist eine vereinfachte Darstellung mit einer Batterie. Experimentiere niemals mit Steckdosen oder Netzstrom. Echte Versuche nur mit geeigneten Materialien und Begleitung."};
+  return {frage:isolator?"Welches Material isoliert die Leitung?":"Was schließt die Lücke im Stromkreis?",tipp:isolator?"Gummi leitet elektrischen Strom normalerweise sehr schlecht.":"Metall leitet Strom. Holz und Gummi hier nicht.",antworten:[isolator?"gummi":"metall"],optionen:[bild("holz","Trockenes Holz","holz"),bild("metall",isolator?"Kupfer":"Metall","metall",isolator?"#c98a5a":undefined),bild("gummi","Gummi","gummi")],wissen:"Das ist eine vereinfachte Darstellung mit einer Batterie. Experimentiere niemals mit Steckdosen oder Netzstrom. Echte Versuche nur mit geeigneten Materialien und Begleitung."};
 }
 export function energieMission(stufe:Stufe):WahlMission{
   return stufe==="start"?{frage:"Wann kann die Solarzelle Licht in Strom umwandeln?",tipp:"Die Solarzelle braucht Licht.",antworten:["sonne"],optionen:[bild("sonne","Im Sonnenlicht","sonne"),bild("nacht","In völliger Dunkelheit","mond")],wissen:"Solarzellen wandeln Lichtenergie in elektrische Energie um. Im Dunkeln liefern sie keinen Strom."}
