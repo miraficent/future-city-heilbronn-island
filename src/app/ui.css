@@ -23,6 +23,11 @@
 .ui-mode__item { min-height: 40px; padding: 8px 18px; border-radius: var(--radius-pill); color: var(--snow);
   font: 700 16px/24px "Nunito", sans-serif; text-decoration: none; }
 .ui-mode__item[aria-current="page"] { background: var(--snow); color: var(--night); }
+.ui-mode__item { display: inline-flex; align-items: center; gap: 8px; }
+.ui-mode__item .symbol { width: 20px; height: 20px; color: var(--accent); }
+.ui-mode__kind { display: inline-flex; align-items: flex-end; justify-content: center; width: 28px; height: 28px; margin-left: -6px;
+  border-radius: 50%; background: var(--snow); overflow: hidden; }
+.ui-mode__kind svg { width: auto; height: 27px; }
 
 /* ---------- Buttons ---------- */
 .ui-btn {
