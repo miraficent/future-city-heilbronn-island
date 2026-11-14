@@ -76,13 +76,15 @@ function verteileWald() {
 type Props = {
   orte: KartenOrt[];
   zahlen: Record<string, number>;
+  /** Einrichtungen mit einem Kinder-Event heute → „Heute!“ mit Funkeln */
+  heute?: Set<string>;
   aktiv: Set<string> | null;
   figur: Pt | null;
   gewaehlt: string | null;
   onWaehle: (id: string) => void;
 };
 
-export function InselKarte({ orte, zahlen, aktiv, figur, gewaehlt, onWaehle }: Props) {
+export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehle }: Props) {
   const haeuser = useMemo(() => verteileHaeuser(orte), [orte]);
   const wald = useMemo(() => verteileWald(), []);
   const [hx, hy] = HAUPTBAHNHOF;
@@ -217,7 +219,7 @@ export function InselKarte({ orte, zahlen, aktiv, figur, gewaehlt, onWaehle }: P
             className={`kr-ort${gedimmt ? " ist-gedimmt" : ""}${leuchtet ? " leuchtet" : ""}${gewaehlt === o.id ? " ist-gewaehlt" : ""}`}
             role="button"
             tabIndex={0}
-            aria-label={zahl ? `${o.name}: ${zahl} passende Angebote` : o.name}
+            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : ""}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
             onClick={waehle}
             onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), waehle())}
           >
@@ -232,6 +234,13 @@ export function InselKarte({ orte, zahlen, aktiv, figur, gewaehlt, onWaehle }: P
                 </g>
                 <path d="M0 0 C-6 -10 -26 -24 -26 -44 A26 26 0 1 1 26 -44 C26 -24 6 -10 0 0 Z" fill={o.farbe} stroke={F.wand} strokeWidth={4} />
                 <g transform="translate(0,-44)"><PinZeichen name={o.symbol} /></g>
+                {heute?.has(o.id) && (
+                  <g transform="translate(0,-112)" className="kr-heute">
+                    <rect x={-42} y={-17} width={84} height={34} rx={17} fill={F.orange} stroke={F.wand} strokeWidth={3} />
+                    <text y={7} textAnchor="middle" className="kr-heute-text">Heute!</text>
+                    <polygon className="kr-funkeln" points="48,-22 51,-14 59,-12 51,-9 48,-1 45,-9 37,-12 45,-14" fill="#FFE082" />
+                  </g>
+                )}
                 {zahl > 0 && (
                   <g transform="translate(-22,-72)">
                     <circle r={15} fill={F.orange} stroke={F.wand} strokeWidth={3} />

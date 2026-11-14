@@ -9,6 +9,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Angebot } from "@/lib/angebot";
+import type { Category, LiveEvent } from "@/types";
+import { getEventsForInstitution, getUpcoming, isToday } from "@/lib/events";
 import { kartenOrte, START, type KartenQuelle, type Pt } from "@/lib/kinderkarte";
 import {
   KINDER_ALTER, KINDER_THEMEN, ORAKEL_FRAGEN, angeboteFuerKind, kartenFuerOrakel, passtZuThema,
@@ -23,6 +25,7 @@ import { KartenStapel } from "./karten-stapel";
 import { Mia } from "./mia";
 import { RoboSpiel, type Bewertung } from "./robo-spiel";
 import { BahnhofSzene, TitelSzene } from "./szenen";
+import { EventGalerie, wunschId } from "./event-galerie";
 
 type Stand = { alter: number | null; thema: string | null; sterne: number };
 type Ansicht = "titel" | "bahnhof" | "stadt" | "haus";
@@ -33,7 +36,16 @@ const SCHLUESSEL = "kinderreise.v1";
 const LEER: Stand = { alter: null, thema: null, sterne: 0 };
 const LAUFZEIT_MS = 1300;
 
-export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[]; quellen: KartenQuelle[]; jetzt: string }) {
+type Props = {
+  angebote: Angebot[];
+  /** Live-Events (scripts/events/), schon auf Kinder-Events gefiltert */
+  events: LiveEvent[];
+  kategorien: Category[];
+  quellen: KartenQuelle[];
+  jetzt: string;
+};
+
+export function Kinderreise({ angebote, events, kategorien, quellen, jetzt }: Props) {
   const orte = useMemo(() => kartenOrte(quellen), [quellen]);
   const merk = useSammlung("kind");
 
@@ -50,6 +62,10 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
   const [schritt, setSchritt] = useState<Schritt>("orakel");
   const [orakel, setOrakel] = useState<OrakelAntworten>({});
   const [gemocht, setGemocht] = useState<Angebot[]>([]);
+  /** Im Haus: Live-Events (Standard) oder das Orakel-Spiel */
+  const [hausModus, setHausModus] = useState<"events" | "spiel">("events");
+  /** Echte Uhrzeit des Geräts für „Heute!“ (die Angebotsdaten nutzen den Datenstand `jetzt`) */
+  const [uhr] = useState(() => new Date());
 
   function aendere(neu: Partial<Stand>) {
     setStand((alt) => {
@@ -66,9 +82,29 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
   const zahlen = useMemo(() => zaehleProOrt(fuerKind, stand.thema), [fuerKind, stand.thema]);
   const aktiv = stand.thema ? new Set(Object.keys(zahlen)) : null;
   const thema = KINDER_THEMEN.find((t) => t.id === stand.thema);
-  const gewuenscht = angebote.filter((a) => merk.ids.includes(a.id));
+
+  // Live-Events: kommend und (wenn bekannt) passend zum Alter des Kindes
+  const liveFuerKind = useMemo(
+    () =>
+      getUpcoming(events, uhr).filter(
+        (e) => !stand.alter || ((e.ageMin ?? 0) <= stand.alter && stand.alter <= (e.ageMax ?? 99)),
+      ),
+    [events, uhr, stand.alter],
+  );
+  /** Abzeichen am Pin: Anzahl kommender Live-Events je Einrichtung */
+  const liveZahlen = useMemo(
+    () => Object.fromEntries(orte.map((o) => [o.id, getEventsForInstitution(liveFuerKind, o.id).length])),
+    [orte, liveFuerKind],
+  );
+  const heute = useMemo(() => new Set(liveFuerKind.filter((e) => isToday(e, uhr)).map((e) => e.institutionId)), [liveFuerKind, uhr]);
+
+  const gewuenscht = [
+    ...angebote.filter((a) => merk.ids.includes(a.id)).map((a) => ({ id: a.id, titel: a.titel })),
+    ...events.filter((e) => merk.ids.includes(wunschId(e))).map((e) => ({ id: wunschId(e), titel: e.title_kids })),
+  ];
 
   function betreteHaus(id: string) {
+    setHausModus("events");
     setHaus(id);
     setSchritt("orakel");
     setOrakel({});
@@ -170,7 +206,7 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
   } else if (ansicht === "stadt") {
     inhalt = (
       <div className="kr-buehne kr-stadt">
-        <InselKarte orte={orte} zahlen={stand.alter ? zahlen : {}} aktiv={aktiv} figur={figur} gewaehlt={gewaehlt} onWaehle={laufeZu} />
+        <InselKarte orte={orte} zahlen={liveZahlen} heute={heute} aktiv={aktiv} figur={figur} gewaehlt={gewaehlt} onWaehle={laufeZu} />
         <button type="button" className="kr-rund kr-oben-links" aria-label="Zurück zum Bahnhof" onClick={() => setAnsicht("bahnhof")}><Symbol name="train" /></button>
         {hud}
         {!gewaehlt && (
@@ -202,7 +238,27 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
             <Gebaeude art={ort.gebaeude} farbe={ort.farbe} symbol={ort.symbol} />
           </svg>
           <div className="kr-haus-spiel">
-            {hier.length === 0 ? (
+            <div className="kr-haus-modus" role="group" aria-label="Was möchtest du machen?">
+              <button type="button" className="kr-knopf kr-weiss" aria-pressed={hausModus === "events"} onClick={() => setHausModus("events")}>
+                <Symbol name="calendar" /> Was gibt&apos;s hier?
+              </button>
+              <button type="button" className="kr-knopf kr-weiss" aria-pressed={hausModus === "spiel"} onClick={() => setHausModus("spiel")}>
+                <Symbol name="search" /> Was passt zu mir?
+              </button>
+            </div>
+            {hausModus === "events" ? (
+              <EventGalerie
+                ortName={ort.name}
+                events={getEventsForInstitution(liveFuerKind, ort.id)}
+                kategorien={kategorien}
+                wuensche={merk.ids}
+                onWunsch={(id) => {
+                  if (!merk.ids.includes(id)) aendere({ sterne: stand.sterne + 1 });
+                  merk.merken(id);
+                }}
+                onZurKarte={() => setFenster("schnellreise")}
+              />
+            ) : hier.length === 0 ? (
               <Mia text={`Bei ${ort.name} gibt es gerade nichts für ${stand.alter} Jahre. Schau mal in ein anderes Haus!`}>
                 <button type="button" className="kr-knopf kr-blau" onClick={() => setFenster("schnellreise")}><Symbol name="map" /> Karte öffnen</button>
               </Mia>
@@ -250,7 +306,7 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
 
       {fenster === "schnellreise" && (
         <div className="kr-schnellreise" role="dialog" aria-modal="true" aria-label="Mini-Heilbronn-Schnellreise">
-          <InselKarte orte={orte} zahlen={stand.alter ? zahlen : {}} aktiv={aktiv} figur={null} gewaehlt={null} onWaehle={reiseZu} />
+          <InselKarte orte={orte} zahlen={liveZahlen} heute={heute} aktiv={aktiv} figur={null} gewaehlt={null} onWaehle={reiseZu} />
           <button type="button" className="kr-rund kr-oben-links kr-schliessen-gross" aria-label="Schließen" onClick={() => setFenster(null)}><Symbol name="close" /></button>
           <div className="kr-schild kr-schild-klein">Mini-Heilbronn-Schnellreise</div>
           <div className="kr-kompass" aria-hidden="true">N<span>▲</span></div>
@@ -267,7 +323,7 @@ export function Kinderreise({ angebote, quellen, jetzt }: { angebote: Angebot[];
               <p>Noch leer. Wisch Karten nach rechts, dann landen sie hier!</p>
             ) : (
               <>
-                <ul className="kr-wunschliste">{gewuenscht.map((a) => <li key={a.id}><Symbol name="check" /> {a.titel}</li>)}</ul>
+                <ul className="kr-wunschliste">{gewuenscht.map((w) => <li key={w.id}><Symbol name="check" /> {w.titel}</li>)}</ul>
                 <p>Zeig das Mama oder Papa. Sie sehen es im Eltern-Bereich und melden dich an.</p>
               </>
             )}

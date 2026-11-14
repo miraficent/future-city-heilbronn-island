@@ -1,0 +1,1089 @@
+{
+  "1147a6a5aeb94cd4": {
+    "categories": [
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "Landesweiter Studieninformationstag TUM Campus Heilbronn",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "9d1950e408d69c51": {
+    "categories": [
+      "it",
+      "coding",
+      "art"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "Women in Robotics: Robotic Weeks Special",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "602d7b65e478822a": {
+    "categories": [
+      "physics",
+      "it",
+      "art"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "Lesungsreihe \"Mutig miteinander\"",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "95a386f2f4dc8b38": {
+    "categories": [
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "KI SALON WORKSHOP: Erstelle dein Board",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "5495ba5371bcba74": {
+    "categories": [
+      "it",
+      "coding"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "KI SALON COMMUNITY EVENT #21",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "6594d9f1e1ff8d5a": {
+    "categories": [
+      "coding"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "BiNe kurz erklärt",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "d009c42bca66d213": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "KI SALON IMPULS: Dr. Sebastian Hallensleben",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "1628df7fc26fb0e6": {
+    "categories": [
+      "coding"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "BiNe kurz erklärt",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "4b0798e36cf30c51": {
+    "categories": [
+      "it",
+      "family"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "Elternuni: Warum Konflikte im Familienalltag wichtig",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "7239dd805b94a040": {
+    "categories": [
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "BiNe-Journey 8",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "eb400a52e6b9726d": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Auge in Auge mit Afrikas Tieren",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "ac03c8e787e3bdea": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Meine Freundin Roxy",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "c6cb5469d2e18bc7": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Die Legende des Zauberriffs &#8211; 3D",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "d0600210e8ffc610": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 10,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Expedition Reef",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "8276c7290e257646": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 10,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Dinosaurier: Eine Geschichte des Überlebens",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "3cc90a51f1207010": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Abenteuerreise durchs Sonnensystem",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "82d26af7a1333181": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "SpektakulAIR",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "2329ee339d37ca1a": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "math"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Das Rätsel der Polarnacht",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "55c9edf7ddb197c4": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Signale aus dem Universum",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "2fa15a66b2a317c3": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Capcom Go!",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "b43337af35dc23c6": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Blitzgescheit",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "90f7661cd4f02761": {
+    "categories": [
+      "astronomy",
+      "biology",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Robert Mayer Lecture: Warum essen wir,",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "6881e0031e64c067": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "VAST",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "4d338f5a6b47c51f": {
+    "categories": [
+      "physics",
+      "it",
+      "art"
+    ],
+    "ageMin": 7,
+    "ageMax": 9,
+    "type": "workshop",
+    "title_kids": "Plätzchen-Party",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "a31d2f4154f211df": {
+    "categories": [
+      "it",
+      "coding"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Fortbildung &#8222;ESP32-Programmierung in Python&#8220;",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "e0e61aee079977d8": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "SinnenRauschen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "b3c8c2a200615df7": {
+    "categories": [
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Fortbildung: Von Wellen und Teilchen: Optik,",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "c6c9fbf6fcf9a47b": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Fortbildung: Molekularbiologie",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "54607f8894802b7c": {
+    "categories": [
+      "physics",
+      "it",
+      "art"
+    ],
+    "ageMin": 7,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Familienworkshop Plätzchen für die ganze Familie",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "4d4880a0c37168f0": {
+    "categories": [
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "event",
+    "title_kids": "Kleidertauschparty",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "263161b1b2133c05": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Der kleine Major Tom",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "ed51148076be82d3": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "SkyNight",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "3f81a8515219fce2": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Imagine Dragons: Dimensional Voyager",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "cdbb8dae74b1347d": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Space and Time",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "5c953082ea3dd817": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 6,
+    "ageMax": 10,
+    "type": "event",
+    "title_kids": "First Lego League Explore",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "442fc05074d1b6d2": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "biology"
+    ],
+    "ageMin": 9,
+    "ageMax": 16,
+    "type": "event",
+    "title_kids": "First Lego League Challenge",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "2a10927b23eb39e4": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 6,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Das Geheimnis der Jahreszeiten",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "95283a2cfb307fc5": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Der Stern von Bethlehem",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "7faf6bf25f64ce89": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Queen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "ac3f61e3f6e3268f": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Wir sind Sterne",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "d5dd8170b5d5043a": {
+    "categories": [
+      "physics",
+      "it",
+      "family"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Stille Stunde",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "19e4344fec9d8168": {
+    "categories": [
+      "astronomy",
+      "physics",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": null,
+    "type": "show",
+    "title_kids": "Die Reise zum Mars &#8211; 3D",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "003d7df2dffdcfd8": {
+    "categories": [
+      "physics",
+      "biology",
+      "coding"
+    ],
+    "ageMin": 14,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Maker Faire ® Heilbronn 2027",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "fe2779dfd1a751d2": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 15,
+    "type": "course",
+    "title_kids": "Kleine Computer, große Wirkung",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "a147f71086e4d2c0": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "Zukunftswerkstatt: Die smarte Kita",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "26bcabeba575a2fa": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": null,
+    "ageMax": null,
+    "type": "workshop",
+    "title_kids": "KI in der Kita? Chancen, Fragen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "02debcd0a8fdc115": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 10,
+    "ageMax": 14,
+    "type": "workshop",
+    "title_kids": "Spieleentwicklung mit Unity für Einsteiger",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "12d9365c6c90f749": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 10,
+    "ageMax": 14,
+    "type": "show",
+    "title_kids": "Craft Your City",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "b202df79e92f7ab9": {
+    "categories": [
+      "math",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": 12,
+    "type": "course",
+    "title_kids": "Kinderuni auf Reisen Mosbach: Wer bezahlt",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "d50c94c3b1f83a69": {
+    "categories": [
+      "biology",
+      "math",
+      "it"
+    ],
+    "ageMin": 8,
+    "ageMax": 12,
+    "type": "course",
+    "title_kids": "Kinderuni: Wie Mathematik die Welt verbessert",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "dcea27c22a087258": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 16,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Business English",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "c110fededaca2bb3": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 15,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Reden mit Wirkung",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "2c4d6d2d2271b200": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 15,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Blockchain, Bitcoin & NFTs",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "462ef5a3ba6c5280": {
+    "categories": [
+      "biology",
+      "math",
+      "it"
+    ],
+    "ageMin": 16,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Datenanalyse mit Power BI",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "a73afb9e3a1caadc": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 16,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Resilienz",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "b8e9c68ecb2228d3": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Sag's überzeugend",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "58f98c124c48f7b9": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Wirtschaftsstandort Deutschland",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "1d8bb34a3a19efe3": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 16,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Internet of Things",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "b3d7588fe4645342": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 16,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Highlights der Physik",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "0f77a38e57a51bb4": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Überzeuge mit Persönlichkeit",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "cf1f1262f24aef60": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 14,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Aus Herausforderungen werden Lösungen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "5357e8cdcd8f3828": {
+    "categories": [
+      "biology",
+      "it",
+      "art"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Was uns verbindet",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "aaf0c474a0a65439": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Stimme zeigen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "78d98ee0b737e174": {
+    "categories": [
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Einführung in die Psychologie",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "c24d6f80c1c509e0": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Kreativ mit KI",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "ee276fcf27a4fe81": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Discover your skills",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "41838251d926bd47": {
+    "categories": [
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Gelassen bleiben",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "7ce2609bf88fa03a": {
+    "categories": [
+      "physics",
+      "it",
+      "art"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Produktiv statt gestresst",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "2a33d3190f68b389": {
+    "categories": [
+      "it",
+      "coding",
+      "art"
+    ],
+    "ageMin": 14,
+    "ageMax": 19,
+    "type": "course",
+    "title_kids": "Juniorakademie: Stark, clever, zielgerichtet",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "4e701ae70623846a": {
+    "categories": [
+      "biology",
+      "math",
+      "it"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Stimme zeigen",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "0d391fd3e958d304": {
+    "categories": [
+      "biology",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Macht und Verantwortung",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "423fdb5993e61c2e": {
+    "categories": [
+      "math",
+      "it"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Einführung in die Psychologie",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "ae44f0a0b7647d1e": {
+    "categories": [
+      "physics",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "show",
+    "title_kids": "Juniorakademie: Mission Online",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "d9e6eb93a682dc98": {
+    "categories": [
+      "physics",
+      "biology",
+      "it"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Physikalische Phänomene",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "9d68899ff69af167": {
+    "categories": [
+      "math",
+      "it",
+      "art"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Mathe, Macht & Meinung",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "10dbf9d4c7784656": {
+    "categories": [
+      "physics",
+      "biology"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "course",
+    "title_kids": "Juniorakademie: Lächeln, nicken, kontern",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "742c195ce368297c": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "show",
+    "title_kids": "Juniorakademie: Politik leicht gemacht",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "c4499a4a9524fb90": {
+    "categories": [
+      "it",
+      "coding",
+      "art"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "show",
+    "title_kids": "Juniorakademie: Storytelling",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "48b477ad3ab988f9": {
+    "categories": [
+      "biology",
+      "math",
+      "it"
+    ],
+    "ageMin": 14,
+    "ageMax": 16,
+    "type": "course",
+    "title_kids": "Juniorakademie: Von der Idee zum Spiel",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  },
+  "fd24b190a6c786d1": {
+    "categories": [
+      "biology",
+      "it",
+      "coding"
+    ],
+    "ageMin": 12,
+    "ageMax": 14,
+    "type": "show",
+    "title_kids": "Juniorakademie: Code your Story",
+    "story_kids": "",
+    "needsReview": true,
+    "quelle": "stichworte"
+  }
+}

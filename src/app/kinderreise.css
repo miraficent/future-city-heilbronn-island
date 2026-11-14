@@ -616,3 +616,78 @@
 .kr-hud-pille .symbol { color: #f59e0b; }
 .kr-hud-karte .symbol { color: #fff; }
 .kr-vorlesen .symbol { width: 1.5rem; height: 1.5rem; }
+
+/* ---------- Live-Events: Haus-Modus, Kategorien, Galerie ---------- */
+.kr-haus-modus { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+.kr-haus-modus .kr-knopf { min-height: 56px; font-size: 1.15rem; }
+.kr-haus-modus .kr-knopf[aria-pressed="true"] { background: #3d7be8; color: #fff; }
+
+.kr-galerie { display: flex; flex-direction: column; gap: 1rem; }
+.kr-gross-knopf { min-height: 76px; font-size: 1.6rem; }
+
+.kr-kategorien { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.kr-kategorie {
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+  min-width: 96px; padding: 0; border: none; background: none;
+  font: 600 1rem/1.15 "Fredoka", sans-serif; color: var(--kr-text); cursor: pointer;
+}
+.kr-kategorie-rund {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 80px; height: 80px; /* mind. 72px Tippfläche */
+  border: 5px solid #fff; border-radius: 50%; background: var(--k-farbe);
+  color: #fff; box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
+  transition: transform 0.12s;
+}
+.kr-kategorie .kr-kategorie-rund .symbol { width: 2.4rem; height: 2.4rem; }
+.kr-kategorie[aria-pressed="true"] .kr-kategorie-rund { transform: scale(1.12); outline: 5px solid var(--k-farbe); outline-offset: 3px; }
+.kr-kategorie-zahl {
+  position: absolute; top: -8px; right: -8px; min-width: 30px; height: 30px; padding: 0 6px;
+  border: 3px solid #fff; border-radius: 999px; background: #f59e0b; color: var(--kr-text);
+  font-size: 1rem; font-weight: 700; line-height: 24px;
+}
+
+.kr-galerie-rahmen { display: flex; align-items: center; gap: 0.5rem; }
+.kr-blaettern { flex: none; width: 56px; height: 56px; }
+.kr-leiste {
+  display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.25rem 1rem;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain;
+}
+.kr-galerie-karte {
+  flex: 0 0 min(260px, 75vw); scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: 0.4rem; padding: 0 0 1rem;
+  border: 5px solid #fff; border-radius: 26px; background: #fffaf0; overflow: hidden;
+  font: inherit; color: var(--kr-text); text-align: left; cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); transition: transform 0.15s;
+}
+.kr-galerie-karte:hover { transform: translateY(-4px); }
+.kr-galerie-karte.ist-gewaehlt { border-color: var(--k-farbe); transform: translateY(-4px); }
+.kr-galerie-bild {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  height: 130px; background: var(--k-farbe); color: #fff;
+}
+.kr-galerie-bild > .symbol { width: 4.5rem; height: 4.5rem; }
+.kr-galerie-wunsch {
+  position: absolute; top: 10px; right: 10px; display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%; background: #9ed65a; color: var(--kr-text);
+}
+.kr-galerie-titel { padding: 0 1rem; font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
+.kr-galerie-zeit { display: flex; align-items: center; gap: 0.4rem; padding: 0 1rem; font-size: 1.1rem; }
+.kr-tageszeit { width: 1.6rem; height: 1.6rem; flex: none; }
+.kr-galerie-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 1rem; }
+.kr-badge-alter, .kr-badge-gratis, .kr-badge-demo {
+  padding: 0.15rem 0.7rem; border-radius: 999px; font-size: 1rem; font-weight: 700;
+}
+.kr-badge-alter { background: #e8f4fd; }
+.kr-badge-gratis { background: #9ed65a; }
+.kr-badge-demo { background: #f3e3c3; color: #6b3e26; }
+
+/* „Heute!“ am Pin */
+.kr-heute-text { font: 700 18px "Fredoka", sans-serif; fill: #1f2937; }
+.kr-funkeln { transform-box: fill-box; transform-origin: center; animation: kr-funkeln 1.6s ease-in-out infinite; }
+@keyframes kr-funkeln { 0%, 100% { transform: scale(0.6) rotate(0); opacity: 0.6; } 50% { transform: scale(1.2) rotate(20deg); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kr-funkeln { animation: none; }
+  .kr-leiste { scroll-behavior: auto; }
+  .kr-galerie-karte, .kr-kategorie-rund { transition: none; }
+}
