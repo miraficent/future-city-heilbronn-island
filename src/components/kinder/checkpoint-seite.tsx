@@ -36,7 +36,7 @@ const WELTEN: Record<string, { grund: string; licht: string }> = {
 /** Plätze im Raum (Mitte in %, Größe, Drehung) – absichtlich unordentlich, unten Mitte bleibt frei für die Figur */
 const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 18, y: 32, s: 0.9, r: -2 },
-  { x: 45, y: 52, s: 1.05, r: 1.5 },
+  { x: 45, y: 44, s: 1.05, r: 1.5 },
   { x: 54, y: 30, s: 0.8, r: -1 },
   { x: 73, y: 26, s: 1.0, r: 2 },
   { x: 70, y: 55, s: 0.85, r: -2.5 },

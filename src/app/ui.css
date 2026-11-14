@@ -268,13 +268,13 @@
 .welt__oben { position: absolute; top: 16px; left: 16px; z-index: 30; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .welt__schild { margin: 0; padding: 8px 28px; font: 700 clamp(28px, 3.4vw, 48px)/1.1 "Baloo 2", sans-serif; color: var(--ink);
   background: rgba(255, 255, 255, .85); transform: rotate(-1.5deg); border-radius: 6px; box-shadow: 0 4px 0 0 rgba(0, 0, 0, .25); }
-.welt__themen { position: absolute; top: 16px; right: 16px; z-index: 30; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 50%; }
-.welt__thema { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
-  border: 2px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .12); color: var(--white); font: 700 16px/1 "Nunito", sans-serif; }
+.welt__themen { position: absolute; top: 16px; right: 16px; z-index: 30; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 64%; }
+.welt__thema { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, .45); background: rgba(0, 0, 0, .28); color: var(--white); font: 700 15px/1 "Nunito", sans-serif; backdrop-filter: blur(4px); }
 .welt__thema .symbol { width: 20px; height: 20px; }
 .welt__thema[aria-pressed="true"] { background: var(--white); color: var(--ink); border-color: var(--farbe, var(--welt-licht)); }
 
-.welt__kacheln { position: absolute; inset: 0; z-index: 10; }
+.welt__kacheln { position: absolute; inset: 110px 0 0 0; z-index: 10; }
 .welt__platz { position: absolute; left: var(--x); top: var(--y); width: clamp(190px, 17vw, 290px); transform: translate(-50%, -50%) scale(var(--s)); }
 .welt__platz:hover, .welt__platz:focus-within { z-index: 25 !important; }
 .welt__kachel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; width: 100%; aspect-ratio: 16 / 10;
