@@ -33,22 +33,28 @@ const WELTEN: Record<string, { grund: string; licht: string }> = {
   cosmos: { grund: "#2e1a04", licht: "#F59E0B" },
 };
 
-/** Plätze im Raum (Mitte in %, Größe, Drehung) – absichtlich unordentlich, unten Mitte bleibt frei für die Figur */
+/**
+ * Plätze im Raum (Mitte in %, Größe, Drehung) – absichtlich unordentlich, unten Mitte bleibt frei für die Figur.
+ * Reihenfolge so gewählt, dass auch wenige Kacheln (z. B. 3–5) gut verteilt sind und sich kaum überdecken.
+ */
 const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 18, y: 32, s: 0.9, r: -2 },
-  { x: 45, y: 52, s: 1.05, r: 1.5 },
-  { x: 54, y: 30, s: 0.8, r: -1 },
   { x: 73, y: 26, s: 1.0, r: 2 },
-  { x: 70, y: 55, s: 0.85, r: -2.5 },
-  { x: 85, y: 47, s: 1.05, r: -1.5 },
+  { x: 45, y: 44, s: 1.05, r: 1.5 },
   { x: 24, y: 62, s: 0.8, r: 2.5 },
-  { x: 35, y: 22, s: 0.78, r: 1 },
+  { x: 85, y: 50, s: 1.05, r: -1.5 },
+  { x: 57, y: 18, s: 0.8, r: -1 },
+  { x: 69, y: 62, s: 0.85, r: -2.5 },
+  { x: 35, y: 16, s: 0.78, r: 1 },
 ];
 
 /**
  * laedt: die Live-Events sind noch unterwegs – der Raum bleibt leer (keine Platzhalter-Kacheln).
+ * bild: Hintergrundbild der Themenwelt (public/welten/<id>.jpg), sonst Leuchtgitter.
  */
-export function CheckpointSeite({ ort, karten, kategorien, laedt = false }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; laedt?: boolean }) {
+export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild = null }: {
+  ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; laedt?: boolean; bild?: string | null;
+}) {
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
@@ -86,7 +92,14 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false }: { or
   return (
     <AppShell modus="kinder" voll>
       <div className="welt" style={raumStil} aria-busy={laedt}>
-        <WeltRaum licht={welt.licht} />
+        {bild ? (
+          <div className="welt__bild" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element -- statischer Export, eigenes Bild */}
+            <img src={bild} alt="" />
+          </div>
+        ) : (
+          <WeltRaum licht={welt.licht} />
+        )}
 
         <div className="welt__oben">
           <BackButton href="/kinder/">Zur Karte</BackButton>

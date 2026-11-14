@@ -44,11 +44,11 @@ export function KartenSeiteLive({ orte }: { orte: KartenOrt[] }) {
   );
 }
 
-export function CheckpointSeiteLive({ ort, kategorien }: { ort: KartenOrt; kategorien: Category[] }) {
+export function CheckpointSeiteLive({ ort, kategorien, bild = null }: { ort: KartenOrt; kategorien: Category[]; bild?: string | null }) {
   const [karten, status] = useKarten(ort.id);
   return (
     <>
-      <CheckpointSeite ort={ort} karten={karten} kategorien={kategorien} laedt={status === "laedt"} />
+      <CheckpointSeite ort={ort} karten={karten} kategorien={kategorien} laedt={status === "laedt"} bild={bild} />
       <LiveHinweis status={status} />
     </>
   );

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<g stroke-linecap="round" stroke-linejoin="round">
+<path d="M35 32 Q35 40 43 40 Q35 40 35 48 Q35 40 27 40 Q35 40 35 32Z" fill="#ffd257" opacity="1"/><path d="M170 154 Q170 160 176 160 Q170 160 170 166 Q170 160 164 160 Q170 160 170 154Z" fill="#5bc0d8" opacity="1"/>
+<path d="M28 170 Q20 160 30 154 Q40 150 38 162 Q36 172 28 170Z" fill="#f07a5f"/>
+<path fill-rule="evenodd" fill="#f6f1e7" d="M100 40 C150 38 180 70 178 105 C176 135 150 150 130 140 C115 133 110 150 114 160 C118 175 100 182 80 178 C40 170 20 135 25 100 C30 65 60 42 100 40Z M114 116 a11 11 0 1 0 22 0 a11 11 0 1 0 -22 0Z"/>
+<path d="M178 105 C176 135 150 150 130 140 C115 133 110 150 114 160 C118 175 100 182 80 178 C60 174 44 162 34 146 C60 165 90 168 100 150 C108 130 130 128 150 130 C165 130 175 118 178 105Z" fill="#e2dcf2"/>
+<circle cx="64" cy="82" r="13" fill="#f07a5f"/><circle cx="100" cy="66" r="13" fill="#f5a524"/><circle cx="140" cy="78" r="12" fill="#22b8a6"/>
+<circle cx="56" cy="120" r="12" fill="#6c4ce0"/><circle cx="86" cy="150" r="11" fill="#7dc76a"/>
+<g transform="translate(152 52) rotate(35)">
+<rect x="-6" y="-62" width="12" height="88" rx="6" fill="#dc8a12"/><rect x="-6" y="-62" width="5" height="88" rx="2.5" fill="#f5a524"/>
+<rect x="-7" y="24" width="14" height="18" rx="2" fill="#c9cde0"/>
+<path d="M-7 42 Q-9 58 0 72 Q9 58 7 42Z" fill="#8a6cf0"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<g stroke-linecap="round" stroke-linejoin="round">
+<circle cx="38" cy="168" r="12" fill="#ffffff" opacity="0.35"/><circle cx="22" cy="184" r="8" fill="#ffffff" opacity="0.25"/><circle cx="54" cy="182" r="7" fill="#ffffff" opacity="0.3"/>
+<path d="M165 141 Q165 150 174 150 Q165 150 165 159 Q165 150 156 150 Q165 150 165 141Z" fill="#ffd257" opacity="1"/><path d="M40 33 Q40 40 47 40 Q40 40 40 47 Q40 40 33 40 Q40 40 40 33Z" fill="#5bc0d8" opacity="1"/><path d="M178 90 Q178 95 183 95 Q178 95 178 100 Q178 95 173 95 Q178 95 178 90Z" fill="#ffffff" opacity="0.8"/>
+<defs><clipPath id="rk-body"><path d="M100 18 C128 40 134 90 126 145 L74 145 C66 90 72 40 100 18Z"/></clipPath></defs>
+<g transform="rotate(40 100 100)">
+<path d="M84 153 Q100 200 116 153Z" fill="#f5a524"/><path d="M91 153 Q100 182 109 153Z" fill="#ffd257"/>
+<path d="M76 108 Q50 120 47 152 L80 140Z" fill="#6c4ce0"/><path d="M124 108 Q150 120 153 152 L120 140Z" fill="#5236c0"/>
+<path d="M82 145 L118 145 L113 156 L87 156Z" fill="#5b6190"/>
+<path d="M100 18 C128 40 134 90 126 145 L74 145 C66 90 72 40 100 18Z" fill="#f6f1e7"/>
+<g clip-path="url(#rk-body)">
+<path d="M100 18 C128 40 134 90 126 145 L113 145 C119 90 117 45 100 18Z" fill="#e2dcf2"/>
+<rect x="60" y="15" width="80" height="44" fill="#f07a5f"/><rect x="110" y="15" width="30" height="44" fill="#d9634a"/>
+<rect x="60" y="118" width="80" height="9" fill="#f5a524"/>
+</g>
+<rect x="96" y="128" width="8" height="28" rx="4" fill="#5236c0"/>
+<circle cx="100" cy="88" r="18" fill="#6c4ce0"/><circle cx="100" cy="88" r="12" fill="#5bc0d8"/>
+<path d="M93 84 Q96 79 101 79" stroke="#ffffff" stroke-width="3.5" fill="none"/>
+</g>
+</g>
+</svg>

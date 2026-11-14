@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { notFound } from "next/navigation";
 import { CheckpointSeiteLive } from "@/components/kinder/live-karten";
 import { META } from "@/lib/daten";
@@ -20,6 +22,8 @@ export default async function Checkpoint({ params }: { params: Promise<{ id: str
   const { id } = await params;
   const ort = kartenOrte(META.quellen).find((o) => o.id === id);
   if (!ort) notFound();
+  // Eigenes Hintergrundbild der Themenwelt, falls vorhanden (public/welten/<id>.jpg) – sonst Leuchtgitter
+  const bild = existsSync(path.join(process.cwd(), "public", "welten", `${id}.jpg`)) ? `/welten/${id}.jpg` : null;
   // Nur Live-Events – der Browser lädt sie aus Mobilizon
-  return <CheckpointSeiteLive ort={ort} kategorien={kategorien as Category[]} />;
+  return <CheckpointSeiteLive ort={ort} kategorien={kategorien as Category[]} bild={bild} />;
 }
