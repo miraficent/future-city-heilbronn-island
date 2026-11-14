@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Owl } from "@/components/ui";
-import { Symbol } from "@/components/symbol";
 import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 
 /**
@@ -60,15 +59,16 @@ export default function Start() {
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
             <span className="start__karte-kinder" aria-hidden="true">
-              <KinderFigurBild art="tuerkis" />
               <KinderFigurBild art="orange" />
-              <KinderFigurBild art="lila" />
             </span>
             <span className="start__karte-titel">Kind</span>
             <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
           <Link href="/eltern/" className="start__karte">
-            <Symbol name="users" />
+            <span className="start__karte-kinder" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik, statischer Export */}
+              <img src="/grafik/eltern-neutral.svg" alt="" width={240} height={320} />
+            </span>
             <span className="start__karte-titel">Eltern</span>
           </Link>
         </div>

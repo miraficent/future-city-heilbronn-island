@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 320" width="240" height="320">
+  <!-- sparkles -->
+  <g fill="#FFD166">
+    <path d="M30 64 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z"/>
+    <circle cx="212" cy="126" r="3"/>
+  </g>
+  <g fill="#9B5DE5">
+    <path d="M208 206 l2.4 6.4 6.4 2.4 -6.4 2.4 -2.4 6.4 -2.4 -6.4 -6.4 -2.4 6.4 -2.4 z"/>
+    <circle cx="32" cy="196" r="2.6"/>
+  </g>
+
+  <!-- left arm down -->
+  <path d="M80 152 Q62 176 64 208" stroke="#F4A259" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <circle cx="64" cy="214" r="11" fill="#F4A259"/>
+
+  <!-- body: sweater -->
+  <path d="M120 138 Q84 138 80 172 L78 224 Q78 240 94 240 L146 240 Q162 240 162 224 L160 172 Q156 138 120 138 Z" fill="#FF8C42"/>
+  <!-- collar -->
+  <path d="M100 142 Q120 158 140 142 L140 152 Q120 166 100 152 Z" fill="#E8762B"/>
+  <!-- star on chest -->
+  <path d="M120 184 l5 12 13 1 -10 8 3 13 -11 -7 -11 7 3 -13 -10 -8 13 -1 z" fill="#FFD166"/>
+
+  <!-- right arm down -->
+  <path d="M160 152 Q178 176 176 208" stroke="#F4A259" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <circle cx="176" cy="214" r="11" fill="#F4A259"/>
+
+  <!-- legs: pants -->
+  <rect x="96" y="240" width="20" height="44" rx="8" fill="#4ECDC4"/>
+  <rect x="124" y="240" width="20" height="44" rx="8" fill="#4ECDC4"/>
+  <!-- shoes -->
+  <path d="M90 284 h28 q6 0 6 8 v4 h-38 q-4 -12 4 -12 z" fill="#9B5DE5"/>
+  <path d="M122 284 h28 q8 0 4 12 h-38 v-4 q0 -8 6 -8 z" fill="#9B5DE5"/>
+
+  <!-- head -->
+  <circle cx="120" cy="86" r="46" fill="#F4A259"/>
+  <!-- short neutral hair -->
+  <path d="M76 84 Q72 38 120 38 Q168 38 164 84 Q156 54 120 54 Q84 54 76 84 Z" fill="#8A5A3B"/>
+  <path d="M96 52 q10 -6 24 -5 M104 46 q8 -3 16 -2" stroke="#6E4429" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- face -->
+  <circle cx="104" cy="90" r="5.5" fill="#2D2440"/>
+  <circle cx="136" cy="90" r="5.5" fill="#2D2440"/>
+  <circle cx="106" cy="88" r="1.8" fill="#fff"/>
+  <circle cx="138" cy="88" r="1.8" fill="#fff"/>
+  <!-- brows -->
+  <path d="M96 80 q8 -5 16 -1 M128 79 q8 -4 16 1" stroke="#6E4429" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- cheeks -->
+  <circle cx="94" cy="104" r="6.5" fill="#FF6B6B" opacity="0.5"/>
+  <circle cx="146" cy="104" r="6.5" fill="#FF6B6B" opacity="0.5"/>
+  <!-- smile -->
+  <path d="M106 106 Q120 120 134 106" stroke="#2D2440" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

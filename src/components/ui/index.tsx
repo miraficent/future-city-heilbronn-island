@@ -8,6 +8,7 @@
 import Link from "next/link";
 import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 import { Symbol } from "@/components/symbol";
+import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 import { vorlesen } from "@/lib/sprechen";
 
 type Groesse = "kids" | "parents";
@@ -82,8 +83,17 @@ export function BackButton({ href, children = "Zurück" }: { href: string; child
 export function ModeSwitch({ aktiv }: { aktiv: "kinder" | "eltern" }) {
   return (
     <nav className="ui-mode" aria-label="Bereich wählen">
-      <Link href="/kinder/" className="ui-mode__item" aria-current={aktiv === "kinder" ? "page" : undefined}>Kinder</Link>
-      <Link href="/eltern/" className="ui-mode__item" aria-current={aktiv === "eltern" ? "page" : undefined}>Eltern</Link>
+      <Link href="/kinder/" className="ui-mode__item" aria-current={aktiv === "kinder" ? "page" : undefined}>
+        <span className="ui-mode__kind" aria-hidden="true"><KinderFigurBild art="orange" /></span>
+        Kinder
+      </Link>
+      <Link href="/eltern/" className="ui-mode__item" aria-current={aktiv === "eltern" ? "page" : undefined}>
+        <span className="ui-mode__kind" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik, statischer Export */}
+          <img src="/grafik/eltern-neutral.svg" alt="" width={240} height={320} />
+        </span>
+        Eltern
+      </Link>
     </nav>
   );
 }
