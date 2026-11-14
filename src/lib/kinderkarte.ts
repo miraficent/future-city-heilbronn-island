@@ -1,0 +1,125 @@
+/**
+ * Kinder-Insel: Farben, Layout der gezeichneten Heilbronn-Karte (viewBox 0 0 1200 800)
+ * und Position der Einrichtungen. Geografisch an Heilbronn angelehnt, künstlerisch vereinfacht.
+ *
+ * Neue Einrichtung in konfiguration/quellen.csv → erscheint automatisch mit einem
+ * einfachen Haus auf dem nächsten freien Platz. Für ein eigenes Haus/Position: ORTE ergänzen.
+ */
+/** Was die Karte von einer Einrichtung braucht (passt zu Quelle und QuelleMeta) */
+export type KartenQuelle = { id: string; name: string; farbe: string };
+
+/** Die einzigen Farben der Karte */
+export const F = {
+  gras: "#8BC34A",
+  grasDunkel: "#6FA83A",
+  fluss: "#4FB3E8",
+  welle: "#A8DCF5",
+  sand: "#E9C98B",
+  klippe: "#C99A5B",
+  dach: "#E07A4F",
+  wand: "#FFF7E8",
+  weg: "#F3E3C3",
+  baum: "#3E8E41",
+  baumHell: "#5DB35F",
+  lila: "#6C4CE0",
+  tuerkis: "#2BB3A3",
+  orange: "#F59E0B",
+  text: "#1F2937",
+  glas: "#2E3A8C",
+  glasHell: "#5B6BD6",
+} as const;
+
+export type Pt = [number, number];
+export type Kurve = [Pt, Pt, Pt, Pt];
+export type PinSymbol = "teleskop" | "chip" | "code" | "herz" | "stern";
+export type Gebaeudeart = "experimenta" | "ipai" | "haus";
+
+export type KartenOrt = {
+  id: string;
+  name: string;
+  farbe: string;
+  symbol: PinSymbol;
+  gebaeude: Gebaeudeart;
+  x: number;
+  y: number;
+};
+
+/** Bekannte Einrichtungen (id wie in quellen.csv) */
+const ORTE: Record<string, Omit<KartenOrt, "id">> = {
+  aim: { name: "aim", farbe: F.orange, symbol: "code", gebaeude: "haus", x: 480, y: 215 },
+  experimenta: { name: "experimenta", farbe: F.lila, symbol: "teleskop", gebaeude: "experimenta", x: 185, y: 572 },
+  hdf: { name: "Haus der Familie", farbe: F.dach, symbol: "herz", gebaeude: "haus", x: 1000, y: 470 },
+  ipai: { name: "IPAI", farbe: F.tuerkis, symbol: "chip", gebaeude: "ipai", x: 620, y: 610 },
+};
+/** Plätze für Einrichtungen, die neu in quellen.csv stehen */
+const FREIE_PLAETZE: Pt[] = [[850, 600], [905, 330], [330, 130], [560, 470]];
+
+export function kartenOrte(quellen: KartenQuelle[]): KartenOrt[] {
+  let frei = 0;
+  return quellen.map((q) => {
+    const bekannt = ORTE[q.id];
+    if (bekannt) return { id: q.id, ...bekannt };
+    const [x, y] = FREIE_PLAETZE[frei++ % FREIE_PLAETZE.length]!;
+    return { id: q.id, name: q.name.split(/\s[–-]\s/)[0] ?? q.name, farbe: q.farbe, symbol: "stern", gebaeude: "haus", x, y };
+  });
+}
+
+/** Wo die Figur am Anfang steht: vor dem Hauptbahnhof */
+export const START: Pt = [285, 322];
+
+// ---------- Kartenlayout ----------
+
+export const INSEL =
+  "M150 150 C230 60 480 55 650 62 C860 55 1080 80 1112 220 C1140 350 1125 520 1065 610 " +
+  "C990 705 780 700 600 700 C410 705 210 700 125 610 C60 535 70 250 150 150 Z";
+
+/** Neckar: S-Kurve von oben links nach unten links */
+export const NECKAR: Kurve[] = [
+  [[340, 30], [300, 160], [420, 250], [380, 360]],
+  [[380, 360], [340, 470], [250, 520], [280, 640]],
+  [[280, 640], [290, 690], [300, 730], [300, 790]],
+];
+
+export function punktAufKurve([p0, p1, p2, p3]: Kurve, t: number) {
+  const u = 1 - t;
+  const at = (i: 0 | 1) => u * u * u * p0[i] + 3 * u * u * t * p1[i] + 3 * u * t * t * p2[i] + t * t * t * p3[i];
+  const d = (i: 0 | 1) => 3 * u * u * (p1[i] - p0[i]) + 6 * u * t * (p2[i] - p1[i]) + 3 * t * t * (p3[i] - p2[i]);
+  return { x: at(0), y: at(1), winkel: (Math.atan2(d(1), d(0)) * 180) / Math.PI };
+}
+
+export const BRUECKEN = ([[0, 0.5], [1, 0], [1, 0.55]] as const).map(([s, t]) => punktAufKurve(NECKAR[s]!, t));
+
+export const WEGE: Kurve[] = [
+  [[210, 300], [160, 380], [150, 480], [185, 575]],
+  [[360, 204], [300, 210], [230, 240], [210, 300]],
+  [[210, 300], [260, 330], [320, 360], [380, 360]],
+  [[380, 360], [480, 360], [560, 410], [735, 410]],
+  [[480, 222], [440, 222], [400, 204], [360, 204]],
+  [[480, 222], [560, 260], [660, 330], [735, 410]],
+  [[735, 410], [840, 410], [900, 480], [1000, 480]],
+  [[735, 410], [720, 480], [640, 520], [620, 612]],
+  [[620, 612], [700, 650], [780, 640], [850, 602]],
+  [[185, 575], [220, 560], [260, 520], [297, 509]],
+  [[297, 509], [400, 500], [520, 560], [620, 612]],
+  [[542, 340], [560, 370], [600, 400], [640, 405]],
+];
+
+export const BAEUME: [number, number, number][] = [
+  [150, 200, 16], [186, 172, 12], [128, 262, 13], [560, 150, 15], [620, 118, 12], [700, 140, 16],
+  [770, 168, 12], [440, 310, 14], [690, 250, 13], [820, 250, 15], [500, 600, 14], [455, 640, 12],
+  [345, 640, 13], [950, 650, 15], [1010, 610, 12], [1065, 560, 14], [1090, 430, 12], [900, 520, 11],
+];
+
+export const ALTSTADT_HAEUSER: Pt[] = [
+  [680, 350], [705, 340], [810, 345], [835, 362], [665, 385], [852, 396], [670, 428], [848, 432],
+  [690, 458], [720, 466], [760, 466], [800, 458], [826, 450], [650, 412], [785, 340],
+];
+export const KILIANSKIRCHE: Pt = [752, 376];
+export const HAUPTBAHNHOF: Pt = [210, 296];
+export const TEICH = { x: 470, y: 470, rx: 36, ry: 18 };
+export const PARKS = [
+  { x: 495, y: 300, w: 94, h: 56 },
+  { x: 1010, y: 280, w: 76, h: 44 },
+];
+export const WEINBERG = "M850 262 C880 170 960 118 1012 128 C1062 138 1096 200 1102 262 Z";
+export const AUSSICHTSTURM: Pt = [1007, 132];

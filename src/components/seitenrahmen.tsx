@@ -7,7 +7,7 @@ import { Symbol } from "./symbol";
 type Bereich = Modus | "karte" | "einblicke";
 
 const NAVIGATION: Array<{ id: Bereich; href: string; text: string; symbol: string }> = [
-  { id: "kind", href: "/kind/", text: "Spielwelt", symbol: "rocket" },
+  { id: "kind", href: "/kinder/", text: "Mini-Heilbronn", symbol: "rocket" },
   { id: "teen", href: "/teen/", text: "Teens", symbol: "star" },
   { id: "eltern", href: "/eltern/", text: "Eltern & Fachkräfte", symbol: "search" },
   { id: "karte", href: "/einrichtungen/", text: "Karte", symbol: "map" },

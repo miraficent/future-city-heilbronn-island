@@ -15,7 +15,7 @@ export default function Lernorte() {
         <HeilbronnKarte orte={orte} />
         <p className="hn-fuss">
           Echte Adressen und Kontakte (Impressum der Einrichtungen, geprüft am 14.11.2026). Die Bilder der Orte sind eigene Illustrationen, keine Fotos. Die Häuser im{" "}
-          <Link href="/kind/">Spiel</Link> sind ausgedachte Lernspiele. Anmeldung immer direkt bei der Einrichtung. Externe Links öffnen fremde Seiten; vorher wird nichts von dort geladen.
+          <Link href="/kinder/">Spiel</Link> sind ausgedachte Lernspiele. Anmeldung immer direkt bei der Einrichtung. Externe Links öffnen fremde Seiten; vorher wird nichts von dort geladen.
         </p>
       </main>
     </Seitenrahmen>

@@ -1,0 +1,618 @@
+/* Mini-Heilbronn – Kinder-Modus. Volle Breite, große runde Schrift (Fredoka, lokal, OFL). */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("/fonts/fredoka-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+.kr-vollbild {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.kr-spiel {
+  --kr-text: #1f2937;
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #8bc34a;
+  color: var(--kr-text);
+  font-family: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  font-size: 20px; /* nie kleiner als 20px im Kinder-Modus */
+  line-height: 1.35;
+}
+
+.kr-buehne {
+  position: absolute;
+  inset: 0;
+}
+
+.kr-szene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.kr-wolke {
+  animation: kr-wolke 40s linear infinite alternate;
+}
+
+/* ---------- Knöpfe ---------- */
+.kr-knopf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 64px;
+  padding: 0 1.8rem;
+  border: 4px solid #fff;
+  border-radius: 999px;
+  font: 600 1.35rem/1 "Fredoka", system-ui, sans-serif;
+  color: var(--kr-text);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.18), 0 10px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.kr-knopf:hover { transform: translateY(-2px); }
+.kr-knopf:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18); }
+.kr-knopf:disabled { opacity: 0.5; cursor: default; transform: none; }
+.kr-gelb { background: #f5b82e; }
+.kr-weiss { background: #fffaf0; }
+.kr-gruen { background: #9ed65a; }
+.kr-blau { background: #3d7be8; color: #fff; }
+.kr-ja { background: #9ed65a; }
+.kr-nein { background: #fffaf0; }
+
+.kr-rund {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #fffaf0;
+  font-size: 1.6rem;
+  color: var(--kr-text);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
+}
+
+.kr-oben-links {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+}
+
+:where(.kr-spiel) :focus-visible {
+  outline: 5px solid #f59e0b;
+  outline-offset: 4px;
+}
+
+/* ---------- HUD oben rechts ---------- */
+.kr-hud {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 6;
+  display: flex;
+  gap: 0.6rem;
+}
+.kr-hud-pille,
+.kr-hud-knopf {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 64px;
+  height: 64px;
+  padding: 0 1.1rem;
+  border: 4px solid #fff;
+  border-radius: 999px;
+  background: #fffaf0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+}
+.kr-hud-knopf { cursor: pointer; padding: 0; width: 64px; }
+.kr-hud-karte {
+  cursor: pointer;
+  background: #3d7be8;
+  color: #fff;
+  font: 600 1.35rem/1 "Fredoka", sans-serif;
+}
+.kr-hud-zahl {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #e07a4f;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 28px;
+}
+
+/* ---------- Titel ---------- */
+.kr-titel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  padding-bottom: 12vh;
+  text-align: center;
+}
+.kr-schild {
+  padding: 0.8rem 2.6rem 1rem;
+  border: 6px solid #c99a5b;
+  border-radius: 34px;
+  background: #f3e3c3;
+  box-shadow: 0 8px 0 #a77b45, 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+.kr-schild h1 {
+  margin: 0;
+  font: 700 clamp(2.6rem, 7vw, 4.6rem)/1 "Fredoka", sans-serif;
+  color: #6b3e26;
+}
+.kr-schild-unter {
+  margin: 0.3rem 0 0;
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  font-weight: 600;
+  color: #6b3e26;
+}
+.kr-titel-text {
+  margin: 0;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.9);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.kr-titel-knoepfe {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: min(360px, 90vw);
+}
+.kr-titel-knoepfe .kr-knopf { min-height: 76px; font-size: 1.6rem; }
+
+/* ---------- Ortsschild ---------- */
+.kr-ortsschild {
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  z-index: 4;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.6rem;
+  border: 4px solid #c99a5b;
+  border-radius: 20px;
+  background: #fffaf0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Mia + Sprechblase ---------- */
+.kr-mia-platz {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+.kr-mia-platz > * { pointer-events: auto; }
+
+.kr-mia {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  max-width: 1000px;
+}
+.kr-mia-figur {
+  flex: none;
+  width: clamp(120px, 16vw, 210px);
+  height: auto;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.2));
+}
+.kr-mia-klein .kr-mia-figur { width: clamp(90px, 10vw, 140px); }
+
+.kr-blase {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 1.6rem 1.6rem 1.3rem;
+  border: 4px solid #fff;
+  border-radius: 28px;
+  background: #fffaf0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.kr-blase::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  bottom: 28px;
+  border: 14px solid transparent;
+  border-right-color: #fffaf0;
+}
+.kr-blase-name {
+  position: absolute;
+  top: -20px;
+  left: 1.2rem;
+  padding: 0.15rem 1rem;
+  border-radius: 999px;
+  background: #3d7be8;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.kr-blase-text {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.kr-vorlesen {
+  width: 48px;
+  height: 48px;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  background: #e8f4fd;
+  font-size: 1.3rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.kr-antworten {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.kr-zahl {
+  width: 72px;
+  height: 72px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #f5b82e;
+  font: 700 2rem/1 "Fredoka", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
+}
+
+.kr-wahl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  min-width: 150px;
+  min-height: 120px;
+  padding: 0.8rem 1rem;
+  border: 4px solid #fff;
+  border-radius: 24px;
+  background: #e8f4fd;
+  font: 600 1.2rem/1.2 "Fredoka", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.12s;
+}
+.kr-wahl span { font-size: 2.6rem; line-height: 1; }
+.kr-wahl:hover { transform: translateY(-3px) rotate(-1deg); }
+.kr-wahl-leise { background: #fff4d6; }
+
+/* ---------- Karte ---------- */
+.kr-karte {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.kr-stadt .kr-karte,
+.kr-schnellreise .kr-karte {
+  position: absolute;
+  inset: 0;
+}
+.kr-name {
+  font: 700 21px "Fredoka", sans-serif;
+  fill: #1f2937;
+}
+.kr-badge {
+  font: 700 17px "Fredoka", sans-serif;
+  fill: #1f2937;
+}
+.kr-ort {
+  cursor: pointer;
+  outline: none;
+  transition: opacity 0.3s;
+}
+.kr-ort.ist-gedimmt { opacity: 0.45; }
+.kr-ort:focus-visible .kr-pin path { stroke: #f59e0b; stroke-width: 7; }
+.kr-pin {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: kr-bob 1.8s ease-in-out infinite;
+}
+.kr-ort:hover .kr-pin,
+.kr-ort.leuchtet .kr-pin { animation-duration: 0.9s; }
+.kr-ort.ist-gewaehlt .kr-pin { animation: kr-sprung 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) forwards; }
+.kr-schein {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: kr-puls 1.4s ease-in-out infinite;
+}
+.kr-figur {
+  transition: transform 1.3s ease-in-out;
+}
+
+/* Schnellreise */
+.kr-schnellreise {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: #8bc34a;
+  animation: kr-auf 0.35s ease-out;
+}
+.kr-schliessen-gross { width: 72px; height: 72px; font-size: 2rem; }
+.kr-schild-klein {
+  position: absolute;
+  top: 1rem;
+  left: 6.5rem;
+  padding: 0.5rem 1.4rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  font-weight: 700;
+  color: #6b3e26;
+}
+.kr-kompass {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border: 4px solid #c99a5b;
+  border-radius: 50%;
+  background: #fffaf0;
+  font-weight: 700;
+  line-height: 1;
+}
+.kr-kompass span { color: #d9433a; }
+.kr-banner {
+  position: absolute;
+  left: 50%;
+  bottom: 1.2rem;
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+  margin: 0;
+  padding: 0.8rem 2rem;
+  border: 4px solid #c99a5b;
+  border-radius: 999px;
+  background: #fffaf0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Haus ---------- */
+.kr-haus {
+  background: linear-gradient(#bfe6ff 0 55%, #8bc34a 55%);
+}
+.kr-haus-inhalt {
+  position: absolute;
+  inset: 6rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 3rem;
+  overflow-y: auto;
+}
+.kr-haus-bild {
+  width: clamp(200px, 26vw, 360px);
+  height: auto;
+}
+.kr-haus-spiel {
+  flex: 1 1 520px;
+  max-width: 820px;
+}
+.kr-haus-spiel .kr-mia-figur { width: clamp(100px, 11vw, 150px); }
+.kr-wunschliste {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.kr-wunschliste li + li { margin-top: 0.4rem; }
+
+/* ---------- Event-Karten ---------- */
+.kr-stapel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.kr-event-karte {
+  position: relative;
+  width: min(440px, 92vw);
+  padding: 1.6rem;
+  border: 6px solid var(--ort-farbe, #3d7be8);
+  border-radius: 30px;
+  background: #fffaf0;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+.kr-event-karte h3 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.kr-fakten {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.25rem;
+}
+.kr-stempel {
+  position: absolute;
+  top: 1rem;
+  font-size: 3rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.kr-stempel-ja { right: 1rem; }
+.kr-stempel-nein { left: 1rem; color: #d9433a; }
+.kr-event-karte.zeigt-ja .kr-stempel-ja,
+.kr-event-karte.zeigt-nein .kr-stempel-nein { opacity: 1; }
+.kr-event-karte .kr-vorlesen { position: absolute; right: 1rem; bottom: 1rem; }
+
+/* ---------- Dialoge + Robo-Coding ---------- */
+.kr-dialog {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(31, 41, 55, 0.45);
+}
+.kr-dialog-karte {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 2rem 1.8rem 1.8rem;
+  border: 6px solid #fff;
+  border-radius: 32px;
+  background: #fffaf0;
+  text-align: center;
+  animation: kr-auf 0.3s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+.kr-dialog-karte h2 { margin: 0 0 0.6rem; font-size: 2rem; }
+.kr-schliessen { position: absolute; top: 0.8rem; right: 0.8rem; width: 56px; height: 56px; }
+.kr-gross { font-size: 1.35rem; }
+.kr-leise { color: #5b6475; }
+.kr-mitte { text-align: center; margin: 0; }
+.kr-reihe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.kr-spalte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.kr-gitter {
+  display: grid;
+  gap: 6px;
+  width: min(300px, 80vw);
+  margin: 1rem auto 0;
+  padding: 8px;
+  border-radius: 20px;
+  background: #c99a5b;
+}
+.kr-feld {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: #f3e3c3;
+  font-size: 2.2rem;
+}
+.kr-programm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  min-height: 56px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 3px dashed #c99a5b;
+  border-radius: 16px;
+  font-size: 1.8rem;
+}
+.kr-knopf-bild {
+  width: 76px;
+  height: 76px;
+  border: 4px solid #fff;
+  border-radius: 22px;
+  background: #e8f4fd;
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
+}
+.kr-knopf-bild:disabled { opacity: 0.4; cursor: default; }
+
+/* ---------- Animationen ---------- */
+@keyframes kr-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes kr-sprung {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-30px) scale(1.2, 0.9); }
+  100% { transform: translateY(-6px) scale(1.3); }
+}
+@keyframes kr-puls { 0%, 100% { transform: scale(0.9); opacity: 0.35; } 50% { transform: scale(1.1); opacity: 0.6; } }
+@keyframes kr-auf { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+@keyframes kr-wolke { from { transform: translateX(0); } to { transform: translateX(80px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kr-pin, .kr-schein, .kr-wolke { animation: none; }
+  .kr-figur { transition: none; }
+}
+
+/* ---------- Handy ---------- */
+@media (max-width: 700px) {
+  .kr-mia { flex-direction: column; align-items: flex-start; }
+  .kr-mia-figur { width: 90px; }
+  .kr-blase { margin-bottom: 0; }
+  .kr-blase::before { display: none; }
+  .kr-blase-text { font-size: 1.25rem; }
+  .kr-wahl { min-width: 130px; min-height: 100px; }
+  .kr-ortsschild { top: 5.5rem; font-size: 1.2rem; }
+  .kr-schild-klein { top: 6rem; left: 1rem; }
+}
+
+/* ---------- Symbole (statt Emojis, Teamregel) ---------- */
+.kr-spiel .symbol { width: 1.15em; height: 1.15em; flex: none; }
+.kr-wahl .symbol { width: 2.8rem; height: 2.8rem; color: #3d7be8; }
+.kr-knopf-bild .symbol { width: 2.2rem; height: 2.2rem; }
+.kr-programm .symbol { width: 2rem; height: 2rem; }
+.kr-feld .symbol { width: 70%; height: 70%; }
+.kr-feld.ist-ziel { color: #f59e0b; }
+.kr-robo { color: #3d7be8; }
+.kr-event-symbol .symbol { width: 3.2rem; height: 3.2rem; color: var(--ort-farbe, #3d7be8); }
+.kr-gesicht { width: 3.4rem; height: 3.4rem; }
+.kr-fakten li, .kr-wunschliste li { display: flex; align-items: center; gap: 0.5rem; }
+.kr-wunschliste .symbol { color: #3e8e41; }
+.kr-dialog-karte h2 { display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.kr-stempel .symbol { width: 3.2rem; height: 3.2rem; }
+.kr-stempel-ja { color: #3e8e41; }
+.kr-hud-pille .symbol { color: #f59e0b; }
+.kr-hud-karte .symbol { color: #fff; }
+.kr-vorlesen .symbol { width: 1.5rem; height: 1.5rem; }

@@ -111,11 +111,11 @@ export function ElternInfos() {
             <span className="ueberblick-symbol"><Symbol name="refresh" /></span>
             <h3>Holt Familien zurück</h3>
             <ul>
-              <li>Spielwelt: 4 Lernhäuser, 12 Sterne, eine Rakete – mit echten Kursen als Belohnung</li>
+              <li>Mini-Heilbronn: Mia fragt nach Interessen, kleine Spiele helfen beim Entscheiden</li>
               <li>Kalender je Thema: neue Termine landen im eigenen Kalender</li>
-              <li>Sammlung und QR-Code: Kinder zeigen ihren Eltern, was sie spannend finden</li>
+              <li>„Will ich!“-Karten: Kinder zeigen ihren Eltern, was sie spannend finden</li>
             </ul>
-            <Link className="knopf" href="/kind/"><Symbol name="rocket" /> Zur Spielwelt</Link>
+            <Link className="knopf" href="/kinder/"><Symbol name="rocket" /> Zu Mini-Heilbronn</Link>
           </article>
           <article className="ueberblick-saeule" style={{ ["--saeulen-farbe" as string]: "#1f8a6e" }}>
             <span className="ueberblick-symbol"><Symbol name="bulb" /></span>

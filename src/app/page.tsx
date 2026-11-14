@@ -16,7 +16,7 @@ export default function Start() {
       <ul className="mt-10 grid gap-5 md:grid-cols-3">
         <li>
           <Link
-            href="/kind/"
+            href="/kinder/"
             className="versatz group relative flex h-full min-h-56 flex-col justify-end overflow-hidden rounded-[28px] border-2 border-tinte bg-flaeche p-6 transition-transform hover:-translate-y-1 hover:-rotate-1"
             style={{ ["--versatz-farbe" as string]: erster?.farbe ?? "#ff5a36" }}
           >

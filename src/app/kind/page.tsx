@@ -1,13 +1,9 @@
-import { Seitenrahmen } from "@/components/seitenrahmen";
-import { Spielwelt } from "@/components/spiel/spielwelt";
-import { META, oeffentlicheAngebote } from "@/lib/daten";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Spielwelt – bau die COSMOS-Rakete" };
-
+/**
+ * Die frühere Laufwelt („Spielwelt“, components/spiel/) ist vorerst ausgeblendet –
+ * Kinder starten jetzt in Mini-Heilbronn. Der Code der Laufwelt bleibt unverändert erhalten.
+ */
 export default function Kind() {
-  return (
-    <Seitenrahmen modus="kind">
-      <Spielwelt angebote={oeffentlicheAngebote()} meta={META} jetzt={META.aktualisiert} />
-    </Seitenrahmen>
-  );
+  redirect("/kinder/");
 }
