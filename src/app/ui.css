@@ -133,6 +133,10 @@
   transition: transform 150ms ease-out; }
 .start__karte:hover { transform: translateY(-4px); }
 .start__karte .symbol { width: 56px; height: 56px; color: var(--accent); }
+.start__karte-kinder { display: flex; align-items: flex-end; justify-content: center; height: 104px; padding: 8px 20px 0;
+  border-radius: 999px 999px 24px 24px; background: rgba(255, 255, 255, .9); }
+.start__karte-kinder svg { width: auto; height: 92px; margin: 0 -10px; }
+.start__karte-kinder svg:nth-child(2) { height: 100px; position: relative; z-index: 1; }
 .start__karte-titel { font: 700 32px/1.1 "Baloo 2", sans-serif; }
 .start__karte-unter { font-size: 18px; color: var(--sea-shallow); }
 .start__karte--kind { background: var(--primary); }

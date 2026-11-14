@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Die drei Kinderfiguren (Vorlagen des Teams: kid-boy-purple, kid-girl-teal, kid-curly-orange).
  * Gemeinsamer Körper, nur Farben, Haare und Haut unterscheiden sich.

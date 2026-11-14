@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Owl } from "@/components/ui";
 import { Symbol } from "@/components/symbol";
+import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 
 /**
  * Startseite (DESIGN.md § Pages 1): Nachthimmel, die Eule fliegt herein und setzt sich auf den Titel,
@@ -58,7 +59,11 @@ export default function Start() {
         <p className="start__unter"><strong>Finde heraus, was in Heilbronn für dich los ist!</strong></p>
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
-            <Symbol name="rocket" />
+            <span className="start__karte-kinder" aria-hidden="true">
+              <KinderFigurBild art="tuerkis" />
+              <KinderFigurBild art="orange" />
+              <KinderFigurBild art="lila" />
+            </span>
             <span className="start__karte-titel">Kind</span>
             <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
