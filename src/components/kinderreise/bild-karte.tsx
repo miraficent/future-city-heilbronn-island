@@ -49,7 +49,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
             transform={`translate(${s.x},${s.y})`}
             className={`kr-ort${aktiv !== null && !aktiv.has(s.o.id) ? " ist-gedimmt" : ""}${gewaehlt === s.o.id ? " ist-gewaehlt" : ""}`}
           >
-            <InstitutGebaeude id={s.o.id} farbe={s.o.farbe} />
+            <InstitutGebaeude id={s.o.id} farbe={s.o.farbe} verzoegerung={orte.indexOf(s.o) * 0.7} />
           </g>
         ),
       )}
@@ -118,7 +118,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
 
       {figur && (
         <g className="kr-figur" style={{ transform: `translate(${figur[0]}px, ${figur[1]}px)` }} aria-hidden="true">
-          <g transform="scale(0.42) translate(-80,-222)"><KinderFigur art={figurArt} /></g>
+          <g className="kf-huepfen"><g transform="scale(0.42) translate(-80,-222)"><KinderFigur art={figurArt} /></g></g>
         </g>
       )}
     </svg>

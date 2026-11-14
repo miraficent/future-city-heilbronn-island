@@ -138,11 +138,13 @@ export function KinderFigur({ art }: { art: FigurArt }) {
 
       <circle cx={54} cy={166} r={8} fill={`url(#${haut})`} stroke={LINIE} strokeWidth={3} />
 
-      {/* winkender Arm */}
+      {/* winkender Arm (Animation: .kf-winken, Drehpunkt Schulter) */}
+      <g className="kf-winken">
       <path d="M104 122 Q122 110 128 84" fill="none" stroke={LINIE} strokeWidth={19} />
       <path d="M104 122 Q122 110 128 84" fill="none" stroke={s.pulli[1]} strokeWidth={13} />
       <path d="M123 88 L133 90" stroke={s.dunkel} strokeWidth={4} />
       <path d="M121 78 Q119 66 126 64 L127 72 Q129 60 134 62 Q137 64 135 72 Q140 70 140 76 Q138 86 128 86 Q122 85 121 78Z" fill={`url(#${haut})`} stroke={LINIE} strokeWidth={3} />
+      </g>
 
       {/* Ohren, Hals, Kopf */}
       <circle cx={45} cy={78} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />

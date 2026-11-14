@@ -233,3 +233,30 @@
 .kinder-figurwahl:hover { transform: translateY(-3px); border-color: var(--primary); }
 .kinder-figurwahl svg { width: 100%; height: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) { .kinder-figurwahl { transition: none; } }
+
+/* Leichte Endlos-Animationen auf der Karte: Gebäude und Kinderfigur (sanft, ruhig) */
+.ig-wippen { animation: ig-wippen 4s ease-in-out infinite; }
+@keyframes ig-wippen { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.ig-glanz { opacity: 0; animation: ig-glanz 5s ease-in-out infinite; }
+@keyframes ig-glanz { 0%, 60%, 100% { opacity: 0; } 75% { opacity: .35; } }
+.ig-schweben { animation: ig-schweben 3s ease-in-out infinite; }
+@keyframes ig-schweben { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.ig-puls { transform-box: fill-box; transform-origin: center; animation: ig-puls 2.4s ease-in-out infinite; }
+@keyframes ig-puls { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } 60% { transform: scale(1); } }
+.ig-rauch { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ig-rauch 4s ease-out infinite; }
+.ig-rauch--2 { animation-delay: 2s; }
+@keyframes ig-rauch { 0% { opacity: 0; transform: translate(0, 0) scale(.5); } 20% { opacity: .9; } 100% { opacity: 0; transform: translate(14px, -46px) scale(1.4); } }
+.ig-blinken { animation: ig-blinken 2s ease-in-out infinite; }
+@keyframes ig-blinken { 0%, 100% { opacity: 0; } 50% { opacity: .55; } }
+.ig-welle { opacity: 0; animation: ig-welle 2.4s ease-out infinite; }
+.ig-welle--2 { animation-delay: .4s; }
+@keyframes ig-welle { 0% { opacity: 0; } 30% { opacity: 1; } 70%, 100% { opacity: 0; } }
+.ig-wehen { transform-box: fill-box; transform-origin: 50% 0; animation: ig-wehen 3.2s ease-in-out infinite; }
+@keyframes ig-wehen { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(2.5deg) translateY(2px); } }
+.kf-huepfen { animation: kf-huepfen 1.6s ease-in-out infinite; }
+@keyframes kf-huepfen { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.kf-winken { transform-box: fill-box; transform-origin: 0% 100%; animation: kf-winken 1.8s ease-in-out infinite; }
+@keyframes kf-winken { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-12deg); } 50% { transform: rotate(4deg); } 75% { transform: rotate(-10deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .ig-wippen, .ig-glanz, .ig-schweben, .ig-puls, .ig-rauch, .ig-blinken, .ig-welle, .ig-wehen, .kf-huepfen, .kf-winken { animation: none; }
+}

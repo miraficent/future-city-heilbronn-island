@@ -139,6 +139,7 @@ function Experimenta() {
       <path d="M250 76 250 112 438 127" fill="none" stroke="#e8ffff" strokeWidth="2" />
       <path d="M82 132 250 112 438 127" fill="none" stroke="#ffffff" strokeWidth="2" opacity=".75" />
       <path d="M250 112 270 185" stroke="#ffffff" strokeWidth="2" opacity=".8" />
+      <path d="M82 132 270 185 438 127 250 76Z" fill="#ffffff" className="ig-glanz" />
       <g clipPath="url(#ex-upperFront)" stroke="#e2f6ef" strokeWidth="2" opacity=".9">
         <path d="M111 140 120 179 M146 150 155 189 M181 160 190 199 M216 170 225 209 M251 180 260 219" />
         <path d="M88 151 270 202 M91 162 270 213" />
@@ -190,13 +191,13 @@ function Aim() {
         linksInhalt={<path d="M26 -58 V0 M52 -58 V0 M78 -58 V0 M104 -58 V0 M0 -29 H130" stroke="#e9e3ff" strokeWidth={2} opacity={0.8} />}
         rechtsInhalt={<path d="M24 -58 V0 M48 -58 V0 M72 -58 V0" stroke="#b6a6f2" strokeWidth={2} />}
       />
-      {/* Code-Schild auf dem Dach */}
-      <g transform={`matrix(1 ${LS} 0 1 150 128)`}>
+      {/* Code-Schild auf dem Dach (schwebt leicht) */}
+      <g className="ig-schweben"><g transform={`matrix(1 ${LS} 0 1 150 128)`}>
         <rect x={6} y={-6} width={6} height={22} fill={rand} />
         <rect x={66} y={-6} width={6} height={22} fill={rand} />
         <rect x={-6} y={-58} width={90} height={54} rx={10} fill="#6C4CE0" stroke={rand} strokeWidth={3} />
         <path d="M22 -44 L10 -31 L22 -18 M56 -44 L68 -31 L56 -18 M46 -48 L32 -14" stroke="#FFFFFF" strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
+      </g></g>
       <path d="M280 340 280 215" stroke="#ffffff" strokeWidth={3} opacity={0.7} />
     </g>
   );
@@ -237,7 +238,7 @@ function HausDerFamilie() {
       {/* Giebel rechts mit Herz */}
       <polygon points={pt([C0, C3, M0])} fill="#ead9c0" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
       <g transform={`translate(${M0[0]},${M0[1] + 38})`}>
-        <path d="M0 10 C-14 0 -16 -10 -9 -14 C-5 -16 -1 -14 0 -10 C1 -14 5 -16 9 -14 C16 -10 14 0 0 10 Z" fill="#FF6B6B" stroke={rand} strokeWidth={2.5} />
+        <path className="ig-puls" d="M0 10 C-14 0 -16 -10 -9 -14 C-5 -16 -1 -14 0 -10 C1 -14 5 -16 9 -14 C16 -10 14 0 0 10 Z" fill="#FF6B6B" stroke={rand} strokeWidth={2.5} />
       </g>
       {/* Dach vorn + Schornstein */}
       <polygon points={pt([C0, C1, M1, M0])} fill="url(#hdf-dach)" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
@@ -249,6 +250,10 @@ function HausDerFamilie() {
         })}
       </g>
       <Kiste x={170} y={210} a={18} b={16} h={30} links="#a8553a" rechts="#8a4430" oben="#6e3524" rand={rand} />
+      <g fill="#ffffff" stroke="#d9d2c4" strokeWidth={2}>
+        <circle className="ig-rauch" cx={167} cy={168} r={9} />
+        <circle className="ig-rauch ig-rauch--2" cx={167} cy={168} r={9} />
+      </g>
       {/* Garten: Bäume und Zaun */}
       <g stroke="#2f6b2f" strokeWidth={2}>
         <circle cx={410} cy={300} r={20} fill="#4E9A4A" />
@@ -293,6 +298,11 @@ function Ipai() {
       {/* Antenne */}
       <path d="M295 92 V54" stroke={rand} strokeWidth={4} strokeLinecap="round" />
       <circle cx={295} cy={50} r={6} fill="#F59E0B" stroke={rand} strokeWidth={2} />
+      <circle className="ig-blinken" cx={295} cy={50} r={11} fill="#F59E0B" opacity={0.5} />
+      <g fill="none" stroke="#2BB3A3" strokeWidth={4} strokeLinecap="round">
+        <path className="ig-welle" d="M281 36 Q295 22 309 36" />
+        <path className="ig-welle ig-welle--2" d="M273 28 Q295 6 317 28" />
+      </g>
       <path d="M300 95 300 265" stroke="#ffffff" strokeWidth={3} opacity={0.7} />
     </g>
   );
@@ -333,11 +343,14 @@ function Cosmos() {
       <polygon points="300,224 212,199 300,140" fill="url(#cos-dach)" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
       <polygon points="300,224 377,196 300,140" fill="#C27C06" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
       <circle cx={300} cy={136} r={7} fill="#6C4CE0" stroke={rand} strokeWidth={2} />
-      {/* Wimpelkette */}
+      <circle className="ig-blinken" cx={300} cy={136} r={12} fill="#6C4CE0" opacity={0.4} />
+      {/* Wimpelkette (weht leicht) */}
+      <g className="ig-wehen">
       <path d="M118 182 Q200 230 296 150" fill="none" stroke={rand} strokeWidth={2} />
       {[[140, 194, "#6C4CE0"], [168, 205, "#2BB3A3"], [198, 210, "#FF6B6B"], [228, 205, "#F59E0B"], [256, 190, "#5BB8C4"]].map(([wx, wy, c]) => (
         <polygon key={wx as number} points={`${wx},${wy} ${(wx as number) + 16},${(wy as number) - 2} ${(wx as number) + 7},${(wy as number) + 16}`} fill={c as string} stroke={rand} strokeWidth={1.5} />
       ))}
+      </g>
       {/* Bänke und Bäume */}
       <g stroke={rand} strokeWidth={2}>
         <polygon points={pt([[380, 330], [420, 316], [424, 322], [384, 336]])} fill="#7A4A2A" />
@@ -366,7 +379,7 @@ export function institutHoehe(id: string) {
 }
 
 /** Gebäude einer Einrichtung, Ursprung = Bodenmitte. Unbekannte Einrichtungen: großes Fachwerkhaus in ihrer Farbe. */
-export function InstitutGebaeude({ id, farbe, massstab = GEBAEUDE_MASSSTAB }: { id: string; farbe: string; massstab?: number }) {
+export function InstitutGebaeude({ id, farbe, massstab = GEBAEUDE_MASSSTAB, verzoegerung = 0 }: { id: string; farbe: string; massstab?: number; verzoegerung?: number }) {
   const g = GEBAEUDE[id];
   if (!g) {
     return (
@@ -377,8 +390,10 @@ export function InstitutGebaeude({ id, farbe, massstab = GEBAEUDE_MASSSTAB }: { 
     );
   }
   return (
-    <g transform={`scale(${massstab}) translate(${-g.ox},${-g.oy})`}>
-      <g.Zeichnung />
+    <g className="ig-wippen" style={{ animationDelay: `${-verzoegerung}s` }}>
+      <g transform={`scale(${massstab}) translate(${-g.ox},${-g.oy})`}>
+        <g.Zeichnung />
+      </g>
     </g>
   );
 }
