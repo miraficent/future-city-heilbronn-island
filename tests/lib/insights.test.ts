@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { altersgruppeFuer, angebotsMatrix, bereinigeBegriff, leererStand, lueckenRadar, pruefeSignal, pruefeStand, topFehlt, zaehle } from "@/lib/insights";
-import { META, oeffentlicheAngebote } from "@/lib/daten";
+import { META } from "@/lib/daten";
+import { beispielAngebote } from "../fixtures/angebote";
 
-describe("Angebotsmatrix aus echten Daten", () => {
-  const matrix = angebotsMatrix(oeffentlicheAngebote(), META.themen);
+describe("Angebotsmatrix aus Beispiel-Kursen", () => {
+  const matrix = angebotsMatrix(beispielAngebote(), META.themen);
 
   it("hat für jedes Thema jede Altersgruppe", () => {
     expect(matrix).toHaveLength(META.themen.length * 4);
@@ -57,7 +58,7 @@ describe("Signale", () => {
   });
 
   it("verbindet Nachfrage mit Angebot im Lücken-Radar", () => {
-    const matrix = angebotsMatrix(oeffentlicheAngebote(), META.themen);
+    const matrix = angebotsMatrix(beispielAngebote(), META.themen);
     const stand = zaehle(leererStand(), { art: "wunsch", thema: "gaming", gruppe: "6-8" }, "2026-11-14");
     const radar = lueckenRadar(matrix, stand);
     expect(radar.find((z) => z.thema === "gaming" && z.gruppe === "6-8")?.wuensche).toBe(1);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import kategorien from "@/data/categories.json";
-import { eigenesBild, erkenneAlter, erkenneKategorien, htmlZuText, zuLiveEvent, type MobilizonEvent } from "@/lib/mobilizon";
+import { bildSchluessel, eigenesBild, erkenneAlter, erkenneStandardbilder, erkenneKategorien, htmlZuText, zuLiveEvent, type MobilizonEvent } from "@/lib/mobilizon";
 import { isForKids } from "@/lib/events";
 import type { Category } from "@/types";
 
@@ -70,6 +70,42 @@ describe("Titelbild", () => {
     expect(eigenesBild("https://www.experimenta.science/bild.jpg", BASIS)).toBeNull();
     expect(eigenesBild(null, BASIS)).toBeNull();
     expect(zuLiveEvent(mz({ picture: null }), KAT, BASIS).image).toBeNull();
+  });
+
+  it("Standardbild der Gruppe (Avatar/Banner) wird zur Farbkachel – erkannt am Datei-Hash", () => {
+    const standard = new Set([bildSchluessel(`${BASIS}/media/28e8f7343589c050fcc9732bb2cee6c7.png?name=logo.png`)]);
+    const mitStandard = mz({ picture: { url: `${BASIS}/media/28e8f7343589c050fcc9732bb2cee6c7.png?name=anderer-name.png` } });
+    expect(zuLiveEvent(mitStandard, KAT, BASIS, standard).image).toBeNull();
+    expect(zuLiveEvent(mz({}), KAT, BASIS, standard).image).toBe(`${BASIS}/media/abc.jpg?name=bild.jpg`);
+  });
+});
+
+describe("Standardbilder der Gruppen", () => {
+  const STANDARD = `${BASIS}/media/28e8f7343589c050fcc9732bb2cee6c7.png`;
+  const FOTO = `${BASIS}/media/67068633c36383feca777a2a45085000.jpg`;
+  const ev = (uuid: string, title: string, url: string, width = 1920, height = 1005, gruppe = "aim") =>
+    mz({ uuid, title, attributedTo: { preferredUsername: gruppe }, picture: { url, metadata: { width, height } } });
+  // Banner ist dasselbe Motiv, von Mobilizon verkleinert neu gespeichert (1600×838, anderer Hash)
+  const gruppen = new Map([["aim", [{ schluessel: "7176fc21da3699fdebd472b66a05fbcd", verhaeltnis: 1600 / 838 }]]]);
+
+  it("gleiches Format wie das Gruppenbild und bei mehreren Veranstaltungen → Standardbild", () => {
+    const s = erkenneStandardbilder([ev("1", "Kurs A", STANDARD), ev("2", "Kurs B", STANDARD)], gruppen);
+    expect(s.has(bildSchluessel(STANDARD))).toBe(true);
+  });
+
+  it("eigenes Foto einer Veranstaltung mit mehreren Terminen bleibt ein Foto, auch im gleichen Format", () => {
+    expect(erkenneStandardbilder([ev("1", "Show", FOTO), ev("2", "Show", FOTO)], gruppen).size).toBe(0);
+  });
+
+  it("anderes Format, andere Gruppe oder ohne Gruppenbild → kein Standardbild", () => {
+    expect(erkenneStandardbilder([ev("1", "A", STANDARD, 1080, 1080), ev("2", "B", STANDARD, 1080, 1080)], gruppen).size).toBe(0);
+    expect(erkenneStandardbilder([ev("1", "A", STANDARD, 1920, 1005, "hdf"), ev("2", "B", STANDARD, 1920, 1005, "hdf")], gruppen).size).toBe(0);
+    expect(erkenneStandardbilder([ev("1", "A", STANDARD), ev("2", "B", STANDARD)], new Map()).size).toBe(0);
+  });
+
+  it("dieselbe Datei wie Avatar oder Banner → immer Standardbild", () => {
+    const gleich = new Map([["aim", [{ schluessel: bildSchluessel(STANDARD), verhaeltnis: null }]]]);
+    expect(erkenneStandardbilder([ev("1", "A", STANDARD)], gleich).has(bildSchluessel(STANDARD))).toBe(true);
   });
 });
 

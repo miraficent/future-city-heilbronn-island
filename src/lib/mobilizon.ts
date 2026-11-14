@@ -5,6 +5,8 @@
  * Kinder sehen ein Event, sobald ein Alter erkannt wurde (isForKids). Ohne erkanntes Alter → needsReview.
  * Eingeordnet wird nur mit Stichwörtern aus categories.json – keine KI, keine externen Dienste.
  * Bilder: nur das Titelbild, das die Instanz selbst ausliefert (/media/…) – Bilder fremder Seiten in der Beschreibung nie.
+ * Ist das Titelbild nur das Gruppenbild der Einrichtung (Avatar/Banner = Standardbild ohne eigenes Foto), zeigt die Kachel ihre Farbe
+ * (erkenneStandardbilder: Mobilizon speichert Gruppenbilder verkleinert neu, deshalb Seitenverhältnis + Mehrfachnutzung statt Dateivergleich).
  *
  * Die Umwandlung ist reine Logik (tests/lib/mobilizon.test.ts); nur ladeMobilizonEvents() greift aufs Netz zu.
  */
@@ -30,7 +32,7 @@ export type MobilizonEvent = {
   attributedTo: { preferredUsername: string } | null;
   organizerActor: { preferredUsername: string } | null;
   tags: { title: string }[];
-  picture: { url: string } | null;
+  picture: { url: string; metadata?: { width: number | null; height: number | null } | null } | null;
 };
 
 const ABFRAGE = `query ($page: Int, $limit: Int) {
@@ -42,7 +44,7 @@ const ABFRAGE = `query ($page: Int, $limit: Int) {
       attributedTo { preferredUsername }
       organizerActor { preferredUsername }
       tags { title }
-      picture { url }
+      picture { url metadata { width height } }
     }
   }
 }`;
@@ -127,7 +129,18 @@ export function eigenesBild(url: string | null | undefined, basis = MOBILIZON_UR
   }
 }
 
-export function zuLiveEvent(e: MobilizonEvent, kategorien: Category[], basis = MOBILIZON_URL): LiveEvent {
+/** Vergleichsschlüssel eines Mobilizon-Bildes: der Datei-Hash in /media/<hash>.<endung> (gleiches Bild = gleicher Hash) */
+export function bildSchluessel(url: string): string {
+  return url.match(/\/media\/([0-9a-f]{16,})/i)?.[1]?.toLowerCase() ?? url.split("?")[0]!;
+}
+
+/** Event-Titelbild, außer es ist fremd oder nur das Standardbild der Gruppe (dann null → Farbkachel) */
+export function eventBild(url: string | null | undefined, standardBilder: ReadonlySet<string>, basis = MOBILIZON_URL): string | null {
+  const bild = eigenesBild(url, basis);
+  return bild && !standardBilder.has(bildSchluessel(bild)) ? bild : null;
+}
+
+export function zuLiveEvent(e: MobilizonEvent, kategorien: Category[], basis = MOBILIZON_URL, standardBilder: ReadonlySet<string> = new Set()): LiveEvent {
   const html = e.description ?? "";
   const tags = e.tags.map((t) => t.title);
   const beschreibung = htmlZuText(html);
@@ -159,7 +172,7 @@ export function zuLiveEvent(e: MobilizonEvent, kategorien: Category[], basis = M
     end: e.endsOn ? new Date(e.endsOn).toISOString() : null,
     location: ort.slice(0, 80),
     cost: preis && /^(keine|kostenfrei|kostenlos|frei)$/i.test(preis) ? "kostenlos" : preis,
-    image: eigenesBild(e.picture?.url, basis),
+    image: eventBild(e.picture?.url, standardBilder, basis),
     story_kids: "", // ohne KI kein Kindertext – die Karte zeigt dann den Titel
     description_parents: beschreibung.slice(0, 600),
     registrationUrl: anmeldung,
@@ -186,10 +199,88 @@ export async function ladeMobilizonEvents(kategorien: Category[], signal?: Abort
     roh.push(...json.data.events.elements);
     if (json.data.events.elements.length < SEITE || roh.length >= json.data.events.total) break;
   }
+  const standardBilder = erkenneStandardbilder(roh, await ladeGruppenbilder(roh, basis, signal));
   const jetzt = Date.now();
   return roh
     .filter((e) => e.status !== "CANCELLED")
-    .map((e) => zuLiveEvent(e, kategorien, basis))
+    .map((e) => zuLiveEvent(e, kategorien, basis, standardBilder))
     .filter((e) => new Date(e.end ?? e.start).getTime() >= jetzt)
     .sort((a, b) => a.start.localeCompare(b.start));
+}
+
+export type Gruppenbild = { schluessel: string; verhaeltnis: number | null };
+
+/** Abweichung im Seitenverhältnis, bis zu der zwei Bilder als dasselbe Motiv gelten (verkleinert/neu gespeichert) */
+const VERHAELTNIS_TOLERANZ = 0.01;
+
+/**
+ * Welche Event-Titelbilder sind nur das Standardbild der Gruppe? (Ergebnis: Bild-Schlüssel)
+ * Mobilizon speichert hochgeladene Gruppenbilder verkleinert neu – Datei und Hash ändern sich. Deshalb gilt ein Titelbild als Standardbild, wenn
+ *  - es genau dieselbe Datei wie Avatar oder Banner der Gruppe ist, oder
+ *  - es bei mindestens zwei verschiedenen Veranstaltungen der Gruppe vorkommt UND das Seitenverhältnis von Avatar oder Banner hat.
+ * Ein eigenes Foto, das nur zu einer Veranstaltung gehört (auch mit mehreren Terminen), bleibt immer ein Foto.
+ */
+export function erkenneStandardbilder(events: MobilizonEvent[], gruppenbilder: ReadonlyMap<string, Gruppenbild[]>): Set<string> {
+  type Nutzung = { gruppe: string; schluessel: string; verhaeltnis: number | null; titel: Set<string> };
+  const nutzungen = new Map<string, Nutzung>();
+  for (const e of events) {
+    const gruppe = e.attributedTo?.preferredUsername;
+    if (!gruppe || !e.picture?.url) continue;
+    const schluessel = bildSchluessel(e.picture.url);
+    const { width, height } = e.picture.metadata ?? {};
+    const n = nutzungen.get(`${gruppe}|${schluessel}`) ?? { gruppe, schluessel, verhaeltnis: width && height ? width / height : null, titel: new Set<string>() };
+    n.titel.add(e.title.trim().toLowerCase());
+    nutzungen.set(`${gruppe}|${schluessel}`, n);
+  }
+  const standard = new Set<string>();
+  for (const { gruppe, schluessel, verhaeltnis, titel } of nutzungen.values()) {
+    const bilder = gruppenbilder.get(gruppe) ?? [];
+    const gleicheDatei = bilder.some((b) => b.schluessel === schluessel);
+    const gleichesFormat =
+      verhaeltnis !== null && bilder.some((b) => b.verhaeltnis !== null && Math.abs(b.verhaeltnis / verhaeltnis - 1) <= VERHAELTNIS_TOLERANZ);
+    if (gleicheDatei || (titel.size >= 2 && gleichesFormat)) standard.add(schluessel);
+  }
+  return standard;
+}
+
+/** Seitenverhältnis eines Bildes – im Browser über ein <img> (braucht kein CORS); ohne DOM (Tests, Node) unbekannt */
+function bildVerhaeltnis(url: string): Promise<number | null> {
+  if (typeof Image === "undefined") return Promise.resolve(null);
+  return new Promise((fertig) => {
+    const bild = new Image();
+    bild.referrerPolicy = "no-referrer";
+    bild.onload = () => fertig(bild.naturalHeight ? bild.naturalWidth / bild.naturalHeight : null);
+    bild.onerror = () => fertig(null);
+    bild.src = url;
+  });
+}
+
+/**
+ * Avatar und Banner aller beteiligten Gruppen (eine Abfrage) samt Seitenverhältnis – die Standardbilder der Einrichtungen.
+ * Schlägt das fehl, gibt es keine Standardbilder (dann zeigen alle Kacheln ihr Titelbild); die Events laden trotzdem.
+ */
+export async function ladeGruppenbilder(
+  events: MobilizonEvent[],
+  basis: string,
+  signal?: AbortSignal,
+  verhaeltnis: (url: string) => Promise<number | null> = bildVerhaeltnis,
+): Promise<Map<string, Gruppenbild[]>> {
+  const gruppen = [...new Set(events.map((e) => e.attributedTo?.preferredUsername).filter((g): g is string => !!g && /^[a-z0-9_.-]+$/i.test(g)))];
+  const ergebnis = new Map<string, Gruppenbild[]>();
+  if (gruppen.length === 0) return ergebnis;
+  const abfrage = `{ ${gruppen.map((g, i) => `g${i}: group(preferredUsername: ${JSON.stringify(g)}) { avatar { url } banner { url } }`).join(" ")} }`;
+  try {
+    const antwort = await fetch(`${basis}/api`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query: abfrage }), signal });
+    const json = (await antwort.json()) as { data?: Record<string, { avatar: { url: string } | null; banner: { url: string } | null } | null> };
+    await Promise.all(
+      gruppen.map(async (gruppe, i) => {
+        const g = json.data?.[`g${i}`];
+        const urls = [g?.avatar?.url, g?.banner?.url].filter((u): u is string => !!u && eigenesBild(u, basis) !== null);
+        ergebnis.set(gruppe, await Promise.all(urls.map(async (u) => ({ schluessel: bildSchluessel(u), verhaeltnis: await verhaeltnis(u) }))));
+      }),
+    );
+  } catch {
+    // keine Standardbilder bekannt
+  }
+  return ergebnis;
 }

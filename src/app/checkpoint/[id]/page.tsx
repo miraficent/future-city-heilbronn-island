@@ -20,6 +20,6 @@ export default async function Checkpoint({ params }: { params: Promise<{ id: str
   const { id } = await params;
   const ort = kartenOrte(META.quellen).find((o) => o.id === id);
   if (!ort) notFound();
-  // Nur Live-Events – der Browser lädt sie aus Mobilizon, solange läuft das Kind in den Raum
+  // Nur Live-Events – der Browser lädt sie aus Mobilizon
   return <CheckpointSeiteLive ort={ort} kategorien={kategorien as Category[]} />;
 }

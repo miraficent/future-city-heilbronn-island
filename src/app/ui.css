@@ -317,18 +317,6 @@
   transform: translateX(-50%); transform-origin: 50% 100%; animation: welt-figur 3s ease-in-out infinite; pointer-events: none;
   filter: drop-shadow(0 0 24px rgba(0, 0, 0, .35)); }
 @keyframes welt-figur { 0%, 100% { transform: translateX(-50%) rotate(0deg); } 50% { transform: translateX(-50%) rotate(1.2deg) translateY(-4px); } }
-/* Laden: das Kind geht in den Raum – Schritte wippen, das Gitter strömt vom Fluchtpunkt nach außen.
-   scale(1.6) = STUFE in checkpoint-seite.tsx, dann passt jede Querlinie nahtlos auf die nächste */
-.welt__gitter { transform-box: view-box; }
-.welt.ist-unterwegs .welt__gitter { animation: welt-gitter 0.9s linear infinite; }
-@keyframes welt-gitter { from { transform: scale(1); } to { transform: scale(1.6); } }
-.welt.ist-unterwegs .welt__figur { animation: welt-gehen 0.9s ease-in-out infinite; }
-@keyframes welt-gehen {
-  0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-  25% { transform: translateX(-50%) translateY(-10px) rotate(-2.5deg); }
-  50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-  75% { transform: translateX(-50%) translateY(-10px) rotate(2.5deg); }
-}
 
 .welt__eule { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40; color: var(--ink); animation: welt-eule .35s ease-out; }
 @keyframes welt-eule { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
@@ -350,5 +338,5 @@
   .welt__figur { position: fixed; height: 19vh; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .welt__kachel, .welt__figur, .welt__eule, .welt.ist-unterwegs .welt__gitter, .welt.ist-unterwegs .welt__figur { animation: none; }
+  .welt__kachel, .welt__figur, .welt__eule { animation: none; }
 }

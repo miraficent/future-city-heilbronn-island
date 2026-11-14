@@ -2,7 +2,7 @@
 
 /**
  * Kinderkarte und Einrichtungsseiten zeigen nur Live-Events aus Mobilizon (im Browser geladen) –
- * keine Kurse, keine Platzhalter. Solange geladen wird, ist der Raum leer und das Kind läuft hinein.
+ * keine Kurse, keine Platzhalter. Solange geladen wird, bleibt der Raum leer.
  * Sicherheit bleibt bei eventKarten() → isForKids(): nur Events mit erkanntem Alter bis 14.
  */
 import { useMemo } from "react";
