@@ -31,7 +31,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaehl
   ].sort((a, b) => a.y - b.y);
 
   return (
-    <svg viewBox={`0 0 ${BILD.w} ${BILD.h}`} preserveAspectRatio="xMidYMid meet" className="kr-karte kr-bildkarte" role="group" aria-label="Karte von Heilbronn">
+    <svg viewBox={`0 0 ${BILD.w} ${BILD.h}`} preserveAspectRatio="xMidYMid slice" className="kr-karte kr-bildkarte" role="group" aria-label="Karte von Heilbronn">
       <image href={BILD.src} x={0} y={0} width={BILD.w} height={BILD.h} />
 
       {stehend.map((s) =>

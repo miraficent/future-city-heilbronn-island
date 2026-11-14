@@ -20,10 +20,12 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
   const router = useRouter();
   const orte = useMemo(() => bildOrte(kartenOrte), [kartenOrte]);
   const rahmen = useRef<HTMLDivElement>(null);
-  // Handy: Karte ist breiter als der Bildschirm – mittig starten
+  // Karte ist größer als der Bildschirm – mittig starten
   useEffect(() => {
     const el = rahmen.current;
-    if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    if (!el) return;
+    el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    el.scrollTop = (el.scrollHeight - el.clientHeight) / 2;
   }, []);
   const [alter, setAlter] = useKinderAlter();
   const minute = useMinute();
@@ -55,7 +57,6 @@ export function KartenSeite({ orte: kartenOrte, karten }: { orte: KartenOrt[]; k
   return (
     <AppShell modus="kinder" voll>
       <div className="kinder-karte" ref={rahmen}>
-        <div className="kinder-karte__grund" aria-hidden="true" />
         <BildKarte
           orte={orte}
           zahlen={zahlen}
