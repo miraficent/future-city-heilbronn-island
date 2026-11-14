@@ -291,6 +291,12 @@
   66% { transform: rotate(calc(var(--r) - 0.8deg)) translateY(2px); }
 }
 .welt__kachel-bild { position: absolute; top: 10px; right: 12px; opacity: .9; }
+/* Titelbild aus Mobilizon statt Farbfläche; Verlauf unten hält Titel und Zeit lesbar */
+.welt__kachel-foto { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.welt__kachel:has(.welt__kachel-foto:not([hidden]))::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .35) 45%, transparent 75%); }
+.welt__kachel-titel, .welt__kachel-zeit { position: relative; z-index: 2; }
+.welt__kachel-herz { z-index: 2; }
 .welt__kachel-bild .symbol { width: clamp(56px, 5vw, 84px); height: auto; color: var(--white); filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .2)); }
 .welt__kachel-titel { align-self: flex-start; max-width: 92%; padding: 4px 10px; border-radius: 4px; transform: rotate(-2deg);
   background: rgba(0, 0, 0, .28); font: 700 clamp(16px, 1.3vw, 21px)/1.2 "Baloo 2", sans-serif;
@@ -311,6 +317,18 @@
   transform: translateX(-50%); transform-origin: 50% 100%; animation: welt-figur 3s ease-in-out infinite; pointer-events: none;
   filter: drop-shadow(0 0 24px rgba(0, 0, 0, .35)); }
 @keyframes welt-figur { 0%, 100% { transform: translateX(-50%) rotate(0deg); } 50% { transform: translateX(-50%) rotate(1.2deg) translateY(-4px); } }
+/* Laden: das Kind geht in den Raum – Schritte wippen, das Gitter strömt vom Fluchtpunkt nach außen.
+   scale(1.6) = STUFE in checkpoint-seite.tsx, dann passt jede Querlinie nahtlos auf die nächste */
+.welt__gitter { transform-box: view-box; }
+.welt.ist-unterwegs .welt__gitter { animation: welt-gitter 0.9s linear infinite; }
+@keyframes welt-gitter { from { transform: scale(1); } to { transform: scale(1.6); } }
+.welt.ist-unterwegs .welt__figur { animation: welt-gehen 0.9s ease-in-out infinite; }
+@keyframes welt-gehen {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  25% { transform: translateX(-50%) translateY(-10px) rotate(-2.5deg); }
+  50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  75% { transform: translateX(-50%) translateY(-10px) rotate(2.5deg); }
+}
 
 .welt__eule { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40; color: var(--ink); animation: welt-eule .35s ease-out; }
 @keyframes welt-eule { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
@@ -332,5 +350,5 @@
   .welt__figur { position: fixed; height: 19vh; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .welt__kachel, .welt__figur, .welt__eule { animation: none; }
+  .welt__kachel, .welt__figur, .welt__eule, .welt.ist-unterwegs .welt__gitter, .welt.ist-unterwegs .welt__figur { animation: none; }
 }

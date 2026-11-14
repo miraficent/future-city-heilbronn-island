@@ -3,9 +3,6 @@ import { ElternInfos } from "@/components/eltern-infos";
 import { KindWuensche } from "@/components/kind-wuensche";
 import { Seitenrahmen } from "@/components/seitenrahmen";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
-import liveEvents from "@/data/events.json";
-import type { LiveEvent } from "@/types";
-import { isForKids } from "@/lib/events";
 
 export const metadata = { title: "Angebote für Familien und Fachkräfte" };
 
@@ -16,7 +13,7 @@ export default function Eltern() {
   return (
     <Seitenrahmen modus="eltern">
       <main id="inhalt">
-        <KindWuensche angebote={angebote} liveEvents={(liveEvents as LiveEvent[]).filter(isForKids)} quellenNamen={quellenNamen} />
+        <KindWuensche angebote={angebote} quellenNamen={quellenNamen} />
         <Entdecker eingebettet modus="eltern" angebote={angebote} meta={META} jetzt={META.aktualisiert} />
         <ElternInfos />
       </main>

@@ -33,7 +33,7 @@ export type LiveEvent = {
   end: string | null;
   location: string;
   cost: string | null;
-  /** Bild-URL der Quelle (wird aus Datenschutzgründen nicht nachgeladen, siehe docs/data-pipeline.md) */
+  /** Titelbild – nur von der eigenen Mobilizon-Instanz (src/lib/mobilizon.ts), sonst null */
   image: string | null;
   /** Höchstens 2 kurze Sätze für Kinder */
   story_kids: string;

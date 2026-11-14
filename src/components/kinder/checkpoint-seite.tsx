@@ -45,7 +45,11 @@ const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 35, y: 22, s: 0.78, r: 1 },
 ];
 
-export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[] }) {
+/**
+ * laedt: die Live-Events sind noch unterwegs – der Raum bleibt leer, das Kind läuft hinein
+ * (Boden- und Deckengitter strömen ihm entgegen, siehe .welt.ist-unterwegs in ui.css).
+ */
+export function CheckpointSeite({ ort, karten, kategorien, laedt = false }: { ort: KartenOrt; karten: KinderKarte[]; kategorien: Category[]; laedt?: boolean }) {
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
@@ -82,7 +86,7 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
 
   return (
     <AppShell modus="kinder" voll>
-      <div className="welt" style={raumStil}>
+      <div className={`welt${laedt ? " ist-unterwegs" : ""}`} style={raumStil} aria-busy={laedt}>
         <WeltRaum licht={welt.licht} />
 
         <div className="welt__oben">
@@ -90,7 +94,9 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
           <h1 className="welt__schild">{ort.name}</h1>
         </div>
 
-        {vorhanden.length > 1 && (
+        {laedt && <p role="status" className="sr-only">Unterwegs zu {ort.name} …</p>}
+
+        {!laedt && vorhanden.length > 1 && (
           <div className="welt__themen" role="group" aria-label="Themen">
             <button type="button" className="welt__thema" aria-pressed={kategorie === null} onClick={() => waehleKategorie(null)}>
               <Symbol name="star" /> Alles
@@ -104,7 +110,7 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
           </div>
         )}
 
-        {passend.length === 0 ? (
+        {laedt ? null : passend.length === 0 ? (
           <div className="welt__leer">
             <EmptyState text="Hier ist gerade nichts – schau mal in einem anderen Haus!">
               <Button variante="primary" groesse="kids" icon="map" href="/kinder/">Zur Karte</Button>
@@ -125,9 +131,16 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
                 <div key={k.id} role="listitem" className="welt__platz" style={stil}>
                   <button type="button" className={`welt__kachel${offen?.id === k.id ? " ist-offen" : ""}`} onClick={() => oeffne(k)}
                     aria-label={`${k.titel}, ${wochentag(k.start)}, ${alterText(k)} Jahre${k.gratis ? ", gratis" : ""}${gewuenscht ? ", gewünscht" : ""}`}>
-                    <span className="welt__kachel-bild" aria-hidden="true">
-                      <Symbol name={c?.icon ?? "star"} />
-                    </span>
+                    {k.bild ? (
+                      // Plain <img>: kommt von der eigenen Mobilizon-Instanz, next/image bräuchte Server oder remotePatterns
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="welt__kachel-foto" src={k.bild} alt="" loading="lazy" decoding="async" referrerPolicy="no-referrer"
+                        onError={(ev) => { ev.currentTarget.hidden = true; }} />
+                    ) : (
+                      <span className="welt__kachel-bild" aria-hidden="true">
+                        <Symbol name={c?.icon ?? "star"} />
+                      </span>
+                    )}
                     <span className="welt__kachel-titel">{k.titel}</span>
                     <span className="welt__kachel-zeit" aria-hidden="true">
                       <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kurzTag(k.start)} · {alterText(k)} J.
@@ -140,7 +153,7 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
           </div>
         )}
 
-        {seiten > 1 && (
+        {!laedt && seiten > 1 && (
           <>
             <button type="button" className="welt__blaettern welt__blaettern--links" aria-label="Vorherige Kacheln"
               disabled={aktuelleSeite === 0} onClick={() => setSeite(aktuelleSeite - 1)}>
@@ -182,12 +195,18 @@ export function CheckpointSeite({ ort, karten, kategorien }: { ort: KartenOrt; k
   );
 }
 
+/** Verhältnis zweier benachbarter Querlinien – muss zu scale() in @keyframes welt-gitter (ui.css) passen */
+const STUFE = 1.6;
+
 /** Leuchtender Raum: Boden- und Deckengitter laufen zur Mitte, dazu ein weicher Lichtschein */
 function WeltRaum({ licht }: { licht: string }) {
   const W = 1600, H = 900, FX = 800, FY = 400;
   const strahlen = Array.from({ length: 17 }, (_, i) => -1600 + i * 200);
-  const boden = [430, 470, 530, 610, 720, 870];
-  const decke = [370, 335, 285, 215, 125, 10];
+  // Querlinien im festen Verhältnis zum Horizont: skaliert man das Gitter um den Fluchtpunkt um STUFE,
+  // landet jede Linie genau auf der nächsten – so läuft das Gitter beim Laden nahtlos (das Kind geht vorwärts)
+  const abstaende = Array.from({ length: 10 }, (_, i) => 12 * STUFE ** i).filter((d) => d < H * STUFE);
+  const boden = abstaende.map((d) => FY + d);
+  const decke = abstaende.map((d) => FY - d);
   return (
     <svg className="welt__raum" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
@@ -199,11 +218,11 @@ function WeltRaum({ licht }: { licht: string }) {
       </defs>
       <rect width={W} height={H} fill="var(--welt-grund)" />
       <rect width={W} height={H} fill="url(#welt-schein)" />
-      <g stroke={licht} strokeWidth={2.5} opacity={0.75}>
-        {strahlen.map((x) => <line key={`b${x}`} x1={FX} y1={FY} x2={x * 1.2 + FX} y2={H} />)}
-        {strahlen.map((x) => <line key={`d${x}`} x1={FX} y1={FY} x2={x * 1.2 + FX} y2={0} />)}
-        {boden.map((y) => <line key={`by${y}`} x1={0} y1={y} x2={W} y2={y} />)}
-        {decke.map((y) => <line key={`dy${y}`} x1={0} y1={y} x2={W} y2={y} />)}
+      <g className="welt__gitter" stroke={licht} strokeWidth={2.5} opacity={0.75} style={{ transformOrigin: `${FX}px ${FY}px` }}>
+        {strahlen.map((x) => <line key={`b${x}`} x1={FX} y1={FY} x2={x * 1.2 + FX} y2={H} vectorEffect="non-scaling-stroke" />)}
+        {strahlen.map((x) => <line key={`d${x}`} x1={FX} y1={FY} x2={x * 1.2 + FX} y2={0} vectorEffect="non-scaling-stroke" />)}
+        {boden.map((y) => <line key={`by${y}`} x1={-W} y1={y} x2={2 * W} y2={y} vectorEffect="non-scaling-stroke" />)}
+        {decke.map((y) => <line key={`dy${y}`} x1={-W} y1={y} x2={2 * W} y2={y} vectorEffect="non-scaling-stroke" />)}
       </g>
       {/* dunkles Band am Horizont, damit die Kacheln davor gut lesbar sind */}
       <rect x={0} y={FY - 40} width={W} height={80} fill="var(--welt-grund)" opacity={0.85} />

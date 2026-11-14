@@ -3,10 +3,11 @@
 /**
  * Eltern-Seite: „Das möchte Ihr Kind besuchen“ – was das Kind in Mini-Heilbronn gewählt hat
  * (Wisch-Karten aus den Angeboten und „Da will ich hin!“ bei Live-Events).
- * Nur in dieser Browsersitzung, auf diesem Gerät.
+ * Nur in dieser Browsersitzung, auf diesem Gerät. Die Live-Events kommen bei jedem Aufruf frisch aus Mobilizon.
  */
 import type { Angebot } from "@/lib/angebot";
-import type { LiveEvent } from "@/types";
+import { isForKids } from "@/lib/events";
+import { useLiveEvents } from "@/lib/live-events";
 import { useSammlung } from "./sammlung";
 import { Button, Card } from "./ui";
 
@@ -16,8 +17,9 @@ const uhrzeit = (iso: string) => new Date(iso).toLocaleTimeString("de-DE", { tim
 
 type Eintrag = { id: string; titel: string; ort: string; start: string; kosten: string; url: string; beispiel: boolean };
 
-export function KindWuensche({ angebote, liveEvents, quellenNamen }: { angebote: Angebot[]; liveEvents: LiveEvent[]; quellenNamen: Record<string, string> }) {
+export function KindWuensche({ angebote, quellenNamen }: { angebote: Angebot[]; quellenNamen: Record<string, string> }) {
   const merk = useSammlung("kind");
+  const liveEvents = useLiveEvents().events.filter(isForKids);
   const liste: Eintrag[] = [
     ...angebote.filter((a) => merk.ids.includes(a.id)).map((a) => ({
       id: a.id, titel: a.titel, ort: quellenNamen[a.quelle] ?? a.quelle, start: a.termine[0]!.start, kosten: a.kosten.text, url: a.url, beispiel: false,
