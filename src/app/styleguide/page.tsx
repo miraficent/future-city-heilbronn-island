@@ -6,7 +6,7 @@ export const metadata = { title: "Styleguide – Heilbronn Island" };
 /** Alle Farben aus DESIGN.md § Colors – Anzeige über die CSS-Variablen, keine eigenen Werte */
 const FARBEN = [
   "night", "night-2", "sea", "sea-shallow", "sea-deep", "land", "land-dark", "sand", "cliff", "paper",
-  "primary", "primary-dark", "accent", "accent-dark", "wish", "wish-dark", "ink", "ink-soft", "snow", "success", "card-border", "roof",
+  "primary", "primary-dark", "accent", "accent-dark", "wish", "wish-dark", "ink", "ink-soft", "snow", "success", "card-border", "roof", "timber",
 ];
 
 /** Styleguide (DESIGN.md § Pages 9): Tokens und Bausteine auf einen Blick */

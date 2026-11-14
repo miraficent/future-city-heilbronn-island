@@ -31,6 +31,7 @@ export const F = {
   glas: "#3B4CCA", // experimenta
   glasHell: "#5B6BD6", // experimenta Facetten
   nacht: "#1E2A5A", // night
+  balken: "#7A4A2A", // timber – Fachwerk
 } as const;
 
 export type Pt = [number, number];

@@ -82,6 +82,8 @@
   --card-border: #E7E2D6;
   /* Dächer der Stadt (DESIGN.md § Map, Start-Insel) */
   --roof: #E07A4F;
+  /* Fachwerk-Balken (DESIGN.md Projektentscheidung 10) */
+  --timber: #7A4A2A;
 
   /* Radien und Abstände (DESIGN.md § Shape) */
   --radius-card: 24px;

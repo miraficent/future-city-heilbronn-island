@@ -21,6 +21,9 @@ Read this file together with CLAUDE.md before changing any UI.
 >    `/checkpoint/[id]/`, `/mitmachen/`, `/styleguide/`.
 > 9. **Zusätzliche Tokens:** `card-border` #E7E2D6 (Kartenrand, stand schon in § Depth) und `roof` #E07A4F
 >    (Dächer, stand schon in § 3).
+> 10. **Stadthäuser = Fachwerkhäuser** (eigene flache Zeichnung, `src/components/kinderreise/fachwerkhaus.tsx`,
+>    Einzeldatei `public/grafik/fachwerkhaus.svg`). Neuer Token `timber` #7A4A2A für die Balken.
+>    Weniger Häuser als zuvor, damit die Karte ruhig bleibt.
 Goal: ONE consistent look for the whole website: map, kids pages, parent dashboard, games.
 Do not invent new colors, fonts or component styles. If something is missing, add it here first.
 

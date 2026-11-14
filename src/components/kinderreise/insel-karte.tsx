@@ -9,6 +9,7 @@ import {
   ALTSTADT_HAEUSER, AUSSICHTSTURM, BAEUME, BRUECKEN, F, HAUPTBAHNHOF, KILIANSKIRCHE, NECKAR, NEUER_ORT,
   PARKS, TEICH, WEGE, WEINBERG, punktAufKurve, type KartenOrt, type Kurve, type Pt,
 } from "@/lib/kinderkarte";
+import { Fachwerkhaus } from "./fachwerkhaus";
 import { GEBAEUDE_HOEHE, Gebaeude, PinZeichen } from "./gebaeude";
 
 const RAND = { x: -700, y: -450, w: 2600, h: 1700 };
@@ -41,11 +42,11 @@ function verteileHaeuser(orte: KartenOrt[]) {
   const nah = (punkte: Pt[], x: number, y: number, d: number) => punkte.some(([px, py]) => Math.hypot(px - x, py - y) < d);
   const r = zufall(7);
   const liste: { x: number; y: number; dach: string; s: number }[] = [];
-  for (let y = RAND.y + 30; y < RAND.y + RAND.h; y += 40) {
-    for (let x = RAND.x + 20; x < RAND.x + RAND.w; x += 44) {
+  for (let y = RAND.y + 30; y < RAND.y + RAND.h; y += 52) {
+    for (let x = RAND.x + 20; x < RAND.x + RAND.w; x += 56) {
       const hx = x + (r() - 0.5) * 18;
       const hy = y + (r() - 0.5) * 14;
-      if (r() < 0.32) continue; // Lücken = Gärten
+      if (r() < 0.55) continue; // Lücken = Gärten (DESIGN.md: weniger Häuser, ruhige Karte)
       if (Math.abs(x - 600) > 900 && r() < 0.5) continue; // außen lockerer
       if (Math.abs(hx - BAHN_X) < 45 || hx < BAHN_X - 120) continue; // Bahn + Wald links
       if (nah(fluss, hx, hy, 52) || nah(wege, hx, hy, 20)) continue;
@@ -185,12 +186,8 @@ export function InselKarte({ orte, zahlen, heute, aktiv, figur, gewaehlt, onWaeh
             <circle cx={-11} cy={-78} r={6} fill={F.welle} />
           </g>
         ) : (
-          <g key={i} transform={`translate(${h.x},${h.y}) scale(${h.s})`}>
-            <polygon points="11,0 11,-18 17,-22 17,-4" fill={F.sand} />
-            <rect x={-11} y={-18} width={22} height={18} fill={F.wand} />
-            <rect x={-6} y={-13} width={5} height={5} fill={F.welle} />
-            <polygon points="0,-31 13,-18 19,-22 6,-35" fill={F.klippe} />
-            <polygon points="-13,-18 0,-31 13,-18" fill={h.dach} />
+          <g key={i} transform={`translate(${h.x},${h.y}) scale(${h.s * 0.8})`}>
+            <Fachwerkhaus dach={h.dach} />
           </g>
         ),
       )}
