@@ -54,7 +54,6 @@ export function GeteilteSammlung({ angebote, meta }: { angebote: Angebot[]; meta
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Button variante="primary" icon="search" href="/eltern/#suche">Alle Angebote durchsuchen</Button>
-        <Button variante="ghost" icon="map" href="/einrichtungen/">Orte in Heilbronn</Button>
       </div>
       <p className="el-stand">Der Link enthält nur Kennungen der Angebote – keine Namen, kein Alter, keine anderen Daten.</p>
     </main>
