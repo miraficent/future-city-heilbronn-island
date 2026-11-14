@@ -23,6 +23,7 @@ import { StadtKulisse, StadtLeben } from "./stadt-grafik";
 import { StartAuswahl } from "./start-auswahl";
 import { ThemenSymbol } from "./themen-symbol";
 import { ZeigEltern } from "./zeig-eltern";
+import { aktivitaetenFuer, useSpielPlugins } from "@/lib/plugin-client";
 
 const TASTEN: Record<string, Punkt> = {
   ArrowUp: { x: 0, y: -1 }, w: { x: 0, y: -1 },
@@ -95,6 +96,9 @@ function Fensterrahmen({ titel, kennung, offen, schliessen, kopfbild, children, 
 }
 
 export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Angebot[]; meta: Meta; jetzt: string }) {
+  // Bis `pluginsGeladen` zeigt das Haus keine Aufgabe, damit niemand ein eingebautes
+  // Spiel beginnt, das gleich darauf durch das Plugin ersetzt wird.
+  const { plugins, geladen: pluginsGeladen } = useSpielPlugins();
   const stadt = useMemo(() => erzeugeStadt(STATIONEN), []);
   const [bereit, setBereit] = useState(false);
   const [figurId, setFigurId] = useState(FIGUREN[0]!.id);
@@ -141,7 +145,8 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
   const teile = useMemo(() => mitTeil.map((s) => s.teil), [mitTeil]);
   const alleTeile = teile.length === STATIONEN.length;
   const nah = nahesHaus(stadt, position);
-  const station = STATIONEN.find((s) => s.id === hausId) ?? STATIONEN[0]!;
+  const basisStation = STATIONEN.find((s) => s.id === hausId) ?? STATIONEN[0]!;
+  const station = { ...basisStation, aktivitaeten: aktivitaetenFuer(plugins, basisStation) };
   const klein = stand.alter <= 8;
   const geschichte = station.geschichte[klein ? "klein" : "gross"];
   const aktivitaet = station.aktivitaeten[phase] ?? station.aktivitaeten[0]!;
@@ -671,7 +676,9 @@ export function Spielwelt({ angebote, meta, jetzt: startJetzt }: { angebote: Ang
             })}
           </nav>
           <div className="aufgabe-flaeche">
-            <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} />
+            {pluginsGeladen
+              ? <Lernaufgabe key={`${station.id}-${stufe}-${phase}`} aktivitaet={aktivitaet} stufe={stufe} geschafft={geschafft} />
+              : <p role="status">Aufgabe wird vorbereitet …</p>}
             <AnimatePresence>
               {belohnung && (
                 <motion.div className="belohnung" initial={{ scale: 0.4, opacity: 0, rotate: -8 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} exit={{ scale: 0.6, opacity: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16 }}>

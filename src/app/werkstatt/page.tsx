@@ -12,6 +12,7 @@ export default function WerkstattSeite() {
       <main id="inhalt" className="mx-auto max-w-7xl px-5 pb-16 pt-12 sm:px-8">
         <p className="font-mono text-xs">FÜR EINRICHTUNGEN · PROTOTYP</p>
         <h1 className="mt-5 max-w-3xl font-display text-4xl font-extrabold">Lernhaus-Werkstatt</h1>
+        <p className="mt-4"><Link href="/admin/" className="underline">Admin-Portal: Spielplugins hochladen und veröffentlichen</Link></p>
         <div className="lesetext">
           <p>
             Jede Einrichtung gestaltet ihr Haus in der Spielwelt selbst: Texte, Farbe, Gebäude und welche Lernmodule in welcher

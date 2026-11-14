@@ -5,9 +5,8 @@ import { z } from "zod";
  * `konfiguration/checkpoints/<id>.json`: Name, Farbe, Gebäudegrafik, Geschichte und
  * welche Lernmodule in welcher Reihenfolge erscheinen.
  *
- * Diese Datei enthält nur Typen, die Modulliste und das Prüfschema. Zur Laufzeit
- * wird nichts validiert (die Spielwelt lädt die JSON-Dateien direkt); die Prüfung
- * läuft in `tests/lib/checkpoint.test.ts`, also bei `npm test`.
+ * Diese Datei enthält Typen, die Modulliste und das Prüfschema. Eingebaute
+ * Checkpoints werden in Tests geprüft; hochgeladene Plugins zusätzlich zur Laufzeit.
  */
 
 /**
@@ -25,11 +24,12 @@ export const MODULE = {
   "level-bau": { name: "Spiellevel bauen", varianten: 3 },
   /** Demo-Lektion: Folien und Abschlussfrage stehen vollständig in der Checkpoint-Datei. */
   lektion: { name: "Demo-Lektion", varianten: 1 },
+  plugin: { name: "HTML-Spielplugin", varianten: 1 },
 } as const satisfies Record<string, { name: string; varianten: number }>;
 
 export type ModulId = keyof typeof MODULE;
 /** Module, deren Inhalt im Code vorbereitet ist; die Datei wählt nur Modul und Variante. */
-const CODE_MODULE = Object.keys(MODULE).filter((m) => m !== "lektion") as [Exclude<ModulId, "lektion">, ...Exclude<ModulId, "lektion">[]];
+const CODE_MODULE = Object.keys(MODULE).filter((m) => m !== "lektion" && m !== "plugin") as [Exclude<ModulId, "lektion" | "plugin">, ...Exclude<ModulId, "lektion" | "plugin">[]];
 
 /** Eingebaute Bildmotive (SVG, siehe `AufgabenBild`). */
 export const MOTIVE = ["ball", "rad", "fenster", "block", "frage", "schild", "gruppe", "sonne", "mond", "metall", "holz", "gummi", "lampe", "batterie"] as const;
@@ -83,7 +83,11 @@ const LektionSchema = z.strictObject({
   abschlussfrage: FrageSchema.optional(),
 });
 
-export const AktivitaetSchema = z.discriminatedUnion("modul", [ModulAktivitaetSchema, LektionSchema]);
+export const AktivitaetSchema = z.discriminatedUnion("modul", [ModulAktivitaetSchema, LektionSchema, z.strictObject({
+  titel: text,
+  modul: z.literal("plugin"),
+  html: z.string().min(1).max(400_000),
+})]);
 
 export const CheckpointSchema = z
   .object({
@@ -104,7 +108,7 @@ export const CheckpointSchema = z
   })
   .superRefine((c, ctx) => {
     c.aktivitaeten.forEach((a, i) => {
-      if (a.modul === "lektion") return;
+      if (a.modul === "lektion" || a.modul === "plugin") return;
       const max = MODULE[a.modul].varianten;
       if ((a.variante ?? 0) >= max) {
         ctx.addIssue({ code: "custom", path: ["aktivitaeten", i, "variante"], message: `Modul „${a.modul}“ kennt nur die Varianten 0–${max - 1}.` });

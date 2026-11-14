@@ -6,6 +6,7 @@ import { useVorlesen } from "@/lib/vorlesen";
 import type { Richtung } from "@/lib/spiel";
 import { Symbol } from "../symbol";
 import { PixelBild, PixelGrafik } from "./pixel-grafik";
+import { HtmlPlugin } from "./html-plugin";
 const DREHUNG:Record<Richtung,number>={rechts:0,runter:90,links:180,hoch:270};
 export function AufgabenBild({option}:{option:BildOption}){
   const farbe=option.farbe??"#ed805c";
@@ -106,6 +107,7 @@ function Lektion({lektion,stufe,geschafft}:{lektion:LektionDaten;stufe:Stufe;ges
 type ModulProps={aktivitaet:Aktivitaet;stufe:Stufe;variante:number;geschafft:()=>void};
 /** Welche Ansicht zu welchem Lernmodul gehört. Ein fehlender Eintrag ist ein Typfehler. */
 const MODUL_ANSICHT:Record<ModulId,(p:ModulProps)=>React.ReactElement>={
+  plugin:({aktivitaet,stufe,geschafft})=>aktivitaet.modul==="plugin"?<HtmlPlugin html={aktivitaet.html} titel={aktivitaet.titel} stufe={stufe} geschafft={geschafft}/>:<></>,
   "roboter-code":({stufe,variante,geschafft})=><CodeAufgabe stufe={stufe} phase={variante} geschafft={geschafft}/>,
   "muster-wahl":({stufe,variante,geschafft})=><WahlAufgabe mission={kiMission(stufe,variante)} geschafft={geschafft}/>,
   "material-wahl":({stufe,geschafft})=><WahlAufgabe mission={materialMission(stufe)} geschafft={geschafft}/>,

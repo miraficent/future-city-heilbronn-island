@@ -4,6 +4,15 @@ Ein funktionsfähiger Web-Prototyp für die aim-Challenge „Learning Guide“. 
 
 ## Website öffnen
 
+**Neu: Spielplugins für alle Besucher:** `/admin/` bietet Upload, Vorschau,
+Veröffentlichung und Wiederherstellung pro Einrichtung. Dafür `COSMOS_ADMIN_PASSWORD`
+in `.env.local` setzen und **`npm.cmd run dev`** oder **`npm.cmd run build` +
+`npm.cmd start`** verwenden (http://localhost:3000/admin/).
+Ein beschreibbares, dauerhaftes `COSMOS_PLUGIN_DIR` ist für Hosting erforderlich.
+Format und Betrieb: [docs/spielplugins.md](docs/spielplugins.md).
+Die statische Demo in `out/` (siehe unten) funktioniert weiterhin, zeigt aber immer
+die eingebauten Spiele; Upload und Veröffentlichung gibt es nur mit Node.js-Server.
+
 **Fertige lokale Webansicht: http://localhost:4173/**
 
 **Direkt in die Spielwelt: http://localhost:4173/kind/** · **Heilbronn-Karte: http://localhost:4173/einrichtungen/**
