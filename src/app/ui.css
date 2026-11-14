@@ -381,3 +381,11 @@
 @media (prefers-reduced-motion: reduce) {
   .start__stern, .start__bild, .start__bild img, .start__eule, .start__eule .owl-fluegel { animation: none; }
 }
+
+/* Karte: Einrichtung ohne Veranstaltungen „schläft“ – Zzz steigen sanft auf */
+.kr-zzz__z { font: 800 28px/1 "Baloo 2", sans-serif; fill: var(--white); stroke: var(--night); stroke-width: 5px; paint-order: stroke;
+  transform-box: fill-box; transform-origin: center; animation: kr-zzz 3s ease-in-out infinite; }
+.kr-zzz__z--2 { font-size: 38px; animation-delay: .6s; }
+.kr-zzz__z--3 { font-size: 50px; animation-delay: 1.2s; }
+@keyframes kr-zzz { 0% { opacity: 0; transform: translate(6px, 10px) scale(.6) rotate(-10deg); } 30%, 70% { opacity: 1; } 100% { opacity: 0; transform: translate(-6px, -12px) scale(1.1) rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) { .kr-zzz__z { animation: none; opacity: 1; } }

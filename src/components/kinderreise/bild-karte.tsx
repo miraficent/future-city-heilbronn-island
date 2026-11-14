@@ -67,7 +67,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
             className={`kr-ort${aktiv !== null && !aktiv.has(o.id) ? " ist-gedimmt" : ""}${gewaehlt === o.id ? " ist-gewaehlt" : ""}`}
             role="button"
             tabIndex={0}
-            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : ""}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
+            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : ": schläft gerade, keine Veranstaltungen"}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
             onClick={waehle}
             onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), waehle())}
           >
@@ -85,10 +85,17 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, gewaehl
                   <polygon className="kr-funkeln" points="0,-16 4.7,-5 16,-4.9 7,2.5 10,14 0,7.4 -10,14 -7,2.5 -16,-4.9 -4.7,-5" fill={F.orange} stroke="#FFFFFF" strokeWidth={3} strokeLinejoin="round" />
                 </g>
               )}
-              {zahl > 0 && (
+              {zahl > 0 ? (
                 <g transform="translate(-22,-72)">
                   <circle r={15} fill={F.orange} stroke={F.wand} strokeWidth={3} />
                   <text y={6} textAnchor="middle" className="kr-badge">{zahl}</text>
+                </g>
+              ) : (
+                /* Keine Veranstaltungen: das Haus „schläft“ – Zzz steigen über dem Pin auf */
+                <g transform="translate(-30,-78)" className="kr-zzz" aria-hidden="true">
+                  <text x={0} y={0} className="kr-zzz__z kr-zzz__z--1">Z</text>
+                  <text x={-22} y={-26} className="kr-zzz__z kr-zzz__z--2">Z</text>
+                  <text x={-48} y={-58} className="kr-zzz__z kr-zzz__z--3">Z</text>
                 </g>
               )}
             </g>
