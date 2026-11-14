@@ -60,9 +60,7 @@ export default function Start() {
         <div className="start__karten">
           <Link href="/kinder/" className="start__karte start__karte--kind">
             <span className="start__karte-kinder" aria-hidden="true">
-              <KinderFigurBild art="tuerkis" />
               <KinderFigurBild art="orange" />
-              <KinderFigurBild art="lila" />
             </span>
             <span className="start__karte-titel">Kind</span>
             <span className="start__karte-unter">Kinder und Teens</span>
