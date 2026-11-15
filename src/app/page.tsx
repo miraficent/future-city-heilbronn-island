@@ -62,7 +62,6 @@ export default function Start() {
               <KinderFigurBild art="orange" />
             </span>
             <span className="start__karte-titel">Kind</span>
-            <span className="start__karte-unter">Kinder und Teens</span>
           </Link>
           <Link href="/eltern/" className="start__karte">
             <span className="start__karte-kinder" aria-hidden="true">
