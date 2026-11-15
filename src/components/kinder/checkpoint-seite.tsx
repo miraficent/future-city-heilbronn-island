@@ -15,7 +15,7 @@ import type { KartenOrt } from "@/lib/kinderkarte";
 import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
-import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann, THEMA_SATZ } from "@/lib/kinder-text";
+import { euleSagt, kartenText, kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
 import type { Category, CategoryId } from "@/types";
 
 const wochentag = (iso: string) =>
@@ -81,11 +81,10 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 
   const jetzt = minute === null ? new Date() : new Date(minute);
   const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt)} ${kinderTageszeit(k.start)}`;
-  const sagt = (k: KinderKarte) =>
-    euleSagt(kinderTitel(k.titel), kinderGeschichte({
-      titel: k.titel, geschichte: k.geschichte, art: k.art, gratis: k.gratis,
-      themen: k.kategorien.map((id) => THEMA_SATZ.de[id]).filter((t): t is string => !!t),
-    }, "de"));
+  const sagt = (k: KinderKarte) => {
+    const t = kartenText(k, "de");
+    return euleSagt(t.titel, t.satz);
+  };
 
   function waehleKategorie(id: CategoryId | null, name: string) {
     setKategorie(id);

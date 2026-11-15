@@ -2,6 +2,7 @@
  * Texte für Kinder (6–14): kurze Titel und Zeitangaben, die man ohne Kalender versteht.
  * Nur Darstellung – die Daten selbst (Mobilizon, Cédric) bleiben unverändert.
  */
+import type { KinderKarte } from "./kinderkarten";
 import type { Sprache } from "@/types";
 
 const MAX_WOERTER = 5;
@@ -139,4 +140,19 @@ export function kinderGeschichte(k: FuerGeschichte, sprache: Sprache): string {
 /** Vorlesetext der Eule: Titel, dann Geschichte – ohne Wiederholung */
 export function euleSagt(titel: string, geschichte: string): string {
   return `${alsSatz(titel)} ${geschichte}`.trim();
+}
+
+/**
+ * Titel und Satz einer Kinderkarte in der gewählten Sprache: zuerst der Kommentar von eule/owl,
+ * sonst kinderTitel() vom Original und ein gebauter Satz in derselben Sprache (nie gemischt).
+ */
+export function kartenText(k: KinderKarte, sprache: Sprache): { titel: string; satz: string } {
+  const eigener = k.texte[sprache];
+  return {
+    titel: eigener?.titel ?? kinderTitel(k.titel),
+    satz: eigener?.satz ?? kinderGeschichte({
+      titel: k.titel, geschichte: k.geschichte, art: k.art, gratis: k.gratis,
+      themen: k.kategorien.map((id) => THEMA_SATZ[sprache][id]).filter((t): t is string => !!t),
+    }, sprache),
+  };
 }

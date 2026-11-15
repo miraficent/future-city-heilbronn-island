@@ -7,7 +7,7 @@ import type { Angebot } from "./angebot";
 import { fuerModus } from "./entdecken";
 import { naechsterStart } from "./filter";
 import { isForKids, isFree } from "./events";
-import type { CategoryId, EventType, LiveEvent } from "@/types";
+import type { CategoryId, EventType, KinderTexte, LiveEvent } from "@/types";
 
 export type KinderKarte = {
   /** Kurs-ID oder "ev:" + Event-ID – dieselbe ID landet im Wunsch-Rucksack */
@@ -19,8 +19,10 @@ export type KinderKarte = {
   ageMin: number | null;
   ageMax: number | null;
   gratis: boolean;
-  /** Kurzer Text, den die Eule vorliest */
+  /** Kurzer Text, den die Eule vorliest (deutsch; Rückfall, wenn kein Eule-Kommentar da ist) */
   geschichte: string;
+  /** Kindertitel und -satz je Sprache aus den Kommentaren von eule/owl – Auswahl über kartenText() */
+  texte: KinderTexte;
   anmeldeUrl: string;
   /** Titelbild des Events (nur eigene Mobilizon-Instanz), sonst null → Farbe der Kategorie */
   bild: string | null;
@@ -55,6 +57,7 @@ export function ausAngebot(a: Angebot, jetzt: Date): KinderKarte {
     bild: null,
     beispiel: false,
     art: null,
+    texte: {},
   };
 }
 
@@ -74,6 +77,7 @@ export function ausEvent(e: LiveEvent): KinderKarte {
     bild: e.image,
     beispiel: e.isDummy,
     art: e.type,
+    texte: e.kinder,
   };
 }
 

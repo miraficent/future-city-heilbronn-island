@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { Angebot } from "@/lib/angebot";
 import type { LiveEvent } from "@/types";
-import { kartenFuerOrt, kinderKarten, passtZumAlter } from "@/lib/kinderkarten";
+import { ausAngebot, ausEvent, kartenFuerOrt, kinderKarten, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
+import { kartenText } from "@/lib/kinder-text";
 import { kartenOrte } from "@/lib/kinderkarte";
 
 const JETZT = new Date("2026-11-14T12:00:00+01:00");
@@ -57,4 +58,22 @@ describe("Kinderkarten aus Kursen und Live-Events", () => {
     expect(orte.map((o) => o.id)).toEqual(["neu", "cosmos"]);
     expect(orte[0]).toMatchObject({ name: "Stadtbibliothek", gebaeude: "haus" });
   });
+});
+
+describe("Eule- und Owl-Texte auf den Karten", () => {
+  it("ausEvent gibt die Kommentartexte weiter, Kurse haben keine", () => {
+    const texte = { en: { titel: "Build a robot", satz: "Here you build a robot!" } };
+    expect(ausEvent(event("a", { kinder: texte })).texte).toEqual(texte);
+    expect(ausAngebot(angebot("a"), JETZT).texte).toEqual({});
+  });
+
+  const basis: KinderKarte = { ...ausEvent(event("a")), titel: "Roboter-Werkstatt für Profis (8–12 Jahre): Wir bauen", geschichte: "Ein langer deutscher Kurstext.", art: "workshop", kategorien: ["coding"], gratis: false };
+  it("nimmt Titel und Satz aus dem Kommentar", () =>
+    expect(kartenText({ ...basis, texte: { en: { titel: "Build a robot", satz: "Here you build a robot!" } } }, "en")).toEqual({ titel: "Build a robot", satz: "Here you build a robot!" }));
+  it("ohne Titelzeile: kinderTitel vom Original", () =>
+    expect(kartenText({ ...basis, texte: { de: { satz: "Hier baust du was." } } }, "de")).toEqual({ titel: "Roboter-Werkstatt für Profis", satz: "Hier baust du was." }));
+  it("ohne Kommentar auf Englisch: gebauter englischer Satz, nie der deutsche Text", () =>
+    expect(kartenText({ ...basis, texte: {} }, "en").satz).toBe("This is all about coding. You get to join in."));
+  it("Kurs auf Englisch: nie der deutsche Teaser", () =>
+    expect(kartenText(ausAngebot(angebot("a"), JETZT), "en").satz).toBe("This is all about coding. Come along and give it a try. It's free."));
 });
