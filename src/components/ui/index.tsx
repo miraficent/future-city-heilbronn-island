@@ -184,14 +184,15 @@ export function OwlGuide({ text, children, className = "", onSchliessen }: { tex
           </button>
         )}
         <p className="ui-guide__text">
-          {text}
+          {/* key: jeder neue Satz blendet weich ein (statt hart zu springen) */}
+          <span key={text} className="ui-guide__satz">{text}</span>
           <button type="button" className={`ui-vorlesen${auto ? " ist-an" : ""}`} aria-pressed={auto}
             aria-label={auto ? t.spricht : t.vorlesen}
             onClick={lautsprecher}>
             <Symbol name="volume" />
           </button>
         </p>
-        {children && <div className="ui-guide__antworten">{children}</div>}
+        {children && <div key={text} className="ui-guide__antworten">{children}</div>}
       </div>
     </section>
   );

@@ -86,15 +86,15 @@
 .owl-schnabel { fill: var(--accent); }
 
 .ui-guide { display: flex; align-items: flex-end; gap: 8px; max-width: 900px; }
-.ui-guide__owl { flex: none; width: clamp(80px, 11vw, 130px); height: auto; }
-.ui-guide__blase { position: relative; margin-bottom: 24px; padding: 16px 20px;
+.ui-guide__owl { flex: none; width: clamp(60px, 7vw, 92px); height: auto; }
+.ui-guide__blase { position: relative; margin-bottom: 16px; padding: 10px 16px;
   border: 2px solid var(--card-border); border-radius: var(--radius-card); background: var(--white); box-shadow: 0 4px 0 var(--card-border); }
-.ui-guide__text { margin: 0; font: 600 22px/1.4 "Nunito", sans-serif; max-width: 60ch; }
-.ui-guide__antworten { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
-.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-left: 8px;
+.ui-guide__text { margin: 0; font: 600 20px/1.35 "Nunito", sans-serif; max-width: 60ch; }
+.ui-guide__antworten { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-left: 8px;
   border: none; border-radius: 50%; background: var(--accent); color: var(--ink); cursor: pointer; vertical-align: middle;
   box-shadow: 0 4px 0 0 var(--accent-dark); animation: ui-vorlesen-ruf 1.8s ease-in-out infinite; }
-.ui-vorlesen .symbol { width: 30px; height: 30px; }
+.ui-vorlesen .symbol { width: 24px; height: 24px; }
 /* Solange die Eule noch nicht von selbst spricht, ruft der Lautsprecher leise: „Tipp mich an!“ */
 @keyframes ui-vorlesen-ruf { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 .ui-vorlesen.ist-an { animation: none; background: var(--paper); color: var(--primary); box-shadow: 0 4px 0 0 var(--card-border); }
@@ -166,8 +166,8 @@
 .kr-karte { display: block; width: 100%; height: 100%; overflow: visible; }
 .kinder-karte__guide { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 5; pointer-events: none; }
 .kinder-karte__guide > * { pointer-events: auto; }
-.kinder-alter { width: 64px; height: 64px; border: none; border-radius: 50%; background: var(--accent); color: var(--ink);
-  font: 700 28px/1 "Baloo 2", sans-serif; cursor: pointer; box-shadow: 0 4px 0 var(--accent-dark); }
+.kinder-alter { width: 52px; height: 52px; border: none; border-radius: 50%; background: var(--accent); color: var(--ink);
+  font: 700 24px/1 "Baloo 2", sans-serif; cursor: pointer; box-shadow: 0 4px 0 var(--accent-dark); }
 
 .kr-ort { cursor: pointer; outline: none; transition: opacity 0.3s; }
 .kr-ort.ist-gedimmt { opacity: 0.45; }
@@ -239,12 +239,12 @@
 @media (max-aspect-ratio: 3/2) { .kr-bildkarte { width: auto; aspect-ratio: 3 / 2; } }
 
 /* Eule schließen / wieder öffnen (Karte frei sehen) */
-.ui-guide__zu { position: absolute; top: -18px; right: -18px; display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
+.ui-guide__zu { position: absolute; top: -20px; right: -20px; display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
   box-shadow: 0 3px 0 0 var(--card-border); cursor: pointer; }
 .ui-guide__zu .symbol { width: 18px; height: 18px; }
 /* Rechts Platz für das X, damit es nicht am Vorlese-Knopf klebt */
-.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 44px; }
+.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 28px; }
 .kinder-karte__eule { position: fixed; left: 16px; bottom: 16px; z-index: 5; width: clamp(72px, 9vw, 104px); padding: 0; border: 0;
   background: none; cursor: pointer; transition: transform .2s ease; }
 .kinder-karte__eule:hover { transform: translateY(-4px) rotate(-4deg); }
@@ -252,9 +252,10 @@
 @media (prefers-reduced-motion: reduce) { .kinder-karte__eule { transition: none; } }
 
 /* Figurenwahl in der Eulen-Blase */
-.kinder-figurwahl { width: 96px; height: 128px; padding: 6px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
+.kinder-figurwahl { width: 76px; height: 100px; padding: 4px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
   box-shadow: 0 4px 0 0 var(--card-border); cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
 .kinder-figurwahl:hover { transform: translateY(-3px); border-color: var(--primary); }
+@media (max-width: 640px) { .kinder-figurwahl { width: 64px; height: 86px; } }
 .kinder-figurwahl svg { width: 100%; height: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) { .kinder-figurwahl { transition: none; } }
 
@@ -466,3 +467,72 @@
 .welt__erwartet-rund { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%;
   background: var(--farbe); color: var(--white); }
 .welt__erwartet-rund .symbol { width: 22px; height: 22px; }
+
+/* ---------- Eulen-Frage beim Hereinkommen: „Was magst du heute?“ ---------- */
+.welt__frage { position: absolute; inset: 0; z-index: 45; display: grid; place-items: center; padding: 24px 16px;
+  background: color-mix(in srgb, var(--welt-grund) 62%, transparent); backdrop-filter: blur(2px); animation: welt-frage-rein .3s ease-out; }
+@keyframes welt-frage-rein { from { opacity: 0; } to { opacity: 1; } }
+.welt__frage-inhalt { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 920px; color: var(--ink); }
+.welt__frage-wahl { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.welt__frage-karte { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 190px; padding: 22px 16px 18px; cursor: pointer;
+  border: 4px solid var(--farbe); border-radius: 32px; background: var(--paper); box-shadow: 0 8px 0 0 var(--farbe);
+  font: 800 26px/1.1 "Baloo 2", sans-serif; color: var(--ink);
+  animation: welt-karte-rein .6s cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: calc(.15s + var(--i) * .08s); }
+@keyframes welt-karte-rein { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.welt__frage-karte:focus-visible { outline: 4px solid var(--white); outline-offset: 4px; }
+.welt__frage-karte img { width: 120px; height: 120px; display: block; }
+.welt__frage-symbol { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; background: var(--farbe); color: var(--white); }
+.welt__frage-symbol .symbol { width: 64px; height: 64px; }
+.welt__frage-alles { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 10px 28px; border-radius: 999px; cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, .8); background: rgba(0, 0, 0, .35); color: var(--white); font: 800 22px/1 "Nunito", sans-serif; }
+.welt__frage-alles .symbol { width: 24px; height: 24px; }
+@media (max-width: 640px) {
+  .welt__frage { position: fixed; top: 68px; }
+  .welt__frage-wahl { gap: 12px; }
+  .welt__frage-karte { width: 104px; padding: 12px 8px; font-size: 18px; border-radius: 22px; }
+  .welt__frage-karte img, .welt__frage-symbol { width: 72px; height: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .welt__frage, .welt__frage-karte { animation: none; transition: none; } }
+/* Viele Themen: kleinere Karten, damit alle auf einen Blick passen */
+.welt__frage-wahl.ist-viele { gap: 16px; max-width: 880px; }
+.welt__frage-wahl.ist-viele .welt__frage-karte { width: 150px; padding: 16px 10px 14px; font-size: 22px; border-radius: 26px; }
+.welt__frage-wahl.ist-viele .welt__frage-karte img, .welt__frage-wahl.ist-viele .welt__frage-symbol { width: 92px; height: 92px; }
+@media (max-width: 640px) {
+  .welt__frage-wahl.ist-viele .welt__frage-karte { width: 96px; font-size: 16px; }
+  .welt__frage-wahl.ist-viele .welt__frage-karte img, .welt__frage-wahl.ist-viele .welt__frage-symbol { width: 60px; height: 60px; }
+}
+/* Kleine Eule unten links – öffnet die Themen-Frage wieder */
+.welt__eule-knopf { position: absolute; left: 16px; bottom: 16px; z-index: 30; display: flex; align-items: flex-end; gap: 4px; padding: 0; border: 0;
+  background: none; cursor: pointer; }
+.welt__eule-knopf svg { width: clamp(72px, 7vw, 96px); height: auto; display: block; transition: transform .2s ease; }
+.welt__eule-knopf span { margin-bottom: 18px; padding: 8px 14px; border-radius: 18px 18px 18px 4px; background: var(--paper); color: var(--ink);
+  font: 800 17px/1.2 "Nunito", sans-serif; box-shadow: 0 4px 0 0 var(--card-border); }
+.welt__eule-knopf:hover svg, .welt__eule-knopf:focus-visible svg { transform: translateY(-4px) rotate(-4deg); }
+@media (max-width: 640px) { .welt__eule-knopf { position: fixed; } .welt__eule-knopf span { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .welt__eule-knopf svg { transition: none; } }
+/* Die Eule erklärt Thema für Thema: die Karte, um die es geht, hebt sich sanft an; die anderen treten zurück.
+   Nur Übergänge (keine Endlos-Animation), damit Wechsel und Zurückgleiten immer weich sind. */
+.welt__frage-karte { transition: transform .45s cubic-bezier(.22, 1, .36, 1), opacity .35s ease, box-shadow .45s ease; will-change: transform; }
+.welt__frage-wahl.hat-dran .welt__frage-karte { opacity: .6; }
+.welt__frage-wahl.hat-dran .welt__frage-karte.ist-dran { opacity: 1; }
+.welt__frage-karte.ist-dran { transform: translateY(-10px) scale(1.06);
+  box-shadow: 0 8px 0 0 var(--farbe), 0 0 0 6px var(--white), 0 0 36px var(--farbe); }
+.welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+.welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { transform: translateY(-4px) rotate(4deg) scale(1.06); }
+/* Sprechblase mit fester Größe: Sätze unterschiedlicher Länge lassen weder Blase noch Karten springen */
+.welt__frage .ui-guide { width: min(880px, 100%); align-items: flex-start; }
+.welt__frage .ui-guide__blase { flex: 1; box-sizing: border-box; height: 160px; margin-bottom: 0; }
+.welt__frage .ui-guide__text { min-height: 2.8em; }
+@media (max-width: 640px) {
+  .welt__frage .ui-guide { width: 100%; }
+  .welt__frage .ui-guide__blase { flex: none; width: 100%; height: 252px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welt__frage-karte, .welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: none; }
+}
+
+/* Was die Eule sagt, blendet weich ein – überall, wo die Eule spricht */
+.ui-guide__satz { animation: ui-satz .45s ease both; }
+.ui-guide__antworten { animation: ui-satz .45s ease .1s both; }
+@keyframes ui-satz { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-guide__satz, .ui-guide__antworten { animation: none; } }

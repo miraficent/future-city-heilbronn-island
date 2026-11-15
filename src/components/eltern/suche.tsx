@@ -10,7 +10,8 @@ import {
   elternSuche,
   LEERER_ELTERN_FILTER,
   nachZeitGruppieren,
-  terminband,
+  tagesEintraege,
+  tagSchluessel,
   type ElternFilter,
 } from "@/lib/eltern-suche";
 import { useJetzt } from "../browser-werte";
@@ -25,14 +26,14 @@ import { FilterFormular } from "./filter-formular";
 import { FILTER_EREIGNIS } from "./kopf";
 import { useSprache } from "./sprache";
 import { FilterSymbol } from "./symbole";
-import { Terminband } from "./terminband";
+import { Kalender } from "./kalender";
 import { TEXTE } from "./texte";
 
 /** So viele Karten auf einmal – danach „Weitere zeigen“. Hält die Seite kurz, vor allem auf dem Handy. */
 const SCHRITT = 10;
 
 /**
- * Eltern-Suche: Suchfeld, Filter (links bzw. als Blatt auf dem Handy), Terminband,
+ * Eltern-Suche: Suchfeld, Filter (links bzw. als Blatt auf dem Handy), großer Monatskalender,
  * Ergebnisse nach Woche/Monat und eine Merkliste, die sich als Link teilen lässt.
  * Filter und Suchtext bleiben nur im Arbeitsspeicher dieser Seite.
  */
@@ -55,7 +56,9 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
   }), [meta]);
 
   const treffer = useMemo(() => elternSuche(angebote, filter, new Date(jetzt)), [angebote, filter, jetzt]);
-  const band = useMemo(() => terminband(angebote, filter, new Date(jetzt), filter.zeitraum === "woche" ? 7 : 28), [angebote, filter, jetzt]);
+  const eintraege = useMemo(() => tagesEintraege(angebote, filter, new Date(jetzt)), [angebote, filter, jetzt]);
+  const tage = useMemo(() => new Map([...eintraege].map(([tag, liste]) => [tag, liste.length])), [eintraege]);
+  const farben = useMemo(() => Object.fromEntries(meta.quellen.map((q) => [q.id, q.farbe])), [meta]);
   const zahlen = useMemo(() => {
     const zaehle = (teil: Partial<ElternFilter>) => elternSuche(angebote, { ...filter, ...teil }, new Date(jetzt)).length;
     return {
@@ -119,7 +122,9 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
     }
   }
 
-  const formular = (kopf?: ReactNode) => <FilterFormular filter={filter} aendere={aendere} meta={meta} zahlen={zahlen} kopf={kopf} />;
+  const formular = (kopf?: ReactNode) => (
+    <FilterFormular filter={filter} aendere={aendere} meta={meta} zahlen={zahlen} kopf={kopf} />
+  );
 
   return (
     <section id="suche" className="el-suche" aria-labelledby="suche-titel">
@@ -168,7 +173,9 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
             <span className="el-handyleiste__zahl">{t.angebote(liste.length)}</span>
           </div>
 
-          {!nurGemerkt && <Terminband tage={band} gewaehlt={filter.tag} waehlen={(tag) => aendere({ tag })} />}
+          {!nurGemerkt && (
+            <Kalender gross zahlen={tage} eintraege={eintraege} farben={farben} heute={tagSchluessel(jetzt)} gewaehlt={filter.tag} waehlen={(tag) => aendere({ tag, zeitraum: "alle" })} />
+          )}
 
           {!nurGemerkt && aktiv.length > 0 && (
             <div className="el-aktiv" aria-label={t.aktiv}>
