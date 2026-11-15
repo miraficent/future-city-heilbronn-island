@@ -34,5 +34,9 @@
   "adresse:Erich-Mendelsohn-Straße 1C, 74076 Heilbronn": {
     "lat": 49.1453958,
     "lon": 9.2089472
+  },
+  "adresse:Im Zukunftspark 11, 74076 Heilbronn": {
+    "lat": 49.1555884,
+    "lon": 9.2076931
   }
 }

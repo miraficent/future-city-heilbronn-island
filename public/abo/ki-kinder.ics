@@ -6,4 +6,68 @@ METHOD:PUBLISH
 X-WR-CALNAME:Künstliche Intelligenz für Kinder – COSMOS-Entdecker
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:hdf-261H207004-20261121T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261121T090000Z
+DTEND:20261121T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261122T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270220T090000Z
+DTEND:20270220T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270221T090000Z
+DTEND:20270221T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
 END:VCALENDAR

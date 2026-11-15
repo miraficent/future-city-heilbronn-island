@@ -7,4 +7,629 @@ X-WR-CALNAME:Künstliche Intelligenz für Eltern & Familien – COSMOS-Entd
  ecker
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:aim-262420PAI-20261116T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261116T153000Z
+DTEND:20261116T173000Z
+SUMMARY:Python lernen mit KI (ab 16 Jahren)
+DESCRIPTION:Dein smarter Start in Python: mit erfahrenem Dozenten und pers
+ önlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem
+  Kurs lernst du Schritt für Schritt die Grundlagen von Python\, einer wel
+ tweit eingesetzten und für Einsteigende super geeigneten Programmiersprac
+ he\, kennen. Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahr
+ en/262420PAI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KR-20261117T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261117T160000Z
+DTEND:20261117T191500Z
+SUMMARY:KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvo
+ ll und rechtssicher im Unterricht einsetzen
+DESCRIPTION:Künstliche Intelligenz verstehen und souverän im Unterricht n
+ utzen Künstliche Intelligenz verändert die Art und Weise\, wie wir lehre
+ n und lernen – und stellt Schulen zugleich vor neue Herausforderungen. D
+ ieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und we
+ iterführenden…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-living-room-session-10-women-in-ai-20261118T170000Z@cosmos-entdeck
+ er
+DTSTAMP:20261115T102627Z
+DTSTART:20261118T170000Z
+DTEND:20261118T200000Z
+SUMMARY:Living Room Session #10: Women in AI
+DESCRIPTION:Kommt vorbei zu unserem Afterwork-Event im IPAI mit einem spann
+ enden Couch-Talk\, Führungen\, Food & Drinks! Das Motto unserer zehnten L
+ iving Room Session ist „Women in Robotics“. Euch erwartet: ein spannen
+ der Couch-Talk mit Leona Grulich (byte robotics)\, Maike Kaufman (Polybot)
+  und Gesche Held…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: https:
+ //ipai-foundation.ai/event/living-room-session-10-women-in-ai/
+LOCATION:Im Zukunftspark 11
+URL:https://ipai-foundation.ai/event/living-room-session-10-women-in-ai/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KIE-20261119T170000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261119T170000Z
+DTEND:20261119T190000Z
+SUMMARY:KI-Orientierung für Eltern: Grundlagen\, Praxis und Zukunftsperspe
+ ktiven
+DESCRIPTION:Künstliche Intelligenz verstehen\, einordnen und Kinder kompet
+ ent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinde
+ r angekommen – in der Schule\, beim Lernen und in der Freizeit. Doch was
+  steckt dahinter\, welche Chancen bietet KI\, und was sollten Eltern wisse
+ n? Dieser Kurs gibt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Pra
+ xis-und-Zukunftsperspektiven/262410KIE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Gru
+ ndlagen-Praxis-und-Zukunftsperspektiven/262410KIE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KIE-20261126T170000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261126T170000Z
+DTEND:20261126T190000Z
+SUMMARY:KI-Orientierung für Eltern: Grundlagen\, Praxis und Zukunftsperspe
+ ktiven
+DESCRIPTION:Künstliche Intelligenz verstehen\, einordnen und Kinder kompet
+ ent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinde
+ r angekommen – in der Schule\, beim Lernen und in der Freizeit. Doch was
+  steckt dahinter\, welche Chancen bietet KI\, und was sollten Eltern wisse
+ n? Dieser Kurs gibt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Pra
+ xis-und-Zukunftsperspektiven/262410KIE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Gru
+ ndlagen-Praxis-und-Zukunftsperspektiven/262410KIE
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261121T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261121T090000Z
+DTEND:20261121T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261122T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendun
+ g-20261123T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261123T140000Z
+DTEND:20261123T160000Z
+SUMMARY:KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwen
+ dung
+DESCRIPTION:Software primär durch intuitive\, KI-gestützte Anweisungen en
+ tstehen lassen – das ist das Prinzip hinter „Vibe Coding“. Doch wie 
+ funktioniert das Zusammenspiel mit modernen KI-Agenten in der Praxis und w
+ orauf müsst ihr achten\, um nicht ins Stolpern zu geraten? Dieser Worksho
+ p bietet euch eine…\n\nKosten: kostenlos\nInfos und Anmeldung: https://i
+ pai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agenten-von-der-i
+ dee-zur-anwendung/
+LOCATION:IPAI Spaces\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agent
+ en-von-der-idee-zur-anwendung/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-workshop-erstelle-dein-board-of-excellence-20261130T11300
+ 0Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261130T113000Z
+DTEND:20261130T133000Z
+SUMMARY:KI SALON WORKSHOP: Erstelle dein Board of Excellence
+DESCRIPTION:In diesem Workshop zeigt Rafaela Fleischer\, wie ihr euch euer 
+ eigenes „Board of Excellence“ aufbaut – ein persönliches Experten-T
+ eam in ChatGPT oder Claude\, ganz ohne Programmieren oder technisches Setu
+ p. Ihr lernt\, wie ihr KI gezielt als Denk- und Sparringspartner nutzt\, u
+ m blinde Flecken…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ipa
+ i-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-of-excellence/
+LOCATION:IPAI Spaces\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-
+ of-excellence/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-community-event-21-20261201T163000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261201T163000Z
+DTEND:20261201T193000Z
+SUMMARY:KI SALON COMMUNITY EVENT #21
+DESCRIPTION:Treffe die KI-Community bei unserem nächsten KI Salon Event im
+  IPAI SPACES! Für wen ist dieses Event? Das Event ist für jede/n der/die
+  sich für KI interessiert. Egal ob Interessiert/e\, Experte\, Bürger\, L
+ aie. Wir freuen uns über jeden. Zur besseren Planung bitten wir um kosten
+ lose Anmeldung über…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: ht
+ tps://ipai-foundation.ai/event/ki-salon-community-event-21/
+LOCATION:Besucherzentrum IPAI\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-community-event-21/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410DKI-20261202T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261202T153000Z
+DTEND:20261202T184500Z
+SUMMARY:Deepfakes & soziale Medien: Wie KI den Alltag von Kindern und Jugen
+ dlichen prägt
+DESCRIPTION:Wie können Deepfakes und KI-generierte Inhalte eingeordnet und
+  Schüler/-innen für einen reflektierten Umgang sensibilisiert werden? In
+  diesem Kurs stehen grundlegende Entwicklungen rund um Künstliche Intelli
+ genz und deren Bedeutung für die Lebenswelt von Kindern und Jugendlichen 
+ im Mittelpunkt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Deepfakes-soziale-Medien-Wie-KI-den-Alltag-von-
+ Kindern-und-Jugendlichen-praegt/262410DKI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Deepfakes-soziale-Medien-Wie-KI
+ -den-Alltag-von-Kindern-und-Jugendlichen-praegt/262410DKI
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-
+ an-die-wand-20261208T173000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261208T173000Z
+DTEND:20261208T193000Z
+SUMMARY:KI SALON IMPULS: Dr. Sebastian Hallensleben – Regulieren wir uns 
+ an die Wand?
+DESCRIPTION:: Einlass & Ankommen: Ab 18:00 Uhr im Raum Grace Hopper Keynote
+ : Dr. Sebastian Hallensleben gibt Einblicke in die Standardisierung der EU
+ -KI-Verordnung\, Qualitätsmetriken und den Mut zur sachlichen KI-Bewertun
+ g Fragen & Austausch: Raum für eure Fragen und eine offene Diskussion mit
+  dem Speaker\, um…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ip
+ ai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hallensleben-regu
+ lieren-wir-uns-an-die-wand/
+LOCATION:Besucherzentrum IPAI\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hall
+ ensleben-regulieren-wir-uns-an-die-wand/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410ZGR-20270116T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270116T090000Z
+DTEND:20270116T153000Z
+SUMMARY:Zukunftswerkstatt: Generative KI trifft Grundschulalltag
+DESCRIPTION:KI-Werkzeuge für den Grundschulalltag In dieser Zukunftswerkst
+ att erhalten Lehrkräfte einen verständlichen Einstieg in generative KI u
+ nd erkunden konkrete Einsatzmöglichkeiten für den Schulalltag. Ob Unterr
+ ichtsvorbereitung\, differenzierte Materialien\, Elternkommunikation oder 
+ organisatorische…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www
+ .aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI-trifft-Grunds
+ chulalltag/271410ZGR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI
+ -trifft-Grundschulalltag/271410ZGR
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410ZKT-20270125T083000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270125T083000Z
+DTEND:20270125T150000Z
+SUMMARY:Zukunftswerkstatt: Die smarte Kita – Planung und Organisation ver
+ einfachen mit KI
+DESCRIPTION:KI als Unterstützung für Organisation und Verwaltung im Kita-
+ Alltag KI kann pädagogische Fachkräfte bei vielen Verwaltungsaufgaben un
+ terstützen – von der Dokumentation über die Elternkommunikation bis hi
+ n zur Erstellung von Protokollen. In dieser Zukunftswerkstatt erhalten Sie
+  einen praxisnahen…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Kita/271410ZKT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Ki
+ ta/271410ZKT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIKT-20270125T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270125T153000Z
+DTEND:20270125T184500Z
+SUMMARY:KI in der Kita? Chancen\, Fragen und erste Erfahrungen
+DESCRIPTION:Impulsvortrag mit anschließendem Austausch Ein niedrigschwelli
+ ger Einstieg in das Thema Künstliche Intelligenz für pädagogische Fachk
+ räfte\, der Orientierung bietet\, Fragen aufgreift und zum gemeinsamen Au
+ stausch einlädt. Künstliche Intelligenz gewinnt auch im Bildungsbereich 
+ zunehmend an…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-und-erste-Erfahrung
+ en/271410KIKT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-u
+ nd-erste-Erfahrungen/271410KIKT
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270220T090000Z
+DTEND:20270220T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270221T090000Z
+DTEND:20270221T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410DD-20270223T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270223T160000Z
+DTEND:20270223T191500Z
+SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
+ entationspflichten clever meistern
+DESCRIPTION:Künstliche Intelligenz – ein Game Changer in der Schulverwal
+ tung? Künstliche Intelligenz in der Verwaltung zu nutzen hat sich vielero
+ rts mittlerweile etabliert. Dieser Kurs beschäftigt sich mit dem Themenge
+ biet der rechtlichen Dokumentationspflichten im Bereich der Schulverwaltun
+ g. Sie lernen\, wie…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulverwaltung/2
+ 71410DD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
+ erwaltung/271410DD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410DD-20270226T130000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270226T130000Z
+DTEND:20270226T180000Z
+SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
+ entationspflichten clever meistern
+DESCRIPTION:Künstliche Intelligenz – ein Game Changer in der Schulverwal
+ tung? Künstliche Intelligenz in der Verwaltung zu nutzen hat sich vielero
+ rts mittlerweile etabliert. Dieser Kurs beschäftigt sich mit dem Themenge
+ biet der rechtlichen Dokumentationspflichten im Bereich der Schulverwaltun
+ g. Sie lernen\, wie…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulverwaltung/2
+ 71410DD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
+ erwaltung/271410DD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270224T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270224T160000Z
+DTEND:20270224T173000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270312T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270312T140000Z
+DTEND:20270312T193000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270414T150000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270414T150000Z
+DTEND:20270414T173000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270225T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270225T161500Z
+DTEND:20270225T180000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270304T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270304T161500Z
+DTEND:20270304T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270311T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270311T161500Z
+DTEND:20270311T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270318T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270318T161500Z
+DTEND:20270318T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIP-20270305T133000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270305T133000Z
+DTEND:20270305T170000Z
+SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
+ aktionspartnern werden
+DESCRIPTION:Folgen für die soziale und kognitive Entwicklung Die Art und W
+ eise\, wie wir KI-Tools verwenden\, lässt sich nicht mehr auf bloßen Wer
+ kzeuggebrauch reduzieren: KI-Systeme bieten sich als Gesprächspartner\, L
+ ernbegleiter\, Freunde und sogar als Therapeuten an. In diesem zweitägige
+ n Seminar für…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/271410KIP
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
+ 271410KIP
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIP-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270306T080000Z
+DTEND:20270306T113000Z
+SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
+ aktionspartnern werden
+DESCRIPTION:Folgen für die soziale und kognitive Entwicklung Die Art und W
+ eise\, wie wir KI-Tools verwenden\, lässt sich nicht mehr auf bloßen Wer
+ kzeuggebrauch reduzieren: KI-Systeme bieten sich als Gesprächspartner\, L
+ ernbegleiter\, Freunde und sogar als Therapeuten an. In diesem zweitägige
+ n Seminar für…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/271410KIP
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
+ 271410KIP
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JLMM-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270306T080000Z
+DTEND:20270306T150000Z
+SUMMARY:Juniorakademie: Mensch\, Maschine\, Moral – Was unterscheidet uns
+  von KI? (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-Moral-Kl-11-13/2
+ 71993JLMM
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-
+ Moral-Kl-11-13/271993JLMM
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270330T070000Z
+DTEND:20270330T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270331T070000Z
+DTEND:20270331T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270401T070000Z
+DTEND:20270401T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270402T070000Z
+DTEND:20270402T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410FK-20270429T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270429T143000Z
+DTEND:20270429T174500Z
+SUMMARY:Feedback-Tools im Unterricht: gestern analog\, heute digital – un
+ d morgen mit KI
+DESCRIPTION:Von analogen Methoden über digitale Tools bis zu KI-gestützte
+ m Feedback im Unterricht Feedback hat einen starken Einfluss auf den Lernp
+ rozess. In diesem Workshop erhalten Sie praxisnahe Impulse dazu\, wie Feed
+ back im Schulalltag gestaltet werden kann\, am Beispiel kleiner\, direkt i
+ m Unterricht…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-gestern-analog-heute
+ -digital-und-morgen-mit-KI/271410FK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-ge
+ stern-analog-heute-digital-und-morgen-mit-KI/271410FK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270525T070000Z
+DTEND:20270525T140000Z
+SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 
+ der Schwarz Digits (ab 13 Jahre)
+DESCRIPTION:Ein Besuch im IT Education Center der Schwarz Digits Komm mit i
+ ns ITEC der Schwarz Digits und tauche ein in die spannende und vielseitige
+  Welt der Informationstechnologie (IT)! Unser interaktiver Workshop „IT 
+ erleben statt nur verstehen" bietet Jugendlichen ab der 7. Klasse und ihre
+ n Eltern die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-Ein-Besuch-im-ITEC
+ -der-Schwarz-Digits/271470SIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-
+ Ein-Besuch-im-ITEC-der-Schwarz-Digits/271470SIT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KR-20270608T150000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270608T150000Z
+DTEND:20270608T181500Z
+SUMMARY:KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvo
+ ll und rechtssicher im Unterricht einsetzen
+DESCRIPTION:Künstliche Intelligenz verstehen und souverän im Unterricht n
+ utzen Künstliche Intelligenz verändert die Art und Weise\, wie wir lehre
+ n und lernen – und stellt Schulen zugleich vor neue Herausforderungen. D
+ ieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und we
+ iterführenden…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR
+END:VEVENT
 END:VCALENDAR

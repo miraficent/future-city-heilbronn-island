@@ -6,4 +6,2729 @@ METHOD:PUBLISH
 X-WR-CALNAME:COSMOS-Entdecker – alle Angebote
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:aim-262420PAI-20261116T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261116T153000Z
+DTEND:20261116T173000Z
+SUMMARY:Python lernen mit KI (ab 16 Jahren)
+DESCRIPTION:Dein smarter Start in Python: mit erfahrenem Dozenten und pers
+ önlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem
+  Kurs lernst du Schritt für Schritt die Grundlagen von Python\, einer wel
+ tweit eingesetzten und für Einsteigende super geeigneten Programmiersprac
+ he\, kennen. Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahr
+ en/262420PAI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262430DSW-20261116T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261116T160000Z
+DTEND:20261116T183000Z
+SUMMARY:Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Ki
+ ndern und Jugendlichen
+DESCRIPTION:Digitale Spiele verstehen und Kinder kompetent begleiten Digita
+ le Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und J
+ ugendlicher. Minecraft\, Roblox und Fortnite sind mittlerweile bekannte Be
+ griffe\, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuel
+ le Spielewelten…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und
+ -Jugendlichen/262430DSW
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-
+ von-Kindern-und-Jugendlichen/262430DSW
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262430DSW-20261123T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261123T160000Z
+DTEND:20261123T183000Z
+SUMMARY:Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Ki
+ ndern und Jugendlichen
+DESCRIPTION:Digitale Spiele verstehen und Kinder kompetent begleiten Digita
+ le Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und J
+ ugendlicher. Minecraft\, Roblox und Fortnite sind mittlerweile bekannte Be
+ griffe\, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuel
+ le Spielewelten…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und
+ -Jugendlichen/262430DSW
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-
+ von-Kindern-und-Jugendlichen/262430DSW
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261117T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261117T153000Z
+DTEND:20261117T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261124T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261124T153000Z
+DTEND:20261124T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261201T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261201T153000Z
+DTEND:20261201T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261208T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261208T153000Z
+DTEND:20261208T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20261215T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261215T153000Z
+DTEND:20261215T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270112T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270112T153000Z
+DTEND:20270112T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270119T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270119T153000Z
+DTEND:20270119T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270126T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270126T153000Z
+DTEND:20270126T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420SC-20270202T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270202T153000Z
+DTEND:20270202T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/262420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/262420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KR-20261117T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261117T160000Z
+DTEND:20261117T191500Z
+SUMMARY:KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvo
+ ll und rechtssicher im Unterricht einsetzen
+DESCRIPTION:Künstliche Intelligenz verstehen und souverän im Unterricht n
+ utzen Künstliche Intelligenz verändert die Art und Weise\, wie wir lehre
+ n und lernen – und stellt Schulen zugleich vor neue Herausforderungen. D
+ ieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und we
+ iterführenden…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420RK2-20261118T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261118T140000Z
+DTEND:20261118T153000Z
+SUMMARY:Robotik zum Anfassen 2– vom analogen ins symbolbasierte Programmi
+ eren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/262420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/262420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20261118T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261118T153000Z
+DTEND:20261118T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20261125T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261125T153000Z
+DTEND:20261125T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20261202T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261202T153000Z
+DTEND:20261202T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20261209T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261209T153000Z
+DTEND:20261209T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20261216T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261216T153000Z
+DTEND:20261216T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20270113T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270113T153000Z
+DTEND:20270113T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20270127T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270127T153000Z
+DTEND:20270127T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PY-20270203T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270203T153000Z
+DTEND:20270203T171000Z
+SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
+DESCRIPTION:Tauche ein in die faszinierende Welt des Programmierens! In uns
+ erem Grundkurs „Programmieren lernen mit Python" entdeckst du\, wie du m
+ it einer der vielseitigsten und beliebtesten Programmiersprachen der Welt 
+ eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal\, 
+ ob du erste…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-
+ akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420P
+ Y
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
+ -1216-Jahre/262420PY
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-living-room-session-10-women-in-ai-20261118T170000Z@cosmos-entdeck
+ er
+DTSTAMP:20261115T102627Z
+DTSTART:20261118T170000Z
+DTEND:20261118T200000Z
+SUMMARY:Living Room Session #10: Women in AI
+DESCRIPTION:Kommt vorbei zu unserem Afterwork-Event im IPAI mit einem spann
+ enden Couch-Talk\, Führungen\, Food & Drinks! Das Motto unserer zehnten L
+ iving Room Session ist „Women in Robotics“. Euch erwartet: ein spannen
+ der Couch-Talk mit Leona Grulich (byte robotics)\, Maike Kaufman (Polybot)
+  und Gesche Held…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: https:
+ //ipai-foundation.ai/event/living-room-session-10-women-in-ai/
+LOCATION:Im Zukunftspark 11
+URL:https://ipai-foundation.ai/event/living-room-session-10-women-in-ai/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KIE-20261119T170000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261119T170000Z
+DTEND:20261119T190000Z
+SUMMARY:KI-Orientierung für Eltern: Grundlagen\, Praxis und Zukunftsperspe
+ ktiven
+DESCRIPTION:Künstliche Intelligenz verstehen\, einordnen und Kinder kompet
+ ent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinde
+ r angekommen – in der Schule\, beim Lernen und in der Freizeit. Doch was
+  steckt dahinter\, welche Chancen bietet KI\, und was sollten Eltern wisse
+ n? Dieser Kurs gibt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Pra
+ xis-und-Zukunftsperspektiven/262410KIE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Gru
+ ndlagen-Praxis-und-Zukunftsperspektiven/262410KIE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410KIE-20261126T170000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261126T170000Z
+DTEND:20261126T190000Z
+SUMMARY:KI-Orientierung für Eltern: Grundlagen\, Praxis und Zukunftsperspe
+ ktiven
+DESCRIPTION:Künstliche Intelligenz verstehen\, einordnen und Kinder kompet
+ ent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinde
+ r angekommen – in der Schule\, beim Lernen und in der Freizeit. Doch was
+  steckt dahinter\, welche Chancen bietet KI\, und was sollten Eltern wisse
+ n? Dieser Kurs gibt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Pra
+ xis-und-Zukunftsperspektiven/262410KIE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Gru
+ ndlagen-Praxis-und-Zukunftsperspektiven/262410KIE
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261121T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261121T090000Z
+DTEND:20261121T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207004-20261122T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261122T090000Z
+DTEND:20261122T110000Z
+SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen in der Welt der Daten! Hier wird gesammelt\, gezählt und gezeichne
+ t – mit bunten Bausteinen\, Lieblingsfarben und kleinen Spielen. Gemeins
+ am mit ihren Eltern entdecken Kinder\, wie man Dinge sortiert\, Strichlist
+ en macht und…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de/
+ kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
+ diagramm-261H207004/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendun
+ g-20261123T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261123T140000Z
+DTEND:20261123T160000Z
+SUMMARY:KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwen
+ dung
+DESCRIPTION:Software primär durch intuitive\, KI-gestützte Anweisungen en
+ tstehen lassen – das ist das Prinzip hinter „Vibe Coding“. Doch wie 
+ funktioniert das Zusammenspiel mit modernen KI-Agenten in der Praxis und w
+ orauf müsst ihr achten\, um nicht ins Stolpern zu geraten? Dieser Worksho
+ p bietet euch eine…\n\nKosten: kostenlos\nInfos und Anmeldung: https://i
+ pai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agenten-von-der-i
+ dee-zur-anwendung/
+LOCATION:IPAI Spaces\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agent
+ en-von-der-idee-zur-anwendung/
+END:VEVENT
+BEGIN:VEVENT
+UID:experimenta-fortbildung-esp32-programmierung-in-python-20261126T130000Z
+ @cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261126T130000Z
+DTEND:20261126T170000Z
+SUMMARY:Fortbildung „ESP32-Programmierung in Python“
+DESCRIPTION:Wie funktioniert der Mikrocontrollers ESP32? Was kann man damit
+  im Unterricht machen? Antworten gibt es in unserer praxisnahen Fortbildun
+ g für Lehrkräfte. Wir richten den Mikrokontroller ein\, verbinden ihn mi
+ t verschiedenen Bauteilen und steuern anschließend LEDs\, Lautsprecher\, 
+ Sensoren und Motoren.\n\nKosten: siehe Anbieter\nInfos und Anmeldung: http
+ s://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-es
+ p32-programmierung-in-python/
+LOCATION:Experimenta-Platz\, 74072 Heilbronn
+URL:https://www.experimenta.science/besuchen/veranstaltungskalender/fortbil
+ dung-esp32-programmierung-in-python/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PCB-20261127T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261127T153000Z
+DTEND:20261127T170000Z
+SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
+ ung mit Mikrocontrollern (12–15 Jahre)
+DESCRIPTION:Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Com
+ puter\, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messg
+ erät dabei helfen\, unser Wasser zu untersuchen? In diesem Kurs probierst
+  du genau das aus. Dazu arbeitest du mit einem kleinen Computer\, einem Mi
+ krocontroller…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontr
+ ollern-1215-Jahre/262420PCB
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
+ ng-mit-Mikrocontrollern-1215-Jahre/262420PCB
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PCB-20261204T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261204T153000Z
+DTEND:20261204T170000Z
+SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
+ ung mit Mikrocontrollern (12–15 Jahre)
+DESCRIPTION:Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Com
+ puter\, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messg
+ erät dabei helfen\, unser Wasser zu untersuchen? In diesem Kurs probierst
+  du genau das aus. Dazu arbeitest du mit einem kleinen Computer\, einem Mi
+ krocontroller…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontr
+ ollern-1215-Jahre/262420PCB
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
+ ng-mit-Mikrocontrollern-1215-Jahre/262420PCB
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262420PCB-20261211T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261211T153000Z
+DTEND:20261211T170000Z
+SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
+ ung mit Mikrocontrollern (12–15 Jahre)
+DESCRIPTION:Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Com
+ puter\, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messg
+ erät dabei helfen\, unser Wasser zu untersuchen? In diesem Kurs probierst
+  du genau das aus. Dazu arbeitest du mit einem kleinen Computer\, einem Mi
+ krocontroller…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontr
+ ollern-1215-Jahre/262420PCB
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
+ ng-mit-Mikrocontrollern-1215-Jahre/262420PCB
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H304002-20261128T113000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261128T113000Z
+DTEND:20261128T143000Z
+SUMMARY:Programmieren Lernen - Scratch
+DESCRIPTION:Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Wo
+ rkshop erlernen die Kinder die visuelle Programmiersprache Scratch\, spezi
+ ell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder dur
+ ch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zwe
+ iergruppen…\n\nKosten: 30 €\nInfos und Anmeldung: https://hdf-hn.de/ku
+ rs/programmieren-lernen-scratch-261H304002/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-workshop-erstelle-dein-board-of-excellence-20261130T11300
+ 0Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261130T113000Z
+DTEND:20261130T133000Z
+SUMMARY:KI SALON WORKSHOP: Erstelle dein Board of Excellence
+DESCRIPTION:In diesem Workshop zeigt Rafaela Fleischer\, wie ihr euch euer 
+ eigenes „Board of Excellence“ aufbaut – ein persönliches Experten-T
+ eam in ChatGPT oder Claude\, ganz ohne Programmieren oder technisches Setu
+ p. Ihr lernt\, wie ihr KI gezielt als Denk- und Sparringspartner nutzt\, u
+ m blinde Flecken…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ipa
+ i-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-of-excellence/
+LOCATION:IPAI Spaces\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-
+ of-excellence/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-community-event-21-20261201T163000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261201T163000Z
+DTEND:20261201T193000Z
+SUMMARY:KI SALON COMMUNITY EVENT #21
+DESCRIPTION:Treffe die KI-Community bei unserem nächsten KI Salon Event im
+  IPAI SPACES! Für wen ist dieses Event? Das Event ist für jede/n der/die
+  sich für KI interessiert. Egal ob Interessiert/e\, Experte\, Bürger\, L
+ aie. Wir freuen uns über jeden. Zur besseren Planung bitten wir um kosten
+ lose Anmeldung über…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: ht
+ tps://ipai-foundation.ai/event/ki-salon-community-event-21/
+LOCATION:Besucherzentrum IPAI\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-community-event-21/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262410DKI-20261202T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261202T153000Z
+DTEND:20261202T184500Z
+SUMMARY:Deepfakes & soziale Medien: Wie KI den Alltag von Kindern und Jugen
+ dlichen prägt
+DESCRIPTION:Wie können Deepfakes und KI-generierte Inhalte eingeordnet und
+  Schüler/-innen für einen reflektierten Umgang sensibilisiert werden? In
+  diesem Kurs stehen grundlegende Entwicklungen rund um Künstliche Intelli
+ genz und deren Bedeutung für die Lebenswelt von Kindern und Jugendlichen 
+ im Mittelpunkt…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Deepfakes-soziale-Medien-Wie-KI-den-Alltag-von-
+ Kindern-und-Jugendlichen-praegt/262410DKI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Deepfakes-soziale-Medien-Wie-KI
+ -den-Alltag-von-Kindern-und-Jugendlichen-praegt/262410DKI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-262993JLKK-20261205T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261205T080000Z
+DTEND:20261205T150000Z
+SUMMARY:Juniorakademie: Kreativ mit KI – Ideen\, Texte und Bilder gestalt
+ en (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-Ideen-Texte-u
+ nd-Bilder-gestalten-Kl-9-10/262993JLKK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-I
+ deen-Texte-und-Bilder-gestalten-Kl-9-10/262993JLKK
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207006-20261205T083000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261205T083000Z
+DTEND:20261205T103000Z
+SUMMARY:Märchenhaft mit ScratchJunior eine Geschichte programmieren: Das m
+ utige Tier
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Workshop machen wir es uns zuerst gemütlich und lauschen einem span
+ nenden Märchen – voller Tiere\, Abenteuer und einer kleinen Portion Mut
+ . Anschließend verwandeln wir die Geschichte gemeinsam mit ScratchJunior\
+ , einer kindgerechten…\n\nKosten: 10 €\nInfos und Anmeldung: https://h
+ df-hn.de/kurs/maerchenhaft-mit-scratchjunior-eine-geschichte-programmieren
+ -das-mutige-tier-261H207006/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 3
+URL:https://hdf-hn.de/kurs/maerchenhaft-mit-scratchjunior-eine-geschichte-p
+ rogrammieren-das-mutige-tier-261H207006/
+END:VEVENT
+BEGIN:VEVENT
+UID:experimenta-first-lego-league-explore-ausstellung-20261205T100000Z@cosm
+ os-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261205T100000Z
+DTEND:20261205T150000Z
+SUMMARY:First Lego League Explore – Ausstellung
+DESCRIPTION:In der aktuellen Saison begeben sich Kinder im Alter von 6 bis 
+ 10 Jahren bei der First Lego League (FLL) Explore in die Vielfalt globaler
+  Naturlandschaften. Die Saison BIOGLOW™ führt Teams in die faszinierend
+ en Ökosysteme unserer Erde. Im Mittelpunkt stehen die Wechselwirkungen zw
+ ischen Natur…\n\nKosten: siehe Anbieter\nInfos und Anmeldung: https://ww
+ w.experimenta.science/besuchen/veranstaltungskalender/first-lego-league-ex
+ plore-ausstellung/
+LOCATION:Experimenta-Platz\, 74072 Heilbronn
+URL:https://www.experimenta.science/besuchen/veranstaltungskalender/first-l
+ ego-league-explore-ausstellung/
+END:VEVENT
+BEGIN:VEVENT
+UID:experimenta-first-lego-league-regionalwettbewerb-heilbronn-20261205T100
+ 000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261205T100000Z
+DTEND:20261205T160000Z
+SUMMARY:First Lego League Challenge – Regionalwettbewerb Heilbronn
+DESCRIPTION:Faszinierende Naturphänomene\, neue Entdeckungen und innovativ
+ e Forschungsmethoden: Unter dem Motto „BIOGLOW“ nimmt die First Lego L
+ eague (FLL) Challenge in dieser Saison mit auf eine Reise durch die vielf
+ ältigen Ökosysteme unserer Erde.\n\nKosten: siehe Anbieter\nInfos und An
+ meldung: https://www.experimenta.science/besuchen/veranstaltungskalender/f
+ irst-lego-league-regionalwettbewerb-heilbronn/
+LOCATION:Experimenta-Platz\, 74072 Heilbronn
+URL:https://www.experimenta.science/besuchen/veranstaltungskalender/first-l
+ ego-league-regionalwettbewerb-heilbronn/
+END:VEVENT
+BEGIN:VEVENT
+UID:ipai-ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-
+ an-die-wand-20261208T173000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20261208T173000Z
+DTEND:20261208T193000Z
+SUMMARY:KI SALON IMPULS: Dr. Sebastian Hallensleben – Regulieren wir uns 
+ an die Wand?
+DESCRIPTION:: Einlass & Ankommen: Ab 18:00 Uhr im Raum Grace Hopper Keynote
+ : Dr. Sebastian Hallensleben gibt Einblicke in die Standardisierung der EU
+ -KI-Verordnung\, Qualitätsmetriken und den Mut zur sachlichen KI-Bewertun
+ g Fragen & Austausch: Raum für eure Fragen und eine offene Diskussion mit
+  dem Speaker\, um…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ip
+ ai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hallensleben-regu
+ lieren-wir-uns-an-die-wand/
+LOCATION:Besucherzentrum IPAI\, Im Zukunftspark 11/13\, 74076 Heilbronn
+URL:https://ipai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hall
+ ensleben-regulieren-wir-uns-an-die-wand/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410ZGR-20270116T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270116T090000Z
+DTEND:20270116T153000Z
+SUMMARY:Zukunftswerkstatt: Generative KI trifft Grundschulalltag
+DESCRIPTION:KI-Werkzeuge für den Grundschulalltag In dieser Zukunftswerkst
+ att erhalten Lehrkräfte einen verständlichen Einstieg in generative KI u
+ nd erkunden konkrete Einsatzmöglichkeiten für den Schulalltag. Ob Unterr
+ ichtsvorbereitung\, differenzierte Materialien\, Elternkommunikation oder 
+ organisatorische…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www
+ .aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI-trifft-Grunds
+ chulalltag/271410ZGR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI
+ -trifft-Grundschulalltag/271410ZGR
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207007-20270116T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270116T090000Z
+DTEND:20270116T103000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207007/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207007/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207007-20270123T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270123T090000Z
+DTEND:20270123T103000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207007/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207007/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207016-20270116T113000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270116T113000Z
+DTEND:20270116T130000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207016/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207016/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207016-20270123T113000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270123T113000Z
+DTEND:20270123T130000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207016/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207016/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207017-20270116T133000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270116T133000Z
+DTEND:20270116T150000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207017/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207017/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207017-20270123T133000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270123T133000Z
+DTEND:20270123T150000Z
+SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem Kurs tauchen Kinder gemeinsam mit ihren Eltern noch tiefer in die We
+ lt der Robotik und des Programmierens ein. Mit LEGO® Education bauen sie 
+ kleine Roboter und lernen anschließend\, diese mithilfe von Symbolen auf 
+ dem Tablet zu…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/roboter-verstehen-programmieren-entdecken-stufe-2-261H207017/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
+ 2-261H207017/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410ZKT-20270125T083000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270125T083000Z
+DTEND:20270125T150000Z
+SUMMARY:Zukunftswerkstatt: Die smarte Kita – Planung und Organisation ver
+ einfachen mit KI
+DESCRIPTION:KI als Unterstützung für Organisation und Verwaltung im Kita-
+ Alltag KI kann pädagogische Fachkräfte bei vielen Verwaltungsaufgaben un
+ terstützen – von der Dokumentation über die Elternkommunikation bis hi
+ n zur Erstellung von Protokollen. In dieser Zukunftswerkstatt erhalten Sie
+  einen praxisnahen…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Kita/271410ZKT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Ki
+ ta/271410ZKT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIKT-20270125T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270125T153000Z
+DTEND:20270125T184500Z
+SUMMARY:KI in der Kita? Chancen\, Fragen und erste Erfahrungen
+DESCRIPTION:Impulsvortrag mit anschließendem Austausch Ein niedrigschwelli
+ ger Einstieg in das Thema Künstliche Intelligenz für pädagogische Fachk
+ räfte\, der Orientierung bietet\, Fragen aufgreift und zum gemeinsamen Au
+ stausch einlädt. Künstliche Intelligenz gewinnt auch im Bildungsbereich 
+ zunehmend an…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-und-erste-Erfahrung
+ en/271410KIKT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-u
+ nd-erste-Erfahrungen/271410KIKT
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H207008-20270130T083000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270130T083000Z
+DTEND:20270130T103000Z
+SUMMARY:Spielerisch mit ScratchJunior eine grünere\, saubere Welt programm
+ ieren
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson In d
+ iesem fröhlichen Mitmach-Workshop entdecken wir gemeinsam\, wie spannend 
+ Programmieren sein kann. Programmieren ist eine eigene Sprache – und mit
+  ScratchJunior können schon die Jüngsten sie spielerisch lernen. Ganz oh
+ ne Vorkenntnisse…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn
+ .de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saubere-welt-programm
+ ieren-261H207008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saub
+ ere-welt-programmieren-261H207008/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430UN-20270203T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270203T143000Z
+DTEND:20270203T183000Z
+SUMMARY:Spieleentwicklung mit Unity für Einsteiger (10–14 Jahre)
+DESCRIPTION:Entwickle dein eigenes Videospiel mit der Spiele-Engine aus Gam
+ es wie Among Us oder Pokémon Go Stell dir vor du drückst „Play" und de
+ in eigenes Spiel startet. Genau das passiert in diesem Workshop mit Hilfe 
+ von Unity! Unity ist eine der weltweit beliebtesten Spiele-Engines\, mit d
+ er vielfältige…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Spieleentwicklung-mit-Unity-fuer-Einsteiger-10
+ 14-Jahre/271430UN
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Spieleentwicklung-mit-Unity-fue
+ r-Einsteiger-1014-Jahre/271430UN
+END:VEVENT
+BEGIN:VEVENT
+UID:experimenta-maker-faire-20270206T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270206T090000Z
+DTEND:20270206T170000Z
+SUMMARY:Maker Faire ® Heilbronn 2027
+DESCRIPTION:Kreativität trifft Technologie! Komm vorbei\, wenn die Maker C
+ ommunity ihre Projekte vorstellt. An den Ständen kannst du kreative Köpf
+ e treffen\, dich austauschen und inspirieren lassen. Werde bei Mini Worksh
+ ops aktiv und lausche spannenden Vorträgen.\n\nKosten: siehe Anbieter\nIn
+ fos und Anmeldung: https://www.experimenta.science/besuchen/veranstaltungs
+ kalender/maker-faire/
+LOCATION:Experimenta-Platz\, 74072 Heilbronn
+URL:https://www.experimenta.science/besuchen/veranstaltungskalender/maker-f
+ aire/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993AOGD-20270208T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270208T080000Z
+DTEND:20270208T141500Z
+SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
+ l. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum-Spiel-Game-
+ Design-mit-Unity-Kl-9-10/271993AOGD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
+ -Spiel-Game-Design-mit-Unity-Kl-9-10/271993AOGD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993AOGD-20270209T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270209T080000Z
+DTEND:20270209T141500Z
+SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
+ l. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum-Spiel-Game-
+ Design-mit-Unity-Kl-9-10/271993AOGD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
+ -Spiel-Game-Design-mit-Unity-Kl-9-10/271993AOGD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993AOGD-20270210T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270210T080000Z
+DTEND:20270210T141500Z
+SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
+ l. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum-Spiel-Game-
+ Design-mit-Unity-Kl-9-10/271993AOGD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
+ -Spiel-Game-Design-mit-Unity-Kl-9-10/271993AOGD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993AOGD-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T080000Z
+DTEND:20270211T141500Z
+SUMMARY:Juniorakademie: Von der Idee zum Spiel – Game-Design mit Unity (K
+ l. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum-Spiel-Game-
+ Design-mit-Unity-Kl-9-10/271993AOGD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Von-der-Idee-zum
+ -Spiel-Game-Design-mit-Unity-Kl-9-10/271993AOGD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430CYC1-20270209T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270209T080000Z
+DTEND:20270209T140000Z
+SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1
+ 0–14 Jahre)
+DESCRIPTION:Kreatives\, nachhaltiges und gemeinsames Bauen in der Sandbox-W
+ elt von Luanti Wie sieht eine Stadt aus\, in der du gerne leben möchtest?
+  In diesem Workshop planst und baust du gemeinsam mit anderen eine nachhal
+ tige und smarte Stadt in der Sandbox-Welt von Luanti (ähnlich wie Minecra
+ ft). Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-a
+ kademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nachhaltige-und-smarte-T
+ raumstadt-1014-Jahre/271430CYC1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nach
+ haltige-und-smarte-Traumstadt-1014-Jahre/271430CYC1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430CYC1-20270210T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270210T080000Z
+DTEND:20270210T140000Z
+SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1
+ 0–14 Jahre)
+DESCRIPTION:Kreatives\, nachhaltiges und gemeinsames Bauen in der Sandbox-W
+ elt von Luanti Wie sieht eine Stadt aus\, in der du gerne leben möchtest?
+  In diesem Workshop planst und baust du gemeinsam mit anderen eine nachhal
+ tige und smarte Stadt in der Sandbox-Welt von Luanti (ähnlich wie Minecra
+ ft). Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-a
+ kademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nachhaltige-und-smarte-T
+ raumstadt-1014-Jahre/271430CYC1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nach
+ haltige-und-smarte-Traumstadt-1014-Jahre/271430CYC1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430CYC1-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T080000Z
+DTEND:20270211T140000Z
+SUMMARY:Craft Your City – Baue deine nachhaltige und smarte Traumstadt (1
+ 0–14 Jahre)
+DESCRIPTION:Kreatives\, nachhaltiges und gemeinsames Bauen in der Sandbox-W
+ elt von Luanti Wie sieht eine Stadt aus\, in der du gerne leben möchtest?
+  In diesem Workshop planst und baust du gemeinsam mit anderen eine nachhal
+ tige und smarte Stadt in der Sandbox-Welt von Luanti (ähnlich wie Minecra
+ ft). Dabei…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-a
+ kademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nachhaltige-und-smarte-T
+ raumstadt-1014-Jahre/271430CYC1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Craft-Your-City-Baue-deine-nach
+ haltige-und-smarte-Traumstadt-1014-Jahre/271430CYC1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKIT-20270209T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270209T080000Z
+DTEND:20270209T141500Z
+SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
+ emen (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Things-Kl-11-13/2719
+ 93JKIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
+ gs-Kl-11-13/271993JKIT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKIT-20270210T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270210T080000Z
+DTEND:20270210T141500Z
+SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
+ emen (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Things-Kl-11-13/2719
+ 93JKIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
+ gs-Kl-11-13/271993JKIT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKIT-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T080000Z
+DTEND:20270211T141500Z
+SUMMARY:Juniorakademie: Internet of Things – Von Sensoren zu smarten Syst
+ emen (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Things-Kl-11-13/2719
+ 93JKIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Thin
+ gs-Kl-11-13/271993JKIT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JGCS-20270210T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270210T080000Z
+DTEND:20270210T141500Z
+SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
+ atch (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-Scratch-Kl-7-
+ 8/271993JGCS
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
+ Scratch-Kl-7-8/271993JGCS
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JGCS-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T080000Z
+DTEND:20270211T141500Z
+SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
+ atch (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-Scratch-Kl-7-
+ 8/271993JGCS
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
+ Scratch-Kl-7-8/271993JGCS
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JGCS-20270212T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270212T080000Z
+DTEND:20270212T141500Z
+SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
+ atch (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-Scratch-Kl-7-
+ 8/271993JGCS
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
+ Scratch-Kl-7-8/271993JGCS
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270211T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T080000Z
+DTEND:20270211T090000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270211T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270211T090000Z
+DTEND:20270211T113000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270212T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270212T080000Z
+DTEND:20270212T090000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305008-20270212T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270212T090000Z
+DTEND:20270212T113000Z
+SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
+ ammiert?
+DESCRIPTION:Für Kinder von 6 bis 10 Jahren ohne Begleitperson In diesem sp
+ ielerischen Kurs entdecken Kinder\, wie Roboter „denken“\, was sie bra
+ uchen um zu funktionieren und wie man ihnen Schritt für Schritt Aufgaben 
+ beibringt - ganz ohne Tablet oder Bildschirm. Wir starten kreativ und ansc
+ hließend planen die…\n\nKosten: 60 €\nInfos und Anmeldung: https://hd
+ f-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wie-werden-sie-
+ programmiert-261H305008/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 8
+URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
+ e-werden-sie-programmiert-261H305008/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-261H305006-20270213T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270213T090000Z
+DTEND:20270213T120000Z
+SUMMARY:KinderFerienBox: Programmieren Lernen - Scratch
+DESCRIPTION:Für Kinder von 8 bis 12 Jahren ohne Begleitperson In diesem Wo
+ rkshop erlernen die Kinder die visuelle Programmiersprache Scratch\, spezi
+ ell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder dur
+ ch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zwe
+ iergruppen…\n\nKosten: 30 €\nInfos und Anmeldung: https://hdf-hn.de/ku
+ rs/kinderferienbox-programmieren-lernen-scratch-261H305006/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 1
+URL:https://hdf-hn.de/kurs/kinderferienbox-programmieren-lernen-scratch-261
+ H305006/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270217T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270217T140000Z
+DTEND:20270217T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270224T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270224T140000Z
+DTEND:20270224T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK1-20270303T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270303T140000Z
+DTEND:20270303T153000Z
+SUMMARY:Robotik zum Anfassen 1 – analoges Programmieren ganz ohne Bildsch
+ irm (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit kleinen Robotern spiele
+ risch die Grundlagen entdecken Entdecke die faszinierende Welt der Robotik
+ ! In diesem Kurs lernen Kinder spielerisch\, wie man Programme erstellt\, 
+ die Roboter zum Leben erwecken. Durch kreative Aufgaben und Teamarbeit wer
+ den logisches…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.ai
+ m-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges-Programmieren-ga
+ nz-ohne-Bildschirm-710-Jahre/271420RK1
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-1-analoges
+ -Programmieren-ganz-ohne-Bildschirm-710-Jahre/271420RK1
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270220T090000Z
+DTEND:20270220T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270221T090000Z
+DTEND:20270221T110000Z
+SUMMARY:Data Literacy for Kids: Trends und Anteile
+DESCRIPTION:Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Will
+ kommen im nächsten Datenabenteuer! In diesem Workshop entdecken Kinder sp
+ ielerisch\, wie man Veränderungen sichtbar macht und Anteile versteht –
+  mit einfachen Alltagsbeobachtungen\, kleinen Experimenten und gemeinsamen
+  Aktivitäten…\n\nKosten: 10 €\nInfos und Anmeldung: https://hdf-hn.de
+ /kurs/data-literacy-for-kids-trends-und-anteile-272H207001/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 4
+URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
+ 7001/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270223T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270223T153000Z
+DTEND:20270223T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270302T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270302T153000Z
+DTEND:20270302T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270309T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270309T153000Z
+DTEND:20270309T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270316T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270316T153000Z
+DTEND:20270316T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270323T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270323T153000Z
+DTEND:20270323T171000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270406T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270406T143000Z
+DTEND:20270406T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270413T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270413T143000Z
+DTEND:20270413T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270420T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270420T143000Z
+DTEND:20270420T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270427T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270427T143000Z
+DTEND:20270427T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270504T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270504T143000Z
+DTEND:20270504T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270511T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270511T143000Z
+DTEND:20270511T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270601T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270601T143000Z
+DTEND:20270601T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270615T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270615T143000Z
+DTEND:20270615T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270622T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270622T143000Z
+DTEND:20270622T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270629T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270629T143000Z
+DTEND:20270629T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SC-20270706T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270706T143000Z
+DTEND:20270706T161000Z
+SUMMARY:Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8
+ –11 Jahre)
+DESCRIPTION:Starte deine eigene Weltraummission und lerne\, wie Programmier
+ en geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise 
+ zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des 
+ Programmierens. Mit Scratch\, einer einfachen und intuitiven Programmiersp
+ rache\, gestalten sie…\n\nKosten: kostenlos\nInfos und Anmeldung: https:
+ //www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reis
+ e-zum-Planeten-Mars-811-Jahre/271420SC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scr
+ atch-Reise-zum-Planeten-Mars-811-Jahre/271420SC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410DD-20270223T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270223T160000Z
+DTEND:20270223T191500Z
+SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
+ entationspflichten clever meistern
+DESCRIPTION:Künstliche Intelligenz – ein Game Changer in der Schulverwal
+ tung? Künstliche Intelligenz in der Verwaltung zu nutzen hat sich vielero
+ rts mittlerweile etabliert. Dieser Kurs beschäftigt sich mit dem Themenge
+ biet der rechtlichen Dokumentationspflichten im Bereich der Schulverwaltun
+ g. Sie lernen\, wie…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulverwaltung/2
+ 71410DD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
+ erwaltung/271410DD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410DD-20270226T130000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270226T130000Z
+DTEND:20270226T180000Z
+SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
+ entationspflichten clever meistern
+DESCRIPTION:Künstliche Intelligenz – ein Game Changer in der Schulverwal
+ tung? Künstliche Intelligenz in der Verwaltung zu nutzen hat sich vielero
+ rts mittlerweile etabliert. Dieser Kurs beschäftigt sich mit dem Themenge
+ biet der rechtlichen Dokumentationspflichten im Bereich der Schulverwaltun
+ g. Sie lernen\, wie…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulverwaltung/2
+ 71410DD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
+ erwaltung/271410DD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270224T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270224T160000Z
+DTEND:20270224T173000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270312T140000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270312T140000Z
+DTEND:20270312T193000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410HBL-20270414T150000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270414T150000Z
+DTEND:20270414T173000Z
+SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
+  einsetzen
+DESCRIPTION:Orientierung statt Tool-Chaos: Lerne Sie\, digitale Bildungsanw
+ endungen mithilfe der Heilbronner Liste reflektiert auszuwählen\, didakti
+ sch sinnvoll einzusetzen und ihre Wirkung im Unterricht zu evaluieren. Mit
+  Digitale Medien und KI-Anwendungen lässt sich der Unterricht vielfältig
+  gestalten. Die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
+ aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-Digitale-Tools-g
+ ezielt-im-Unterricht-einsetzen/271410HBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
+ igitale-Tools-gezielt-im-Unterricht-einsetzen/271410HBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270225T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270225T153000Z
+DTEND:20270225T171000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270304T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270304T153000Z
+DTEND:20270304T171000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270311T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270311T153000Z
+DTEND:20270311T171000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270318T153000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270318T153000Z
+DTEND:20270318T171000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270408T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270408T143000Z
+DTEND:20270408T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270415T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270415T143000Z
+DTEND:20270415T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270422T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270422T143000Z
+DTEND:20270422T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270429T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270429T143000Z
+DTEND:20270429T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270513T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270513T143000Z
+DTEND:20270513T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270603T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270603T143000Z
+DTEND:20270603T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270617T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270617T143000Z
+DTEND:20270617T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270624T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270624T143000Z
+DTEND:20270624T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270701T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270701T143000Z
+DTEND:20270701T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270708T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270708T143000Z
+DTEND:20270708T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420FE-20270715T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270715T143000Z
+DTEND:20270715T161000Z
+SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
+ 7 Jahre)
+DESCRIPTION:Schritt für Schritt zur eigenen Messenger-App – von der Idee
+  bis zur Web-App In diesem Kurs tauchst du in die Welt der Webentwicklung 
+ ein und baust deine eigene Messenger Web-App\, inspiriert von Anwendungen 
+ wie WhatsApp\, Discord oder Signal. Jede Woche kommt ein neues Puzzleteil 
+ dazu. Du startest…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-eigene-Messen
+ ger-Web-App-1317-Jahre/271420FE
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
+ eigene-Messenger-Web-App-1317-Jahre/271420FE
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270225T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270225T161500Z
+DTEND:20270225T180000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270304T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270304T161500Z
+DTEND:20270304T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270311T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270311T161500Z
+DTEND:20270311T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KK-20270318T161500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270318T161500Z
+DTEND:20270318T193000Z
+SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
+ richt entwickeln
+DESCRIPTION:Musikalisch\, performativ und konzeptionell – vom ersten Impu
+ ls zur gestalteten Umsetzung – für Unterricht\, AGs und kreative Projek
+ te In diesem Kurs entdecken Lehrkräfte die kreativen Möglichkeiten von M
+ usik-KI und entwickeln daraus eigene Songs\, Klangideen und musikalische F
+ ormate für Schule und…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Klangdesig
+ ns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
+ angdesigns-fuer-Schule-und-Unterricht-entwickeln/271410KK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430GBL-20270301T160000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270301T160000Z
+DTEND:20270301T193000Z
+SUMMARY:Games im Unterricht – Impulse für den Einstieg in Game-based Lea
+ rning
+DESCRIPTION:Wie Sie motivierende Lernprozesse mit Spielen gestalten können
+  Spiele gehören heute selbstverständlich zu unserer Kultur\, digital wie
+  analog\, und haben längst auch den Bildungsbereich erreicht. Doch nicht 
+ in jeder spielerischen Verpackung steckt ein gelungener Lernprozess. In di
+ esem kompakten…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Games-im-Unterricht-Impulse-fuer-den-Einstieg-i
+ n-Game-based-Learning/271430GBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Games-im-Unterricht-Impulse-fue
+ r-den-Einstieg-in-Game-based-Learning/271430GBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIP-20270305T133000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270305T133000Z
+DTEND:20270305T170000Z
+SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
+ aktionspartnern werden
+DESCRIPTION:Folgen für die soziale und kognitive Entwicklung Die Art und W
+ eise\, wie wir KI-Tools verwenden\, lässt sich nicht mehr auf bloßen Wer
+ kzeuggebrauch reduzieren: KI-Systeme bieten sich als Gesprächspartner\, L
+ ernbegleiter\, Freunde und sogar als Therapeuten an. In diesem zweitägige
+ n Seminar für…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/271410KIP
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
+ 271410KIP
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KIP-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270306T080000Z
+DTEND:20270306T113000Z
+SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
+ aktionspartnern werden
+DESCRIPTION:Folgen für die soziale und kognitive Entwicklung Die Art und W
+ eise\, wie wir KI-Tools verwenden\, lässt sich nicht mehr auf bloßen Wer
+ kzeuggebrauch reduzieren: KI-Systeme bieten sich als Gesprächspartner\, L
+ ernbegleiter\, Freunde und sogar als Therapeuten an. In diesem zweitägige
+ n Seminar für…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/271410KIP
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
+ 271410KIP
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271430ZGBL-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270306T080000Z
+DTEND:20270306T153000Z
+SUMMARY:Zukunftswerkstatt: Game-based Learning im Unterricht umsetzen – L
+ ernsettings mit Games gestalten
+DESCRIPTION:Wir unterstützen Sie dabei\, Lernprozesse mit Spielmethoden zu
+  gestalten! Sie möchten Ihre Schüler mit spielerischen Methoden neu moti
+ vieren\, wissen aber noch nicht\, wie Sie Game-based Learning sinnvoll in 
+ Ihren Unterricht integrieren können? In dieser Zukunftswerkstatt setzen S
+ ie sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim-akad
+ emie.org/kurse/kurs/Zukunftswerkstatt-Game-based-Learning-im-Unterricht-um
+ setzen/271430ZGBL
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Game-based-Le
+ arning-im-Unterricht-umsetzen/271430ZGBL
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JLMM-20270306T080000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270306T080000Z
+DTEND:20270306T150000Z
+SUMMARY:Juniorakademie: Mensch\, Maschine\, Moral – Was unterscheidet uns
+  von KI? (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-Moral-Kl-11-13/2
+ 71993JLMM
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-
+ Moral-Kl-11-13/271993JLMM
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SG-20270310T150000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270310T150000Z
+DTEND:20270310T181500Z
+SUMMARY:Talking Plants – Programmiere deine Pflanze\, bis sie spricht (12
+ –16 Jahre)
+DESCRIPTION:Was wäre\, wenn deine Pflanze plötzlich Nachrichten schicken 
+ könnte? In diesem Workshop entdeckst du\, wie Internet of Things\, Coding
+  und KI zusammenwirken. Du verbindest einen Micro-Computer (keine Angst\, 
+ das lernst du hier) mit einem Feuchtigkeitssensor und programmierst\, wann
+  deine Pflanze eine…\n\nKosten: kostenlos\nInfos und Anmeldung: https://
+ www.aim-akademie.org/kurse/kurs/Talking-Plants-Programmiere-deine-Pflanze-
+ bis-sie-spricht-1216-Jahre/271420SG
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Talking-Plants-Programmiere-dei
+ ne-Pflanze-bis-sie-spricht-1216-Jahre/271420SG
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270330T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270330T070000Z
+DTEND:20270330T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270331T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270331T070000Z
+DTEND:20270331T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993KIEK-20270401T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270401T070000Z
+DTEND:20270401T131500Z
+SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-Kuenstliche-
+ Intelligenz-Kl-9-10/271993KIEK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
+ Kuenstliche-Intelligenz-Kl-9-10/271993KIEK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270330T070000Z
+DTEND:20270330T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270331T070000Z
+DTEND:20270331T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270401T070000Z
+DTEND:20270401T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270402T070000Z
+DTEND:20270402T131500Z
+SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
+ SS und JavaScript (Kl. 11-13)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbr
+ onn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlauf
+ en eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüle
+ rinnen können…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitaet-Webentwicklung
+ -Kl-11-13/271993JKCK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
+ t-Webentwicklung-Kl-11-13/271993JKCK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270407T130000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270407T130000Z
+DTEND:20270407T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270414T130000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270414T130000Z
+DTEND:20270414T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420RK2-20270421T130000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270421T130000Z
+DTEND:20270421T143000Z
+SUMMARY:Robotik zum Anfassen 2 – vom analogen ins symbolbasierte Programm
+ ieren (7–10 Jahre)
+DESCRIPTION:Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine
+  Roboter programmieren. Tauche ein in die spannende Welt der Robotik und d
+ es Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Rob
+ oter und lernst\, sie mithilfe von Symbolen auf dem Tablet zu programmiere
+ n. Spielerisch…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolba
+ sierte-Programmieren710-Jahre/271420RK2
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analo
+ gen-ins-symbolbasierte-Programmieren710-Jahre/271420RK2
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270423T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270423T124500Z
+DTEND:20270423T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270430T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270430T124500Z
+DTEND:20270430T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270507T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270507T124500Z
+DTEND:20270507T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270514T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270514T124500Z
+DTEND:20270514T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270604T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270604T124500Z
+DTEND:20270604T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270611T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270611T124500Z
+DTEND:20270611T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:hdf-272H116102-20270618T124500Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270618T124500Z
+DTEND:20270618T140000Z
+SUMMARY:Maxi-MINTies -  Entdeckungsreise durch die Welt der Informatik
+DESCRIPTION:Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson I
+ n diesem Angebot setzen sich die Kinder altersgerecht mit Grundprinzipien 
+ der Informatik auseinander. Sie erfinden einfache Anleitungen\, erkennen M
+ uster\, sortieren\, strukturieren und finden kreative Lösungen. Dabei erf
+ ahren sie\, wie…\n\nKosten: 60 €\nInfos und Anmeldung: https://hdf-hn.
+ de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-informatik-272H11
+ 6102/
+LOCATION:Heilbronn\, Haus der Familie\, Erich-Mendelsohn-Str. 1C\, Raum 5
+URL:https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der
+ -informatik-272H116102/
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271993JEWP-20270424T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270424T070000Z
+DTEND:20270424T140000Z
+SUMMARY:Juniorakademie: Entdecke die Welt des Programmierens – Vom ersten
+  Befehl zur eigenen Anwendung (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Entdecke-die-Welt-des-Program
+ mierens-Kl-7-8/271993JEWP
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Entdecke-die-Wel
+ t-des-Programmierens-Kl-7-8/271993JEWP
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410FK-20270429T143000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270429T143000Z
+DTEND:20270429T174500Z
+SUMMARY:Feedback-Tools im Unterricht: gestern analog\, heute digital – un
+ d morgen mit KI
+DESCRIPTION:Von analogen Methoden über digitale Tools bis zu KI-gestützte
+ m Feedback im Unterricht Feedback hat einen starken Einfluss auf den Lernp
+ rozess. In diesem Workshop erhalten Sie praxisnahe Impulse dazu\, wie Feed
+ back im Schulalltag gestaltet werden kann\, am Beispiel kleiner\, direkt i
+ m Unterricht…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-gestern-analog-heute
+ -digital-und-morgen-mit-KI/271410FK
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-ge
+ stern-analog-heute-digital-und-morgen-mit-KI/271410FK
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SDD-20270524T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270524T070000Z
+DTEND:20270524T120000Z
+SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
+ en (ab 14 Jahre)
+DESCRIPTION:Daten gehören zu den wichtigsten Ressourcen unserer Zeit – d
+ och wie werden sie eigentlich gespeichert\, analysiert und genutzt? Weißt
+  du\, warum immer genug Chips da sind\, während kurz vor Ladenschluss man
+ chmal das frische Obst fehlt? Oder noch wichtiger: Wie lässt sich verhind
+ ern\, dass am Ende des…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenbanken-di
+ e-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
+ anken-die-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SDD-20270526T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270526T070000Z
+DTEND:20270526T120000Z
+SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
+ en (ab 14 Jahre)
+DESCRIPTION:Daten gehören zu den wichtigsten Ressourcen unserer Zeit – d
+ och wie werden sie eigentlich gespeichert\, analysiert und genutzt? Weißt
+  du\, warum immer genug Chips da sind\, während kurz vor Ladenschluss man
+ chmal das frische Obst fehlt? Oder noch wichtiger: Wie lässt sich verhind
+ ern\, dass am Ende des…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenbanken-di
+ e-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
+ anken-die-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271420SDD-20270605T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270605T070000Z
+DTEND:20270605T120000Z
+SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
+ en (ab 14 Jahre)
+DESCRIPTION:Daten gehören zu den wichtigsten Ressourcen unserer Zeit – d
+ och wie werden sie eigentlich gespeichert\, analysiert und genutzt? Weißt
+  du\, warum immer genug Chips da sind\, während kurz vor Ladenschluss man
+ chmal das frische Obst fehlt? Oder noch wichtiger: Wie lässt sich verhind
+ ern\, dass am Ende des…\n\nKosten: kostenlos\nInfos und Anmeldung: https
+ ://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenbanken-di
+ e-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
+ anken-die-Welt-von-morgen-gestalten-ab-14-J/271420SDD
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270525T070000Z
+DTEND:20270525T140000Z
+SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 
+ der Schwarz Digits (ab 13 Jahre)
+DESCRIPTION:Ein Besuch im IT Education Center der Schwarz Digits Komm mit i
+ ns ITEC der Schwarz Digits und tauche ein in die spannende und vielseitige
+  Welt der Informationstechnologie (IT)! Unser interaktiver Workshop „IT 
+ erleben statt nur verstehen" bietet Jugendlichen ab der 7. Klasse und ihre
+ n Eltern die…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.aim
+ -akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-Ein-Besuch-im-ITEC
+ -der-Schwarz-Digits/271470SIT
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-
+ Ein-Besuch-im-ITEC-der-Schwarz-Digits/271470SIT
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-271410KR-20270608T150000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270608T150000Z
+DTEND:20270608T181500Z
+SUMMARY:KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvo
+ ll und rechtssicher im Unterricht einsetzen
+DESCRIPTION:Künstliche Intelligenz verstehen und souverän im Unterricht n
+ utzen Künstliche Intelligenz verändert die Art und Weise\, wie wir lehre
+ n und lernen – und stellt Schulen zugleich vor neue Herausforderungen. D
+ ieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und we
+ iterführenden…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.a
+ im-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993XMC-20270802T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270802T070000Z
+DTEND:20270802T131500Z
+SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-und-Elektroni
+ k-Kl-7-8/272993XMC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
+ und-Elektronik-Kl-7-8/272993XMC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993XMC-20270803T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270803T070000Z
+DTEND:20270803T131500Z
+SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-und-Elektroni
+ k-Kl-7-8/272993XMC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
+ und-Elektronik-Kl-7-8/272993XMC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993XMC-20270804T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270804T070000Z
+DTEND:20270804T131500Z
+SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-und-Elektroni
+ k-Kl-7-8/272993XMC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
+ und-Elektronik-Kl-7-8/272993XMC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993JECI-20270802T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270802T070000Z
+DTEND:20270802T131500Z
+SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
+ lernen mit Python (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-zur-eigenen-
+ Idee-Kl-9-10/272993JECI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
+ zur-eigenen-Idee-Kl-9-10/272993JECI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993JECI-20270803T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270803T070000Z
+DTEND:20270803T131500Z
+SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
+ lernen mit Python (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-zur-eigenen-
+ Idee-Kl-9-10/272993JECI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
+ zur-eigenen-Idee-Kl-9-10/272993JECI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993JECI-20270804T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270804T070000Z
+DTEND:20270804T131500Z
+SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
+ lernen mit Python (Kl. 9-10)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 9 und 10. Die Juniorakademie ist das Stipendienprogramm der aim Heilbro
+ nn. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufe
+ n eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüler
+ innen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://w
+ ww.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-zur-eigenen-
+ Idee-Kl-9-10/272993JECI
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
+ zur-eigenen-Idee-Kl-9-10/272993JECI
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993RESC-20270906T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270906T070000Z
+DTEND:20270906T131500Z
+SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
+ n mit LEGO & senseBox (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-Kl-7-8/272993R
+ ESC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-K
+ l-7-8/272993RESC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993RESC-20270907T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270907T070000Z
+DTEND:20270907T131500Z
+SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
+ n mit LEGO & senseBox (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-Kl-7-8/272993R
+ ESC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-K
+ l-7-8/272993RESC
+END:VEVENT
+BEGIN:VEVENT
+UID:aim-272993RESC-20270908T070000Z@cosmos-entdecker
+DTSTAMP:20261115T102627Z
+DTSTART:20270908T070000Z
+DTEND:20270908T131500Z
+SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
+ n mit LEGO & senseBox (Kl. 7-8)
+DESCRIPTION:Diese Veranstaltung richtet sich an Juniorstudierende der Klass
+ en 7 und 8. Die Juniorakademie ist das Stipendienprogramm der aim Heilbron
+ n. Um an Juniorakademie-Kursen teilnehmen zu können\, ist das Durchlaufen
+  eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schüleri
+ nnen können sich…\n\nKosten: kostenlos\nInfos und Anmeldung: https://ww
+ w.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-Kl-7-8/272993R
+ ESC
+LOCATION:Bildungscampus 7\, 74076 Heilbronn
+URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-K
+ l-7-8/272993RESC
+END:VEVENT
 END:VCALENDAR
