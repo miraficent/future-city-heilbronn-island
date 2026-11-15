@@ -1,6 +1,8 @@
 /**
  * Isometrische Einrichtungsgebäude für die gemalte Kinder-Karte (DESIGN.md Projektentscheidung 11).
- * Vorbild ist die experimenta-Zeichnung des Teams (Glas, kräftige Kanten, gepflasterter Sockel).
+ * Stil wie die experimenta-Zeichnung des Teams (kräftige Kanten, gepflasterter Sockel). Die vier echten Orte
+ * sind nach ihren echten Gebäuden in Heilbronn gezeichnet (Vorlage: die Fotos in public/medien/fotos/ und die
+ * gemalten Ortsszenen) – eigene, vereinfachte Zeichnungen, keine Fotos. COSMOS ist kein echtes Haus (Platz mit Kiosk).
  * Alle Gebäude sind in einem 520 × 400-Raum gezeichnet und werden auf der Karte verkleinert.
  * Verläufe sind hier ausdrücklich erlaubt (Ausnahme nur für diese Gebäude).
  */
@@ -77,233 +79,244 @@ function Sockel({ x, y, a, b }: { x: number; y: number; a: number; b: number }) 
   );
 }
 
-// ---------- experimenta (Zeichnung des Teams, unverändert übernommen) ----------
+/** Rauten-Fassade der experimenta: zwei gegenläufige Zickzack-Linien ergeben Dreiecke und Rauten */
+function Rauten({ breite, hoehe, schritt, farbe }: { breite: number; hoehe: number; schritt: number; farbe: string }) {
+  const n = Math.ceil(breite / schritt);
+  const zick = (phase: number) =>
+    Array.from({ length: n + 1 }, (_, i) => `${Math.min(i * schritt, breite)},${(i + phase) % 2 === 0 ? -hoehe : 0}`).join(" ");
+  return (
+    <g fill="none" stroke={farbe} strokeWidth={2} strokeLinejoin="round">
+      <polyline points={zick(0)} />
+      <polyline points={zick(1)} opacity={0.7} />
+    </g>
+  );
+}
+
+/** Klinker: feine waagerechte Fugen */
+function Klinker({ breite, hoehe, farbe }: { breite: number; hoehe: number; farbe: string }) {
+  return (
+    <path d={Array.from({ length: Math.floor(hoehe / 7) }, (_, i) => `M0 ${-(i + 1) * 7} H${breite}`).join(" ")} stroke={farbe} strokeWidth={1} opacity={0.45} />
+  );
+}
+
+/** Glasband mit senkrechten Sprossen (Erdgeschosse) */
+function Glasband({ breite, hoehe, unten = 0, fill, sprossen, abstand = 22 }: { breite: number; hoehe: number; unten?: number; fill: string; sprossen: string; abstand?: number }) {
+  return (
+    <g>
+      <rect x={0} y={-unten - hoehe} width={breite} height={hoehe} fill={fill} />
+      <path d={Array.from({ length: Math.floor(breite / abstand) }, (_, i) => `M${(i + 1) * abstand} ${-unten - hoehe} V${-unten}`).join(" ")} stroke={sprossen} strokeWidth={2} opacity={0.8} />
+    </g>
+  );
+}
+
+/** Pflanzenwand (IPAI Spaces): grüne Fläche mit Blätter-Tupfen; feste Positionen, damit nichts flackert */
+function Pflanzenwand({ von, bis, oben, unten }: { von: number; bis: number; oben: number; unten: number }) {
+  const breite = bis - von, hoehe = unten - oben;
+  const tupfen = Array.from({ length: Math.floor((breite * hoehe) / 160) }, (_, i) => {
+    const x = von + ((i * 37) % breite);
+    const y = oben + ((i * 53) % hoehe);
+    return <circle key={i} cx={x} cy={y} r={4 + (i % 3)} fill={["#7BC86C", "#4E9A4A", "#9ad67e", "#3d7f3a"][i % 4]} />;
+  });
+  return (
+    <g>
+      <rect x={von} y={oben} width={breite} height={hoehe} rx={4} fill="#4E9A4A" />
+      {tupfen}
+    </g>
+  );
+}
+
+// ---------- experimenta – nach dem echten Gebäude: gestapelte, versetzte Blöcke, weiße Rauten-Fassade, dunkle Glasbänder, Science Dome ----------
 
 function Experimenta() {
+  const rand = "#24323c";
+  const weissL = "url(#ex-weissL)", weissR = "url(#ex-weissR)";
   return (
     <g>
       <defs>
-        <linearGradient id="ex-glassFront" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#a8dce0" /><stop offset=".42" stopColor="#438da7" /><stop offset="1" stopColor="#174d6b" />
-        </linearGradient>
-        <linearGradient id="ex-glassSide" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#d2eff0" /><stop offset=".45" stopColor="#6bb3c1" /><stop offset="1" stopColor="#28627d" />
-        </linearGradient>
-        <linearGradient id="ex-glassRoof" x1="0" y1="0" x2=".9" y2="1">
-          <stop offset="0" stopColor="#e4f5ef" /><stop offset=".55" stopColor="#9ccfd0" /><stop offset="1" stopColor="#4c91a5" />
-        </linearGradient>
-        <linearGradient id="ex-lowerGlass" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#4b91a7" /><stop offset="1" stopColor="#173e5d" />
-        </linearGradient>
-        <clipPath id="ex-frontClip"><path d="M92 170 270 220 270 348 119 292Z" /></clipPath>
-        <clipPath id="ex-rightClip"><path d="M270 220 432 162 421 286 270 348Z" /></clipPath>
-        <clipPath id="ex-upperFront"><path d="M82 132 270 185 270 224 92 174Z" /></clipPath>
-        <clipPath id="ex-upperRight"><path d="M270 185 438 127 432 165 270 224Z" /></clipPath>
+        <linearGradient id="ex-weissL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#e3e8ec" /></linearGradient>
+        <linearGradient id="ex-weissR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e6ebef" /><stop offset="1" stopColor="#c7d0d7" /></linearGradient>
+        <linearGradient id="ex-glas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4a6274" /><stop offset=".5" stopColor="#1f2f3c" /><stop offset="1" stopColor="#111a22" /></linearGradient>
+        <linearGradient id="ex-blau" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#8fc4ee" /><stop offset=".5" stopColor="#3b6fe0" /><stop offset="1" stopColor="#1d3f8a" /></linearGradient>
+        <radialGradient id="ex-kuppel" cx=".35" cy=".3" r=".8"><stop offset="0" stopColor="#ffffff" /><stop offset=".6" stopColor="#c9d2da" /><stop offset="1" stopColor="#8d99a4" /></radialGradient>
       </defs>
-      <path d="M42 324 250 389 484 300 280 239Z" fill="#526b55" opacity=".12" />
-      <path d="M47 313 250 377 479 291 275 228Z" fill="#d9d2b9" stroke="#8a927e" strokeWidth="2.5" />
-      <path d="M67 311 250 368 458 290 276 239Z" fill="#e9e2cb" stroke="#b0aa91" strokeWidth="1.5" />
-      <path d="M84 317 250 369 446 295" fill="none" stroke="#c0b99f" strokeWidth="2" />
-      <path d="M119 270 270 315 421 259 421 286 270 348 119 292Z" fill="url(#ex-lowerGlass)" stroke="#244c60" strokeWidth="3" />
-      <path d="M119 270 270 315 270 348 119 292Z" fill="#286780" opacity=".8" />
-      <path d="M270 315 421 259 421 286 270 348Z" fill="#174866" opacity=".78" />
-      <path d="M119 270 270 315 421 259" fill="none" stroke="#d2f1e9" strokeWidth="3" />
-      <path d="M119 292 270 348 421 286" fill="none" stroke="#9bcbd0" strokeWidth="2" />
-      <g stroke="#a9dce0" strokeWidth="2" opacity=".8">
-        <path d="M145 278 145 302 M169 285 169 311 M194 293 194 320 M220 300 220 329 M246 307 246 337" />
-        <path d="M294 306 294 338 M319 297 319 329 M345 287 345 320 M371 278 371 311 M397 268 397 301" />
+      <Sockel x={270} y={345} a={180} b={170} />
+      {/* Erdgeschoss: dunkles Glas */}
+      <Kiste x={270} y={345} a={170} b={160} h={40} links="url(#ex-glas)" rechts="url(#ex-glas)" oben="#3a4a56" rand={rand}
+        linksInhalt={<Glasband breite={170} hoehe={40} fill="url(#ex-glas)" sprossen="#6f8798" />}
+        rechtsInhalt={<Glasband breite={160} hoehe={40} fill="url(#ex-glas)" sprossen="#6f8798" />} />
+      {/* 1. Block: weiße Rauten */}
+      <Kiste x={262} y={305} a={176} b={168} h={56} links={weissL} rechts={weissR} oben="#f2f5f7" rand={rand}
+        linksInhalt={<Rauten breite={176} hoehe={56} schritt={22} farbe="#aab5be" />}
+        rechtsInhalt={<Rauten breite={168} hoehe={56} schritt={22} farbe="#9aa6b0" />} />
+      {/* dunkles Glasband, leicht verdreht */}
+      <Kiste x={276} y={249} a={168} b={158} h={30} links="url(#ex-glas)" rechts="url(#ex-glas)" oben="#3a4a56" rand={rand}
+        linksInhalt={<Glasband breite={168} hoehe={30} fill="url(#ex-glas)" sprossen="#6f8798" abstand={28} />}
+        rechtsInhalt={<Glasband breite={158} hoehe={30} fill="url(#ex-glas)" sprossen="#6f8798" abstand={28} />} />
+      {/* 2. Block: weiße Rauten, zur anderen Seite versetzt */}
+      <Kiste x={266} y={219} a={178} b={164} h={50} links={weissL} rechts={weissR} oben="#f2f5f7" rand={rand}
+        linksInhalt={<Rauten breite={178} hoehe={50} schritt={22} farbe="#aab5be" />}
+        rechtsInhalt={<Rauten breite={164} hoehe={50} schritt={22} farbe="#9aa6b0" />} />
+      {/* oberster Block: blaues Glas an der Ecke */}
+      <Kiste x={300} y={169} a={124} b={112} h={42} links="url(#ex-glas)" rechts="url(#ex-blau)" oben="#d7e1e8" rand={rand}
+        linksInhalt={<Glasband breite={124} hoehe={42} fill="url(#ex-glas)" sprossen="#6f8798" abstand={26} />}
+        rechtsInhalt={<path d="M28 -42 V0 M56 -42 V0 M84 -42 V0 M0 -21 H112" stroke="#cfe6fb" strokeWidth={2} opacity={0.8} />} />
+      <path d="M300 169 300 127" stroke="#ffffff" strokeWidth={3} opacity={0.7} />
+      {/* Science Dome: silberne Kuppel vor dem Haus */}
+      <path d="M352 326 Q352 290 390 288 Q428 290 428 326 Z" fill="url(#ex-kuppel)" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
+      <path d="M352 326 Q390 336 428 326" fill="none" stroke={rand} strokeWidth={3} />
+      <path d="M362 306 Q390 300 418 306" fill="none" stroke="#ffffff" strokeWidth={2} opacity={0.8} />
+      {/* orange Kugeln am Ufer */}
+      <g stroke={rand} strokeWidth={2}>
+        <circle cx={150} cy={338} r={7} fill="#F59E0B" />
+        <circle cx={170} cy={345} r={7} fill="#F59E0B" />
       </g>
-      <path d="M119 292 270 348 270 315" fill="none" stroke="#102f49" strokeWidth="4" />
-      <path d="M92 170 270 220 270 315 119 270Z" fill="url(#ex-glassFront)" stroke="#244e63" strokeWidth="4" />
-      <path d="M270 220 432 162 421 259 270 315Z" fill="url(#ex-glassSide)" stroke="#244e63" strokeWidth="4" />
-      <path d="M92 170 270 220 432 162" fill="none" stroke="#e1f7f2" strokeWidth="3" />
-      <g clipPath="url(#ex-frontClip)" stroke="#bce4e2" strokeWidth="2" opacity=".88">
-        <path d="M115 173 139 277 M139 180 164 284 M164 187 188 291 M189 194 213 299 M214 201 238 307 M239 208 264 314" />
-        <path d="M90 194 270 246 M90 218 270 270 M90 242 270 294" />
-      </g>
-      <g clipPath="url(#ex-rightClip)" stroke="#d2efeb" strokeWidth="2" opacity=".9">
-        <path d="M292 213 285 309 M320 203 313 298 M348 193 341 287 M376 183 369 276 M404 172 397 266" />
-        <path d="M270 244 430 187 M270 269 427 212 M270 293 424 237" />
-      </g>
-      <path d="M92 170 270 220 432 162 421 198 270 252 105 207Z" fill="#1c5875" opacity=".86" stroke="#244e63" strokeWidth="3" />
-      <path d="M105 207 270 252 421 198" fill="none" stroke="#a9dfe0" strokeWidth="3" />
-      <path d="M270 220 270 252" stroke="#d8f4ed" strokeWidth="3" />
-      <path d="M117 209 270 252 411 202" fill="none" stroke="#173f5b" strokeWidth="2" />
-      <path d="M82 132 270 185 438 127 250 76Z" fill="url(#ex-glassRoof)" stroke="#274f63" strokeWidth="4" />
-      <path d="M82 132 270 185 270 220 92 170Z" fill="#6aaabd" stroke="#274f63" strokeWidth="3" />
-      <path d="M270 185 438 127 432 162 270 220Z" fill="#b6dfe0" stroke="#274f63" strokeWidth="3" />
-      <path d="M82 132 250 76 270 185Z" fill="#d8eeea" opacity=".65" stroke="#f2ffff" strokeWidth="2" />
-      <path d="M250 76 438 127 270 185Z" fill="#b2d9d9" opacity=".7" stroke="#f2ffff" strokeWidth="2" />
-      <path d="M82 132 270 185 438 127" fill="none" stroke="#f4ffff" strokeWidth="4" />
-      <path d="M250 76 250 112 270 185" fill="none" stroke="#7baeb9" strokeWidth="2" />
-      <path d="M250 76 250 112 438 127" fill="none" stroke="#e8ffff" strokeWidth="2" />
-      <path d="M82 132 250 112 438 127" fill="none" stroke="#ffffff" strokeWidth="2" opacity=".75" />
-      <path d="M250 112 270 185" stroke="#ffffff" strokeWidth="2" opacity=".8" />
-      <path d="M82 132 270 185 438 127 250 76Z" fill="#ffffff" className="ig-glanz" />
-      <g clipPath="url(#ex-upperFront)" stroke="#e2f6ef" strokeWidth="2" opacity=".9">
-        <path d="M111 140 120 179 M146 150 155 189 M181 160 190 199 M216 170 225 209 M251 180 260 219" />
-        <path d="M88 151 270 202 M91 162 270 213" />
-      </g>
-      <g clipPath="url(#ex-upperRight)" stroke="#6f9eaa" strokeWidth="2" opacity=".8">
-        <path d="M300 174 300 210 M333 163 333 198 M366 151 366 186 M399 139 399 174" />
-        <path d="M270 199 434 143 M270 211 433 155" />
-      </g>
-      <path d="M82 132 92 170 119 270" fill="none" stroke="#173f59" strokeWidth="4" />
-      <path d="M438 127 432 162 421 259" fill="none" stroke="#173f59" strokeWidth="4" />
-      <path d="M270 185 270 220 270 315" fill="none" stroke="#e1f6ef" strokeWidth="3" />
-      <path d="M119 270 270 315 421 259" fill="none" stroke="#163f5a" strokeWidth="4" />
-      <path d="M190 321 270 348 350 318" fill="none" stroke="#d4f1e8" strokeWidth="3" />
-      <path d="M239 337 239 358 M270 348 270 367 M302 336 302 356" stroke="#c4e8e4" strokeWidth="2" />
-      <path d="M250 342 270 349 290 342" fill="none" stroke="#173f5a" strokeWidth="2" />
     </g>
   );
 }
 
-// ---------- aim – Bildungscampus: heller Bau mit lila Glasbändern und Code-Schild ----------
+// ---------- aim – Bildungscampus nach dem echten Ort: dunkelgraue Klinker-Würfel, Fensterraster, Glas-Erdgeschoss ----------
 
 function Aim() {
-  const rand = "#3a2a7a";
+  const rand = "#2c2e34";
+  const fenster = "url(#aim-fenster)";
   return (
     <g>
       <defs>
-        <linearGradient id="aim-glas" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#c9bdf6" /><stop offset=".5" stopColor="#7d63e6" /><stop offset="1" stopColor="#4F35B0" />
-        </linearGradient>
-        <linearGradient id="aim-wandL" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fbf9f4" /><stop offset="1" stopColor="#e6e0d2" />
-        </linearGradient>
-        <linearGradient id="aim-wandR" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#e3dccd" /><stop offset="1" stopColor="#cbc2ae" />
-        </linearGradient>
+        <linearGradient id="aim-fenster" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#9fb3c4" /><stop offset=".5" stopColor="#3d4f5f" /><stop offset="1" stopColor="#1e2a35" /></linearGradient>
+        <linearGradient id="aim-erd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#b8d0de" /><stop offset="1" stopColor="#4b6576" /></linearGradient>
       </defs>
-      <Sockel x={280} y={340} a={210} b={140} />
-      <Kiste x={280} y={340} a={210} b={140} h={125} links="url(#aim-wandL)" rechts="url(#aim-wandR)" oben="#efe9fb" rand={rand}
+      <Sockel x={280} y={345} a={200} b={150} />
+      {/* hinterer, niedrigerer Würfel */}
+      <Kiste x={360} y={302} a={92} b={92} h={112} links="#8b8d93" rechts="#6f7177" oben="#9a9ca2" rand={rand}
         linksInhalt={<>
-          <Fenster von={8} bis={202} reihen={3} spalten={7} unten={14} hoehe={22} abstand={12} fill="url(#aim-glas)" rahmen={rand} />
-          {/* Eingang mit lila Vordach */}
-          <rect x={150} y={-34} width={44} height={34} fill="#3b2a85" stroke={rand} strokeWidth={2} />
-          <rect x={140} y={-44} width={64} height={10} rx={2} fill="#6C4CE0" stroke={rand} strokeWidth={2} />
-        </>}
-        rechtsInhalt={<Fenster von={6} bis={134} reihen={3} spalten={4} unten={14} hoehe={22} abstand={12} fill="url(#aim-glas)" rahmen={rand} />}
-      />
-      {/* Aufbau mit Glasfront */}
-      <Kiste x={250} y={206} a={130} b={95} h={58} links="url(#aim-glas)" rechts="#5b42c4" oben="#d9cff8" rand={rand}
-        linksInhalt={<path d="M26 -58 V0 M52 -58 V0 M78 -58 V0 M104 -58 V0 M0 -29 H130" stroke="#e9e3ff" strokeWidth={2} opacity={0.8} />}
-        rechtsInhalt={<path d="M24 -58 V0 M48 -58 V0 M72 -58 V0" stroke="#b6a6f2" strokeWidth={2} />}
-      />
-      {/* Code-Schild auf dem Dach (schwebt leicht) */}
-      <g className="ig-schweben"><g transform={`matrix(1 ${LS} 0 1 150 128)`}>
-        <rect x={6} y={-6} width={6} height={22} fill={rand} />
-        <rect x={66} y={-6} width={6} height={22} fill={rand} />
-        <rect x={-6} y={-58} width={90} height={54} rx={10} fill="#6C4CE0" stroke={rand} strokeWidth={3} />
-        <path d="M22 -44 L10 -31 L22 -18 M56 -44 L68 -31 L56 -18 M46 -48 L32 -14" stroke="#FFFFFF" strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      </g></g>
-      <path d="M280 340 280 215" stroke="#ffffff" strokeWidth={3} opacity={0.7} />
-    </g>
-  );
-}
-
-// ---------- Haus der Familie – warmes Haus mit Satteldach, Herz und Garten ----------
-
-function HausDerFamilie() {
-  const rand = "#7a3a24";
-  const x = 280, y = 336, a = 190, b = 120, h = 100, rh = 66;
-  const L: P = [x - a, y - LS * a], R: P = [x + b, y - RS * b];
-  const C0: P = [x, y - h], C1: P = [L[0], L[1] - h], C3: P = [R[0], R[1] - h], C2: P = [L[0] + b, L[1] - RS * b - h];
-  const M0: P = [(C0[0] + C3[0]) / 2, (C0[1] + C3[1]) / 2 - rh];
-  const M1: P = [(C1[0] + C2[0]) / 2, (C1[1] + C2[1]) / 2 - rh];
-  return (
-    <g>
-      <defs>
-        <linearGradient id="hdf-dach" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#f7ad92" /><stop offset=".55" stopColor="#F28C6B" /><stop offset="1" stopColor="#c8603f" />
-        </linearGradient>
-        <linearGradient id="hdf-glas" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#d6f1f4" /><stop offset="1" stopColor="#5BB8C4" />
-        </linearGradient>
-      </defs>
-      <Sockel x={x} y={y} a={a} b={b} />
-      <polygon points={pt([M0, M1, C2, C3])} fill="#b9573a" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
-      <Kiste x={x} y={y} a={a} b={b} h={h} links="#fbf3e6" rechts="#ead9c0" oben="#ead9c0" rand={rand}
-        linksInhalt={<>
-          <Fenster von={10} bis={180} reihen={2} spalten={5} unten={14} hoehe={28} abstand={14} fill="url(#hdf-glas)" rahmen={rand} />
-          {/* Tür mit Vordach */}
-          <rect x={80} y={-44} width={34} height={44} rx={4} fill="#c8603f" stroke={rand} strokeWidth={2} />
-          <rect x={70} y={-54} width={54} height={10} rx={3} fill="#F28C6B" stroke={rand} strokeWidth={2} />
+          <Klinker breite={92} hoehe={112} farbe="#5d5f65" />
+          <Fenster von={4} bis={88} reihen={3} spalten={3} unten={36} hoehe={16} abstand={10} fill={fenster} rahmen="#e6e8ec" />
+          <Glasband breite={92} hoehe={30} fill="url(#aim-erd)" sprossen="#e6e8ec" />
         </>}
         rechtsInhalt={<>
-          <Fenster von={6} bis={114} reihen={2} spalten={3} unten={14} hoehe={28} abstand={14} fill="url(#hdf-glas)" rahmen={rand} />
+          <Klinker breite={92} hoehe={112} farbe="#55575d" />
+          <Fenster von={4} bis={88} reihen={3} spalten={3} unten={36} hoehe={16} abstand={10} fill={fenster} rahmen="#d4d6da" />
+        </>} />
+      {/* vorderer, hoher Würfel */}
+      <Kiste x={250} y={345} a={150} b={110} h={150} links="#80828a" rechts="#66686f" oben="#8f9198" rand={rand}
+        linksInhalt={<>
+          <Klinker breite={150} hoehe={150} farbe="#5d5f65" />
+          <Fenster von={6} bis={144} reihen={4} spalten={5} unten={46} hoehe={18} abstand={9} fill={fenster} rahmen="#e6e8ec" />
+          <Glasband breite={150} hoehe={38} fill="url(#aim-erd)" sprossen="#e6e8ec" />
+          {/* Eingang mit lila Rahmen (aim-Farbe) */}
+          <rect x={100} y={-38} width={34} height={38} fill="#2f3b4a" stroke="#6C4CE0" strokeWidth={4} />
         </>}
-      />
-      {/* Giebel rechts mit Herz */}
-      <polygon points={pt([C0, C3, M0])} fill="#ead9c0" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
-      <g transform={`translate(${M0[0]},${M0[1] + 38})`}>
-        <path className="ig-puls" d="M0 10 C-14 0 -16 -10 -9 -14 C-5 -16 -1 -14 0 -10 C1 -14 5 -16 9 -14 C16 -10 14 0 0 10 Z" fill="#FF6B6B" stroke={rand} strokeWidth={2.5} />
-      </g>
-      {/* Dach vorn + Schornstein */}
-      <polygon points={pt([C0, C1, M1, M0])} fill="url(#hdf-dach)" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
-      <g stroke="#fbd2c2" strokeWidth={2} opacity={0.6}>
-        {[0.25, 0.5, 0.75].map((t) => {
-          const p: P = [C0[0] + (C1[0] - C0[0]) * t, C0[1] + (C1[1] - C0[1]) * t];
-          const q: P = [M0[0] + (M1[0] - M0[0]) * t, M0[1] + (M1[1] - M0[1]) * t];
-          return <line key={t} x1={p[0]} y1={p[1]} x2={q[0]} y2={q[1]} />;
-        })}
-      </g>
-      <Kiste x={170} y={210} a={18} b={16} h={30} links="#a8553a" rechts="#8a4430" oben="#6e3524" rand={rand} />
-      <g fill="#ffffff" stroke="#d9d2c4" strokeWidth={2}>
-        <circle className="ig-rauch" cx={167} cy={168} r={9} />
-        <circle className="ig-rauch ig-rauch--2" cx={167} cy={168} r={9} />
-      </g>
-      {/* Garten: Bäume und Zaun */}
+        rechtsInhalt={<>
+          <Klinker breite={110} hoehe={150} farbe="#55575d" />
+          <Fenster von={6} bis={104} reihen={4} spalten={3} unten={46} hoehe={18} abstand={9} fill={fenster} rahmen="#d4d6da" />
+          <Glasband breite={110} hoehe={38} fill="url(#aim-erd)" sprossen="#d4d6da" />
+        </>} />
+      <path d="M250 345 250 195" stroke="#ffffff" strokeWidth={2.5} opacity={0.55} />
+      {/* Platz davor: Bäume wie auf dem Campus */}
       <g stroke="#2f6b2f" strokeWidth={2}>
-        <circle cx={410} cy={300} r={20} fill="#4E9A4A" />
-        <circle cx={430} cy={288} r={15} fill="#7BC86C" />
+        <circle cx={118} cy={318} r={16} fill="#7BC86C" />
+        <circle cx={420} cy={300} r={14} fill="#4E9A4A" />
       </g>
-      <path d="M318 346 L420 309" stroke="#ffffff" strokeWidth={4} strokeDasharray="4 8" strokeLinecap="round" />
     </g>
   );
 }
 
-// ---------- IPAI – Glasturm auf flachem Sockelbau, Chip auf dem Dach ----------
+// ---------- Haus der Familie – nach dem echten Haus: Holzfassade, Fensterbänder mit Geländer, Glas-Erdgeschoss mit Stützen ----------
 
-function Ipai() {
-  const rand = "#14544c";
+function HausDerFamilie() {
+  const rand = "#6b4423";
+  const holzL = "url(#hdf-holzL)", holzR = "url(#hdf-holzR)";
+  const fensterband = (breite: number, unten: number) => (
+    <g>
+      <rect x={6} y={-unten - 22} width={breite - 12} height={22} fill="url(#hdf-glas)" stroke={rand} strokeWidth={2} />
+      <path d={Array.from({ length: Math.floor((breite - 12) / 26) }, (_, i) => `M${6 + (i + 1) * 26} ${-unten - 22} V${-unten}`).join(" ")} stroke={rand} strokeWidth={1.5} opacity={0.7} />
+      {/* Geländer vor dem Fensterband */}
+      <path d={`M6 ${-unten - 10} H${breite - 6}`} stroke="#5d6470" strokeWidth={2} />
+      <path d={Array.from({ length: Math.floor((breite - 12) / 6) }, (_, i) => `M${6 + i * 6} ${-unten - 10} V${-unten}`).join(" ")} stroke="#5d6470" strokeWidth={0.8} opacity={0.8} />
+    </g>
+  );
+  const holzfugen = (breite: number, hoehe: number) => (
+    <path d={Array.from({ length: Math.floor(hoehe / 6) }, (_, i) => `M0 ${-(i + 1) * 6} H${breite}`).join(" ")} stroke="#a8743e" strokeWidth={1} opacity={0.5} />
+  );
   return (
     <g>
       <defs>
-        <linearGradient id="ipai-glasL" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#b9efe7" /><stop offset=".45" stopColor="#2BB3A3" /><stop offset="1" stopColor="#11695f" />
-        </linearGradient>
-        <linearGradient id="ipai-glasR" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#dcf7f2" /><stop offset=".5" stopColor="#6fd0c3" /><stop offset="1" stopColor="#1f8a7d" />
-        </linearGradient>
+        <linearGradient id="hdf-holzL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f0cf9e" /><stop offset="1" stopColor="#d9a96c" /></linearGradient>
+        <linearGradient id="hdf-holzR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#d6a76b" /><stop offset="1" stopColor="#b8864c" /></linearGradient>
+        <linearGradient id="hdf-glas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e3f4f6" /><stop offset=".6" stopColor="#8FD3DB" /><stop offset="1" stopColor="#4AA3AF" /></linearGradient>
       </defs>
-      <Sockel x={270} y={346} a={200} b={150} />
-      <Kiste x={270} y={346} a={200} b={150} h={60} links="url(#ipai-glasL)" rechts="url(#ipai-glasR)" oben="#d7f2ec" rand={rand}
-        linksInhalt={<path d="M25 -60 V0 M50 -60 V0 M75 -60 V0 M100 -60 V0 M125 -60 V0 M150 -60 V0 M175 -60 V0 M0 -30 H200" stroke="#e3fbf6" strokeWidth={2} opacity={0.8} />}
-        rechtsInhalt={<path d="M25 -60 V0 M50 -60 V0 M75 -60 V0 M100 -60 V0 M125 -60 V0 M0 -30 H150" stroke="#e3fbf6" strokeWidth={2} opacity={0.8} />}
-      />
-      {/* Turm */}
-      <Kiste x={300} y={265} a={100} b={80} h={170} links="url(#ipai-glasL)" rechts="url(#ipai-glasR)" oben="#e4f8f4" rand={rand}
-        linksInhalt={<path d="M25 -170 V0 M50 -170 V0 M75 -170 V0 M0 -34 H100 M0 -68 H100 M0 -102 H100 M0 -136 H100" stroke="#e3fbf6" strokeWidth={2} opacity={0.85} />}
-        rechtsInhalt={<path d="M26 -170 V0 M53 -170 V0 M0 -34 H80 M0 -68 H80 M0 -102 H80 M0 -136 H80" stroke="#0f4f47" strokeWidth={2} opacity={0.5} />}
-        obenInhalt={
-          <g transform="translate(24,26)">
-            <rect x={-4} y={-4} width={40} height={40} rx={6} fill="#14544c" />
-            <rect x={0} y={0} width={32} height={32} rx={5} fill="#2BB3A3" stroke="#ffffff" strokeWidth={2} />
-            <rect x={9} y={9} width={14} height={14} rx={2} fill="#ffffff" />
-          </g>
-        }
-      />
-      {/* Antenne */}
-      <path d="M295 92 V54" stroke={rand} strokeWidth={4} strokeLinecap="round" />
-      <circle cx={295} cy={50} r={6} fill="#F59E0B" stroke={rand} strokeWidth={2} />
-      <circle className="ig-blinken" cx={295} cy={50} r={11} fill="#F59E0B" opacity={0.5} />
-      <g fill="none" stroke="#2BB3A3" strokeWidth={4} strokeLinecap="round">
-        <path className="ig-welle" d="M281 36 Q295 22 309 36" />
-        <path className="ig-welle ig-welle--2" d="M273 28 Q295 6 317 28" />
+      <Sockel x={280} y={336} a={200} b={130} />
+      {/* Glas-Erdgeschoss (etwas kleiner, das Holz steht vor) mit hellen Stützen */}
+      <Kiste x={280} y={336} a={186} b={118} h={44} links="url(#hdf-glas)" rechts="url(#hdf-glas)" oben="#d9cbb3" rand={rand}
+        linksInhalt={<>
+          <Glasband breite={186} hoehe={44} fill="url(#hdf-glas)" sprossen="#5d6470" abstand={20} />
+          {[30, 92, 154].map((u) => <rect key={u} x={u} y={-44} width={10} height={44} fill="#e7e2d6" stroke={rand} strokeWidth={1.5} />)}
+          <rect x={56} y={-36} width={28} height={36} fill="#3f6b72" stroke={rand} strokeWidth={2} />
+        </>}
+        rechtsInhalt={<>
+          <Glasband breite={118} hoehe={44} fill="url(#hdf-glas)" sprossen="#5d6470" abstand={20} />
+          {[40, 100].map((u) => <rect key={u} x={u} y={-44} width={10} height={44} fill="#e7e2d6" stroke={rand} strokeWidth={1.5} />)}
+        </>} />
+      {/* zwei Obergeschosse aus Holz */}
+      <Kiste x={280} y={292} a={198} b={128} h={96} links={holzL} rechts={holzR} oben="#e8dcc6" rand={rand}
+        linksInhalt={<>{holzfugen(198, 96)}{fensterband(198, 12)}{fensterband(198, 60)}</>}
+        rechtsInhalt={<>{holzfugen(128, 96)}{fensterband(128, 12)}{fensterband(128, 60)}</>} />
+      <path d="M280 292 280 196" stroke="#fff4dd" strokeWidth={3} opacity={0.7} />
+      {/* Bäume und Blumen davor */}
+      <g stroke="#2f6b2f" strokeWidth={2}>
+        <circle cx={410} cy={296} r={20} fill="#4E9A4A" />
+        <circle cx={432} cy={284} r={15} fill="#7BC86C" />
+        <circle cx={112} cy={318} r={14} fill="#7BC86C" />
       </g>
-      <path d="M300 95 300 265" stroke="#ffffff" strokeWidth={3} opacity={0.7} />
+      <g>
+        {[[150, 344, "#FF6B6B"], [162, 348, "#F59E0B"], [174, 351, "#6C4CE0"]].map(([bx, by, c]) => <circle key={bx as number} cx={bx as number} cy={by as number} r={4} fill={c as string} />)}
+      </g>
+    </g>
+  );
+}
+
+// ---------- IPAI – IPAI Spaces nach dem echten Haus: hellgrauer Würfel, Pflanzenwände an den Ecken, dunkles Dachgeschoss ----------
+
+function Ipai() {
+  const rand = "#2a3036";
+  const fenster = "url(#ipai-fenster)";
+  return (
+    <g>
+      <defs>
+        <linearGradient id="ipai-fenster" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a9c3d1" /><stop offset=".5" stopColor="#425b6a" /><stop offset="1" stopColor="#1f2c35" /></linearGradient>
+        <linearGradient id="ipai-wandL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#f1f2f3" /><stop offset="1" stopColor="#d9dcdf" /></linearGradient>
+        <linearGradient id="ipai-wandR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#d4d8dc" /><stop offset="1" stopColor="#b8bec4" /></linearGradient>
+      </defs>
+      <Sockel x={270} y={346} a={190} b={150} />
+      <Kiste x={270} y={346} a={180} b={140} h={150} links="url(#ipai-wandL)" rechts="url(#ipai-wandR)" oben="#e3e6e9" rand={rand}
+        linksInhalt={<>
+          {/* dunkles Eingangsband mit Glastüren */}
+          <rect x={0} y={-34} width={180} height={34} fill="#2d3238" />
+          <rect x={70} y={-30} width={60} height={30} fill={fenster} stroke="#5b6670" strokeWidth={1.5} />
+          <rect x={86} y={-46} width={78} height={10} fill="#2d3238" />
+          <Fenster von={44} bis={136} reihen={3} spalten={2} unten={44} hoehe={26} abstand={10} fill={fenster} rahmen="#2d3238" />
+          {/* Pflanzenwände an beiden Ecken, mit Fenstern darin */}
+          <Pflanzenwand von={2} bis={44} oben={-148} unten={-36} />
+          <Pflanzenwand von={138} bis={178} oben={-148} unten={-36} />
+          <Fenster von={6} bis={42} reihen={3} spalten={1} unten={46} hoehe={24} abstand={12} fill={fenster} rahmen="#2d3238" />
+          <Fenster von={138} bis={176} reihen={3} spalten={1} unten={46} hoehe={24} abstand={12} fill={fenster} rahmen="#2d3238" />
+        </>}
+        rechtsInhalt={<>
+          <rect x={0} y={-34} width={140} height={34} fill="#2d3238" />
+          <Fenster von={6} bis={100} reihen={3} spalten={2} unten={44} hoehe={26} abstand={10} fill={fenster} rahmen="#2d3238" />
+          <Pflanzenwand von={102} bis={138} oben={-148} unten={-36} />
+          <Fenster von={104} bis={136} reihen={3} spalten={1} unten={46} hoehe={24} abstand={12} fill={fenster} rahmen="#2d3238" />
+        </>} />
+      {/* zurückgesetztes dunkles Dachgeschoss */}
+      <Kiste x={266} y={174} a={108} b={76} h={20} links="#4a5058" rechts="#3a3f46" oben="#5b626b" rand={rand}
+        linksInhalt={<Glasband breite={108} hoehe={20} fill="#4a5058" sprossen="#6b7680" abstand={18} />} />
+      <path d="M270 346 270 196" stroke="#ffffff" strokeWidth={2.5} opacity={0.6} />
+      {/* Gräser und Bäume vor dem Haus */}
+      <g stroke="#2f6b2f" strokeWidth={2}>
+        <circle cx={420} cy={300} r={16} fill="#4E9A4A" />
+        <circle cx={112} cy={322} r={12} fill="#7BC86C" />
+      </g>
+      <path d="M140 342 l4 -14 M146 344 l2 -16 M152 345 l-1 -14 M380 330 l3 -13 M386 328 l1 -15" stroke="#9ad67e" strokeWidth={3} strokeLinecap="round" />
     </g>
   );
 }
@@ -363,10 +376,10 @@ function Cosmos() {
 
 /** Zeichnung, Bodenmitte (ox, oy) und Oberkante (oben) im 520 × 400-Raum */
 const GEBAEUDE: Record<string, { Zeichnung: () => ReactNode; ox: number; oy: number; oben: number }> = {
-  experimenta: { Zeichnung: Experimenta, ox: 265, oy: 320, oben: 76 },
-  aim: { Zeichnung: Aim, ox: 245, oy: 280, oben: 66 },
-  hdf: { Zeichnung: HausDerFamilie, ox: 245, oy: 284, oben: 150 },
-  ipai: { Zeichnung: Ipai, ox: 245, oy: 290, oben: 44 },
+  experimenta: { Zeichnung: Experimenta, ox: 265, oy: 300, oben: 52 },
+  aim: { Zeichnung: Aim, ox: 255, oy: 296, oben: 112 },
+  hdf: { Zeichnung: HausDerFamilie, ox: 245, oy: 290, oben: 95 },
+  ipai: { Zeichnung: Ipai, ox: 250, oy: 298, oben: 95 },
   cosmos: { Zeichnung: Cosmos, ox: 240, oy: 290, oben: 130 },
 };
 
