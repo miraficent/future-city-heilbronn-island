@@ -19,7 +19,7 @@ function event(id: string, teil: Partial<LiveEvent> = {}): LiveEvent {
   return {
     id, institutionId: "experimenta", title: "VAST", title_kids: "Reise durchs Weltall", categories: ["astronomy"], ageMin: 8, ageMax: null,
     type: "show", start: "2026-11-20T14:30:00+01:00", end: null, location: "experimenta", cost: "6 €", image: null,
-    story_kids: "Du reist durch das Weltall.", description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
+    story_kids: "Du reist durch das Weltall.", kinder: {}, description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
     lastUpdated: "2026-11-14", needsReview: false, isDummy: false, ...teil,
   };
 }

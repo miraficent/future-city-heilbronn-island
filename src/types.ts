@@ -43,6 +43,8 @@ export type LiveEvent = {
   image: string | null;
   /** Höchstens 2 kurze Sätze für Kinder */
   story_kids: string;
+  /** Kindertitel und -satz der Konten eule/owl (Mobilizon-Kommentare) */
+  kinder: KinderTexte;
   description_parents: string;
   registrationUrl: string;
   sourceUrl: string;

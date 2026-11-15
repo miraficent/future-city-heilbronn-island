@@ -60,7 +60,7 @@ function ev(id: string, teil: Partial<LiveEvent> = {}): LiveEvent {
     location: "experimenta",
     cost: "kostenlos",
     image: null,
-    story_kids: "",
+    story_kids: "", kinder: {},
     description_parents: "",
     registrationUrl: "https://example.org/anmelden",
     sourceUrl: "https://example.org/",

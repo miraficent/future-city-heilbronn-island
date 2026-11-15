@@ -8,7 +8,7 @@ function ev(id: string, teil: Partial<LiveEvent> = {}): LiveEvent {
   return {
     id, institutionId: "experimenta", title: id, title_kids: id, categories: ["astronomy"], ageMin: 8, ageMax: null,
     type: "show", start: "2026-11-20T14:30:00+01:00", end: null, location: "experimenta", cost: "kostenlos", image: null,
-    story_kids: "", description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
+    story_kids: "", kinder: {}, description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
     lastUpdated: "2026-11-14", needsReview: false, isDummy: false, ...teil,
   };
 }
