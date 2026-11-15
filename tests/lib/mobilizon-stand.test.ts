@@ -20,6 +20,11 @@ describe("standEvents – gespeicherter Mobilizon-Stand", () => {
     expect(kinder.some((e) => e.title.startsWith("Meine Freundin Roxy"))).toBe(true);
   });
 
+  it("zeigt lokale Bilder (auch ohne Mobilizon-Server)", () => {
+    const roxy = events.find((e) => e.title.startsWith("Meine Freundin Roxy"))!;
+    expect(roxy.image).toMatch(/^\/events\/[0-9a-f]+\.jpg$/);
+  });
+
   it("zeigt nichts, was schon vorbei ist", () => {
     const spaeter = standEvents(kategorien as Category[], new Date("2026-12-01T00:00:00+01:00"), "http://localhost:4000");
     expect(spaeter.length).toBeLessThan(events.length);
