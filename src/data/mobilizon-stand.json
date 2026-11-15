@@ -1,0 +1,2465 @@
+[
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T09:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2021/11/VACORSCD0015.jpg\" alt=\"Das Rätsel der Polarnacht – 3D\"/></p>\n<p>Pinguin James und Eisbär Vladimir sind beste Freunde und beobachten gerne gemeinsam den Sternenhimmel. Dabei wundern sie sich, warum die Polarnächte so lang sind. Also beschließen sie, eine eigene Sternwarte zu errichten, um das Rätsel zu lösen.</p>\n<p>Doch dabei bleibt es nicht: Gemeinsam bauen sie das Raumschiff Polaris und starten ihre Mission zu Mars und Saturn. Im Weltall finden sie Antworten auf ihre Fragen und entdecken die wunderbare Welt der Planeten. Thema der Show sind die Jahreszeiten.</p>\n<p>Produziert wurde die Show vom Saint-Étienne Planetarium unter dem Titel „Polaris, the Space Submarine &amp; the Mystery of the Polar Night“.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1794738600\">https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1794738600</a></p>",
+  "endsOn": "2026-11-15T09:59:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "VACORSCD0015.jpg",
+   "size": 91736,
+   "url": "http://localhost:4000/media/67068633c36383feca777a2a450850003e7dc7b3cdb1683ac8d5f11bc2d9debf.jpg?name=VACORSCD0015.jpg",
+   "uuid": "af315d43-5ab6-43af-8654-a87a5d979d7f"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Das Rätsel der Polarnacht – 3D",
+  "updatedAt": "2026-11-14T19:09:35Z",
+  "url": "https://localhost/events/541c5345-7c2f-4938-abc2-a90d4bb9c263",
+  "uuid": "541c5345-7c2f-4938-abc2-a90d4bb9c263",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T10:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2026/04/2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg\" alt=\"Auge in Auge mit Afrikas Tieren\"/></p>\n<p>Auf einer Safari in die Savanne der Provinz KwaZulu-Natal in Südafrika werden Tiere in ihrer natürlichen Umgebung gezeigt. Auf der 360-Grad-Kuppel des Science Dome lassen sich Löwen, Elefanten und weitere Tiere Südafrikas ganz nah und ohne Gefahr beobachten.</p>\n<p>Die Vorführung begleitet einzigartige Tiere in ihrem Alltag und zeigt, welche Charaktere sie haben: mal verspielt, mal kraftvoll und manchmal überraschend emotional. So bekommt man einen Eindruck von der Vielfalt der Wildnis.</p>\n<p>Die Produktion stammt von VR Capture und trägt im Original den Titel „Close Encounters“.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1794742200\">https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1794742200</a></p>",
+  "endsOn": "2026-11-15T11:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "size": 407762,
+   "url": "http://localhost:4000/media/f0d65c8a2320ee65ccf42947aefa7d84b842d9f7ba52418e45bd270af726e330.jpg?name=2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "uuid": "aa5218fb-80b0-4907-93db-cbbfdd8a2e9e"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Auge in Auge mit Afrikas Tieren",
+  "updatedAt": "2026-11-14T19:09:35Z",
+  "url": "https://localhost/events/368805af-d55a-45d5-8eee-a9350f65fcda",
+  "uuid": "368805af-d55a-45d5-8eee-a9350f65fcda",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T11:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2026/08/Mitarbeiterportal-1920x1080-1.jpg\" alt=\"Dinosaurier: Eine Geschichte des Überlebens\"/></p>\n<p>Du begleitest das Mädchen Celeste auf einer abenteuerlichen Reise zurück in die Urzeit auf der 360-Grad-Kuppel des Science Dome. Dabei erfährst du, wie sich die faszinierenden Tiere über Millionen Jahre verändert haben. Lerne riesige Kreaturen, gepanzerte Bestien und Raubtiere kennen und staune über ihre Anpassungsfähigkeit, bis zu dem Tag, an dem ein Asteroideneinschlag ein Massensterben auf der Erde verursachte.</p>\n<p>Doch was, wenn die Dinosaurier gar nicht ausgestorben sind und noch heute ein bisschen Dino in einigen Tieren steckt? Die Show trägt im Original den Titel „Dinosaurs: A Story of Survival“ und wurde von Render Area &amp; Monigotes Estudio 2.0 produziert.</p>\n<p>Hinweis: Bei unseren Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1794745800\">https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1794745800</a></p>",
+  "endsOn": "2026-11-15T11:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Mitarbeiterportal-1920x1080-1.jpg",
+   "size": 199639,
+   "url": "http://localhost:4000/media/9f0dbb90351370b85fabad740c8a907a6f1c492032ecee381aaada4ac4fe86f8.jpg?name=Mitarbeiterportal-1920x1080-1.jpg",
+   "uuid": "1fba760a-dca0-421b-bd53-2f125c25defc"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Dinosaurier: Eine Geschichte des Überlebens",
+  "updatedAt": "2026-11-14T19:09:35Z",
+  "url": "https://localhost/events/112c5175-534b-4145-8f01-ceef9f4f9cb9",
+  "uuid": "112c5175-534b-4145-8f01-ceef9f4f9cb9",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T12:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2026/02/2026-02-26-experimenta-veranstaltung-Messengers_of_Time-and-Space.jpg\" alt=\"Signale aus dem Universum\"/></p>\n<p>Das Universum ist ständig im Wandel: Sterne explodieren, Galaxien kollidieren und Schwarze Löcher senden gewaltige Signale durch Raum und Zeit. Viele dieser Ereignisse bleiben für uns unsichtbar und werden erst durch modernste Technologien wahrnehmbar.</p>\n<p>In der Show begleitet das Publikum Forschende zu Observatorien in Chile und Hawaii. Dort zeigt sich, wie ein Netzwerk aus Teleskopen Botschaften aus dem All empfängt, miteinander verknüpft und entschlüsselt. Auch Gravitationswellen und Neutrinos spielen dabei eine wichtige Rolle und eröffnen ganz neue Einblicke in das Universum.</p>\n<p>Die Show wurde von NSF NOIRlab unter dem Titel „Messengers of Time and Space&quot; produziert. Bei Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/signale-aus-dem-universum/?termin=1794749400\">https://www.experimenta.science/besuchen/veranstaltungskalender/signale-aus-dem-universum/?termin=1794749400</a></p>",
+  "endsOn": "2026-11-15T13:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-02-26-experimenta-veranstaltung-Messengers_of_Time-and-Space.jpg",
+   "size": 262584,
+   "url": "http://localhost:4000/media/4f2e99b02fc23395e466ab69ec011c99005762a153b1c602be8558f452d622ce.jpg?name=2026-02-26-experimenta-veranstaltung-Messengers_of_Time-and-Space.jpg",
+   "uuid": "b8c93ffa-0640-4510-b411-a09e47029955"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Signale aus dem Universum",
+  "updatedAt": "2026-11-14T19:09:35Z",
+  "url": "https://localhost/events/991ed43e-ff41-4f74-855d-8d2558b80293",
+  "uuid": "991ed43e-ff41-4f74-855d-8d2558b80293",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T13:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2023/09/2023-09-15-experimenta-veranstaltung-Capcom-Go.jpg\" alt=\"Capcom Go! – 3D\"/></p>\n<p>Dieses Fulldome-Erlebnis über die Apollo-Mission zum Mond versetzt dich mithilfe neuester 3D-Technik zurück in die Zeit und mitten hinein in das Geschehen von damals.</p>\n<p>„CapCom“ ist kurz für „capsule communicator“ und der Titel einer wichtigen Person in der bemannten Raumfahrt: Der „CapCom“ ist die Kontaktperson auf der Erde, genauer gesagt in Houston, für die Astronauten. Alle Astronauten in der Kapsel hören auf sein oder ihr „go“.</p>\n<p>In „CapCom GO!“ landest du mit Neil Armstrong und Buzz Aldrin auf dem Mond und gehst mit ihnen den kleinen Schritt, der ein großer für die Menschheit ist. Produziert von NSC Creative.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/capcom-go-3d/?termin=1794753000\">https://www.experimenta.science/besuchen/veranstaltungskalender/capcom-go-3d/?termin=1794753000</a></p>",
+  "endsOn": "2026-11-15T13:56:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2023-09-15-experimenta-veranstaltung-Capcom-Go.jpg",
+   "size": 770725,
+   "url": "http://localhost:4000/media/80e7dbc246c6e1c869616374e489e1e0785a2027865c5fcea54742d9a6852b45.jpg?name=2023-09-15-experimenta-veranstaltung-Capcom-Go.jpg",
+   "uuid": "8a50f4f0-ac95-42a9-8bec-d7eed8f8f6b7"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Capcom Go! – 3D",
+  "updatedAt": "2026-11-14T19:09:35Z",
+  "url": "https://localhost/events/894da71e-7b1f-4225-a3d7-ea91137cad8b",
+  "uuid": "894da71e-7b1f-4225-a3d7-ea91137cad8b",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T14:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2021/07/2021-07-14-veranstaltung-Das-Zauberriff.jpg\" alt=\"Die Legende des Zauberriffs – 3D\"/></p>\n<p>Die Legende des Zauberriffs (3D) ist eine Show im Science Dome für Kinder ab 6 Jahren. Nachdem ihr Heimatriff zerstört wird, machen sich die Fische Jake, Shorty und Indigo auf die Suche nach einem sagenumwobenen Korallenriff. Auf dieser Reise gilt es so manches Abenteuer zu bestehen.</p>\n<p>Auf spielerische und humorvolle Art schafft der Film ein Bewusstsein für den Erhalt des einzigartigen Lebensraums der Korallenriffe. Die Produktion stammt von Softmachine Immersive Productions und trägt im Original den Titel „Legend of the Enchanted Reef“. Die Themen sind Ökosystem Meer und Plastik.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/die-legende-des-zauberriffs/?termin=1794756600\">https://www.experimenta.science/besuchen/veranstaltungskalender/die-legende-des-zauberriffs/?termin=1794756600</a></p>",
+  "endsOn": "2026-11-15T14:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2021-07-14-veranstaltung-Das-Zauberriff.jpg",
+   "size": 200367,
+   "url": "http://localhost:4000/media/5ec7d3536883becf67a266ff89c4cb6e6fd01cd2fa9ab61beacf351d9e770847.jpg?name=2021-07-14-veranstaltung-Das-Zauberriff.jpg",
+   "uuid": "63138d36-f639-4a2d-8b6b-bff17e63ed02"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Die Legende des Zauberriffs – 3D",
+  "updatedAt": "2026-11-14T19:09:34Z",
+  "url": "https://localhost/events/5a041f81-6bb3-4efb-8dcd-02c9c5775daf",
+  "uuid": "5a041f81-6bb3-4efb-8dcd-02c9c5775daf",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-15T15:30:00Z",
+  "description": "<p><img src=\"https://www.experimenta.science/wp-content/uploads/2021/07/2021-07-14-veranstaltung-blitzgescheit.jpg\" alt=\"Blitzgescheit – LIVE\"/></p>\n<p>In der Show „Blitzgescheit“ begleiten Showstar Funke und Physikgenie Einstein das Publikum auf eine energiegeladene Zeitreise in die Welt von Volt, Ampere und elektrischen Impulsen.</p>\n<p>Die Show stellt Fragen wie: Was ist ein Blitz? Kann Strom durch deinen Körper fließen? Und wie funktioniert ein Faradayscher Käfig? Mit hochspannenden Experimenten geht die Veranstaltung diesen Fragen auf den Grund.</p>\n<p>Im Spannungsfeld aus Humor, Interaktion und Wissen geht es um das Thema Elektrizität.</p>\n<p>Hinweis: Bei diesem Angebot im Science Dome treten laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auf.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/blitzgescheit/?termin=1794760200\">https://www.experimenta.science/besuchen/veranstaltungskalender/blitzgescheit/?termin=1794760200</a></p>",
+  "endsOn": "2026-11-15T16:03:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2021-07-14-veranstaltung-blitzgescheit.jpg",
+   "size": 377572,
+   "url": "http://localhost:4000/media/e600381c5da22649b5b77c51ca376427a8b575ce754ce28ff563ece911e25a27.jpg?name=2021-07-14-veranstaltung-blitzgescheit.jpg",
+   "uuid": "7762d1d1-df04-4180-8229-c51761b531ee"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Blitzgescheit – LIVE",
+  "updatedAt": "2026-11-14T19:09:34Z",
+  "url": "https://localhost/events/93229116-4802-457e-ae27-3c7503e52cb6",
+  "uuid": "93229116-4802-457e-ae27-3c7503e52cb6",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Aim – Akademie für Innovative Bildung und Management",
+   "preferredUsername": "aim"
+  },
+  "beginsOn": "2026-11-16T16:00:00Z",
+  "description": "<p>Digitale Spiele verstehen und Kinder kompetent begleiten</p>\n<p>Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten, Trends und Plattformen kennen und erfahren, warum Gaming eine so große Faszination ausübt. Sie setzen sich mit Spielmotivation, Monetarisierungsstrategien, Gewaltinhalten und wissenschaftlichen Erkenntnissen zur Medienwirkung auseinander und entwickeln Ansätze, um Kinder und Jugendliche kompetent zu begleiten. Der erste Termin widmet sich aktuellen digitalen Spielewelten, ihren Trends, Plattformen und ihrer Faszination für Kinder und Jugendliche. Im zweiten Termin steht der Umgang mit Gewalt in digitalen Spielen sowie dessen mögliche Wirkung im Mittelpunkt.</p>\n<p>Was Sie erwartet</p>\n<ul><li>Digitale Lebenswelten verstehen: Sie erhalten einen Überblick über aktuelle Spiele, Plattformen, Trends und Communities von Kindern und Jugendlichen.</li><li>Spielmotivation erkennen: Sie lernen, welche Bedürfnisse digitale Spiele erfüllen und warum sie eine so hohe Anziehungskraft besitzen.</li><li>Psychologische Mechanismen einordnen: Sie verstehen, wie Belohnungssysteme, Flow-Erleben und soziale Interaktion das Spielverhalten beeinflussen.</li><li>Monetarisierungsstrategien kritisch bewerten: Sie setzen sich mit In-Game-Käufen, virtuellen Währungen, Battle Passes und sogenannten Dark Patterns auseinander.</li><li>Gewalt in Spielen differenziert betrachten: Sie lernen aktuelle wissenschaftliche Erkenntnisse zur Wirkung von Gewaltinhalten kennen und reflektieren verbreitete Mythen.</li><li>Risiken und Schutzfaktoren erkennen: Sie erfahren, welche Faktoren problematische Entwicklungen begünstigen oder verhindern können.</li><li>Medienkompetenz fördern: Sie entwickeln Strategien, um Kinder und Jugendliche im Umgang mit digitalen Spielen konstruktiv zu begleiten.</li><li>Orientierung geben: Sie lernen den Einsatz von USK-Altersfreigaben sowie Möglichkeiten zum Umgang mit toxischem Verhalten in Online-Spielen kennen.</li></ul>\n<p>Teilnehmen</p>\n<p>Dieser Online-Kurs richtet sich an Lehrkräfte aller Schularten, Ganztagesbetreuende, Schulsozialarbeitende und Eltern. Zur Teilnahme benötigen Sie einen Internetzugang sowie ein Endgerät.</p>\n<p><strong>Dieser Kurs besteht aus 2 Terminen – die Anmeldung gilt für alle Termine.</strong></p>\n<ul><li>Mo, 16.11.2026, 17:00–19:30 Uhr – Online (BigBlueButton Greenlight 02)</li><li>Mo, 23.11.2026, 17:00–19:30 Uhr – Online (BigBlueButton Greenlight 02)</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW\">https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW</a></p>",
+  "endsOn": "2026-11-16T18:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Online",
+   "locality": "Heilbronn",
+   "postalCode": null,
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "csm_AIM_Geba__ude_b9062a5594.png",
+   "size": 2731064,
+   "url": "http://localhost:4000/media/28e8f7343589c050fcc9732bb2cee6c72b74920014d6a4a773c295a9ab2c3b5d.png?name=csm_AIM_Geba__ude_b9062a5594.png",
+   "uuid": "546d35cc-18f7-4d5c-b14b-7c14f27e1ca6"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   }
+  ],
+  "title": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen (2 Termine)",
+  "updatedAt": "2026-11-14T19:41:10Z",
+  "url": "https://localhost/events/1ffa07a2-65ae-4a32-b0cf-29e02eb6723a",
+  "uuid": "1ffa07a2-65ae-4a32-b0cf-29e02eb6723a",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-17T08:30:00Z",
+  "description": "<p>Lizzi findet auf dem Schulweg einen kaputten Roboter, und damit beginnt ein Abenteuer voller Technik, Freundschaft und Neugier. Gemeinsam mit ihrer Oma repariert sie das Roboter-Mädchen Roxy und zeigt ihm die Welt. Dabei lernt auch Lizzi viel über Künstliche Intelligenz, Computer und Datenschutz.</p>\n<p>„Meine Freundin Roxy“ ist ein liebevoll gestalteter Animationsfilm über Vielfalt, Mut und die Frage, ob man einen Roboter einfach behalten darf. Die Produktion zeigt, dass Wissenschaft auch Herz haben kann.</p>\n<p>Die experimenta-Produktion basiert auf dem Buch „Meine Freundin Roxy“ von Kenza Ait Si Abbou Lyadini. Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1794907800\">https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1794907800</a></p>",
+  "endsOn": "2026-11-17T09:05:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "size": 485400,
+   "url": "http://localhost:4000/media/1bd3850c31e3178893accfddf3bc41252489ef25f3ca051d13bf8598c443409b.jpg?name=2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "uuid": "34e6a1b4-ab9c-4732-a750-2b3ef061fef9"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Meine Freundin Roxy",
+  "updatedAt": "2026-11-14T18:59:08Z",
+  "url": "http://localhost:4000/events/c8de1fce-1c9f-4332-92b9-53b3c5bc35f9",
+  "uuid": "c8de1fce-1c9f-4332-92b9-53b3c5bc35f9",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Aim – Akademie für Innovative Bildung und Management",
+   "preferredUsername": "aim"
+  },
+  "beginsOn": "2026-11-17T16:00:00Z",
+  "description": "<p>Künstliche Intelligenz verstehen und souverän im Unterricht nutzen</p>\n<p>Künstliche Intelligenz verändert die Art und Weise, wie wir lehren und lernen – und stellt Schulen zugleich vor neue Herausforderungen. Dieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und weiterführenden Schulen, die KI aktiv, verantwortungsvoll und rechtssicher im schulischen Kontext einsetzen möchten.</p>\n<p>Sie erhalten eine fundierte Einführung in die technischen Grundlagen sowie in die rechtlichen Rahmenbedingungen für den Einsatz von KI im Unterricht. Ziel ist es, Ihnen die Sicherheit zu vermitteln, KI-Anwendungen souverän und praxisnah im Schulalltag zu nutzen.</p>\n<p>Der Kurs bietet einen Überblick über zentrale juristische Fragestellungen im Zusammenhang mit modernen KI-Tools wie ChatGPT, Midjourney oder DALL·E. Praxisnahe Beispiele und konkrete Handlungsempfehlungen unterstützen Sie dabei, Chancen und Risiken realistisch einzuordnen und KI zielführend in den Unterricht einzubauen.</p>\n<p>So stärken Sie Ihre digitale Souveränität im Umgang mit KI-Technologien, gewinnen neue Impulse für einen zukunftsorientierten Unterricht und lernen, KI innerhalb eines pädagogisch und rechtlich verantwortungsvollen Rahmens einzusetzen.</p>\n<p>Was Sie erwartet</p>\n<ul><li>Einführung in die Grundlagen Künstlicher Intelligenz: Funktionsweisen, Potenziale, Grenzen und aktuelle Herausforderungen bei der rechtlichen Einordnung von KI-Systemen</li><li>Überblick über urheberrechtliche Fragestellungen beim Einsatz von KI, insbesondere zu Schutzrechten an KI-generierten Inhalten, der Überarbeitung eigener Texte mit KI sowie möglichen Kennzeichnungspflichten</li><li>Einführung in die datenschutzrechtlichen Rahmenbedingungen beim Einsatz von KI-Anwendungen im schulischen Kontext, insbesondere im Umgang mit personenbezogenen und sensiblen Daten wie Schülerdaten</li><li>Einblick in Fragen des Allgemeinen Persönlichkeitsrechts, etwa bei der KI-gestützten Bearbeitung von Foto-, Video- und Audioaufnahmen sowie beim Recht am eigenen Bild und an der eigenen Stimme</li><li>Überblick über die Inhalte und Anforderungen der europäischen KI-Verordnung (AI Act), einschließlich Hochrisiko-KI-Systemen, verbotenen KI-Praktiken sowie den Pflichten von Schulen beim Einsatz von KI</li><li>Impulse zur Förderung von KI-Kompetenz und zum verantwortungsvollen, rechtssicheren Einsatz von KI im Unterricht und Schulalltag</li></ul>\n<p>Teilnehmen</p>\n<p>Diese Veranstaltung richtet sich an Lehrkräfte von Grund- und weiterführenden Schulen sowie Schulleitungen. Für diesen Kurs sind weder juristische noch technische Vorkenntnisse erforderlich.</p>\n<ul><li>Di, 17.11.2026, 17:00–20:15 Uhr – Online (BigBlueButton Greenlight 01)</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR\">https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR</a></p>",
+  "endsOn": "2026-11-17T19:15:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Online",
+   "locality": "Heilbronn",
+   "postalCode": null,
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "csm_AIM_Geba__ude_b9062a5594.png",
+   "size": 2731064,
+   "url": "http://localhost:4000/media/28e8f7343589c050fcc9732bb2cee6c72b74920014d6a4a773c295a9ab2c3b5d.png?name=csm_AIM_Geba__ude_b9062a5594.png",
+   "uuid": "546d35cc-18f7-4d5c-b14b-7c14f27e1ca6"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   }
+  ],
+  "title": "KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvoll und rechtssicher im Unterricht einsetzen",
+  "updatedAt": "2026-11-14T19:41:11Z",
+  "url": "https://localhost/events/0e7cd11c-deda-4391-9a7a-057a22de405e",
+  "uuid": "0e7cd11c-deda-4391-9a7a-057a22de405e",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-17T17:00:00Z",
+  "description": "<p>Soziale Medien sind fester Bestandteil der Lebenswelt Jugendlicher. Im ersten Teil des Webinars wird aufgezeigt, warum Plattformen so fesselnd wirken und mit welchen Mechanismen – wie Likes, Endlosschleifen, Push-Benachrichtigungen, FOMO oder Antwortdruck – Jugendliche möglichst lange online gehalten werden. Zudem wird thematisiert, wie Beauty-Filter, KI und inszenierte Influencer-Welten das Selbstbild beeinflussen und unrealistische Erwartungen erzeugen. Die Teilnehmenden reflektieren ihren eigenen Medienkonsum, erkennen mögliche Risiken für mentale und körperliche Gesundheit und entwickeln ein erstes Bewusstsein für einen achtsamen Umgang mit Social Media.</p>\n<p>Gefördert durch das Ministerium für Ernährung, Ländlicher Raum und Verbraucherschutz Baden-Württemberg im Rahmen des Projekts „Verbraucherbildung für Familien und Erwachsene in Baden-Württemberg“.</p>\n<ul><li>Termine: Di, 17.11.2026, 18:00–19:30 Uhr</li><li>Ort: online</li><li>Gebühr: kostenlos</li><li>Plätze: frei: 44 von 50</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-i-mechanismen-verstehen-und-risiken-erkennen-live-online-261H207010/\">https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-i-mechanismen-verstehen-und-risiken-erkennen-live-online-261H207010/</a></p>",
+  "endsOn": "2026-11-17T18:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Haus der Familie Heilbronn",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   }
+  ],
+  "title": "Gesunder Umgang mit Social Media (Teil I): Mechanismen verstehen und Risiken erkennen - LIVE ONLINE – Ein Vortrag für Eltern",
+  "updatedAt": "2026-11-14T19:09:59Z",
+  "url": "https://localhost/events/b8d1bb16-56de-41a6-88bf-000fc93d002a",
+  "uuid": "b8d1bb16-56de-41a6-88bf-000fc93d002a",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-17T18:30:00Z",
+  "description": "<p>Wir essen nicht nur, weil wir hungrig sind. Unsere Ernährung hängt stark mit Gefühlen, Erziehung und Gewohnheiten zusammen. In der Robert Mayer Lecture erfahren Sie, wie der Alltag beeinflusst, was auf unserem Teller landet.</p>\n<p>Zu Gast ist Dr. Laura König, Professorin für Gesundheitspsychologie an der Universität Wien. In ihrer Forschung widmet sie sich dem Essverhalten eines gesunden Durchschnittsmenschen.</p>\n<p>Im Vortrag gibt sie unter anderem einen Einblick in aktuelle ernährungspsychologische Studien, bei denen Smartphone-Apps und täuschend echte Lebensmittel-Nachbildungen eine Rolle spielen. Außerdem zeigt sie, wie man sich mithilfe kleiner psychologischer Tricks ganz einfach gesünder ernähren kann.</p>\n<p>Im Anschluss an den Vortrag gibt es eine Fragerunde sowie Häppchen und Getränke im UG Foyer.</p>\n<ul><li>Ort: Science Dome, e1</li><li>Preis: 9,00 Euro Erwachsene / 5,00 Euro ermäßigt (keine Abendkasse)</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/robert-mayer-lecture-warum-essen-wir-was-wir-essen/?termin=1794943800\">https://www.experimenta.science/besuchen/veranstaltungskalender/robert-mayer-lecture-warum-essen-wir-was-wir-essen/?termin=1794943800</a></p>",
+  "endsOn": "2026-11-17T21:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "RML_Headerbild_-essen.jpg",
+   "size": 235627,
+   "url": "http://localhost:4000/media/d6202ef1dcebf0be180e1a858a22adf8c993054902d0b8140b0a362e32147bb4.jpg?name=RML_Headerbild_-essen.jpg",
+   "uuid": "25da0b7b-9fe0-4e68-9520-ad65adbbcf70"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "2",
+    "slug": "vortrag",
+    "title": "vortrag"
+   },
+   {
+    "id": "22",
+    "slug": "robert-mayer-lecture",
+    "title": "robert-mayer-lecture"
+   }
+  ],
+  "title": "Robert Mayer Lecture: Warum essen wir, was wir essen?",
+  "updatedAt": "2026-11-14T18:59:10Z",
+  "url": "http://localhost:4000/events/9ec6c059-eda7-46e9-8512-e0e6bb468872",
+  "uuid": "9ec6c059-eda7-46e9-8512-e0e6bb468872",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "IPAI Foundation",
+   "preferredUsername": "ipai"
+  },
+  "beginsOn": "2026-11-18T17:00:00Z",
+  "description": "<p>Kommt vorbei zu unserem Afterwork-Event im IPAI mit einem spannenden Couch-Talk, Führungen, Food &amp; Drinks! Das Motto unserer zehnten Living Room Session ist „Women in Robotics“. Euch erwartet: ein spannender Couch-Talk mit Leona Grulich (byte robotics), Maike Kaufman (Polybot) und Gesche Held (Fraunhofer IPA/Robotersysteme) aus der Robotikforschung und Unternehmen unter der Moderation mit Sirid Böhm</p>\n<p>Mehr Infos: <a href=\"https://www.eventbrite.de/e/living-room-session-10-women-in-robotics-tickets-2002429858611?aff=oddtdtcreator\">https://www.eventbrite.de/e/living-room-session-10-women-in-robotics-tickets-2002429858611?aff=oddtdtcreator</a></p>",
+  "endsOn": "2026-11-18T20:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "IPAI Foundation",
+   "locality": "Heilbronn",
+   "postalCode": null,
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "ipai-hero-image-cut-1-scaled.jpg",
+   "size": 624850,
+   "url": "http://localhost:4000/media/a4e4510b8f2d67a6ccd6a28cb2aa515f4ca13e529e61920040bccce6f08cef29.jpg?name=ipai-hero-image-cut-1-scaled.jpg",
+   "uuid": "c75ff07c-bac1-41a4-9557-39de581c7cec"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [],
+  "title": "Living Room Session #10: Women in AI",
+  "updatedAt": "2026-11-14T20:10:40Z",
+  "url": "https://localhost/events/af9e4c88-77d1-4b9f-996a-0cd39cc9f895",
+  "uuid": "af9e4c88-77d1-4b9f-996a-0cd39cc9f895",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-20T15:30:00Z",
+  "description": "<p><strong>Ausgebucht – Warteliste möglich</strong></p>\n<p>Unter Anleitung eines Trainers erleben die Kinder in einem Schnupperkurs die Faszination des Kletterns. Betreut, angeleitet und vor allem gut gesichert, klettern die Kinder bis auf 18 Meter Höhe und können ausprobieren, ob sie den Klettersport regelmäßiger ausüben möchten. Insgesamt trägt das Klettern dazu bei, dass Kinder ihre körperlichen und geistigen Fähigkeiten weiterentwickeln, ihre sozialen Kompetenzen ausbauen und ihre Selbstwahrnehmung stärken.</p>\n<ul><li>Termine: Fr, 20.11.2026, 16:30–18:30 Uhr</li><li>Ort: Heilbronn, Die Kletterarena, Lichtenbergerstraße 17</li><li>Gebühr: 25,00 € (inkl. Eintritt u. Leihgebühren f. Ausrüstung)</li><li>Plätze: frei: 0 von 12</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/hoch-hinaus-kletterkurs-261H302014/\">https://hdf-hn.de/kurs/hoch-hinaus-kletterkurs-261H302014/</a></p>",
+  "endsOn": "2026-11-20T17:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Die Kletterarena, Lichtenbergerstraße 17",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Hoch hinaus - Kletterkurs – Für Kinder ab 6 Jahren ohne Begleitperson",
+  "updatedAt": "2026-11-14T19:10:19Z",
+  "url": "https://localhost/events/5aab5989-ad17-4e25-a925-0c0b6b00d45f",
+  "uuid": "5aab5989-ad17-4e25-a925-0c0b6b00d45f",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-21T09:00:00Z",
+  "description": "<p><strong>Ausgebucht – Warteliste möglich</strong></p>\n<p>In diesem vorweihnachtlichen, stimmungsvollen Kreativangebot backen die Kinder Weihnachtsplätzchen. Wir starten mit einer kurzen Weihnachtsgeschichte, im Anschluss können die Kinder unter Anleitung kreativ sein, Plätzchen formen, gestalten und nach dem Backen individuell dekorieren – der Fantasie und Kreativität sind keine Grenzen gesetzt. Gleichzeitig erfahren die kleinen Bäckerinnen und Bäcker, welche Zutaten für einen Teig benötigt werden und wie man ihn herstellt. Natürlich werden die Plätzchen zum Abschluss probiert und jedes Kind kann selbst gebackenen Plätzchen mit nach Hause nehmen.</p>\n<ul><li>Termine: Sa, 21.11.2026, 10:00–13:00 Uhr</li><li>Ort: Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 7</li><li>Gebühr: 20,00 € (inkl. Materialkosten); 10,00 € (jede weitere Person)</li><li>Plätze: frei: 0 von 15</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/plaetzchenzauber-adventsbacken-261H301010/\">https://hdf-hn.de/kurs/plaetzchenzauber-adventsbacken-261H301010/</a></p>",
+  "endsOn": "2026-11-21T12:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 7",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "19",
+    "slug": "3-6-jahre",
+    "title": "3-6 Jahre"
+   },
+   {
+    "id": "20",
+    "slug": "mit-begleitperson",
+    "title": "mit Begleitperson"
+   }
+  ],
+  "title": "Plätzchenzauber – Adventsbacken – Für Kinder von 3 bis 6 Jahren mit Begleitperson",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/745998df-3cf9-4ca3-b53d-f12365b35472",
+  "uuid": "745998df-3cf9-4ca3-b53d-f12365b35472",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-21T09:00:00Z",
+  "description": "<p><strong>Ausgebucht – Warteliste möglich</strong></p>\n<p>Unter fachkundiger Anleitung eines Naturpädagogen lernen die Kinder den sicheren und verantwortungsvollen Umgang mit dem Schnitzmesser kennen. Schritt für Schritt werden, unter Berücksichtigung der Sicherheitsregeln, grundlegende Schnitztechniken geübt. Anschließend können sie ihrer Kreativität freien Lauf lassen und aus Naturmaterialien eigene kleine Werkstücke gestalten. Je nach Alter und Erfahrung entstehen beispielsweise geschnitzte Figuren, Stäbe oder andere individuelle Kunstwerke. Dieses naturpädagogische Angebot verbindet kreatives Arbeiten mit praktischen Erfahrungen in der Natur und schafft Raum für Ruhe, Entschleunigung und die Freude am eigenen Schaffen.</p>\n<ul><li>Termine: Sa, 21.11.2026, 10:00–12:30 Uhr</li><li>Ort: Heilbronn, Waldheide, Wanderparkplatz Jägerhaus</li><li>Gebühr: 20,00 €</li><li>Plätze: frei: 0 von 14</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/waldentdecker-schnitzen-im-wald-kreativ-mit-holz-arbeiten-261H303006/\">https://hdf-hn.de/kurs/waldentdecker-schnitzen-im-wald-kreativ-mit-holz-arbeiten-261H303006/</a></p>",
+  "endsOn": "2026-11-21T11:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Waldheide, Wanderparkplatz Jägerhaus",
+   "locality": "Heilbronn",
+   "postalCode": "74074",
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   }
+  ],
+  "title": "Waldentdecker: Schnitzen im Wald – Kreativ mit Holz arbeiten – Für Kinder von 6 bis 10 Jahren ohne Begleitperson",
+  "updatedAt": "2026-11-14T19:09:59Z",
+  "url": "https://localhost/events/234588d8-f730-4cfc-af17-5446ae74707c",
+  "uuid": "234588d8-f730-4cfc-af17-5446ae74707c",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-21T09:00:00Z",
+  "description": "<p>Willkommen in der Welt der Daten! Hier wird gesammelt, gezählt und gezeichnet – mit bunten Bausteinen, Lieblingsfarben und kleinen Spielen. Gemeinsam mit ihren Eltern entdecken Kinder, wie man Dinge sortiert, Strichlisten macht und spannende Diagramme erstellt.</p>\n<p>Damon, das neugierige Datenmonster, begleitet uns dabei und stellt Fragen wie: „Von welcher Farbe habe ich die meisten Legosteine?“ oder „Wie viele rote Dinge finden wir gemeinsam?“. Mit seiner Hilfe verwandeln wir unsere Entdeckungen in bunte Datenbilder und lernen ganz nebenbei, warum Daten so wichtig für künstliche Intelligenz (KI) sind – denn ohne Daten kann KI nichts lernen oder verstehen. Ganz ohne Computer, dafür mit viel Kreativität und Bewegung. Die Kinder brauchen keine Vorkenntnisse – Neugier, Spaß am Mitmachen und Lust aufs Entdecken reichen völlig aus.</p>\n<ul><li>Termine: Sa, 21.11.2026, 10:00–12:00 Uhr; So, 22.11.2026, 10:00–12:00 Uhr</li><li>Ort: Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8</li><li>Gebühr: 10,00 €</li><li>Plätze: frei: 2 von 12</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/\">https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/</a></p>",
+  "endsOn": "2026-11-21T11:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "19",
+    "slug": "3-6-jahre",
+    "title": "3-6 Jahre"
+   },
+   {
+    "id": "20",
+    "slug": "mit-begleitperson",
+    "title": "mit Begleitperson"
+   }
+  ],
+  "title": "Data Literacy for Kids: Von Bausteinen zum Balkendiagramm – Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/54807aaa-a688-4a11-bc14-c94e76fc7ced",
+  "uuid": "54807aaa-a688-4a11-bc14-c94e76fc7ced",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T09:30:00Z",
+  "description": "<p>Begleite die Tiere Südafrikas auf einer Safari in die Savanne der Provinz KwaZulu-Natal, die du auf der 360-Grad-Kuppel im Science Dome erlebst. Löwen, Elefanten und weitere Tiere kannst du ganz nah und ohne Gefahr in ihrer natürlichen Umgebung beobachten.</p>\n<p>Du begleitest einzigartige Tiere in ihrem Alltag und erfährst mehr über ihre verblüffenden Charaktere – mal verspielt, mal kraftvoll und manchmal überraschend emotional. Die Vorführung zeigt die Vielfalt der Wildnis.</p>\n<p>Produziert wurde die Vorführung von VR Capture unter dem Titel „Close Encounters“.</p>\n<p>Hinweis: Bei dieser Vorführung können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren, Familien</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1795257000\">https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1795257000</a></p>",
+  "endsOn": "2026-11-21T10:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "size": 407762,
+   "url": "http://localhost:4000/media/f0d65c8a2320ee65ccf42947aefa7d84b842d9f7ba52418e45bd270af726e330.jpg?name=2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "uuid": "aa5218fb-80b0-4907-93db-cbbfdd8a2e9e"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Auge in Auge mit Afrikas Tieren",
+  "updatedAt": "2026-11-14T18:59:11Z",
+  "url": "http://localhost:4000/events/a9f924d6-8edc-4289-8507-69a0efdf6041",
+  "uuid": "a9f924d6-8edc-4289-8507-69a0efdf6041",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T10:30:00Z",
+  "description": "<p>Lizzi findet auf dem Schulweg einen kaputten Roboter, und damit beginnt ein Abenteuer voller Technik, Freundschaft und Neugier. Gemeinsam mit ihrer Oma repariert sie das Roboter-Mädchen Roxy und zeigt ihm die Welt. Dabei lernt auch Lizzi viel über Künstliche Intelligenz, Computer und Datenschutz.</p>\n<p>„Meine Freundin Roxy“ ist ein liebevoll gestalteter Animationsfilm über Vielfalt, Mut und die Frage, ob man einen Roboter einfach behalten darf. Die Produktion zeigt, dass Wissenschaft auch Herz haben kann.</p>\n<p>Die experimenta-Produktion basiert auf dem Buch „Meine Freundin Roxy“ von Kenza Ait Si Abbou Lyadini. Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1795260600\">https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1795260600</a></p>",
+  "endsOn": "2026-11-21T11:05:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "size": 485400,
+   "url": "http://localhost:4000/media/1bd3850c31e3178893accfddf3bc41252489ef25f3ca051d13bf8598c443409b.jpg?name=2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "uuid": "34e6a1b4-ab9c-4732-a750-2b3ef061fef9"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Meine Freundin Roxy",
+  "updatedAt": "2026-11-14T18:59:11Z",
+  "url": "http://localhost:4000/events/7c45b46a-3210-4b47-afea-be0714eb33c2",
+  "uuid": "7c45b46a-3210-4b47-afea-be0714eb33c2",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T11:30:00Z",
+  "description": "<p>Die Fische Jake, Shorty und Indigo machen sich auf die Suche nach einem sagenumwobenen Korallenriff, nachdem ihr Heimatriff zerstört wurde. Auf dieser Reise müssen sie so manches Abenteuer bestehen.</p>\n<p>Der Film vermittelt auf spielerische und humorvolle Art, wie wichtig der Erhalt des einzigartigen Lebensraums Korallenriff ist. Die Themen sind das Ökosystem Meer und Plastik.</p>\n<p>Hinweis: Bei dieser Vorführung im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten. Der Film wurde von Softmachine Immersive Productions unter dem Titel „Legend of the Enchanted Reef“ produziert.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/die-legende-des-zauberriffs/?termin=1795264200\">https://www.experimenta.science/besuchen/veranstaltungskalender/die-legende-des-zauberriffs/?termin=1795264200</a></p>",
+  "endsOn": "2026-11-21T11:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2021-07-14-veranstaltung-Das-Zauberriff.jpg",
+   "size": 200367,
+   "url": "http://localhost:4000/media/5ec7d3536883becf67a266ff89c4cb6e6fd01cd2fa9ab61beacf351d9e770847.jpg?name=2021-07-14-veranstaltung-Das-Zauberriff.jpg",
+   "uuid": "63138d36-f639-4a2d-8b6b-bff17e63ed02"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Die Legende des Zauberriffs – 3D",
+  "updatedAt": "2026-11-14T18:59:12Z",
+  "url": "http://localhost:4000/events/e5ba7e50-a2a9-4218-affa-5711e0cde6cf",
+  "uuid": "e5ba7e50-a2a9-4218-affa-5711e0cde6cf",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T12:30:00Z",
+  "description": "<p>Besuche bei einer 360°-Ozeansafari die dynamischsten und am stärksten gefährdeten Meeres-Ökosysteme der Welt. Erfahre, wie Korallen leben und welchen Gefahren die Riffbewohner durch Klimawandel und Überfischung drohen.</p>\n<p>Die Wissenschaftlerin und Riff-Expertin Dr. Rebecca Albright sagt: „Dies ist ein Wendepunkt für Riffe, aber es ist noch nicht zu spät.“ Die Show wurde von der California Academy of Sciences unter dem Titel „Expedition Reef“ produziert.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/expedition-reef/?termin=1795267800\">https://www.experimenta.science/besuchen/veranstaltungskalender/expedition-reef/?termin=1795267800</a></p>",
+  "endsOn": "2026-11-21T12:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2021-07-14-veranstaltung-Expedition-Reef.jpg",
+   "size": 239767,
+   "url": "http://localhost:4000/media/ab93b76a5f9653a6ad5bb4571277dbcbf8b9dfb3eb50d88927d37786f4842895.jpg?name=2021-07-14-veranstaltung-Expedition-Reef.jpg",
+   "uuid": "7ba5f81a-cacf-49d0-afd5-e56d2a027497"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Expedition Reef",
+  "updatedAt": "2026-11-14T18:59:12Z",
+  "url": "http://localhost:4000/events/420472e6-c140-46af-94cb-c481366caa27",
+  "uuid": "420472e6-c140-46af-94cb-c481366caa27",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T13:30:00Z",
+  "description": "<p>Erlebe die faszinierende Welt der Dinosaurier auf der 360-Grad-Kuppel des Science Domes. Du begleitest das Mädchen Celeste auf ihrer abenteuerlichen Reise zurück in die Urzeit.</p>\n<p>Dabei erfährst du, wie sich die faszinierenden Tiere über Millionen Jahre verändert haben. Du lernst riesige Kreaturen, gepanzerte Bestien und Raubtiere kennen und staunst über ihre Anpassungsfähigkeit. Bis zu dem Tag, an dem ein Asteroideneinschlag ein Massensterben auf der Erde verursachte.</p>\n<p>Die Show stellt außerdem die Frage, ob die Dinosaurier wirklich ausgestorben sind oder ob noch heute ein bisschen Dino in einigen Tieren steckt.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten. Die Produktion stammt von Render Area &amp; Monigotes Estudio 2.0 und trägt den Originaltitel „Dinosaurs: A Story of Survival“.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795271400\">https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795271400</a></p>",
+  "endsOn": "2026-11-21T13:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Mitarbeiterportal-1920x1080-1.jpg",
+   "size": 199639,
+   "url": "http://localhost:4000/media/9f0dbb90351370b85fabad740c8a907a6f1c492032ecee381aaada4ac4fe86f8.jpg?name=Mitarbeiterportal-1920x1080-1.jpg",
+   "uuid": "1fba760a-dca0-421b-bd53-2f125c25defc"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Dinosaurier: Eine Geschichte des Überlebens",
+  "updatedAt": "2026-11-14T18:59:13Z",
+  "url": "http://localhost:4000/events/2debacb6-d2c7-4bdc-bb8e-10da65088e9c",
+  "uuid": "2debacb6-d2c7-4bdc-bb8e-10da65088e9c",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T14:30:00Z",
+  "description": "<p>Ein Fulldome-Erlebnis über die Apollo-Mission zum Mond versetzt dich zurück in diese Zeit. Mithilfe neuester 3D-Technik bist du hautnah mitten im Geschehen dabei.</p>\n<p>„CapCom“ ist kurz für „capsule communicator“ und der Titel einer wichtigen Person in der bemannten Raumfahrt. Diese Kontaktperson sitzt auf der Erde, genauer gesagt in Houston, und ist für die Astronauten zuständig. Alle Astronauten in der Kapsel hören auf sein oder ihr „go“.</p>\n<p>In CapCom GO! landest du mit Neil Armstrong und Buzz Aldrin auf dem Mond und gehst mit ihnen den kleinen Schritt, der ein großer für die Menschheit ist.</p>\n<p>Hinweis: Bei Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/capcom-go-3d/?termin=1795275000\">https://www.experimenta.science/besuchen/veranstaltungskalender/capcom-go-3d/?termin=1795275000</a></p>",
+  "endsOn": "2026-11-21T14:56:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2023-09-15-experimenta-veranstaltung-Capcom-Go.jpg",
+   "size": 770725,
+   "url": "http://localhost:4000/media/80e7dbc246c6e1c869616374e489e1e0785a2027865c5fcea54742d9a6852b45.jpg?name=2023-09-15-experimenta-veranstaltung-Capcom-Go.jpg",
+   "uuid": "8a50f4f0-ac95-42a9-8bec-d7eed8f8f6b7"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Capcom Go! – 3D",
+  "updatedAt": "2026-11-14T18:59:14Z",
+  "url": "http://localhost:4000/events/91e1eaf0-e930-4bf4-824e-1e1f4dc9213d",
+  "uuid": "91e1eaf0-e930-4bf4-824e-1e1f4dc9213d",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-21T15:30:00Z",
+  "description": "<p>Die Liveshow „SpektakulAIR“ im Science Dome zeigt spannende Experimente rund um Luft und Bewegung und verbindet Humor mit Wissenschaft. Vom schwebenden Wasserglas über Wirbelringe bis zur Fahrt mit einem echten Hovercraft ist alles dabei.</p>\n<p>Mit Hilfe von Luftdruck, Zentripetalkraft und dem Rückstoßprinzip erfahren die Zuschauer, wie Dinge schweben, fliegen und rotieren. Physik zum Staunen: Hündin Laika wird in einer Vakuumkanone „zum Mond“ geschickt, und es entsteht ein Feuertornado.</p>\n<p>Hinweis: Bei dieser Vorführung im Science Dome treten laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auf.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/spektakulair/?termin=1795278600\">https://www.experimenta.science/besuchen/veranstaltungskalender/spektakulair/?termin=1795278600</a></p>",
+  "endsOn": "2026-11-21T16:05:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-03-23-experimenta-veranstaltung-spektakulair-live.jpg",
+   "size": 402532,
+   "url": "http://localhost:4000/media/02721e02d72d2922e24cfd6ff2017f6018cf9112a0412d887707901f47a66cb1.jpg?name=2026-03-23-experimenta-veranstaltung-spektakulair-live.jpg",
+   "uuid": "cf4a4b1c-feb6-4143-8055-fb5f94587e0b"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "SpektakulAIR – Live",
+  "updatedAt": "2026-11-14T18:59:15Z",
+  "url": "http://localhost:4000/events/0b7febbf-8205-4477-a691-d730380f625b",
+  "uuid": "0b7febbf-8205-4477-a691-d730380f625b",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T09:30:00Z",
+  "description": "<p>Besuche bei einer 360°-Ozeansafari die dynamischsten und am stärksten gefährdeten Meeres-Ökosysteme der Welt. Erfahre, wie Korallen leben und welchen Gefahren die Riffbewohner durch Klimawandel und Überfischung drohen.</p>\n<p>Die Wissenschaftlerin und Riff-Expertin Dr. Rebecca Albright sagt: „Dies ist ein Wendepunkt für Riffe, aber es ist noch nicht zu spät.“ Die Show wurde von der California Academy of Sciences unter dem Titel „Expedition Reef“ produziert.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/expedition-reef/?termin=1795343400\">https://www.experimenta.science/besuchen/veranstaltungskalender/expedition-reef/?termin=1795343400</a></p>",
+  "endsOn": "2026-11-22T09:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2021-07-14-veranstaltung-Expedition-Reef.jpg",
+   "size": 239767,
+   "url": "http://localhost:4000/media/ab93b76a5f9653a6ad5bb4571277dbcbf8b9dfb3eb50d88927d37786f4842895.jpg?name=2021-07-14-veranstaltung-Expedition-Reef.jpg",
+   "uuid": "7ba5f81a-cacf-49d0-afd5-e56d2a027497"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Expedition Reef",
+  "updatedAt": "2026-11-14T18:59:16Z",
+  "url": "http://localhost:4000/events/814f12d3-005a-4c6d-be95-fbbffdbcd6b8",
+  "uuid": "814f12d3-005a-4c6d-be95-fbbffdbcd6b8",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T10:30:00Z",
+  "description": "<p>Pinguin James und Eisbär Vladimir sind beste Freunde und beobachten gern gemeinsam den Sternenhimmel. Dabei wundern sie sich, warum die Polarnächte so lang sind. Also beschließen sie, eine eigene Sternwarte zu errichten, um das Rätsel zu lösen.</p>\n<p>Doch dabei bleibt es nicht: Gemeinsam bauen sie das Raumschiff Polaris und starten zu einer Mission zu Mars und Saturn. Im Weltall finden sie Antworten auf ihre Fragen und entdecken die Welt der Planeten.</p>\n<p>Die Show wurde vom Saint-Étienne Planetarium unter dem Titel „Polaris, the Space Submarine &amp; the Mystery of the Polar Night“ produziert. Hinweis der Veranstalter: Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1795347000\">https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1795347000</a></p>",
+  "endsOn": "2026-11-22T10:59:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "VACORSCD0015.jpg",
+   "size": 91736,
+   "url": "http://localhost:4000/media/67068633c36383feca777a2a450850003e7dc7b3cdb1683ac8d5f11bc2d9debf.jpg?name=VACORSCD0015.jpg",
+   "uuid": "af315d43-5ab6-43af-8654-a87a5d979d7f"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Das Rätsel der Polarnacht – 3D",
+  "updatedAt": "2026-11-14T18:59:17Z",
+  "url": "http://localhost:4000/events/077e5aef-4a94-4e18-a10a-cf41ba5a8e9f",
+  "uuid": "077e5aef-4a94-4e18-a10a-cf41ba5a8e9f",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T11:30:00Z",
+  "description": "<p>Erlebe die faszinierende Welt der Dinosaurier auf der 360-Grad-Kuppel des Science Domes. Du begleitest das Mädchen Celeste auf ihrer abenteuerlichen Reise zurück in die Urzeit.</p>\n<p>Dabei erfährst du, wie sich die faszinierenden Tiere über Millionen Jahre verändert haben. Du lernst riesige Kreaturen, gepanzerte Bestien und Raubtiere kennen und staunst über ihre Anpassungsfähigkeit. Bis zu dem Tag, an dem ein Asteroideneinschlag ein Massensterben auf der Erde verursachte.</p>\n<p>Die Show stellt außerdem die Frage, ob die Dinosaurier wirklich ausgestorben sind oder ob noch heute ein bisschen Dino in einigen Tieren steckt.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten. Die Produktion stammt von Render Area &amp; Monigotes Estudio 2.0 und trägt den Originaltitel „Dinosaurs: A Story of Survival“.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795350600\">https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795350600</a></p>",
+  "endsOn": "2026-11-22T11:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Mitarbeiterportal-1920x1080-1.jpg",
+   "size": 199639,
+   "url": "http://localhost:4000/media/9f0dbb90351370b85fabad740c8a907a6f1c492032ecee381aaada4ac4fe86f8.jpg?name=Mitarbeiterportal-1920x1080-1.jpg",
+   "uuid": "1fba760a-dca0-421b-bd53-2f125c25defc"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Dinosaurier: Eine Geschichte des Überlebens",
+  "updatedAt": "2026-11-14T18:59:18Z",
+  "url": "http://localhost:4000/events/eca3e96a-f63d-4400-a67a-19af2a507aa3",
+  "uuid": "eca3e96a-f63d-4400-a67a-19af2a507aa3",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T12:30:00Z",
+  "description": "<p>Schiaparelli, der charismatische Entertainer, nimmt euch mit auf eine spektakuläre Reise durch Raum und Zeit. In seinem wundersamen Observatorium geht es von der glühend heißen Oberfläche des Merkur bis zu den eisigen Weiten des Pluto. Ihr entdeckt die Wunder und Gefahren unseres Sonnensystems hautnah und lernt dabei, wie kostbar unser Heimatplanet wirklich ist.</p>\n<p>Achtung: Diese Tour führt zu den gefährlichsten Orten des Sonnensystems und erfordert Mut und echte Flugkünste. Das Abenteuer ist nichts für schwache Nerven.</p>\n<p>Die Show wurde von NSC Creative unter dem Titel „The Great Solar System Adventure“ produziert. Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795354200\">https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795354200</a></p>",
+  "endsOn": "2026-11-22T12:56:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "size": 419986,
+   "url": "http://localhost:4000/media/735be78d401068e4604fe0bcaa8866c8fb97b17ec349bce093374c2423135fca.jpg?name=Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "uuid": "43dc8d6f-848d-46ae-9c1a-155906c9afe8"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Abenteuerreise durchs Sonnensystem – 3D",
+  "updatedAt": "2026-11-14T18:59:18Z",
+  "url": "http://localhost:4000/events/1d44f13e-749a-444a-b75b-298c94cd546e",
+  "uuid": "1d44f13e-749a-444a-b75b-298c94cd546e",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T13:30:00Z",
+  "description": "<p>Der Weltraum hat eine unvorstellbare Ausdehnung. Angetrieben von Neugier und dem Wunsch nach Wissen erforschen Menschen das Weltall und wollen mehr über das Universum erfahren. Gleichzeitig gibt es noch sehr viel zu entdecken.</p>\n<p>Die Reise im Science Dome basiert auf echten Daten, die durch den technologischen Fortschritt und viele Jahre Forschung gesammelt wurden. Sie beginnt im eigenen Sonnensystem und führt bis zum Urknall.</p>\n<p>Die Show wurde vom Norrköping Visualization Center C im Rahmen des WISDOME Projekts produziert. Sie trägt dort den Titel „VAST – A Cosmic Journey Through Time and Space“. Hinweis: Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/vast-eine-kosmische-reise-3d/?termin=1795357800\">https://www.experimenta.science/besuchen/veranstaltungskalender/vast-eine-kosmische-reise-3d/?termin=1795357800</a></p>",
+  "endsOn": "2026-11-22T14:04:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2024-01-30-experimenta-veranstaltung-vast-1920x1080-1.jpg",
+   "size": 402274,
+   "url": "http://localhost:4000/media/25bfa24417ea877d1fee067395ed94b4f328cc4d538b8cdd5a1224043dcad25b.jpg?name=2024-01-30-experimenta-veranstaltung-vast-1920x1080-1.jpg",
+   "uuid": "720684cf-0600-469e-bd85-a7a9d3dfcbd7"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "VAST – Eine kosmische Reise – 3D",
+  "updatedAt": "2026-11-14T18:59:22Z",
+  "url": "http://localhost:4000/events/96b7f8e7-785e-40d3-9881-87cb130daf2e",
+  "uuid": "96b7f8e7-785e-40d3-9881-87cb130daf2e",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T14:30:00Z",
+  "description": "<p>Schiaparelli, der charismatische Entertainer, nimmt euch mit auf eine spektakuläre Reise durch Raum und Zeit. In seinem wundersamen Observatorium geht es von der glühend heißen Oberfläche des Merkur bis zu den eisigen Weiten des Pluto. Ihr entdeckt die Wunder und Gefahren unseres Sonnensystems hautnah und lernt dabei, wie kostbar unser Heimatplanet wirklich ist.</p>\n<p>Achtung: Diese Tour führt zu den gefährlichsten Orten des Sonnensystems und erfordert Mut und echte Flugkünste. Das Abenteuer ist nichts für schwache Nerven.</p>\n<p>Die Show wurde von NSC Creative unter dem Titel „The Great Solar System Adventure“ produziert. Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795361400\">https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795361400</a></p>",
+  "endsOn": "2026-11-22T14:56:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "size": 419986,
+   "url": "http://localhost:4000/media/735be78d401068e4604fe0bcaa8866c8fb97b17ec349bce093374c2423135fca.jpg?name=Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "uuid": "43dc8d6f-848d-46ae-9c1a-155906c9afe8"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Abenteuerreise durchs Sonnensystem – 3D",
+  "updatedAt": "2026-11-14T18:59:23Z",
+  "url": "http://localhost:4000/events/aaf108a3-5ec9-4f8f-ba36-2411f35dd192",
+  "uuid": "aaf108a3-5ec9-4f8f-ba36-2411f35dd192",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-22T15:30:00Z",
+  "description": "<p>Die Liveshow „SpektakulAIR“ im Science Dome zeigt spannende Experimente rund um Luft und Bewegung und verbindet Humor mit Wissenschaft. Vom schwebenden Wasserglas über Wirbelringe bis zur Fahrt mit einem echten Hovercraft ist alles dabei.</p>\n<p>Mit Hilfe von Luftdruck, Zentripetalkraft und dem Rückstoßprinzip erfahren die Zuschauer, wie Dinge schweben, fliegen und rotieren. Physik zum Staunen: Hündin Laika wird in einer Vakuumkanone „zum Mond“ geschickt, und es entsteht ein Feuertornado.</p>\n<p>Hinweis: Bei dieser Vorführung im Science Dome treten laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auf.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/spektakulair/?termin=1795365000\">https://www.experimenta.science/besuchen/veranstaltungskalender/spektakulair/?termin=1795365000</a></p>",
+  "endsOn": "2026-11-22T16:05:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-03-23-experimenta-veranstaltung-spektakulair-live.jpg",
+   "size": 402532,
+   "url": "http://localhost:4000/media/02721e02d72d2922e24cfd6ff2017f6018cf9112a0412d887707901f47a66cb1.jpg?name=2026-03-23-experimenta-veranstaltung-spektakulair-live.jpg",
+   "uuid": "cf4a4b1c-feb6-4143-8055-fb5f94587e0b"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "SpektakulAIR – Live",
+  "updatedAt": "2026-11-14T18:59:25Z",
+  "url": "http://localhost:4000/events/c8c39f7a-6c05-4ecf-a55d-0787c7706ca2",
+  "uuid": "c8c39f7a-6c05-4ecf-a55d-0787c7706ca2",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "IPAI Foundation",
+   "preferredUsername": "ipai"
+  },
+  "beginsOn": "2026-11-23T14:00:00Z",
+  "description": "<p>Keyfacts</p>\n<ul><li>Wann: 23. November 2026, 15:00-17:00 Uhr</li><li>Wo: IPAI (Innovation Park Artificial Intelligence) Heilbronn, Alan Turing Raum</li><li>Trainer: Juan Gómez Fernández (Teamleiter der Schwarz Digits Data &amp; AI Academy, Data &amp; AI Allrounder) &amp; Diana Thim (Expertin für AI Use Cases &amp; Everyday AI, Data &amp; AI Academy der Schwarz Digits IT KG)</li><li>Sprache: Deutsch</li><li>Teilnehmerzahl: begrenzt auf 25 Personen</li><li>Teilnahme: kostenfrei</li><li>Zielgruppe: Alle interessierten KI-Nutzer:innen (keine besonderen Voraussetzungen / Vorkenntnisse erforderlich)</li></ul>\n<p>Technische Voraussetzungen:</p>\n<ul><li>Kein eigener Laptop erforderlich</li></ul>\n<p>Was erwartet euch?</p>\n<p>Software primär durch intuitive, KI-gestützte Anweisungen entstehen lassen – das ist das Prinzip hinter „Vibe Coding“. Doch wie funktioniert das Zusammenspiel mit modernen KI-Agenten in der Praxis und worauf müsst ihr achten, um nicht ins Stolpern zu geraten?</p>\n<p>Dieser Workshop bietet euch eine kompakte Einführung in die Welt der KI-Agenten und beleuchtet das Phänomen des „Vibe Codings“. Anhand einer Live-Demo erlebt ihr direkt vor Ort den gesamten Prozess von der initialen Idee bis hin zur fertigen Anwendung – ergänzt durch wertvolle Best Practices und typische Stolpersteine für die Praxis.</p>\n<p>Agenda</p>\n<ul><li>Was sind KI-Agenten?</li><li>Was bedeutet „Vibe Coding“?</li><li>Live-Demo: Von der Idee über den Code bis hin zur fertigen Anwendung</li><li>„Don’t kill the vibe“: Stolpersteine &amp; Best Practices</li><li>Austausch &amp; offene Fragen</li></ul>\n<p>Information über die Trainer:</p>\n<p>Juan Gómez Fernández ist Teamleiter der Schwarz Digits Data &amp; AI Academy. Als Allrounder im Bereich Data &amp; AI verfügt er über ein umfassendes Fachwissen, das von den technischen Grundlagen bis hin zu komplexen, strategischen Anwendungen reicht.</p>\n<p>Diana Thim ist Expertin für AI Use Cases &amp; Everyday AI bei der Data &amp; AI Academy der Schwarz Digits IT KG. Ihr Fokus liegt ganz besonders darauf, Berührungsängste vor neuen Technologien abzubauen und den ganz konkreten, geschäftlichen sowie privaten Nutzen von AI-Tools für jeden greifbar zu machen.</p>\n<p>Anmeldung: <a href=\"https://www.eventbrite.de/e/ki-salon-workshop-vibe-coding-ki-agenten-tickets-2003294256047?aff=oddtdtcreator\">https://www.eventbrite.de/e/ki-salon-workshop-vibe-coding-ki-agenten-tickets-2003294256047?aff=oddtdtcreator</a></p>\n<p>Mehr Infos: <a href=\"https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung/\">https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung/</a></p>",
+  "endsOn": "2026-11-23T16:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "IPAI Spaces",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Im Zukunftspark 11/13",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Juan_Diana-1024x1019.png",
+   "size": 1498922,
+   "url": "http://localhost:4000/media/d4b214eb65ea2c35ecefa5e4269992e56e9107b617cbf56b192bdc34ec40ee0a.png?name=Juan_Diana-1024x1019.png",
+   "uuid": "79b1f900-9be0-4c70-9414-bea963a56c0c"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [],
+  "title": "KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwendung",
+  "updatedAt": "2026-11-14T20:10:41Z",
+  "url": "https://localhost/events/c7a7cf20-7600-4e63-9384-660060c342e9",
+  "uuid": "c7a7cf20-7600-4e63-9384-660060c342e9",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-24T17:00:00Z",
+  "description": "<p>Im zweiten Teil stehen konkrete Lösungsansätze für eine gesunde Mediennutzung im Mittelpunkt. Gemeinsam werden Strategien erarbeitet, um Bildschirmzeiten zu reduzieren, Inhalte kritisch zu hinterfragen und eine bessere Balance zwischen Online- und Offline-Aktivitäten zu schaffen. Themen wie der „Traumjob Influencer“, digitale Vorbilder, Familienregeln und der Einfluss von Social Media auf Lernen, Konzentration und Wohlbefinden werden praxisnah behandelt. Ziel ist es, Jugendliche zu stärken, damit sie Social Media bewusst nutzen und wieder mehr Raum für Schule, Freundschaften und persönliche Interessen gewinnen.</p>\n<p>Gefördert durch das Ministerium für Ernährung, Ländlicher Raum und Verbraucherschutz Baden-Württemberg im Rahmen des Projekts „Verbraucherbildung für Familien und Erwachsene in Baden-Württemberg“.</p>\n<ul><li>Termine: Di, 24.11.2026, 18:00–19:30 Uhr</li><li>Ort: online</li><li>Gebühr: kostenlos</li><li>Plätze: frei: 48 von 50</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-ii-medienbalance-finden-strategien-fuer-einen-bewussten-umgang-entwickeln-live-online-261H207011/\">https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-ii-medienbalance-finden-strategien-fuer-einen-bewussten-umgang-entwickeln-live-online-261H207011/</a></p>",
+  "endsOn": "2026-11-24T18:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Haus der Familie Heilbronn",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   }
+  ],
+  "title": "Gesunder Umgang mit Social Media (Teil II): Medienbalance finden – Strategien für einen bewussten Umgang entwickeln - LIVE ONLINE – Ein Vortrag für Eltern",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/00fdcc05-cf0f-4f71-a61f-664e89cc0c1b",
+  "uuid": "00fdcc05-cf0f-4f71-a61f-664e89cc0c1b",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-25T13:00:00Z",
+  "description": "<p>In diesem Workshop aus dem Ferienprogramm der Experimentierküche wird gemeinsam gebacken, verziert und genossen. Im Mittelpunkt stehen köstliche Plätzchen, ob klassisch oder bunt dekoriert, für jeden ist etwas dabei.</p>\n<p>Die Kinder erwartet ein Nachmittag voller Kreativität und Spaß. Der Kurs richtet sich an Kinder von 7 bis 9 Jahren, die Teilnehmeranzahl ist auf 8 begrenzt.</p>\n<p>Die Anmeldung erfolgt per E-Mail. Auf Nachfrage können die eingesetzten Hauptallergene erfragt werden.</p>\n<ul><li>Alter: 7-9 Jahre</li><li>Ort: experimenta, E2, Carl-Heinrich Knorr-Experimentierküche</li><li>Preis: 5 €</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/plaetzchen-party/?termin=1795615200\">https://www.experimenta.science/besuchen/veranstaltungskalender/plaetzchen-party/?termin=1795615200</a></p>",
+  "endsOn": "2026-11-25T15:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Plaetzchen-Party-1920x1080-1.jpg",
+   "size": 182388,
+   "url": "http://localhost:4000/media/a2f59144bfc4517ff2acfe8d183578e56cbf296d59fca2641c964d922a1ab04a.jpg?name=Plaetzchen-Party-1920x1080-1.jpg",
+   "uuid": "b967654a-02c3-46d8-8049-a5a8385ae625"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "1",
+    "slug": "workshop",
+    "title": "workshop"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "23",
+    "slug": "ferienprogramm",
+    "title": "ferienprogramm"
+   },
+   {
+    "id": "24",
+    "slug": "experimentierkueche",
+    "title": "experimentierkueche"
+   }
+  ],
+  "title": "Plätzchen-Party",
+  "updatedAt": "2026-11-14T18:59:28Z",
+  "url": "http://localhost:4000/events/8f7c2a2e-486f-4aab-9a73-903c15dc565c",
+  "uuid": "8f7c2a2e-486f-4aab-9a73-903c15dc565c",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-26T13:00:00Z",
+  "description": "<p>Die Fortbildung richtet sich an Lehrkräfte und zeigt, wie der Mikrocontroller ESP32 funktioniert und wie er im Unterricht eingesetzt werden kann. Gemeinsam wird der ESP32 eingerichtet und eine schlanke Python-Programmierumgebung aufgebaut.</p>\n<p>Anschließend werden LEDs, Lautsprecher, Sensoren und Servomotoren angeschlossen und zu kleinen elektronischen Geräten gesteuert. ESP32-Neulinge wie Erfahrene lernen dabei gleichermaßen die Hardware kennen und erfahren, wie sie Schülerinnen und Schülern die Programmiersprache Python anschaulich vermitteln können.</p>\n<p>Ergänzend wird gezeigt, wie sich Mikrocontroller-Projekte mithilfe künstlicher Intelligenz per Vibe-Coding einfacher entwickeln und testen lassen, einschließlich möglicher didaktischer Fallstricke.</p>\n<ul><li>Ort: Zuse-Labor</li><li>Preis: kostenlos</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-esp32-programmierung-in-python/?termin=1795701600\">https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-esp32-programmierung-in-python/?termin=1795701600</a></p>",
+  "endsOn": "2026-11-26T17:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "ESP32-Projekte_in_Python_experimenta_1920x1080.jpg",
+   "size": 126239,
+   "url": "http://localhost:4000/media/af2c570d123b0dce43c126ae93c036dcd7256f11f07c3a3749d1b89b22a8d38a.jpg?name=ESP32-Projekte_in_Python_experimenta_1920x1080.jpg",
+   "uuid": "79d08d47-361d-4a88-a7ce-a775f3bc4bee"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   },
+   {
+    "id": "25",
+    "slug": "fortbildung",
+    "title": "fortbildung"
+   }
+  ],
+  "title": "Fortbildung „ESP32-Programmierung in Python“",
+  "updatedAt": "2026-11-14T18:59:31Z",
+  "url": "http://localhost:4000/events/c54c6024-8882-4ddb-bc25-d8db368d836e",
+  "uuid": "c54c6024-8882-4ddb-bc25-d8db368d836e",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-26T18:30:00Z",
+  "description": "<p>SinnenRauschen ist ein immersives Musiktheatererlebnis. In diesem besonderen Konzertformat holt das WKO unter der musikalischen Leitung von Michael Form den Barock in die Gegenwart und zeigt, wie zeitlos seine Ausdruckskraft und sein Wesenskern sind.</p>\n<p>Aus der Kombination von Musik, Literatur, Theater und Videokunst entsteht ein Live-Erlebnis, das neue Hör- und Seherlebnisse schafft. Begleitet von Impulsen aus der Forschung des Max-Planck-Instituts für empirische Ästhetik greifen Kunst, Wahrnehmung und wissenschaftliche Erkenntnisse ineinander. Die Veranstaltung fragt, was im menschlichen Körper geschieht, wenn die emotionale Kraft der Musik uns bewegt, und welche Rolle Glücks- und Stresshormone dabei spielen.</p>\n<p>Hinweis: Bei diesem Angebot im Science Dome treten laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auf.</p>\n<ul><li>Ort: Science Dome</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/sinnenrauschen/?termin=1795721400\">https://www.experimenta.science/besuchen/veranstaltungskalender/sinnenrauschen/?termin=1795721400</a></p>",
+  "endsOn": "2026-11-26T20:45:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-07-22_experimenta-veranstaltung-sinnenrauschen-wko.jpg",
+   "size": 639994,
+   "url": "http://localhost:4000/media/9c2dc6f1235b629442a339ed79539a3df3c99946d452e8241c127f3ee861f1f2.jpg?name=2026-07-22_experimenta-veranstaltung-sinnenrauschen-wko.jpg",
+   "uuid": "dabc5ed8-ad30-48f8-b46b-318f2c9cd741"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "26",
+    "slug": "science-dome-special",
+    "title": "science-dome-special"
+   }
+  ],
+  "title": "SinnenRauschen",
+  "updatedAt": "2026-11-14T18:59:34Z",
+  "url": "http://localhost:4000/events/9f45b0ff-083a-4e2c-9acf-c13f58d53b14",
+  "uuid": "9f45b0ff-083a-4e2c-9acf-c13f58d53b14",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-27T14:00:00Z",
+  "description": "<p>Schiaparelli, der charismatische Entertainer, nimmt euch mit auf eine spektakuläre Reise durch Raum und Zeit. In seinem wundersamen Observatorium geht es von der glühend heißen Oberfläche des Merkur bis zu den eisigen Weiten des Pluto. Ihr entdeckt die Wunder und Gefahren unseres Sonnensystems hautnah und lernt dabei, wie kostbar unser Heimatplanet wirklich ist.</p>\n<p>Achtung: Diese Tour führt zu den gefährlichsten Orten des Sonnensystems und erfordert Mut und echte Flugkünste. Das Abenteuer ist nichts für schwache Nerven.</p>\n<p>Die Show wurde von NSC Creative unter dem Titel „The Great Solar System Adventure“ produziert. Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795791600\">https://www.experimenta.science/besuchen/veranstaltungskalender/abenteuerreise-durchs-sonnensystem-3d/?termin=1795791600</a></p>",
+  "endsOn": "2026-11-27T14:26:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "size": 419986,
+   "url": "http://localhost:4000/media/735be78d401068e4604fe0bcaa8866c8fb97b17ec349bce093374c2423135fca.jpg?name=Die_grosse_Abenteuerreise_durchs_Sonnensystem-Web-1920-1080.jpg",
+   "uuid": "43dc8d6f-848d-46ae-9c1a-155906c9afe8"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Abenteuerreise durchs Sonnensystem – 3D",
+  "updatedAt": "2026-11-14T18:59:35Z",
+  "url": "http://localhost:4000/events/d5248f31-dbfd-4c45-a675-9ddd962b65df",
+  "uuid": "d5248f31-dbfd-4c45-a675-9ddd962b65df",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-27T14:00:00Z",
+  "description": "<p>In dieser Fortbildung lernen Lehrkräfte das umfangreiche Experimentier-Angebot des Physik-Kurses für die Sekundarstufe II kennen. Aus mehr als 20 Experimenten aus den Bereichen Optik, Atom- und Quantenphysik wird eine Auswahl vorgestellt. Die Lehrkräfte können die Experimente in der gleichen Weise durchführen, wie Schülerinnen und Schüler sie in einem Kurs umsetzen.</p>\n<p>Zu den Themen gehören: Spektroskopie, Thermografie, Polarisation, Interferometrie, Spannungsoptik, Doppelspalt mit Laser und Einzelphotonen, Balmer-Serie, Quantenradierer, Fotoeffekt, Franck-Hertz-Versuch, Millikan-Versuch, AFM und STM.</p>\n<ul><li>Ort: Robert-Mayer-Labor (e2)</li><li>Preis: kostenfrei</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-highlights-der-physik-2/?termin=1795791600\">https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-highlights-der-physik-2/?termin=1795791600</a></p>",
+  "endsOn": "2026-11-27T17:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2022-07-05-experimenta-veranstaltung-highlights-physik-1920x1080-1.jpg",
+   "size": 300046,
+   "url": "http://localhost:4000/media/df921ecf32d843c30c74e740b4157f795d16372c4597e9ce107604b86ac6b126.jpg?name=2022-07-05-experimenta-veranstaltung-highlights-physik-1920x1080-1.jpg",
+   "uuid": "43f10621-f2e4-4642-aa44-3d9fda6892f7"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   },
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   },
+   {
+    "id": "25",
+    "slug": "fortbildung",
+    "title": "fortbildung"
+   }
+  ],
+  "title": "Fortbildung: Von Wellen und Teilchen: Optik, Atom- und Quantenphysik",
+  "updatedAt": "2026-11-14T18:59:38Z",
+  "url": "http://localhost:4000/events/a69177b1-757b-404a-91e4-ae19d795b874",
+  "uuid": "a69177b1-757b-404a-91e4-ae19d795b874",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-27T14:00:00Z",
+  "description": "<p>Die Fortbildung richtet sich an Lehrkräfte von Gymnasien. Sie gibt einen Einblick in die genauen Kursinhalte der Angebote des Schülerlabors aus dem Bereich Molekularbiologie. So können Lehrkräfte vorab prüfen, welche Fachinhalte vorausgesetzt werden, und den passenden Laborkurs leichter auswählen. Das erleichtert die Zusammenarbeit zwischen Schule und Schülerlabor.</p>\n<p>Eine kleine Wiederholung der praktischen Fertigkeiten im Labor ist im Programm enthalten. Ein Besuch der Fortbildung ist Voraussetzung für die Buchung der folgenden Kurse: DNA-Techniken, Krebsdiagnostik p53, Kampf gegen das Virus – Strategien gegen SARS-CoV und CRISPR-Cas9.</p>\n<ul><li>Ort: Elisabeth Kalko-Labor (e2)</li><li>Preis: kostenfrei</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-molekularbiologie/?termin=1795791600\">https://www.experimenta.science/besuchen/veranstaltungskalender/fortbildung-molekularbiologie/?termin=1795791600</a></p>",
+  "endsOn": "2026-11-27T17:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "DNA-Techniken_1920x1080px-1.jpg",
+   "size": 239402,
+   "url": "http://localhost:4000/media/2fd90979e48d5edb92981536f54ae463720d19427a4737eea03d2fb2103e0298.jpg?name=DNA-Techniken_1920x1080px-1.jpg",
+   "uuid": "580923ce-0daa-445d-9369-0e7d3fdba0e1"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   },
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   },
+   {
+    "id": "25",
+    "slug": "fortbildung",
+    "title": "fortbildung"
+   }
+  ],
+  "title": "Fortbildung: Molekularbiologie",
+  "updatedAt": "2026-11-14T18:59:40Z",
+  "url": "http://localhost:4000/events/78d9c254-0fe3-43f0-a78b-0a6b26f3567d",
+  "uuid": "78d9c254-0fe3-43f0-a78b-0a6b26f3567d",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-27T15:00:00Z",
+  "description": "<p>Das Universum ist ständig im Wandel: Sterne explodieren, Galaxien kollidieren und Schwarze Löcher senden gewaltige Signale durch Raum und Zeit. Viele dieser Ereignisse bleiben für uns unsichtbar und sind erst mit modernsten Technologien wahrnehmbar.</p>\n<p>Die Show begleitet die Zuschauer zu Observatorien in Chile und Hawaii. Dort zeigt sie, wie Forschende mit ihrem Netzwerk aus Teleskopen Botschaften aus dem All empfangen, verknüpfen und entschlüsseln. Auch gehen Gravitationswellen und Neutrinos darauf ein, die völlig neue Einblicke in das Universum ermöglichen.</p>\n<p>Die Show wurde von NSF NOIRlab unter dem Titel „Messengers of Time and Space“ produziert. Hinweis: Bei Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/signale-aus-dem-universum/?termin=1795795200\">https://www.experimenta.science/besuchen/veranstaltungskalender/signale-aus-dem-universum/?termin=1795795200</a></p>",
+  "endsOn": "2026-11-27T15:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-02-26-experimenta-veranstaltung-Messengers_of_Time-and-Space.jpg",
+   "size": 262584,
+   "url": "http://localhost:4000/media/4f2e99b02fc23395e466ab69ec011c99005762a153b1c602be8558f452d622ce.jpg?name=2026-02-26-experimenta-veranstaltung-Messengers_of_Time-and-Space.jpg",
+   "uuid": "b8c93ffa-0640-4510-b411-a09e47029955"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Signale aus dem Universum",
+  "updatedAt": "2026-11-14T18:59:41Z",
+  "url": "http://localhost:4000/events/a0ad197a-4f95-4832-80e4-5911d8166ba8",
+  "uuid": "a0ad197a-4f95-4832-80e4-5911d8166ba8",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Aim – Akademie für Innovative Bildung und Management",
+   "preferredUsername": "aim"
+  },
+  "beginsOn": "2026-11-27T15:30:00Z",
+  "description": "<p>Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Computer, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messgerät dabei helfen, unser Wasser zu untersuchen?</p>\n<p>In diesem Kurs probierst du genau das aus. Dazu arbeitest du mit einem kleinen Computer, einem Mikrocontroller. Hinzu kommen Bauteile wie Lichter, Knöpfe, Schalter und Sensoren. Schritt für Schritt lernst du, wie du diese anschließest und mit einfachen Befehlen steuerst. So siehst du sofort, was dein Code bewirkt. Dabei lernst du wichtige Grundlagen der Programmierung kennen, zum Beispiel wie ein Programm sich Dinge merkt, Abläufe wiederholt oder Entscheidungen trifft.</p>\n<p>Am Ende nutzt du dein Wissen für ein kleines Projekt: Du untersuchst mit Sensoren verschiedene Wasserproben und vergleichst die Ergebnisse. So siehst du, wie Programmierung und Technik helfen können, Unterschiede im Wasser sichtbar zu machen.</p>\n<p>Begleitet wirst du von einem erfahrenen Dozenten, der dir alles verständlich erklärt und dich beim Ausprobieren unterstützt. Du brauchst keine Vorkenntnisse in Programmierung oder Elektronik.</p>\n<p>Was dich erwartet</p>\n<ul><li>Programmieren ausprobieren: Du lernst erste Grundlagen und testest sie direkt an einem kleinen Computer.</li><li>Technik zum Anfassen: Du arbeitest mit Lichtern, Knöpfen, Schaltern und kleinen Sensoren.</li><li>Praxisprojekt Wasserqualität: Du untersuchst unser Wasser und vergleichst die Ergebnisse.</li></ul>\n<p>Teilnehmen</p>\n<p>Der Kurs richtet sich an Schüler/-innen zwischen 12 und 15 Jahren. Du brauchst keine Vorkenntnisse in Programmierung oder Elektronik. Es reicht, wenn du einen PC grundsätzlich bedienen kannst und neugierig auf Technik, Ausprobieren und Tüfteln bist.</p>\n<p>Mitbringen</p>\n<p>Alle Materialien, Bauteile und Geräte werden für die Dauer des Kurses gestellt. Du brauchst nichts mitzubringen.</p>\n<p><strong>Dieser Kurs besteht aus 3 Terminen – die Anmeldung gilt für alle Termine.</strong></p>\n<ul><li>Fr, 27.11.2026, 16:30–18:00 Uhr – Bildungscampus 7, Raum 3.02</li><li>Fr, 04.12.2026, 16:30–18:00 Uhr – Bildungscampus 7, Raum 3.02</li><li>Fr, 11.12.2026, 16:30–18:00 Uhr – Bildungscampus 7, Raum 3.02</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontrollern-1215-Jahre/262420PCB\">https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontrollern-1215-Jahre/262420PCB</a></p>",
+  "endsOn": "2026-11-27T17:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "aim HN, Raum 3.02, Bildungscampus 7",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Bildungscampus 7",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "csm_AIM_Geba__ude_b9062a5594.png",
+   "size": 2731064,
+   "url": "http://localhost:4000/media/28e8f7343589c050fcc9732bb2cee6c72b74920014d6a4a773c295a9ab2c3b5d.png?name=csm_AIM_Geba__ude_b9062a5594.png",
+   "uuid": "546d35cc-18f7-4d5c-b14b-7c14f27e1ca6"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Kleine Computer, große Wirkung – Einführung in die Programmierung mit Mikrocontrollern (12–15 Jahre) (3 Termine)",
+  "updatedAt": "2026-11-14T19:41:11Z",
+  "url": "https://localhost/events/4dafa78b-e954-41bd-8f03-59d84541d89a",
+  "uuid": "4dafa78b-e954-41bd-8f03-59d84541d89a",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-28T09:00:00Z",
+  "description": "<p><strong>Ausgebucht – Warteliste möglich</strong></p>\n<p>Seit die Oma der Knusperhexe versucht hat, Hänsel und Gretel zu braten, ist im Hexenwald nichts mehr wie früher. Niemand wagt sich mehr in die Nähe des Waldes, und die Bewohner des Märchenwaldes machen lieber einen großen Bogen um die Hexenfamilie. Auch das Kind des bösen Wolfs ist einsam. Als sie feststellen, dass nicht einmal der Weihnachtsmann den Weg in ihren Wald findet, überlegen sie, wie sie das Weihnachtsfest übernehmen können. Wird ihr Plan gelingen? Und was bedeutet das für die anderen Märchenbewohner? Nach dem Stück gibt es für die Kinder die Möglichkeit eigene Fingerpuppen zu basteln, damit wir in gemütlicher Runde ein bekanntes Märchen nachspielen können. Hier können die Kinder ihre Kreativität entfalten und das Spielen fördert das soziale Miteinander.</p>\n<ul><li>Termine: Sa, 28.11.2026, 10:00–11:30 Uhr</li><li>Ort: Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 7</li><li>Gebühr: 20,00 € (inkl. Materialkosten); 10,00 € (jede weitere Person)</li><li>Plätze: frei: 0 von 20</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/weihnachten-im-hexenwald-261H301009/\">https://hdf-hn.de/kurs/weihnachten-im-hexenwald-261H301009/</a></p>",
+  "endsOn": "2026-11-28T10:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 7",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "19",
+    "slug": "3-6-jahre",
+    "title": "3-6 Jahre"
+   },
+   {
+    "id": "20",
+    "slug": "mit-begleitperson",
+    "title": "mit Begleitperson"
+   }
+  ],
+  "title": "Weihnachten im Hexenwald – Puppenspiel und Basteln für Kinder von 3 bis 6 Jahren mit Begleitperson",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/3decfcaa-f8ff-4f74-9423-8bddb68ffa53",
+  "uuid": "3decfcaa-f8ff-4f74-9423-8bddb68ffa53",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T09:00:00Z",
+  "description": "<p><strong>Ausgebucht</strong></p>\n<p>Gemeinsam backen, verzieren und genießen! In diesem Familienworkshop dreht sich alles um köstliche Plätzchen, ob klassisch oder bunt dekoriert. Für jeden ist etwas dabei.</p>\n<p>Freut euch auf einen Nachmittag voller Kreativität, Spaß und köstlicher Plätzchen. Der Workshop ist Teil des Ferienprogramms der Experimentierküche und richtet sich an Familien mit Kindern ab 7 Jahren. Es nehmen höchstens 8 Familien teil.</p>\n<p>Die Veranstaltung ist bereits ausgebucht. Eingesetzte Hauptallergene können bei der Experimentierküche erfragt werden.</p>\n<ul><li>Alter: Für Familien mit Kindern ab 7 Jahren</li><li>Ort: experimenta, E2, Carl-Heinrich Knorr-Experimentierküche</li><li>Preis: 5 €</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/familienworkshop-plaetzchen-fuer-die-ganze-familie/?termin=1795860000\">https://www.experimenta.science/besuchen/veranstaltungskalender/familienworkshop-plaetzchen-fuer-die-ganze-familie/?termin=1795860000</a></p>",
+  "endsOn": "2026-11-28T11:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Plaetzchen-Familie_1920x1080.jpg",
+   "size": 283983,
+   "url": "http://localhost:4000/media/f5b1661663573d26e50313547a2e22f1101cf1f90208e90c940ebfff90da8b30.jpg?name=Plaetzchen-Familie_1920x1080.jpg",
+   "uuid": "5b3544c7-9317-443f-9d27-7e5bcd598d99"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "1",
+    "slug": "workshop",
+    "title": "workshop"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   },
+   {
+    "id": "23",
+    "slug": "ferienprogramm",
+    "title": "ferienprogramm"
+   },
+   {
+    "id": "24",
+    "slug": "experimentierkueche",
+    "title": "experimentierkueche"
+   }
+  ],
+  "title": "Familienworkshop Plätzchen für die ganze Familie",
+  "updatedAt": "2026-11-14T18:59:42Z",
+  "url": "http://localhost:4000/events/a5779e78-ab05-4bbc-b128-3597a187ecf8",
+  "uuid": "a5779e78-ab05-4bbc-b128-3597a187ecf8",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T09:30:00Z",
+  "description": "<p>Begleite die Tiere Südafrikas auf einer Safari in die Savanne der Provinz KwaZulu-Natal, die du auf der 360-Grad-Kuppel im Science Dome erlebst. Löwen, Elefanten und weitere Tiere kannst du ganz nah und ohne Gefahr in ihrer natürlichen Umgebung beobachten.</p>\n<p>Du begleitest einzigartige Tiere in ihrem Alltag und erfährst mehr über ihre verblüffenden Charaktere – mal verspielt, mal kraftvoll und manchmal überraschend emotional. Die Vorführung zeigt die Vielfalt der Wildnis.</p>\n<p>Produziert wurde die Vorführung von VR Capture unter dem Titel „Close Encounters“.</p>\n<p>Hinweis: Bei dieser Vorführung können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 8 Jahren, Familien</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1795861800\">https://www.experimenta.science/besuchen/veranstaltungskalender/auge-in-auge-mit-afrikas-wilden-tieren/?termin=1795861800</a></p>",
+  "endsOn": "2026-11-28T10:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "size": 407762,
+   "url": "http://localhost:4000/media/f0d65c8a2320ee65ccf42947aefa7d84b842d9f7ba52418e45bd270af726e330.jpg?name=2026-04-13_experimenta-Auge-in-Auge-mit-Afrikas-wilden-Tieren-1920x1080-Web.jpg",
+   "uuid": "aa5218fb-80b0-4907-93db-cbbfdd8a2e9e"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Auge in Auge mit Afrikas Tieren",
+  "updatedAt": "2026-11-14T18:59:43Z",
+  "url": "http://localhost:4000/events/4e8c011d-5653-497d-b0e7-fa7eeace316d",
+  "uuid": "4e8c011d-5653-497d-b0e7-fa7eeace316d",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-28T10:00:00Z",
+  "description": "<p>Gute Umgangsformen können richtig Spaß machen. In diesem Kurs entdecken die Kinder spielerisch, wie sie sich in verschiedenen Situationen sicher und entspannt bewegen können. Bei einem gemeinsamen Essen mit einer Knigge-Beraterin lernen sie, worauf es beim Essen zu Hause oder im Restaurant ankommt - vom Umgang mit Besteck und Serviette bis zu guten Tischmanieren und einem wertschätzenden Miteinander. Mit viel Freude, praktischen Übungen und ohne erhobenen Zeigefinger lernen die Kinder, sich aufmerksam, respektvoll und selbstbewusst zu verhalten - Fähigkeiten, die ihnen im Alltag immer wieder zugutekommen.</p>\n<ul><li>Termine: Sa, 28.11.2026, 11:00–14:00 Uhr</li><li>Ort: Heilbronn, La Toscana, Südstr. 88</li><li>Gebühr: 45,00 € (inkl. Essen und ein Getränk)</li><li>Plätze: frei: 7 von 15</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/knigge-fuer-kids-261H304003/\">https://hdf-hn.de/kurs/knigge-fuer-kids-261H304003/</a></p>",
+  "endsOn": "2026-11-28T13:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, La Toscana, Südstr. 88",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": null,
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   }
+  ],
+  "title": "Knigge für Kids – Für Kinder von 7 bis 12 Jahren",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/45379527-312c-4361-aa6c-2a91f800ee75",
+  "uuid": "45379527-312c-4361-aa6c-2a91f800ee75",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T10:00:00Z",
+  "description": "<p>Bei unserer Kleidertauschparty kannst du ausgemistete Kleidungsstücke gegen die Schrankhüter anderer tauschen. Das spart Geld und schont die Umwelt. Wer möchte, kann bis zu zehn gut erhaltene Kleidungsstücke mitbringen und abgeben – und sich dafür neue Lieblingsteile aussuchen.</p>\n<p>Getauscht werden können gut erhaltene und saubere Kleidungsstücke für junge Erwachsene und Erwachsene, zum Beispiel Hosen, Röcke, T-Shirts, Pullover, Jacken und Schuhe. Auch Accessoires und Modeschmuck können getauscht werden.</p>\n<p>Alle nicht getauschten Kleidungsstücke werden nach einiger Zeit an die Aufbaugilde in Heilbronn gespendet. Für die Veranstaltung ist keine Anmeldung erforderlich.</p>\n<ul><li>Alter: 11. bis 13. Klasse, Jugendliche und Erwachsene</li><li>Ort: Maker Space der experimenta (Erdgeschoss, Hagenbucher Speicher)</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/kleidertausch-im-forum/?termin=1795863600\">https://www.experimenta.science/besuchen/veranstaltungskalender/kleidertausch-im-forum/?termin=1795863600</a></p>",
+  "endsOn": "2026-11-28T14:00:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2023-03-29-experimenta-veranstaltung-experimenta-Kleidertausch-1.jpg",
+   "size": 1215995,
+   "url": "http://localhost:4000/media/73ceefedb289421921e6f6b7f86a741e605b682eccef9d88e8e591c3c2488f0b.jpg?name=2023-03-29-experimenta-veranstaltung-experimenta-Kleidertausch-1.jpg",
+   "uuid": "fd24abce-8848-4c79-9ccb-4121bc878b71"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   },
+   {
+    "id": "18",
+    "slug": "erwachsene",
+    "title": "Erwachsene"
+   },
+   {
+    "id": "27",
+    "slug": "forum",
+    "title": "forum"
+   }
+  ],
+  "title": "Kleidertauschparty",
+  "updatedAt": "2026-11-14T18:59:45Z",
+  "url": "http://localhost:4000/events/faa9dd87-9798-4e52-9af6-4b7bdfe0c2d5",
+  "uuid": "faa9dd87-9798-4e52-9af6-4b7bdfe0c2d5",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T10:30:00Z",
+  "description": "<p>Lizzi findet auf dem Schulweg einen kaputten Roboter, und damit beginnt ein Abenteuer voller Technik, Freundschaft und Neugier. Gemeinsam mit ihrer Oma repariert sie das Roboter-Mädchen Roxy und zeigt ihm die Welt. Dabei lernt auch Lizzi viel über Künstliche Intelligenz, Computer und Datenschutz.</p>\n<p>„Meine Freundin Roxy“ ist ein liebevoll gestalteter Animationsfilm über Vielfalt, Mut und die Frage, ob man einen Roboter einfach behalten darf. Die Produktion zeigt, dass Wissenschaft auch Herz haben kann.</p>\n<p>Die experimenta-Produktion basiert auf dem Buch „Meine Freundin Roxy“ von Kenza Ait Si Abbou Lyadini. Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1795865400\">https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/?termin=1795865400</a></p>",
+  "endsOn": "2026-11-28T11:05:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "size": 485400,
+   "url": "http://localhost:4000/media/1bd3850c31e3178893accfddf3bc41252489ef25f3ca051d13bf8598c443409b.jpg?name=2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+   "uuid": "34e6a1b4-ab9c-4732-a750-2b3ef061fef9"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Meine Freundin Roxy",
+  "updatedAt": "2026-11-14T18:59:46Z",
+  "url": "http://localhost:4000/events/04d6b76d-c3f6-477f-972d-8d7ac009af11",
+  "uuid": "04d6b76d-c3f6-477f-972d-8d7ac009af11",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Haus der Familie Heilbronn",
+   "preferredUsername": "hdf"
+  },
+  "beginsOn": "2026-11-28T11:30:00Z",
+  "description": "<p><strong>Ausgebucht – Warteliste möglich</strong></p>\n<p>In diesem Workshop erlernen die Kinder die visuelle Programmiersprache Scratch, speziell für Kinder konzipiert. Ganz ohne Vorkenntnisse können die Kinder durch das Zusammenfügen von Code-Blöcken eigene Programme erstellen. In Zweiergruppen entdecken sie die Grundlagen des Programmierens und gestalten ihre eigenen Charaktere, die sie zum Leben erwecken - sie lassen sie laufen, hüpfen und spannende Aufgaben meistern. Scratch fördert kreatives Denken und Problemlösungsfähigkeiten, da die Kinder lernen, logische Abläufe zu erstellen und ihre Ideen in digitale Projekte umzusetzen.</p>\n<ul><li>Termine: Sa, 28.11.2026, 12:30–15:30 Uhr</li><li>Ort: Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4</li><li>Gebühr: 30,00 €</li><li>Plätze: frei: 0 von 8</li></ul>\n<p>Anmeldung &amp; Infos: <a href=\"https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/\">https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/</a></p>",
+  "endsOn": "2026-11-28T14:30:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 4",
+   "locality": "Heilbronn",
+   "postalCode": "74076",
+   "region": null,
+   "street": "Erich-Mendelsohn-Str. 1C",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "20250724_Haus_der_Familie_37.jpg",
+   "size": 306018,
+   "url": "http://localhost:4000/media/65f6481a0c109ef67c014fd99f1fc03bd2adc217a9a78276c5cf2c5eece39470.jpg?name=20250724_Haus_der_Familie_37.jpg",
+   "uuid": "e1bba082-9ba1-41a1-85a2-ab47c6bed53a"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   }
+  ],
+  "title": "Programmieren Lernen - Scratch – Für Kinder von 8 bis 12 Jahren ohne Begleitperson",
+  "updatedAt": "2026-11-14T19:09:58Z",
+  "url": "https://localhost/events/5cca7131-b622-4a5d-a8bb-4230521086f2",
+  "uuid": "5cca7131-b622-4a5d-a8bb-4230521086f2",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T11:30:00Z",
+  "description": "<p>Pinguin James und Eisbär Vladimir sind beste Freunde und beobachten gern gemeinsam den Sternenhimmel. Dabei wundern sie sich, warum die Polarnächte so lang sind. Also beschließen sie, eine eigene Sternwarte zu errichten, um das Rätsel zu lösen.</p>\n<p>Doch dabei bleibt es nicht: Gemeinsam bauen sie das Raumschiff Polaris und starten zu einer Mission zu Mars und Saturn. Im Weltall finden sie Antworten auf ihre Fragen und entdecken die Welt der Planeten.</p>\n<p>Die Show wurde vom Saint-Étienne Planetarium unter dem Titel „Polaris, the Space Submarine &amp; the Mystery of the Polar Night“ produziert. Hinweis der Veranstalter: Im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten.</p>\n<ul><li>Alter: Ab 6 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1795869000\">https://www.experimenta.science/besuchen/veranstaltungskalender/das-raetsel-der-polarnacht-3d/?termin=1795869000</a></p>",
+  "endsOn": "2026-11-28T11:59:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "VACORSCD0015.jpg",
+   "size": 91736,
+   "url": "http://localhost:4000/media/67068633c36383feca777a2a450850003e7dc7b3cdb1683ac8d5f11bc2d9debf.jpg?name=VACORSCD0015.jpg",
+   "uuid": "af315d43-5ab6-43af-8654-a87a5d979d7f"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "15",
+    "slug": "6-10-jahre",
+    "title": "6-10 Jahre"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Das Rätsel der Polarnacht – 3D",
+  "updatedAt": "2026-11-14T18:59:46Z",
+  "url": "http://localhost:4000/events/70848fa4-4c7c-4544-860c-54c43d3f8fa4",
+  "uuid": "70848fa4-4c7c-4544-860c-54c43d3f8fa4",
+  "visibility": "PUBLIC"
+ },
+ {
+  "attributedTo": {
+   "name": "Experimenta",
+   "preferredUsername": "experimenta"
+  },
+  "beginsOn": "2026-11-28T12:30:00Z",
+  "description": "<p>Erlebe die faszinierende Welt der Dinosaurier auf der 360-Grad-Kuppel des Science Domes. Du begleitest das Mädchen Celeste auf ihrer abenteuerlichen Reise zurück in die Urzeit.</p>\n<p>Dabei erfährst du, wie sich die faszinierenden Tiere über Millionen Jahre verändert haben. Du lernst riesige Kreaturen, gepanzerte Bestien und Raubtiere kennen und staunst über ihre Anpassungsfähigkeit. Bis zu dem Tag, an dem ein Asteroideneinschlag ein Massensterben auf der Erde verursachte.</p>\n<p>Die Show stellt außerdem die Frage, ob die Dinosaurier wirklich ausgestorben sind oder ob noch heute ein bisschen Dino in einigen Tieren steckt.</p>\n<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht sowie andere akustische oder visuelle Reize auftreten. Die Produktion stammt von Render Area &amp; Monigotes Estudio 2.0 und trägt den Originaltitel „Dinosaurs: A Story of Survival“.</p>\n<ul><li>Alter: Ab 10 Jahren</li><li>Ort: Science Dome (e1)</li><li>Preis: 6,00 Euro Erwachsene / 4,00 Euro ermäßigt</li></ul>\n<p>Tickets &amp; Infos: <a href=\"https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795872600\">https://www.experimenta.science/besuchen/veranstaltungskalender/dinosaurier-eine-geschichte-des-ueberlebens/?termin=1795872600</a></p>",
+  "endsOn": "2026-11-28T12:58:00Z",
+  "physicalAddress": {
+   "country": "Germany",
+   "description": "experimenta",
+   "locality": "Heilbronn",
+   "postalCode": "74072",
+   "region": null,
+   "street": "Experimenta-Platz",
+   "timezone": "Europe/Berlin"
+  },
+  "picture": {
+   "alt": null,
+   "name": "Mitarbeiterportal-1920x1080-1.jpg",
+   "size": 199639,
+   "url": "http://localhost:4000/media/9f0dbb90351370b85fabad740c8a907a6f1c492032ecee381aaada4ac4fe86f8.jpg?name=Mitarbeiterportal-1920x1080-1.jpg",
+   "uuid": "1fba760a-dca0-421b-bd53-2f125c25defc"
+  },
+  "publishAt": null,
+  "status": "CONFIRMED",
+  "tags": [
+   {
+    "id": "10",
+    "slug": "familien",
+    "title": "familien"
+   },
+   {
+    "id": "11",
+    "slug": "science-dome-shows",
+    "title": "science-dome-shows"
+   },
+   {
+    "id": "16",
+    "slug": "10-14-jahre",
+    "title": "10-14 Jahre"
+   },
+   {
+    "id": "17",
+    "slug": "14-18-jahre",
+    "title": "14-18 Jahre"
+   }
+  ],
+  "title": "Dinosaurier: Eine Geschichte des Überlebens",
+  "updatedAt": "2026-11-14T18:59:47Z",
+  "url": "http://localhost:4000/events/850935ad-c53f-48ad-b90e-99ae88de40b4",
+  "uuid": "850935ad-c53f-48ad-b90e-99ae88de40b4",
+  "visibility": "PUBLIC"
+ }
+]

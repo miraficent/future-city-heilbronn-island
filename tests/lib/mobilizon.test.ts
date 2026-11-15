@@ -69,6 +69,9 @@ describe("Titelbild", () => {
     expect(eigenesBild(`${BASIS}/media/x.jpg`, BASIS)).toBe(`${BASIS}/media/x.jpg`);
     expect(eigenesBild("https://www.experimenta.science/bild.jpg", BASIS)).toBeNull();
     expect(eigenesBild(null, BASIS)).toBeNull();
+    // Mobilizon nennt sich intern „localhost“ – das Bild liegt trotzdem auf der eigenen Instanz
+    expect(eigenesBild("http://localhost:4000/media/abc.jpg?name=x.jpg", "http://10.40.58.53:4000")).toBe("http://10.40.58.53:4000/media/abc.jpg?name=x.jpg");
+    expect(eigenesBild("http://localhost:4000/anderes/abc.jpg", "http://10.40.58.53:4000")).toBeNull();
     expect(zuLiveEvent(mz({ picture: null }), KAT, BASIS).image).toBeNull();
   });
 
@@ -120,6 +123,38 @@ describe("Einordnung", () => {
   it("kurze Stichwörter nur als ganzes Wort („ki“ steckt nicht in „Kinder“)", () => {
     expect(erkenneKategorien("Ein Nachmittag für Kinder", KAT)).not.toContain("it");
     expect(erkenneKategorien("Was kann KI?", KAT)).toContain("it");
+  });
+
+  it("Stichwörter zählen nur am Wortanfang („stern“ steckt nicht in „meistern“)", () => {
+    expect(erkenneKategorien("Die Teams müssen Missionen meistern", KAT)).not.toContain("astronomy");
+    expect(erkenneKategorien("Dort präsentieren die Teams", KAT)).not.toContain("biology");
+    expect(erkenneKategorien("Er trifft auf Freunde", KAT)).not.toContain("biology");
+    // Wortanfang mit Endung bleibt erkannt
+    expect(erkenneKategorien("Unter dem Sternenhimmel", KAT)).toContain("astronomy");
+    expect(erkenneKategorien("Wir programmieren einen Roboter", KAT)).toContain("coding");
+  });
+
+  it("Ort, Einrichtungsname, Links und Hinweise bestimmen kein Thema (sonst ist jede experimenta-Show „Physik“ und „Sterne“)", () => {
+    const tiershow = zuLiveEvent(mz({
+      title: "Auge in Auge mit Afrikas Tieren",
+      description:
+        "<p>Die Kuppel des Science Dome lässt dich die Tiere der Savanne erleben. Eine experimenta-Produktion.</p>" +
+        "<p>Hinweis: Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht auftreten.</p>" +
+        "<ul><li>Alter: Ab 8 Jahren</li><li>Ort: Science Dome (e1)</li></ul>" +
+        "<p>Infos: https://www.experimenta.science/termin/</p>",
+      tags: [],
+    }), KAT, BASIS);
+    expect(tiershow.categories).toEqual(["biology"]);
+    // Hinweis ohne eigenen Absatz und ohne das Wort „Hinweis“
+    const roboter = zuLiveEvent(mz({
+      title: "Meine Freundin Roxy",
+      description: "<p>Lizzi repariert einen Roboter. Bei den Angeboten im Science Dome können laute Geräusche, Lichteffekte und helles Licht auftreten.</p>",
+      tags: [],
+    }), KAT, BASIS);
+    expect(roboter.categories).not.toContain("physics");
+    // echte Themen im Text zählen weiter
+    expect(zuLiveEvent(mz({}), KAT, BASIS).categories).toContain("astronomy");
+    expect(erkenneKategorien("Spannende Experimente mit Strom", KAT)).toContain("physics");
   });
 
   it("HTML wird zu Text, Bilder fallen weg, Zeichen werden entschlüsselt", () => {
