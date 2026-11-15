@@ -34,14 +34,16 @@ function Kiste({
   return (
     <g strokeLinejoin="round">
       <g transform={`matrix(1 ${LS} 0 1 ${L[0]} ${L[1]})`}>
-        <rect x={0} y={-h} width={a} height={h} fill={links} stroke={rand} strokeWidth={3} />
+        <rect x={0} y={-h} width={a} height={h} fill={links} stroke={rand} strokeWidth={2.2} />
         {linksInhalt}
+        <rect x={0} y={-h} width={a} height={h} fill="url(#ig-licht)" pointerEvents="none" />
       </g>
       <g transform={`matrix(1 ${-RS} 0 1 ${x} ${y})`}>
-        <rect x={0} y={-h} width={b} height={h} fill={rechts} stroke={rand} strokeWidth={3} />
+        <rect x={0} y={-h} width={b} height={h} fill={rechts} stroke={rand} strokeWidth={2.2} />
         {rechtsInhalt}
+        <rect x={0} y={-h} width={b} height={h} fill="url(#ig-schatten)" pointerEvents="none" />
       </g>
-      {oben !== "none" && <polygon points={pt([[x, y - h], [L[0], L[1] - h], [H[0], H[1] - h], [R[0], R[1] - h]])} fill={oben} stroke={rand} strokeWidth={3} />}
+      {oben !== "none" && <polygon points={pt([[x, y - h], [L[0], L[1] - h], [H[0], H[1] - h], [R[0], R[1] - h]])} fill={oben} stroke={rand} strokeWidth={2.2} />}
       {/* Oberseite: u entlang der rechten Achse, v entlang der linken Achse */}
       {obenInhalt && <g transform={`matrix(1 ${-RS} -1 ${-LS} ${x} ${y - h})`}>{obenInhalt}</g>}
     </g>
@@ -55,9 +57,24 @@ function Sockel({ x, y, a, b }: { x: number; y: number; a: number; b: number }) 
   ];
   return (
     <g>
-      <polygon points={pt(ecke(-8, 22, a + 34, b + 30))} fill="#526b55" opacity={0.14} />
+      <polygon points={pt(ecke(-14, 30, a + 44, b + 40))} fill="#2f4a2f" opacity={0.1} />
+      <polygon points={pt(ecke(-8, 22, a + 34, b + 30))} fill="#2f4a2f" opacity={0.12} />
       <polygon points={pt(ecke(0, 16, a + 30, b + 26))} fill="#d9d2b9" stroke="#8a927e" strokeWidth={2.5} />
       <polygon points={pt(ecke(0, 9, a + 16, b + 14))} fill="#e9e2cb" stroke="#b0aa91" strokeWidth={1.5} />
+    </g>
+  );
+}
+
+/** Baum im Stil der gemalten Karte: runde Krone mit Licht von oben links, Stamm, weicher Schatten */
+function Baum({ x, y, r }: { x: number; y: number; r: number }) {
+  return (
+    <g>
+      <ellipse cx={x + r * 0.55} cy={y + r * 1.05} rx={r * 1.1} ry={r * 0.36} fill="#2f4a2f" opacity={0.2} />
+      <rect x={x - r * 0.12} y={y + r * 0.2} width={r * 0.24} height={r * 0.85} rx={r * 0.1} fill="#7A4A2A" />
+      <circle cx={x - r * 0.48} cy={y + r * 0.22} r={r * 0.62} fill="url(#ig-baum)" stroke="#2f6b2f" strokeWidth={1.5} />
+      <circle cx={x + r * 0.5} cy={y + r * 0.18} r={r * 0.6} fill="url(#ig-baum)" stroke="#2f6b2f" strokeWidth={1.5} />
+      <circle cx={x} cy={y - r * 0.12} r={r * 0.82} fill="url(#ig-baum)" stroke="#2f6b2f" strokeWidth={1.5} />
+      <circle cx={x - r * 0.28} cy={y - r * 0.4} r={r * 0.3} fill="#c4eba6" opacity={0.6} />
     </g>
   );
 }
@@ -92,6 +109,8 @@ function Glasband({ breite, hoehe, unten = 0, fill, sprossen, abstand = 22, inne
         <rect key={i} x={i * abstand + 3} y={-unten - hoehe * 0.72} width={abstand - 6} height={hoehe * 0.5} fill={innen} opacity={0.55} />
       ))}
       <path d={Array.from({ length: felder }, (_, i) => `M${(i + 1) * abstand} ${-unten - hoehe} V${-unten}`).join(" ")} stroke={sprossen} strokeWidth={2} opacity={0.8} />
+      {/* schräge Spiegelung wie auf echtem Glas */}
+      <path d={Array.from({ length: Math.ceil(felder / 3) }, (_, i) => `M${i * 3 * abstand + 4} ${-unten - 2} L${i * 3 * abstand + abstand * 0.75} ${-unten - hoehe + 2}`).join(" ")} stroke="#ffffff" strokeWidth={3} opacity={0.28} strokeLinecap="round" />
     </g>
   );
 }
@@ -217,9 +236,9 @@ function Aim() {
       </g>
       <path d="M280 345 280 205" stroke="#ffffff" strokeWidth={2.5} opacity={0.6} />
       {/* Campus-Hof: Bäume, Bank, Fahrräder */}
-      <g stroke="#2f6b2f" strokeWidth={2}>
-        <circle cx={112} cy={318} r={16} fill="#7BC86C" />
-        <circle cx={426} cy={298} r={15} fill="#4E9A4A" />
+      <g>
+        <Baum x={112} y={312} r={22} />
+        <Baum x={426} y={292} r={20} />
       </g>
       <Fahrrad x={330} y={352} farbe="#5d6470" />
       <Fahrrad x={354} y={344} farbe="#5d6470" />
@@ -277,10 +296,10 @@ function HausDerFamilie() {
       {balkon(296 - 2 * geschoss, false)}
       <path d="M280 296 280 194" stroke="#fff4dd" strokeWidth={3} opacity={0.6} />
       {/* Grün, Blumen und Fahrradständer */}
-      <g stroke="#2f6b2f" strokeWidth={2}>
-        <circle cx={414} cy={294} r={20} fill="#4E9A4A" />
-        <circle cx={436} cy={282} r={15} fill="#7BC86C" />
-        <circle cx={108} cy={318} r={14} fill="#7BC86C" />
+      <g>
+        <Baum x={414} y={288} r={27} />
+        <Baum x={436} y={276} r={20} />
+        <Baum x={108} y={312} r={19} />
       </g>
       {[[140, 344, "#FF6B6B"], [152, 348, "#F59E0B"], [164, 351, "#6C4CE0"], [176, 353, "#FF6B6B"]].map(([bx, by, c]) => <circle key={bx as number} cx={bx as number} cy={by as number} r={4} fill={c as string} />)}
       <path d="M318 354 h30 M322 354 v-8 M330 354 v-8 M338 354 v-8 M346 354 v-8" stroke="#8d99a4" strokeWidth={2} strokeLinecap="round" />
@@ -343,9 +362,9 @@ function Ipai() {
       </g>
       <path d="M270 346 270 196" stroke="#ffffff" strokeWidth={2.5} opacity={0.6} />
       {/* Vorplatz: Bäume, Gräser, Fahrräder */}
-      <g stroke="#2f6b2f" strokeWidth={2}>
-        <circle cx={434} cy={300} r={16} fill="#4E9A4A" />
-        <circle cx={108} cy={322} r={12} fill="#7BC86C" />
+      <g>
+        <Baum x={434} y={294} r={22} />
+        <Baum x={108} y={316} r={16} />
       </g>
       <path d="M140 342 l4 -14 M146 344 l2 -16 M152 345 l-1 -14 M372 334 l3 -13 M378 332 l1 -15" stroke="#9ad67e" strokeWidth={3} strokeLinecap="round" />
       <Fahrrad x={300} y={354} farbe="#2BB3A3" />
@@ -433,9 +452,9 @@ function Cosmos() {
         ))}
       </g>
       {/* Marktplatz: Bäume */}
-      <g stroke="#2f6b2f" strokeWidth={2}>
-        <circle cx={92} cy={308} r={15} fill="#4E9A4A" />
-        <circle cx={450} cy={300} r={16} fill="#7BC86C" />
+      <g>
+        <Baum x={92} y={302} r={20} />
+        <Baum x={450} y={294} r={22} />
       </g>
     </g>
   );
@@ -471,6 +490,17 @@ export function InstitutGebaeude({ id, farbe, massstab = GEBAEUDE_MASSSTAB, verz
   }
   return (
     <g className="ig-wippen" style={{ animationDelay: `${-verzoegerung}s` }}>
+      <defs>
+        <linearGradient id="ig-licht" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffffff" stopOpacity={0.22} /><stop offset=".55" stopColor="#ffffff" stopOpacity={0} /><stop offset="1" stopColor="#1f2559" stopOpacity={0.06} />
+        </linearGradient>
+        <linearGradient id="ig-schatten" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#1f2559" stopOpacity={0.04} /><stop offset="1" stopColor="#1f2559" stopOpacity={0.16} />
+        </linearGradient>
+        <radialGradient id="ig-baum" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stopColor="#9ad67e" /><stop offset=".55" stopColor="#5fae54" /><stop offset="1" stopColor="#3d7f3a" />
+        </radialGradient>
+      </defs>
       <g transform={`scale(${massstab}) translate(${-g.ox},${-g.oy})`}>
         <g.Zeichnung />
       </g>

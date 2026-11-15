@@ -7,7 +7,8 @@ describe("besteStimme", () => {
   const windows = [s("Microsoft Stefan - German (Germany)"), s("Microsoft Katja - German (Germany)"), s("Microsoft Hedda - German (Germany)"), s("Google Deutsch", "de-DE", false)];
 
   it("nimmt für die Eule eine freundliche lokale Stimme", () => {
-    expect(besteStimme(windows, "eule")?.name).toContain("Hedda");
+    expect(besteStimme(windows, "eule")?.name).toContain("Katja");
+    expect(besteStimme([s("Microsoft Hedda - German (Germany)")], "eule")?.name).toContain("Hedda");
     expect(besteStimme(windows, "junge")?.name).toContain("Stefan");
     expect(besteStimme(windows, "maedchen")?.name).toContain("Katja");
   });

@@ -15,7 +15,8 @@ const MAENNLICH = [/stefan/i, /markus/i, /yannick/i, /conrad/i, /klaus/i, /vikto
 const WEIBLICH = [/katja/i, /anna/i, /petra/i, /helena/i, /marlene/i, /hedda/i];
 
 const REIHENFOLGE: Record<Sprecher, RegExp[]> = {
-  eule: [/hedda/i, ...BEVORZUGT],
+  // Katja klingt natürlicher als Hedda (unter Windows die Standardstimme) – so hört man den Unterschied.
+  eule: [/katja/i, /anna/i, /petra/i, /hedda/i, ...BEVORZUGT],
   maedchen: WEIBLICH,
   junge: [...MAENNLICH, ...BEVORZUGT],
   roboter: [...MAENNLICH, ...BEVORZUGT],
@@ -23,7 +24,7 @@ const REIHENFOLGE: Record<Sprecher, RegExp[]> = {
 
 /** Tonhöhe und Tempo je Sprecher; die Eule spricht ruhig und freundlich. */
 export const KLANG: Record<Sprecher, { pitch: number; rate: number }> = {
-  eule: { pitch: 1.05, rate: 0.92 },
+  eule: { pitch: 1.2, rate: 0.95 },
   maedchen: { pitch: 1.3, rate: 1 },
   junge: { pitch: 1.25, rate: 1 },
   roboter: { pitch: 1.7, rate: 0.92 },
