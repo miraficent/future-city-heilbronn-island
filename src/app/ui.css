@@ -167,7 +167,7 @@
 .kr-name { font: 700 16px "Baloo 2", sans-serif; fill: var(--ink); }
 .kr-badge { font: 700 16px "Nunito", sans-serif; fill: var(--ink); }
 .kr-funkeln { transform-box: fill-box; transform-origin: center; animation: kr-funkeln 1.6s ease-in-out infinite; }
-.kr-figur { transition: transform 1.2s ease-in-out; }
+.kr-figur { transition: transform 1.2s ease-in-out; pointer-events: none; } /* Figur fängt keine Tipps ab (sonst ist das Gebäude dahinter nicht erreichbar) */
 .kr-neuer-ort:hover rect:first-child, .kr-neuer-ort:focus-visible rect:first-child { stroke: var(--primary); }
 
 /* ---------- Einrichtungsseite (Kinder) ---------- */
