@@ -42,10 +42,33 @@ function setze(neu: LiveEventsZustand) {
   hoerer.forEach((h) => h());
 }
 
+/**
+ * Letzter gespeicherter Mobilizon-Stand (echte Daten, src/data/mobilizon-stand.json) – nur lokal über .env.local:
+ *  - NEXT_PUBLIC_EVENTS_STAND=notfall → erst live; nur wenn Mobilizon nicht erreichbar ist, der gespeicherte Stand
+ *  - NEXT_PUBLIC_EVENTS_STAND=immer   → nur der gespeicherte Stand (Mobilizon wird nicht gefragt)
+ *  - nicht gesetzt (Standard)          → nur live, ohne Ersatz
+ */
+const STAND = process.env.NEXT_PUBLIC_EVENTS_STAND;
+
+async function ladeStand(): Promise<LiveEvent[]> {
+  const { standEvents } = await import("./mobilizon-stand");
+  return standEvents(kategorien as Category[], new Date());
+}
+
+function ladeQuelle(): Promise<LiveEvent[]> {
+  if (STAND === "immer") return ladeStand();
+  const live = ladeMobilizonEvents(kategorien as Category[], AbortSignal.timeout(15_000));
+  if (STAND !== "notfall") return live;
+  return live.catch((fehler: unknown) => {
+    console.info("Mobilizon nicht erreichbar – gespeicherter Stand (NEXT_PUBLIC_EVENTS_STAND=notfall):", fehler);
+    return ladeStand();
+  });
+}
+
 /** Startet das Laden, falls nichts Frisches da ist. Mehrfach aufrufbar – es läuft höchstens ein Abruf. */
 export function ladeLiveEventsVor(): void {
   if (laufend || (aktuell().status === "ok" && Date.now() - geladenUm < FRISCH_MS)) return;
-  laufend = ladeMobilizonEvents(kategorien as Category[], AbortSignal.timeout(15_000))
+  laufend = ladeQuelle()
     .then(
       (events) => {
         geladenUm = Date.now();
