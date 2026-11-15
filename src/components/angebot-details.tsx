@@ -8,6 +8,7 @@ import { alterHinweis, ART_TEXTE, preisText, statusAnzeige, tagSchluessel, thema
 import { alterText, formatTermin, naechsterTermin } from "@/lib/format";
 import { erzeugeIcs } from "@/lib/ics";
 import { slugAusId } from "@/lib/routen";
+import { besteStimme } from "@/lib/stimme";
 import { useBrowserKann, useHerkunft, useJetzt, useUrlParameter } from "./browser-werte";
 import { kurzname } from "./einrichtung-badge";
 import { DatumBlock } from "./eltern/datum-block";
@@ -106,7 +107,7 @@ export function AngebotDetails({ angebot: a, meta, jetzt: start }: { angebot: An
       setLiest(false);
       return;
     }
-    const stimme = window.speechSynthesis.getVoices().find((v) => v.localService && v.lang.startsWith("de"));
+    const stimme = besteStimme(window.speechSynthesis.getVoices(), "eule");
     if (!stimme) {
       setMeldung(t.keineStimme);
       return;
