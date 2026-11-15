@@ -75,15 +75,15 @@
 .owl-schnabel { fill: var(--accent); }
 
 .ui-guide { display: flex; align-items: flex-end; gap: 8px; max-width: 900px; }
-.ui-guide__owl { flex: none; width: clamp(80px, 11vw, 130px); height: auto; }
-.ui-guide__blase { position: relative; margin-bottom: 24px; padding: 16px 20px;
+.ui-guide__owl { flex: none; width: clamp(60px, 7vw, 92px); height: auto; }
+.ui-guide__blase { position: relative; margin-bottom: 16px; padding: 10px 16px;
   border: 2px solid var(--card-border); border-radius: var(--radius-card); background: var(--white); box-shadow: 0 4px 0 var(--card-border); }
-.ui-guide__text { margin: 0; font: 600 22px/1.4 "Nunito", sans-serif; max-width: 60ch; }
-.ui-guide__antworten { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
-.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-left: 8px;
+.ui-guide__text { margin: 0; font: 600 20px/1.35 "Nunito", sans-serif; max-width: 60ch; }
+.ui-guide__antworten { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-left: 8px;
   border: none; border-radius: 50%; background: var(--accent); color: var(--ink); cursor: pointer; vertical-align: middle;
   box-shadow: 0 4px 0 0 var(--accent-dark); animation: ui-vorlesen-ruf 1.8s ease-in-out infinite; }
-.ui-vorlesen .symbol { width: 30px; height: 30px; }
+.ui-vorlesen .symbol { width: 24px; height: 24px; }
 /* Solange die Eule noch nicht von selbst spricht, ruft der Lautsprecher leise: „Tipp mich an!“ */
 @keyframes ui-vorlesen-ruf { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 .ui-vorlesen.ist-an { animation: none; background: var(--paper); color: var(--primary); box-shadow: 0 4px 0 0 var(--card-border); }
@@ -155,8 +155,8 @@
 .kr-karte { display: block; width: 100%; height: 100%; overflow: visible; }
 .kinder-karte__guide { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 5; pointer-events: none; }
 .kinder-karte__guide > * { pointer-events: auto; }
-.kinder-alter { width: 64px; height: 64px; border: none; border-radius: 50%; background: var(--accent); color: var(--ink);
-  font: 700 28px/1 "Baloo 2", sans-serif; cursor: pointer; box-shadow: 0 4px 0 var(--accent-dark); }
+.kinder-alter { width: 52px; height: 52px; border: none; border-radius: 50%; background: var(--accent); color: var(--ink);
+  font: 700 24px/1 "Baloo 2", sans-serif; cursor: pointer; box-shadow: 0 4px 0 var(--accent-dark); }
 
 .kr-ort { cursor: pointer; outline: none; transition: opacity 0.3s; }
 .kr-ort.ist-gedimmt { opacity: 0.45; }
@@ -228,12 +228,12 @@
 @media (max-aspect-ratio: 3/2) { .kr-bildkarte { width: auto; aspect-ratio: 3 / 2; } }
 
 /* Eule schließen / wieder öffnen (Karte frei sehen) */
-.ui-guide__zu { position: absolute; top: -18px; right: -18px; display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
+.ui-guide__zu { position: absolute; top: -20px; right: -20px; display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
   box-shadow: 0 3px 0 0 var(--card-border); cursor: pointer; }
 .ui-guide__zu .symbol { width: 18px; height: 18px; }
 /* Rechts Platz für das X, damit es nicht am Vorlese-Knopf klebt */
-.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 44px; }
+.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 28px; }
 .kinder-karte__eule { position: fixed; left: 16px; bottom: 16px; z-index: 5; width: clamp(72px, 9vw, 104px); padding: 0; border: 0;
   background: none; cursor: pointer; transition: transform .2s ease; }
 .kinder-karte__eule:hover { transform: translateY(-4px) rotate(-4deg); }
@@ -241,9 +241,10 @@
 @media (prefers-reduced-motion: reduce) { .kinder-karte__eule { transition: none; } }
 
 /* Figurenwahl in der Eulen-Blase */
-.kinder-figurwahl { width: 96px; height: 128px; padding: 6px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
+.kinder-figurwahl { width: 76px; height: 100px; padding: 4px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
   box-shadow: 0 4px 0 0 var(--card-border); cursor: pointer; transition: transform .15s ease, border-color .15s ease; }
 .kinder-figurwahl:hover { transform: translateY(-3px); border-color: var(--primary); }
+@media (max-width: 640px) { .kinder-figurwahl { width: 64px; height: 86px; } }
 .kinder-figurwahl svg { width: 100%; height: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) { .kinder-figurwahl { transition: none; } }
 

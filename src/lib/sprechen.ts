@@ -1,11 +1,33 @@
-/** Kindertexte vorlesen – Web Speech API, lokale deutsche Stimme, nichts wird übertragen. */
-export function vorlesen(text: string): void {
+import { besteStimme, KLANG, type Sprecher } from "./stimme";
+
+/**
+ * Kindertexte vorlesen – Web Speech API mit der besten lokal installierten deutschen Stimme (src/lib/stimme.ts).
+ * Gibt es keine lokale Stimme, bleibt es still: Der Text wird nie an einen Online-Sprachdienst geschickt.
+ */
+export function vorlesen(text: string, sprecher: Sprecher = "eule"): void {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const satz = new SpeechSynthesisUtterance(text);
-  satz.lang = "de-DE";
-  satz.rate = 0.9;
-  window.speechSynthesis.speak(satz);
+  const sprechen = () => {
+    const stimme = besteStimme(window.speechSynthesis.getVoices(), sprecher);
+    if (!stimme) return;
+    window.speechSynthesis.cancel();
+    const satz = new SpeechSynthesisUtterance(text);
+    satz.voice = stimme;
+    satz.lang = "de-DE";
+    satz.rate = KLANG[sprecher].rate;
+    satz.pitch = KLANG[sprecher].pitch;
+    window.speechSynthesis.speak(satz);
+  };
+  // Chrome lädt die Stimmenliste erst nach dem ersten Abruf – dann kurz darauf warten.
+  if (window.speechSynthesis.getVoices().length > 0) {
+    sprechen();
+    return;
+  }
+  const einmal = () => {
+    window.speechSynthesis.removeEventListener("voiceschanged", einmal);
+    sprechen();
+  };
+  window.speechSynthesis.addEventListener("voiceschanged", einmal);
+  setTimeout(einmal, 800);
 }
 
 /*
