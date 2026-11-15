@@ -95,7 +95,8 @@ export function kinderGeschichte(k: FuerGeschichte): string {
   const eigene = k.geschichte.trim();
   if (eigene && vergleich(eigene) !== titel && !vergleich(eigene).startsWith(titel)) return alsSatz(eigene);
   const teile: string[] = [];
-  if (k.themen.length) teile.push(`Hier geht es um ${k.themen.slice(0, 2).join(" und ")}.`);
+  // Nur das Hauptthema – zwei Themen mit „und“ ergeben holprige Sätze („Sterne und das Weltall und …“)
+  if (k.themen.length) teile.push(`Hier geht es um ${k.themen[0]}.`);
   teile.push(ART_SATZ[k.art ?? "event"]);
   if (k.gratis) teile.push("Es kostet nichts.");
   return teile.join(" ");

@@ -40,6 +40,8 @@ describe("kinderGeschichte – die Eule wiederholt nie nur den Titel", () => {
     const g = kinderGeschichte({ titel: "Capcom Go!", geschichte: "Capcom Go!", art: "show", themen: ["Spiele"], gratis: true });
     expect(g).toBe("Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
     expect(euleSagt("Capcom Go!", g)).toBe("Capcom Go! Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
+    expect(kinderGeschichte({ titel: "Polarnacht", geschichte: "", art: "show", themen: ["Sterne und das Weltall", "spannende Experimente"], gratis: false }))
+      .toBe("Hier geht es um Sterne und das Weltall. Du schaust zu und staunst.");
   });
   it("nimmt einen echten Kindertext und setzt keinen doppelten Punkt", () => {
     expect(kinderGeschichte({ titel: "Blitze", geschichte: "Es knistert und blitzt", art: "workshop", themen: [], gratis: false })).toBe("Es knistert und blitzt.");
