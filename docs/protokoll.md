@@ -137,3 +137,12 @@ Entscheidung: Der COSMOS-Platz auf der Kinderkarte zeigt nicht mehr alle Karten,
 anderen Einrichtung gehören (`erkenneEinrichtung()` in `src/lib/mobilizon.ts` gibt dann „cosmos“ zurück).
 Grund: Sonst stehen die Angebote von aim, experimenta, Haus der Familie und IPAI doppelt da, und COSMOS ist überfüllt.
 Code: `kartenFuerOrt()` in `src/lib/kinderkarten.ts` filtert jetzt für alle Orte gleich.
+
+## 15.11.2026 – Einrichtungsseite: erst alles zeigen, nur Hauptthemen als Knöpfe
+
+Entscheidung: Beim Betreten eines Hauses ist „Alles“ gewählt. Die Eulen-Frage „Was magst du heute?“ öffnet sich nicht
+mehr von selbst, nur über den kleinen Eulen-Knopf unten links. Die Themen-Knöpfe zeigen nur die **Hauptthemen**
+(erstes erkanntes Thema einer Karte, das auch Farbe und Symbol der Kachel bestimmt). Der Themen-Filter nutzt dasselbe.
+Grund: `erkenneKategorien()` erkennt per Stichwort bis zu 3 Themen pro Event. Mit allen Nebenthemen hatte die
+experimenta 9 Knöpfe (z. B. „Rätsel“ im Titel → Mathe), mit Hauptthemen sind es 4.
+Code: `themenImHaus()` und `hauptThema()` in `src/lib/kinderkarten.ts` (mit Test). Die Daten bleiben unverändert.

@@ -31,8 +31,8 @@ Read this file together with CLAUDE.md before changing any UI.
 >    Kachel antippen → Eule liest vor → „Da will ich hin!“. Verläufe nur für den Lichtschein und die Kachel-Struktur.
 > 13. **Kinderfreundlich (für 6–14):** kurze Kindertitel (`kinderTitel`, max. 5 Wörter, ohne Klammern/Untertitel),
 >    Zeit wie Kinder sie sagen („Heute“, „Morgen“, „Am Samstag“, „Nächste Woche“ – `src/lib/kinder-text.ts`),
->    alle Themen als große runde Symbole + „Alles“, höchstens 6 Kacheln pro Ansicht, Alter als Plakette.
->    Beim Betreten eines Hauses fragt die Eule einmal „Was magst du heute?“ mit großen Themenbildern (alle Themen des Hauses).
+>    Themen als große runde Symbole + „Alles“ (nur Hauptthemen der Angebote des Hauses), höchstens 6 Kacheln pro Ansicht, Alter als Plakette.
+>    Beim Betreten eines Hauses ist „Alles“ gewählt. Die Eule fragt „Was magst du heute?“ (große Themenbilder) nur, wenn das Kind auf den Eulen-Knopf tippt.
 >    Ein Tipp auf den Lautsprecher schaltet „Eule spricht von selbst“ ein. Kein „Neuer Ort?“ auf der Kinderkarte.
 Goal: ONE consistent look for the whole website: map, kids pages, parent dashboard, games.
 Do not invent new colors, fonts or component styles. If something is missing, add it here first.

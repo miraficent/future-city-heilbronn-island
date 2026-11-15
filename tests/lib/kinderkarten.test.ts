@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Angebot } from "@/lib/angebot";
 import type { LiveEvent } from "@/types";
-import { ausAngebot, ausEvent, kartenFuerOrt, kinderKarten, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
+import { ausAngebot, ausEvent, hauptThema, kartenFuerOrt, kinderKarten, passtZumAlter, themenImHaus, type KinderKarte } from "@/lib/kinderkarten";
 import { kartenText } from "@/lib/kinder-text";
 import { kartenOrte } from "@/lib/kinderkarte";
 
@@ -85,4 +85,19 @@ describe("Eule- und Owl-Texte auf den Karten", () => {
     expect(kartenText({ ...basis, texte: {} }, "en").satz).toBe("This is all about coding. You get to join in."));
   it("Kurs auf Englisch: nie der deutsche Teaser", () =>
     expect(kartenText(ausAngebot(angebot("a"), JETZT), "en").satz).toBe("This is all about coding. Come along and give it a try. It's free."));
+});
+
+describe("Themen-Knöpfe im Haus", () => {
+  const kats = [{ id: "astronomy" as const }, { id: "math" as const }, { id: "biology" as const }];
+  const karte = (id: string, categories: LiveEvent["categories"]) => ausEvent(event(id, { categories }));
+
+  it("zählt nur das Hauptthema, Nebenthemen erzeugen keinen Knopf", () => {
+    const karten = [karte("a", ["astronomy", "math"]), karte("b", ["biology"]), karte("c", ["biology", "math"])];
+    expect(themenImHaus(karten, kats)).toEqual([{ id: "biology", anzahl: 2 }, { id: "astronomy", anzahl: 1 }]);
+  });
+
+  it("Karten ohne Thema haben kein Hauptthema", () => {
+    expect(hauptThema(karte("x", []))).toBeNull();
+    expect(themenImHaus([karte("x", [])], kats)).toEqual([]);
+  });
 });

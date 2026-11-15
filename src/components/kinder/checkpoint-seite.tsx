@@ -6,18 +6,17 @@
  * (leichtes Wackeln), unten die gewählte Kinderfigur von hinten.
  * Kachel antippen → die Eule kommt und liest vor, worum es geht → „Da will ich hin!“ (Wunsch für die Eltern).
  */
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { AppShell, BackButton, Button, EmptyState, Owl, OwlGuide, useSprache } from "@/components/ui";
 import { KinderFigurRuecken, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
 import { useSammlung } from "@/components/sammlung";
 import type { KartenOrt } from "@/lib/kinderkarte";
-import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
+import { hauptThema, istAbends, passtZumAlter, themenImHaus, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
 import { euleSagt, kartenText, kinderTageszeit, kinderWann } from "@/lib/kinder-text";
 import { LOCALE } from "@/lib/eltern-suche";
-import { lies, schreibe } from "@/lib/speicher";
 import type { Category, CategoryId, Sprache } from "@/types";
 import { KINDER_TEXTE, useKinderTexte } from "./texte";
 
@@ -50,7 +49,7 @@ const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 58, y: 18, s: 0.85, r: -1 },
 ];
 
-/** Die Eule fragt beim Hereinkommen nur, wenn es genug Auswahl gibt; im Satz nennt sie höchstens 3 Themen */
+/** Den Eulen-Knopf gibt es nur, wenn es genug Auswahl gibt; im Satz nennt die Eule höchstens 3 Themen */
 const FRAGE_AB_ANGEBOTEN = 4;
 const FRAGE_IM_SATZ = 3;
 
@@ -65,7 +64,6 @@ const kurzName = (c: Category) => c.label_kids.split(" & ")[0]!;
 const gross = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 /** Wie lange ein Satz stehen bleibt (ungefähr so lang, wie die Eule zum Vorlesen braucht) */
 const satzDauer = (text: string) => 1200 + text.length * 70;
-const nichts = () => () => {};
 
 /**
  * laedt: die Live-Events sind noch unterwegs – der Raum bleibt leer (keine Platzhalter-Kacheln).
@@ -84,34 +82,26 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const [kategorie, setKategorie] = useState<CategoryId | null>(null);
   const [seite, setSeite] = useState(0);
   const [offen, setOffen] = useState<KinderKarte | null>(null);
-  // Eulen-Frage nur einmal pro Haus und Sitzung (Server: gilt als gefragt → nichts wird vorgerendert)
-  const frageSchluessel = `kinder.gefragt.${ort.id}`;
-  const schonGefragt = useSyncExternalStore(nichts, () => lies<boolean>("sitzung", frageSchluessel, false), () => true);
-  const [frageZu, setFrageZu] = useState(false);
-  const [nochmal, setNochmal] = useState(false);
+  // Beim Hereinkommen sieht das Kind alles; die Eulen-Frage öffnet nur der kleine Eulen-Knopf
+  const [frageOffen, setFrageOffen] = useState(false);
 
   const welt = WELTEN[ort.id] ?? { grund: "#1E2A5A", licht: ort.farbe };
   const passend = useMemo(
     () => karten.filter((k) => passtZumAlter(k, alter) && (minute === null || new Date(k.start).getTime() >= minute - 3 * 3_600_000)),
     [karten, alter, minute],
   );
-  const vorhanden = kategorien
-    .map((k) => ({ ...k, anzahl: passend.filter((x) => x.kategorien.includes(k.id)).length }))
-    .filter((k) => k.anzahl > 0)
-    .sort((a, b) => b.anzahl - a.anzahl);
-  const liste = kategorie ? passend.filter((k) => k.kategorien.includes(kategorie)) : passend;
+  const vorhanden = themenImHaus(passend, kategorien);
+  const liste = kategorie ? passend.filter((k) => hauptThema(k) === kategorie) : passend;
   const seiten = Math.max(1, Math.ceil(liste.length / PLAETZE.length));
   const aktuelleSeite = Math.min(seite, seiten - 1);
   const sichtbar = liste.slice(aktuelleSeite * PLAETZE.length, (aktuelleSeite + 1) * PLAETZE.length);
-  const kat = (k: KinderKarte) => kategorien.find((c) => c.id === k.kategorien[0]);
+  const kat = (k: KinderKarte) => kategorien.find((c) => c.id === hauptThema(k));
   const frageThemen = vorhanden;
   const frageMoeglich = !laedt && passend.length >= FRAGE_AB_ANGEBOTEN && frageThemen.length >= 2;
-  const frageZeigen = frageMoeglich && (nochmal || (!schonGefragt && !frageZu));
+  const frageZeigen = frageMoeglich && frageOffen;
 
   function beantworte(id: CategoryId | null, name: string) {
-    schreibe("sitzung", frageSchluessel, true);
-    setFrageZu(true);
-    setNochmal(false);
+    setFrageOffen(false);
     setKategorie(id);
     setSeite(0);
     if (id && autoVorlesen()) vorlesen(t.frage.gewaehlt(gross(name)), sprache);
@@ -235,9 +225,9 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
           <KinderFigurRuecken art={figurArt ?? "lila"} />
         </svg>
 
-        {/* Kleine Eule unten links: fragt noch einmal „Was magst du heute?“ */}
+        {/* Kleine Eule unten links: fragt auf Wunsch „Was magst du heute?“ */}
         {frageMoeglich && !frageZeigen && !offen && (
-          <button type="button" className="welt__eule-knopf" aria-label={t.frage.euleFragen} onClick={() => setNochmal(true)}>
+          <button type="button" className="welt__eule-knopf" aria-label={t.frage.euleFragen} onClick={() => setFrageOffen(true)}>
             <Owl />
             <span>{t.frage.wasGibtEs}</span>
           </button>
@@ -298,7 +288,7 @@ function ErwartetDich({ karte, thema, alter, sprache }: { karte: KinderKarte; th
 }
 
 /**
- * Beim Hereinkommen fragt die Eule: „Was magst du heute?“ – höchstens 3 große Themenbilder + „Zeig mir alles“.
+ * Auf Wunsch (Eulen-Knopf) fragt die Eule: „Was magst du heute?“ – große Themenbilder + „Zeig mir alles“.
  * Kein Hindernis: Tipp daneben, Esc oder „Zeig mir alles“ schließt; die Kacheln sind schwach dahinter zu sehen.
  */
 function EulenFrage({ themen, onWahl, sprache }: {

@@ -127,3 +127,19 @@ export function istAbends(k: KinderKarte): boolean {
     .find((p) => p.type === "hour");
   return Number(teil?.value) >= 17;
 }
+
+/** Hauptthema einer Karte = das erste erkannte Thema (dasselbe, das Farbe und Symbol der Kachel bestimmt) */
+export function hauptThema(k: KinderKarte): CategoryId | null {
+  return k.kategorien[0] ?? null;
+}
+
+/**
+ * Themen-Knöpfe eines Hauses: nur Hauptthemen der Karten, häufigste zuerst.
+ * Nebenthemen (per Stichwort miterkannt, z. B. „Rätsel“ → Mathe) zählen nicht – sonst gibt es zu viele Knöpfe.
+ */
+export function themenImHaus<T extends { id: CategoryId }>(karten: KinderKarte[], kategorien: T[]): (T & { anzahl: number })[] {
+  return kategorien
+    .map((c) => ({ ...c, anzahl: karten.filter((k) => hauptThema(k) === c.id).length }))
+    .filter((c) => c.anzahl > 0)
+    .sort((a, b) => b.anzahl - a.anzahl);
+}
