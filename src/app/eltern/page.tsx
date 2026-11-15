@@ -9,8 +9,8 @@ import { WunschBox } from "@/components/wunsch-box";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
 
 export const metadata = {
-  title: "Für Eltern – Kurse zu KI, Coding und Gaming",
-  description: "Alle Kurse zu KI, Coding und Gaming für Kinder in Heilbronn: suchen, filtern, direkt beim Anbieter anmelden.",
+  title: "Für Eltern – Kurse und Veranstaltungen in Heilbronn",
+  description: "Alle Kurse und Veranstaltungen für Kinder und Jugendliche in Heilbronn: suchen, filtern, direkt beim Anbieter anmelden.",
 };
 
 /**

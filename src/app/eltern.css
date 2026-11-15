@@ -14,9 +14,9 @@
 .el-kopf h1 { max-width: 24ch; margin: 8px 0 0; font: 700 38px/1.15 "Baloo 2", sans-serif; }
 .el-kopf__text { max-width: 60ch; margin: 8px 0 0; color: var(--tinte-2); font-size: 21px; text-wrap: pretty; }
 .el-fakten { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
-.el-fakt { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 2px solid var(--linie); border-radius: var(--radius-pill);
-  background: var(--flaeche); font-size: 18px; }
-.el-fakt .symbol { width: 16px; height: 16px; color: var(--primary); }
+.el-fakt { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 2px solid var(--linie); border-radius: var(--radius-pill);
+  background: var(--flaeche); font-size: 20px; }
+.el-fakt .symbol { width: 20px; height: 20px; color: var(--primary); }
 /* Handy: nur die zwei wichtigsten Zahlen, damit die Wünsche schnell sichtbar sind */
 .el-fakt--extra { display: none; }
 
@@ -117,13 +117,13 @@
 .el-filter legend, .el-filter__titel { display: block; margin: 0 0 8px; padding: 0; color: var(--ink); font: 700 19px/1.3 "Nunito", sans-serif; }
 .el-filter h2 { margin: 0; font: 700 26px/1.2 "Baloo 2", sans-serif; }
 .el-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.el-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border: 2px solid var(--card-border); border-radius: var(--radius-pill);
-  background: var(--white); box-shadow: 0 3px 0 var(--card-border); color: var(--ink); font: 700 19px/1.1 "Nunito", sans-serif; text-align: left; cursor: pointer;
+.el-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 18px; border: 2px solid var(--card-border); border-radius: var(--radius-pill);
+  background: var(--white); box-shadow: 0 3px 0 var(--card-border); color: var(--ink); font: 700 21px/1.1 "Nunito", sans-serif; text-align: left; cursor: pointer;
   transition: transform 150ms ease-out, box-shadow 150ms ease-out; }
 .el-chip:active { box-shadow: 0 0 0 transparent; transform: translateY(3px); }
 .el-chip[aria-pressed="true"] { border-color: var(--primary); background: var(--primary); box-shadow: 0 3px 0 var(--primary-dark); color: var(--snow); }
-.el-chip .symbol { width: 16px; height: 16px; }
-.el-chip__punkt { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--farbe, var(--ink-soft)); }
+.el-chip .symbol { width: 20px; height: 20px; }
+.el-chip__punkt { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--farbe, var(--ink-soft)); }
 .el-chip[aria-pressed="true"] .el-chip__punkt { box-shadow: 0 0 0 2px var(--snow); }
 .el-chip__zahl { color: var(--ink-soft); font-weight: 400; }
 .el-chip[aria-pressed="true"] .el-chip__zahl { color: var(--snow); }
@@ -167,9 +167,9 @@
 
 /* ---------- Ergebnisse ---------- */
 .el-aktiv { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
-.el-aktiv__chip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 8px 0 14px; border: 0; border-radius: var(--radius-pill);
-  background: var(--card-border); color: var(--ink); font: 700 18px/1 "Nunito", sans-serif; cursor: pointer; }
-.el-aktiv__chip .symbol { width: 18px; height: 18px; }
+.el-aktiv__chip { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 12px 0 18px; border: 0; border-radius: var(--radius-pill);
+  background: var(--card-border); color: var(--ink); font: 700 20px/1 "Nunito", sans-serif; cursor: pointer; }
+.el-aktiv__chip .symbol { width: 20px; height: 20px; }
 .el-aktiv__chip:hover { background: var(--sand); }
 
 .el-ergebnis__kopf { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
@@ -305,7 +305,7 @@
   .el-kopf--gross { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; gap: 40px; }
   .el-raster { grid-template-columns: 300px minmax(0, 1fr); gap: 32px; }
   .el-seitenleiste .ui-card { padding: 20px; }
-  .el-seitenleiste .el-chip { min-height: 40px; padding: 0 12px; font-size: 18px; }
+  .el-seitenleiste .el-chip { min-height: 46px; padding: 0 14px; font-size: 19px; }
   .el-seitenleiste .el-filter { gap: 18px; }
   .el-seitenleiste { position: sticky; top: 16px; display: block; max-height: calc(100dvh - 32px); padding: 0 4px 6px 0; overflow-y: auto; }
   .el-handyleiste { display: none; }
@@ -336,3 +336,7 @@
 .el-seite .wunsch-box .text-xs, .el-seite .wunsch-box .text-sm, .el-seite .wunsch-box .chip { font-size: 18px; }
 .el-seite .wunsch-box .feld-label { font-size: 18px; }
 .el-seite .wunsch-box h2 { font-size: 28px; }
+
+/* Abzeichen (Plätze, weitere Termine, Beispiel) im Eltern-Bereich größer */
+.el-seite .ui-badge, .el-detail .ui-badge { padding: 4px 14px; font-size: 18px; }
+.el-seite .ui-badge .symbol, .el-detail .ui-badge .symbol { width: 18px; height: 18px; }

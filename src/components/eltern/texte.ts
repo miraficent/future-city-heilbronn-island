@@ -15,8 +15,8 @@ const DE = {
   },
   kopf: {
     oben: "Für Eltern und Fachkräfte",
-    titel: "Kurse zu KI, Coding und Gaming für Ihr Kind",
-    text: (namen: string) => `Alle Angebote von ${namen} in Heilbronn an einem Ort. Sie finden hier, was passt – und melden Ihr Kind direkt beim Anbieter an.`,
+    titel: "Kurse und Veranstaltungen für Ihr Kind in Heilbronn",
+    text: (namen: string) => `Alle Angebote für Kinder und Jugendliche von ${namen} an einem Ort. Sie finden hier, was zu Ihrem Kind passt – und melden es direkt beim Anbieter an.`,
     und: "und",
     schnell: "Schnell finden",
     kostenlos: "Kostenlos",
@@ -263,8 +263,8 @@ const EN: typeof DE = {
   },
   kopf: {
     oben: "For parents and educators",
-    titel: "AI, coding and gaming courses for your child",
-    text: (namen) => `All activities from ${namen} in Heilbronn in one place. Find what suits your child – and register directly with the provider.`,
+    titel: "Courses and events for your child in Heilbronn",
+    text: (namen) => `All activities for children and teens from ${namen} in one place. Find what suits your child – and register directly with the provider.`,
     und: "and",
     schnell: "Quick search",
     kostenlos: "Free",
