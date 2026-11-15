@@ -488,3 +488,12 @@
   .welt__frage-wahl.ist-viele .welt__frage-karte { width: 96px; font-size: 16px; }
   .welt__frage-wahl.ist-viele .welt__frage-karte img, .welt__frage-wahl.ist-viele .welt__frage-symbol { width: 60px; height: 60px; }
 }
+/* Kleine Eule unten links – öffnet die Themen-Frage wieder */
+.welt__eule-knopf { position: absolute; left: 16px; bottom: 16px; z-index: 30; display: flex; align-items: flex-end; gap: 4px; padding: 0; border: 0;
+  background: none; cursor: pointer; }
+.welt__eule-knopf svg { width: clamp(72px, 7vw, 96px); height: auto; display: block; transition: transform .2s ease; }
+.welt__eule-knopf span { margin-bottom: 18px; padding: 8px 14px; border-radius: 18px 18px 18px 4px; background: var(--paper); color: var(--ink);
+  font: 800 17px/1.2 "Nunito", sans-serif; box-shadow: 0 4px 0 0 var(--card-border); }
+.welt__eule-knopf:hover svg, .welt__eule-knopf:focus-visible svg { transform: translateY(-4px) rotate(-4deg); }
+@media (max-width: 640px) { .welt__eule-knopf { position: fixed; } .welt__eule-knopf span { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .welt__eule-knopf svg { transition: none; } }

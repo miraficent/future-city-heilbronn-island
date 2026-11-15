@@ -7,7 +7,7 @@
  * Kachel antippen → die Eule kommt und liest vor, worum es geht → „Da will ich hin!“ (Wunsch für die Eltern).
  */
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
-import { AppShell, BackButton, Button, EmptyState, OwlGuide } from "@/components/ui";
+import { AppShell, BackButton, Button, EmptyState, Owl, OwlGuide } from "@/components/ui";
 import { KinderFigurRuecken, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
 import { useSammlung } from "@/components/sammlung";
@@ -83,6 +83,7 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const frageSchluessel = `kinder.gefragt.${ort.id}`;
   const schonGefragt = useSyncExternalStore(nichts, () => lies<boolean>("sitzung", frageSchluessel, false), () => true);
   const [frageZu, setFrageZu] = useState(false);
+  const [nochmal, setNochmal] = useState(false);
 
   const welt = WELTEN[ort.id] ?? { grund: "#1E2A5A", licht: ort.farbe };
   const passend = useMemo(
@@ -99,11 +100,13 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const sichtbar = liste.slice(aktuelleSeite * PLAETZE.length, (aktuelleSeite + 1) * PLAETZE.length);
   const kat = (k: KinderKarte) => kategorien.find((c) => c.id === k.kategorien[0]);
   const frageThemen = vorhanden;
-  const frageZeigen = !laedt && !schonGefragt && !frageZu && passend.length >= FRAGE_AB_ANGEBOTEN && frageThemen.length >= 2;
+  const frageMoeglich = !laedt && passend.length >= FRAGE_AB_ANGEBOTEN && frageThemen.length >= 2;
+  const frageZeigen = frageMoeglich && (nochmal || (!schonGefragt && !frageZu));
 
   function beantworte(id: CategoryId | null, name: string) {
     schreibe("sitzung", frageSchluessel, true);
     setFrageZu(true);
+    setNochmal(false);
     setKategorie(id);
     setSeite(0);
     if (id && autoVorlesen()) vorlesen(`${name}! Schau mal, was es da gibt.`);
@@ -227,6 +230,14 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
         <svg className="welt__figur" viewBox="20 10 120 225" aria-hidden="true">
           <KinderFigurRuecken art={figurArt ?? "lila"} />
         </svg>
+
+        {/* Kleine Eule unten links: fragt noch einmal „Was magst du heute?“ */}
+        {frageMoeglich && !frageZeigen && !offen && (
+          <button type="button" className="welt__eule-knopf" aria-label="Eule fragen: Was magst du heute?" onClick={() => setNochmal(true)}>
+            <Owl />
+            <span>Was gibt es hier?</span>
+          </button>
+        )}
 
         {frageZeigen && (
           <EulenFrage themen={frageThemen} onWahl={beantworte} />
