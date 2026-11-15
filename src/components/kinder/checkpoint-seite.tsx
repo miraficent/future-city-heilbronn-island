@@ -84,8 +84,8 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const sagt = (k: KinderKarte) =>
     euleSagt(kinderTitel(k.titel), kinderGeschichte({
       titel: k.titel, geschichte: k.geschichte, art: k.art, gratis: k.gratis,
-      themen: k.kategorien.map((id) => THEMA_SATZ[id]).filter((t): t is string => !!t),
-    }));
+      themen: k.kategorien.map((id) => THEMA_SATZ.de[id]).filter((t): t is string => !!t),
+    }, "de"));
 
   function waehleKategorie(id: CategoryId | null, name: string) {
     setKategorie(id);

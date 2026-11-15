@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
+import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann, THEMA_SATZ } from "@/lib/kinder-text";
 
 describe("kinderTitel", () => {
   it("nimmt bei Titel: Untertitel nur den Titel", () => {
@@ -37,14 +37,32 @@ describe("kinderWann", () => {
 
 describe("kinderGeschichte – die Eule wiederholt nie nur den Titel", () => {
   it("bildet ohne Kindertext einen Satz aus Thema, Art und Kosten", () => {
-    const g = kinderGeschichte({ titel: "Capcom Go!", geschichte: "Capcom Go!", art: "show", themen: ["Spiele"], gratis: true });
+    const g = kinderGeschichte({ titel: "Capcom Go!", geschichte: "Capcom Go!", art: "show", themen: ["Spiele"], gratis: true }, "de");
     expect(g).toBe("Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
     expect(euleSagt("Capcom Go!", g)).toBe("Capcom Go! Hier geht es um Spiele. Du schaust zu und staunst. Es kostet nichts.");
-    expect(kinderGeschichte({ titel: "Polarnacht", geschichte: "", art: "show", themen: ["Sterne und das Weltall", "spannende Experimente"], gratis: false }))
+    expect(kinderGeschichte({ titel: "Polarnacht", geschichte: "", art: "show", themen: ["Sterne und das Weltall", "spannende Experimente"], gratis: false }, "de"))
       .toBe("Hier geht es um Sterne und das Weltall. Du schaust zu und staunst.");
   });
   it("nimmt einen echten Kindertext und setzt keinen doppelten Punkt", () => {
-    expect(kinderGeschichte({ titel: "Blitze", geschichte: "Es knistert und blitzt", art: "workshop", themen: [], gratis: false })).toBe("Es knistert und blitzt.");
+    expect(kinderGeschichte({ titel: "Blitze", geschichte: "Es knistert und blitzt", art: "workshop", themen: [], gratis: false }, "de")).toBe("Es knistert und blitzt.");
     expect(euleSagt("Blitze im Labor", "x")).toBe("Blitze im Labor. x");
+  });
+});
+
+describe("Englisch", () => {
+  const k = { titel: "Roboter bauen", geschichte: "Hier baust du einen Roboter.", art: "workshop" as const, themen: ["coding"], gratis: true };
+  it("baut den Satz auf Englisch und ignoriert den deutschen Eigentext", () => {
+    expect(kinderGeschichte({ ...k, themen: [THEMA_SATZ.en.coding!] }, "en")).toBe("This is all about coding. You get to join in. It's free.");
+  });
+  it("nutzt auf Deutsch weiter den Eigentext", () => {
+    expect(kinderGeschichte(k, "de")).toBe("Hier baust du einen Roboter.");
+  });
+  it("sagt die Zeit auf Englisch", () => {
+    const jetzt = new Date("2026-11-16T09:00:00+01:00"); // Montag
+    expect(kinderWann("2026-11-16T15:00:00+01:00", jetzt, "en")).toBe("Today");
+    expect(kinderWann("2026-11-17T15:00:00+01:00", jetzt, "en")).toBe("Tomorrow");
+    expect(kinderWann("2026-11-21T15:00:00+01:00", jetzt, "en")).toBe("On Saturday");
+    expect(kinderWann("2026-11-25T15:00:00+01:00", jetzt, "en")).toBe("Next week");
+    expect(kinderTageszeit("2026-11-16T15:00:00+01:00", "en")).toBe("in the afternoon");
   });
 });
