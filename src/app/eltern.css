@@ -326,8 +326,6 @@
 }
 
 /* ---------- Sprachumschalter DE | EN (rechts in der Top-Leiste, Stil wie „Kinder | Eltern“) ---------- */
-.el-sprache .ui-mode__item { min-width: 44px; padding: 8px 12px; border: 0; background: transparent; cursor: pointer; }
-.el-sprache .ui-mode__item[aria-pressed="true"] { background: var(--snow); color: var(--night); }
 
 /* Größere Grundschrift im Eltern-Bereich (Wunsch des Teams: Texte gut lesbar, auch für ältere Eltern) */
 .el-seite, .el-detail { font-size: 20px; }

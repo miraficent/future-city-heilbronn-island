@@ -24,6 +24,11 @@
   font: 700 16px/24px "Nunito", sans-serif; text-decoration: none; }
 .ui-mode__item[aria-current="page"] { background: var(--snow); color: var(--night); }
 .ui-mode__item { display: inline-flex; align-items: center; gap: 8px; }
+/* Sprachumschalter DE | EN (Eltern und Kinder) */
+.el-sprache .ui-mode__item { min-width: 44px; padding: 8px 12px; border: 0; background: transparent; cursor: pointer; }
+.el-sprache .ui-mode__item[aria-pressed="true"] { background: var(--snow); color: var(--night); }
+/* Kinder: Touch-Ziel mindestens 56px */
+.ui-shell--kinder .el-sprache .ui-mode__item { min-width: 56px; min-height: 56px; justify-content: center; }
 .ui-mode__item .symbol { width: 20px; height: 20px; color: var(--accent); }
 .ui-mode__kind { display: inline-flex; align-items: flex-end; justify-content: center; width: 28px; height: 28px; margin-left: -6px;
   border-radius: 50%; background: var(--snow); overflow: hidden; }

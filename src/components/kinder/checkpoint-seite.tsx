@@ -7,7 +7,7 @@
  * Kachel antippen → die Eule kommt und liest vor, worum es geht → „Da will ich hin!“ (Wunsch für die Eltern).
  */
 import { useMemo, useState, type CSSProperties } from "react";
-import { AppShell, BackButton, Button, EmptyState, OwlGuide } from "@/components/ui";
+import { AppShell, BackButton, Button, EmptyState, OwlGuide, useSprache } from "@/components/ui";
 import { KinderFigurRuecken, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
 import { useSammlung } from "@/components/sammlung";
@@ -15,7 +15,7 @@ import type { KartenOrt } from "@/lib/kinderkarte";
 import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
-import { euleSagt, kartenText, kinderTageszeit, kinderTitel, kinderWann } from "@/lib/kinder-text";
+import { euleSagt, kartenText, kinderTageszeit, kinderWann } from "@/lib/kinder-text";
 import type { Category, CategoryId } from "@/types";
 
 const wochentag = (iso: string) =>
@@ -58,6 +58,7 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
+  const sprache = useSprache();
   const merk = useSammlung("kind");
   const [kategorie, setKategorie] = useState<CategoryId | null>(null);
   const [seite, setSeite] = useState(0);
@@ -80,22 +81,22 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const kat = (k: KinderKarte) => kategorien.find((c) => c.id === k.kategorien[0]);
 
   const jetzt = minute === null ? new Date() : new Date(minute);
-  const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt)} ${kinderTageszeit(k.start)}`;
+  const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt, sprache)} ${kinderTageszeit(k.start, sprache)}`;
   const sagt = (k: KinderKarte) => {
-    const t = kartenText(k, "de");
+    const t = kartenText(k, sprache);
     return euleSagt(t.titel, t.satz);
   };
 
   function waehleKategorie(id: CategoryId | null, name: string) {
     setKategorie(id);
     setSeite(0);
-    if (autoVorlesen()) vorlesen(name);
+    if (autoVorlesen()) vorlesen(name, sprache);
   }
 
   function oeffne(k: KinderKarte) {
     setOffen(k);
     // Mit „Eule spricht von selbst“ liest der OwlGuide; sonst einmal hier (das Antippen erlaubt die Sprache)
-    if (!autoVorlesen()) vorlesen(sagt(k));
+    if (!autoVorlesen()) vorlesen(sagt(k), sprache);
   }
 
   const raumStil = { "--welt-grund": welt.grund, "--welt-licht": welt.licht } as CSSProperties;
@@ -155,7 +156,7 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
               return (
                 <div key={k.id} role="listitem" className="welt__platz" style={stil}>
                   <button type="button" className={`welt__kachel${offen?.id === k.id ? " ist-offen" : ""}`} onClick={() => oeffne(k)}
-                    aria-label={`${kinderTitel(k.titel)}, ${wann(k)}, ${alterText(k)} Jahre${k.gratis ? ", gratis" : ""}${gewuenscht ? ", gewünscht" : ""}`}>
+                    aria-label={`${kartenText(k, sprache).titel}, ${wann(k)}, ${alterText(k)} Jahre${k.gratis ? ", gratis" : ""}${gewuenscht ? ", gewünscht" : ""}`}>
                     {k.bild ? (
                       // Plain <img>: kommt von der eigenen Mobilizon-Instanz, next/image bräuchte Server oder remotePatterns
                       // eslint-disable-next-line @next/next/no-img-element
@@ -166,9 +167,9 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
                         <Symbol name={c?.icon ?? "star"} />
                       </span>
                     )}
-                    <span className="welt__kachel-titel">{kinderTitel(k.titel)}</span>
+                    <span className="welt__kachel-titel">{kartenText(k, sprache).titel}</span>
                     <span className="welt__kachel-zeit" aria-hidden="true">
-                      <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kinderWann(k.start, jetzt)}
+                      <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kinderWann(k.start, jetzt, sprache)}
                     </span>
                     <span className="welt__kachel-alter" aria-hidden="true">{alterText(k)} J.</span>
                     {gewuenscht && <span className="welt__kachel-herz" aria-hidden="true"><Symbol name="heart" /></span>}

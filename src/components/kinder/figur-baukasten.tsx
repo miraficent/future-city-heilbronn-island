@@ -10,7 +10,7 @@ import { useState, type CSSProperties, type ReactNode } from "react";
 import { Backpack, Ban, Check, Dices, Eye, Footprints, Hand, Palette, PersonStanding, Scissors, Shirt, Smile, type LucideIcon } from "lucide-react";
 import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
-import { BottomSheet, Button } from "@/components/ui";
+import { BottomSheet, Button, useSprache } from "@/components/ui";
 import { AUGENFARBEN, beschreibe, FRISUREN, HAARFARBEN, HAUT, KLEIDERFARBEN, MUENDER, zufallsAussehen, type Aussehen } from "@/lib/eigene-figur";
 import { useEigeneFigur } from "@/lib/eigene-figur-zustand";
 import { vorlesen } from "@/lib/sprechen";
@@ -36,6 +36,7 @@ function Farbe({ farbe, name, gewaehlt, onClick }: { farbe: string; name: string
 
 export function FigurBaukasten({ onSchliessen, onFertig }: { onSchliessen: () => void; onFertig: () => void }) {
   const [gespeichert, speichern] = useEigeneFigur();
+  const sprache = useSprache();
   const [entwurf, setEntwurf] = useState<Aussehen>(gespeichert);
   const setze = (teil: Partial<Aussehen>) => setEntwurf((vorher) => ({ ...vorher, ...teil }));
   const kleider = (titel: string, feld: "pulli" | "hose" | "schuh") =>
@@ -57,7 +58,7 @@ export function FigurBaukasten({ onSchliessen, onFertig }: { onSchliessen: () =>
         <div className="fb__auswahl">
           <div className="fb__kopf">
             <h2>Bau dir deine Figur!</h2>
-            <button type="button" className="ui-vorlesen" aria-label="Vorlesen" onClick={() => vorlesen(ANLEITUNG)}><Symbol name="volume" /></button>
+            <button type="button" className="ui-vorlesen" aria-label="Vorlesen" onClick={() => vorlesen(ANLEITUNG, sprache)}><Symbol name="volume" /></button>
           </div>
 
           <Reihe symbol={Hand} titel="Haut">
