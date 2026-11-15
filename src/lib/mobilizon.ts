@@ -208,7 +208,12 @@ export function erkenneEinrichtung(gruppe: string, text: string): string {
 export function eigenesBild(url: string | null | undefined, basis = MOBILIZON_URL): string | null {
   if (!url) return null;
   try {
-    return new URL(url).origin === new URL(basis).origin ? url : null;
+    const bild = new URL(url);
+    const eigen = new URL(basis);
+    if (bild.origin === eigen.origin) return url;
+    // Mobilizon nennt sich intern oft „localhost“ – dann liegt das Bild trotzdem auf der eigenen Instanz
+    if (/^(localhost|127\.0\.0\.1)$/.test(bild.hostname) && bild.pathname.startsWith("/media/")) return `${eigen.origin}${bild.pathname}${bild.search}`;
+    return null;
   } catch {
     return null;
   }

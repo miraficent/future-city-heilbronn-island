@@ -69,6 +69,9 @@ describe("Titelbild", () => {
     expect(eigenesBild(`${BASIS}/media/x.jpg`, BASIS)).toBe(`${BASIS}/media/x.jpg`);
     expect(eigenesBild("https://www.experimenta.science/bild.jpg", BASIS)).toBeNull();
     expect(eigenesBild(null, BASIS)).toBeNull();
+    // Mobilizon nennt sich intern „localhost“ – das Bild liegt trotzdem auf der eigenen Instanz
+    expect(eigenesBild("http://localhost:4000/media/abc.jpg?name=x.jpg", "http://10.40.58.53:4000")).toBe("http://10.40.58.53:4000/media/abc.jpg?name=x.jpg");
+    expect(eigenesBild("http://localhost:4000/anderes/abc.jpg", "http://10.40.58.53:4000")).toBeNull();
     expect(zuLiveEvent(mz({ picture: null }), KAT, BASIS).image).toBeNull();
   });
 
