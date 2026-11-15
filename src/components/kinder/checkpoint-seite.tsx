@@ -6,7 +6,7 @@
  * (leichtes Wackeln), unten die gewählte Kinderfigur von hinten.
  * Kachel antippen → die Eule kommt und liest vor, worum es geht → „Da will ich hin!“ (Wunsch für die Eltern).
  */
-import { useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
 import { AppShell, BackButton, Button, EmptyState, OwlGuide } from "@/components/ui";
 import { KinderFigurRuecken, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
@@ -16,6 +16,7 @@ import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
 import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann, THEMA_SATZ } from "@/lib/kinder-text";
+import { lies, schreibe } from "@/lib/speicher";
 import type { Category, CategoryId } from "@/types";
 
 const wochentag = (iso: string) =>
@@ -45,8 +46,24 @@ const PLAETZE: { x: number; y: number; s: number; r: number }[] = [
   { x: 58, y: 18, s: 0.85, r: -1 },
 ];
 
-/** Höchstens so viele Themen-Knöpfe (die häufigsten) – mehr überfordert Kleine */
-const MAX_THEMEN = 4;
+/** Die Eule fragt beim Hereinkommen nur, wenn es genug Auswahl gibt; im Satz nennt sie höchstens 3 Themen */
+const FRAGE_AB_ANGEBOTEN = 4;
+const FRAGE_IM_SATZ = 3;
+
+/** Große Themenbilder (dieselben wie auf der Startseite) – Kinder erkennen sie leichter als Linien-Symbole */
+const THEMA_BILD: Partial<Record<CategoryId, string>> = {
+  astronomy: "/grafik/themen/rakete.svg", physics: "/grafik/themen/mikroskop.svg", biology: "/grafik/themen/biologie-dna.svg",
+  math: "/grafik/themen/buch.svg", it: "/grafik/themen/ki-roboter.svg", coding: "/grafik/themen/code.svg",
+  gaming: "/grafik/themen/computer.svg", art: "/grafik/themen/kunst.svg", family: "/grafik/eltern-neutral.svg",
+};
+const kurzName = (c: Category) => c.label_kids.split(" & ")[0]!;
+/** Namen für die Eulen-Frage – so, dass der Satz klingt („Hier gibt es Sterne, Natur und Familien-Sachen.“) */
+const FRAGE_NAME: Partial<Record<CategoryId, string>> = {
+  astronomy: "Sterne", physics: "Experimente", biology: "Natur", math: "Rätsel", it: "Computer",
+  coding: "Coden", gaming: "Spiele", art: "Kunst", family: "Familien-Sachen",
+};
+const frageName = (c: Category) => FRAGE_NAME[c.id] ?? kurzName(c);
+const nichts = () => () => {};
 
 /**
  * laedt: die Live-Events sind noch unterwegs – der Raum bleibt leer (keine Platzhalter-Kacheln).
@@ -62,6 +79,10 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const [kategorie, setKategorie] = useState<CategoryId | null>(null);
   const [seite, setSeite] = useState(0);
   const [offen, setOffen] = useState<KinderKarte | null>(null);
+  // Eulen-Frage nur einmal pro Haus und Sitzung (Server: gilt als gefragt → nichts wird vorgerendert)
+  const frageSchluessel = `kinder.gefragt.${ort.id}`;
+  const schonGefragt = useSyncExternalStore(nichts, () => lies<boolean>("sitzung", frageSchluessel, false), () => true);
+  const [frageZu, setFrageZu] = useState(false);
 
   const welt = WELTEN[ort.id] ?? { grund: "#1E2A5A", licht: ort.farbe };
   const passend = useMemo(
@@ -71,13 +92,22 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const vorhanden = kategorien
     .map((k) => ({ ...k, anzahl: passend.filter((x) => x.kategorien.includes(k.id)).length }))
     .filter((k) => k.anzahl > 0)
-    .sort((a, b) => b.anzahl - a.anzahl)
-    .slice(0, MAX_THEMEN);
+    .sort((a, b) => b.anzahl - a.anzahl);
   const liste = kategorie ? passend.filter((k) => k.kategorien.includes(kategorie)) : passend;
   const seiten = Math.max(1, Math.ceil(liste.length / PLAETZE.length));
   const aktuelleSeite = Math.min(seite, seiten - 1);
   const sichtbar = liste.slice(aktuelleSeite * PLAETZE.length, (aktuelleSeite + 1) * PLAETZE.length);
   const kat = (k: KinderKarte) => kategorien.find((c) => c.id === k.kategorien[0]);
+  const frageThemen = vorhanden;
+  const frageZeigen = !laedt && !schonGefragt && !frageZu && passend.length >= FRAGE_AB_ANGEBOTEN && frageThemen.length >= 2;
+
+  function beantworte(id: CategoryId | null, name: string) {
+    schreibe("sitzung", frageSchluessel, true);
+    setFrageZu(true);
+    setKategorie(id);
+    setSeite(0);
+    if (id && autoVorlesen()) vorlesen(`${name}! Schau mal, was es da gibt.`);
+  }
 
   const jetzt = minute === null ? new Date() : new Date(minute);
   const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt)} ${kinderTageszeit(k.start)}`;
@@ -198,6 +228,10 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
           <KinderFigurRuecken art={figurArt ?? "lila"} />
         </svg>
 
+        {frageZeigen && (
+          <EulenFrage themen={frageThemen} onWahl={beantworte} />
+        )}
+
         {offen && (
           <div className="welt__eule">
             <OwlGuide text={sagt(offen)} onSchliessen={() => setOffen(null)}>
@@ -250,6 +284,49 @@ function ErwartetDich({ karte, thema, alter }: { karte: KinderKarte; thema?: Cat
         </li>
       ))}
     </ul>
+  );
+}
+
+/**
+ * Beim Hereinkommen fragt die Eule: „Was magst du heute?“ – höchstens 3 große Themenbilder + „Zeig mir alles“.
+ * Kein Hindernis: Tipp daneben, Esc oder „Zeig mir alles“ schließt; die Kacheln sind schwach dahinter zu sehen.
+ */
+function EulenFrage({ themen, onWahl }: { themen: Category[]; onWahl: (id: CategoryId | null, name: string) => void }) {
+  const erster = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    erster.current?.focus();
+    const taste = (e: KeyboardEvent) => e.key === "Escape" && onWahl(null, "Alles");
+    window.addEventListener("keydown", taste);
+    return () => window.removeEventListener("keydown", taste);
+  }, [onWahl]);
+  const namen = themen.map(frageName);
+  const aufzaehlung = namen.length > FRAGE_IM_SATZ
+    ? `${namen.slice(0, FRAGE_IM_SATZ).join(", ")} und noch mehr`
+    : namen.length > 1 ? `${namen.slice(0, -1).join(", ")} und ${namen.at(-1)}` : namen[0];
+  return (
+    <div className="welt__frage" role="dialog" aria-modal="true" aria-label="Was magst du heute?"
+      onClick={(e) => e.target === e.currentTarget && onWahl(null, "Alles")}>
+      <div className="welt__frage-inhalt">
+        <OwlGuide text={`Hallo! Hier gibt es ${aufzaehlung}. Was magst du heute?`} />
+        <div className={`welt__frage-wahl${themen.length > 4 ? " ist-viele" : ""}`}>
+          {themen.map((t, i) => (
+            <button key={t.id} ref={i === 0 ? erster : undefined} type="button" className="welt__frage-karte"
+              style={{ "--farbe": t.color, "--i": i } as CSSProperties} onClick={() => onWahl(t.id, frageName(t))}>
+              {THEMA_BILD[t.id] ? (
+                // eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik
+                <img src={THEMA_BILD[t.id]} alt="" width={120} height={120} />
+              ) : (
+                <span className="welt__frage-symbol"><Symbol name={t.icon} /></span>
+              )}
+              <span>{frageName(t)}</span>
+            </button>
+          ))}
+        </div>
+        <button type="button" className="welt__frage-alles" onClick={() => onWahl(null, "Alles")}>
+          <Symbol name="star" /> Zeig mir alles
+        </button>
+      </div>
+    </div>
   );
 }
 

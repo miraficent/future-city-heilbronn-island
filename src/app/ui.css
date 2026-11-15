@@ -455,3 +455,36 @@
 .welt__erwartet-rund { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%;
   background: var(--farbe); color: var(--white); }
 .welt__erwartet-rund .symbol { width: 22px; height: 22px; }
+
+/* ---------- Eulen-Frage beim Hereinkommen: „Was magst du heute?“ ---------- */
+.welt__frage { position: absolute; inset: 0; z-index: 45; display: grid; place-items: center; padding: 24px 16px;
+  background: color-mix(in srgb, var(--welt-grund) 62%, transparent); backdrop-filter: blur(2px); animation: welt-frage-rein .3s ease-out; }
+@keyframes welt-frage-rein { from { opacity: 0; } to { opacity: 1; } }
+.welt__frage-inhalt { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 920px; color: var(--ink); }
+.welt__frage-wahl { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.welt__frage-karte { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 190px; padding: 22px 16px 18px; cursor: pointer;
+  border: 4px solid var(--farbe); border-radius: 32px; background: var(--paper); box-shadow: 0 8px 0 0 var(--farbe);
+  font: 800 26px/1.1 "Baloo 2", sans-serif; color: var(--ink);
+  animation: start-ploppen .5s cubic-bezier(.34, 1.56, .64, 1) both; animation-delay: calc(.15s + var(--i) * .12s); transition: transform .15s ease; }
+.welt__frage-karte:hover, .welt__frage-karte:focus-visible { transform: translateY(-6px); }
+.welt__frage-karte img { width: 120px; height: 120px; display: block; }
+.welt__frage-symbol { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; background: var(--farbe); color: var(--white); }
+.welt__frage-symbol .symbol { width: 64px; height: 64px; }
+.welt__frage-alles { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 10px 28px; border-radius: 999px; cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, .8); background: rgba(0, 0, 0, .35); color: var(--white); font: 800 22px/1 "Nunito", sans-serif; }
+.welt__frage-alles .symbol { width: 24px; height: 24px; }
+@media (max-width: 640px) {
+  .welt__frage { position: fixed; top: 68px; }
+  .welt__frage-wahl { gap: 12px; }
+  .welt__frage-karte { width: 104px; padding: 12px 8px; font-size: 18px; border-radius: 22px; }
+  .welt__frage-karte img, .welt__frage-symbol { width: 72px; height: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .welt__frage, .welt__frage-karte { animation: none; transition: none; } }
+/* Viele Themen: kleinere Karten, damit alle auf einen Blick passen */
+.welt__frage-wahl.ist-viele { gap: 16px; max-width: 880px; }
+.welt__frage-wahl.ist-viele .welt__frage-karte { width: 150px; padding: 16px 10px 14px; font-size: 22px; border-radius: 26px; }
+.welt__frage-wahl.ist-viele .welt__frage-karte img, .welt__frage-wahl.ist-viele .welt__frage-symbol { width: 92px; height: 92px; }
+@media (max-width: 640px) {
+  .welt__frage-wahl.ist-viele .welt__frage-karte { width: 96px; font-size: 16px; }
+  .welt__frage-wahl.ist-viele .welt__frage-karte img, .welt__frage-wahl.ist-viele .welt__frage-symbol { width: 60px; height: 60px; }
+}
