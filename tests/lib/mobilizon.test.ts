@@ -176,7 +176,7 @@ describe("eulenTexte – Kindertexte aus den Kommentaren von eule und owl", () =
     expect(eulenTexte([k("eule", "alt"), k("eule", "neu", { updatedAt: "2026-11-15T12:00:00Z" })]).de?.satz).toBe("neu");
   });
   it("gelöschte zählen nicht, auch wenn neuer", () => {
-    expect(eulenTexte([k("eule", "alt"), k("eule", "", { insertedAt: "2026-11-16T10:00:00Z", deletedAt: "2026-11-16T11:00:00Z" })]).de?.satz).toBe("alt");
+    expect(eulenTexte([k("eule", "alt"), k("eule", "geloescht", { insertedAt: "2026-11-16T10:00:00Z", deletedAt: "2026-11-16T11:00:00Z" })]).de?.satz).toBe("alt");
   });
   it("leeres Markup zählt als fehlend", () => expect(eulenTexte([k("eule", "<p><br></p>")])).toEqual({}));
   it("kappt lange Texte", () => {

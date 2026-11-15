@@ -6,6 +6,7 @@
  * Kinderseite einen Satz aus Thema, Art und Kosten (kartenText in src/lib/kinder-text.ts).
  */
 import { Badge } from "@/components/ui";
+import { eulenZeilen } from "@/lib/eulen-liste";
 import type { KinderText, LiveEvent } from "@/types";
 
 function Text({ text }: { text?: KinderText }) {
@@ -19,15 +20,14 @@ function Text({ text }: { text?: KinderText }) {
 }
 
 export function EulenListe({ events, jetzt }: { events: LiveEvent[]; jetzt: Date }) {
-  const kommend = events.filter((e) => new Date(e.end ?? e.start).getTime() >= jetzt.getTime());
-  const einmal = [...new Map(kommend.map((e) => [`${e.institutionId}|${e.title}`, e])).values()];
+  const einmal = eulenZeilen(events, jetzt);
   const ohne = einmal.filter((e) => !e.kinder?.de || !e.kinder?.en).length;
 
   return (
     <section className="mt-12" aria-labelledby="eulen-liste">
       <h2 id="eulen-liste" className="font-display text-2xl font-bold">Eule & Owl: Kindertexte gegenlesen</h2>
       <p className="mt-2 max-w-3xl text-tinte-2">
-        {einmal.length} kommende Veranstaltungen, bei {ohne} fehlt mindestens ein Text. Korrigieren: in Mobilizon als
+        {einmal.length} Zeilen (Termine mit gleichen Texten zusammengefasst), bei {ohne} fehlt mindestens ein Text. Korrigieren: in Mobilizon als
         „eule“ bzw. „owl“ anmelden und den Kommentar bearbeiten. Neu schreiben lassen: Kommentar löschen.
       </p>
       <div className="mt-6 overflow-x-auto">
