@@ -1,11 +1,12 @@
 import "../eltern.css";
 import { kurzname } from "@/components/einrichtung-badge";
+import { Einrichtungen } from "@/components/eltern/einrichtungen";
 import { ElternKopf } from "@/components/eltern/kopf";
 import { ElternSuche } from "@/components/eltern/suche";
+import { WunschAnfrage } from "@/components/eltern/wunsch-anfrage";
 import { ElternInfos } from "@/components/eltern-infos";
 import { KindWuensche } from "@/components/kind-wuensche";
 import { Seitenrahmen } from "@/components/seitenrahmen";
-import { WunschBox } from "@/components/wunsch-box";
 import { META, oeffentlicheAngebote } from "@/lib/daten";
 
 export const metadata = {
@@ -14,7 +15,8 @@ export const metadata = {
 };
 
 /**
- * Eltern-Bereich: kurzer Kopf, Wünsche des Kindes, Suche mit Filtern, danach alle Hintergrundinfos.
+ * Eltern-Bereich: kurzer Kopf, Wünsche des Kindes, Suche mit Kalender und Filtern, „Was fehlt?“,
+ * die Einrichtungen mit Bildern und ganz unten die häufigen Fragen.
  * Die Live-Events lädt der Browser aus Mobilizon; vom Server kommen nur die Kurse (falls vorhanden).
  */
 export default function Eltern() {
@@ -28,7 +30,8 @@ export default function Eltern() {
         <ElternKopf angebote={angebote} meta={META} jetzt={jetzt} />
         <KindWuensche angebote={angebote} einrichtungen={einrichtungen} jetzt={jetzt} />
         <ElternSuche angebote={angebote} meta={META} jetzt={jetzt} />
-        <WunschBox themen={META.themen} modus="eltern" />
+        <WunschAnfrage angebote={angebote} meta={META} />
+        <Einrichtungen />
         <ElternInfos />
       </main>
     </Seitenrahmen>

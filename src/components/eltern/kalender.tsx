@@ -5,10 +5,10 @@
  * Punkte unter dem Datum zeigen, wie viele Angebote es gibt. Flache Blumen in den Farben der Seite
  * (DESIGN.md-Tokens) geben dem Kalender denselben freundlichen Ton wie Karte und Wunschzettel.
  */
-import { useState } from "react";
-import { LOCALE, monatsRaster, tagText } from "@/lib/eltern-suche";
+import { useState, type CSSProperties } from "react";
+import { kurzTitel, LOCALE, monatsRaster, tagText, type TagesEintrag } from "@/lib/eltern-suche";
 import { Symbol } from "../symbol";
-import { useSprache } from "./sprache";
+import { datum, useSprache } from "./sprache";
 import { TEXTE } from "./texte";
 
 /** Eine Blume aus fünf Blütenblättern; Farben als CSS-Variablen (keine festen Farbwerte). */
@@ -50,8 +50,16 @@ function Blumen() {
   );
 }
 
-export function Kalender({ zahlen, heute, gewaehlt, waehlen }: {
+/**
+ * `gross`: Monatsansicht über der Ergebnisliste – auf dem Computer stehen die ersten Angebote des Tages
+ * (Uhrzeit, Titel, Farbe der Einrichtung) direkt im Kalender, auf dem Handy Punkte.
+ */
+export function Kalender({ zahlen, eintraege, farben = {}, gross = false, heute, gewaehlt, waehlen }: {
   zahlen: Map<string, number>;
+  eintraege?: Map<string, TagesEintrag[]>;
+  /** Einrichtungsfarbe je Quelle (aus den Daten) */
+  farben?: Record<string, string>;
+  gross?: boolean;
   /** heutiger Tag-Schlüssel („2026-11-15“) */
   heute: string;
   gewaehlt?: string;
@@ -59,6 +67,7 @@ export function Kalender({ zahlen, heute, gewaehlt, waehlen }: {
 }) {
   const sprache = useSprache();
   const t = TEXTE[sprache].kalender;
+  const d = datum(sprache);
   const start = gewaehlt ?? heute;
   const [ansicht, setAnsicht] = useState({ jahr: Number(start.slice(0, 4)), monat: Number(start.slice(5, 7)) - 1 });
   const aktuell = { jahr: Number(heute.slice(0, 4)), monat: Number(heute.slice(5, 7)) - 1 };
@@ -70,9 +79,9 @@ export function Kalender({ zahlen, heute, gewaehlt, waehlen }: {
   const imMonat = felder.reduce((summe, tag) => summe + (tag ? zahlen.get(tag) ?? 0 : 0), 0);
 
   return (
-    <section className="el-kal" aria-labelledby="kal-titel">
+    <section className={`el-kal${gross ? " el-kal--gross" : ""}`} aria-labelledby="kal-titel">
       <Blumen />
-      <p className="el-kal__oben">{t.oben}</p>
+      <p className="el-kal__oben">{gross ? t.grossOben : t.oben}</p>
       <div className="el-kal__kopf">
         <button type="button" className="el-kal__pfeil" onClick={() => blaettern(-1)} disabled={istErster} aria-label={t.zurueck}><Symbol name="back" /></button>
         <h3 id="kal-titel" aria-live="polite">{titel}</h3>
@@ -83,6 +92,7 @@ export function Kalender({ zahlen, heute, gewaehlt, waehlen }: {
         {felder.map((tag, i) => {
           if (!tag) return <span key={`leer-${i}`} />;
           const anzahl = zahlen.get(tag) ?? 0;
+          const liste = eintraege?.get(tag) ?? [];
           const vorbei = tag < heute;
           const aktiv = gewaehlt === tag;
           return (
@@ -95,10 +105,20 @@ export function Kalender({ zahlen, heute, gewaehlt, waehlen }: {
               disabled={(vorbei || anzahl === 0) && !aktiv}
               onClick={() => waehlen(aktiv ? undefined : tag)}
             >
-              <span>{Number(tag.slice(8))}</span>
+              <span className="el-kal__zahl">{Number(tag.slice(8))}</span>
               <span className="el-kal__punkte" aria-hidden="true">
                 {Array.from({ length: Math.min(anzahl, 3) }, (_, k) => <i key={k} />)}
               </span>
+              {gross && liste.length > 0 && (
+                <span className="el-kal__eintraege" aria-hidden="true">
+                  {liste.slice(0, 2).map((e) => (
+                    <span key={e.angebot.id} className="el-kal__eintrag" style={{ ["--farbe" as string]: farben[e.angebot.quelle] } as CSSProperties}>
+                      <b>{d.zeit(e.termin.start).replace(" Uhr", "")}</b> {kurzTitel(e.angebot.titel)}
+                    </span>
+                  ))}
+                  {liste.length > 2 && <span className="el-kal__mehr">{t.mehr(liste.length - 2)}</span>}
+                </span>
+              )}
             </button>
           );
         })}
