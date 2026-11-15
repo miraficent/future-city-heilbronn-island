@@ -417,12 +417,14 @@
 .ui-mode__kind img { height: 34px; margin-bottom: -4px; }
 
 /* ---------- Kinderfreundlich: große Themen-Symbole, größere Kachelschrift ---------- */
-.welt__themen { gap: 10px; }
-.welt__thema { flex-direction: column; gap: 4px; min-height: 0; padding: 0; border: 0; border-radius: 0; background: none; backdrop-filter: none; }
+/* Gleich breite Spalten: Kreise stehen in gleichem Abstand, lange Namen brechen um („Mit der / Familie“) */
+.welt__themen { display: grid; grid-auto-flow: column; grid-auto-columns: 88px; gap: 8px; align-items: start; justify-content: end; }
+.welt__thema { width: 100%; flex-direction: column; gap: 4px; min-height: 0; padding: 0; border: 0; border-radius: 0; background: none; backdrop-filter: none; }
 .welt__thema-rund { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%;
   background: var(--farbe, var(--primary)); color: var(--white); border: 3px solid rgba(255, 255, 255, .7); box-shadow: 0 4px 0 0 rgba(0, 0, 0, .3); }
 .welt__thema .welt__thema-rund .symbol { width: 28px; height: 28px; }
-.welt__thema-name { padding: 2px 8px; border-radius: 999px; background: rgba(0, 0, 0, .45); color: var(--white); font: 800 14px/1.2 "Nunito", sans-serif; }
+.welt__thema-name { max-width: 100%; padding: 2px 8px; border-radius: 10px; background: rgba(0, 0, 0, .45); color: var(--white); font: 800 14px/1.2 "Nunito", sans-serif;
+  text-align: center; white-space: normal; hyphens: auto; }
 .welt__thema[aria-pressed="true"] { background: none; }
 .welt__thema[aria-pressed="true"] .welt__thema-rund { border-color: var(--white); outline: 4px solid var(--accent); transform: translateY(-3px); }
 .welt__thema[aria-pressed="true"] .welt__thema-name { background: var(--white); color: var(--ink); }
@@ -433,7 +435,7 @@
   font: 800 15px/1.1 "Nunito", sans-serif; }
 .welt__kachel-herz { top: auto; bottom: 10px; left: auto; right: 10px; }
 @media (max-width: 640px) {
-  .welt__themen { padding-top: 84px; }
+  .welt__themen { padding-top: 84px; justify-content: start; }
   /* Kacheln laufen über der Figur, damit sie nichts verdeckt */
   .welt__kacheln { z-index: 21; }
   .welt__figur { z-index: 5; opacity: .9; }
