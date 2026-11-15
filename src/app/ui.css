@@ -465,8 +465,9 @@
 .welt__frage-karte { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 190px; padding: 22px 16px 18px; cursor: pointer;
   border: 4px solid var(--farbe); border-radius: 32px; background: var(--paper); box-shadow: 0 8px 0 0 var(--farbe);
   font: 800 26px/1.1 "Baloo 2", sans-serif; color: var(--ink);
-  animation: start-ploppen .5s cubic-bezier(.34, 1.56, .64, 1) both; animation-delay: calc(.15s + var(--i) * .12s); transition: transform .15s ease; }
-.welt__frage-karte:hover, .welt__frage-karte:focus-visible { transform: translateY(-6px); }
+  animation: welt-karte-rein .6s cubic-bezier(.22, 1, .36, 1) backwards; animation-delay: calc(.15s + var(--i) * .08s); }
+@keyframes welt-karte-rein { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.welt__frage-karte:focus-visible { outline: 4px solid var(--white); outline-offset: 4px; }
 .welt__frage-karte img { width: 120px; height: 120px; display: block; }
 .welt__frage-symbol { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; background: var(--farbe); color: var(--white); }
 .welt__frage-symbol .symbol { width: 64px; height: 64px; }
@@ -497,3 +498,17 @@
 .welt__eule-knopf:hover svg, .welt__eule-knopf:focus-visible svg { transform: translateY(-4px) rotate(-4deg); }
 @media (max-width: 640px) { .welt__eule-knopf { position: fixed; } .welt__eule-knopf span { font-size: 14px; } }
 @media (prefers-reduced-motion: reduce) { .welt__eule-knopf svg { transition: none; } }
+/* Die Eule erklärt Thema für Thema: die Karte, um die es geht, hebt sich sanft an und schwebt; die anderen treten zurück.
+   Kein Hüpfen: Anheben per Übergang, danach ein ruhiges, langsames Schweben. */
+.welt__frage-karte { transition: transform .5s cubic-bezier(.22, 1, .36, 1), opacity .5s ease, box-shadow .5s ease; }
+.welt__frage-wahl.hat-dran .welt__frage-karte { opacity: .6; }
+.welt__frage-wahl.hat-dran .welt__frage-karte.ist-dran { opacity: 1; }
+.welt__frage-karte.ist-dran { transform: translateY(-10px) scale(1.07);
+  box-shadow: 0 8px 0 0 var(--farbe), 0 0 0 6px var(--white), 0 0 36px var(--farbe); }
+.welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { animation: welt-dran-schweben 2.6s ease-in-out .5s infinite; }
+@keyframes welt-dran-schweben { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .welt__frage-karte, .welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: none; }
+  .welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { animation: none; }
+}

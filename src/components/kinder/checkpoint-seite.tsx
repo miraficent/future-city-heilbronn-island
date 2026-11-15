@@ -63,6 +63,22 @@ const FRAGE_NAME: Partial<Record<CategoryId, string>> = {
   coding: "Coden", gaming: "Spiele", art: "Kunst", family: "Familien-Sachen",
 };
 const frageName = (c: Category) => FRAGE_NAME[c.id] ?? kurzName(c);
+
+/** Was man bei jedem Thema macht – ein kurzer Satz, den die Eule sagt, während die Karte hüpft */
+const ERKLAERUNG: Partial<Record<CategoryId, string>> = {
+  astronomy: "Du fliegst durchs Weltall und entdeckst Sterne und Planeten.",
+  physics: "Du probierst aus, wie Strom, Luft und Licht funktionieren.",
+  biology: "Hier geht es um Tiere, Pflanzen und das Meer.",
+  math: "Du knobelst mit Zahlen, Mustern und Rätseln.",
+  it: "Du erfährst, wie Computer und KI denken.",
+  coding: "Du sagst dem Computer mit Befehlen, was er tun soll.",
+  gaming: "Du spielst und baust deine eigenen Spiele.",
+  art: "Du malst, bastelst und bist kreativ.",
+  family: "Das machst du zusammen mit deiner Familie.",
+};
+const erklaere = (c: Category) => `${frageName(c)}: ${ERKLAERUNG[c.id] ?? "Schau mal, was es hier gibt."}`;
+/** Wie lange ein Satz stehen bleibt (ungefähr so lang, wie die Eule zum Vorlesen braucht) */
+const satzDauer = (text: string) => 1200 + text.length * 70;
 const nichts = () => () => {};
 
 /**
@@ -304,25 +320,68 @@ function ErwartetDich({ karte, thema, alter }: { karte: KinderKarte; thema?: Cat
  */
 function EulenFrage({ themen, onWahl }: { themen: Category[]; onWahl: (id: CategoryId | null, name: string) => void }) {
   const erster = useRef<HTMLButtonElement>(null);
+  // Rundgang: -1 = Begrüßung, 0..n-1 = die Eule erklärt Thema für Thema, n = „Tipp auf das, was du magst!“
+  const [schritt, setSchritt] = useState(-1);
+  const [fokus, setFokus] = useState<number | null>(null);
+  // Angetippte Karte: die Eule erzählt darüber; zweiter Tipp oder „… zeigen!“ wählt sie
+  const [gewaehlt, setGewaehlt] = useState<number | null>(null);
   useEffect(() => {
-    erster.current?.focus();
+    erster.current?.focus({ preventScroll: true });
     const taste = (e: KeyboardEvent) => e.key === "Escape" && onWahl(null, "Alles");
     window.addEventListener("keydown", taste);
     return () => window.removeEventListener("keydown", taste);
   }, [onWahl]);
+
   const namen = themen.map(frageName);
   const aufzaehlung = namen.length > FRAGE_IM_SATZ
     ? `${namen.slice(0, FRAGE_IM_SATZ).join(", ")} und noch mehr`
     : namen.length > 1 ? `${namen.slice(0, -1).join(", ")} und ${namen.at(-1)}` : namen[0];
+  const begruessung = `Hallo! Hier gibt es ${aufzaehlung}. Ich zeig dir alles!`;
+  const dran = gewaehlt ?? fokus ?? (schritt >= 0 && schritt < themen.length ? schritt : null);
+  const text = gewaehlt !== null ? `${erklaere(themen[gewaehlt]!)} Willst du das sehen?`
+    : dran !== null ? erklaere(themen[dran]!) : schritt < 0 ? begruessung : "Und? Tipp auf das, was du magst!";
+
+  function tippe(i: number) {
+    const t = themen[i]!;
+    if (gewaehlt === i) return onWahl(t.id, frageName(t));
+    setGewaehlt(i);
+    if (!autoVorlesen()) vorlesen(`${erklaere(t)} Willst du das sehen?`);
+  }
+
+  // Rundgang weiterschalten, solange niemand selbst auf eine Karte zeigt
+  useEffect(() => {
+    if (gewaehlt !== null || fokus !== null || schritt >= themen.length) return;
+    const t = setTimeout(() => setSchritt((x) => x + 1), satzDauer(text));
+    return () => clearTimeout(t);
+  }, [schritt, fokus, gewaehlt, text, themen.length]);
+
   return (
     <div className="welt__frage" role="dialog" aria-modal="true" aria-label="Was magst du heute?"
       onClick={(e) => e.target === e.currentTarget && onWahl(null, "Alles")}>
       <div className="welt__frage-inhalt">
-        <OwlGuide text={`Hallo! Hier gibt es ${aufzaehlung}. Was magst du heute?`} />
-        <div className={`welt__frage-wahl${themen.length > 4 ? " ist-viele" : ""}`}>
+        <OwlGuide text={text}>
+          {gewaehlt !== null && (
+            <>
+              <Button variante="primary" groesse="kids" icon="check" onClick={() => onWahl(themen[gewaehlt]!.id, frageName(themen[gewaehlt]!))}>
+                {frageName(themen[gewaehlt]!)} zeigen!
+              </Button>
+              <Button variante="ghost" groesse="kids" onClick={() => setGewaehlt(null)}>Was gibt es noch?</Button>
+            </>
+          )}
+          {gewaehlt === null && schritt >= themen.length && fokus === null && (
+            <Button variante="ghost" groesse="kids" icon="volume" onClick={() => setSchritt(-1)}>Nochmal erklären</Button>
+          )}
+        </OwlGuide>
+        <div className={`welt__frage-wahl${themen.length > 4 ? " ist-viele" : ""}${dran !== null ? " hat-dran" : ""}`}>
           {themen.map((t, i) => (
-            <button key={t.id} ref={i === 0 ? erster : undefined} type="button" className="welt__frage-karte"
-              style={{ "--farbe": t.color, "--i": i } as CSSProperties} onClick={() => onWahl(t.id, frageName(t))}>
+            <button key={t.id} ref={i === 0 ? erster : undefined} type="button"
+              className={`welt__frage-karte${dran === i ? " ist-dran" : ""}`}
+              style={{ "--farbe": t.color, "--i": i } as CSSProperties}
+              onMouseEnter={() => setFokus(i)} onMouseLeave={() => setFokus(null)}
+              onFocus={() => schritt >= themen.length && setFokus(i)} onBlur={() => setFokus(null)}
+              aria-describedby={dran === i ? "welt-frage-erklaerung" : undefined}
+              aria-pressed={gewaehlt === i}
+              onClick={() => tippe(i)}>
               {THEMA_BILD[t.id] ? (
                 // eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik
                 <img src={THEMA_BILD[t.id]} alt="" width={120} height={120} />
@@ -333,6 +392,7 @@ function EulenFrage({ themen, onWahl }: { themen: Category[]; onWahl: (id: Categ
             </button>
           ))}
         </div>
+        <p id="welt-frage-erklaerung" className="sr-only">{text}</p>
         <button type="button" className="welt__frage-alles" onClick={() => onWahl(null, "Alles")}>
           <Symbol name="star" /> Zeig mir alles
         </button>
