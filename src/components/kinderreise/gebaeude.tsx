@@ -110,7 +110,7 @@ function EinfachesHaus({ farbe, symbol }: { farbe: string; symbol: PinSymbol }) 
   );
 }
 
-/** COSMOS: kleiner Platz mit Kiosk und Infotafel (Kalender) = „alle Veranstaltungen“ */
+/** COSMOS: kleiner Platz mit Kiosk und Infotafel (Kalender) = Veranstaltungen ohne eigene Einrichtung */
 function CosmosPlatz({ farbe }: { farbe: string }) {
   return (
     <g>

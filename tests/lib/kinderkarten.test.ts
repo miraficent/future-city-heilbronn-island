@@ -47,9 +47,10 @@ describe("Kinderkarten aus Kursen und Live-Events", () => {
     expect(passtZumAlter(k!, null)).toBe(true);
   });
 
-  it("COSMOS zeigt alle Angebote, andere Orte nur ihre eigenen", () => {
-    const karten = kinderKarten([angebot("a")], [event("e")], JETZT);
-    expect(kartenFuerOrt(karten, "cosmos")).toHaveLength(2);
+  it("jeder Ort zeigt nur seine eigenen Karten, COSMOS nur die ohne Einrichtung", () => {
+    const ohneEinrichtung = { ...ausEvent(event("e")), id: "ev:frei", institutionId: "cosmos" };
+    const karten = [...kinderKarten([angebot("a")], [event("e")], JETZT), ohneEinrichtung];
+    expect(kartenFuerOrt(karten, "cosmos").map((k) => k.id)).toEqual(["ev:frei"]);
     expect(kartenFuerOrt(karten, "aim").map((k) => k.id)).toEqual(["a"]);
   });
 

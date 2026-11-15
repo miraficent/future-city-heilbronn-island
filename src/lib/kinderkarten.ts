@@ -108,9 +108,12 @@ export function passtZumAlter(k: KinderKarte, alter: number | null): boolean {
   return alter === null || ((k.ageMin ?? 0) <= alter && alter <= (k.ageMax ?? 99));
 }
 
-/** COSMOS ist der „alle Veranstaltungen“-Ort: dort erscheinen alle Karten */
+/**
+ * Karten eines Ortes. COSMOS zeigt nur, was zu keiner anderen Einrichtung gehört:
+ * Events ohne erkannte Einrichtung bekommen in erkenneEinrichtung() die Kennung „cosmos“.
+ */
 export function kartenFuerOrt(karten: KinderKarte[], ortId: string): KinderKarte[] {
-  return ortId === "cosmos" ? karten : karten.filter((k) => k.institutionId === ortId);
+  return karten.filter((k) => k.institutionId === ortId);
 }
 
 export function istHeute(k: KinderKarte, jetzt: Date): boolean {

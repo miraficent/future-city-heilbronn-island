@@ -35,7 +35,7 @@ können beide Seiten unabhängig arbeiten.
 |---|---|---|
 | `/` **Start** | Nachthimmel, die Eule fliegt herein, schwebende Themenbilder, zwei Karten: **„Kind“** und **„Eltern“** | alle |
 | `/kinder/` **Karte** | Stadtansicht von Heilbronn (Neckar, Altstadt, Kilianskirche, Hauptbahnhof). Jedes Gebäude ist ein **Link** zu seiner Einrichtung, mit Anzahl kommender Angebote und „Heute!“-Stern. Die Eule fragt einmal nach dem Alter. | Kinder, Teens |
-| `/checkpoint/[id]/` **Einrichtung** | Banner mit Gebäude, Eule, runde Kategorie-Knöpfe, Karten zum Wischen, Vorlesen, **„Da will ich hin!“**. COSMOS zeigt alle Angebote. | Kinder, Teens |
+| `/checkpoint/[id]/` **Einrichtung** | Banner mit Gebäude, Eule, runde Kategorie-Knöpfe, Karten zum Wischen, Vorlesen, **„Da will ich hin!“**. COSMOS zeigt Veranstaltungen ohne eigene Einrichtung. | Kinder, Teens |
 | `/eltern/` **Eltern** | „Das möchte Ihr Kind besuchen“, Suche mit allen Filtern, Infos, offizielle Links | Eltern, Fachkräfte |
 | `/mitmachen/` | Neue Einrichtungen: Voraussetzungen und Formular (ohne Server) | Einrichtungen |
 | `/styleguide/` | Alle Farben, Schriften und Bausteine | Team |

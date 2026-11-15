@@ -130,3 +130,10 @@ Entscheidungen (Details: `docs/superpowers/specs/2026-11-15-eule-owl-kommentare-
   Kinder die Seite nutzen. Solange ein Name frei ist, kann sich jeder mit einem Konto auf der Instanz diesen Namen
   als Identität anlegen, und sein Kommentar würde Kindern vorgelesen. Registrierung auf der Instanz schließen oder
   moderieren.
+
+## 15.11.2026 – COSMOS zeigt nur Veranstaltungen ohne Einrichtung
+
+Entscheidung: Der COSMOS-Platz auf der Kinderkarte zeigt nicht mehr alle Karten, sondern nur Events, die zu keiner
+anderen Einrichtung gehören (`erkenneEinrichtung()` in `src/lib/mobilizon.ts` gibt dann „cosmos“ zurück).
+Grund: Sonst stehen die Angebote von aim, experimenta, Haus der Familie und IPAI doppelt da, und COSMOS ist überfüllt.
+Code: `kartenFuerOrt()` in `src/lib/kinderkarten.ts` filtert jetzt für alle Orte gleich.

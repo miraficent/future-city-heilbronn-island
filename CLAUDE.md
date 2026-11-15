@@ -20,7 +20,7 @@ Read before larger changes: `README.md` (overview), `docs/regeln.md` (team rules
 - **Kids map** `/kinder/`: city view of Heilbronn (no sea, no islands). Buildings link to `/checkpoint/[id]/`;
   "Neuer Ort?" links to `/mitmachen/`. Owl asks the child's age once (sessionStorage).
 - **Institution page** `/checkpoint/[id]/`: banner, owl, category bubbles, card gallery, bottom sheet with
-  read-aloud and "Da will ich hin!". `cosmos` shows all offers.
+  read-aloud and "Da will ich hin!". `cosmos` shows only events that belong to no other institution.
 - **Parents** `/eltern/`: child's wishes, search with filters, all long texts. Teen area `/teen/` still exists (open).
 - **No games.** All mini-games and the walking world were removed – do not add them back.
 - **Roles:** Cedric owns the **data**. Everyone else works on the **presentation**. Never change data files to fix a

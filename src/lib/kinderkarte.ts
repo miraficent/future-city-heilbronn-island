@@ -61,7 +61,7 @@ const ORTE: Record<string, Omit<KartenOrt, "id">> = {
   ipai: { name: "IPAI", farbe: "#2BB3A3", symbol: "chip", gebaeude: "ipai", x: 620, y: 610 },
 };
 
-/** COSMOS: der Platz für „alle Veranstaltungen“ – gehört zu keiner Quelle, steht immer auf der Karte */
+/** COSMOS: der Platz für Veranstaltungen ohne eigene Einrichtung – gehört zu keiner Quelle, steht immer auf der Karte */
 const COSMOS: KartenOrt = { id: "cosmos", name: "COSMOS", farbe: "#F59E0B", symbol: "kalender", gebaeude: "platz", x: 850, y: 610 };
 
 /** Freie Fläche „Neuer Ort?“ → Mitmach-Seite */
