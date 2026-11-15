@@ -3,6 +3,7 @@ import type { Art, Zielgruppe } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { ART_TEXTE, TAGESZEIT_TEXTE, WOCHENTAGE_TEXTE, ZIELGRUPPE_TEXTE, type ElternFilter, type Tageszeit } from "@/lib/eltern-suche";
 import { kurzname } from "../einrichtung-badge";
+import { Kalender } from "./kalender";
 import { useSprache } from "./sprache";
 import { TEXTE } from "./texte";
 
@@ -18,11 +19,14 @@ const umschalten = <T,>(liste: T[], wert: T) => (liste.includes(wert) ? liste.fi
  * und im aufklappbaren Blatt (Handy). Die Zahlen an Thema und Einrichtung zeigen,
  * wie viele Treffer diese Wahl zusammen mit den übrigen Filtern ergibt.
  */
-export function FilterFormular({ filter, aendere, meta, zahlen, kopf }: {
+export function FilterFormular({ filter, aendere, meta, zahlen, tage, heute, kopf }: {
   filter: ElternFilter;
   aendere: (teil: Partial<ElternFilter>) => void;
   meta: Meta;
   zahlen: { themen: Record<string, number>; quellen: Record<string, number> };
+  /** Angebote je Tag für den Kalender */
+  tage: Map<string, number>;
+  heute: string;
   kopf?: ReactNode;
 }) {
   const id = useId();
@@ -31,6 +35,7 @@ export function FilterFormular({ filter, aendere, meta, zahlen, kopf }: {
   return (
     <div className="el-filter">
       {kopf}
+      <Kalender zahlen={tage} heute={heute} gewaehlt={filter.tag} waehlen={(tag) => aendere({ tag, zeitraum: "alle" })} />
       <fieldset>
         <legend>{t.thema}</legend>
         <div className="el-chips">

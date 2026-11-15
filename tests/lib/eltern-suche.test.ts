@@ -8,10 +8,12 @@ import {
   kindWuensche,
   kurzTitel,
   LEERER_ELTERN_FILTER,
+  monatsRaster,
   nachZeitGruppieren,
   ortText,
   preisText,
   tageszeitVon,
+  tagesZahlen,
   terminband,
   themaName,
   themenFuer,
@@ -276,5 +278,25 @@ describe("Englisch", () => {
     expect(preisText(a("1", { kosten: { euro: null, text: "siehe Anbieter" } }), "en")).toBe("Price: see provider");
     expect(themaName({ id: "ki", name: "Künstliche Intelligenz" }, "en")).toBe("Artificial intelligence");
     expect(themaName({ id: "neu", name: "Neues Thema" }, "en")).toBe("Neues Thema");
+  });
+});
+
+describe("Monatskalender", () => {
+  it("beginnt die Woche am Montag und füllt volle Wochen", () => {
+    const nov = monatsRaster(2026, 10);
+    // 1. November 2026 ist ein Sonntag → sechs leere Felder davor
+    expect(nov.slice(0, 7)).toEqual([null, null, null, null, null, null, "2026-11-01"]);
+    expect(nov.length % 7).toBe(0);
+    expect(nov.filter(Boolean)).toHaveLength(30);
+    expect(nov.at(-1)).toBeNull();
+  });
+
+  it("zählt Angebote je Tag auch über Monatsgrenzen", () => {
+    const zahlen = tagesZahlen([
+      a("1", { termine: [{ start: "2026-11-21T10:00:00+01:00" }, { start: "2026-12-05T10:00:00+01:00" }] }),
+      a("2", { termine: [{ start: "2026-11-21T15:00:00+01:00" }] }),
+    ], filter({ tag: "2026-11-21" }), JETZT);
+    expect(zahlen.get("2026-11-21")).toBe(2);
+    expect(zahlen.get("2026-12-05")).toBe(1);
   });
 });

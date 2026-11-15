@@ -148,18 +148,37 @@ export function elternSuche(angebote: Angebot[], f: ElternFilter, jetzt: Date): 
 export type BandTag = { tag: string; anzahl: number; wochenende: boolean; heute: boolean };
 
 /** Zählt je Tag die Angebote mit passendem Termin. Der gewählte Tag selbst wird dabei ignoriert. */
-export function terminband(angebote: Angebot[], f: ElternFilter, jetzt: Date, tage = 28): BandTag[] {
+/** Anzahl Angebote je Kalendertag („2026-11-21“ → 3) für alle kommenden Termine; der gewählte Tag wird ignoriert. */
+export function tagesZahlen(angebote: Angebot[], f: ElternFilter, jetzt: Date): Map<string, number> {
   const ohneTag: ElternFilter = { ...f, tag: undefined };
   const zaehler = new Map<string, number>();
   for (const a of filtere(angebote, ohneTag, jetzt)) {
     const tageDesAngebots = new Set(kommendeTermine(a, jetzt).filter((t) => passtTermin(t, ohneTag, jetzt)).map((t) => tagSchluessel(t.start)));
     for (const tag of tageDesAngebots) zaehler.set(tag, (zaehler.get(tag) ?? 0) + 1);
   }
+  return zaehler;
+}
+
+export function terminband(angebote: Angebot[], f: ElternFilter, jetzt: Date, tage = 28): BandTag[] {
+  const zaehler = tagesZahlen(angebote, f, jetzt);
   const heute = tagSchluessel(jetzt);
   return Array.from({ length: tage }, (_, i) => {
     const tag = plusTage(heute, i);
     return { tag, anzahl: zaehler.get(tag) ?? 0, wochenende: [0, 6].includes(wochentagVon(tag)), heute: i === 0 };
   });
+}
+
+// ---------- Monatskalender ----------
+
+/** Tage eines Monats (monat 0–11) als Tag-Schlüssel, Wochen ab Montag; leere Felder davor und danach sind null. */
+export function monatsRaster(jahr: number, monat: number): Array<string | null> {
+  const erster = new Date(Date.UTC(jahr, monat, 1, 12));
+  const tage = new Date(Date.UTC(jahr, monat + 1, 0, 12)).getUTCDate();
+  const vorne = (erster.getUTCDay() + 6) % 7;
+  const felder: Array<string | null> = Array.from({ length: vorne }, () => null);
+  for (let d = 1; d <= tage; d++) felder.push(`${jahr}-${String(monat + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`);
+  while (felder.length % 7 !== 0) felder.push(null);
+  return felder;
 }
 
 // ---------- Ergebnisliste in Zeitabschnitten ----------

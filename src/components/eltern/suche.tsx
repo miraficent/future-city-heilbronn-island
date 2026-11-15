@@ -10,6 +10,8 @@ import {
   elternSuche,
   LEERER_ELTERN_FILTER,
   nachZeitGruppieren,
+  tagesZahlen,
+  tagSchluessel,
   terminband,
   type ElternFilter,
 } from "@/lib/eltern-suche";
@@ -56,6 +58,7 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
 
   const treffer = useMemo(() => elternSuche(angebote, filter, new Date(jetzt)), [angebote, filter, jetzt]);
   const band = useMemo(() => terminband(angebote, filter, new Date(jetzt), filter.zeitraum === "woche" ? 7 : 28), [angebote, filter, jetzt]);
+  const tage = useMemo(() => tagesZahlen(angebote, filter, new Date(jetzt)), [angebote, filter, jetzt]);
   const zahlen = useMemo(() => {
     const zaehle = (teil: Partial<ElternFilter>) => elternSuche(angebote, { ...filter, ...teil }, new Date(jetzt)).length;
     return {
@@ -119,7 +122,9 @@ export function ElternSuche({ angebote: kurse, meta: grundMeta, jetzt: start }: 
     }
   }
 
-  const formular = (kopf?: ReactNode) => <FilterFormular filter={filter} aendere={aendere} meta={meta} zahlen={zahlen} kopf={kopf} />;
+  const formular = (kopf?: ReactNode) => (
+    <FilterFormular filter={filter} aendere={aendere} meta={meta} zahlen={zahlen} tage={tage} heute={tagSchluessel(jetzt)} kopf={kopf} />
+  );
 
   return (
     <section id="suche" className="el-suche" aria-labelledby="suche-titel">

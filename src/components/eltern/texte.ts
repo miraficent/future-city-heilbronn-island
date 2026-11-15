@@ -133,6 +133,16 @@ const DE = {
     anzahl: (n: number) => (n === 0 ? "keine Angebote" : n === 1 ? "1 Angebot" : `${n} Angebote`),
   },
   datum: { heute: "Heute" },
+  kalender: {
+    oben: "Tag wählen",
+    zurueck: "Voriger Monat",
+    weiter: "Nächster Monat",
+    wochentage: ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
+    heute: "Heute, ",
+    anzahl: (n: number) => (n === 0 ? "keine Angebote" : n === 1 ? "1 Angebot" : `${n} Angebote`),
+    imMonat: (n: number) => (n === 0 ? "In diesem Monat ist noch nichts eingetragen." : `Punkte zeigen Angebote · ${n} in diesem Monat`),
+    alleTage: "Wieder alle Tage zeigen",
+  },
   infos: {
     titel: "Gut zu wissen",
     unter: "Kurz erklärt: Anmeldung, Alter, Wünsche und Datenschutz.",
@@ -381,6 +391,16 @@ const EN: typeof DE = {
     anzahl: (n) => (n === 0 ? "no activities" : n === 1 ? "1 activity" : `${n} activities`),
   },
   datum: { heute: "Today" },
+  kalender: {
+    oben: "Pick a day",
+    zurueck: "Previous month",
+    weiter: "Next month",
+    wochentage: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+    heute: "Today, ",
+    anzahl: (n) => (n === 0 ? "no activities" : n === 1 ? "1 activity" : `${n} activities`),
+    imMonat: (n) => (n === 0 ? "Nothing is listed this month yet." : `Dots show activities · ${n} this month`),
+    alleTage: "Show all days again",
+  },
   infos: {
     titel: "Good to know",
     unter: "In short: registration, age, wishes and privacy.",
