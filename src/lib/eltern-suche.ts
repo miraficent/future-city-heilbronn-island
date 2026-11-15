@@ -148,15 +148,31 @@ export function elternSuche(angebote: Angebot[], f: ElternFilter, jetzt: Date): 
 export type BandTag = { tag: string; anzahl: number; wochenende: boolean; heute: boolean };
 
 /** Zählt je Tag die Angebote mit passendem Termin. Der gewählte Tag selbst wird dabei ignoriert. */
-/** Anzahl Angebote je Kalendertag („2026-11-21“ → 3) für alle kommenden Termine; der gewählte Tag wird ignoriert. */
-export function tagesZahlen(angebote: Angebot[], f: ElternFilter, jetzt: Date): Map<string, number> {
+export type TagesEintrag = { angebot: Angebot; termin: Termin };
+
+/**
+ * Alle kommenden Termine je Kalendertag („2026-11-21“ → Einträge, nach Uhrzeit sortiert), passend zu allen
+ * Filtern außer dem gewählten Tag. Ein Angebot steht pro Tag höchstens einmal drin.
+ */
+export function tagesEintraege(angebote: Angebot[], f: ElternFilter, jetzt: Date): Map<string, TagesEintrag[]> {
   const ohneTag: ElternFilter = { ...f, tag: undefined };
-  const zaehler = new Map<string, number>();
+  const tage = new Map<string, TagesEintrag[]>();
   for (const a of filtere(angebote, ohneTag, jetzt)) {
-    const tageDesAngebots = new Set(kommendeTermine(a, jetzt).filter((t) => passtTermin(t, ohneTag, jetzt)).map((t) => tagSchluessel(t.start)));
-    for (const tag of tageDesAngebots) zaehler.set(tag, (zaehler.get(tag) ?? 0) + 1);
+    const gesehen = new Set<string>();
+    for (const t of kommendeTermine(a, jetzt).filter((x) => passtTermin(x, ohneTag, jetzt))) {
+      const tag = tagSchluessel(t.start);
+      if (gesehen.has(tag)) continue;
+      gesehen.add(tag);
+      tage.set(tag, [...(tage.get(tag) ?? []), { angebot: a, termin: t }]);
+    }
   }
-  return zaehler;
+  for (const liste of tage.values()) liste.sort((x, y) => Date.parse(x.termin.start) - Date.parse(y.termin.start));
+  return tage;
+}
+
+/** Anzahl Angebote je Kalendertag; der gewählte Tag wird ignoriert. */
+export function tagesZahlen(angebote: Angebot[], f: ElternFilter, jetzt: Date): Map<string, number> {
+  return new Map([...tagesEintraege(angebote, f, jetzt)].map(([tag, liste]) => [tag, liste.length]));
 }
 
 export function terminband(angebote: Angebot[], f: ElternFilter, jetzt: Date, tage = 28): BandTag[] {

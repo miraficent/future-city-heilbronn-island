@@ -13,6 +13,7 @@ import {
   ortText,
   preisText,
   tageszeitVon,
+  tagesEintraege,
   tagesZahlen,
   terminband,
   themaName,
@@ -298,5 +299,14 @@ describe("Monatskalender", () => {
     ], filter({ tag: "2026-11-21" }), JETZT);
     expect(zahlen.get("2026-11-21")).toBe(2);
     expect(zahlen.get("2026-12-05")).toBe(1);
+  });
+});
+
+describe("tagesEintraege", () => {
+  it("listet Angebote je Tag nach Uhrzeit, jedes nur einmal pro Tag", () => {
+    const frueh = a("frueh", { termine: [{ start: "2026-11-21T09:00:00+01:00" }, { start: "2026-11-21T14:00:00+01:00" }] });
+    const spaet = a("spaet", { termine: [{ start: "2026-11-21T08:00:00+01:00" }] });
+    const tage = tagesEintraege([frueh, spaet], LEERER_ELTERN_FILTER, JETZT);
+    expect(tage.get("2026-11-21")?.map((e) => e.angebot.id)).toEqual(["spaet", "frueh"]);
   });
 });
