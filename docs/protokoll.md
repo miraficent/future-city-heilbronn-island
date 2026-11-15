@@ -114,3 +114,12 @@ Entscheidungen:
 - Stichwörter zählen nur am Wortanfang („Sternenhimmel“ ja, „meistern“ nein). Wortenden in Zusammensetzungen
   („Weihnachtsstern“) zählen nicht – fehlt ein Thema, ein eigenes Stichwort in `src/data/categories.json` ergänzen.
 - „science dome“ ist kein Stichwort für „Sterne & Weltall“ mehr (Ort, kein Thema).
+
+## 15.11.2026 – Eule & Owl: Kindertexte als Mobilizon-Kommentare
+
+Entscheidungen (Details: `docs/superpowers/specs/2026-11-15-eule-owl-kommentare-design.md`):
+- Der Mobilizon-Importer schreibt pro Event einmal einen Kommentar der Konten `eule` (Deutsch) und `owl` (Englisch):
+  Zeile 1 Kindertitel, Zeile 2 ein Satz, was das Kind erwartet. Korrektur von Hand in Mobilizon.
+- Der Importer überschreibt nie einen vorhandenen Kommentar. Neuer Satz → Kommentar löschen.
+- Das Frontend nimmt nur Kommentare lokaler Konten; fehlt einer, gilt der bisherige gebaute Satz.
+- Der ganze Kinderbereich wird zweisprachig (DE | EN), gleiche Spracheinstellung wie im Eltern-Bereich.
