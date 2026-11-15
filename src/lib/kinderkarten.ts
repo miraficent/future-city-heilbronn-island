@@ -77,7 +77,8 @@ export function ausEvent(e: LiveEvent): KinderKarte {
     bild: e.image,
     beispiel: e.isDummy,
     art: e.type,
-    texte: e.kinder,
+    // ?? {}: Events aus einem Sitzungsspeicher von vor diesem Feld haben noch kein `kinder`
+    texte: e.kinder ?? {},
   };
 }
 

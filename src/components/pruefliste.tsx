@@ -4,8 +4,11 @@
  * Prüfliste für das Team: Live-Events aus Mobilizon ohne erkanntes Alter (needsReview – Kinder sehen sie nicht).
  * Abhilfe: in Mobilizon ein Alter in den Text schreiben („ab 8 Jahren“) oder einen Alters-Tag („6-10 Jahre“) setzen.
  * Gleiche Veranstaltungen mit mehreren Terminen stehen nur einmal da.
+ * Darunter: die Kindertexte der Konten eule/owl zum Gegenlesen (EulenListe).
  */
+import { EulenListe } from "@/components/eulen-liste";
 import { LiveHinweis } from "@/components/kinder/live-karten";
+import { useMinute } from "@/lib/kinder-zustand";
 import { useLiveEvents } from "@/lib/live-events";
 import type { LiveEvent } from "@/types";
 
@@ -13,6 +16,7 @@ const datum = new Intl.DateTimeFormat("de-DE", { timeZone: "Europe/Berlin", week
 
 export function Pruefliste() {
   const live = useLiveEvents();
+  const minute = useMinute();
   const offen = live.events.filter((e) => e.needsReview);
   const einmal = [...new Map(offen.map((e) => [`${e.institutionId}|${e.title}`, e])).values()];
   const anzahl = (e: LiveEvent) => offen.filter((x) => x.institutionId === e.institutionId && x.title === e.title).length;
@@ -52,6 +56,7 @@ export function Pruefliste() {
             </tbody>
           </table>
         </div>
+      {live.status === "ok" && minute !== null && <EulenListe events={live.events} jetzt={new Date(minute)} />}
       <LiveHinweis status={live.status} kind={false} />
     </>
   );

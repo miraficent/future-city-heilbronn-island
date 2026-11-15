@@ -67,6 +67,14 @@ describe("Eule- und Owl-Texte auf den Karten", () => {
     expect(ausAngebot(angebot("a"), JETZT).texte).toEqual({});
   });
 
+  it("Events aus einem alten Sitzungsspeicher (ohne kinder) brechen nichts", () => {
+    const alt = { ...event("a") } as Partial<LiveEvent>;
+    delete alt.kinder;
+    const karte = ausEvent(alt as LiveEvent);
+    expect(karte.texte).toEqual({});
+    expect(kartenText(karte, "en").titel).toBe("Reise durchs Weltall");
+  });
+
   const basis: KinderKarte = { ...ausEvent(event("a")), titel: "Roboter-Werkstatt für Profis (8–12 Jahre): Wir bauen", geschichte: "Ein langer deutscher Kurstext.", art: "workshop", kategorien: ["coding"], gratis: false };
   it("nimmt Titel und Satz aus dem Kommentar", () =>
     expect(kartenText({ ...basis, texte: { en: { titel: "Build a robot", satz: "Here you build a robot!" } } }, "en")).toEqual({ titel: "Build a robot", satz: "Here you build a robot!" }));
