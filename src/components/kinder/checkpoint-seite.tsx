@@ -372,12 +372,14 @@ function EulenFrage({ themen, onWahl }: { themen: Category[]; onWahl: (id: Categ
             <Button variante="ghost" groesse="kids" icon="volume" onClick={() => setSchritt(-1)}>Nochmal erklären</Button>
           )}
         </OwlGuide>
-        <div className={`welt__frage-wahl${themen.length > 4 ? " ist-viele" : ""}${dran !== null ? " hat-dran" : ""}`}>
+        {/* Maus verlässt erst die ganze Auswahl → Hervorhebung weg (kein Flackern zwischen zwei Karten) */}
+        <div className={`welt__frage-wahl${themen.length > 4 ? " ist-viele" : ""}${dran !== null ? " hat-dran" : ""}`}
+          onMouseLeave={() => setFokus(null)}>
           {themen.map((t, i) => (
             <button key={t.id} ref={i === 0 ? erster : undefined} type="button"
               className={`welt__frage-karte${dran === i ? " ist-dran" : ""}`}
               style={{ "--farbe": t.color, "--i": i } as CSSProperties}
-              onMouseEnter={() => setFokus(i)} onMouseLeave={() => setFokus(null)}
+              onMouseEnter={() => setFokus(i)}
               onFocus={() => schritt >= themen.length && setFokus(i)} onBlur={() => setFokus(null)}
               aria-describedby={dran === i ? "welt-frage-erklaerung" : undefined}
               aria-pressed={gewaehlt === i}

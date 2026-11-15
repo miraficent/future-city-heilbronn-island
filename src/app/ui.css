@@ -498,17 +498,29 @@
 .welt__eule-knopf:hover svg, .welt__eule-knopf:focus-visible svg { transform: translateY(-4px) rotate(-4deg); }
 @media (max-width: 640px) { .welt__eule-knopf { position: fixed; } .welt__eule-knopf span { font-size: 14px; } }
 @media (prefers-reduced-motion: reduce) { .welt__eule-knopf svg { transition: none; } }
-/* Die Eule erklärt Thema für Thema: die Karte, um die es geht, hebt sich sanft an und schwebt; die anderen treten zurück.
-   Kein Hüpfen: Anheben per Übergang, danach ein ruhiges, langsames Schweben. */
-.welt__frage-karte { transition: transform .5s cubic-bezier(.22, 1, .36, 1), opacity .5s ease, box-shadow .5s ease; }
+/* Die Eule erklärt Thema für Thema: die Karte, um die es geht, hebt sich sanft an; die anderen treten zurück.
+   Nur Übergänge (keine Endlos-Animation), damit Wechsel und Zurückgleiten immer weich sind. */
+.welt__frage-karte { transition: transform .45s cubic-bezier(.22, 1, .36, 1), opacity .35s ease, box-shadow .45s ease; will-change: transform; }
 .welt__frage-wahl.hat-dran .welt__frage-karte { opacity: .6; }
 .welt__frage-wahl.hat-dran .welt__frage-karte.ist-dran { opacity: 1; }
-.welt__frage-karte.ist-dran { transform: translateY(-10px) scale(1.07);
+.welt__frage-karte.ist-dran { transform: translateY(-10px) scale(1.06);
   box-shadow: 0 8px 0 0 var(--farbe), 0 0 0 6px var(--white), 0 0 36px var(--farbe); }
-.welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
-.welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { animation: welt-dran-schweben 2.6s ease-in-out .5s infinite; }
-@keyframes welt-dran-schweben { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+.welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+.welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { transform: translateY(-4px) rotate(4deg) scale(1.06); }
+/* Sprechblase mit fester Größe: Sätze unterschiedlicher Länge lassen weder Blase noch Karten springen */
+.welt__frage .ui-guide { width: min(880px, 100%); align-items: flex-start; }
+.welt__frage .ui-guide__blase { flex: 1; box-sizing: border-box; height: 204px; margin-bottom: 0; }
+.welt__frage .ui-guide__text { min-height: 2.8em; }
+@media (max-width: 640px) {
+  .welt__frage .ui-guide { width: 100%; }
+  .welt__frage .ui-guide__blase { flex: none; width: 100%; height: 300px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .welt__frage-karte, .welt__frage-karte img, .welt__frage-karte .welt__frage-symbol { transition: none; }
-  .welt__frage-karte.ist-dran img, .welt__frage-karte.ist-dran .welt__frage-symbol { animation: none; }
 }
+
+/* Was die Eule sagt, blendet weich ein – überall, wo die Eule spricht */
+.ui-guide__satz { animation: ui-satz .45s ease both; }
+.ui-guide__antworten { animation: ui-satz .45s ease .1s both; }
+@keyframes ui-satz { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ui-guide__satz, .ui-guide__antworten { animation: none; } }
