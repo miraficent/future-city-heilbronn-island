@@ -184,12 +184,6 @@ function Experimenta() {
       <path d="M346 330 L346 320 Q390 312 434 320 L434 330 Q390 340 346 330 Z" fill="#2f3f4b" stroke={rand} strokeWidth={2.5} />
       <path d="M352 321 Q352 288 390 286 Q428 288 428 321 Z" fill="url(#ex-kuppel)" stroke={rand} strokeWidth={3} strokeLinejoin="round" />
       <path d="M362 304 Q390 298 418 304" fill="none" stroke="#ffffff" strokeWidth={2} opacity={0.8} />
-      {/* orange Kugeln und ein Stück Neckar */}
-      <path d="M40 352 Q90 366 150 362 L132 382 Q80 384 36 368 Z" fill="#5BB8C4" opacity={0.85} />
-      <g stroke={rand} strokeWidth={2}>
-        <circle cx={150} cy={338} r={7} fill="#F59E0B" />
-        <circle cx={170} cy={345} r={7} fill="#F59E0B" />
-      </g>
     </g>
   );
 }
