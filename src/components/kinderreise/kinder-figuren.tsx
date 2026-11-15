@@ -1,61 +1,94 @@
 "use client";
 
 /**
- * Die drei Kinderfiguren (Vorlagen des Teams: kid-boy-purple, kid-girl-teal, kid-curly-orange).
- * Gemeinsamer Körper, nur Farben, Haare und Haut unterscheiden sich.
- * Raum 160 × 240, Füße bei (80, 216). Verläufe sind hier erlaubt (DESIGN.md Entscheidung 11).
+ * Die Kinderfiguren (Vorlagen des Teams: kid-boy-purple, kid-girl-teal, kid-curly-orange) und die eigene Figur
+ * aus dem Baukasten („eigen“, src/lib/eigene-figur.ts). Gemeinsamer Körper – Farben, Haare, Augen, Mund
+ * und Tasche unterscheiden sich. Raum 160 × 240, Füße bei (80, 216). Verläufe sind hier erlaubt (DESIGN.md Entscheidung 11).
  */
 import { useId } from "react";
+import { beschreibe, HAUT, toene, type Aussehen, type Frisur, type Mund } from "@/lib/eigene-figur";
+import { useEigeneFigur } from "@/lib/eigene-figur-zustand";
 
-export type FigurArt = "lila" | "tuerkis" | "orange";
-export const FIGUR_ARTEN: FigurArt[] = ["lila", "tuerkis", "orange"];
+export type FigurArt = "lila" | "tuerkis" | "orange" | "eigen";
+/** Die fertigen Figuren zur Auswahl; „eigen“ kommt aus dem Baukasten. */
+export const FIGUR_ARTEN: Exclude<FigurArt, "eigen">[] = ["lila", "tuerkis", "orange"];
 
 const LINIE = "#1f2559";
 
-const STIL: Record<FigurArt, {
+type Stil = {
   label: string;
   pulli: [string, string]; dunkel: string;
   haut: [string, string];
-  tasche: [string, string]; gurt: string; kordel: string; schuh: string;
+  /** null = ohne Tasche */
+  tasche: [string, string] | null; gurt: string; kordel: string; schuh: string;
   hose: [string, string];
-}> = {
+  frisur: Frisur; haar: string; glanz: string; spange: string;
+  augen: string; mund: Mund;
+};
+
+const STIL: Record<Exclude<FigurArt, "eigen">, Stil> = {
   lila: {
     label: "Kind mit lila Pulli und oranger Tasche",
     pulli: ["#8a6cf0", "#6c4ce0"], dunkel: "#5236be", haut: ["#fbd7b5", "#eeb48e"],
     tasche: ["#f5a524", "#dc8a12"], gurt: "#f5a524", kordel: "#f5a524", schuh: "#f5a524", hose: ["#2b3170", "#232862"],
+    frisur: "kurz", haar: "#3a2a4a", glanz: "#5e4a72", spange: "#f27a6a", augen: LINIE, mund: "lachen",
   },
   tuerkis: {
     label: "Kind mit Zöpfen und türkisem Pulli",
     pulli: ["#45cdb8", "#22b3a0"], dunkel: "#178f80", haut: ["#fbd7b5", "#eeb48e"],
     tasche: ["#f27a6a", "#d85e50"], gurt: "#f27a6a", kordel: "#f27a6a", schuh: "#6c4ce0", hose: ["#3c4aa0", "#323e8c"],
+    frisur: "zoepfe", haar: "#8a4b2a", glanz: "#b06a3e", spange: "#f27a6a", augen: LINIE, mund: "lachen",
   },
   orange: {
     label: "Kind mit Locken und orangem Pulli",
     pulli: ["#fbb84e", "#f59a24"], dunkel: "#d97c0c", haut: ["#b97a52", "#9a603d"],
     tasche: ["#3b6fe0", "#2c58bd"], gurt: "#3b6fe0", kordel: "#3b6fe0", schuh: "#22b3a0", hose: ["#2b3170", "#232862"],
+    frisur: "locken", haar: "#2a1d24", glanz: "#4a3540", spange: "#f27a6a", augen: LINIE, mund: "lachen",
   },
 };
 
-export function figurLabel(art: FigurArt) {
-  return STIL[art].label;
+/** Baukasten-Werte → Zeichenstil: Licht und Schatten werden aus der gewählten Farbe gemischt. */
+function stilAus(a: Aussehen): Stil {
+  const dunkel = toene(a.pulli, -0.28);
+  return {
+    label: beschreibe(a),
+    pulli: [toene(a.pulli, 0.2), a.pulli], dunkel,
+    haut: HAUT[a.haut]?.farben ?? HAUT[0]!.farben,
+    tasche: a.tasche ? [toene(a.tasche, 0.12), toene(a.tasche, -0.12)] : null,
+    gurt: a.tasche ?? dunkel, kordel: a.tasche ?? toene(a.pulli, 0.5), schuh: a.schuh,
+    hose: [a.hose, toene(a.hose, -0.12)],
+    frisur: a.frisur, haar: a.haar, glanz: toene(a.haar, 0.28), spange: a.tasche ?? a.schuh,
+    augen: a.augen, mund: a.mund,
+  };
 }
 
-function Haare({ art }: { art: FigurArt }) {
-  if (art === "lila") {
+/** Stil einer Figur; „eigen“ liest die gespeicherte Figur (oder einen Entwurf aus dem Baukasten). */
+function useStil(art: FigurArt, entwurf?: Aussehen): Stil {
+  const [eigen] = useEigeneFigur();
+  return art === "eigen" ? stilAus(entwurf ?? eigen) : STIL[art];
+}
+
+export function figurLabel(art: FigurArt) {
+  return art === "eigen" ? "Eigene Figur" : STIL[art].label;
+}
+
+/** Haare vorne auf dem Kopf */
+function Haare({ s }: { s: Stil }) {
+  if (s.frisur === "kurz") {
     return (
       <>
-        <path d="M44 76 Q38 34 80 32 Q122 34 116 76 Q113 60 105 55 Q101 63 92 59 Q87 50 80 56 Q72 48 66 59 Q58 54 54 61 Q48 64 44 76Z" fill="#3a2a4a" stroke={LINIE} strokeWidth={3.5} />
-        <path d="M74 34 Q76 18 92 20 Q84 25 86 34Z" fill="#3a2a4a" stroke={LINIE} strokeWidth={3} />
-        <path d="M58 44 Q68 37 80 38" fill="none" stroke="#5e4a72" strokeWidth={3} />
+        <path d="M44 76 Q38 34 80 32 Q122 34 116 76 Q113 60 105 55 Q101 63 92 59 Q87 50 80 56 Q72 48 66 59 Q58 54 54 61 Q48 64 44 76Z" fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+        <path d="M74 34 Q76 18 92 20 Q84 25 86 34Z" fill={s.haar} stroke={LINIE} strokeWidth={3} />
+        <path d="M58 44 Q68 37 80 38" fill="none" stroke={s.glanz} strokeWidth={3} />
       </>
     );
   }
-  if (art === "tuerkis") {
+  if (s.frisur === "zoepfe" || s.frisur === "lang") {
     return (
       <>
-        <path d="M44 78 Q38 32 80 32 Q122 32 116 78 Q114 62 108 56 Q98 60 88 54 Q84 60 74 58 Q64 60 56 56 Q48 62 44 78Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
-        <path d="M58 42 Q70 36 82 37" fill="none" stroke="#b06a3e" strokeWidth={3} />
-        <path d="M100 44 L103 38 L106 44 L112 45 L107 49 L109 55 L103 52 L97 55 L99 49 L94 45Z" fill="#f5c542" stroke={LINIE} strokeWidth={2} />
+        <path d="M44 78 Q38 32 80 32 Q122 32 116 78 Q114 62 108 56 Q98 60 88 54 Q84 60 74 58 Q64 60 56 56 Q48 62 44 78Z" fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+        <path d="M58 42 Q70 36 82 37" fill="none" stroke={s.glanz} strokeWidth={3} />
+        {s.frisur === "zoepfe" && <path d="M100 44 L103 38 L106 44 L112 45 L107 49 L109 55 L103 52 L97 55 L99 49 L94 45Z" fill="#f5c542" stroke={LINIE} strokeWidth={2} />}
       </>
     );
   }
@@ -63,16 +96,50 @@ function Haare({ art }: { art: FigurArt }) {
   const fuellung: [number, number, number][] = [[60, 52, 12], [80, 46, 14], [100, 52, 12], [70, 44, 10], [90, 44, 10]];
   return (
     <>
-      {umriss.map(([cx, cy, r]) => <circle key={`u${cx}${cy}`} cx={cx} cy={cy} r={r} fill="#2a1d24" stroke={LINIE} strokeWidth={3} />)}
-      {fuellung.map(([cx, cy, r]) => <circle key={`f${cx}${cy}`} cx={cx} cy={cy} r={r} fill="#2a1d24" />)}
-      <path d="M70 34 Q76 30 82 31" fill="none" stroke="#4a3540" strokeWidth={2.5} />
+      {umriss.map(([cx, cy, r]) => <circle key={`u${cx}${cy}`} cx={cx} cy={cy} r={r} fill={s.haar} stroke={LINIE} strokeWidth={3} />)}
+      {fuellung.map(([cx, cy, r]) => <circle key={`f${cx}${cy}`} cx={cx} cy={cy} r={r} fill={s.haar} />)}
+      <path d="M70 34 Q76 30 82 31" fill="none" stroke={s.glanz} strokeWidth={2.5} />
     </>
   );
 }
 
-/** Eine Kinderfigur. Ursprung wie in der Vorlage (0,0 oben links). */
-export function KinderFigur({ art }: { art: FigurArt }) {
-  const s = STIL[art];
+/** Haare hinter dem Kopf (Zöpfe, lange Haare) – vorne und hinten fast gleich */
+function HaareHinterKopf({ s, versatz }: { s: Stil; versatz: number }) {
+  if (s.frisur === "zoepfe") {
+    return (
+      <>
+        <path d={`M${42 + versatz} 66 Q${24 + versatz} 72 ${26 + versatz} 98 Q${28 + versatz} 112 ${36 + versatz} 116 Q${34 + versatz} 100 ${46 + versatz} 86Z`} fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+        <path d={`M${118 - versatz} 66 Q${136 - versatz} 72 ${134 - versatz} 98 Q${132 - versatz} 112 ${124 - versatz} 116 Q${126 - versatz} 100 ${114 - versatz} 86Z`} fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+      </>
+    );
+  }
+  if (s.frisur === "lang") {
+    return <path d="M42 62 Q30 100 38 132 Q58 140 80 138 Q102 140 122 132 Q130 100 118 62Z" fill={s.haar} stroke={LINIE} strokeWidth={3.5} />;
+  }
+  return null;
+}
+
+function Mundform({ mund }: { mund: Mund }) {
+  if (mund === "laecheln") return <path d="M70 95 Q80 104 90 95" fill="none" stroke={LINIE} strokeWidth={3} />;
+  if (mund === "staunen") {
+    return (
+      <>
+        <ellipse cx={80} cy={98} rx={5.5} ry={7} fill={LINIE} />
+        <ellipse cx={80} cy={101} rx={3.2} ry={2.6} fill="#f2777a" />
+      </>
+    );
+  }
+  return (
+    <>
+      <path d="M70 94 Q80 106 90 94 Q80 97 70 94Z" fill={LINIE} stroke={LINIE} strokeWidth={2.4} />
+      <path d="M75 99.5 Q80 97 85 99.5 Q80 103 75 99.5Z" fill="#f2777a" />
+    </>
+  );
+}
+
+/** Eine Kinderfigur. Ursprung wie in der Vorlage (0,0 oben links). `entwurf` zeigt eine noch nicht gespeicherte eigene Figur. */
+export function KinderFigur({ art, entwurf }: { art: FigurArt; entwurf?: Aussehen }) {
+  const s = useStil(art, entwurf);
   const id = useId().replace(/:/g, "");
   const pulli = `${id}-pulli`, haut = `${id}-haut`, tasche = `${id}-tasche`;
   return (
@@ -80,22 +147,25 @@ export function KinderFigur({ art }: { art: FigurArt }) {
       <defs>
         <linearGradient id={pulli} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={s.pulli[0]} /><stop offset="1" stopColor={s.pulli[1]} /></linearGradient>
         <radialGradient id={haut} cx="0.4" cy="0.35" r="0.75"><stop offset="0" stopColor={s.haut[0]} /><stop offset="1" stopColor={s.haut[1]} /></radialGradient>
-        <linearGradient id={tasche} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={s.tasche[0]} /><stop offset="1" stopColor={s.tasche[1]} /></linearGradient>
+        {s.tasche && <linearGradient id={tasche} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={s.tasche[0]} /><stop offset="1" stopColor={s.tasche[1]} /></linearGradient>}
       </defs>
       <ellipse cx={80} cy={224} rx={40} ry={8} fill={LINIE} opacity={0.18} />
 
       {/* Rucksack */}
-      <rect x={38} y={112} width={84} height={68} rx={22} fill={`url(#${tasche})`} stroke={LINIE} strokeWidth={3.5} />
-      <path d="M60 112 Q80 98 100 112" fill="none" stroke={LINIE} strokeWidth={8} />
-      <path d="M60 112 Q80 98 100 112" fill="none" stroke={s.tasche[1]} strokeWidth={4} />
-
-      {/* Zöpfe hinter dem Kopf */}
-      {art === "tuerkis" && (
+      {s.tasche && (
         <>
-          <path d="M42 66 Q24 72 26 98 Q28 112 36 116 Q34 100 46 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
-          <path d="M118 66 Q136 72 134 98 Q132 112 124 116 Q126 100 114 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
-          <circle cx={40} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
-          <circle cx={120} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
+          <rect x={38} y={112} width={84} height={68} rx={22} fill={`url(#${tasche})`} stroke={LINIE} strokeWidth={3.5} />
+          <path d="M60 112 Q80 98 100 112" fill="none" stroke={LINIE} strokeWidth={8} />
+          <path d="M60 112 Q80 98 100 112" fill="none" stroke={s.tasche[1]} strokeWidth={4} />
+        </>
+      )}
+
+      {/* Zöpfe bzw. lange Haare hinter dem Kopf */}
+      <HaareHinterKopf s={s} versatz={0} />
+      {s.frisur === "zoepfe" && (
+        <>
+          <circle cx={40} cy={74} r={5} fill={s.spange} stroke={LINIE} strokeWidth={2.5} />
+          <circle cx={120} cy={74} r={5} fill={s.spange} stroke={LINIE} strokeWidth={2.5} />
         </>
       )}
 
@@ -127,8 +197,12 @@ export function KinderFigur({ art }: { art: FigurArt }) {
       <path d="M73 121 L72 136 M87 121 L88 136" stroke="#ffffff" strokeWidth={2.2} />
       <circle cx={72} cy={138} r={2.2} fill={s.kordel} stroke={LINIE} strokeWidth={1.5} />
       <circle cx={88} cy={138} r={2.2} fill={s.kordel} stroke={LINIE} strokeWidth={1.5} />
-      <path d="M60 114 Q56 134 60 156 M100 114 Q104 134 100 156" fill="none" stroke={LINIE} strokeWidth={8} />
-      <path d="M60 114 Q56 134 60 156 M100 114 Q104 134 100 156" fill="none" stroke={s.gurt} strokeWidth={4.5} />
+      {s.tasche && (
+        <>
+          <path d="M60 114 Q56 134 60 156 M100 114 Q104 134 100 156" fill="none" stroke={LINIE} strokeWidth={8} />
+          <path d="M60 114 Q56 134 60 156 M100 114 Q104 134 100 156" fill="none" stroke={s.gurt} strokeWidth={4.5} />
+        </>
+      )}
 
       {/* Eulen-Anstecker */}
       <circle cx={94} cy={134} r={6.5} fill="#6c4ce0" stroke={LINIE} strokeWidth={2} />
@@ -153,12 +227,12 @@ export function KinderFigur({ art }: { art: FigurArt }) {
       <circle cx={115} cy={78} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
       <rect x={72} y={98} width={16} height={12} rx={5} fill={s.haut[1]} />
       <circle cx={80} cy={70} r={36} fill={`url(#${haut})`} stroke={LINIE} strokeWidth={3.5} />
-      <Haare art={art} />
+      <Haare s={s} />
 
       {/* Gesicht */}
       <path d="M60 70 Q66 66 72 69 M88 69 Q94 66 100 70" fill="none" stroke={LINIE} strokeWidth={2.6} />
-      <ellipse cx={66} cy={81} rx={5.2} ry={6.6} fill={LINIE} />
-      <ellipse cx={94} cy={81} rx={5.2} ry={6.6} fill={LINIE} />
+      <ellipse cx={66} cy={81} rx={5.2} ry={6.6} fill={s.augen} stroke={LINIE} strokeWidth={s.augen === LINIE ? 0 : 1.6} />
+      <ellipse cx={94} cy={81} rx={5.2} ry={6.6} fill={s.augen} stroke={LINIE} strokeWidth={s.augen === LINIE ? 0 : 1.6} />
       <circle cx={68} cy={78.5} r={2.2} fill="#ffffff" />
       <circle cx={96} cy={78.5} r={2.2} fill="#ffffff" />
       <circle cx={64.6} cy={84} r={1} fill="#ffffff" />
@@ -166,69 +240,70 @@ export function KinderFigur({ art }: { art: FigurArt }) {
       <ellipse cx={56} cy={92} rx={6} ry={3.6} fill="#f2777a" opacity={0.45} />
       <ellipse cx={104} cy={92} rx={6} ry={3.6} fill="#f2777a" opacity={0.45} />
       <path d="M78 88 Q80 90 82 88" fill="none" stroke={LINIE} strokeWidth={2} opacity={0.6} />
-      <path d="M70 94 Q80 106 90 94 Q80 97 70 94Z" fill={LINIE} stroke={LINIE} strokeWidth={2.4} />
-      <path d="M75 99.5 Q80 97 85 99.5 Q80 103 75 99.5Z" fill="#f2777a" />
+      <Mundform mund={s.mund} />
     </g>
   );
 }
 
-/** Figur als eigenes kleines Bild (für die Auswahl) */
-export function KinderFigurBild({ art, className = "" }: { art: FigurArt; className?: string }) {
+/** Figur als eigenes kleines Bild (für die Auswahl). `ausschnitt` = viewBox, z. B. nur der Kopf. */
+export function KinderFigurBild({ art, entwurf, className = "", ausschnitt = "20 10 130 225" }: { art: FigurArt; entwurf?: Aussehen; className?: string; ausschnitt?: string }) {
   return (
-    <svg viewBox="20 10 130 225" className={className} aria-hidden="true" focusable="false">
-      <KinderFigur art={art} />
+    <svg viewBox={ausschnitt} className={className} aria-hidden="true" focusable="false">
+      <KinderFigur art={art} entwurf={entwurf} />
     </svg>
   );
 }
 
 /** Haare von hinten: bedecken fast den ganzen Kopf */
-function HaareHinten({ art }: { art: FigurArt }) {
-  if (art === "orange") {
+function HaareHinten({ s }: { s: Stil }) {
+  if (s.frisur === "locken") {
     const locken: [number, number, number][] = [
       [50, 60, 11], [56, 44, 12], [68, 34, 12], [80, 31, 12], [92, 34, 12], [104, 44, 12], [110, 60, 11],
       [50, 78, 11], [62, 92, 12], [80, 98, 12], [98, 92, 12], [110, 78, 11],
     ];
     return (
       <>
-        {locken.map(([cx, cy, r]) => <circle key={`l${cx}${cy}`} cx={cx} cy={cy} r={r} fill="#2a1d24" stroke={LINIE} strokeWidth={3} />)}
-        <circle cx={80} cy={64} r={30} fill="#2a1d24" />
-        <circle cx={66} cy={74} r={14} fill="#2a1d24" />
-        <circle cx={94} cy={74} r={14} fill="#2a1d24" />
+        {locken.map(([cx, cy, r]) => <circle key={`l${cx}${cy}`} cx={cx} cy={cy} r={r} fill={s.haar} stroke={LINIE} strokeWidth={3} />)}
+        <circle cx={80} cy={64} r={30} fill={s.haar} />
+        <circle cx={66} cy={74} r={14} fill={s.haar} />
+        <circle cx={94} cy={74} r={14} fill={s.haar} />
       </>
     );
   }
-  const farbe = art === "lila" ? "#3a2a4a" : "#8a4b2a";
-  const glanz = art === "lila" ? "#5e4a72" : "#b06a3e";
+  if (s.frisur === "lang") {
+    return (
+      <>
+        <path d="M44 76 Q40 30 80 32 Q120 30 116 76 Q122 108 112 124 Q80 130 48 124 Q38 108 44 76Z" fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+        <path d="M62 44 Q72 38 84 40" fill="none" stroke={s.glanz} strokeWidth={3} />
+        <path d="M80 34 V124" fill="none" stroke={s.glanz} strokeWidth={2} opacity={0.6} />
+      </>
+    );
+  }
   return (
     <>
-      <path d="M44 76 Q40 30 80 32 Q120 30 116 76 Q118 96 104 102 Q80 108 56 102 Q42 96 44 76Z" fill={farbe} stroke={LINIE} strokeWidth={3.5} />
-      <path d="M62 44 Q72 38 84 40" fill="none" stroke={glanz} strokeWidth={3} />
-      <path d="M80 34 V100" fill="none" stroke={glanz} strokeWidth={2} opacity={0.6} />
-      {art === "lila" && <path d="M74 34 Q76 18 92 20 Q84 25 86 34Z" fill={farbe} stroke={LINIE} strokeWidth={3} />}
+      <path d="M44 76 Q40 30 80 32 Q120 30 116 76 Q118 96 104 102 Q80 108 56 102 Q42 96 44 76Z" fill={s.haar} stroke={LINIE} strokeWidth={3.5} />
+      <path d="M62 44 Q72 38 84 40" fill="none" stroke={s.glanz} strokeWidth={3} />
+      <path d="M80 34 V100" fill="none" stroke={s.glanz} strokeWidth={2} opacity={0.6} />
+      {s.frisur === "kurz" && <path d="M74 34 Q76 18 92 20 Q84 25 86 34Z" fill={s.haar} stroke={LINIE} strokeWidth={3} />}
     </>
   );
 }
 
 /** Dieselbe Figur von hinten (für die Themenwelt: das Kind schaut auf die Kacheln) */
 export function KinderFigurRuecken({ art }: { art: FigurArt }) {
-  const s = STIL[art];
+  const s = useStil(art);
   const id = useId().replace(/:/g, "");
   const pulli = `${id}-pulli`, tasche = `${id}-tasche`;
   return (
     <g strokeLinejoin="round" strokeLinecap="round">
       <defs>
         <linearGradient id={pulli} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={s.pulli[0]} /><stop offset="1" stopColor={s.pulli[1]} /></linearGradient>
-        <linearGradient id={tasche} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={s.tasche[0]} /><stop offset="1" stopColor={s.tasche[1]} /></linearGradient>
+        {s.tasche && <linearGradient id={tasche} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={s.tasche[0]} /><stop offset="1" stopColor={s.tasche[1]} /></linearGradient>}
       </defs>
       <ellipse cx={80} cy={224} rx={42} ry={8} fill={LINIE} opacity={0.25} />
 
       {/* Zöpfe */}
-      {art === "tuerkis" && (
-        <>
-          <path d="M44 66 Q26 72 28 98 Q30 112 38 116 Q36 100 48 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
-          <path d="M116 66 Q134 72 132 98 Q130 112 122 116 Q124 100 112 86Z" fill="#8a4b2a" stroke={LINIE} strokeWidth={3.5} />
-        </>
-      )}
+      {s.frisur === "zoepfe" && <HaareHinterKopf s={s} versatz={2} />}
 
       {/* Beine und Schuhe (Fersen) */}
       <path d="M68 172 L66 204 M92 172 L94 204" stroke={LINIE} strokeWidth={20} />
@@ -251,23 +326,27 @@ export function KinderFigurRuecken({ art }: { art: FigurArt }) {
       <path d="M58 112 Q80 142 102 112 Q80 102 58 112Z" fill={s.dunkel} stroke={LINIE} strokeWidth={3} />
 
       {/* Rucksack von hinten */}
-      <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={LINIE} strokeWidth={8} />
-      <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={s.gurt} strokeWidth={4.5} />
-      <rect x={50} y={124} width={60} height={56} rx={16} fill={`url(#${tasche})`} stroke={LINIE} strokeWidth={3.5} />
-      <path d="M50 142 Q80 134 110 142 L110 136 Q110 124 94 124 H66 Q50 124 50 136Z" fill={s.tasche[1]} stroke={LINIE} strokeWidth={3} />
-      <rect x={62} y={152} width={36} height={20} rx={7} fill={s.tasche[0]} stroke={LINIE} strokeWidth={2.5} />
-      <circle cx={80} cy={142} r={4} fill="#6c4ce0" stroke={LINIE} strokeWidth={2} />
+      {s.tasche && (
+        <>
+          <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={LINIE} strokeWidth={8} />
+          <path d="M62 112 Q60 122 62 128 M98 112 Q100 122 98 128" fill="none" stroke={s.gurt} strokeWidth={4.5} />
+          <rect x={50} y={124} width={60} height={56} rx={16} fill={`url(#${tasche})`} stroke={LINIE} strokeWidth={3.5} />
+          <path d="M50 142 Q80 134 110 142 L110 136 Q110 124 94 124 H66 Q50 124 50 136Z" fill={s.tasche[1]} stroke={LINIE} strokeWidth={3} />
+          <rect x={62} y={152} width={36} height={20} rx={7} fill={s.tasche[0]} stroke={LINIE} strokeWidth={2.5} />
+          <circle cx={80} cy={142} r={4} fill="#6c4ce0" stroke={LINIE} strokeWidth={2} />
+        </>
+      )}
 
       {/* Kopf von hinten */}
       <circle cx={45} cy={76} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
       <circle cx={115} cy={76} r={8} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
       <rect x={72} y={98} width={16} height={12} rx={5} fill={s.haut[1]} />
       <circle cx={80} cy={70} r={36} fill={s.haut[1]} stroke={LINIE} strokeWidth={3.5} />
-      <HaareHinten art={art} />
-      {art === "tuerkis" && (
+      <HaareHinten s={s} />
+      {s.frisur === "zoepfe" && (
         <>
-          <circle cx={42} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
-          <circle cx={118} cy={74} r={5} fill="#f27a6a" stroke={LINIE} strokeWidth={2.5} />
+          <circle cx={42} cy={74} r={5} fill={s.spange} stroke={LINIE} strokeWidth={2.5} />
+          <circle cx={118} cy={74} r={5} fill={s.spange} stroke={LINIE} strokeWidth={2.5} />
         </>
       )}
     </g>

@@ -82,10 +82,10 @@ export default function Einblicke() {
           <h2 id="wie-titel"><Symbol name="info" /> So entstehen die Zahlen</h2>
           <ul>
             <li><strong>Angebot:</strong> jede Nacht automatisch von den Websites der Einrichtungen gelesen, nach Thema und Alter geordnet (Regeln in einer Tabelle, keine Blackbox).</li>
-            <li><strong>Wünsche:</strong> nur nach einem bewussten Klick bei Teens oder Eltern. Gezählt werden Thema, Altersgruppe und Tag. Keine Namen, keine IP-Adressen, keine Uhrzeit. Die Kinder-Spielwelt sendet nichts.</li>
+            <li><strong>Wünsche:</strong> nur nach einem bewussten Klick bei Teens oder Eltern. Gezählt werden Thema, Altersgruppe und Tag. Keine Namen, keine IP-Adressen, keine Uhrzeit. Der Kinderbereich sendet nichts.</li>
             <li><strong>Suchbegriffe:</strong> nur wenn jemand „fehlt mir“ antippt. E-Mail-Adressen, Telefonnummern, Daten und Adressen werden vorher automatisch entfernt.</li>
           </ul>
-          <p className="mt-3"><Link className="underline underline-offset-4" href="/datenschutz/">Datenschutz im Detail</Link> · <Link className="underline underline-offset-4" href="/teen/">Wunsch abgeben (Teens)</Link> · <Link className="underline underline-offset-4" href="/eltern/">Wunsch abgeben (Eltern)</Link></p>
+          <p className="mt-3"><Link className="underline underline-offset-4" href="/datenschutz/">Datenschutz im Detail</Link> · <Link className="underline underline-offset-4" href="/teen/">Wunsch abgeben (Teens)</Link> · <Link className="underline underline-offset-4" href="/eltern/#wunsch-titel">Wunsch abgeben (Eltern)</Link></p>
         </section>
       </main>
     </Seitenrahmen>

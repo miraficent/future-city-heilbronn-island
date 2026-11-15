@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, type ReactNode } from "react";
 import type { Angebot, Art, Zielgruppe } from "@/lib/angebot";
 import type { Meta } from "@/lib/daten";
 import { fuerModus, INTERESSEN, interessenThemen, type Modus } from "@/lib/entdecken";
@@ -10,6 +10,7 @@ import { ART_TEXT, formatMonat, naechsterTermin } from "@/lib/format";
 import { themenStile } from "@/lib/themen-stil";
 import { slugAusId } from "@/lib/routen";
 import { Angebotskarte } from "./angebotskarte";
+import { useJetzt } from "./browser-werte";
 import { kurzname } from "./einrichtung-badge";
 import { useSammlung } from "./sammlung";
 import { Planet } from "./planet";
@@ -25,12 +26,7 @@ const INHALTE = {
 /** `zusatz` erscheint direkt unter dem Kopfbereich – z. B. die Heilbronn-Karte im Teens-Bereich. */
 export function Entdecker({ modus, angebote, meta, jetzt: initialJetzt, eingebettet=false, zusatz }: { modus: Modus; angebote: Angebot[]; meta: Meta; jetzt: string; eingebettet?:boolean; zusatz?: ReactNode }) {
   const Rahmen=eingebettet?"section":"main";
-  const [jetzt, setJetzt] = useState(initialJetzt);
-  useEffect(() => {
-    setJetzt(new Date().toISOString());
-    const timer = setInterval(() => setJetzt(new Date().toISOString()), 60_000);
-    return () => clearInterval(timer);
-  }, []);
+  const jetzt = useJetzt(initialJetzt);
   const [filter, setFilter] = useState<Filter>({ ...LEERER_FILTER });
   const [ansicht, setAnsicht] = useState<"karten" | "zeit" | "pfad">("karten");
   const [merkansicht, setMerkansicht] = useState(false);

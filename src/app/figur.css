@@ -1,0 +1,52 @@
+/*
+ * Figuren-Baukasten (Kinder) – nur Tokens aus globals.css. Kinder-Regeln: Schrift ≥ 20px, Knöpfe ≥ 56px.
+ * Klassen beginnen mit „fb-“. Dazu: Knopf „Eigene Figur“ in der Figurenwahl der Eule.
+ */
+.fb { display: grid; gap: 16px; }
+/* Handy: Vorschau bleibt beim Scrollen oben sichtbar */
+.fb__vorschau { position: sticky; top: -32px; z-index: 3; display: flex; justify-content: center; margin: -32px -24px 0; padding: 12px 8px 8px;
+  border-bottom: 2px solid var(--card-border); border-radius: var(--radius-card) var(--radius-card) 0 0; background: var(--paper); }
+.fb__figur { width: 96px; height: auto; }
+.fb__kopf { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-right: 48px; }
+.fb__kopf h2 { margin: 0; font: 700 28px/1.15 "Baloo 2", sans-serif; }
+.fb__auswahl { display: grid; gap: 18px; }
+
+.fb-reihe { min-width: 0; margin: 0; padding: 0; border: 0; }
+.fb-reihe legend { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 0; color: var(--ink); font: 700 22px/1.2 "Baloo 2", sans-serif; }
+.fb-reihe legend .symbol { width: 26px; height: 26px; color: var(--primary); }
+.fb-reihe__wahl { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.fb-farbe { display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 3px solid var(--white); border-radius: 50%;
+  background: var(--farbe); box-shadow: 0 0 0 2px var(--card-border), 0 4px 0 var(--card-border); color: var(--white); cursor: pointer;
+  transition: transform 150ms ease-out; }
+.fb-farbe .symbol { width: 26px; height: 26px; filter: drop-shadow(0 1px 0 rgb(31 41 55 / 0.6)); }
+.fb-farbe[aria-pressed="true"] { box-shadow: 0 0 0 4px var(--primary), 0 4px 0 var(--primary-dark); transform: scale(1.08); }
+.fb-farbe--keine { background: var(--white); color: var(--ink-soft); }
+.fb-farbe--keine .symbol { filter: none; }
+
+.fb-bild { width: 84px; height: 84px; padding: 4px; border: 3px solid var(--card-border); border-radius: 20px; background: var(--paper);
+  box-shadow: 0 4px 0 var(--card-border); cursor: pointer; transition: transform 150ms ease-out; }
+.fb-bild svg { display: block; width: 100%; height: 100%; }
+.fb-bild[aria-pressed="true"] { border-color: var(--primary); box-shadow: 0 4px 0 var(--primary-dark); transform: translateY(-2px); }
+
+.fb__fuss { position: sticky; bottom: -32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  margin: 8px -24px -32px; padding: 16px 24px max(16px, env(safe-area-inset-bottom)); border-top: 2px solid var(--card-border); background: var(--white); }
+
+/* Breiter Bildschirm: Figur links groß, Auswahl rechts */
+@media (min-width: 700px) {
+  .fb { grid-template-columns: 220px minmax(0, 1fr); align-items: start; }
+  .fb__vorschau { top: 0; margin: 0; padding: 16px; border-bottom: 0; border-radius: var(--radius-card); }
+  .fb__figur { width: 190px; }
+  .fb__fuss { grid-column: 1 / -1; }
+}
+
+/* Knopf „Eigene Figur“ in der Figurenwahl */
+.kinder-figurwahl--eigen { position: relative; }
+.kinder-figurwahl__plus { position: absolute; top: -10px; right: -10px; display: grid; place-items: center; width: 36px; height: 36px;
+  border: 3px solid var(--white); border-radius: 50%; background: var(--accent); color: var(--ink); }
+.kinder-figurwahl__plus .symbol { width: 20px; height: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-farbe, .fb-bild { transition: none; }
+  .fb-farbe[aria-pressed="true"], .fb-bild[aria-pressed="true"] { transform: none; }
+}
