@@ -10,6 +10,22 @@ import { useEffect, useRef, useSyncExternalStore, type CSSProperties, type React
 import { Symbol } from "@/components/symbol";
 import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
 import { abonniereAutoVorlesen, autoVorlesen, setzeAutoVorlesen, vorlesen } from "@/lib/sprechen";
+import type { Sprache } from "@/types";
+import { SprachUmschalter, useSprache } from "./sprache";
+
+export { SprachUmschalter, setzeSprache, useSprache } from "./sprache";
+
+/** Feste Texte der Bausteine in beiden Sprachen */
+const UI_TEXTE: Record<Sprache, { bereich: string; kinder: string; eltern: string; start: string; euleZu: string; schliessen: string; spricht: string; vorlesen: string }> = {
+  de: {
+    bereich: "Bereich wählen", kinder: "Kinder", eltern: "Eltern", start: "Heilbronn Island – Startseite", euleZu: "Eule schließen", schliessen: "Schließen",
+    spricht: "Die Eule spricht – nochmal vorlesen", vorlesen: "Vorlesen – danach spricht die Eule von selbst",
+  },
+  en: {
+    bereich: "Choose area", kinder: "Kids", eltern: "Parents", start: "Heilbronn Island – home page", euleZu: "Close owl", schliessen: "Close",
+    spricht: "The owl is talking – read again", vorlesen: "Read aloud – then the owl talks by itself",
+  },
+};
 
 type Groesse = "kids" | "parents";
 type Variante = "primary" | "accent" | "wish" | "ghost";
@@ -81,18 +97,19 @@ export function BackButton({ href, children = "Zurück" }: { href: string; child
 }
 
 export function ModeSwitch({ aktiv }: { aktiv: "kinder" | "eltern" }) {
+  const t = UI_TEXTE[useSprache()];
   return (
-    <nav className="ui-mode" aria-label="Bereich wählen">
+    <nav className="ui-mode" aria-label={t.bereich}>
       <Link href="/kinder/" className="ui-mode__item" aria-current={aktiv === "kinder" ? "page" : undefined}>
         <span className="ui-mode__kind" aria-hidden="true"><KinderFigurBild art="orange" /></span>
-        Kinder
+        <span className="ui-mode__text">{t.kinder}</span>
       </Link>
       <Link href="/eltern/" className="ui-mode__item" aria-current={aktiv === "eltern" ? "page" : undefined}>
         <span className="ui-mode__kind" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik, statischer Export */}
           <img src="/grafik/eltern-neutral.svg" alt="" width={240} height={320} />
         </span>
-        Eltern
+        <span className="ui-mode__text">{t.eltern}</span>
       </Link>
     </nav>
   );
@@ -100,15 +117,18 @@ export function ModeSwitch({ aktiv }: { aktiv: "kinder" | "eltern" }) {
 
 /** Top-Leiste (night): Eulen-Logo + „Heilbronn Island“ + Bereichsumschalter */
 export function AppShell({ children, modus, rechts, voll = false }: { children: ReactNode; modus: "kinder" | "eltern"; rechts?: ReactNode; voll?: boolean }) {
+  const t = UI_TEXTE[useSprache()];
+  // Kinderseiten bekommen den Sprachumschalter von selbst; Eltern-Seiten geben ihn über `rechts` mit
+  const rechtsInhalt = rechts ?? (modus === "kinder" ? <SprachUmschalter /> : null);
   return (
     <div className={`ui-shell ui-shell--${modus}${voll ? " ui-shell--voll" : ""}`}>
       <header className="ui-topbar">
-        <Link href="/" className="ui-logo" aria-label="Heilbronn Island – Startseite">
+        <Link href="/" className="ui-logo" aria-label={t.start}>
           <Owl className="ui-logo__owl" />
           <span>Heilbronn Island</span>
         </Link>
         <div className="ui-topbar__rechts">
-          {rechts}
+          {rechtsInhalt}
           <ModeSwitch aktiv={modus} />
         </div>
       </header>
@@ -144,11 +164,14 @@ export function Owl({ className = "" }: { className?: string }) {
 export function OwlGuide({ text, children, className = "", onSchliessen }: { text: string; children?: ReactNode; className?: string; onSchliessen?: () => void }) {
   // Nach dem ersten Antippen des Lautsprechers spricht die Eule jeden neuen Satz von selbst
   const auto = useSyncExternalStore(abonniereAutoVorlesen, autoVorlesen, () => false);
+  const sprache = useSprache();
+  const t = UI_TEXTE[sprache];
+  // Sprache in den Abhängigkeiten: nach dem Umschalten liest die Eule den neuen Text einmal mit der neuen Stimme
   useEffect(() => {
-    if (auto) vorlesen(text);
-  }, [auto, text]);
+    if (auto) vorlesen(text, sprache);
+  }, [auto, text, sprache]);
   function lautsprecher() {
-    vorlesen(text);
+    vorlesen(text, sprache);
     if (!auto) setzeAutoVorlesen(true);
   }
   return (
@@ -156,14 +179,14 @@ export function OwlGuide({ text, children, className = "", onSchliessen }: { tex
       <Owl className="ui-guide__owl" />
       <div className="ui-guide__blase">
         {onSchliessen && (
-          <button type="button" className="ui-guide__zu" aria-label="Eule schließen" onClick={onSchliessen}>
+          <button type="button" className="ui-guide__zu" aria-label={t.euleZu} onClick={onSchliessen}>
             <Symbol name="close" />
           </button>
         )}
         <p className="ui-guide__text">
           {text}
           <button type="button" className={`ui-vorlesen${auto ? " ist-an" : ""}`} aria-pressed={auto}
-            aria-label={auto ? "Die Eule spricht – nochmal vorlesen" : "Vorlesen – danach spricht die Eule von selbst"}
+            aria-label={auto ? t.spricht : t.vorlesen}
             onClick={lautsprecher}>
             <Symbol name="volume" />
           </button>
@@ -178,6 +201,7 @@ export function OwlGuide({ text, children, className = "", onSchliessen }: { tex
 
 export function BottomSheet({ offen, onSchliessen, titel, children }: { offen: boolean; onSchliessen: () => void; titel: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
+  const sprache = useSprache();
   useEffect(() => {
     if (!offen) return;
     const taste = (e: KeyboardEvent) => e.key === "Escape" && onSchliessen();
@@ -189,7 +213,7 @@ export function BottomSheet({ offen, onSchliessen, titel, children }: { offen: b
   return (
     <div className="ui-sheet" role="dialog" aria-modal="true" aria-label={titel} onClick={(e) => e.target === e.currentTarget && onSchliessen()}>
       <div className="ui-sheet__panel" ref={ref}>
-        <button type="button" className="ui-sheet__zu" aria-label="Schließen" onClick={onSchliessen}><Symbol name="close" /></button>
+        <button type="button" className="ui-sheet__zu" aria-label={UI_TEXTE[sprache].schliessen} onClick={onSchliessen}><Symbol name="close" /></button>
         {children}
       </div>
     </div>

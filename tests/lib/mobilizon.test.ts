@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import kategorien from "@/data/categories.json";
-import { bildSchluessel, eigenesBild, erkenneAlter, erkenneStandardbilder, erkenneKategorien, htmlZuText, zuLiveEvent, type MobilizonEvent } from "@/lib/mobilizon";
+import { bildSchluessel, eigenesBild, erkenneAlter, erkenneStandardbilder, erkenneKategorien, eulenTexte, htmlZuText, zuLiveEvent, type MobilizonEvent, type MobilizonKommentar } from "@/lib/mobilizon";
 import { isForKids } from "@/lib/events";
 import type { Category } from "@/types";
 
@@ -156,5 +156,39 @@ describe("Einordnung", () => {
 
   it("HTML wird zu Text, Bilder fallen weg, Zeichen werden entschlüsselt", () => {
     expect(htmlZuText('<p><img src="x"/>A &amp; B</p><p>C&nbsp;D &#8211; E</p>')).toBe("A & B C D – E");
+  });
+});
+
+const k = (name: string, text: string, extra: Partial<MobilizonKommentar> = {}): MobilizonKommentar =>
+  ({ text, insertedAt: "2026-11-15T10:00:00Z", updatedAt: null, deletedAt: null, actor: { preferredUsername: name, domain: null }, ...extra });
+
+describe("eulenTexte – Kindertexte aus den Kommentaren von eule und owl", () => {
+  it("liest Titel und Satz beider Konten", () => {
+    expect(eulenTexte([k("eule", "<p>Roboter bauen</p><p>Hier baust du einen Roboter!</p>"), k("owl", "Build a robot<br>Here you build your own robot!")]))
+      .toEqual({ de: { titel: "Roboter bauen", satz: "Hier baust du einen Roboter!" }, en: { titel: "Build a robot", satz: "Here you build your own robot!" } });
+  });
+  it("eine Zeile ist der Satz", () => expect(eulenTexte([k("eule", "Hier baust du einen Roboter!")])).toEqual({ de: { satz: "Hier baust du einen Roboter!" } }));
+  it("ignoriert fremde Server, auch wenn neuer", () => {
+    expect(eulenTexte([k("eule", "echt"), k("eule", "fremd", { insertedAt: "2026-11-16T10:00:00Z", actor: { preferredUsername: "eule", domain: "andere.example" } })]).de?.satz).toBe("echt");
+  });
+  it("ignoriert andere Konten", () => expect(eulenTexte([k("besucher", "Hallo")])).toEqual({}));
+  it("neuester gewinnt", () => {
+    expect(eulenTexte([k("eule", "alt"), k("eule", "neu", { updatedAt: "2026-11-15T12:00:00Z" })]).de?.satz).toBe("neu");
+  });
+  it("gelöschte zählen nicht, auch wenn neuer", () => {
+    expect(eulenTexte([k("eule", "alt"), k("eule", "geloescht", { insertedAt: "2026-11-16T10:00:00Z", deletedAt: "2026-11-16T11:00:00Z" })]).de?.satz).toBe("alt");
+  });
+  it("leeres Markup zählt als fehlend", () => expect(eulenTexte([k("eule", "<p><br></p>")])).toEqual({}));
+  it("kappt lange Texte", () => {
+    const t = eulenTexte([k("eule", `Eins zwei drei vier fünf sechs sieben
+${"wort ".repeat(60)}`)]).de!;
+    expect(t.titel).toBe("Eins zwei drei vier fünf …");
+    expect(t.satz.length).toBeLessThanOrEqual(162);
+    expect(t.satz.endsWith(" …")).toBe(true);
+  });
+  it("ohne Kommentare leer", () => expect(eulenTexte(null)).toEqual({}));
+  it("zuLiveEvent übernimmt die Texte", () => {
+    expect(zuLiveEvent(mz({ comments: [k("owl", "Hi")] }), KAT, BASIS).kinder).toEqual({ en: { satz: "Hi" } });
+    expect(zuLiveEvent(mz({}), KAT, BASIS).kinder).toEqual({});
   });
 });

@@ -11,7 +11,7 @@ import { isFree } from "./events";
 import { filtere, LEERER_FILTER, type Filter } from "./filter";
 import { alterText, ART_TEXT } from "./format";
 import { slugAusId } from "./routen";
-import type { Category, CategoryId, EventType, LiveEvent } from "@/types";
+import type { Category, CategoryId, EventType, LiveEvent, Sprache } from "@/types";
 
 const ZONE = "Europe/Berlin";
 const TAG_MS = 24 * 60 * 60 * 1000;
@@ -30,7 +30,7 @@ export type ElternFilter = Filter & {
 export const LEERER_ELTERN_FILTER: ElternFilter = { ...LEERER_FILTER, wochentage: "alle", tageszeiten: [] };
 
 /** Sprache des Eltern-Bereichs. Texte der Anbieter (Titel, Beschreibung) bleiben im Original. */
-export type Sprache = "de" | "en";
+export type { Sprache };
 export const LOCALE: Record<Sprache, string> = { de: "de-DE", en: "en-GB" };
 
 export const TAGESZEIT_TEXTE: Record<Sprache, Record<Tageszeit, string>> = {

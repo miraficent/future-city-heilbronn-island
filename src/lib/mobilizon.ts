@@ -8,9 +8,12 @@
  * Ist das Titelbild nur das Gruppenbild der Einrichtung (Avatar/Banner = Standardbild ohne eigenes Foto), zeigt die Kachel ihre Farbe
  * (erkenneStandardbilder: Mobilizon speichert Gruppenbilder verkleinert neu, deshalb Seitenverhältnis + Mehrfachnutzung statt Dateivergleich).
  *
+ * Kindertitel und -satz: Kommentare der eigenen Konten „eule“ (Deutsch) und „owl“ (Englisch), geschrieben vom Importer,
+ * korrigierbar in Mobilizon (eulenTexte). Kommentare anderer Konten oder fremder Server zählen nie.
+ *
  * Die Umwandlung ist reine Logik (tests/lib/mobilizon.test.ts); nur ladeMobilizonEvents() greift aufs Netz zu.
  */
-import type { Category, CategoryId, EventType, LiveEvent } from "@/types";
+import type { Category, CategoryId, EventType, KinderText, KinderTexte, LiveEvent, Sprache } from "@/types";
 
 /** Basis-URL der Instanz; beim Build über NEXT_PUBLIC_MOBILIZON_URL änderbar */
 export const MOBILIZON_URL = (process.env.NEXT_PUBLIC_MOBILIZON_URL ?? "http://localhost:4000").replace(/\/$/, "");
@@ -33,6 +36,15 @@ export type MobilizonEvent = {
   organizerActor: { preferredUsername: string } | null;
   tags: { title: string }[];
   picture: { url: string; metadata?: { width: number | null; height: number | null } | null } | null;
+  comments?: MobilizonKommentar[] | null;
+};
+
+export type MobilizonKommentar = {
+  text: string | null;
+  insertedAt: string | null;
+  updatedAt: string | null;
+  deletedAt: string | null;
+  actor: { preferredUsername: string; domain: string | null } | null;
 };
 
 const ABFRAGE = `query ($page: Int, $limit: Int) {
@@ -45,6 +57,7 @@ const ABFRAGE = `query ($page: Int, $limit: Int) {
       organizerActor { preferredUsername }
       tags { title }
       picture { url metadata { width height } }
+      comments { text insertedAt updatedAt deletedAt actor { preferredUsername domain } }
     }
   }
 }`;
@@ -65,6 +78,58 @@ const nurText = (html: string) => leerzeichen(entschluessle(html.replace(/<[^>]*
 
 export function htmlZuText(html: string): string {
   return nurText(html.replace(/<img[^>]*>/gi, ""));
+}
+
+// ---------- Kindertexte der Eule (Kommentare) ----------
+
+/** Konten, deren Kommentar der Kindertext ist – nur auf unserer eigenen Instanz */
+export const EULEN_KONTEN: Record<Sprache, string> = { de: "eule", en: "owl" };
+
+const MAX_TITEL_WOERTER = 5;
+const MAX_SATZ_ZEICHEN = 160;
+
+/** Zeilen eines Kommentars (HTML oder Text) – an <br>, Absatz- und Zeilenende getrennt, leere weg */
+export function kommentarZeilen(html: string): string[] {
+  return html
+    .replace(/<img[^>]*>/gi, "")
+    .split(/<br\s*\/?>|<\/p>|<\/div>|\n/i)
+    .map(nurText)
+    .filter(Boolean);
+}
+
+function kappeTitel(t: string): string {
+  const woerter = t.split(" ");
+  return woerter.length > MAX_TITEL_WOERTER ? `${woerter.slice(0, MAX_TITEL_WOERTER).join(" ")} …` : t;
+}
+
+function kappeSatz(t: string): string {
+  if (t.length <= MAX_SATZ_ZEICHEN) return t;
+  const schnitt = t.lastIndexOf(" ", MAX_SATZ_ZEICHEN);
+  return `${t.slice(0, schnitt > 0 ? schnitt : MAX_SATZ_ZEICHEN)} …`;
+}
+
+const zeitpunkt = (k: MobilizonKommentar) => Date.parse(k.updatedAt ?? k.insertedAt ?? "") || 0;
+
+/**
+ * Kindertitel und -satz je Sprache aus den Kommentaren: neuester lebender Kommentar des Kontos,
+ * nur eigene Instanz (actor.domain leer). Zeile 1 = Titel, Zeile 2 = Satz; nur eine Zeile = Satz.
+ */
+export function eulenTexte(kommentare: MobilizonKommentar[] | null | undefined): KinderTexte {
+  const texte: KinderTexte = {};
+  for (const sprache of Object.keys(EULEN_KONTEN) as Sprache[]) {
+    const kandidaten = (kommentare ?? [])
+      .filter((k) => k.actor?.preferredUsername === EULEN_KONTEN[sprache] && !k.actor.domain && !k.deletedAt)
+      .map((k) => ({ k, zeilen: kommentarZeilen(k.text ?? "") }))
+      .filter((x) => x.zeilen.length > 0)
+      .sort((a, b) => zeitpunkt(b.k) - zeitpunkt(a.k));
+    const zeilen = kandidaten[0]?.zeilen;
+    if (!zeilen) continue;
+    const text: KinderText = zeilen.length === 1
+      ? { satz: kappeSatz(zeilen[0]!) }
+      : { titel: kappeTitel(zeilen[0]!), satz: kappeSatz(zeilen[1]!) };
+    texte[sprache] = text;
+  }
+  return texte;
 }
 
 // ---------- Einordnung ----------
@@ -193,7 +258,8 @@ export function zuLiveEvent(e: MobilizonEvent, kategorien: Category[], basis = M
     location: ort.slice(0, 80),
     cost: preis && /^(keine|kostenfrei|kostenlos|frei)$/i.test(preis) ? "kostenlos" : preis,
     image: eventBild(e.picture?.url, standardBilder, basis),
-    story_kids: "", // ohne KI kein Kindertext – die Karte zeigt dann den Titel
+    story_kids: "", // Kindertexte kommen aus den Kommentaren (kinder), sonst baut die Oberfläche einen Satz
+    kinder: eulenTexte(e.comments),
     description_parents: beschreibung.slice(0, 600),
     registrationUrl: anmeldung,
     sourceUrl: `${basis}/events/${e.uuid}`,

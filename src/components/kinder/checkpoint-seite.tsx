@@ -7,7 +7,7 @@
  * Kachel antippen → die Eule kommt und liest vor, worum es geht → „Da will ich hin!“ (Wunsch für die Eltern).
  */
 import { useMemo, useState, type CSSProperties } from "react";
-import { AppShell, BackButton, Button, EmptyState, OwlGuide } from "@/components/ui";
+import { AppShell, BackButton, Button, EmptyState, OwlGuide, useSprache } from "@/components/ui";
 import { KinderFigurRuecken, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { Symbol } from "@/components/symbol";
 import { useSammlung } from "@/components/sammlung";
@@ -15,13 +15,17 @@ import type { KartenOrt } from "@/lib/kinderkarte";
 import { istAbends, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { autoVorlesen, vorlesen } from "@/lib/sprechen";
-import { euleSagt, kinderGeschichte, kinderTageszeit, kinderTitel, kinderWann, THEMA_SATZ } from "@/lib/kinder-text";
-import type { Category, CategoryId } from "@/types";
+import { euleSagt, kartenText, kinderTageszeit, kinderWann } from "@/lib/kinder-text";
+import { LOCALE } from "@/lib/eltern-suche";
+import type { Category, CategoryId, Sprache } from "@/types";
+import { KINDER_TEXTE, useKinderTexte } from "./texte";
 
-const wochentag = (iso: string) =>
-  new Date(iso).toLocaleDateString("de-DE", { timeZone: "Europe/Berlin", weekday: "long", day: "numeric", month: "long" });
-const uhrzeit = (iso: string) => new Date(iso).toLocaleTimeString("de-DE", { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit" });
-const alterText = (k: KinderKarte) => (k.ageMax !== null && k.ageMax < 99 ? `${k.ageMin ?? ""}–${k.ageMax}` : `ab ${k.ageMin}`);
+const wochentag = (iso: string, sprache: Sprache) =>
+  new Date(iso).toLocaleDateString(LOCALE[sprache], { timeZone: "Europe/Berlin", weekday: "long", day: "numeric", month: "long" });
+const uhrzeit = (iso: string, sprache: Sprache) =>
+  new Date(iso).toLocaleTimeString(LOCALE[sprache], { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit" });
+const alterSpanne = (k: KinderKarte, ab: (alter: number | null) => string) =>
+  k.ageMax !== null && k.ageMax < 99 ? `${k.ageMin ?? ""}–${k.ageMax}` : ab(k.ageMin);
 
 /** Raumfarben je Einrichtung: Grund (dunkel) und Leuchtlinien */
 const WELTEN: Record<string, { grund: string; licht: string }> = {
@@ -58,6 +62,9 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const [alter] = useKinderAlter();
   const [figurArt] = useKinderFigur<FigurArt>();
   const minute = useMinute();
+  const sprache = useSprache();
+  const t = useKinderTexte();
+  const alterText = (k: KinderKarte) => alterSpanne(k, t.welt.ab);
   const merk = useSammlung("kind");
   const [kategorie, setKategorie] = useState<CategoryId | null>(null);
   const [seite, setSeite] = useState(0);
@@ -80,23 +87,22 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
   const kat = (k: KinderKarte) => kategorien.find((c) => c.id === k.kategorien[0]);
 
   const jetzt = minute === null ? new Date() : new Date(minute);
-  const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt)} ${kinderTageszeit(k.start)}`;
-  const sagt = (k: KinderKarte) =>
-    euleSagt(kinderTitel(k.titel), kinderGeschichte({
-      titel: k.titel, geschichte: k.geschichte, art: k.art, gratis: k.gratis,
-      themen: k.kategorien.map((id) => THEMA_SATZ[id]).filter((t): t is string => !!t),
-    }));
+  const wann = (k: KinderKarte) => `${kinderWann(k.start, jetzt, sprache)} ${kinderTageszeit(k.start, sprache)}`;
+  const sagt = (k: KinderKarte) => {
+    const text = kartenText(k, sprache);
+    return euleSagt(text.titel, text.satz);
+  };
 
   function waehleKategorie(id: CategoryId | null, name: string) {
     setKategorie(id);
     setSeite(0);
-    if (autoVorlesen()) vorlesen(name);
+    if (autoVorlesen()) vorlesen(name, sprache);
   }
 
   function oeffne(k: KinderKarte) {
     setOffen(k);
     // Mit „Eule spricht von selbst“ liest der OwlGuide; sonst einmal hier (das Antippen erlaubt die Sprache)
-    if (!autoVorlesen()) vorlesen(sagt(k));
+    if (!autoVorlesen()) vorlesen(sagt(k), sprache);
   }
 
   const raumStil = { "--welt-grund": welt.grund, "--welt-licht": welt.licht } as CSSProperties;
@@ -114,23 +120,23 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
         )}
 
         <div className="welt__oben">
-          <BackButton href="/kinder/">Zur Karte</BackButton>
+          <BackButton href="/kinder/">{t.welt.zurKarte}</BackButton>
           <h1 className="welt__schild">{ort.name}</h1>
         </div>
 
-        {laedt && <p role="status" className="sr-only">Veranstaltungen werden geladen …</p>}
+        {laedt && <p role="status" className="sr-only">{t.welt.laedt}</p>}
 
         {!laedt && vorhanden.length > 1 && (
-          <div className="welt__themen" role="group" aria-label="Themen">
-            <button type="button" className="welt__thema" aria-pressed={kategorie === null} onClick={() => waehleKategorie(null, "Alles")}>
+          <div className="welt__themen" role="group" aria-label={t.welt.themen}>
+            <button type="button" className="welt__thema" aria-pressed={kategorie === null} onClick={() => waehleKategorie(null, t.welt.alles)}>
               <span className="welt__thema-rund"><Symbol name="star" /></span>
-              <span className="welt__thema-name">Alles</span>
+              <span className="welt__thema-name">{t.welt.alles}</span>
             </button>
             {vorhanden.map((k) => (
               <button key={k.id} type="button" className="welt__thema" aria-pressed={kategorie === k.id}
-                style={{ "--farbe": k.color } as CSSProperties} onClick={() => waehleKategorie(k.id, k.label_kids)}>
+                style={{ "--farbe": k.color } as CSSProperties} onClick={() => waehleKategorie(k.id, t.welt.themaLang(k))}>
                 <span className="welt__thema-rund"><Symbol name={k.icon} /></span>
-                <span className="welt__thema-name">{k.label_kids.split(" & ")[0]}</span>
+                <span className="welt__thema-name">{t.welt.thema(k)}</span>
               </button>
             ))}
           </div>
@@ -138,12 +144,12 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 
         {laedt ? null : passend.length === 0 ? (
           <div className="welt__leer">
-            <EmptyState text="Hier ist gerade nichts – schau mal in einem anderen Haus!">
-              <Button variante="primary" groesse="kids" icon="map" href="/kinder/">Zur Karte</Button>
+            <EmptyState text={t.welt.leer}>
+              <Button variante="primary" groesse="kids" icon="map" href="/kinder/">{t.welt.zurKarte}</Button>
             </EmptyState>
           </div>
         ) : (
-          <div className="welt__kacheln" role="list" aria-label={`Angebote bei ${ort.name}`}>
+          <div className="welt__kacheln" role="list" aria-label={t.welt.angeboteBei(ort.name)}>
             {sichtbar.map((k, i) => {
               const p = PLAETZE[i]!;
               const c = kat(k);
@@ -156,7 +162,7 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
               return (
                 <div key={k.id} role="listitem" className="welt__platz" style={stil}>
                   <button type="button" className={`welt__kachel${offen?.id === k.id ? " ist-offen" : ""}`} onClick={() => oeffne(k)}
-                    aria-label={`${kinderTitel(k.titel)}, ${wann(k)}, ${alterText(k)} Jahre${k.gratis ? ", gratis" : ""}${gewuenscht ? ", gewünscht" : ""}`}>
+                    aria-label={t.welt.kachel({ titel: kartenText(k, sprache).titel, wann: wann(k), alter: alterText(k), gratis: k.gratis, gewuenscht })}>
                     {k.bild ? (
                       // Plain <img>: kommt von der eigenen Mobilizon-Instanz, next/image bräuchte Server oder remotePatterns
                       // eslint-disable-next-line @next/next/no-img-element
@@ -167,11 +173,11 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
                         <Symbol name={c?.icon ?? "star"} />
                       </span>
                     )}
-                    <span className="welt__kachel-titel">{kinderTitel(k.titel)}</span>
+                    <span className="welt__kachel-titel">{kartenText(k, sprache).titel}</span>
                     <span className="welt__kachel-zeit" aria-hidden="true">
-                      <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kinderWann(k.start, jetzt)}
+                      <Symbol name={istAbends(k) ? "moon" : "sun"} /> {kinderWann(k.start, jetzt, sprache)}
                     </span>
-                    <span className="welt__kachel-alter" aria-hidden="true">{alterText(k)} J.</span>
+                    <span className="welt__kachel-alter" aria-hidden="true">{t.welt.alterKurz(alterText(k))}</span>
                     {gewuenscht && <span className="welt__kachel-herz" aria-hidden="true"><Symbol name="heart" /></span>}
                   </button>
                 </div>
@@ -182,11 +188,11 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 
         {!laedt && seiten > 1 && (
           <>
-            <button type="button" className="welt__blaettern welt__blaettern--links" aria-label="Vorherige Kacheln"
+            <button type="button" className="welt__blaettern welt__blaettern--links" aria-label={t.welt.vorherige}
               disabled={aktuelleSeite === 0} onClick={() => setSeite(aktuelleSeite - 1)}>
               <Symbol name="back" />
             </button>
-            <button type="button" className="welt__blaettern welt__blaettern--rechts" aria-label="Weitere Kacheln"
+            <button type="button" className="welt__blaettern welt__blaettern--rechts" aria-label={t.welt.weitere}
               disabled={aktuelleSeite >= seiten - 1} onClick={() => setSeite(aktuelleSeite + 1)}>
               <Symbol name="arrow" />
             </button>
@@ -201,9 +207,9 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
         {offen && (
           <div className="welt__eule">
             <OwlGuide text={sagt(offen)} onSchliessen={() => setOffen(null)}>
-              <ErwartetDich karte={offen} thema={kat(offen)} alter={alterText(offen)} />
+              <ErwartetDich karte={offen} thema={kat(offen)} alter={alterText(offen)} sprache={sprache} />
               <p className="welt__eule-info">
-                <Symbol name="calendar" /> {wann(offen)} · {wochentag(offen.start)}, {uhrzeit(offen.start)} Uhr{offen.gratis ? " · gratis" : ""}
+                <Symbol name="calendar" /> {wann(offen)} · {wochentag(offen.start, sprache)}, {t.welt.uhrzeit(uhrzeit(offen.start, sprache))}{offen.gratis ? ` · ${t.welt.gratis}` : ""}
               </p>
               <Button
                 variante="wish"
@@ -212,9 +218,9 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
                 ariaPressed={merk.ids.includes(offen.id)}
                 onClick={() => merk.merken(offen.id)}
               >
-                {merk.ids.includes(offen.id) ? "Deine Eltern sehen es!" : "Da will ich hin!"}
+                {merk.ids.includes(offen.id) ? t.welt.gewuenscht : t.welt.wunsch}
               </Button>
-              <Button variante="ghost" groesse="kids" onClick={() => setOffen(null)}>Andere ansehen</Button>
+              <Button variante="ghost" groesse="kids" onClick={() => setOffen(null)}>{t.welt.andere}</Button>
             </OwlGuide>
           </div>
         )}
@@ -224,25 +230,20 @@ export function CheckpointSeite({ ort, karten, kategorien, laedt = false, bild =
 }
 
 /** Art der Veranstaltung als Bild-Hinweis: Was macht das Kind dort? */
-const ART_HINWEIS: Record<string, { icon: string; text: string }> = {
-  workshop: { icon: "tools", text: "Selbst machen" },
-  show: { icon: "sparkles", text: "Zuschauen" },
-  course: { icon: "calendar", text: "Mehrere Treffen" },
-  event: { icon: "star", text: "Vorbeikommen" },
-};
+const ART_SYMBOL: Record<string, string> = { workshop: "tools", show: "sparkles", course: "calendar", event: "star" };
 
 /** „Was erwartet dich?“ – große Bild-Hinweise statt Text: Art, Thema, Alter, mit Familie, kostenlos */
-function ErwartetDich({ karte, thema, alter }: { karte: KinderKarte; thema?: Category; alter: string }) {
-  const art = karte.art ? ART_HINWEIS[karte.art] : null;
+function ErwartetDich({ karte, thema, alter, sprache }: { karte: KinderKarte; thema?: Category; alter: string; sprache: Sprache }) {
+  const t = KINDER_TEXTE[sprache].welt;
   const hinweise = [
-    art && { icon: art.icon, text: art.text, farbe: "var(--primary)" },
-    thema && { icon: thema.icon, text: thema.label_kids.split(" & ")[0]!, farbe: thema.color },
-    { icon: "cake", text: `${alter} Jahre`, farbe: "var(--accent-dark)" },
-    karte.kategorien.includes("family") && { icon: "users", text: "Mit Familie", farbe: "var(--wish-dark)" },
-    karte.gratis && { icon: "heart", text: "Kostenlos", farbe: "var(--success)" },
+    karte.art && { icon: ART_SYMBOL[karte.art] ?? "star", text: t.art[karte.art], farbe: "var(--primary)" },
+    thema && { icon: thema.icon, text: t.thema(thema), farbe: thema.color },
+    { icon: "cake", text: t.jahre(alter), farbe: "var(--accent-dark)" },
+    karte.kategorien.includes("family") && { icon: "users", text: t.mitFamilie, farbe: "var(--wish-dark)" },
+    karte.gratis && { icon: "heart", text: t.kostenlos, farbe: "var(--success)" },
   ].filter((h): h is { icon: string; text: string; farbe: string } => !!h);
   return (
-    <ul className="welt__erwartet" aria-label="Was erwartet dich?">
+    <ul className="welt__erwartet" aria-label={t.erwartet}>
       {hinweise.map((h) => (
         <li key={h.text} style={{ "--farbe": h.farbe } as CSSProperties}>
           <span className="welt__erwartet-rund"><Symbol name={h.icon} /></span>

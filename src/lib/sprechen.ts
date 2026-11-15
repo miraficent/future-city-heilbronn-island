@@ -1,9 +1,12 @@
-/** Kindertexte vorlesen – Web Speech API, lokale deutsche Stimme, nichts wird übertragen. */
-export function vorlesen(text: string): void {
+import { LOCALE } from "./eltern-suche";
+import type { Sprache } from "@/types";
+
+/** Kindertexte vorlesen – Web Speech API, lokale Stimme der gewählten Sprache, nichts wird übertragen. */
+export function vorlesen(text: string, sprache: Sprache = "de"): void {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
   const satz = new SpeechSynthesisUtterance(text);
-  satz.lang = "de-DE";
+  satz.lang = LOCALE[sprache];
   satz.rate = 0.9;
   window.speechSynthesis.speak(satz);
 }

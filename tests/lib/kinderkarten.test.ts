@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import type { Angebot } from "@/lib/angebot";
 import type { LiveEvent } from "@/types";
-import { kartenFuerOrt, kinderKarten, passtZumAlter } from "@/lib/kinderkarten";
+import { ausAngebot, ausEvent, kartenFuerOrt, kinderKarten, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
+import { kartenText } from "@/lib/kinder-text";
 import { kartenOrte } from "@/lib/kinderkarte";
 
 const JETZT = new Date("2026-11-14T12:00:00+01:00");
@@ -19,7 +20,7 @@ function event(id: string, teil: Partial<LiveEvent> = {}): LiveEvent {
   return {
     id, institutionId: "experimenta", title: "VAST", title_kids: "Reise durchs Weltall", categories: ["astronomy"], ageMin: 8, ageMax: null,
     type: "show", start: "2026-11-20T14:30:00+01:00", end: null, location: "experimenta", cost: "6 €", image: null,
-    story_kids: "Du reist durch das Weltall.", description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
+    story_kids: "Du reist durch das Weltall.", kinder: {}, description_parents: "", registrationUrl: "https://example.org", sourceUrl: "https://example.org",
     lastUpdated: "2026-11-14", needsReview: false, isDummy: false, ...teil,
   };
 }
@@ -57,4 +58,30 @@ describe("Kinderkarten aus Kursen und Live-Events", () => {
     expect(orte.map((o) => o.id)).toEqual(["neu", "cosmos"]);
     expect(orte[0]).toMatchObject({ name: "Stadtbibliothek", gebaeude: "haus" });
   });
+});
+
+describe("Eule- und Owl-Texte auf den Karten", () => {
+  it("ausEvent gibt die Kommentartexte weiter, Kurse haben keine", () => {
+    const texte = { en: { titel: "Build a robot", satz: "Here you build a robot!" } };
+    expect(ausEvent(event("a", { kinder: texte })).texte).toEqual(texte);
+    expect(ausAngebot(angebot("a"), JETZT).texte).toEqual({});
+  });
+
+  it("Events aus einem alten Sitzungsspeicher (ohne kinder) brechen nichts", () => {
+    const alt = { ...event("a") } as Partial<LiveEvent>;
+    delete alt.kinder;
+    const karte = ausEvent(alt as LiveEvent);
+    expect(karte.texte).toEqual({});
+    expect(kartenText(karte, "en").titel).toBe("Reise durchs Weltall");
+  });
+
+  const basis: KinderKarte = { ...ausEvent(event("a")), titel: "Roboter-Werkstatt für Profis (8–12 Jahre): Wir bauen", geschichte: "Ein langer deutscher Kurstext.", art: "workshop", kategorien: ["coding"], gratis: false };
+  it("nimmt Titel und Satz aus dem Kommentar", () =>
+    expect(kartenText({ ...basis, texte: { en: { titel: "Build a robot", satz: "Here you build a robot!" } } }, "en")).toEqual({ titel: "Build a robot", satz: "Here you build a robot!" }));
+  it("ohne Titelzeile: kinderTitel vom Original", () =>
+    expect(kartenText({ ...basis, texte: { de: { satz: "Hier baust du was." } } }, "de")).toEqual({ titel: "Roboter-Werkstatt für Profis", satz: "Hier baust du was." }));
+  it("ohne Kommentar auf Englisch: gebauter englischer Satz, nie der deutsche Text", () =>
+    expect(kartenText({ ...basis, texte: {} }, "en").satz).toBe("This is all about coding. You get to join in."));
+  it("Kurs auf Englisch: nie der deutsche Teaser", () =>
+    expect(kartenText(ausAngebot(angebot("a"), JETZT), "en").satz).toBe("This is all about coding. Come along and give it a try. It's free."));
 });

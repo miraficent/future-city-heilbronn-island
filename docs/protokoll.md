@@ -123,3 +123,10 @@ Entscheidungen (Details: `docs/superpowers/specs/2026-11-15-eule-owl-kommentare-
 - Der Importer überschreibt nie einen vorhandenen Kommentar. Neuer Satz → Kommentar löschen.
 - Das Frontend nimmt nur Kommentare lokaler Konten; fehlt einer, gilt der bisherige gebaute Satz.
 - Der ganze Kinderbereich wird zweisprachig (DE | EN), gleiche Spracheinstellung wie im Eltern-Bereich.
+- Umgesetzt (Branch `feature/eule-owl`): `/pruefen/` zeigt die Eule-/Owl-Texte zum Gegenlesen. Die Karten tragen beide
+  Sprachen, `kartenText(karte, sprache)` wählt Titel und Satz – `kinderKarten()` bekommt keinen Sprach-Parameter.
+  Englische Themen-Namen stehen in `src/components/kinder/texte.ts` (Kategorien in `src/data/` bleiben deutsch).
+- **Wichtig vor dem Einsatz:** Die Konten `eule` und `owl` müssen auf unserer Mobilizon-Instanz angelegt sein, bevor
+  Kinder die Seite nutzen. Solange ein Name frei ist, kann sich jeder mit einem Konto auf der Instanz diesen Namen
+  als Identität anlegen, und sein Kommentar würde Kindern vorgelesen. Registrierung auf der Instanz schließen oder
+  moderieren.

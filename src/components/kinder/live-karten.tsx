@@ -8,6 +8,7 @@
 import { useMemo } from "react";
 import { CheckpointSeite } from "./checkpoint-seite";
 import { KartenSeite } from "./karten-seite";
+import { useKinderTexte } from "./texte";
 import type { KartenOrt } from "@/lib/kinderkarte";
 import { eventKarten, kartenFuerOrt, type KinderKarte } from "@/lib/kinderkarten";
 import { useLiveEvents, type LiveEventsZustand } from "@/lib/live-events";
@@ -24,12 +25,11 @@ function useKarten(ortId?: string): [KinderKarte[], LiveEventsZustand["status"]]
 
 /** Kurzer Hinweis, wenn Mobilizon nicht erreichbar ist – es gibt bewusst keine Ersatzdaten */
 export function LiveHinweis({ status, kind = true }: { status: LiveEventsZustand["status"]; kind?: boolean }) {
+  const t = useKinderTexte();
   if (status !== "fehler") return null;
   return (
     <p role="status" className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-xl rounded-2xl border-2 border-tinte bg-papier px-4 py-3 text-center font-bold shadow-lg">
-      {kind
-        ? "Die Veranstaltungen konnten gerade nicht geladen werden. Versuch es gleich noch einmal."
-        : "Die Live-Veranstaltungen (Mobilizon) sind gerade nicht erreichbar. Bitte später neu laden."}
+      {kind ? t.live.fehlerKind : t.live.fehlerEltern}
     </p>
   );
 }

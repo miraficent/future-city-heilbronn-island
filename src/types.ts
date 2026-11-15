@@ -17,6 +17,13 @@ export type Category = {
 
 export type EventType = "workshop" | "show" | "course" | "event";
 
+/** Sprache der Oberfläche (Gerät, siehe src/components/ui/sprache.tsx) */
+export type Sprache = "de" | "en";
+
+/** Kindertitel und -satz eines Events in einer Sprache (Mobilizon-Kommentar der Konten eule/owl) */
+export type KinderText = { titel?: string; satz: string };
+export type KinderTexte = Partial<Record<Sprache, KinderText>>;
+
 export type LiveEvent = {
   id: string;
   institutionId: string;
@@ -36,6 +43,8 @@ export type LiveEvent = {
   image: string | null;
   /** Höchstens 2 kurze Sätze für Kinder */
   story_kids: string;
+  /** Kindertitel und -satz der Konten eule/owl (Mobilizon-Kommentare) */
+  kinder: KinderTexte;
   description_parents: string;
   registrationUrl: string;
   sourceUrl: string;

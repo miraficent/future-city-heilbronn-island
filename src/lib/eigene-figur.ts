@@ -4,6 +4,7 @@
  * Gespeichert wird nur in der Browsersitzung (wie Alter und Figur, siehe kinder-zustand.ts).
  * Reine Logik ohne Darstellung, getestet in tests/lib/eigene-figur.test.ts.
  */
+import type { Sprache } from "@/types";
 
 export type Frisur = "kurz" | "zoepfe" | "locken" | "lang";
 export type Mund = "lachen" | "laecheln" | "staunen";
@@ -125,10 +126,31 @@ export function toene(hex: string, anteil: number): string {
 }
 
 /** Kurzer Satz für Screenreader und Vorlesen, z. B. „Deine Figur mit Locken, Pulli in Blau und Tasche in Rot“. */
-export function beschreibe(a: Aussehen): string {
+/** Englische Namen der Farben, Frisuren und Gesichter (Schlüssel = deutscher Name) */
+export const FARBNAME_EN: Record<string, string> = {
+  hell: "light", pfirsich: "peach", mittel: "medium", braun: "brown", dunkel: "dark",
+  kurz: "short", "Zöpfe": "braids", Locken: "curls", lang: "long",
+  schwarz: "black", blond: "blonde", rot: "red", lila: "purple", blau: "blue", "grün": "green",
+  lachen: "laughing", "lächeln": "smiling", staunen: "amazed",
+  "türkis": "turquoise", orange: "orange", dunkelblau: "dark blue", sand: "sand",
+};
+
+/** Name einer Wahl in der gewählten Sprache */
+export function farbName(name: string, sprache: Sprache): string {
+  return sprache === "en" ? (FARBNAME_EN[name] ?? name) : name;
+}
+
+/** Kurze Beschreibung der eigenen Figur für Screenreader */
+export function beschreibe(a: Aussehen, sprache: Sprache = "de"): string {
+  const name = (wert: string) => KLEIDERFARBEN.find((w) => w.wert === wert)?.name ?? "";
+  if (sprache === "en") {
+    const frisur = { kurz: "short hair", zoepfe: "braids", locken: "curls", lang: "long hair" }[a.frisur];
+    const tasche = a.tasche ? ` and ${farbName(name(a.tasche), "en")} bag` : "";
+    return `Your figure with ${frisur}, ${farbName(name(a.pulli), "en")} jumper${tasche}`;
+  }
   const farbe = (wert: string) => {
-    const name = KLEIDERFARBEN.find((w) => w.wert === wert)?.name ?? "";
-    return name.charAt(0).toUpperCase() + name.slice(1);
+    const n = name(wert);
+    return n.charAt(0).toUpperCase() + n.slice(1);
   };
   const frisur = { kurz: "kurzen Haaren", zoepfe: "Zöpfen", locken: "Locken", lang: "langen Haaren" }[a.frisur];
   const tasche = a.tasche ? ` und Tasche in ${farbe(a.tasche)}` : "";

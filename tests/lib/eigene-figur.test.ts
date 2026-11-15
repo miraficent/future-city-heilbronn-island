@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { beschreibe, HAARFARBEN, KLEIDERFARBEN, pruefeAussehen, STANDARD_AUSSEHEN, toene, zufallsAussehen } from "@/lib/eigene-figur";
+import { AUGENFARBEN, beschreibe, FARBNAME_EN, farbName, FRISUREN, HAUT, MUENDER, HAARFARBEN, KLEIDERFARBEN, pruefeAussehen, STANDARD_AUSSEHEN, toene, zufallsAussehen } from "@/lib/eigene-figur";
 
 describe("pruefeAussehen", () => {
   it("übernimmt gültige Werte", () => {
@@ -38,5 +38,18 @@ describe("beschreibe", () => {
   it("beschreibt die Figur in einem kurzen Satz", () => {
     expect(beschreibe({ ...STANDARD_AUSSEHEN, frisur: "locken", pulli: "#3b6fe0", tasche: null })).toBe("Deine Figur mit Locken, Pulli in Blau");
     expect(beschreibe({ ...STANDARD_AUSSEHEN, pulli: "#6c4ce0", tasche: "#ff6b6b" })).toBe("Deine Figur mit kurzen Haaren, Pulli in Lila und Tasche in Rot");
+  });
+});
+
+describe("beschreibe auf Englisch", () => {
+  it("beschreibt die Figur auf Englisch", () => {
+    expect(beschreibe({ ...STANDARD_AUSSEHEN, frisur: "locken", pulli: "#3b6fe0", tasche: null }, "en")).toBe("Your figure with curls, blue jumper");
+    expect(beschreibe({ ...STANDARD_AUSSEHEN, pulli: "#6c4ce0", tasche: "#ff6b6b" }, "en")).toBe("Your figure with short hair, purple jumper and red bag");
+  });
+  it("übersetzt jeden Farb- und Formnamen", () => {
+    const namen = [...HAUT, ...FRISUREN, ...HAARFARBEN, ...AUGENFARBEN, ...MUENDER, ...KLEIDERFARBEN].map((f) => f.name);
+    for (const n of namen) expect(Object.keys(FARBNAME_EN)).toContain(n);
+    expect(farbName("türkis", "en")).toBe("turquoise");
+    expect(farbName("türkis", "de")).toBe("türkis");
   });
 });
