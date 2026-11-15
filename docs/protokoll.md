@@ -102,3 +102,15 @@ Ideen zum Besprechen (noch nichts entschieden):
 - [ ] Darstellungs-Ideen oben auswählen und als Skizze abstimmen.
 - [ ] `docs/demo-ablauf.md` an den neuen Ablauf anpassen.
 - [ ] Branches zusammenführen (`zusammen`, `feature/live-events`, `cedric`) und auf GitHub pushen – erst nach Absprache.
+
+## 15.11.2026 – Themen-Filter der Live-Events
+
+Problem: In der experimenta-Themenwelt zeigten „Physik“ und „Sterne“ fast alle Angebote. Ursache war die
+Stichwort-Erkennung (`src/lib/mobilizon.ts`): „experiment“ steckt in „experimenta“, „licht“ im Science-Dome-Hinweis
+(„Lichteffekte“), „science dome“ ist nur der Ort.
+
+Entscheidungen:
+- Themen werden nur aus dem Inhalt erkannt: ohne „Ort: …“, Hinweis-Sätze, Links und Einrichtungsnamen (`themenText()`).
+- Stichwörter zählen nur am Wortanfang („Sternenhimmel“ ja, „meistern“ nein). Wortenden in Zusammensetzungen
+  („Weihnachtsstern“) zählen nicht – fehlt ein Thema, ein eigenes Stichwort in `src/data/categories.json` ergänzen.
+- „science dome“ ist kein Stichwort für „Sterne & Weltall“ mehr (Ort, kein Thema).

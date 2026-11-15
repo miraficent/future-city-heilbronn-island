@@ -88,11 +88,31 @@ export function erkenneAlter(text: string, tags: string[]): [number | null, numb
   return erwachsene ? [18, null] : [null, null];
 }
 
-/** Kurze Stichwörter („ki“, „app“) nur als ganzes Wort – sonst passt „ki“ in jedes „Kinder“ */
+const regexSicher = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/**
+ * Stichwörter zählen nur am Wortanfang („Sternenhimmel“ ja, „meistern“ nein; „präsentieren“ ist kein „tiere“).
+ * Kurze Stichwörter („ki“, „app“) nur als ganzes Wort – sonst passt „ki“ in jedes „Kinder“.
+ * Preis dafür: Wortenden in Zusammensetzungen („Weihnachtsstern“, „Wildtiere“) zählen nicht.
+ */
 function enthaelt(text: string, wort: string): boolean {
-  const w = wort.trim();
-  if (w.length > 3) return text.includes(w);
-  return new RegExp(`(^|[^\\p{L}])${w}($|[^\\p{L}])`, "u").test(text);
+  const w = regexSicher(wort.trim());
+  const ende = wort.trim().length > 3 ? "" : "($|[^\\p{L}])";
+  return new RegExp(`(^|[^\\p{L}])${w}${ende}`, "u").test(text);
+}
+
+/**
+ * Text für die Themen-Erkennung: nur, worum es geht – nicht, wo es stattfindet.
+ * Weg fallen Listenpunkte/Absätze „Ort: …“, Hinweis-Sätze (z. B. „Im Science Dome können laute Geräusche,
+ * Lichteffekte … auftreten“), Links und Einrichtungsnamen. Sonst passt „experiment“ in jedes „experimenta“
+ * und der Science-Dome-Hinweis macht jede Show zu „Physik“.
+ */
+export function themenText(titel: string, html: string, tags: string[]): string {
+  const ohneOrt = html.replace(/<(p|li)\b[^>]*>\s*(?:<[^>]+>\s*)*ort\s*:[\s\S]*?<\/\1>/gi, " ");
+  const saetze = htmlZuText(ohneOrt).split(/(?<=[.!?])\s+/).filter((s) => !/^hinweis|lichteffekt/i.test(s));
+  return `${titel} ${saetze.join(" ")} ${tags.join(" ")}`
+    .replace(/(?:https?:\/\/|www\.)\S+/gi, " ")
+    .replace(/experimenta|haus der familie|\bipai\b/gi, " ");
 }
 
 export function erkenneKategorien(text: string, kategorien: Category[]): CategoryId[] {
@@ -164,7 +184,7 @@ export function zuLiveEvent(e: MobilizonEvent, kategorien: Category[], basis = M
     institutionId: erkenneEinrichtung(gruppe, `${ort} ${titel}`),
     title: titel,
     title_kids: titel.split(/\s[–(-]\s?/)[0]!.split(" ").slice(0, 6).join(" "),
-    categories: erkenneKategorien(suchtext, kategorien),
+    categories: erkenneKategorien(themenText(titel, html, tags), kategorien),
     ageMin,
     ageMax,
     type: erkenneArt(suchtext),

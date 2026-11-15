@@ -1,5 +1,5 @@
 [
-  {"id": "astronomy", "label_kids": "Sterne & Weltall", "icon": "planet", "color": "#3B4CCA", "keywords": ["weltall", "weltraum", "universum", "sterne", "stern", "planet", "sonnensystem", "mars", "kosmisch", "teleskop", "science dome", "astronom", "galaxie", "rakete"]},
+  {"id": "astronomy", "label_kids": "Sterne & Weltall", "icon": "planet", "color": "#3B4CCA", "keywords": ["weltall", "weltraum", "universum", "sterne", "stern", "planet", "sonnensystem", "mars", "kosmisch", "teleskop", "astronom", "galaxie", "rakete"]},
   {"id": "physics", "label_kids": "Physik & Experimente", "icon": "bulb", "color": "#F59E0B", "keywords": ["physik", "experiment", "strom", "energie", "licht", "optik", "magnet", "blitz", "löten", "elektronik", "solarmobil"]},
   {"id": "biology", "label_kids": "Natur & Tiere", "icon": "leaf", "color": "#4E9A4A", "keywords": ["biologie", "natur", "tiere", "pflanze", "riff", "meer", "dinosaurier", "körper", "ernährung", "wald", "klima"]},
   {"id": "math", "label_kids": "Mathe & Rätsel", "icon": "plus", "color": "#6C4CE0", "keywords": ["mathe", "mathematik", "zahlen", "rätsel", "logik", "statistik", "problemlösen", "knobel"]},
