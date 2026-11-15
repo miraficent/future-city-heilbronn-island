@@ -9,6 +9,7 @@ import { Fachwerkhaus } from "./fachwerkhaus";
 import { PinZeichen } from "./gebaeude";
 import { InstitutGebaeude, institutHoehe } from "./institut-gebaeude";
 import { KinderFigur, type FigurArt } from "./kinder-figuren";
+import { useKinderTexte } from "@/components/kinder/texte";
 
 type Props = {
   /** Orte bereits in Bildkoordinaten (bildOrte) */
@@ -29,6 +30,7 @@ type Props = {
 const DAECHER = [F.dach, F.klippe];
 
 export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen = true, gewaehlt, onWaehle, onNeuerOrt }: Props) {
+  const t = useKinderTexte().karte;
   // Häuser und Einrichtungen gemeinsam von hinten nach vorn zeichnen
   const stehend = [
     ...BILD_HAEUSER.map(([x, y, d], i) => ({ art: "haus" as const, key: `h${i}`, x, y, d })),
@@ -36,7 +38,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen
   ].sort((a, b) => a.y - b.y);
 
   return (
-    <svg viewBox={`0 0 ${BILD.w} ${BILD.h}`} preserveAspectRatio="xMidYMid slice" className="kr-karte kr-bildkarte" role="group" aria-label="Karte von Heilbronn">
+    <svg viewBox={`0 0 ${BILD.w} ${BILD.h}`} preserveAspectRatio="xMidYMid slice" className="kr-karte kr-bildkarte" role="group" aria-label={t.karteVon}>
       <image href={BILD.src} x={0} y={0} width={BILD.w} height={BILD.h} />
 
       {stehend.map((s) =>
@@ -69,7 +71,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen
             className={`kr-ort${aktiv !== null && !aktiv.has(o.id) ? " ist-gedimmt" : ""}${gewaehlt === o.id ? " ist-gewaehlt" : ""}`}
             role="button"
             tabIndex={0}
-            aria-label={`${o.name}${zahl ? `: ${zahl} Veranstaltungen` : geladen ? ": schläft gerade, keine Veranstaltungen" : ""}${heute?.has(o.id) ? ", heute ist etwas los" : ""}`}
+            aria-label={t.ortLabel(o.name, zahl, geladen, !!heute?.has(o.id))}
             onClick={waehle}
             onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), waehle())}
           >
@@ -111,7 +113,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen
           className="kr-ort kr-neuer-ort"
           role="link"
           tabIndex={0}
-          aria-label="Neuer Ort? Hier kann eine neue Einrichtung dazukommen"
+          aria-label={t.neuerOrtLabel}
           onClick={onNeuerOrt}
           onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), onNeuerOrt())}
         >
@@ -120,7 +122,7 @@ export function BildKarte({ orte, zahlen, heute, aktiv, figur, figurArt, geladen
           <path d="M0 -34 V-14 M-10 -24 H10" stroke={F.lila} strokeWidth={4} strokeLinecap="round" />
           <g transform="translate(0,36)">
             <rect x={-62} y={-17} width={124} height={34} rx={17} fill="#FFFFFF" stroke={F.lila} strokeWidth={2} />
-            <text y={6} textAnchor="middle" className="kr-name">Neuer Ort?</text>
+            <text y={6} textAnchor="middle" className="kr-name">{t.neuerOrt}</text>
           </g>
         </g>
       )}

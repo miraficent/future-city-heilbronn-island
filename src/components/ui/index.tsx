@@ -16,13 +16,13 @@ import { SprachUmschalter, useSprache } from "./sprache";
 export { SprachUmschalter, setzeSprache, useSprache } from "./sprache";
 
 /** Feste Texte der Bausteine in beiden Sprachen */
-const UI_TEXTE: Record<Sprache, { bereich: string; kinder: string; eltern: string; start: string; euleZu: string; spricht: string; vorlesen: string }> = {
+const UI_TEXTE: Record<Sprache, { bereich: string; kinder: string; eltern: string; start: string; euleZu: string; schliessen: string; spricht: string; vorlesen: string }> = {
   de: {
-    bereich: "Bereich wählen", kinder: "Kinder", eltern: "Eltern", start: "Heilbronn Island – Startseite", euleZu: "Eule schließen",
+    bereich: "Bereich wählen", kinder: "Kinder", eltern: "Eltern", start: "Heilbronn Island – Startseite", euleZu: "Eule schließen", schliessen: "Schließen",
     spricht: "Die Eule spricht – nochmal vorlesen", vorlesen: "Vorlesen – danach spricht die Eule von selbst",
   },
   en: {
-    bereich: "Choose area", kinder: "Kids", eltern: "Parents", start: "Heilbronn Island – home page", euleZu: "Close owl",
+    bereich: "Choose area", kinder: "Kids", eltern: "Parents", start: "Heilbronn Island – home page", euleZu: "Close owl", schliessen: "Close",
     spricht: "The owl is talking – read again", vorlesen: "Read aloud – then the owl talks by itself",
   },
 };
@@ -102,14 +102,14 @@ export function ModeSwitch({ aktiv }: { aktiv: "kinder" | "eltern" }) {
     <nav className="ui-mode" aria-label={t.bereich}>
       <Link href="/kinder/" className="ui-mode__item" aria-current={aktiv === "kinder" ? "page" : undefined}>
         <span className="ui-mode__kind" aria-hidden="true"><KinderFigurBild art="orange" /></span>
-        {t.kinder}
+        <span className="ui-mode__text">{t.kinder}</span>
       </Link>
       <Link href="/eltern/" className="ui-mode__item" aria-current={aktiv === "eltern" ? "page" : undefined}>
         <span className="ui-mode__kind" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element -- eigene SVG-Grafik, statischer Export */}
           <img src="/grafik/eltern-neutral.svg" alt="" width={240} height={320} />
         </span>
-        {t.eltern}
+        <span className="ui-mode__text">{t.eltern}</span>
       </Link>
     </nav>
   );
@@ -201,6 +201,7 @@ export function OwlGuide({ text, children, className = "", onSchliessen }: { tex
 
 export function BottomSheet({ offen, onSchliessen, titel, children }: { offen: boolean; onSchliessen: () => void; titel: string; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
+  const sprache = useSprache();
   useEffect(() => {
     if (!offen) return;
     const taste = (e: KeyboardEvent) => e.key === "Escape" && onSchliessen();
@@ -212,7 +213,7 @@ export function BottomSheet({ offen, onSchliessen, titel, children }: { offen: b
   return (
     <div className="ui-sheet" role="dialog" aria-modal="true" aria-label={titel} onClick={(e) => e.target === e.currentTarget && onSchliessen()}>
       <div className="ui-sheet__panel" ref={ref}>
-        <button type="button" className="ui-sheet__zu" aria-label="Schließen" onClick={onSchliessen}><Symbol name="close" /></button>
+        <button type="button" className="ui-sheet__zu" aria-label={UI_TEXTE[sprache].schliessen} onClick={onSchliessen}><Symbol name="close" /></button>
         {children}
       </div>
     </div>

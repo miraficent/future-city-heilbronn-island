@@ -6,13 +6,15 @@
  */
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { AppShell, Button, Owl, OwlGuide } from "@/components/ui";
+import { AppShell, Button, Owl, OwlGuide, useSprache } from "@/components/ui";
+import { LOCALE } from "@/lib/eltern-suche";
+import { useKinderTexte } from "./texte";
 import { BildKarte } from "@/components/kinderreise/bild-karte";
 import type { KartenOrt, Pt } from "@/lib/kinderkarte";
 import { BILD_START, bildOrte } from "@/lib/bildkarte";
 import { istHeute, kartenFuerOrt, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
-import { FIGUR_ARTEN, KinderFigurBild, figurLabel, type FigurArt } from "@/components/kinderreise/kinder-figuren";
+import { FIGUR_ARTEN, KinderFigurBild, type FigurArt } from "@/components/kinderreise/kinder-figuren";
 import { FigurBaukasten } from "@/components/kinder/figur-baukasten";
 import { Symbol } from "@/components/symbol";
 
@@ -37,6 +39,8 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
   const [gewaehlt, setGewaehlt] = useState<string | null>(null);
   const [euleOffen, setEuleOffen] = useState(true);
   const [baukasten, setBaukasten] = useState(false);
+  const sprache = useSprache();
+  const t = useKinderTexte();
 
   // Kommende Karten für dieses Alter (ohne Uhrzeit/Alter beim ersten Rendern: alle)
   const passend = useMemo(
@@ -59,7 +63,7 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
     setTimeout(() => router.push(`/checkpoint/${id}/`), sanft ? LAUFZEIT_MS : 0);
   }
 
-  const wochentag = minute === null ? null : new Date(minute).toLocaleDateString("de-DE", { weekday: "long", timeZone: "Europe/Berlin" });
+  const wochentag = minute === null ? null : new Date(minute).toLocaleDateString(LOCALE[sprache], { weekday: "long", timeZone: "Europe/Berlin" });
 
   return (
     <AppShell modus="kinder" voll>
@@ -76,35 +80,35 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
           onWaehle={laufeZu}
         />
         {!gewaehlt && !euleOffen && (
-          <button type="button" className="kinder-karte__eule" aria-label="Eule öffnen" onClick={() => setEuleOffen(true)}>
+          <button type="button" className="kinder-karte__eule" aria-label={t.karte.euleOeffnen} onClick={() => setEuleOffen(true)}>
             <Owl />
           </button>
         )}
         {!gewaehlt && euleOffen && (
           <div className="kinder-karte__guide">
             {alter === null ? (
-              <OwlGuide text="Hallo! Ich bin die Eule. Wie alt bist du?" onSchliessen={() => setEuleOffen(false)}>
+              <OwlGuide text={t.karte.wieAlt} onSchliessen={() => setEuleOffen(false)}>
                 {KINDER_ALTER.map((n) => (
                   <button key={n} type="button" className="kinder-alter" onClick={() => setAlter(n)}>{n}</button>
                 ))}
               </OwlGuide>
             ) : figurArt === null ? (
-              <OwlGuide text="Super! Wer bist du? Such dir eine Figur aus." onSchliessen={() => setEuleOffen(false)}>
+              <OwlGuide text={t.karte.werBistDu} onSchliessen={() => setEuleOffen(false)}>
                 {FIGUR_ARTEN.map((art) => (
-                  <button key={art} type="button" className="kinder-figurwahl" aria-label={figurLabel(art)} onClick={() => setFigurArt(art)}>
+                  <button key={art} type="button" className="kinder-figurwahl" aria-label={t.figur.figuren[art]} onClick={() => setFigurArt(art)}>
                     <KinderFigurBild art={art} />
                   </button>
                 ))}
-                <button type="button" className="kinder-figurwahl kinder-figurwahl--eigen" aria-label="Eigene Figur bauen" onClick={() => setBaukasten(true)}>
+                <button type="button" className="kinder-figurwahl kinder-figurwahl--eigen" aria-label={t.karte.eigeneFigurBauen} onClick={() => setBaukasten(true)}>
                   <KinderFigurBild art="eigen" />
                   <span className="kinder-figurwahl__plus" aria-hidden="true"><Symbol name="plus" /></span>
                 </button>
               </OwlGuide>
             ) : (
-              <OwlGuide text={`Hey! Heute ist ${wochentag ?? "ein schöner Tag"}. Wohin willst du?`} onSchliessen={() => setEuleOffen(false)}>
-                <Button variante="ghost" groesse="kids" icon="cake" onClick={() => setAlter(null)}>Alter ändern</Button>
-                <Button variante="ghost" groesse="kids" icon="users" onClick={() => setFigurArt(null)}>Figur ändern</Button>
-                <Button variante="ghost" groesse="kids" icon="tools" onClick={() => setBaukasten(true)}>Figur bauen</Button>
+              <OwlGuide text={t.karte.hallo(wochentag)} onSchliessen={() => setEuleOffen(false)}>
+                <Button variante="ghost" groesse="kids" icon="cake" onClick={() => setAlter(null)}>{t.karte.alterAendern}</Button>
+                <Button variante="ghost" groesse="kids" icon="users" onClick={() => setFigurArt(null)}>{t.karte.figurAendern}</Button>
+                <Button variante="ghost" groesse="kids" icon="tools" onClick={() => setBaukasten(true)}>{t.karte.figurBauen}</Button>
               </OwlGuide>
             )}
           </div>
