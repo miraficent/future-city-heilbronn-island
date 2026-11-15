@@ -228,12 +228,12 @@
 @media (max-aspect-ratio: 3/2) { .kr-bildkarte { width: auto; aspect-ratio: 3 / 2; } }
 
 /* Eule schließen / wieder öffnen (Karte frei sehen) */
-.ui-guide__zu { position: absolute; top: -18px; right: -18px; display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
+.ui-guide__zu { position: absolute; top: -20px; right: -20px; display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px; border: 2px solid var(--card-border); background: var(--white); color: var(--ink);
   box-shadow: 0 3px 0 0 var(--card-border); cursor: pointer; }
 .ui-guide__zu .symbol { width: 18px; height: 18px; }
 /* Rechts Platz für das X, damit es nicht am Vorlese-Knopf klebt */
-.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 44px; }
+.ui-guide__blase:has(> .ui-guide__zu) { padding-right: 28px; }
 .kinder-karte__eule { position: fixed; left: 16px; bottom: 16px; z-index: 5; width: clamp(72px, 9vw, 104px); padding: 0; border: 0;
   background: none; cursor: pointer; transition: transform .2s ease; }
 .kinder-karte__eule:hover { transform: translateY(-4px) rotate(-4deg); }
