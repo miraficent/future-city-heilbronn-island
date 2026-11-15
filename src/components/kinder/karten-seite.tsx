@@ -13,6 +13,8 @@ import { BILD_START, bildOrte } from "@/lib/bildkarte";
 import { istHeute, kartenFuerOrt, passtZumAlter, type KinderKarte } from "@/lib/kinderkarten";
 import { useKinderAlter, useKinderFigur, useMinute } from "@/lib/kinder-zustand";
 import { FIGUR_ARTEN, KinderFigurBild, figurLabel, type FigurArt } from "@/components/kinderreise/kinder-figuren";
+import { FigurBaukasten } from "@/components/kinder/figur-baukasten";
+import { Symbol } from "@/components/symbol";
 
 const KINDER_ALTER = [6, 7, 8, 9, 10, 11, 12, 13, 14];
 const LAUFZEIT_MS = 1200;
@@ -34,6 +36,7 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
   const [figur, setFigur] = useState<Pt>(BILD_START);
   const [gewaehlt, setGewaehlt] = useState<string | null>(null);
   const [euleOffen, setEuleOffen] = useState(true);
+  const [baukasten, setBaukasten] = useState(false);
 
   // Kommende Karten für dieses Alter (ohne Uhrzeit/Alter beim ersten Rendern: alle)
   const passend = useMemo(
@@ -92,16 +95,30 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
                     <KinderFigurBild art={art} />
                   </button>
                 ))}
+                <button type="button" className="kinder-figurwahl kinder-figurwahl--eigen" aria-label="Eigene Figur bauen" onClick={() => setBaukasten(true)}>
+                  <KinderFigurBild art="eigen" />
+                  <span className="kinder-figurwahl__plus" aria-hidden="true"><Symbol name="plus" /></span>
+                </button>
               </OwlGuide>
             ) : (
               <OwlGuide text={`Hey! Heute ist ${wochentag ?? "ein schöner Tag"}. Wohin willst du?`} onSchliessen={() => setEuleOffen(false)}>
                 <Button variante="ghost" groesse="kids" icon="cake" onClick={() => setAlter(null)}>Alter ändern</Button>
                 <Button variante="ghost" groesse="kids" icon="users" onClick={() => setFigurArt(null)}>Figur ändern</Button>
+                <Button variante="ghost" groesse="kids" icon="tools" onClick={() => setBaukasten(true)}>Figur bauen</Button>
               </OwlGuide>
             )}
           </div>
         )}
       </div>
+      {baukasten && (
+        <FigurBaukasten
+          onSchliessen={() => setBaukasten(false)}
+          onFertig={() => {
+            setFigurArt("eigen");
+            setBaukasten(false);
+          }}
+        />
+      )}
     </AppShell>
   );
 }
