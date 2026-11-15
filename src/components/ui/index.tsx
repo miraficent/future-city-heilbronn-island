@@ -6,10 +6,10 @@
  * Eine Einrichtungsfarbe kommt aus den Daten und wird als --farbe übergeben.
  */
 import Link from "next/link";
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
 import { Symbol } from "@/components/symbol";
 import { KinderFigurBild } from "@/components/kinderreise/kinder-figuren";
-import { vorlesen } from "@/lib/sprechen";
+import { abonniereAutoVorlesen, autoVorlesen, setzeAutoVorlesen, vorlesen } from "@/lib/sprechen";
 
 type Groesse = "kids" | "parents";
 type Variante = "primary" | "accent" | "wish" | "ghost";
@@ -142,6 +142,15 @@ export function Owl({ className = "" }: { className?: string }) {
 
 /** Eule mit Sprechblase und Vorlese-Knopf. Antworten (Knöpfe) als children. */
 export function OwlGuide({ text, children, className = "", onSchliessen }: { text: string; children?: ReactNode; className?: string; onSchliessen?: () => void }) {
+  // Nach dem ersten Antippen des Lautsprechers spricht die Eule jeden neuen Satz von selbst
+  const auto = useSyncExternalStore(abonniereAutoVorlesen, autoVorlesen, () => false);
+  useEffect(() => {
+    if (auto) vorlesen(text);
+  }, [auto, text]);
+  function lautsprecher() {
+    vorlesen(text);
+    if (!auto) setzeAutoVorlesen(true);
+  }
   return (
     <section className={`ui-guide ${className}`} aria-live="polite">
       <Owl className="ui-guide__owl" />
@@ -153,7 +162,9 @@ export function OwlGuide({ text, children, className = "", onSchliessen }: { tex
         )}
         <p className="ui-guide__text">
           {text}
-          <button type="button" className="ui-vorlesen" aria-label="Vorlesen" onClick={() => vorlesen(text)}>
+          <button type="button" className={`ui-vorlesen${auto ? " ist-an" : ""}`} aria-pressed={auto}
+            aria-label={auto ? "Die Eule spricht – nochmal vorlesen" : "Vorlesen – danach spricht die Eule von selbst"}
+            onClick={lautsprecher}>
             <Symbol name="volume" />
           </button>
         </p>

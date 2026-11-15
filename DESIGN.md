@@ -29,6 +29,10 @@ Read this file together with CLAUDE.md before changing any UI.
 > 12. **Einrichtungsseite = Themenwelt** (`/checkpoint/[id]/`): leuchtender Raum mit Fluchtgitter in den Farben der Einrichtung,
 >    Angebote als Kacheln kreuz und quer im Raum (leichtes Wackeln), unten die gewählte Kinderfigur von hinten.
 >    Kachel antippen → Eule liest vor → „Da will ich hin!“. Verläufe nur für den Lichtschein und die Kachel-Struktur.
+> 13. **Kinderfreundlich (für 6–14):** kurze Kindertitel (`kinderTitel`, max. 5 Wörter, ohne Klammern/Untertitel),
+>    Zeit wie Kinder sie sagen („Heute“, „Morgen“, „Am Samstag“, „Nächste Woche“ – `src/lib/kinder-text.ts`),
+>    höchstens 4 Themen als große runde Symbole + „Alles“, höchstens 6 Kacheln pro Ansicht, Alter als Plakette.
+>    Ein Tipp auf den Lautsprecher schaltet „Eule spricht von selbst“ ein. Kein „Neuer Ort?“ auf der Kinderkarte.
 Goal: ONE consistent look for the whole website: map, kids pages, parent dashboard, games.
 Do not invent new colors, fonts or component styles. If something is missing, add it here first.
 

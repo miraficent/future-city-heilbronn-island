@@ -46,6 +46,7 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
     [passend, minute],
   );
 
+  // „Neuer Ort?“ richtet sich an Einrichtungen – bewusst nicht auf der Kinderkarte (Mitmachen liegt im Eltern-Bereich)
   function laufeZu(id: string) {
     if (gewaehlt) return;
     const ort = orte.find((o) => o.id === id)!;
@@ -70,7 +71,6 @@ export function KartenSeite({ orte: kartenOrte, karten, geladen = true }: { orte
           geladen={geladen}
           gewaehlt={gewaehlt}
           onWaehle={laufeZu}
-          onNeuerOrt={() => router.push("/mitmachen/")}
         />
         {!gewaehlt && !euleOffen && (
           <button type="button" className="kinder-karte__eule" aria-label="Eule öffnen" onClick={() => setEuleOffen(true)}>

@@ -80,9 +80,14 @@
   border: 2px solid var(--card-border); border-radius: var(--radius-card); background: var(--white); box-shadow: 0 4px 0 var(--card-border); }
 .ui-guide__text { margin: 0; font: 600 22px/1.4 "Nunito", sans-serif; max-width: 60ch; }
 .ui-guide__antworten { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
-.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-left: 8px;
-  border: none; border-radius: 50%; background: var(--paper); color: var(--primary); cursor: pointer; vertical-align: middle; }
-.ui-vorlesen .symbol { width: 26px; height: 26px; }
+.ui-vorlesen { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin-left: 8px;
+  border: none; border-radius: 50%; background: var(--accent); color: var(--ink); cursor: pointer; vertical-align: middle;
+  box-shadow: 0 4px 0 0 var(--accent-dark); animation: ui-vorlesen-ruf 1.8s ease-in-out infinite; }
+.ui-vorlesen .symbol { width: 30px; height: 30px; }
+/* Solange die Eule noch nicht von selbst spricht, ruft der Lautsprecher leise: „Tipp mich an!“ */
+@keyframes ui-vorlesen-ruf { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.ui-vorlesen.ist-an { animation: none; background: var(--paper); color: var(--primary); box-shadow: 0 4px 0 0 var(--card-border); }
+@media (prefers-reduced-motion: reduce) { .ui-vorlesen { animation: none; } }
 
 /* ---------- BottomSheet, EmptyState, Banner ---------- */
 .ui-sheet { position: fixed; inset: 0; z-index: 50; display: flex; align-items: flex-end; justify-content: center; background: rgb(30 42 90 / 0.45); }
@@ -408,3 +413,41 @@
 /* Elternfigur hat mehr Rand in ihrer Grafik – etwas größer, damit sie so groß wirkt wie das Kind */
 .start__karte-kinder img { height: 124px; margin-bottom: -10px; }
 .ui-mode__kind img { height: 34px; margin-bottom: -4px; }
+
+/* ---------- Kinderfreundlich: große Themen-Symbole, größere Kachelschrift ---------- */
+.welt__themen { gap: 10px; }
+.welt__thema { flex-direction: column; gap: 4px; min-height: 0; padding: 0; border: 0; border-radius: 0; background: none; backdrop-filter: none; }
+.welt__thema-rund { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%;
+  background: var(--farbe, var(--primary)); color: var(--white); border: 3px solid rgba(255, 255, 255, .7); box-shadow: 0 4px 0 0 rgba(0, 0, 0, .3); }
+.welt__thema .welt__thema-rund .symbol { width: 28px; height: 28px; }
+.welt__thema-name { padding: 2px 8px; border-radius: 999px; background: rgba(0, 0, 0, .45); color: var(--white); font: 800 14px/1.2 "Nunito", sans-serif; }
+.welt__thema[aria-pressed="true"] { background: none; }
+.welt__thema[aria-pressed="true"] .welt__thema-rund { border-color: var(--white); outline: 4px solid var(--accent); transform: translateY(-3px); }
+.welt__thema[aria-pressed="true"] .welt__thema-name { background: var(--white); color: var(--ink); }
+.welt__kachel-titel { font-size: clamp(19px, 1.6vw, 25px); }
+.welt__kachel-zeit { font-size: 17px; }
+.welt__kachel-zeit .symbol { width: 20px; height: 20px; }
+.welt__kachel-alter { position: absolute; top: 10px; left: 10px; z-index: 2; padding: 4px 10px; border-radius: 999px; background: var(--white); color: var(--ink);
+  font: 800 15px/1.1 "Nunito", sans-serif; }
+.welt__kachel-herz { top: auto; bottom: 10px; left: auto; right: 10px; }
+@media (max-width: 640px) {
+  .welt__themen { padding-top: 84px; }
+  /* Kacheln laufen über der Figur, damit sie nichts verdeckt */
+  .welt__kacheln { z-index: 21; }
+  .welt__figur { z-index: 5; opacity: .9; }
+}
+/* Symbol kleiner und hinter dem Titel, Titel deckender – nichts überlappt */
+.welt__kachel-bild { z-index: 1; }
+.welt__kachel-bild .symbol { width: clamp(40px, 3.4vw, 56px); }
+.welt__kachel-titel { background: rgba(0, 0, 0, .42); }
+@media (max-width: 640px) {
+  .welt__themen { padding-top: 150px; }
+}
+
+/* „Was erwartet dich?“ – Bild-Hinweise in der Eulen-Blase */
+.welt__erwartet { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; margin: 0; padding: 0; list-style: none; }
+.welt__erwartet li { display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px 4px 4px; border-radius: 999px;
+  background: var(--paper); border: 2px solid var(--card-border); font: 800 17px/1.2 "Nunito", sans-serif; color: var(--ink); }
+.welt__erwartet-rund { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--farbe); color: var(--white); }
+.welt__erwartet-rund .symbol { width: 22px; height: 22px; }
