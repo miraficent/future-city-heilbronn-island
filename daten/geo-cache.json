@@ -38,5 +38,9 @@
   "adresse:Im Zukunftspark 11, 74076 Heilbronn": {
     "lat": 49.1555884,
     "lon": 9.2076931
+  },
+  "adresse:Bildungscampus 7, 74076 Heilbronn": {
+    "lat": 49.1480204,
+    "lon": 9.2149954
   }
 }

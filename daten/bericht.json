@@ -1,5 +1,5 @@
 {
-  "erstellt": "2026-11-15T10:21:43.422Z",
+  "erstellt": "2026-11-16T10:35:59.537Z",
   "lesemodus": "live",
   "quellen": [
     {
@@ -8,56 +8,7 @@
       "ok": true,
       "anzahlRoh": 108,
       "anzahlAufgenommen": 48,
-      "neu": [
-        "aim:271931",
-        "aim:262410DKI",
-        "aim:271410ZGR",
-        "aim:271410DD",
-        "aim:271410HBL",
-        "aim:271410KK",
-        "aim:271430GBL",
-        "aim:271410PM",
-        "aim:271410KIP",
-        "aim:271430ZGBL",
-        "aim:271470IN",
-        "aim:271420SG",
-        "aim:271410FK",
-        "aim:271420SDD",
-        "aim:271410KR",
-        "aim:262430DSW",
-        "aim:262410KR",
-        "aim:262420PCB",
-        "aim:271410ZKT",
-        "aim:271410KIKT",
-        "aim:271430UN",
-        "aim:271430CYC1",
-        "aim:271420RK1",
-        "aim:271420SC",
-        "aim:271420FE",
-        "aim:271420RK2",
-        "aim:271470SIT",
-        "aim:262420PAI",
-        "aim:262420SC",
-        "aim:262420PY",
-        "aim:262420RK2",
-        "aim:262410KIE",
-        "aim:262993CHNB",
-        "aim:271993JKIT",
-        "aim:271993JLMM",
-        "aim:271993KIEK",
-        "aim:271993JKCK",
-        "aim:271992BBMM",
-        "aim:262993JLKK",
-        "aim:271993SDMO",
-        "aim:271993AOGD",
-        "aim:271993JGCS",
-        "aim:271994CMDB",
-        "aim:271993AOER",
-        "aim:271993JEWP",
-        "aim:272993XMC",
-        "aim:272993JECI",
-        "aim:272993RESC"
-      ],
+      "neu": [],
       "unsicher": [
         "aim:271931",
         "aim:271410PM",
@@ -68,7 +19,7 @@
         "aim:271994CMDB",
         "aim:271993AOER"
       ],
-      "dauerMs": 220051
+      "dauerMs": 230419
     },
     {
       "quelle": "experimenta",
@@ -76,45 +27,19 @@
       "ok": true,
       "anzahlRoh": 34,
       "anzahlAufgenommen": 5,
-      "neu": [
-        "experimenta:meine-freundin-roxy",
-        "experimenta:fortbildung-esp32-programmierung-in-python",
-        "experimenta:first-lego-league-explore-ausstellung",
-        "experimenta:first-lego-league-regionalwettbewerb-heilbronn",
-        "experimenta:maker-faire"
-      ],
+      "neu": [],
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 1236
+      "dauerMs": 1367
     },
     {
       "quelle": "hdf",
       "name": "Haus der Familie Heilbronn",
       "ok": true,
-      "anzahlRoh": 576,
+      "anzahlRoh": 574,
       "anzahlAufgenommen": 19,
-      "neu": [
-        "hdf:261H207010",
-        "hdf:261H207004",
-        "hdf:261H116302",
-        "hdf:261H304002",
-        "hdf:261H207006",
-        "hdf:261H116102",
-        "hdf:261H207007",
-        "hdf:261H207016",
-        "hdf:261H207017",
-        "hdf:261H207008",
-        "hdf:261H305008",
-        "hdf:261H305006",
-        "hdf:261H116303",
-        "hdf:272H207001",
-        "hdf:272H116101",
-        "hdf:272H114102",
-        "hdf:272H114201",
-        "hdf:272H116102",
-        "hdf:272H116103"
-      ],
+      "neu": [],
       "unsicher": [
         "hdf:261H207010",
         "hdf:261H116302",
@@ -125,7 +50,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 11707
+      "dauerMs": 13734
     },
     {
       "quelle": "ipai",
@@ -133,15 +58,9 @@
       "ok": true,
       "anzahlRoh": 41,
       "anzahlAufgenommen": 5,
-      "neu": [
-        "ipai:ki-salon-community-event-21",
-        "ipai:ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-an-die-wand",
-        "ipai:ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung",
-        "ipai:ki-salon-workshop-erstelle-dein-board-of-excellence",
-        "ipai:living-room-session-10-women-in-ai"
-      ],
+      "neu": [],
       "unsicher": [],
-      "dauerMs": 49901
+      "dauerMs": 54575
     }
   ],
   "gesamt": 77
