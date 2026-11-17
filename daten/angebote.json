@@ -1,277 +1,5 @@
 [
  {
-  "id": "aim:262420PAI",
-  "quelle": "aim",
-  "titel": "Python lernen mit KI (ab 16 Jahren)",
-  "teaser": "Dein smarter Start in Python: mit erfahrenem Dozenten und persönlichem KI-Tutor Programmieren lernen war noch nie so einfach: In diesem Kurs lernst du Schritt für Schritt die Grundlagen von Python, einer weltweit eingesetzten und für Einsteigende super geeigneten Programmiersprache, kennen. Dabei…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Python-lernen-mit-KI-ab-16-Jahren/262420PAI",
-  "themen": [
-   "ki",
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens",
-   "erwachsene",
-   "eltern"
-  ],
-  "alterMin": 16,
-  "termine": [
-   {
-    "start": "2026-11-16T16:30:00+01:00",
-    "ende": "2026-11-16T18:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "Programmier",
-   "Python"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "aim:262430DSW",
-  "quelle": "aim",
-  "titel": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen",
-  "teaser": "Digitale Spiele verstehen und Kinder kompetent begleiten Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW",
-  "themen": [
-   "gaming"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "eltern",
-   "fachkraefte"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-16T17:00:00+01:00",
-    "ende": "2026-11-16T19:30:00+01:00"
-   },
-   {
-    "start": "2026-11-23T17:00:00+01:00",
-    "ende": "2026-11-23T19:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Online",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "wenige",
-  "sicherheit": 0.7,
-  "ausloeser": [
-   "Game",
-   "Gaming",
-   "Minecraft",
-   "Roblox"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "experimenta:meine-freundin-roxy",
-  "quelle": "experimenta",
-  "titel": "Meine Freundin Roxy",
-  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
-  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
-  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "teens"
-  ],
-  "alterMin": 6,
-  "termine": [
-   {
-    "start": "2026-11-17T09:30:00+01:00",
-    "ende": "2026-11-17T10:05:00+01:00"
-   },
-   {
-    "start": "2026-11-21T11:30:00+01:00",
-    "ende": "2026-11-21T12:05:00+01:00"
-   },
-   {
-    "start": "2026-11-28T11:30:00+01:00",
-    "ende": "2026-11-28T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-02T09:30:00+01:00",
-    "ende": "2026-12-02T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-05T12:30:00+01:00",
-    "ende": "2026-12-05T13:05:00+01:00"
-   },
-   {
-    "start": "2026-12-06T10:30:00+01:00",
-    "ende": "2026-12-06T11:05:00+01:00"
-   },
-   {
-    "start": "2026-12-10T09:30:00+01:00",
-    "ende": "2026-12-10T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-19T13:30:00+01:00",
-    "ende": "2026-12-19T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-20T11:30:00+01:00",
-    "ende": "2026-12-20T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-21T13:00:00+01:00",
-    "ende": "2026-12-21T13:35:00+01:00"
-   },
-   {
-    "start": "2026-12-23T11:00:00+01:00",
-    "ende": "2026-12-23T11:35:00+01:00"
-   },
-   {
-    "start": "2026-12-27T13:30:00+01:00",
-    "ende": "2026-12-27T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-29T10:00:00+01:00",
-    "ende": "2026-12-29T10:35:00+01:00"
-   },
-   {
-    "start": "2026-12-29T15:00:00+01:00",
-    "ende": "2026-12-29T15:35:00+01:00"
-   },
-   {
-    "start": "2027-01-05T12:00:00+01:00",
-    "ende": "2027-01-05T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-07T12:00:00+01:00",
-    "ende": "2027-01-07T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-09T12:30:00+01:00",
-    "ende": "2027-01-09T13:05:00+01:00"
-   },
-   {
-    "start": "2027-01-10T10:30:00+01:00",
-    "ende": "2027-01-10T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-13T09:30:00+01:00",
-    "ende": "2027-01-13T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-17T10:30:00+01:00",
-    "ende": "2027-01-17T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-19T09:30:00+01:00",
-    "ende": "2027-01-19T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-23T12:30:00+01:00",
-    "ende": "2027-01-23T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-07T12:30:00+01:00",
-    "ende": "2027-02-07T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-08T11:00:00+01:00",
-    "ende": "2027-02-08T11:35:00+01:00"
-   },
-   {
-    "start": "2027-02-10T13:00:00+01:00",
-    "ende": "2027-02-10T13:35:00+01:00"
-   },
-   {
-    "start": "2027-02-14T10:30:00+01:00",
-    "ende": "2027-02-14T11:05:00+01:00"
-   },
-   {
-    "start": "2027-02-20T12:30:00+01:00",
-    "ende": "2027-02-20T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-28T10:30:00+01:00",
-    "ende": "2027-02-28T11:05:00+01:00"
-   },
-   {
-    "start": "2027-03-18T09:30:00+01:00",
-    "ende": "2027-03-18T10:05:00+01:00"
-   },
-   {
-    "start": "2027-03-24T12:00:00+01:00",
-    "ende": "2027-03-24T12:35:00+01:00"
-   },
-   {
-    "start": "2027-03-25T11:00:00+01:00",
-    "ende": "2027-03-25T11:35:00+01:00"
-   },
-   {
-    "start": "2027-03-28T11:30:00+02:00",
-    "ende": "2027-03-28T12:05:00+02:00"
-   },
-   {
-    "start": "2027-03-31T11:00:00+02:00",
-    "ende": "2027-03-31T11:35:00+02:00"
-   },
-   {
-    "start": "2027-04-06T09:30:00+02:00",
-    "ende": "2027-04-06T10:05:00+02:00"
-   },
-   {
-    "start": "2027-05-03T09:30:00+02:00",
-    "ende": "2027-05-03T10:05:00+02:00"
-   },
-   {
-    "start": "2027-06-14T09:30:00+02:00",
-    "ende": "2027-06-14T10:05:00+02:00"
-   },
-   {
-    "start": "2027-07-13T09:30:00+02:00",
-    "ende": "2027-07-13T10:05:00+02:00"
-   }
-  ],
-  "ort": {
-   "name": "experimenta",
-   "adresse": "Experimenta-Platz, 74072 Heilbronn",
-   "online": false,
-   "lat": 49.1395178,
-   "lon": 9.2161475
-  },
-  "kosten": {
-   "euro": null,
-   "text": "siehe Anbieter"
-  },
-  "status": "unbekannt",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "Roboter"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "aim:262420SC",
   "quelle": "aim",
   "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
@@ -664,6 +392,186 @@
   "erstmalsGesehen": "2026-11-15"
  },
  {
+  "id": "experimenta:meine-freundin-roxy",
+  "quelle": "experimenta",
+  "titel": "Meine Freundin Roxy",
+  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-11-21T11:30:00+01:00",
+    "ende": "2026-11-21T12:05:00+01:00"
+   },
+   {
+    "start": "2026-11-28T11:30:00+01:00",
+    "ende": "2026-11-28T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-02T09:30:00+01:00",
+    "ende": "2026-12-02T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-05T12:30:00+01:00",
+    "ende": "2026-12-05T13:05:00+01:00"
+   },
+   {
+    "start": "2026-12-06T10:30:00+01:00",
+    "ende": "2026-12-06T11:05:00+01:00"
+   },
+   {
+    "start": "2026-12-10T09:30:00+01:00",
+    "ende": "2026-12-10T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-19T13:30:00+01:00",
+    "ende": "2026-12-19T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-20T11:30:00+01:00",
+    "ende": "2026-12-20T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-21T13:00:00+01:00",
+    "ende": "2026-12-21T13:35:00+01:00"
+   },
+   {
+    "start": "2026-12-23T11:00:00+01:00",
+    "ende": "2026-12-23T11:35:00+01:00"
+   },
+   {
+    "start": "2026-12-27T13:30:00+01:00",
+    "ende": "2026-12-27T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-29T10:00:00+01:00",
+    "ende": "2026-12-29T10:35:00+01:00"
+   },
+   {
+    "start": "2026-12-29T15:00:00+01:00",
+    "ende": "2026-12-29T15:35:00+01:00"
+   },
+   {
+    "start": "2027-01-05T12:00:00+01:00",
+    "ende": "2027-01-05T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-07T12:00:00+01:00",
+    "ende": "2027-01-07T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-09T12:30:00+01:00",
+    "ende": "2027-01-09T13:05:00+01:00"
+   },
+   {
+    "start": "2027-01-10T10:30:00+01:00",
+    "ende": "2027-01-10T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-13T09:30:00+01:00",
+    "ende": "2027-01-13T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-17T10:30:00+01:00",
+    "ende": "2027-01-17T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-19T09:30:00+01:00",
+    "ende": "2027-01-19T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-23T12:30:00+01:00",
+    "ende": "2027-01-23T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-07T12:30:00+01:00",
+    "ende": "2027-02-07T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-08T11:00:00+01:00",
+    "ende": "2027-02-08T11:35:00+01:00"
+   },
+   {
+    "start": "2027-02-10T13:00:00+01:00",
+    "ende": "2027-02-10T13:35:00+01:00"
+   },
+   {
+    "start": "2027-02-14T10:30:00+01:00",
+    "ende": "2027-02-14T11:05:00+01:00"
+   },
+   {
+    "start": "2027-02-20T12:30:00+01:00",
+    "ende": "2027-02-20T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-28T10:30:00+01:00",
+    "ende": "2027-02-28T11:05:00+01:00"
+   },
+   {
+    "start": "2027-03-18T09:30:00+01:00",
+    "ende": "2027-03-18T10:05:00+01:00"
+   },
+   {
+    "start": "2027-03-24T12:00:00+01:00",
+    "ende": "2027-03-24T12:35:00+01:00"
+   },
+   {
+    "start": "2027-03-25T11:00:00+01:00",
+    "ende": "2027-03-25T11:35:00+01:00"
+   },
+   {
+    "start": "2027-03-28T11:30:00+02:00",
+    "ende": "2027-03-28T12:05:00+02:00"
+   },
+   {
+    "start": "2027-03-31T11:00:00+02:00",
+    "ende": "2027-03-31T11:35:00+02:00"
+   },
+   {
+    "start": "2027-04-06T09:30:00+02:00",
+    "ende": "2027-04-06T10:05:00+02:00"
+   },
+   {
+    "start": "2027-05-03T09:30:00+02:00",
+    "ende": "2027-05-03T10:05:00+02:00"
+   },
+   {
+    "start": "2027-06-14T09:30:00+02:00",
+    "ende": "2027-06-14T10:05:00+02:00"
+   },
+   {
+    "start": "2027-07-13T09:30:00+02:00",
+    "ende": "2027-07-13T10:05:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Roboter"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
   "id": "ipai:ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung",
   "quelle": "ipai",
   "titel": "KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwendung",
@@ -700,6 +608,47 @@
    "KI",
    "KI-Agent",
    "Coding"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262430DSW",
+  "quelle": "aim",
+  "titel": "Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Kindern und Jugendlichen",
+  "teaser": "Digitale Spiele verstehen und Kinder kompetent begleiten Digitale Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und Jugendlicher. Minecraft, Roblox und Fortnite sind mittlerweile bekannte Begriffe, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuelle Spielewelten…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und-Jugendlichen/262430DSW",
+  "themen": [
+   "gaming"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern",
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-23T17:00:00+01:00",
+    "ende": "2026-11-23T19:30:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.7,
+  "ausloeser": [
+   "Game",
+   "Gaming",
+   "Minecraft",
+   "Roblox"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
@@ -1309,7 +1258,7 @@
   ],
   "ort": {
    "name": "Heilbronn",
-   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 3",
    "online": false,
    "lat": 49.1453958,
    "lon": 9.2089472
@@ -3658,6 +3607,47 @@
    "ChatGPT"
   ],
   "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262410KID",
+  "quelle": "aim",
+  "titel": "KI im DaZ/DaF Unterricht: Chancen für Vielfalt und Bildungsgerechtigkeit",
+  "teaser": "KI unterstützend im DaZ/DaF Unterricht einsetzen - Möglichkeiten zu Differenzierung und Teilhabe In diesem mehrtägigen Online-Kurs erfahren Lehrkräfte praxisnah, wie sie KI als Werkzeug zur Unterstützung von Lernprozessen im DaZ/DaF Unterricht einsetzen können. Im Mittelpunkt stehen die vier…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-im-DaZDaF-Unterricht-Chancen-fuer-Vielfalt-und-Bildungsgerechtigkeit/262410KID",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-06-14T15:15:00+02:00",
+    "ende": "2027-06-14T18:30:00+02:00"
+   },
+   {
+    "start": "2027-06-24T15:15:00+02:00",
+    "ende": "2027-06-24T18:30:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Online",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-17"
  },
  {
   "id": "hdf:272H116103",

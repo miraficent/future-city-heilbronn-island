@@ -1,14 +1,16 @@
 {
-  "erstellt": "2026-11-16T10:35:59.537Z",
+  "erstellt": "2026-11-17T11:27:26.586Z",
   "lesemodus": "live",
   "quellen": [
     {
       "quelle": "aim",
       "name": "aim – Akademie für Innovative Bildung und Management",
       "ok": true,
-      "anzahlRoh": 108,
+      "anzahlRoh": 107,
       "anzahlAufgenommen": 48,
-      "neu": [],
+      "neu": [
+        "aim:262410KID"
+      ],
       "unsicher": [
         "aim:271931",
         "aim:271410PM",
@@ -19,7 +21,7 @@
         "aim:271994CMDB",
         "aim:271993AOER"
       ],
-      "dauerMs": 230419
+      "dauerMs": 281675
     },
     {
       "quelle": "experimenta",
@@ -31,13 +33,13 @@
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 1367
+      "dauerMs": 1929
     },
     {
       "quelle": "hdf",
       "name": "Haus der Familie Heilbronn",
       "ok": true,
-      "anzahlRoh": 574,
+      "anzahlRoh": 569,
       "anzahlAufgenommen": 19,
       "neu": [],
       "unsicher": [
@@ -50,7 +52,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 13734
+      "dauerMs": 13091
     },
     {
       "quelle": "ipai",
@@ -60,7 +62,7 @@
       "anzahlAufgenommen": 5,
       "neu": [],
       "unsicher": [],
-      "dauerMs": 54575
+      "dauerMs": 49928
     }
   ],
   "gesamt": 77

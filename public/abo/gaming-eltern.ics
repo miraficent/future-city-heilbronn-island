@@ -7,26 +7,8 @@ X-WR-CALNAME:Gaming & Games für Eltern & Familien – COSMOS-Entdecker
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:aim-262430DSW-20261116T160000Z@cosmos-entdecker
-DTSTAMP:20261116T104101Z
-DTSTART:20261116T160000Z
-DTEND:20261116T183000Z
-SUMMARY:Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Ki
- ndern und Jugendlichen
-DESCRIPTION:Digitale Spiele verstehen und Kinder kompetent begleiten Digita
- le Spiele sind ein geläufiger Bestandteil des Alltags vieler Kinder und J
- ugendlicher. Minecraft\, Roblox und Fortnite sind mittlerweile bekannte Be
- griffe\, doch was verbirgt sich dahinter? In diesem Kurs lernen Sie aktuel
- le Spielewelten…\n\nKosten: kostenlos\nInfos und Anmeldung: https://www.
- aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-von-Kindern-und
- -Jugendlichen/262430DSW
-LOCATION:Bildungscampus 7\, 74076 Heilbronn
-URL:https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-
- von-Kindern-und-Jugendlichen/262430DSW
-END:VEVENT
-BEGIN:VEVENT
 UID:aim-262430DSW-20261123T160000Z@cosmos-entdecker
-DTSTAMP:20261116T104101Z
+DTSTAMP:20261117T113313Z
 DTSTART:20261123T160000Z
 DTEND:20261123T183000Z
 SUMMARY:Was spielst du da eigentlich? Aktuelle digitale Spielewelten von Ki
@@ -44,7 +26,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Aktuelle-digitale-Spielewelten-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271430GBL-20270301T160000Z@cosmos-entdecker
-DTSTAMP:20261116T104101Z
+DTSTAMP:20261117T113313Z
 DTSTART:20270301T160000Z
 DTEND:20270301T193000Z
 SUMMARY:Games im Unterricht – Impulse für den Einstieg in Game-based Lea
@@ -62,7 +44,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Games-im-Unterricht-Impulse-fue
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271430ZGBL-20270306T080000Z@cosmos-entdecker
-DTSTAMP:20261116T104101Z
+DTSTAMP:20261117T113313Z
 DTSTART:20270306T080000Z
 DTEND:20270306T153000Z
 SUMMARY:Zukunftswerkstatt: Game-based Learning im Unterricht umsetzen – L
