@@ -1,153 +1,5 @@
 [
  {
-  "id": "aim:262420SC",
-  "quelle": "aim",
-  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
-  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/262420SC",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder"
-  ],
-  "alterMin": 8,
-  "alterMax": 11,
-  "termine": [
-   {
-    "start": "2026-11-17T16:30:00+01:00",
-    "ende": "2026-11-17T18:10:00+01:00"
-   },
-   {
-    "start": "2026-11-24T16:30:00+01:00",
-    "ende": "2026-11-24T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-01T16:30:00+01:00",
-    "ende": "2026-12-01T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-08T16:30:00+01:00",
-    "ende": "2026-12-08T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-15T16:30:00+01:00",
-    "ende": "2026-12-15T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-12T16:30:00+01:00",
-    "ende": "2027-01-12T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-19T16:30:00+01:00",
-    "ende": "2027-01-19T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-26T16:30:00+01:00",
-    "ende": "2027-01-26T18:10:00+01:00"
-   },
-   {
-    "start": "2027-02-02T16:30:00+01:00",
-    "ende": "2027-02-02T18:10:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Scratch"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "aim:262410KR",
-  "quelle": "aim",
-  "titel": "KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvoll und rechtssicher im Unterricht einsetzen",
-  "teaser": "Künstliche Intelligenz verstehen und souverän im Unterricht nutzen Künstliche Intelligenz verändert die Art und Weise, wie wir lehren und lernen – und stellt Schulen zugleich vor neue Herausforderungen. Dieser Kurs richtet sich an Lehrkräfte und Schulleitungen an Grund- und weiterführenden…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/262410KR",
-  "themen": [
-   "ki"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "fachkraefte"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-17T17:00:00+01:00",
-    "ende": "2026-11-17T20:15:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Online",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "wenige",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "AI",
-   "künstliche Intelligenz",
-   "ChatGPT"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "hdf:261H207010",
-  "quelle": "hdf",
-  "titel": "Gesunder Umgang mit Social Media (Teil I): Mechanismen verstehen und Risiken erkennen - LIVE ONLINE",
-  "teaser": "Ein Vortrag für Eltern Soziale Medien sind fester Bestandteil der Lebenswelt Jugendlicher. Im ersten Teil des Webinars wird aufgezeigt, warum Plattformen so fesselnd wirken und mit welchen Mechanismen – wie Likes, Endlosschleifen, Push-Benachrichtigungen, FOMO oder Antwortdruck – Jugendliche…",
-  "url": "https://hdf-hn.de/kurs/gesunder-umgang-mit-social-media-teil-i-mechanismen-verstehen-und-risiken-erkennen-live-online-261H207010/",
-  "themen": [
-   "ki"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "eltern",
-   "familien"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-17T18:00:00+01:00",
-    "ende": "2026-11-17T19:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Haus der Familie",
-   "adresse": "online",
-   "online": true
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "frei",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "KI"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "aim:262420RK2",
   "quelle": "aim",
   "titel": "Robotik zum Anfassen 2– vom analogen ins symbolbasierte Programmieren (7–10 Jahre)",
@@ -649,6 +501,74 @@
    "Gaming",
    "Minecraft",
    "Roblox"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262420SC",
+  "quelle": "aim",
+  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
+  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/262420SC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 8,
+  "alterMax": 11,
+  "termine": [
+   {
+    "start": "2026-11-24T16:30:00+01:00",
+    "ende": "2026-11-24T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-01T16:30:00+01:00",
+    "ende": "2026-12-01T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-08T16:30:00+01:00",
+    "ende": "2026-12-08T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-15T16:30:00+01:00",
+    "ende": "2026-12-15T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-12T16:30:00+01:00",
+    "ende": "2027-01-12T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-19T16:30:00+01:00",
+    "ende": "2027-01-19T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-26T16:30:00+01:00",
+    "ende": "2027-01-26T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-02T16:30:00+01:00",
+    "ende": "2027-02-02T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
@@ -1843,56 +1763,6 @@
   "erstmalsGesehen": "2026-11-15"
  },
  {
-  "id": "aim:271993JKIT",
-  "quelle": "aim",
-  "titel": "Juniorakademie: Internet of Things – Von Sensoren zu smarten Systemen (Kl. 11-13)",
-  "teaser": "Diese Veranstaltung richtet sich an Juniorstudierende der Klassen 11 bis 13. Die Juniorakademie ist das Stipendienprogramm der aim Heilbronn. Um an Juniorakademie-Kursen teilnehmen zu können, ist das Durchlaufen eines Bewerbungsprozesses notwendig. Interessierte Schüler und Schülerinnen können…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Internet-of-Things-Kl-11-13/271993JKIT",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens",
-   "erwachsene"
-  ],
-  "alterMin": 16,
-  "alterMax": 18,
-  "termine": [
-   {
-    "start": "2027-02-09T09:00:00+01:00",
-    "ende": "2027-02-09T15:15:00+01:00"
-   },
-   {
-    "start": "2027-02-10T09:00:00+01:00",
-    "ende": "2027-02-10T15:15:00+01:00"
-   },
-   {
-    "start": "2027-02-11T09:00:00+01:00",
-    "ende": "2027-02-11T15:15:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "frei",
-  "sicherheit": 0.7,
-  "ausloeser": [
-   "Programmier",
-   "Mikrocontroller",
-   "Microcontroller"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "aim:271993JGCS",
   "quelle": "aim",
   "titel": "Juniorakademie: Code your Story – Interaktive Geschichten mit Scratch (Kl. 7-8)",
@@ -2586,7 +2456,7 @@
   ],
   "ort": {
    "name": "Heilbronn",
-   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 5",
+   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 3",
    "online": false,
    "lat": 49.1453958,
    "lon": 9.2089472
