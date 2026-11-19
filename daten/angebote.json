@@ -1,156 +1,5 @@
 [
  {
-  "id": "aim:262420RK2",
-  "quelle": "aim",
-  "titel": "Robotik zum Anfassen 2– vom analogen ins symbolbasierte Programmieren (7–10 Jahre)",
-  "teaser": "Programmier-Abenteuer zum Anfassen: Mit LEGO® Education kleine Roboter programmieren. Tauche ein in die spannende Welt der Robotik und des Programmierens! In diesem Kurs baust Du mit LEGO® Education kleine Roboter und lernst, sie mithilfe von Symbolen auf dem Tablet zu programmieren. Spielerisch…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Robotik-zum-Anfassen-2vom-analogen-ins-symbolbasierte-Programmieren710-Jahre/262420RK2",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder"
-  ],
-  "alterMin": 7,
-  "alterMax": 10,
-  "termine": [
-   {
-    "start": "2026-11-18T15:00:00+01:00",
-    "ende": "2026-11-18T16:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Roboter",
-   "Robotik",
-   "Algorithm"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "aim:262420PY",
-  "quelle": "aim",
-  "titel": "Programmieren lernen mit Python (12–16 Jahre)",
-  "teaser": "Tauche ein in die faszinierende Welt des Programmierens! In unserem Grundkurs „Programmieren lernen mit Python\" entdeckst du, wie du mit einer der vielseitigsten und beliebtesten Programmiersprachen der Welt eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal, ob du erste…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420PY",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens"
-  ],
-  "alterMin": 12,
-  "alterMax": 16,
-  "termine": [
-   {
-    "start": "2026-11-18T16:30:00+01:00",
-    "ende": "2026-11-18T18:10:00+01:00"
-   },
-   {
-    "start": "2026-11-25T16:30:00+01:00",
-    "ende": "2026-11-25T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-02T16:30:00+01:00",
-    "ende": "2026-12-02T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-09T16:30:00+01:00",
-    "ende": "2026-12-09T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-16T16:30:00+01:00",
-    "ende": "2026-12-16T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-13T16:30:00+01:00",
-    "ende": "2027-01-13T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-27T16:30:00+01:00",
-    "ende": "2027-01-27T18:10:00+01:00"
-   },
-   {
-    "start": "2027-02-03T16:30:00+01:00",
-    "ende": "2027-02-03T18:10:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Python"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "ipai:living-room-session-10-women-in-ai",
-  "quelle": "ipai",
-  "titel": "Living Room Session #10: Women in AI",
-  "teaser": "Kommt vorbei zu unserem Afterwork-Event im IPAI mit einem spannenden Couch-Talk, Führungen, Food & Drinks! Das Motto unserer zehnten Living Room Session ist „Women in Robotics“. Euch erwartet: ein spannender Couch-Talk mit Leona Grulich (byte robotics), Maike Kaufman (Polybot) und Gesche Held…",
-  "url": "https://ipai-foundation.ai/event/living-room-session-10-women-in-ai/",
-  "themen": [
-   "ki",
-   "coding"
-  ],
-  "art": "veranstaltung",
-  "zielgruppen": [
-   "erwachsene"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-18T18:00:00+01:00",
-    "ende": "2026-11-18T21:00:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "IPAI",
-   "adresse": "Im Zukunftspark 11",
-   "online": false,
-   "lat": 49.1555884,
-   "lon": 9.2076931
-  },
-  "kosten": {
-   "euro": null,
-   "text": "siehe Anbieter"
-  },
-  "status": "unbekannt",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "AI",
-   "Roboter",
-   "Robotik"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "aim:262410KIE",
   "quelle": "aim",
   "titel": "KI-Orientierung für Eltern: Grundlagen, Praxis und Zukunftsperspektiven",
@@ -637,6 +486,70 @@
   "sicherheit": 0.5,
   "ausloeser": [
    "Game"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262420PY",
+  "quelle": "aim",
+  "titel": "Programmieren lernen mit Python (12–16 Jahre)",
+  "teaser": "Tauche ein in die faszinierende Welt des Programmierens! In unserem Grundkurs „Programmieren lernen mit Python\" entdeckst du, wie du mit einer der vielseitigsten und beliebtesten Programmiersprachen der Welt eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal, ob du erste…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420PY",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 16,
+  "termine": [
+   {
+    "start": "2026-11-25T16:30:00+01:00",
+    "ende": "2026-11-25T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-02T16:30:00+01:00",
+    "ende": "2026-12-02T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-09T16:30:00+01:00",
+    "ende": "2026-12-09T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-16T16:30:00+01:00",
+    "ende": "2026-12-16T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-13T16:30:00+01:00",
+    "ende": "2027-01-13T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-27T16:30:00+01:00",
+    "ende": "2027-01-27T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-03T16:30:00+01:00",
+    "ende": "2027-02-03T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
