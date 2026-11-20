@@ -1,49 +1,5 @@
 [
  {
-  "id": "aim:262410KIE",
-  "quelle": "aim",
-  "titel": "KI-Orientierung für Eltern: Grundlagen, Praxis und Zukunftsperspektiven",
-  "teaser": "Künstliche Intelligenz verstehen, einordnen und Kinder kompetent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinder angekommen – in der Schule, beim Lernen und in der Freizeit. Doch was steckt dahinter, welche Chancen bietet KI, und was sollten Eltern wissen? Dieser Kurs gibt…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Praxis-und-Zukunftsperspektiven/262410KIE",
-  "themen": [
-   "ki"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "eltern"
-  ],
-  "termine": [
-   {
-    "start": "2026-11-19T18:00:00+01:00",
-    "ende": "2026-11-19T20:00:00+01:00"
-   },
-   {
-    "start": "2026-11-26T18:00:00+01:00",
-    "ende": "2026-11-26T20:00:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "künstliche Intelligenz",
-   "Chatbot",
-   "Prompt"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "hdf:261H207004",
   "quelle": "hdf",
   "titel": "Data Literacy for Kids: Von Bausteinen zum Balkendiagramm",
@@ -82,7 +38,7 @@
    "euro": 10,
    "text": "10 €"
   },
-  "status": "wenige",
+  "status": "ausgebucht",
   "sicherheit": 0.9,
   "ausloeser": [
    "KI",
@@ -591,6 +547,46 @@
    "Python",
    "Mikrocontroller",
    "ESP32"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262410KIE",
+  "quelle": "aim",
+  "titel": "KI-Orientierung für Eltern: Grundlagen, Praxis und Zukunftsperspektiven",
+  "teaser": "Künstliche Intelligenz verstehen, einordnen und Kinder kompetent begleiten. Künstliche Intelligenz ist längst im Alltag unserer Kinder angekommen – in der Schule, beim Lernen und in der Freizeit. Doch was steckt dahinter, welche Chancen bietet KI, und was sollten Eltern wissen? Dieser Kurs gibt…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/KI-Orientierung-fuer-Eltern-Grundlagen-Praxis-und-Zukunftsperspektiven/262410KIE",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "eltern"
+  ],
+  "termine": [
+   {
+    "start": "2026-11-26T18:00:00+01:00",
+    "ende": "2026-11-26T20:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI",
+   "künstliche Intelligenz",
+   "Chatbot",
+   "Prompt"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
@@ -3144,6 +3140,71 @@
    "Informatik"
   ],
   "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:271410SQR",
+  "quelle": "aim",
+  "titel": "Schule in Zeiten von KI strategisch führen – eine Qualifizierungsreihe für Führungskräfte aus dem Bildungsbereich",
+  "teaser": "„Leading in a culture of change does not mean placing changed individuals into unchanged environments (…) rather change leaders work on changing the context.” (Fullan, 2020) Unsere Gesellschaft verändert sich im Kontext umfangreicher Digitalisierungsprozesse und KI grundlegend. In Folge stehen…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strategisch-fuehren/271410SQR",
+  "themen": [
+   "ki"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "fachkraefte"
+  ],
+  "termine": [
+   {
+    "start": "2027-04-23T15:30:00+02:00",
+    "ende": "2027-04-23T20:30:00+02:00"
+   },
+   {
+    "start": "2027-04-24T08:30:00+02:00",
+    "ende": "2027-04-24T16:00:00+02:00"
+   },
+   {
+    "start": "2027-06-10T17:00:00+02:00",
+    "ende": "2027-06-10T20:15:00+02:00"
+   },
+   {
+    "start": "2027-06-15T17:00:00+02:00",
+    "ende": "2027-06-15T20:15:00+02:00"
+   },
+   {
+    "start": "2027-10-06T17:00:00+02:00",
+    "ende": "2027-10-06T20:30:00+02:00"
+   },
+   {
+    "start": "2027-11-12T15:30:00+01:00",
+    "ende": "2027-11-12T20:30:00+01:00"
+   },
+   {
+    "start": "2027-11-13T08:30:00+01:00",
+    "ende": "2027-11-13T16:00:00+01:00"
+   },
+   {
+    "start": "2028-05-23T17:00:00+02:00",
+    "ende": "2028-05-23T20:30:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "Blended Learning",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "frei",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "KI"
+  ],
+  "erstmalsGesehen": "2026-11-20"
  },
  {
   "id": "aim:271992BBMM",

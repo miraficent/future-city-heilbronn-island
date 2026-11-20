@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:aim-262420PY-20261125T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261125T153000Z
 DTEND:20261125T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -25,7 +25,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20261202T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261202T153000Z
 DTEND:20261202T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -42,7 +42,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20261209T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261209T153000Z
 DTEND:20261209T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -59,7 +59,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20261216T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261216T153000Z
 DTEND:20261216T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -76,7 +76,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20270113T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270113T153000Z
 DTEND:20270113T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -93,7 +93,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20270127T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270127T153000Z
 DTEND:20270127T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -110,7 +110,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PY-20270203T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270203T153000Z
 DTEND:20270203T171000Z
 SUMMARY:Programmieren lernen mit Python (12–16 Jahre)
@@ -127,7 +127,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PCB-20261127T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261127T153000Z
 DTEND:20261127T170000Z
 SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
@@ -145,7 +145,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PCB-20261204T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261204T153000Z
 DTEND:20261204T170000Z
 SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
@@ -163,7 +163,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262420PCB-20261211T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261211T153000Z
 DTEND:20261211T170000Z
 SUMMARY:Kleine Computer\, große Wirkung – Einführung in die Programmier
@@ -181,7 +181,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmieru
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H304002-20261128T113000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261128T113000Z
 DTEND:20261128T143000Z
 SUMMARY:Programmieren Lernen - Scratch
@@ -196,7 +196,7 @@ URL:https://hdf-hn.de/kurs/programmieren-lernen-scratch-261H304002/
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207006-20261205T083000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261205T083000Z
 DTEND:20261205T103000Z
 SUMMARY:Märchenhaft mit ScratchJunior eine Geschichte programmieren: Das m
@@ -215,7 +215,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:experimenta-first-lego-league-regionalwettbewerb-heilbronn-20261205T100
  000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20261205T100000Z
 DTEND:20261205T160000Z
 SUMMARY:First Lego League Challenge – Regionalwettbewerb Heilbronn
@@ -231,7 +231,7 @@ URL:https://www.experimenta.science/besuchen/veranstaltungskalender/first-l
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207007-20270116T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270116T090000Z
 DTEND:20270116T103000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -247,7 +247,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207007-20270123T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270123T090000Z
 DTEND:20270123T103000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -263,7 +263,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207016-20270116T113000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270116T113000Z
 DTEND:20270116T130000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -279,7 +279,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207016-20270123T113000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270123T113000Z
 DTEND:20270123T130000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -295,7 +295,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207017-20270116T133000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270116T133000Z
 DTEND:20270116T150000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -311,7 +311,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207017-20270123T133000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270123T133000Z
 DTEND:20270123T150000Z
 SUMMARY:Roboter - Verstehen\, Programmieren\, Entdecken - Stufe 2
@@ -327,7 +327,7 @@ URL:https://hdf-hn.de/kurs/roboter-verstehen-programmieren-entdecken-stufe-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207008-20270130T083000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270130T083000Z
 DTEND:20270130T103000Z
 SUMMARY:Spielerisch mit ScratchJunior eine grünere\, saubere Welt programm
@@ -345,7 +345,7 @@ URL:https://hdf-hn.de/kurs/spielerisch-mit-scratchjunior-eine-gruenere-saub
 END:VEVENT
 BEGIN:VEVENT
 UID:experimenta-maker-faire-20270206T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270206T090000Z
 DTEND:20270206T170000Z
 SUMMARY:Maker Faire ® Heilbronn 2027
@@ -361,7 +361,7 @@ URL:https://www.experimenta.science/besuchen/veranstaltungskalender/maker-f
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JGCS-20270210T080000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270210T080000Z
 DTEND:20270210T141500Z
 SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
@@ -379,7 +379,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JGCS-20270211T080000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270211T080000Z
 DTEND:20270211T141500Z
 SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
@@ -397,7 +397,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JGCS-20270212T080000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270212T080000Z
 DTEND:20270212T141500Z
 SUMMARY:Juniorakademie: Code your Story – Interaktive Geschichten mit Scr
@@ -415,7 +415,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-your-Story-
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H305008-20270211T080000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270211T080000Z
 DTEND:20270211T090000Z
 SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
@@ -433,7 +433,7 @@ URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H305008-20270211T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270211T090000Z
 DTEND:20270211T113000Z
 SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
@@ -451,7 +451,7 @@ URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H305008-20270212T080000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270212T080000Z
 DTEND:20270212T090000Z
 SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
@@ -469,7 +469,7 @@ URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H305008-20270212T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270212T090000Z
 DTEND:20270212T113000Z
 SUMMARY:KinderFerienBox: Wie funktionieren Roboter und wie werden sie progr
@@ -487,7 +487,7 @@ URL:https://hdf-hn.de/kurs/kinderferienbox-wie-funktionieren-roboter-und-wi
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H305006-20270213T090000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270213T090000Z
 DTEND:20270213T120000Z
 SUMMARY:KinderFerienBox: Programmieren Lernen - Scratch
@@ -503,7 +503,7 @@ URL:https://hdf-hn.de/kurs/kinderferienbox-programmieren-lernen-scratch-261
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270225T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270225T153000Z
 DTEND:20270225T171000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -521,7 +521,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270304T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270304T153000Z
 DTEND:20270304T171000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -539,7 +539,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270311T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270311T153000Z
 DTEND:20270311T171000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -557,7 +557,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270318T153000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270318T153000Z
 DTEND:20270318T171000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -575,7 +575,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270408T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270408T143000Z
 DTEND:20270408T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -593,7 +593,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270415T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270415T143000Z
 DTEND:20270415T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -611,7 +611,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270422T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270422T143000Z
 DTEND:20270422T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -629,7 +629,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270429T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270429T143000Z
 DTEND:20270429T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -647,7 +647,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270513T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270513T143000Z
 DTEND:20270513T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -665,7 +665,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270603T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270603T143000Z
 DTEND:20270603T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -683,7 +683,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270617T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270617T143000Z
 DTEND:20270617T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -701,7 +701,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270624T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270624T143000Z
 DTEND:20270624T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -719,7 +719,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270701T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270701T143000Z
 DTEND:20270701T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -737,7 +737,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270708T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270708T143000Z
 DTEND:20270708T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -755,7 +755,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420FE-20270715T143000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270715T143000Z
 DTEND:20270715T161000Z
 SUMMARY:Code your Chat – Entwickle deine eigene Messenger-Web-App (13–1
@@ -773,7 +773,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Code-your-Chat-Entwickle-deine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420SG-20270310T150000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270310T150000Z
 DTEND:20270310T181500Z
 SUMMARY:Talking Plants – Programmiere deine Pflanze\, bis sie spricht (12
@@ -791,7 +791,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Talking-Plants-Programmiere-dei
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270330T070000Z
 DTEND:20270330T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -809,7 +809,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270331T070000Z
 DTEND:20270331T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -827,7 +827,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270401T070000Z
 DTEND:20270401T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -845,7 +845,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270402T070000Z
 DTEND:20270402T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -863,7 +863,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JEWP-20270424T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270424T070000Z
 DTEND:20270424T140000Z
 SUMMARY:Juniorakademie: Entdecke die Welt des Programmierens – Vom ersten
@@ -881,7 +881,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Entdecke-die-Wel
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420SDD-20270524T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270524T070000Z
 DTEND:20270524T120000Z
 SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
@@ -899,7 +899,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420SDD-20270526T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270526T070000Z
 DTEND:20270526T120000Z
 SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
@@ -917,7 +917,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271420SDD-20270605T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270605T070000Z
 DTEND:20270605T120000Z
 SUMMARY:Future Skills: Mit Python & Datenbanken die Welt von morgen gestalt
@@ -935,7 +935,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Future-Skills-Mit-Python-Datenb
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270525T070000Z
 DTEND:20270525T140000Z
 SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 
@@ -953,7 +953,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993XMC-20270802T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270802T070000Z
 DTEND:20270802T131500Z
 SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
@@ -970,7 +970,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993XMC-20270803T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270803T070000Z
 DTEND:20270803T131500Z
 SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
@@ -987,7 +987,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993XMC-20270804T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270804T070000Z
 DTEND:20270804T131500Z
 SUMMARY:Juniorakademie: Microcontroller und Elektronik (Kl. 7-8)
@@ -1004,7 +1004,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Microcontroller-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993JECI-20270802T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270802T070000Z
 DTEND:20270802T131500Z
 SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
@@ -1022,7 +1022,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993JECI-20270803T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270803T070000Z
 DTEND:20270803T131500Z
 SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
@@ -1040,7 +1040,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993JECI-20270804T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270804T070000Z
 DTEND:20270804T131500Z
 SUMMARY:Juniorakademie: Vom ersten Code zur eigenen Idee – Programmieren 
@@ -1058,7 +1058,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Vom-ersten-Code-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993RESC-20270906T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270906T070000Z
 DTEND:20270906T131500Z
 SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
@@ -1076,7 +1076,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-K
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993RESC-20270907T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270907T070000Z
 DTEND:20270907T131500Z
 SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
@@ -1094,7 +1094,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Smart-City-Lab-K
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-272993RESC-20270908T070000Z@cosmos-entdecker
-DTSTAMP:20261119T110926Z
+DTSTAMP:20261120T105832Z
 DTSTART:20270908T070000Z
 DTEND:20270908T131500Z
 SUMMARY:Juniorakademie: Smart City Lab – Bauen\, Coden\, Zukunft gestalte
