@@ -9,7 +9,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:hdf-261H207004-20261121T090000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261121T090000Z
 DTEND:20261121T110000Z
 SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
@@ -25,7 +25,7 @@ URL:https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balken
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-261H207004-20261122T090000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261122T090000Z
 DTEND:20261122T110000Z
 SUMMARY:Data Literacy for Kids: Von Bausteinen zum Balkendiagramm
@@ -42,7 +42,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ipai-ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendun
  g-20261123T140000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261123T140000Z
 DTEND:20261123T160000Z
 SUMMARY:KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwen
@@ -60,7 +60,7 @@ URL:https://ipai-foundation.ai/event/ki-salon-workshop-vibe-coding-ki-agent
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262410KIE-20261126T170000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261126T170000Z
 DTEND:20261126T190000Z
 SUMMARY:KI-Orientierung für Eltern: Grundlagen\, Praxis und Zukunftsperspe
@@ -79,7 +79,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ipai-ki-salon-workshop-erstelle-dein-board-of-excellence-20261130T11300
  0Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261130T113000Z
 DTEND:20261130T133000Z
 SUMMARY:KI SALON WORKSHOP: Erstelle dein Board of Excellence
@@ -95,7 +95,7 @@ URL:https://ipai-foundation.ai/event/ki-salon-workshop-erstelle-dein-board-
 END:VEVENT
 BEGIN:VEVENT
 UID:ipai-ki-salon-community-event-21-20261201T163000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261201T163000Z
 DTEND:20261201T193000Z
 SUMMARY:KI SALON COMMUNITY EVENT #21
@@ -110,7 +110,7 @@ URL:https://ipai-foundation.ai/event/ki-salon-community-event-21/
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262410DKI-20261202T153000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261202T153000Z
 DTEND:20261202T184500Z
 SUMMARY:Deepfakes & soziale Medien: Wie KI den Alltag von Kindern und Jugen
@@ -129,7 +129,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ipai-ki-salon-impuls-prof-dr-sebastian-hallensleben-regulieren-wir-uns-
  an-die-wand-20261208T173000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20261208T173000Z
 DTEND:20261208T193000Z
 SUMMARY:KI SALON IMPULS: Dr. Sebastian Hallensleben – Regulieren wir uns 
@@ -147,7 +147,7 @@ URL:https://ipai-foundation.ai/event/ki-salon-impuls-prof-dr-sebastian-hall
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410ZGR-20270116T090000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270116T090000Z
 DTEND:20270116T153000Z
 SUMMARY:Zukunftswerkstatt: Generative KI trifft Grundschulalltag
@@ -164,7 +164,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Generative-KI
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410ZKT-20270125T083000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270125T083000Z
 DTEND:20270125T150000Z
 SUMMARY:Zukunftswerkstatt: Die smarte Kita – Planung und Organisation ver
@@ -181,7 +181,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Zukunftswerkstatt-Die-smarte-Ki
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KIKT-20270125T153000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270125T153000Z
 DTEND:20270125T184500Z
 SUMMARY:KI in der Kita? Chancen\, Fragen und erste Erfahrungen
@@ -198,7 +198,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-in-der-Kita-Chancen-Fragen-u
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270220T090000Z
 DTEND:20270220T110000Z
 SUMMARY:Data Literacy for Kids: Trends und Anteile
@@ -214,7 +214,7 @@ URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270221T090000Z
 DTEND:20270221T110000Z
 SUMMARY:Data Literacy for Kids: Trends und Anteile
@@ -230,7 +230,7 @@ URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410DD-20270223T160000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270223T160000Z
 DTEND:20270223T191500Z
 SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
@@ -248,7 +248,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410DD-20270226T130000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270226T130000Z
 DTEND:20270226T180000Z
 SUMMARY:KI als Entlastung in der Schulverwaltung – Datenschutz- und Dokum
@@ -266,7 +266,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-als-Entlastung-in-der-Schulv
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410HBL-20270224T160000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270224T160000Z
 DTEND:20270224T173000Z
 SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
@@ -284,7 +284,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410HBL-20270312T140000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270312T140000Z
 DTEND:20270312T193000Z
 SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
@@ -302,7 +302,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410HBL-20270414T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270414T150000Z
 DTEND:20270414T173000Z
 SUMMARY:Sicher durch den KI-Dschungel: Digitale Tools gezielt im Unterricht
@@ -320,7 +320,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Sicher-durch-den-KI-Dschungel-D
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KK-20270225T161500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270225T161500Z
 DTEND:20270225T180000Z
 SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
@@ -338,7 +338,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KK-20270304T161500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270304T161500Z
 DTEND:20270304T193000Z
 SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
@@ -356,7 +356,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KK-20270311T161500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270311T161500Z
 DTEND:20270311T193000Z
 SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
@@ -374,7 +374,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KK-20270318T161500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270318T161500Z
 DTEND:20270318T193000Z
 SUMMARY:KI kreativ – eigene Musik- und Klangdesigns für Schule und Unter
@@ -392,7 +392,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-kreativ-eigene-Musik--und-Kl
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KIP-20270305T133000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270305T133000Z
 DTEND:20270305T170000Z
 SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
@@ -409,7 +409,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KIP-20270306T080000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270306T080000Z
 DTEND:20270306T113000Z
 SUMMARY:Parasoziale Beziehungen und KI – Wenn Werkzeuge zu sozialen Inter
@@ -426,7 +426,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Parasoziale-Beziehungen-und-KI/
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JLMM-20270306T080000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270306T080000Z
 DTEND:20270306T150000Z
 SUMMARY:Juniorakademie: Mensch\, Maschine\, Moral – Was unterscheidet uns
@@ -444,7 +444,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270330T070000Z
 DTEND:20270330T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -462,7 +462,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270331T070000Z
 DTEND:20270331T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -480,7 +480,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270401T070000Z
 DTEND:20270401T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -498,7 +498,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270402T070000Z
 DTEND:20270402T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -516,7 +516,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20270423T133000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270423T133000Z
 DTEND:20270423T183000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -534,7 +534,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20270424T063000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270424T063000Z
 DTEND:20270424T140000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -552,7 +552,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20270610T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270610T150000Z
 DTEND:20270610T181500Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -570,7 +570,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20270615T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270615T150000Z
 DTEND:20270615T181500Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -588,7 +588,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20271006T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20271006T150000Z
 DTEND:20271006T183000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -606,7 +606,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20271112T143000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20271112T143000Z
 DTEND:20271112T193000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -624,7 +624,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20271113T073000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20271113T073000Z
 DTEND:20271113T150000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -642,7 +642,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410SQR-20280523T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20280523T150000Z
 DTEND:20280523T183000Z
 SUMMARY:Schule in Zeiten von KI strategisch führen – eine Qualifizierung
@@ -660,7 +660,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Schule-in-Zeiten-von-KI-strateg
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410FK-20270429T143000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270429T143000Z
 DTEND:20270429T174500Z
 SUMMARY:Feedback-Tools im Unterricht: gestern analog\, heute digital – un
@@ -678,7 +678,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Feedback-Tools-im-Unterricht-ge
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270525T070000Z
 DTEND:20270525T140000Z
 SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 
@@ -696,7 +696,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/IT-erleben-statt-nur-verstehen-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271410KR-20270608T150000Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270608T150000Z
 DTEND:20270608T181500Z
 SUMMARY:KI-Recht in der Schule – Künstliche Intelligenz verantwortungsvo
@@ -712,7 +712,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-Recht-in-der-Schule/271410KR
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262410KID-20270614T131500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270614T131500Z
 DTEND:20270614T163000Z
 SUMMARY:KI im DaZ/DaF Unterricht: Chancen für Vielfalt und Bildungsgerecht
@@ -730,7 +730,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/KI-im-DaZDaF-Unterricht-Chancen
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-262410KID-20270624T131500Z@cosmos-entdecker
-DTSTAMP:20261120T105832Z
+DTSTAMP:20261121T104201Z
 DTSTART:20270624T131500Z
 DTEND:20270624T163000Z
 SUMMARY:KI im DaZ/DaF Unterricht: Chancen für Vielfalt und Bildungsgerecht

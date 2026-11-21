@@ -1,5 +1,5 @@
 {
-  "erstellt": "2026-11-20T10:53:28.275Z",
+  "erstellt": "2026-11-21T10:37:30.317Z",
   "lesemodus": "live",
   "quellen": [
     {
@@ -8,9 +8,7 @@
       "ok": true,
       "anzahlRoh": 105,
       "anzahlAufgenommen": 46,
-      "neu": [
-        "aim:271410SQR"
-      ],
+      "neu": [],
       "unsicher": [
         "aim:271931",
         "aim:271410PM",
@@ -21,7 +19,7 @@
         "aim:271994CMDB",
         "aim:271993AOER"
       ],
-      "dauerMs": 231805
+      "dauerMs": 220033
     },
     {
       "quelle": "experimenta",
@@ -33,13 +31,13 @@
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 1440
+      "dauerMs": 1394
     },
     {
       "quelle": "hdf",
       "name": "Haus der Familie Heilbronn",
       "ok": true,
-      "anzahlRoh": 554,
+      "anzahlRoh": 546,
       "anzahlAufgenommen": 18,
       "neu": [],
       "unsicher": [
@@ -51,7 +49,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 13093
+      "dauerMs": 11961
     },
     {
       "quelle": "ipai",
@@ -61,7 +59,7 @@
       "anzahlAufgenommen": 4,
       "neu": [],
       "unsicher": [],
-      "dauerMs": 57931
+      "dauerMs": 37510
     }
   ],
   "gesamt": 73

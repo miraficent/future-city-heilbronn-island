@@ -1096,7 +1096,7 @@
    "euro": 60,
    "text": "60 €"
   },
-  "status": "frei",
+  "status": "ausgebucht",
   "sicherheit": 0.5,
   "ausloeser": [
    "Informatik"
@@ -2459,7 +2459,7 @@
    "euro": 128.5,
    "text": "128,50 €"
   },
-  "status": "wenige",
+  "status": "ausgebucht",
   "sicherheit": 0.5,
   "ausloeser": [
    "Informatik"
@@ -2544,7 +2544,7 @@
    "euro": 128.5,
    "text": "128,50 €"
   },
-  "status": "wenige",
+  "status": "ausgebucht",
   "sicherheit": 0.5,
   "ausloeser": [
    "Informatik"
