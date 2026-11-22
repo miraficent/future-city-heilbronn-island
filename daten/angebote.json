@@ -1,234 +1,5 @@
 [
  {
-  "id": "hdf:261H207004",
-  "quelle": "hdf",
-  "titel": "Data Literacy for Kids: Von Bausteinen zum Balkendiagramm",
-  "teaser": "Ein Workshop für Kinder (4 bis 7 Jahre) mit Begleitperson Willkommen in der Welt der Daten! Hier wird gesammelt, gezählt und gezeichnet – mit bunten Bausteinen, Lieblingsfarben und kleinen Spielen. Gemeinsam mit ihren Eltern entdecken Kinder, wie man Dinge sortiert, Strichlisten macht und…",
-  "url": "https://hdf-hn.de/kurs/data-literacy-for-kids-von-bausteinen-zum-balkendiagramm-261H207004/",
-  "themen": [
-   "ki"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "eltern",
-   "teens",
-   "familien"
-  ],
-  "alterMin": 4,
-  "alterMax": 7,
-  "termine": [
-   {
-    "start": "2026-11-21T10:00:00+01:00",
-    "ende": "2026-11-21T12:00:00+01:00"
-   },
-   {
-    "start": "2026-11-22T10:00:00+01:00",
-    "ende": "2026-11-22T12:00:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Heilbronn",
-   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 8",
-   "online": false,
-   "lat": 49.1453958,
-   "lon": 9.2089472
-  },
-  "kosten": {
-   "euro": 10,
-   "text": "10 €"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "KI",
-   "künstliche Intelligenz",
-   "Data Literacy",
-   "Datenkompetenz"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "experimenta:meine-freundin-roxy",
-  "quelle": "experimenta",
-  "titel": "Meine Freundin Roxy",
-  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
-  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
-  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "teens"
-  ],
-  "alterMin": 6,
-  "termine": [
-   {
-    "start": "2026-11-21T11:30:00+01:00",
-    "ende": "2026-11-21T12:05:00+01:00"
-   },
-   {
-    "start": "2026-11-28T11:30:00+01:00",
-    "ende": "2026-11-28T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-02T09:30:00+01:00",
-    "ende": "2026-12-02T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-05T12:30:00+01:00",
-    "ende": "2026-12-05T13:05:00+01:00"
-   },
-   {
-    "start": "2026-12-06T10:30:00+01:00",
-    "ende": "2026-12-06T11:05:00+01:00"
-   },
-   {
-    "start": "2026-12-10T09:30:00+01:00",
-    "ende": "2026-12-10T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-19T13:30:00+01:00",
-    "ende": "2026-12-19T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-20T11:30:00+01:00",
-    "ende": "2026-12-20T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-21T13:00:00+01:00",
-    "ende": "2026-12-21T13:35:00+01:00"
-   },
-   {
-    "start": "2026-12-23T11:00:00+01:00",
-    "ende": "2026-12-23T11:35:00+01:00"
-   },
-   {
-    "start": "2026-12-27T13:30:00+01:00",
-    "ende": "2026-12-27T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-29T10:00:00+01:00",
-    "ende": "2026-12-29T10:35:00+01:00"
-   },
-   {
-    "start": "2026-12-29T15:00:00+01:00",
-    "ende": "2026-12-29T15:35:00+01:00"
-   },
-   {
-    "start": "2027-01-05T12:00:00+01:00",
-    "ende": "2027-01-05T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-07T12:00:00+01:00",
-    "ende": "2027-01-07T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-09T12:30:00+01:00",
-    "ende": "2027-01-09T13:05:00+01:00"
-   },
-   {
-    "start": "2027-01-10T10:30:00+01:00",
-    "ende": "2027-01-10T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-13T09:30:00+01:00",
-    "ende": "2027-01-13T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-17T10:30:00+01:00",
-    "ende": "2027-01-17T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-19T09:30:00+01:00",
-    "ende": "2027-01-19T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-23T12:30:00+01:00",
-    "ende": "2027-01-23T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-07T12:30:00+01:00",
-    "ende": "2027-02-07T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-08T11:00:00+01:00",
-    "ende": "2027-02-08T11:35:00+01:00"
-   },
-   {
-    "start": "2027-02-10T13:00:00+01:00",
-    "ende": "2027-02-10T13:35:00+01:00"
-   },
-   {
-    "start": "2027-02-14T10:30:00+01:00",
-    "ende": "2027-02-14T11:05:00+01:00"
-   },
-   {
-    "start": "2027-02-20T12:30:00+01:00",
-    "ende": "2027-02-20T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-28T10:30:00+01:00",
-    "ende": "2027-02-28T11:05:00+01:00"
-   },
-   {
-    "start": "2027-03-18T09:30:00+01:00",
-    "ende": "2027-03-18T10:05:00+01:00"
-   },
-   {
-    "start": "2027-03-24T12:00:00+01:00",
-    "ende": "2027-03-24T12:35:00+01:00"
-   },
-   {
-    "start": "2027-03-25T11:00:00+01:00",
-    "ende": "2027-03-25T11:35:00+01:00"
-   },
-   {
-    "start": "2027-03-28T11:30:00+02:00",
-    "ende": "2027-03-28T12:05:00+02:00"
-   },
-   {
-    "start": "2027-03-31T11:00:00+02:00",
-    "ende": "2027-03-31T11:35:00+02:00"
-   },
-   {
-    "start": "2027-04-06T09:30:00+02:00",
-    "ende": "2027-04-06T10:05:00+02:00"
-   },
-   {
-    "start": "2027-05-03T09:30:00+02:00",
-    "ende": "2027-05-03T10:05:00+02:00"
-   },
-   {
-    "start": "2027-06-14T09:30:00+02:00",
-    "ende": "2027-06-14T10:05:00+02:00"
-   },
-   {
-    "start": "2027-07-13T09:30:00+02:00",
-    "ende": "2027-07-13T10:05:00+02:00"
-   }
-  ],
-  "ort": {
-   "name": "experimenta",
-   "adresse": "Experimenta-Platz, 74072 Heilbronn",
-   "online": false,
-   "lat": 49.1395178,
-   "lon": 9.2161475
-  },
-  "kosten": {
-   "euro": null,
-   "text": "siehe Anbieter"
-  },
-  "status": "unbekannt",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "Roboter"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "ipai:ki-salon-workshop-vibe-coding-ki-agenten-von-der-idee-zur-anwendung",
   "quelle": "ipai",
   "titel": "KI SALON WORKSHOP: Vibe Coding & KI-Agenten: Von der Idee zur Anwendung",
@@ -635,6 +406,182 @@
   "ausloeser": [
    "Programmier",
    "Mikrocontroller"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "experimenta:meine-freundin-roxy",
+  "quelle": "experimenta",
+  "titel": "Meine Freundin Roxy",
+  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-11-28T11:30:00+01:00",
+    "ende": "2026-11-28T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-02T09:30:00+01:00",
+    "ende": "2026-12-02T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-05T12:30:00+01:00",
+    "ende": "2026-12-05T13:05:00+01:00"
+   },
+   {
+    "start": "2026-12-06T10:30:00+01:00",
+    "ende": "2026-12-06T11:05:00+01:00"
+   },
+   {
+    "start": "2026-12-10T09:30:00+01:00",
+    "ende": "2026-12-10T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-19T13:30:00+01:00",
+    "ende": "2026-12-19T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-20T11:30:00+01:00",
+    "ende": "2026-12-20T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-21T13:00:00+01:00",
+    "ende": "2026-12-21T13:35:00+01:00"
+   },
+   {
+    "start": "2026-12-23T11:00:00+01:00",
+    "ende": "2026-12-23T11:35:00+01:00"
+   },
+   {
+    "start": "2026-12-27T13:30:00+01:00",
+    "ende": "2026-12-27T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-29T10:00:00+01:00",
+    "ende": "2026-12-29T10:35:00+01:00"
+   },
+   {
+    "start": "2026-12-29T15:00:00+01:00",
+    "ende": "2026-12-29T15:35:00+01:00"
+   },
+   {
+    "start": "2027-01-05T12:00:00+01:00",
+    "ende": "2027-01-05T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-07T12:00:00+01:00",
+    "ende": "2027-01-07T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-09T12:30:00+01:00",
+    "ende": "2027-01-09T13:05:00+01:00"
+   },
+   {
+    "start": "2027-01-10T10:30:00+01:00",
+    "ende": "2027-01-10T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-13T09:30:00+01:00",
+    "ende": "2027-01-13T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-17T10:30:00+01:00",
+    "ende": "2027-01-17T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-19T09:30:00+01:00",
+    "ende": "2027-01-19T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-23T12:30:00+01:00",
+    "ende": "2027-01-23T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-07T12:30:00+01:00",
+    "ende": "2027-02-07T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-08T11:00:00+01:00",
+    "ende": "2027-02-08T11:35:00+01:00"
+   },
+   {
+    "start": "2027-02-10T13:00:00+01:00",
+    "ende": "2027-02-10T13:35:00+01:00"
+   },
+   {
+    "start": "2027-02-14T10:30:00+01:00",
+    "ende": "2027-02-14T11:05:00+01:00"
+   },
+   {
+    "start": "2027-02-20T12:30:00+01:00",
+    "ende": "2027-02-20T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-28T10:30:00+01:00",
+    "ende": "2027-02-28T11:05:00+01:00"
+   },
+   {
+    "start": "2027-03-18T09:30:00+01:00",
+    "ende": "2027-03-18T10:05:00+01:00"
+   },
+   {
+    "start": "2027-03-24T12:00:00+01:00",
+    "ende": "2027-03-24T12:35:00+01:00"
+   },
+   {
+    "start": "2027-03-25T11:00:00+01:00",
+    "ende": "2027-03-25T11:35:00+01:00"
+   },
+   {
+    "start": "2027-03-28T11:30:00+02:00",
+    "ende": "2027-03-28T12:05:00+02:00"
+   },
+   {
+    "start": "2027-03-31T11:00:00+02:00",
+    "ende": "2027-03-31T11:35:00+02:00"
+   },
+   {
+    "start": "2027-04-06T09:30:00+02:00",
+    "ende": "2027-04-06T10:05:00+02:00"
+   },
+   {
+    "start": "2027-05-03T09:30:00+02:00",
+    "ende": "2027-05-03T10:05:00+02:00"
+   },
+   {
+    "start": "2027-06-14T09:30:00+02:00",
+    "ende": "2027-06-14T10:05:00+02:00"
+   },
+   {
+    "start": "2027-07-13T09:30:00+02:00",
+    "ende": "2027-07-13T10:05:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Roboter"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
