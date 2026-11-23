@@ -1,5 +1,5 @@
 {
-  "erstellt": "2026-11-22T10:40:46.366Z",
+  "erstellt": "2026-11-23T11:44:34.768Z",
   "lesemodus": "live",
   "quellen": [
     {
@@ -19,7 +19,7 @@
         "aim:271994CMDB",
         "aim:271993AOER"
       ],
-      "dauerMs": 236993
+      "dauerMs": 266138
     },
     {
       "quelle": "experimenta",
@@ -31,13 +31,13 @@
       "unsicher": [
         "experimenta:meine-freundin-roxy"
       ],
-      "dauerMs": 1345
+      "dauerMs": 1182
     },
     {
       "quelle": "hdf",
       "name": "Haus der Familie Heilbronn",
       "ok": true,
-      "anzahlRoh": 541,
+      "anzahlRoh": 542,
       "anzahlAufgenommen": 17,
       "neu": [],
       "unsicher": [
@@ -49,7 +49,7 @@
         "hdf:272H114201",
         "hdf:272H116103"
       ],
-      "dauerMs": 12871
+      "dauerMs": 12067
     },
     {
       "quelle": "ipai",
@@ -59,7 +59,7 @@
       "anzahlAufgenommen": 4,
       "neu": [],
       "unsicher": [],
-      "dauerMs": 43318
+      "dauerMs": 32288
     }
   ],
   "gesamt": 72
