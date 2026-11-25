@@ -1,141 +1,5 @@
 [
  {
-  "id": "aim:262420SC",
-  "quelle": "aim",
-  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
-  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/262420SC",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder"
-  ],
-  "alterMin": 8,
-  "alterMax": 11,
-  "termine": [
-   {
-    "start": "2026-11-24T16:30:00+01:00",
-    "ende": "2026-11-24T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-01T16:30:00+01:00",
-    "ende": "2026-12-01T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-08T16:30:00+01:00",
-    "ende": "2026-12-08T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-15T16:30:00+01:00",
-    "ende": "2026-12-15T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-12T16:30:00+01:00",
-    "ende": "2027-01-12T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-19T16:30:00+01:00",
-    "ende": "2027-01-19T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-26T16:30:00+01:00",
-    "ende": "2027-01-26T18:10:00+01:00"
-   },
-   {
-    "start": "2027-02-02T16:30:00+01:00",
-    "ende": "2027-02-02T18:10:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Scratch"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "hdf:261H116302",
-  "quelle": "hdf",
-  "titel": "English Kids Club",
-  "teaser": "children aged 3-5 years Our English Club is designed for children aged 3–5 who are growing up with English or speak English at home. Through stories, songs, games, movement, and hands-on activities, children can build confidence, expand their vocabulary, and enjoy using English in a fun and…",
-  "url": "https://hdf-hn.de/kurs/english-kids-club-261H116302/",
-  "themen": [
-   "gaming"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "eltern"
-  ],
-  "alterMin": 3,
-  "alterMax": 6,
-  "termine": [
-   {
-    "start": "2026-11-24T16:45:00+01:00",
-    "ende": "2026-11-24T17:30:00+01:00"
-   },
-   {
-    "start": "2026-12-01T16:45:00+01:00",
-    "ende": "2026-12-01T17:30:00+01:00"
-   },
-   {
-    "start": "2026-12-08T16:45:00+01:00",
-    "ende": "2026-12-08T17:30:00+01:00"
-   },
-   {
-    "start": "2026-12-15T16:45:00+01:00",
-    "ende": "2026-12-15T17:30:00+01:00"
-   },
-   {
-    "start": "2027-01-12T16:45:00+01:00",
-    "ende": "2027-01-12T17:30:00+01:00"
-   },
-   {
-    "start": "2027-01-19T16:45:00+01:00",
-    "ende": "2027-01-19T17:30:00+01:00"
-   },
-   {
-    "start": "2027-01-26T16:45:00+01:00",
-    "ende": "2027-01-26T17:30:00+01:00"
-   },
-   {
-    "start": "2027-02-02T16:45:00+01:00",
-    "ende": "2027-02-02T17:30:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Heilbronn",
-   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 2",
-   "online": false,
-   "lat": 49.1453958,
-   "lon": 9.2089472
-  },
-  "kosten": {
-   "euro": 38,
-   "text": "38 €"
-  },
-  "status": "frei",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "Game"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "aim:262420PY",
   "quelle": "aim",
   "titel": "Programmieren lernen mit Python (12–16 Jahre)",
@@ -320,7 +184,7 @@
    "euro": 0,
    "text": "kostenlos"
   },
-  "status": "ausgebucht",
+  "status": "wenige",
   "sicherheit": 0.9,
   "ausloeser": [
    "Programmier",
@@ -591,6 +455,70 @@
    "AI",
    "ChatGPT",
    "Prompt"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262420SC",
+  "quelle": "aim",
+  "titel": "Visuelle Programmierung mit Scratch – Reise zum Planeten Mars (8–11 Jahre)",
+  "teaser": "Starte deine eigene Weltraummission und lerne, wie Programmieren geht! In unserem Kurs „Visuelle Programmierung mit Scratch – Reise zum Planeten Mars“ lernen Kinder von 8 bis 11 Jahren die Grundlagen des Programmierens. Mit Scratch, einer einfachen und intuitiven Programmiersprache, gestalten sie…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Visuelle-Programmierung-mit-Scratch-Reise-zum-Planeten-Mars-811-Jahre/262420SC",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder"
+  ],
+  "alterMin": 8,
+  "alterMax": 11,
+  "termine": [
+   {
+    "start": "2026-12-01T16:30:00+01:00",
+    "ende": "2026-12-01T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-08T16:30:00+01:00",
+    "ende": "2026-12-08T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-15T16:30:00+01:00",
+    "ende": "2026-12-15T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-12T16:30:00+01:00",
+    "ende": "2027-01-12T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-19T16:30:00+01:00",
+    "ende": "2027-01-19T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-26T16:30:00+01:00",
+    "ende": "2027-01-26T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-02T16:30:00+01:00",
+    "ende": "2027-02-02T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Scratch"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
