@@ -8,7 +8,7 @@ X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:aim-262993JLKK-20261205T080000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20261205T080000Z
 DTEND:20261205T150000Z
 SUMMARY:Juniorakademie: Kreativ mit KI – Ideen\, Texte und Bilder gestalt
@@ -26,7 +26,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Kreativ-mit-KI-I
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H207001-20270220T090000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270220T090000Z
 DTEND:20270220T110000Z
 SUMMARY:Data Literacy for Kids: Trends und Anteile
@@ -42,7 +42,7 @@ URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
 END:VEVENT
 BEGIN:VEVENT
 UID:hdf-272H207001-20270221T090000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270221T090000Z
 DTEND:20270221T110000Z
 SUMMARY:Data Literacy for Kids: Trends und Anteile
@@ -58,7 +58,7 @@ URL:https://hdf-hn.de/kurs/data-literacy-for-kids-trends-und-anteile-272H20
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JLMM-20270306T080000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270306T080000Z
 DTEND:20270306T150000Z
 SUMMARY:Juniorakademie: Mensch\, Maschine\, Moral – Was unterscheidet uns
@@ -76,7 +76,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Mensch-Maschine-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993KIEK-20270330T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270330T070000Z
 DTEND:20270330T131500Z
 SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
@@ -93,7 +93,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993KIEK-20270331T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270331T070000Z
 DTEND:20270331T131500Z
 SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
@@ -110,7 +110,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993KIEK-20270401T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270401T070000Z
 DTEND:20270401T131500Z
 SUMMARY:Juniorakademie: Einstieg in die Künstliche Intelligenz (Kl. 9-10)
@@ -127,7 +127,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Einstieg-in-die-
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270330T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270330T070000Z
 DTEND:20270330T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -145,7 +145,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270331T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270331T070000Z
 DTEND:20270331T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -163,7 +163,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270401T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270401T070000Z
 DTEND:20270401T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -181,7 +181,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271993JKCK-20270402T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270402T070000Z
 DTEND:20270402T131500Z
 SUMMARY:Juniorakademie: Code & Kreativität – Webentwicklung mit HTML\, C
@@ -199,7 +199,7 @@ URL:https://www.aim-akademie.org/kurse/kurs/Juniorakademie-Code-Kreativitae
 END:VEVENT
 BEGIN:VEVENT
 UID:aim-271470SIT-20270525T070000Z@cosmos-entdecker
-DTSTAMP:20261125T120822Z
+DTSTAMP:20261126T115703Z
 DTSTART:20270525T070000Z
 DTEND:20270525T140000Z
 SUMMARY:IT erleben statt nur verstehen - Ein Besuch im IT Education Center 

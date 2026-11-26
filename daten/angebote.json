@@ -1,69 +1,5 @@
 [
  {
-  "id": "aim:262420PY",
-  "quelle": "aim",
-  "titel": "Programmieren lernen mit Python (12–16 Jahre)",
-  "teaser": "Tauche ein in die faszinierende Welt des Programmierens! In unserem Grundkurs „Programmieren lernen mit Python\" entdeckst du, wie du mit einer der vielseitigsten und beliebtesten Programmiersprachen der Welt eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal, ob du erste…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420PY",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens"
-  ],
-  "alterMin": 12,
-  "alterMax": 16,
-  "termine": [
-   {
-    "start": "2026-11-25T16:30:00+01:00",
-    "ende": "2026-11-25T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-02T16:30:00+01:00",
-    "ende": "2026-12-02T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-09T16:30:00+01:00",
-    "ende": "2026-12-09T18:10:00+01:00"
-   },
-   {
-    "start": "2026-12-16T16:30:00+01:00",
-    "ende": "2026-12-16T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-13T16:30:00+01:00",
-    "ende": "2027-01-13T18:10:00+01:00"
-   },
-   {
-    "start": "2027-01-27T16:30:00+01:00",
-    "ende": "2027-01-27T18:10:00+01:00"
-   },
-   {
-    "start": "2027-02-03T16:30:00+01:00",
-    "ende": "2027-02-03T18:10:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Python"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "experimenta:fortbildung-esp32-programmierung-in-python",
   "quelle": "experimenta",
   "titel": "Fortbildung „ESP32-Programmierung in Python“",
@@ -595,6 +531,66 @@
   "ausloeser": [
    "KI",
    "künstliche Intelligenz"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262420PY",
+  "quelle": "aim",
+  "titel": "Programmieren lernen mit Python (12–16 Jahre)",
+  "teaser": "Tauche ein in die faszinierende Welt des Programmierens! In unserem Grundkurs „Programmieren lernen mit Python\" entdeckst du, wie du mit einer der vielseitigsten und beliebtesten Programmiersprachen der Welt eigene Programme entwickeln und kreative Projekte umsetzen kannst. Egal, ob du erste…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Programmieren-lernen-mit-Python-1216-Jahre/262420PY",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 16,
+  "termine": [
+   {
+    "start": "2026-12-02T16:30:00+01:00",
+    "ende": "2026-12-02T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-09T16:30:00+01:00",
+    "ende": "2026-12-09T18:10:00+01:00"
+   },
+   {
+    "start": "2026-12-16T16:30:00+01:00",
+    "ende": "2026-12-16T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-13T16:30:00+01:00",
+    "ende": "2027-01-13T18:10:00+01:00"
+   },
+   {
+    "start": "2027-01-27T16:30:00+01:00",
+    "ende": "2027-01-27T18:10:00+01:00"
+   },
+   {
+    "start": "2027-02-03T16:30:00+01:00",
+    "ende": "2027-02-03T18:10:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Python"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
