@@ -1,237 +1,5 @@
 [
  {
-  "id": "aim:262420PCB",
-  "quelle": "aim",
-  "titel": "Kleine Computer, große Wirkung – Einführung in die Programmierung mit Mikrocontrollern (12–15 Jahre)",
-  "teaser": "Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Computer, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messgerät dabei helfen, unser Wasser zu untersuchen? In diesem Kurs probierst du genau das aus. Dazu arbeitest du mit einem kleinen Computer, einem Mikrocontroller…",
-  "url": "https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontrollern-1215-Jahre/262420PCB",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "teens"
-  ],
-  "alterMin": 12,
-  "alterMax": 15,
-  "termine": [
-   {
-    "start": "2026-11-27T16:30:00+01:00",
-    "ende": "2026-11-27T18:00:00+01:00"
-   },
-   {
-    "start": "2026-12-04T16:30:00+01:00",
-    "ende": "2026-12-04T18:00:00+01:00"
-   },
-   {
-    "start": "2026-12-11T16:30:00+01:00",
-    "ende": "2026-12-11T18:00:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Bildungscampus",
-   "adresse": "Bildungscampus 7, 74076 Heilbronn",
-   "online": false,
-   "lat": 49.1480204,
-   "lon": 9.2149954
-  },
-  "kosten": {
-   "euro": 0,
-   "text": "kostenlos"
-  },
-  "status": "wenige",
-  "sicherheit": 0.9,
-  "ausloeser": [
-   "Programmier",
-   "Mikrocontroller"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "experimenta:meine-freundin-roxy",
-  "quelle": "experimenta",
-  "titel": "Meine Freundin Roxy",
-  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
-  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
-  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "teens"
-  ],
-  "alterMin": 6,
-  "termine": [
-   {
-    "start": "2026-11-28T11:30:00+01:00",
-    "ende": "2026-11-28T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-02T09:30:00+01:00",
-    "ende": "2026-12-02T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-05T12:30:00+01:00",
-    "ende": "2026-12-05T13:05:00+01:00"
-   },
-   {
-    "start": "2026-12-06T10:30:00+01:00",
-    "ende": "2026-12-06T11:05:00+01:00"
-   },
-   {
-    "start": "2026-12-10T09:30:00+01:00",
-    "ende": "2026-12-10T10:05:00+01:00"
-   },
-   {
-    "start": "2026-12-19T13:30:00+01:00",
-    "ende": "2026-12-19T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-20T11:30:00+01:00",
-    "ende": "2026-12-20T12:05:00+01:00"
-   },
-   {
-    "start": "2026-12-21T13:00:00+01:00",
-    "ende": "2026-12-21T13:35:00+01:00"
-   },
-   {
-    "start": "2026-12-23T11:00:00+01:00",
-    "ende": "2026-12-23T11:35:00+01:00"
-   },
-   {
-    "start": "2026-12-27T13:30:00+01:00",
-    "ende": "2026-12-27T14:05:00+01:00"
-   },
-   {
-    "start": "2026-12-29T15:00:00+01:00",
-    "ende": "2026-12-29T15:35:00+01:00"
-   },
-   {
-    "start": "2027-01-05T12:00:00+01:00",
-    "ende": "2027-01-05T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-07T12:00:00+01:00",
-    "ende": "2027-01-07T12:35:00+01:00"
-   },
-   {
-    "start": "2027-01-09T12:30:00+01:00",
-    "ende": "2027-01-09T13:05:00+01:00"
-   },
-   {
-    "start": "2027-01-10T10:30:00+01:00",
-    "ende": "2027-01-10T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-13T09:30:00+01:00",
-    "ende": "2027-01-13T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-17T10:30:00+01:00",
-    "ende": "2027-01-17T11:05:00+01:00"
-   },
-   {
-    "start": "2027-01-19T09:30:00+01:00",
-    "ende": "2027-01-19T10:05:00+01:00"
-   },
-   {
-    "start": "2027-01-23T12:30:00+01:00",
-    "ende": "2027-01-23T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-07T12:30:00+01:00",
-    "ende": "2027-02-07T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-08T11:00:00+01:00",
-    "ende": "2027-02-08T11:35:00+01:00"
-   },
-   {
-    "start": "2027-02-10T13:00:00+01:00",
-    "ende": "2027-02-10T13:35:00+01:00"
-   },
-   {
-    "start": "2027-02-14T10:30:00+01:00",
-    "ende": "2027-02-14T11:05:00+01:00"
-   },
-   {
-    "start": "2027-02-20T12:30:00+01:00",
-    "ende": "2027-02-20T13:05:00+01:00"
-   },
-   {
-    "start": "2027-02-28T10:30:00+01:00",
-    "ende": "2027-02-28T11:05:00+01:00"
-   },
-   {
-    "start": "2027-03-18T09:30:00+01:00",
-    "ende": "2027-03-18T10:05:00+01:00"
-   },
-   {
-    "start": "2027-03-24T12:00:00+01:00",
-    "ende": "2027-03-24T12:35:00+01:00"
-   },
-   {
-    "start": "2027-03-25T11:00:00+01:00",
-    "ende": "2027-03-25T11:35:00+01:00"
-   },
-   {
-    "start": "2027-03-28T11:30:00+02:00",
-    "ende": "2027-03-28T12:05:00+02:00"
-   },
-   {
-    "start": "2027-03-31T11:00:00+02:00",
-    "ende": "2027-03-31T11:35:00+02:00"
-   },
-   {
-    "start": "2027-04-04T15:30:00+02:00",
-    "ende": "2027-04-04T16:05:00+02:00"
-   },
-   {
-    "start": "2027-04-06T09:30:00+02:00",
-    "ende": "2027-04-06T10:05:00+02:00"
-   },
-   {
-    "start": "2027-04-17T14:30:00+02:00",
-    "ende": "2027-04-17T15:05:00+02:00"
-   },
-   {
-    "start": "2027-04-23T16:00:00+02:00",
-    "ende": "2027-04-23T16:35:00+02:00"
-   },
-   {
-    "start": "2027-05-03T09:30:00+02:00",
-    "ende": "2027-05-03T10:05:00+02:00"
-   },
-   {
-    "start": "2027-06-14T09:30:00+02:00",
-    "ende": "2027-06-14T10:05:00+02:00"
-   },
-   {
-    "start": "2027-07-13T09:30:00+02:00",
-    "ende": "2027-07-13T10:05:00+02:00"
-   }
-  ],
-  "ort": {
-   "name": "experimenta",
-   "adresse": "Experimenta-Platz, 74072 Heilbronn",
-   "online": false,
-   "lat": 49.1395178,
-   "lon": 9.2161475
-  },
-  "kosten": {
-   "euro": null,
-   "text": "siehe Anbieter"
-  },
-  "status": "unbekannt",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "Roboter"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
   "id": "hdf:261H304002",
   "quelle": "hdf",
   "titel": "Programmieren Lernen - Scratch",
@@ -416,6 +184,186 @@
   "erstmalsGesehen": "2026-11-15"
  },
  {
+  "id": "experimenta:meine-freundin-roxy",
+  "quelle": "experimenta",
+  "titel": "Meine Freundin Roxy",
+  "teaser": "Als Lizzi einen kaputten Roboter findet, startet für die beiden ein Abenteuer voller Technik, Freundschaft und Neugier. Ab 6 Jahren.",
+  "url": "https://www.experimenta.science/besuchen/veranstaltungskalender/meine-freundin-roxy/",
+  "bild": "https://www.experimenta.science/wp-content/uploads/2025/12/2025-12-17-experimenta-science-dome-meine-freundin-roxy7-1920x1080-1.jpg",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "kinder",
+   "teens"
+  ],
+  "alterMin": 6,
+  "termine": [
+   {
+    "start": "2026-12-02T09:30:00+01:00",
+    "ende": "2026-12-02T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-05T12:30:00+01:00",
+    "ende": "2026-12-05T13:05:00+01:00"
+   },
+   {
+    "start": "2026-12-06T10:30:00+01:00",
+    "ende": "2026-12-06T11:05:00+01:00"
+   },
+   {
+    "start": "2026-12-10T09:30:00+01:00",
+    "ende": "2026-12-10T10:05:00+01:00"
+   },
+   {
+    "start": "2026-12-19T13:30:00+01:00",
+    "ende": "2026-12-19T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-20T11:30:00+01:00",
+    "ende": "2026-12-20T12:05:00+01:00"
+   },
+   {
+    "start": "2026-12-21T13:00:00+01:00",
+    "ende": "2026-12-21T13:35:00+01:00"
+   },
+   {
+    "start": "2026-12-23T11:00:00+01:00",
+    "ende": "2026-12-23T11:35:00+01:00"
+   },
+   {
+    "start": "2026-12-27T13:30:00+01:00",
+    "ende": "2026-12-27T14:05:00+01:00"
+   },
+   {
+    "start": "2026-12-29T15:00:00+01:00",
+    "ende": "2026-12-29T15:35:00+01:00"
+   },
+   {
+    "start": "2027-01-05T12:00:00+01:00",
+    "ende": "2027-01-05T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-07T12:00:00+01:00",
+    "ende": "2027-01-07T12:35:00+01:00"
+   },
+   {
+    "start": "2027-01-09T12:30:00+01:00",
+    "ende": "2027-01-09T13:05:00+01:00"
+   },
+   {
+    "start": "2027-01-10T10:30:00+01:00",
+    "ende": "2027-01-10T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-13T09:30:00+01:00",
+    "ende": "2027-01-13T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-17T10:30:00+01:00",
+    "ende": "2027-01-17T11:05:00+01:00"
+   },
+   {
+    "start": "2027-01-19T09:30:00+01:00",
+    "ende": "2027-01-19T10:05:00+01:00"
+   },
+   {
+    "start": "2027-01-23T12:30:00+01:00",
+    "ende": "2027-01-23T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-07T12:30:00+01:00",
+    "ende": "2027-02-07T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-08T11:00:00+01:00",
+    "ende": "2027-02-08T11:35:00+01:00"
+   },
+   {
+    "start": "2027-02-10T13:00:00+01:00",
+    "ende": "2027-02-10T13:35:00+01:00"
+   },
+   {
+    "start": "2027-02-14T10:30:00+01:00",
+    "ende": "2027-02-14T11:05:00+01:00"
+   },
+   {
+    "start": "2027-02-20T12:30:00+01:00",
+    "ende": "2027-02-20T13:05:00+01:00"
+   },
+   {
+    "start": "2027-02-28T10:30:00+01:00",
+    "ende": "2027-02-28T11:05:00+01:00"
+   },
+   {
+    "start": "2027-03-18T09:30:00+01:00",
+    "ende": "2027-03-18T10:05:00+01:00"
+   },
+   {
+    "start": "2027-03-24T12:00:00+01:00",
+    "ende": "2027-03-24T12:35:00+01:00"
+   },
+   {
+    "start": "2027-03-25T11:00:00+01:00",
+    "ende": "2027-03-25T11:35:00+01:00"
+   },
+   {
+    "start": "2027-03-28T11:30:00+02:00",
+    "ende": "2027-03-28T12:05:00+02:00"
+   },
+   {
+    "start": "2027-03-31T11:00:00+02:00",
+    "ende": "2027-03-31T11:35:00+02:00"
+   },
+   {
+    "start": "2027-04-04T15:30:00+02:00",
+    "ende": "2027-04-04T16:05:00+02:00"
+   },
+   {
+    "start": "2027-04-06T09:30:00+02:00",
+    "ende": "2027-04-06T10:05:00+02:00"
+   },
+   {
+    "start": "2027-04-17T14:30:00+02:00",
+    "ende": "2027-04-17T15:05:00+02:00"
+   },
+   {
+    "start": "2027-04-23T16:00:00+02:00",
+    "ende": "2027-04-23T16:35:00+02:00"
+   },
+   {
+    "start": "2027-05-03T09:30:00+02:00",
+    "ende": "2027-05-03T10:05:00+02:00"
+   },
+   {
+    "start": "2027-06-14T09:30:00+02:00",
+    "ende": "2027-06-14T10:05:00+02:00"
+   },
+   {
+    "start": "2027-07-13T09:30:00+02:00",
+    "ende": "2027-07-13T10:05:00+02:00"
+   }
+  ],
+  "ort": {
+   "name": "experimenta",
+   "adresse": "Experimenta-Platz, 74072 Heilbronn",
+   "online": false,
+   "lat": 49.1395178,
+   "lon": 9.2161475
+  },
+  "kosten": {
+   "euro": null,
+   "text": "siehe Anbieter"
+  },
+  "status": "unbekannt",
+  "sicherheit": 0.5,
+  "ausloeser": [
+   "Roboter"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
   "id": "aim:262410DKI",
   "quelle": "aim",
   "titel": "Deepfakes & soziale Medien: Wie KI den Alltag von Kindern und Jugendlichen prägt",
@@ -510,6 +458,50 @@
   "ausloeser": [
    "Programmier",
    "Python"
+  ],
+  "erstmalsGesehen": "2026-11-15"
+ },
+ {
+  "id": "aim:262420PCB",
+  "quelle": "aim",
+  "titel": "Kleine Computer, große Wirkung – Einführung in die Programmierung mit Mikrocontrollern (12–15 Jahre)",
+  "teaser": "Wie bringt man ein kleines Licht zum Blinken? Wie merkt ein Computer, dass du einen Knopf gedrückt hast? Und wie kann ein kleines Messgerät dabei helfen, unser Wasser zu untersuchen? In diesem Kurs probierst du genau das aus. Dazu arbeitest du mit einem kleinen Computer, einem Mikrocontroller…",
+  "url": "https://www.aim-akademie.org/kurse/kurs/Einfuehrung-in-die-Programmierung-mit-Mikrocontrollern-1215-Jahre/262420PCB",
+  "themen": [
+   "coding"
+  ],
+  "art": "kurs",
+  "zielgruppen": [
+   "teens"
+  ],
+  "alterMin": 12,
+  "alterMax": 15,
+  "termine": [
+   {
+    "start": "2026-12-04T16:30:00+01:00",
+    "ende": "2026-12-04T18:00:00+01:00"
+   },
+   {
+    "start": "2026-12-11T16:30:00+01:00",
+    "ende": "2026-12-11T18:00:00+01:00"
+   }
+  ],
+  "ort": {
+   "name": "Bildungscampus",
+   "adresse": "Bildungscampus 7, 74076 Heilbronn",
+   "online": false,
+   "lat": 49.1480204,
+   "lon": 9.2149954
+  },
+  "kosten": {
+   "euro": 0,
+   "text": "kostenlos"
+  },
+  "status": "ausgebucht",
+  "sicherheit": 0.9,
+  "ausloeser": [
+   "Programmier",
+   "Mikrocontroller"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
@@ -753,70 +745,6 @@
   "ausloeser": [
    "KI",
    "AI"
-  ],
-  "erstmalsGesehen": "2026-11-15"
- },
- {
-  "id": "hdf:261H116102",
-  "quelle": "hdf",
-  "titel": "Maxi-MINTies - Entdeckungsreise durch die Welt der Technik",
-  "teaser": "Kindertreff für Kinder von 3 bis 5 Jahren ohne Begleitperson In diesem Angebot erleben Kinder Technik als etwas Greifbares und Alltagsnahes. Sie bauen, tüfteln, reparieren und experimentieren mit verschiedenen Materialien und einfachen Werkzeugen. Dabei entwickeln sie ein erstes Verständnis für…",
-  "url": "https://hdf-hn.de/kurs/maxi-minties-entdeckungsreise-durch-die-welt-der-technik-261H116102/",
-  "themen": [
-   "coding"
-  ],
-  "art": "kurs",
-  "zielgruppen": [
-   "kinder",
-   "eltern"
-  ],
-  "alterMin": 3,
-  "alterMax": 5,
-  "termine": [
-   {
-    "start": "2026-12-11T14:45:00+01:00",
-    "ende": "2026-12-11T16:00:00+01:00"
-   },
-   {
-    "start": "2026-12-18T14:45:00+01:00",
-    "ende": "2026-12-18T16:00:00+01:00"
-   },
-   {
-    "start": "2027-01-15T14:45:00+01:00",
-    "ende": "2027-01-15T16:00:00+01:00"
-   },
-   {
-    "start": "2027-01-22T14:45:00+01:00",
-    "ende": "2027-01-22T16:00:00+01:00"
-   },
-   {
-    "start": "2027-01-29T14:45:00+01:00",
-    "ende": "2027-01-29T16:00:00+01:00"
-   },
-   {
-    "start": "2027-02-05T14:45:00+01:00",
-    "ende": "2027-02-05T16:00:00+01:00"
-   },
-   {
-    "start": "2027-02-12T14:45:00+01:00",
-    "ende": "2027-02-12T16:00:00+01:00"
-   }
-  ],
-  "ort": {
-   "name": "Heilbronn",
-   "adresse": "Heilbronn, Haus der Familie, Erich-Mendelsohn-Str. 1C, Raum 3",
-   "online": false,
-   "lat": 49.1453958,
-   "lon": 9.2089472
-  },
-  "kosten": {
-   "euro": 60,
-   "text": "60 €"
-  },
-  "status": "ausgebucht",
-  "sicherheit": 0.5,
-  "ausloeser": [
-   "Informatik"
   ],
   "erstmalsGesehen": "2026-11-15"
  },
